@@ -47,7 +47,7 @@ export const TYPERT = {
         typeSymbol: 'kaitu-novel-workspace-source#kaituNovel/request:result',
         create: kaitu_novel_workspace_source_kaituNovel_request_result$schema,
       },
-      sourceLocation: {"file":"packages/novel-plugin/src/index.ts","line":56,"column":9},
+      sourceLocation: {"file":"packages/novel-plugin/src/index.ts","line":64,"column":9},
     },
   ],
   model: {

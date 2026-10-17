@@ -68576,6 +68576,7 @@ ${header.split("\n").find((line) => /^#\s/.test(line)) ?? ""}`;
   if (/候选|AI[ _-]?草稿|candidate/i.test(location)) result.role = "candidate";
   else if (/(?:^|[/\\])(?:README|AGENTS|DESIGN)\.(md|txt)$/i.test(path)) result.role = "notes";
   else if (/世界书|设定集|设定|规则|worldbook|world.?bible/i.test(title)) result.role = "setting";
+  else if (/人物卡|人物总卡|时间线/.test(title)) result.role = "setting";
   else if (/大纲|总纲|分镜|outline/i.test(title)) result.role = "outline";
   else if (/参考资料|外部来源|reference/i.test(location)) result.role = "reference";
   else if (/笔记|修改意见|修改建议|工作单|修订说明|写作提示/i.test(location)) result.role = "notes";
@@ -68591,7 +68592,8 @@ ${header.split("\n").find((line) => /^#\s/.test(line)) ?? ""}`;
     reference: "reference",
     candidate: "candidate"
   };
-  if (roles[role]) result.role = roles[role];
+  const declaredRole = roles[role];
+  if (declaredRole) result.role = declaredRole;
   result.evidence.push(roles[role] ? "\u6587\u4EF6\u5143\u6570\u636E\u58F0\u660E\u7528\u9014" : `\u76EE\u5F55\u6216\u6807\u9898\u8BC6\u522B\uFF1A${result.role}`);
   const origin = String(declared.origin ?? declared.generated_by ?? declared.author ?? "");
   if (/^(human|author|人工|作者|手写)$/i.test(origin) || /作者手写|人工撰写/.test(path)) {

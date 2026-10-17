@@ -1,13 +1,13 @@
 import type { Context } from "@deepseek-ai/cordis";
 import type {} from "@deepseek-ai/dsh-api-remotes/client";
+import type { ISessions } from "@deepseek-ai/dsh-api-session-controller/client";
 import type { MainPanelId } from "@deepseek-ai/dsh-client-ui-layout/client";
 import type {} from "@deepseek-ai/dsh-client-ui-renderer/client";
 import type {} from "@deepseek-ai/dsh-client-ui-sidebar/client";
 import contribution from "../../lib/typert.remote-client.js";
 import { type KaituSessionServices, openKaituSession } from "./agent-prompt.js";
 import { EmbeddedNovelPage, WriterChat } from "./embedded-agent.js";
-import type { ISessions } from "@deepseek-ai/dsh-api-session-controller/client";
-import { type Request } from "./page.js";
+import type { FolderListing, Request } from "./page.js";
 export const inject = ["slots", "remote", "layout"];
 const panel = "kaitu-novel" as MainPanelId;
 declare global {
@@ -53,6 +53,7 @@ export async function apply(ctx: Context) {
             inject: () => ({
               request,
               onAgent,
+              onBrowseFolder: (path?: string) => request<FolderListing>("folders", path ? { path } : {}),
               services: {
                 sessions: ctx.get("sessions") as ISessions,
                 workspaces: ctx.get("workspaces") as {

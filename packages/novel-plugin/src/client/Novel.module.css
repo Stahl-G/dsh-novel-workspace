@@ -160,3 +160,36 @@
 details.card label {
   margin-top: 12px;
 }
+
+.projectOpen {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0;
+}
+.actions input {
+  flex: 1;
+}
+.wrap button:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+}
+.projectOpen:hover {
+  color: var(--link);
+}
+.projectOpen:active {
+  transform: translateY(1px);
+}
+.wrap button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.folderPicker { border:1px solid var(--line); padding:16px; border-radius:8px; background:var(--sunken); }
+.folderList { display:grid; gap:6px; max-height:260px; overflow:auto; margin-bottom:14px; }
+.folderList button { text-align:left; }
+.folderPicker .actions { flex-wrap:wrap; }

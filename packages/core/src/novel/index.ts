@@ -556,7 +556,14 @@ export function applyNovelDraft(
 // Replace only the selected section. The surrounding file (including frontmatter)
 // stays byte-for-byte intact, and a concurrent editor change stops the save.
 export function saveNovelScene(ws: Workspace, project: string, revision: string, input: unknown) {
-  const args = z.object({ scene: z.string(), fileHash: z.string(), text: z.string() }).parse(input);
+  const args = z
+    .object({
+      scene: z.string(),
+      fileHash: z.string(),
+      text: z.string(),
+      wholeDocument: z.boolean().default(false),
+    })
+    .parse(input);
   return changeStore(novelFile(ws, project), initial, revision, (data) => {
     if (data.writingMode !== "writing") throw new Error("切换到写作模式后可以保存正文");
     const source = novelScene(ws, project, args.scene);
@@ -575,7 +582,7 @@ export function saveNovelScene(ws: Workspace, project: string, revision: string,
     const newline = before.includes("\r\n") ? "\r\n" : "\n";
     const section = args.text.replace(/\r?\n/g, newline);
     const replacement = next ? section.replace(/(?:\r?\n)*$/, "") + newline : section;
-    const after = before.slice(0, start) + replacement + before.slice(end);
+    const after = args.wholeDocument ? args.text : before.slice(0, start) + replacement + before.slice(end);
     const backup = { path: source.scene.path, before, afterHash: hash(after) };
     fs.mkdirSync(join(data.managedRoot, "source-backups"), { recursive: true });
     fs.writeFileSync(join(data.managedRoot, "source-backups", "editor-last.json"), JSON.stringify(backup), {

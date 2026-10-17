@@ -1,8 +1,9 @@
 .shell {
   color: var(--ink);
   font: 14px / 1.6 var(--font);
-  height: 100%;
-  min-height: 650px;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: 16px;
@@ -104,7 +105,7 @@
 .editorWrap {
   position: relative;
   flex: 1;
-  min-height: 280px;
+  min-height: 0;
   overflow: hidden;
 }
 .cmHost {
@@ -216,10 +217,85 @@
     grid-column: 1 / -1;
     min-height: 400px;
   }
-  .shell {
-    height: auto;
+  .columns:not(.noAssistant) {
+    grid-template-rows: minmax(0, 1fr) minmax(220px, .7fr);
   }
-  .manuscript {
-    height: 70vh;
+  .assistant {
+    min-height: 0;
   }
+}
+
+.noAssistant {
+  grid-template-columns: 155px minmax(330px, 1fr);
+}
+.withReference {
+  grid-template-columns: 145px minmax(280px, 1fr) minmax(330px, 1fr) minmax(290px, 340px);
+}
+.withReference.noAssistant {
+  grid-template-columns: 145px minmax(280px, 1fr) minmax(330px, 1fr);
+}
+.reference {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.reference .toolbar select {
+  width: 100%;
+  min-width: 0;
+}
+.reference .toolbar {
+  min-width: 0;
+}
+.shell button:focus-visible,
+.shell select:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 2px;
+}
+@media (max-width: 1100px) {
+  .withReference,
+  .withReference.noAssistant {
+    grid-template-columns: 120px minmax(230px, 1fr) minmax(260px, 1fr);
+  }
+  .withReference .assistant {
+    grid-column: 2 / -1;
+  }
+  .withReference:not(.noAssistant) {
+    grid-template-rows: minmax(0, 1fr) minmax(220px, .7fr);
+  }
+}
+@media (max-width: 760px) {
+  .withReference,
+  .withReference.noAssistant {
+    grid-template-columns: 1fr;
+  }
+  .withReference .chapters {
+    max-height: 160px;
+  }
+  .reference {
+    height: 45vh;
+  }
+  .withReference .assistant {
+    grid-column: auto;
+  }
+  .header {
+    flex-wrap: wrap;
+  }
+}
+
+.referenceActions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 8px 12px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.referenceActions button {
+  padding: 4px 8px;
 }

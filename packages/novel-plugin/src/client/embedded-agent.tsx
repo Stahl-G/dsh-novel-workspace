@@ -4,9 +4,9 @@ import type {
   SessionSnapshot,
 } from "@deepseek-ai/dsh-api-session-controller/client";
 import type { ConversationViewsProps } from "@deepseek-ai/dsh-client-ui-conversation/client";
-import type { PropsRuntime, PropsRenderFactories, PropsRenderSlots } from "@deepseek-ai/dsh-client-ui-slots";
+import type { PropsRenderFactories, PropsRenderSlots, PropsRuntime } from "@deepseek-ai/dsh-client-ui-slots";
 import { useEffect, useRef, useState } from "react";
-import { NovelPage, type Request } from "./page.js";
+import { type FolderListing, NovelPage, type Request } from "./page.js";
 
 declare module "@deepseek-ai/dsh-api-session-controller/client" {
   interface SessionReferenceSourceMap {
@@ -45,12 +45,14 @@ export function WriterChat({
 export function EmbeddedNovelPage({
   request,
   onAgent,
+  onBrowseFolder,
   services,
   SessionProvider,
   renderSlot,
 }: {
   request: Request;
   onAgent(text: string): Promise<void>;
+  onBrowseFolder?(path?: string): Promise<FolderListing>;
   services: {
     sessions: ISessions;
     workspaces: { create(input: { path: string }): Promise<{ workspaceId: string }> };
@@ -69,6 +71,7 @@ export function EmbeddedNovelPage({
     <NovelPage
       request={request}
       onAgent={onAgent}
+      onBrowseFolder={onBrowseFolder}
       writerAgent={{
         async send(project, text) {
           let reference = references.current.get(project);

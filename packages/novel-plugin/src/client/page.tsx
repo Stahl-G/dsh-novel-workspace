@@ -5,12 +5,20 @@ import css from "./Novel.module.css";
 import { Writer, type WriterAgent } from "./Writer.js";
 import { continuationPrompt, externalContinuationPrompt } from "./continuation-prompt.js";
 export type Request = <T = unknown>(operation: string, input?: object) => Promise<T>;
+export type FolderListing = {
+  path: string;
+  home: string;
+  crumbs: { name: string; path: string }[];
+  entries: { name: string; path: string; hidden: boolean }[];
+  truncated: boolean;
+};
 type Agent = (text: string) => Promise<void>;
 type Project = {
   slug: string;
   title: string;
   linked: boolean;
   pinned: boolean;
+  hidden?: boolean;
   words: number;
   scenes: number;
 };
@@ -59,7 +67,13 @@ export function NovelPage({
   request,
   onAgent,
   writerAgent,
-}: { request: Request; onAgent?: Agent; writerAgent?: WriterAgent }) {
+  onBrowseFolder,
+}: {
+  request: Request;
+  onAgent?: Agent;
+  writerAgent?: WriterAgent;
+  onBrowseFolder?(path?: string): Promise<FolderListing>;
+}) {
   const [catalog, setCatalog] = useState<Catalog>({
     projects: [],
     science: false,
@@ -75,6 +89,13 @@ export function NovelPage({
   const [next, setNext] = useState("");
   const [writingIntent, setWritingIntent] = useState("");
   const [agentIntent, setAgentIntent] = useState("");
+  const [adding, setAdding] = useState(false);
+  const [folder, setFolder] = useState("");
+  const [newTitle, setNewTitle] = useState("");
+  const [importMode, setImportMode] = useState("copy");
+  const [showHidden, setShowHidden] = useState(false);
+  const [removing, setRemoving] = useState("");
+  const [folders, setFolders] = useState<FolderListing | null>(null);
   const refresh = useCallback(async () => {
     const info = await request<Catalog>("projects");
     setCatalog(info);
@@ -154,6 +175,16 @@ export function NovelPage({
             <span className={css.muted}>开图 · 小说工作台</span>
             <h1>{title ?? "你的作品"}</h1>
           </div>
+          {!project && (
+            <button
+              type="button"
+              className={`${base.btn} ${base["btn-strong"]}`}
+              disabled={busy}
+              onClick={() => setAdding((v) => !v)}
+            >
+              添加作品
+            </button>
+          )}
           {project && (
             <button
               type="button"
@@ -189,26 +220,226 @@ export function NovelPage({
         {!project && (
           <>
             <p>继续写作，找回资料，检查设定。</p>
+            {adding && (
+              <form
+                className={`${css.card} ${css.stack}`}
+                aria-label="添加作品"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  void run(async () => {
+                    const added = await request<{ project: string }>("addProject", {
+                      path: folder,
+                      title: newTitle,
+                      mode: importMode,
+                    });
+                    const info = await request<Catalog>("projects");
+                    setCatalog(info);
+                    const p = info.projects.find((p) => p.slug === added.project);
+                    setAdding(false);
+                    setFolder("");
+                    setNewTitle("");
+                    if (p) await choose(p);
+                  }, "作品已添加");
+                }}
+              >
+                <h2>添加作品</h2>
+                <label>
+                  作品文件夹
+                  <div className={css.actions}>
+                    <input
+                      required
+                      value={folder}
+                      placeholder="选择或粘贴作品文件夹路径"
+                      onChange={(e) => setFolder(e.target.value)}
+                    />
+                    {onBrowseFolder && (
+                      <button
+                        type="button"
+                        className={base.btn}
+                        disabled={busy}
+                        onClick={() =>
+                          void run(async () => {
+                            setFolders(await onBrowseFolder(folder || undefined));
+                          }, "")
+                        }
+                      >
+                        选择文件夹
+                      </button>
+                    )}
+                  </div>
+                </label>
+                {folders && onBrowseFolder && (
+                  <section className={css.folderPicker} aria-label="选择作品文件夹">
+                    <div className={css.actions}>
+                      {folders.crumbs.map((c) => (
+                        <button
+                          type="button"
+                          key={c.path}
+                          className={base.link}
+                          disabled={busy}
+                          onClick={() => void run(async () => setFolders(await onBrowseFolder(c.path)), "")}
+                        >
+                          {c.name || "/"}
+                        </button>
+                      ))}
+                    </div>
+                    <p className={css.muted}>{folders.path}</p>
+                    <div className={css.folderList}>
+                      {folders.entries
+                        .filter((e) => !e.hidden)
+                        .map((entry) => (
+                          <button
+                            type="button"
+                            key={entry.path}
+                            className={base.btn}
+                            disabled={busy}
+                            onClick={() =>
+                              void run(async () => setFolders(await onBrowseFolder(entry.path)), "")
+                            }
+                          >
+                            📁 {entry.name}
+                          </button>
+                        ))}
+                    </div>
+                    {folders.truncated && <p>此目录内容较多，可在路径框中输入目标子目录。</p>}
+                    <div className={css.actions}>
+                      <button
+                        type="button"
+                        className={`${base.btn} ${base["btn-strong"]}`}
+                        onClick={() => {
+                          setFolder(folders.path);
+                          if (!newTitle)
+                            setNewTitle(folders.path.split(/[/\\]/).filter(Boolean).at(-1) ?? "");
+                          setFolders(null);
+                        }}
+                      >
+                        使用此文件夹
+                      </button>
+                      <button type="button" className={base.btn} onClick={() => setFolders(null)}>
+                        取消选择
+                      </button>
+                    </div>
+                  </section>
+                )}
+                <label>
+                  作品名称
+                  <input
+                    value={newTitle}
+                    placeholder="留空使用文件夹名"
+                    onChange={(e) => setNewTitle(e.target.value)}
+                  />
+                </label>
+                <label>
+                  使用方式
+                  <select value={importMode} onChange={(e) => setImportMode(e.target.value)}>
+                    <option value="copy">导入副本，在插件里写作</option>
+                    <option value="link">关联原目录，与 Obsidian 共用文件</option>
+                  </select>
+                </label>
+                <p className={css.muted}>
+                  {importMode === "copy"
+                    ? "正文、大纲和资料一起复制到插件工作区；两个目录独立保存。"
+                    : "插件与 Obsidian 读取同一份文件，保存会写回原目录。"}
+                </p>
+                <div className={css.actions}>
+                  <button
+                    type="submit"
+                    className={`${base.btn} ${base["btn-strong"]}`}
+                    disabled={busy || !folder.trim()}
+                  >
+                    {busy ? "正在添加…" : "添加并打开"}
+                  </button>
+                  <button type="button" className={base.btn} disabled={busy} onClick={() => setAdding(false)}>
+                    取消
+                  </button>
+                </div>
+              </form>
+            )}
+            <div className={css.actions}>
+              <button
+                type="button"
+                className={base.link}
+                aria-pressed={showHidden}
+                onClick={() => setShowHidden((v) => !v)}
+              >
+                {showHidden ? "返回作品" : `已隐藏（${catalog.projects.filter((p) => p.hidden).length}）`}
+              </button>
+            </div>
             <div className={css.grid}>
               {[...catalog.projects]
+                .filter((p) => !!p.hidden === showHidden)
                 .sort((a, b) => Number(b.pinned) - Number(a.pinned))
                 .map((p) => (
-                  <button
-                    type="button"
-                    key={p.slug}
-                    className={css.card}
-                    style={{ textAlign: "left", color: "inherit" }}
-                    onClick={() => void run(() => choose(p), "作品已打开")}
-                  >
-                    <small>
-                      {p.pinned ? "已固定 · " : ""}
-                      {p.linked ? `${p.scenes} 场景 · ${p.words} 字词` : "待接入小说资料"}
-                    </small>
-                    <h2>{p.title}</h2>
-                  </button>
+                  <article key={p.slug} className={css.card}>
+                    <button
+                      type="button"
+                      className={css.projectOpen}
+                      disabled={busy}
+                      onClick={() => void run(() => choose(p), "作品已打开")}
+                    >
+                      <small>
+                        {p.pinned ? "已固定 · " : ""}
+                        {p.linked ? `${p.scenes} 场景 · ${p.words} 字词` : "待接入小说资料"}
+                      </small>
+                      <h2>{p.title}</h2>
+                    </button>
+                    <div className={css.actions}>
+                      <button
+                        type="button"
+                        className={base.link}
+                        disabled={busy}
+                        onClick={() =>
+                          void run(
+                            () => request("hideProject", { project: p.slug, hidden: !p.hidden }),
+                            p.hidden ? "已恢复显示" : "作品已隐藏",
+                          )
+                        }
+                      >
+                        {p.hidden ? "恢复显示" : "隐藏"}
+                      </button>
+                      <button
+                        type="button"
+                        className={base.link}
+                        disabled={busy}
+                        onClick={() => setRemoving(p.slug)}
+                      >
+                        移除
+                      </button>
+                    </div>
+                    {removing === p.slug && (
+                      <section aria-label={`移除${p.title}`} className={css.warn}>
+                        <p>移除《{p.title}》？插件资料与导入副本移入回收目录，关联的原目录保留。</p>
+                        <button
+                          type="button"
+                          className={base.btn}
+                          disabled={busy}
+                          onClick={() =>
+                            void run(async () => {
+                              await request("removeProject", { project: p.slug });
+                              setRemoving("");
+                            }, "作品已移除")
+                          }
+                        >
+                          确认移除
+                        </button>
+                        <button
+                          type="button"
+                          className={base.btn}
+                          disabled={busy}
+                          onClick={() => setRemoving("")}
+                        >
+                          取消
+                        </button>
+                      </section>
+                    )}
+                  </article>
                 ))}
             </div>
-            {!catalog.projects.length && <p>在开图关联作品项目后，让 Agent 接入正文与世界书。</p>}
+            {!catalog.projects.some((p) => !!p.hidden === showHidden) && (
+              <p>
+                {showHidden ? "没有隐藏的作品。" : "点击“添加作品”，选择你的正文、大纲与资料所在文件夹。"}
+              </p>
+            )}
           </>
         )}
         {project && !data && <p>让 Agent 读取这个项目的目录并接入索引即可开始。</p>}

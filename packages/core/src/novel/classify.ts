@@ -24,6 +24,7 @@ export function classifyNovelDocument(path: string, text: string): NovelClassifi
   if (/候选|AI[ _-]?草稿|candidate/i.test(location)) result.role = "candidate";
   else if (/(?:^|[/\\])(?:README|AGENTS|DESIGN)\.(md|txt)$/i.test(path)) result.role = "notes";
   else if (/世界书|设定集|设定|规则|worldbook|world.?bible/i.test(title)) result.role = "setting";
+  else if (/人物卡|人物总卡|时间线/.test(title)) result.role = "setting";
   else if (/大纲|总纲|分镜|outline/i.test(title)) result.role = "outline";
   else if (/参考资料|外部来源|reference/i.test(location)) result.role = "reference";
   else if (/笔记|修改意见|修改建议|工作单|修订说明|写作提示/i.test(location)) result.role = "notes";
@@ -39,7 +40,8 @@ export function classifyNovelDocument(path: string, text: string): NovelClassifi
     reference: "reference",
     candidate: "candidate",
   };
-  if (roles[role]) result.role = roles[role]!;
+  const declaredRole = roles[role];
+  if (declaredRole) result.role = declaredRole;
   result.evidence.push(roles[role] ? "文件元数据声明用途" : `目录或标题识别：${result.role}`);
 
   const origin = String(declared.origin ?? declared.generated_by ?? declared.author ?? "");

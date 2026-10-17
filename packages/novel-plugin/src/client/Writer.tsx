@@ -1,10 +1,11 @@
-import type { Anchor, NovelData, NovelView } from "@kaitu/core";
 import type { EditorView } from "@codemirror/view";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import type { Anchor, NovelData, NovelView } from "@kaitu/core";
+import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
+import css from "./Writer.module.css";
 import { CodeEditor } from "./editor/CodeEditor.js";
 import type { Request } from "./page.js";
-import css from "./Writer.module.css";
 export type WriterSource = { scene: NovelData["scenes"][number]; text: string; path: string; anchor: Anchor };
+type ReferenceSource = { path: string; relativePath: string; text: string; fileHash: string; scene: string };
 export type WriterAgent = {
   send(project: string, text: string): Promise<void>;
   render(project: string, onReply: () => void): ReactNode;
@@ -35,38 +36,51 @@ export function Writer({
   const [action, setAction] = useState("check");
   const [cursor, setCursor] = useState(0);
   const [epoch, setEpoch] = useState(0);
+  const [reference, setReference] = useState<ReferenceSource | null>(null);
+  const [referenceText, setReferenceText] = useState("");
+  const referenceLatest = useRef({ reference, text: referenceText });
+  referenceLatest.current = { reference, text: referenceText };
+  const [referenceId, setReferenceId] = useState("");
+  const [assistantOpen, setAssistantOpen] = useState(true);
   const editor = useRef<EditorView | null>(null);
   const latest = useRef({ source, text });
   latest.current = { source, text };
   const key = `kaitu-writer:${project}`;
   const dirty = !!source && text !== source.text;
+  const referenceDirty = !!reference && referenceText !== reference.text;
   const writing = view?.data.writingMode === "writing";
   const editable = writing && !!source && /\.(md|txt)$/i.test(source.path);
-  const update = (v: NovelView) => {
-    setView(v);
-    onView(v);
-  };
+  const update = useCallback(
+    (v: NovelView) => {
+      setView(v);
+      onView(v);
+    },
+    [onView],
+  );
   async function refresh() {
     const v = await request<NovelView>("view", { project });
     update(v);
     return v;
   }
-  async function load(id: string) {
-    const s = await request<WriterSource>("scene", { project, scene: id });
-    setSource(s);
-    const recovery = sessionStorage.getItem(`${key}:draft:${s.scene.id}`);
-    const draft = recovery ? (JSON.parse(recovery) as { text: string; fileHash: string }) : null;
-    setText(draft?.text ?? s.text);
-    if (draft && draft.fileHash !== s.anchor.fileHash) {
-      setSource({ ...s, anchor: { ...s.anchor, fileHash: draft.fileHash } });
-      setError("原文件已有修改，已保留你上次未保存的编辑，可导出对照");
-    }
-    setSelected("");
-    setEpoch((n) => n + 1);
-    const position = Number(localStorage.getItem(`${key}:${s.scene.id}`) ?? 0);
-    setCursor(Math.min(position, s.text.length));
-    localStorage.setItem(key, s.scene.id);
-  }
+  const load = useCallback(
+    async (id: string) => {
+      const s = await request<WriterSource>("scene", { project, scene: id });
+      setSource(s);
+      const recovery = sessionStorage.getItem(`${key}:draft:${s.scene.id}`);
+      const draft = recovery ? (JSON.parse(recovery) as { text: string; fileHash: string }) : null;
+      setText(draft?.text ?? s.text);
+      if (draft && draft.fileHash !== s.anchor.fileHash) {
+        setSource({ ...s, anchor: { ...s.anchor, fileHash: draft.fileHash } });
+        setError("原文件已有修改，已保留你上次未保存的编辑，可导出对照");
+      }
+      setSelected("");
+      setEpoch((n) => n + 1);
+      const position = Number(localStorage.getItem(`${key}:${s.scene.id}`) ?? 0);
+      setCursor(Math.min(position, s.text.length));
+      localStorage.setItem(key, s.scene.id);
+    },
+    [key, project, request],
+  );
   useEffect(() => {
     let live = true;
     void request<NovelView>("view", { project })
@@ -81,6 +95,17 @@ export function Writer({
         const remembered = localStorage.getItem(key);
         const id = scenes.find((s) => s.id === remembered)?.id ?? scenes[0]?.id;
         if (id) await load(id);
+        const rememberedReference = localStorage.getItem(`${key}:reference`);
+        const refScene = v.data.scenes.find((s) => s.documentId === rememberedReference);
+        if (refScene) {
+          const ref = await request<ReferenceSource>("document", { project, scene: refScene.id });
+          const stored = sessionStorage.getItem(`${key}:reference-draft:${ref.path}`);
+          const draft = stored ? (JSON.parse(stored) as { text: string; fileHash: string }) : null;
+          setReference(draft ? { ...ref, fileHash: draft.fileHash } : ref);
+          setReferenceText(draft?.text ?? ref.text);
+          setReferenceId(refScene.documentId);
+          setAssistantOpen(false);
+        }
       })
       .catch((e) => {
         if (live) setError(e.message);
@@ -88,16 +113,20 @@ export function Writer({
     return () => {
       live = false;
     };
-  }, [project]);
+  }, [project, key, request, load, update]);
   useEffect(() => {
     if (!source) return;
     const cache = `${key}:draft:${source.scene.id}`;
     if (dirty) sessionStorage.setItem(cache, JSON.stringify({ text, fileHash: source.anchor.fileHash }));
     else sessionStorage.removeItem(cache);
-  }, [source, text, dirty]);
+  }, [source, text, dirty, key]);
   useEffect(() => {
     const prevent = (e: BeforeUnloadEvent) => {
-      if (latest.current.source && latest.current.text !== latest.current.source.text) {
+      if (
+        (latest.current.source && latest.current.text !== latest.current.source.text) ||
+        (referenceLatest.current.reference &&
+          referenceLatest.current.text !== referenceLatest.current.reference.text)
+      ) {
         e.preventDefault();
         e.returnValue = "";
       }
@@ -138,8 +167,57 @@ export function Writer({
     await load(id);
     setNotice("");
   }
+  function restoreReference(ref: ReferenceSource) {
+    const stored = sessionStorage.getItem(`${key}:reference-draft:${ref.path}`);
+    const draft = stored ? (JSON.parse(stored) as { text: string; fileHash: string }) : null;
+    setReference(draft ? { ...ref, fileHash: draft.fileHash } : ref);
+    setReferenceText(draft?.text ?? ref.text);
+  }
+  useEffect(() => {
+    if (!reference) return;
+    const cache = `${key}:reference-draft:${reference.path}`;
+    if (referenceDirty)
+      sessionStorage.setItem(cache, JSON.stringify({ text: referenceText, fileHash: reference.fileHash }));
+    else sessionStorage.removeItem(cache);
+  }, [reference, referenceText, referenceDirty, key]);
+  async function saveReference() {
+    const current = referenceLatest.current;
+    if (!current.reference || current.text === current.reference.text) return;
+    const fresh = await refresh();
+    const result = await request<{ scene: string }>("saveScene", {
+      project,
+      revision: fresh.revision,
+      input: {
+        scene: current.reference.scene,
+        fileHash: current.reference.fileHash,
+        text: current.text,
+        wholeDocument: true,
+      },
+    });
+    const saved = await request<ReferenceSource>("document", { project, scene: result.scene });
+    setReference(saved);
+    setReferenceText((t) => (t === current.text ? saved.text : t));
+    await refresh();
+  }
+  async function closeReference() {
+    await saveReference();
+    setReference(null);
+    localStorage.removeItem(`${key}:reference`);
+  }
+  async function openReference(documentId: string) {
+    await saveReference();
+    const scene = view?.data.scenes.find((s) => s.documentId === documentId);
+    if (!scene) return;
+    const doc = await request<ReferenceSource>("document", { project, scene: scene.id });
+    restoreReference(doc);
+    setReferenceId(documentId);
+    localStorage.setItem(`${key}:reference`, documentId);
+    setAssistantOpen(false);
+  }
   async function send(kind = action) {
+    setAssistantOpen(true);
     if (!agent || !source) return;
+    await saveReference();
     const saved = await save();
     if (!saved) return;
     const task =
@@ -171,6 +249,23 @@ export function Writer({
           <h1>{title}</h1>
           <small>{dirty ? "未保存" : notice || "正文工作台"}</small>
         </div>
+        <button
+          type="button"
+          disabled={busy || !documents.length}
+          onClick={() => {
+            if (reference) {
+              void run(closeReference);
+            } else {
+              const doc = documents.find((d) => d.classification?.role === "outline") ?? documents[0];
+              if (doc) void run(() => openReference(doc.id));
+            }
+          }}
+        >
+          {reference ? "收起对照" : "对照资料"}
+        </button>
+        <button type="button" onClick={() => setAssistantOpen((v) => !v)}>
+          {assistantOpen ? "收起助手" : "写作助手"}
+        </button>
         <select
           aria-label="作品模式"
           value={writing ? "writing" : "read_only"}
@@ -178,6 +273,7 @@ export function Writer({
           onChange={(e) => {
             const mode = e.target.value;
             void run(async () => {
+              await saveReference();
               await save();
               const v = await refresh();
               await request("edit", { project, revision: v.revision, command: { type: "mode", mode } });
@@ -189,8 +285,10 @@ export function Writer({
           <option value="writing">写作</option>
         </select>
         <button
+          type="button"
           onClick={() =>
             void run(async () => {
+              await saveReference();
               await save();
               onBack();
             })
@@ -203,6 +301,7 @@ export function Writer({
         <div role="alert" className={css.error}>
           {error}{" "}
           <button
+            type="button"
             onClick={() => {
               const a = document.createElement("a");
               const url = URL.createObjectURL(new Blob([text], { type: "text/plain" }));
@@ -216,11 +315,14 @@ export function Writer({
           </button>
         </div>
       )}
-      <div className={css.columns}>
+      <div
+        className={`${css.columns} ${reference ? css.withReference : ""} ${!assistantOpen ? css.noAssistant : ""}`}
+      >
         <nav className={css.chapters}>
           <h2>章节</h2>
           {scenes.map((s) => (
             <button
+              type="button"
               key={s.id}
               disabled={busy}
               aria-current={s.id === source?.scene.id ? "page" : undefined}
@@ -233,11 +335,11 @@ export function Writer({
           <h2>资料</h2>
           {documents.map((d) => (
             <button
+              type="button"
               key={d.id}
               disabled={busy}
               onClick={() => {
-                const s = view?.data.scenes.find((s) => s.documentId === d.id);
-                if (s) void run(() => switchScene(s.id));
+                void run(() => openReference(d.id));
               }}
             >
               {d.path.split("/").at(-1)}
@@ -245,6 +347,7 @@ export function Writer({
             </button>
           ))}
           <button
+            type="button"
             disabled={busy}
             onClick={() =>
               void run(async () => {
@@ -271,14 +374,91 @@ export function Writer({
             刷新文件
           </button>
         </nav>
+        {reference && (
+          <section className={css.reference} aria-label="对照资料">
+            <div className={css.toolbar}>
+              <select
+                aria-label="对照文件"
+                value={referenceId}
+                disabled={busy}
+                onChange={(e) => void run(() => openReference(e.target.value))}
+              >
+                {documents.map((d) => (
+                  <option key={d.id} value={d.id}>
+                    {d.path.split("/").at(-1)}
+                  </option>
+                ))}
+              </select>
+              <button
+                type="button"
+                onClick={() => {
+                  void run(closeReference);
+                }}
+                aria-label="关闭对照资料"
+              >
+                关闭
+              </button>
+            </div>
+            <div className={css.referenceActions}>
+              <span>{referenceDirty ? "资料未保存" : "资料已保存"}</span>
+              <button
+                type="button"
+                disabled={!writing || !referenceDirty || busy}
+                onClick={() => void run(saveReference)}
+              >
+                保存资料 ⌘S
+              </button>
+              <button
+                type="button"
+                disabled={
+                  !writing || busy || referenceDirty || view?.data.editorUndo?.path !== reference.relativePath
+                }
+                onClick={() =>
+                  void run(async () => {
+                    const fresh = await refresh();
+                    await request("undoScene", { project, revision: fresh.revision });
+                    const updated = await refresh();
+                    const scene = updated.data.scenes.find((s) => s.path === reference.relativePath);
+                    if (scene)
+                      restoreReference(
+                        await request<ReferenceSource>("document", { project, scene: scene.id }),
+                      );
+                  })
+                }
+              >
+                撤销资料保存
+              </button>
+            </div>
+            <CodeEditor
+              key={reference.path}
+              path={reference.path}
+              label="对照资料内容"
+              value={referenceText}
+              onChange={setReferenceText}
+              onSave={() => {
+                if (writing && !busy) void run(saveReference);
+              }}
+              readOnly={!writing || busy || !/\.(md|txt)$/i.test(reference.path)}
+              cursor={0}
+              onCursor={() => {}}
+            />
+          </section>
+        )}
         <section className={css.manuscript}>
           <div className={css.toolbar}>
             <strong>{source?.scene.title ?? "选择章节"}</strong>
-            <button disabled={!editable || !dirty || busy} onClick={() => void run(save)}>
+            <button type="button" disabled={!editable || !dirty || busy} onClick={() => void run(save)}>
               保存 ⌘S
             </button>
             <button
-              disabled={!writing || !view?.data.editorUndo || dirty || busy}
+              type="button"
+              disabled={
+                !writing ||
+                !view?.data.editorUndo ||
+                view.data.editorUndo.path !== source?.scene.path ||
+                dirty ||
+                busy
+              }
               onClick={() =>
                 void run(async () => {
                   const v = await refresh();
@@ -324,7 +504,10 @@ export function Writer({
           {source && !/\.(md|txt)$/i.test(source.path) && (
             <p className={css.hint}>
               DOCX 阅读视图 ·{" "}
-              <button onClick={() => void run(() => request("open", { project, scene: source.scene.id }))}>
+              <button
+                type="button"
+                onClick={() => void run(() => request("open", { project, scene: source.scene.id }))}
+              >
                 在原编辑器修改
               </button>
             </p>
@@ -332,6 +515,7 @@ export function Writer({
           <footer>
             <span>{Array.from(text.replace(/\s/g, "")).length} 字符 · 已记住光标位置</span>
             <button
+              type="button"
               disabled={!editable || busy}
               onClick={() => {
                 setAction("continue");
@@ -342,84 +526,96 @@ export function Writer({
             </button>
           </footer>
         </section>
-        <aside className={css.assistant}>
-          <h2>写作助手</h2>
-          <div className={css.tabs}>
-            {[
-              ["check", "查设定"],
-              ["plot", "想剧情"],
-              ["continue", "接着写"],
-            ].map(([id, label]) => (
-              <button key={id} aria-selected={action === id} onClick={() => setAction(id!)}>
-                {label}
-              </button>
-            ))}
-          </div>
-          <small>当前章节 + Agent 自动查找的世界书与资料</small>
-          <textarea
-            aria-label="给写作助手的要求"
-            placeholder="补充你的要求，或选中正文讨论……"
-            value={intent}
-            onChange={(e) => setIntent(e.target.value)}
-          />
-          {selected && (
-            <details>
-              <summary>
-                已选中 {selected.length} 字 <button onClick={() => setSelected("")}>清除</button>
-              </summary>
-              <blockquote>{selected}</blockquote>
-            </details>
-          )}
-          <button
-            className={css.primary}
-            disabled={!source || !agent || busy || (action === "continue" && !writing)}
-            onClick={() => void run(() => send())}
-          >
-            {action === "check" ? "检查当前章节" : action === "plot" ? "推荐接下来的剧情" : "生成续写候选"}
-          </button>
-          {!agent && <small>在 DSH 中打开可使用写作助手。</small>}
-          <div className={css.chat}>
-            {agent?.render(project, () => {
-              void refresh().catch((e) => setError(e.message));
-            })}
-          </div>
-          <details className={css.candidates} open>
-            <summary>
-              续写候选{" "}
-              <button disabled={busy} onClick={() => void run(refresh)}>
-                刷新
-              </button>
-            </summary>
-            {drafts.map((d) => (
-              <article key={d.id}>
-                <strong>{d.title}</strong>
-                <pre>{d.text}</pre>
+        {assistantOpen && (
+          <aside className={css.assistant}>
+            <h2>写作助手</h2>
+            <div className={css.tabs}>
+              {[
+                ["check", "查设定"],
+                ["plot", "想剧情"],
+                ["continue", "接着写"],
+              ].map(([id, label]) => (
                 <button
-                  disabled={!editable || busy}
-                  onClick={() =>
-                    void run(async () => {
-                      if (d.sourceHash !== source?.anchor.fileHash)
-                        throw new Error("这份候选基于旧稿，请让 Agent 对照当前章节更新");
-                      const cm = editor.current;
-                      if (cm) {
-                        const at = cm.state.selection.main.head;
-                        cm.dispatch({
-                          changes: { from: at, insert: "\n\n" + d.text + "\n" },
-                          selection: { anchor: at + d.text.length + 3 },
-                        });
-                        cm.focus();
-                        setNotice("候选已插入，保存后写入原稿；⌘Z 可撤销");
-                      }
-                    })
-                  }
+                  type="button"
+                  key={id}
+                  aria-selected={action === id}
+                  onClick={() => setAction(id ?? "check")}
                 >
-                  采纳到光标位置
+                  {label}
                 </button>
-              </article>
-            ))}
-            {!drafts.length && <small>续写完成后会显示在这里。</small>}
-          </details>
-        </aside>
+              ))}
+            </div>
+            <small>当前章节 + Agent 自动查找的世界书与资料</small>
+            <textarea
+              aria-label="给写作助手的要求"
+              placeholder="补充你的要求，或选中正文讨论……"
+              value={intent}
+              onChange={(e) => setIntent(e.target.value)}
+            />
+            {selected && (
+              <details>
+                <summary>
+                  已选中 {selected.length} 字{" "}
+                  <button type="button" onClick={() => setSelected("")}>
+                    清除
+                  </button>
+                </summary>
+                <blockquote>{selected}</blockquote>
+              </details>
+            )}
+            <button
+              type="button"
+              className={css.primary}
+              disabled={!source || !agent || busy || (action === "continue" && !writing)}
+              onClick={() => void run(() => send())}
+            >
+              {action === "check" ? "检查当前章节" : action === "plot" ? "推荐接下来的剧情" : "生成续写候选"}
+            </button>
+            {!agent && <small>在 DSH 中打开可使用写作助手。</small>}
+            <div className={css.chat}>
+              {agent?.render(project, () => {
+                void refresh().catch((e) => setError(e.message));
+              })}
+            </div>
+            <details className={css.candidates} open>
+              <summary>
+                续写候选{" "}
+                <button type="button" disabled={busy} onClick={() => void run(refresh)}>
+                  刷新
+                </button>
+              </summary>
+              {drafts.map((d) => (
+                <article key={d.id}>
+                  <strong>{d.title}</strong>
+                  <pre>{d.text}</pre>
+                  <button
+                    type="button"
+                    disabled={!editable || busy}
+                    onClick={() =>
+                      void run(async () => {
+                        if (d.sourceHash !== source?.anchor.fileHash)
+                          throw new Error("这份候选基于旧稿，请让 Agent 对照当前章节更新");
+                        const cm = editor.current;
+                        if (cm) {
+                          const at = cm.state.selection.main.head;
+                          cm.dispatch({
+                            changes: { from: at, insert: `\n\n${d.text}\n` },
+                            selection: { anchor: at + d.text.length + 3 },
+                          });
+                          cm.focus();
+                          setNotice("候选已插入，保存后写入原稿；⌘Z 可撤销");
+                        }
+                      })
+                    }
+                  >
+                    采纳到光标位置
+                  </button>
+                </article>
+              ))}
+              {!drafts.length && <small>续写完成后会显示在这里。</small>}
+            </details>
+          </aside>
+        )}
       </div>
     </div>
   );

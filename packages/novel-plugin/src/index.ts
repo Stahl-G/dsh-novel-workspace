@@ -1,5 +1,6 @@
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
 import { type Context, Service } from "@deepseek-ai/cordis";
 import { Remote, TypertRemoteService } from "@deepseek-ai/dsh-typert-protocol";
 import type { TypertContribution } from "@deepseek-ai/dsh-typert-registry";
@@ -22,6 +23,13 @@ import {
   undoNovelScene,
 } from "@kaitu/core";
 import { TYPERT } from "../lib/typert.host.js";
+import {
+  addLibraryProject,
+  browseLibraryFolders,
+  libraryProjects,
+  removeLibraryProject,
+  setLibraryHidden,
+} from "./library.js";
 
 export const name = "kaitu-novel-workspace";
 export const inject = ["tools", "systemPrompt", "typert"];
@@ -64,11 +72,34 @@ export class NovelService extends TypertRemoteService {
         break;
       case "projects":
         result = {
-          projects: novelProjects(ws),
+          projects: libraryProjects(ws),
           science: !!this.ctx.get("kaituScience"),
           contractVersion: novelContractVersion,
         };
         break;
+      case "folders":
+        result = browseLibraryFolders(args);
+        break;
+      case "addProject":
+        result = await addLibraryProject(ws, args);
+        break;
+      case "hideProject":
+        result = setLibraryHidden(ws, project, args.hidden === true);
+        break;
+      case "removeProject":
+        result = removeLibraryProject(ws, project);
+        break;
+      case "document": {
+        const source = this.scene(project, String(args.scene));
+        result = {
+          fileHash: source.anchor.fileHash,
+          scene: source.scene.id,
+          relativePath: source.scene.path,
+          path: source.path,
+          text: /\.(md|txt)$/i.test(source.path) ? readFileSync(source.path, "utf8") : source.text,
+        };
+        break;
+      }
       case "view":
         result = this.snapshot(project);
         break;
