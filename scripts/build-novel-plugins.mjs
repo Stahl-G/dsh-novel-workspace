@@ -12,39 +12,42 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 const folder = process.argv[2];
 const pkg = resolve(root, "packages", folder);
 const packageName = JSON.parse(readFileSync(resolve(pkg, "package.json"), "utf8")).name;
-// rc.2 recognizes protocol symbols only inside its workspace inventory. Give the
-// published declarations a temporary workspace identity, without importing DSH source.
+// Typert requires declaration owners, including framework module merges, in its
+// host inventory. Analyze the published SDK declarations without DSH source.
 const analysis = mkdtempSync("/tmp/kaitu-typert-");
 if (folder === "novel-plugin")
   try {
     const analyzedPkg = resolve(analysis, `packages/${folder}`);
-    const protocol = resolve(analysis, "packages/protocol");
+    const sdkPackages = ["dsh-typert-protocol", "dsh-typert-registry"];
+    const sdkRoots = sdkPackages.map((name) => resolve(analysis, "packages", name));
     mkdirSync(analyzedPkg, { recursive: true });
     cpSync(resolve(pkg, "src"), resolve(analyzedPkg, "src"), { recursive: true });
     cpSync(resolve(pkg, "package.json"), resolve(analyzedPkg, "package.json"));
     mkdirSync(resolve(analyzedPkg, "lib"));
     writeFileSync(resolve(analyzedPkg, "lib/typert.host.d.ts"), "export declare const TYPERT: unknown;\n");
     symlinkSync(resolve(pkg, "node_modules"), resolve(analyzedPkg, "node_modules"));
-    cpSync(
-      resolve(pkg, "node_modules/@deepseek-ai/dsh-typert-protocol/lib/types"),
-      resolve(protocol, "src"),
-      {
+    for (const [index, sdkName] of sdkPackages.entries()) {
+      const sdkRoot = sdkRoots[index];
+      cpSync(resolve(pkg, `node_modules/@deepseek-ai/${sdkName}/lib/types`), resolve(sdkRoot, "src"), {
         recursive: true,
-      },
-    );
-    writeFileSync(
-      resolve(protocol, "package.json"),
-      JSON.stringify({ name: "@deepseek-ai/dsh-typert-protocol", exports: { ".": "./src/index.d.ts" } }),
-    );
-    symlinkSync(resolve(pkg, "node_modules"), resolve(protocol, "node_modules"));
+      });
+      writeFileSync(
+        resolve(sdkRoot, "package.json"),
+        JSON.stringify({ name: `@deepseek-ai/${sdkName}`, exports: { ".": "./src/index.d.ts" } }),
+      );
+      symlinkSync(resolve(pkg, "node_modules"), resolve(sdkRoot, "node_modules"));
+    }
     const options = JSON.parse(readFileSync(resolve(root, "tsconfig.base.json"), "utf8"));
     options.compilerOptions.types = ["node"];
-    options.compilerOptions.paths = {
-      "@deepseek-ai/dsh-typert-protocol": [resolve(protocol, "src/index.d.ts")],
-    };
+    options.compilerOptions.paths = Object.fromEntries(
+      sdkPackages.map((name, index) => [
+        `@deepseek-ai/${name}`,
+        [resolve(sdkRoots[index], "src/index.d.ts")],
+      ]),
+    );
     writeFileSync(resolve(analysis, "tsconfig.base.json"), JSON.stringify(options));
     symlinkSync(resolve(root, "node_modules"), resolve(analysis, "node_modules"));
-    for (const dir of [analyzedPkg, protocol]) {
+    for (const dir of [analyzedPkg, ...sdkRoots]) {
       writeFileSync(
         resolve(dir, "tsconfig.json"),
         JSON.stringify({
@@ -59,7 +62,10 @@ if (folder === "novel-plugin")
       JSON.stringify({
         extends: "./tsconfig.base.json",
         files: [],
-        references: [{ path: `packages/${folder}` }, { path: "packages/protocol" }],
+        references: [
+          { path: `packages/${folder}` },
+          ...sdkPackages.map((name) => ({ path: `packages/${name}` })),
+        ],
       }),
     );
     const generator = new WorkspaceTypertGenerator(analysis);

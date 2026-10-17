@@ -2,6 +2,7 @@ import type { EditorView } from "@codemirror/view";
 import type { Anchor, NovelData, NovelView } from "@kaitu/core";
 import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import css from "./Writer.module.css";
+import { WriterPanels } from "./WriterPanels.js";
 import { CodeEditor } from "./editor/CodeEditor.js";
 import type { Request } from "./page.js";
 export type WriterSource = { scene: NovelData["scenes"][number]; text: string; path: string; anchor: Anchor };
@@ -25,6 +26,11 @@ export function Writer({
   onView(view: NovelView): void;
   onBack(): void;
 }) {
+  const key = `kaitu-writer:${project}`;
+  const [toolsOpen, setToolsOpen] = useState(
+    () => localStorage.getItem(`${key}:assistant-tools`) !== "closed",
+  );
+  const [navigationOpen, setNavigationOpen] = useState(true);
   const [view, setView] = useState<NovelView>();
   const [source, setSource] = useState<WriterSource>();
   const [text, setText] = useState("");
@@ -45,7 +51,6 @@ export function Writer({
   const editor = useRef<EditorView | null>(null);
   const latest = useRef({ source, text });
   latest.current = { source, text };
-  const key = `kaitu-writer:${project}`;
   const dirty = !!source && text !== source.text;
   const referenceDirty = !!reference && referenceText !== reference.text;
   const writing = view?.data.writingMode === "writing";
@@ -251,6 +256,13 @@ export function Writer({
         </div>
         <button
           type="button"
+          aria-expanded={navigationOpen}
+          onClick={() => setNavigationOpen((open) => !open)}
+        >
+          {navigationOpen ? "收起目录" : "章节目录"}
+        </button>
+        <button
+          type="button"
           disabled={busy || !documents.length}
           onClick={() => {
             if (reference) {
@@ -315,308 +327,341 @@ export function Writer({
           </button>
         </div>
       )}
-      <div
-        className={`${css.columns} ${reference ? css.withReference : ""} ${!assistantOpen ? css.noAssistant : ""}`}
-      >
-        <nav className={css.chapters}>
-          <h2>章节</h2>
-          {scenes.map((s) => (
-            <button
-              type="button"
-              key={s.id}
-              disabled={busy}
-              aria-current={s.id === source?.scene.id ? "page" : undefined}
-              onClick={() => void run(() => switchScene(s.id))}
-            >
-              {s.title}
-              <small>{s.path.split("/").at(-1)}</small>
-            </button>
-          ))}
-          <h2>资料</h2>
-          {documents.map((d) => (
-            <button
-              type="button"
-              key={d.id}
-              disabled={busy}
-              onClick={() => {
-                void run(() => openReference(d.id));
-              }}
-            >
-              {d.path.split("/").at(-1)}
-              <small>{d.classification?.role === "setting" ? "世界书 / 设定" : "大纲 / 参考资料"}</small>
-            </button>
-          ))}
-          <button
-            type="button"
-            disabled={busy}
-            onClick={() =>
-              void run(async () => {
-                await save();
-                const v = await refresh();
-                await request("edit", { project, revision: v.revision, command: { type: "refresh" } });
-                const fresh = await refresh();
-                const s =
-                  fresh.data.scenes.find((s) => s.id === source?.scene.id) ??
-                  fresh.data.scenes.find((s) => s.path === source?.scene.path) ??
-                  fresh.data.scenes.find((s) => {
-                    const role = fresh.data.documents.find((d) => d.id === s.documentId)?.classification
-                      ?.role;
-                    return !role || role === "manuscript";
-                  });
-                if (s) await load(s.id);
-                else {
-                  setSource(undefined);
-                  setText("");
-                }
-              })
-            }
-          >
-            刷新文件
-          </button>
-        </nav>
-        {reference && (
-          <section className={css.reference} aria-label="对照资料">
-            <div className={css.toolbar}>
-              <select
-                aria-label="对照文件"
-                value={referenceId}
+      <WriterPanels
+        storageKey={`${key}:panels`}
+        navigation={
+          navigationOpen && (
+            <nav className={css.chapters}>
+              <h2>章节</h2>
+              {scenes.map((s) => (
+                <button
+                  type="button"
+                  key={s.id}
+                  disabled={busy}
+                  aria-current={s.id === source?.scene.id ? "page" : undefined}
+                  onClick={() => void run(() => switchScene(s.id))}
+                >
+                  {s.title}
+                  <small>{s.path.split("/").at(-1)}</small>
+                </button>
+              ))}
+              <h2>资料</h2>
+              {documents.map((d) => (
+                <button
+                  type="button"
+                  key={d.id}
+                  disabled={busy}
+                  onClick={() => {
+                    void run(() => openReference(d.id));
+                  }}
+                >
+                  {d.path.split("/").at(-1)}
+                  <small>{d.classification?.role === "setting" ? "世界书 / 设定" : "大纲 / 参考资料"}</small>
+                </button>
+              ))}
+              <button
+                type="button"
                 disabled={busy}
-                onChange={(e) => void run(() => openReference(e.target.value))}
+                onClick={() =>
+                  void run(async () => {
+                    await save();
+                    const v = await refresh();
+                    await request("edit", { project, revision: v.revision, command: { type: "refresh" } });
+                    const fresh = await refresh();
+                    const s =
+                      fresh.data.scenes.find((s) => s.id === source?.scene.id) ??
+                      fresh.data.scenes.find((s) => s.path === source?.scene.path) ??
+                      fresh.data.scenes.find((s) => {
+                        const role = fresh.data.documents.find((d) => d.id === s.documentId)?.classification
+                          ?.role;
+                        return !role || role === "manuscript";
+                      });
+                    if (s) await load(s.id);
+                    else {
+                      setSource(undefined);
+                      setText("");
+                    }
+                  })
+                }
               >
-                {documents.map((d) => (
-                  <option key={d.id} value={d.id}>
-                    {d.path.split("/").at(-1)}
-                  </option>
-                ))}
-              </select>
-              <button
-                type="button"
-                onClick={() => {
-                  void run(closeReference);
-                }}
-                aria-label="关闭对照资料"
-              >
-                关闭
+                刷新文件
               </button>
-            </div>
-            <div className={css.referenceActions}>
-              <span>{referenceDirty ? "资料未保存" : "资料已保存"}</span>
-              <button
-                type="button"
-                disabled={!writing || !referenceDirty || busy}
-                onClick={() => void run(saveReference)}
-              >
-                保存资料 ⌘S
+            </nav>
+          )
+        }
+        reference={
+          reference && (
+            <section className={css.reference} aria-label="对照资料">
+              <div className={css.toolbar}>
+                <select
+                  aria-label="对照文件"
+                  value={referenceId}
+                  disabled={busy}
+                  onChange={(e) => void run(() => openReference(e.target.value))}
+                >
+                  {documents.map((d) => (
+                    <option key={d.id} value={d.id}>
+                      {d.path.split("/").at(-1)}
+                    </option>
+                  ))}
+                </select>
+                <button
+                  type="button"
+                  onClick={() => {
+                    void run(closeReference);
+                  }}
+                  aria-label="关闭对照资料"
+                >
+                  关闭
+                </button>
+              </div>
+              <div className={css.referenceActions}>
+                <span>{referenceDirty ? "资料未保存" : "资料已保存"}</span>
+                <button
+                  type="button"
+                  disabled={!writing || !referenceDirty || busy}
+                  onClick={() => void run(saveReference)}
+                >
+                  保存资料 ⌘S
+                </button>
+                <button
+                  type="button"
+                  disabled={
+                    !writing ||
+                    busy ||
+                    referenceDirty ||
+                    view?.data.editorUndo?.path !== reference.relativePath
+                  }
+                  onClick={() =>
+                    void run(async () => {
+                      const fresh = await refresh();
+                      await request("undoScene", { project, revision: fresh.revision });
+                      const updated = await refresh();
+                      const scene = updated.data.scenes.find((s) => s.path === reference.relativePath);
+                      if (scene)
+                        restoreReference(
+                          await request<ReferenceSource>("document", { project, scene: scene.id }),
+                        );
+                    })
+                  }
+                >
+                  撤销资料保存
+                </button>
+              </div>
+              <CodeEditor
+                key={reference.path}
+                path={reference.path}
+                label="对照资料内容"
+                value={referenceText}
+                onChange={setReferenceText}
+                onSave={() => {
+                  if (writing && !busy) void run(saveReference);
+                }}
+                readOnly={!writing || busy || !/\.(md|txt)$/i.test(reference.path)}
+                cursor={0}
+                onCursor={() => {}}
+              />
+            </section>
+          )
+        }
+        manuscript={
+          <section className={css.manuscript}>
+            <div className={css.toolbar}>
+              <strong>{source?.scene.title ?? "选择章节"}</strong>
+              <button type="button" disabled={!editable || !dirty || busy} onClick={() => void run(save)}>
+                保存 ⌘S
               </button>
               <button
                 type="button"
                 disabled={
-                  !writing || busy || referenceDirty || view?.data.editorUndo?.path !== reference.relativePath
+                  !writing ||
+                  !view?.data.editorUndo ||
+                  view.data.editorUndo.path !== source?.scene.path ||
+                  dirty ||
+                  busy
                 }
                 onClick={() =>
                   void run(async () => {
+                    const v = await refresh();
+                    const r = await request<{ path: string }>("undoScene", { project, revision: v.revision });
                     const fresh = await refresh();
-                    await request("undoScene", { project, revision: fresh.revision });
-                    const updated = await refresh();
-                    const scene = updated.data.scenes.find((s) => s.path === reference.relativePath);
-                    if (scene)
-                      restoreReference(
-                        await request<ReferenceSource>("document", { project, scene: scene.id }),
-                      );
+                    const s =
+                      fresh.data.scenes.find((s) => s.id === source?.scene.id) ??
+                      fresh.data.scenes.find((s) => s.path === r.path);
+                    if (s) await load(s.id);
+                    setNotice("已撤销上次保存");
                   })
                 }
               >
-                撤销资料保存
+                撤销保存
               </button>
             </div>
-            <CodeEditor
-              key={reference.path}
-              path={reference.path}
-              label="对照资料内容"
-              value={referenceText}
-              onChange={setReferenceText}
-              onSave={() => {
-                if (writing && !busy) void run(saveReference);
-              }}
-              readOnly={!writing || busy || !/\.(md|txt)$/i.test(reference.path)}
-              cursor={0}
-              onCursor={() => {}}
-            />
-          </section>
-        )}
-        <section className={css.manuscript}>
-          <div className={css.toolbar}>
-            <strong>{source?.scene.title ?? "选择章节"}</strong>
-            <button type="button" disabled={!editable || !dirty || busy} onClick={() => void run(save)}>
-              保存 ⌘S
-            </button>
-            <button
-              type="button"
-              disabled={
-                !writing ||
-                !view?.data.editorUndo ||
-                view.data.editorUndo.path !== source?.scene.path ||
-                dirty ||
-                busy
-              }
-              onClick={() =>
-                void run(async () => {
-                  const v = await refresh();
-                  const r = await request<{ path: string }>("undoScene", { project, revision: v.revision });
-                  const fresh = await refresh();
-                  const s =
-                    fresh.data.scenes.find((s) => s.id === source?.scene.id) ??
-                    fresh.data.scenes.find((s) => s.path === r.path);
-                  if (s) await load(s.id);
-                  setNotice("已撤销上次保存");
-                })
-              }
-            >
-              撤销保存
-            </button>
-          </div>
-          {source && (
-            <CodeEditor
-              key={`${source.scene.id}:${epoch}`}
-              path={source.path}
-              label="小说正文"
-              value={text}
-              onChange={setText}
-              onSave={() => {
-                if (editable && !busy) void run(save);
-              }}
-              readOnly={!editable || busy}
-              cursor={cursor}
-              onCursor={(p) => {
-                setCursor(p);
-                localStorage.setItem(`${key}:${source.scene.id}`, String(p));
-              }}
-              onReady={(v) => {
-                editor.current = v;
-              }}
-              onAddToChat={(value) => {
-                setSelected(value);
-                setIntent("请分析这段");
-                return true;
-              }}
-            />
-          )}
-          {source && !/\.(md|txt)$/i.test(source.path) && (
-            <p className={css.hint}>
-              DOCX 阅读视图 ·{" "}
-              <button
-                type="button"
-                onClick={() => void run(() => request("open", { project, scene: source.scene.id }))}
-              >
-                在原编辑器修改
-              </button>
-            </p>
-          )}
-          <footer>
-            <span>{Array.from(text.replace(/\s/g, "")).length} 字符 · 已记住光标位置</span>
-            <button
-              type="button"
-              disabled={!editable || busy}
-              onClick={() => {
-                setAction("continue");
-                void run(() => send("continue"));
-              }}
-            >
-              从这里续写
-            </button>
-          </footer>
-        </section>
-        {assistantOpen && (
-          <aside className={css.assistant}>
-            <h2>写作助手</h2>
-            <div className={css.tabs}>
-              {[
-                ["check", "查设定"],
-                ["plot", "想剧情"],
-                ["continue", "接着写"],
-              ].map(([id, label]) => (
+            {source && (
+              <CodeEditor
+                key={`${source.scene.id}:${epoch}`}
+                path={source.path}
+                label="小说正文"
+                value={text}
+                onChange={setText}
+                onSave={() => {
+                  if (editable && !busy) void run(save);
+                }}
+                readOnly={!editable || busy}
+                cursor={cursor}
+                onCursor={(p) => {
+                  setCursor(p);
+                  localStorage.setItem(`${key}:${source.scene.id}`, String(p));
+                }}
+                onReady={(v) => {
+                  editor.current = v;
+                }}
+                onAddToChat={(value) => {
+                  setSelected(value);
+                  setIntent("请分析这段");
+                  return true;
+                }}
+              />
+            )}
+            {source && !/\.(md|txt)$/i.test(source.path) && (
+              <p className={css.hint}>
+                DOCX 阅读视图 ·{" "}
                 <button
                   type="button"
-                  key={id}
-                  aria-selected={action === id}
-                  onClick={() => setAction(id ?? "check")}
+                  onClick={() => void run(() => request("open", { project, scene: source.scene.id }))}
                 >
-                  {label}
+                  在原编辑器修改
                 </button>
-              ))}
-            </div>
-            <small>当前章节 + Agent 自动查找的世界书与资料</small>
-            <textarea
-              aria-label="给写作助手的要求"
-              placeholder="补充你的要求，或选中正文讨论……"
-              value={intent}
-              onChange={(e) => setIntent(e.target.value)}
-            />
-            {selected && (
-              <details>
-                <summary>
-                  已选中 {selected.length} 字{" "}
-                  <button type="button" onClick={() => setSelected("")}>
-                    清除
-                  </button>
-                </summary>
-                <blockquote>{selected}</blockquote>
-              </details>
+              </p>
             )}
-            <button
-              type="button"
-              className={css.primary}
-              disabled={!source || !agent || busy || (action === "continue" && !writing)}
-              onClick={() => void run(() => send())}
-            >
-              {action === "check" ? "检查当前章节" : action === "plot" ? "推荐接下来的剧情" : "生成续写候选"}
-            </button>
-            {!agent && <small>在 DSH 中打开可使用写作助手。</small>}
-            <div className={css.chat}>
-              {agent?.render(project, () => {
-                void refresh().catch((e) => setError(e.message));
-              })}
-            </div>
-            <details className={css.candidates} open>
-              <summary>
-                续写候选{" "}
-                <button type="button" disabled={busy} onClick={() => void run(refresh)}>
-                  刷新
+            <footer>
+              <span>{Array.from(text.replace(/\s/g, "")).length} 字符 · 已记住光标位置</span>
+              <button
+                type="button"
+                disabled={!editable || busy}
+                onClick={() => {
+                  setAction("continue");
+                  void run(() => send("continue"));
+                }}
+              >
+                从这里续写
+              </button>
+            </footer>
+          </section>
+        }
+        assistant={
+          assistantOpen && (
+            <aside className={css.assistant}>
+              <div className={css.assistantHeader}>
+                <h2>写作助手</h2>
+                <button
+                  type="button"
+                  aria-expanded={toolsOpen}
+                  onClick={() => {
+                    const open = !toolsOpen;
+                    setToolsOpen(open);
+                    localStorage.setItem(`${key}:assistant-tools`, open ? "open" : "closed");
+                  }}
+                >
+                  {toolsOpen ? "收起操作" : "展开操作"}
                 </button>
-              </summary>
-              {drafts.map((d) => (
-                <article key={d.id}>
-                  <strong>{d.title}</strong>
-                  <pre>{d.text}</pre>
+              </div>
+              {toolsOpen && (
+                <div className={css.assistantTools}>
+                  <div className={css.tabs}>
+                    {[
+                      ["check", "查设定"],
+                      ["plot", "想剧情"],
+                      ["continue", "接着写"],
+                    ].map(([id, label]) => (
+                      <button
+                        type="button"
+                        key={id}
+                        aria-selected={action === id}
+                        onClick={() => setAction(id ?? "check")}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                  <small>当前章节 + Agent 自动查找的世界书与资料</small>
+                  <textarea
+                    aria-label="给写作助手的要求"
+                    placeholder="补充你的要求，或选中正文讨论……"
+                    value={intent}
+                    onChange={(e) => setIntent(e.target.value)}
+                  />
+                  {selected && (
+                    <details>
+                      <summary>
+                        已选中 {selected.length} 字{" "}
+                        <button type="button" onClick={() => setSelected("")}>
+                          清除
+                        </button>
+                      </summary>
+                      <blockquote>{selected}</blockquote>
+                    </details>
+                  )}
                   <button
                     type="button"
-                    disabled={!editable || busy}
-                    onClick={() =>
-                      void run(async () => {
-                        if (d.sourceHash !== source?.anchor.fileHash)
-                          throw new Error("这份候选基于旧稿，请让 Agent 对照当前章节更新");
-                        const cm = editor.current;
-                        if (cm) {
-                          const at = cm.state.selection.main.head;
-                          cm.dispatch({
-                            changes: { from: at, insert: `\n\n${d.text}\n` },
-                            selection: { anchor: at + d.text.length + 3 },
-                          });
-                          cm.focus();
-                          setNotice("候选已插入，保存后写入原稿；⌘Z 可撤销");
-                        }
-                      })
-                    }
+                    className={css.primary}
+                    disabled={!source || !agent || busy || (action === "continue" && !writing)}
+                    onClick={() => void run(() => send())}
                   >
-                    采纳到光标位置
+                    {action === "check"
+                      ? "检查当前章节"
+                      : action === "plot"
+                        ? "推荐接下来的剧情"
+                        : "生成续写候选"}
                   </button>
-                </article>
-              ))}
-              {!drafts.length && <small>续写完成后会显示在这里。</small>}
-            </details>
-          </aside>
-        )}
-      </div>
+                  {!agent && <small>在 DSH 中打开可使用写作助手。</small>}
+                </div>
+              )}
+              <div className={css.chat}>
+                {agent?.render(project, () => {
+                  void refresh().catch((e) => setError(e.message));
+                })}
+              </div>
+              <details className={css.candidates} open>
+                <summary>
+                  续写候选{" "}
+                  <button type="button" disabled={busy} onClick={() => void run(refresh)}>
+                    刷新
+                  </button>
+                </summary>
+                {drafts.map((d) => (
+                  <article key={d.id}>
+                    <strong>{d.title}</strong>
+                    <pre>{d.text}</pre>
+                    <button
+                      type="button"
+                      disabled={!editable || busy}
+                      onClick={() =>
+                        void run(async () => {
+                          if (d.sourceHash !== source?.anchor.fileHash)
+                            throw new Error("这份候选基于旧稿，请让 Agent 对照当前章节更新");
+                          const cm = editor.current;
+                          if (cm) {
+                            const at = cm.state.selection.main.head;
+                            cm.dispatch({
+                              changes: { from: at, insert: `\n\n${d.text}\n` },
+                              selection: { anchor: at + d.text.length + 3 },
+                            });
+                            cm.focus();
+                            setNotice("候选已插入，保存后写入原稿；⌘Z 可撤销");
+                          }
+                        })
+                      }
+                    >
+                      采纳到光标位置
+                    </button>
+                  </article>
+                ))}
+                {!drafts.length && <small>续写完成后会显示在这里。</small>}
+              </details>
+            </aside>
+          )
+        }
+      />
     </div>
   );
 }

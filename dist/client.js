@@ -1,4 +1,4 @@
-window.__ModuleLoader__.load({id:"kaitu-novel-workspace",factory:(require)=>{var module={exports:{}};var exports=module.exports;window.__kaituNovelStyles=".kn_wrap_GZZZGa {\n  max-width: 1120px;\n  color: var(--ink);\n  font: 15px / 1.6 var(--font);\n  margin: auto;\n  padding: 28px;\n}\n\n.kn_wrap_GZZZGa h1 {\n  margin: 0;\n  font-size: 28px;\n}\n\n.kn_wrap_GZZZGa h2 {\n  font-size: 18px;\n}\n\n.kn_wrap_GZZZGa h3 {\n  font-size: 16px;\n}\n\n.kn_wrap_GZZZGa button, .kn_wrap_GZZZGa input, .kn_wrap_GZZZGa select, .kn_wrap_GZZZGa textarea {\n  font: inherit;\n}\n\n.kn_wrap_GZZZGa input, .kn_wrap_GZZZGa select, .kn_wrap_GZZZGa textarea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  color: var(--ink);\n  border-radius: 7px;\n  min-width: 0;\n  padding: 7px;\n}\n\n.kn_wrap_GZZZGa textarea {\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 85px;\n}\n\n.kn_wrap_GZZZGa label {\n  gap: 4px;\n  display: grid;\n}\n\n.kn_grid_GZZZGa {\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n  display: grid;\n}\n\n.kn_stack_GZZZGa {\n  gap: 14px;\n  display: grid;\n}\n\n.kn_actions_GZZZGa {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 9px;\n  display: flex;\n}\n\n.kn_muted_GZZZGa {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_table_GZZZGa {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.kn_table_GZZZGa th, .kn_table_GZZZGa td {\n  text-align: left;\n  border-bottom: 1px solid var(--line);\n  vertical-align: top;\n  padding: 9px;\n}\n\n.kn_table_GZZZGa th {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_scroll_GZZZGa {\n  overflow: auto;\n}\n\n.kn_quote_GZZZGa {\n  white-space: pre-wrap;\n  background: var(--sunken);\n  border-radius: 8px;\n  max-height: 240px;\n  padding: 15px;\n  overflow: auto;\n}\n\n.kn_card_GZZZGa {\n  border: 1px solid var(--line);\n  border-radius: var(--radius);\n  background: var(--surface);\n  padding: 18px;\n}\n\n.kn_warn_GZZZGa {\n  color: var(--news-ink);\n  background: var(--news-tint);\n  border-radius: 8px;\n  padding: 10px;\n}\n\n.kn_check_GZZZGa {\n  align-items: center;\n  gap: 7px;\n  display: flex !important;\n}\n\n.kn_wrap_GZZZGa a {\n  color: var(--link);\n}\n\n.kn_diff_GZZZGa {\n  grid-template-columns: 1fr 1fr;\n  gap: 10px;\n  display: grid;\n}\n\n.kn_diff_GZZZGa pre {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_selected_GZZZGa {\n  background: var(--doing-tint);\n}\n\n@media (width <= 760px) {\n  .kn_grid_GZZZGa, .kn_diff_GZZZGa {\n    grid-template-columns: 1fr;\n  }\n\n  .kn_wrap_GZZZGa {\n    padding: 15px;\n  }\n\n  .kn_table_GZZZGa td {\n    min-width: 100px;\n  }\n}\n\n.kn_start_GZZZGa h2 {\n  margin: 0;\n}\n\n.kn_start_GZZZGa form {\n  gap: 10px;\n  display: grid;\n}\n\n.kn_start_GZZZGa textarea {\n  resize: vertical;\n  min-height: 100px;\n}\n\n.kn_shortcuts_GZZZGa {\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-top: 16px;\n  display: flex;\n}\n\n.kn_grid_GZZZGa {\n  align-items: start;\n}\n\n.kn_card_GZZZGa select {\n  max-width: 100%;\n}\n\n.kn_card_GZZZGa summary {\n  cursor: pointer;\n  font-weight: 600;\n}\n\n.kn_card_GZZZGa details, details.kn_card_GZZZGa label {\n  margin-top: 12px;\n}\n\n.kn_projectOpen_GZZZGa {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  cursor: pointer;\n  background: none;\n  border: 0;\n  padding: 0;\n  display: block;\n}\n\n.kn_actions_GZZZGa input {\n  flex: 1;\n}\n\n.kn_wrap_GZZZGa button:focus-visible {\n  outline: 2px solid var(--link);\n  outline-offset: 3px;\n}\n\n.kn_projectOpen_GZZZGa:hover {\n  color: var(--link);\n}\n\n.kn_projectOpen_GZZZGa:active {\n  transform: translateY(1px);\n}\n\n.kn_wrap_GZZZGa button:disabled {\n  opacity: .5;\n  cursor: default;\n}\n\n.kn_folderPicker_GZZZGa {\n  border: 1px solid var(--line);\n  background: var(--sunken);\n  border-radius: 8px;\n  padding: 16px;\n}\n\n.kn_folderList_GZZZGa {\n  gap: 6px;\n  max-height: 260px;\n  margin-bottom: 14px;\n  display: grid;\n  overflow: auto;\n}\n\n.kn_folderList_GZZZGa button {\n  text-align: left;\n}\n\n.kn_folderPicker_GZZZGa .kn_actions_GZZZGa {\n  flex-wrap: wrap;\n}\n\n.kn_app_mNecSG {\n  --bg: #fcfcfb;\n  --surface: #fff;\n  --sunken: #f5f5f3;\n  --control: #f0efec;\n  --line: #ecebe7;\n  --ink: #1f1e1d;\n  --ink2: #4d4c48;\n  --muted: #6b6a66;\n  --link: #2f5fc4;\n  --primary: #2f5fc4;\n  --on-primary: #fff;\n  --strong: #1f1e1d;\n  --on-strong: #fff;\n  --ask: #f2f5fd;\n  --ask-line: #dce4f8;\n  --scrim: #1f1e1d6b;\n  --health: #2e8b57;\n  --health-tint: #e8f3ec;\n  --health-ink: #1f6b43;\n  --doing: #6b5bd6;\n  --doing-tint: #efedfb;\n  --doing-ink: #4b3fb0;\n  --explore: #3d6fe0;\n  --explore-tint: #ecf1fc;\n  --explore-ink: #2a4fa8;\n  --news: #c47a12;\n  --news-tint: #fbefe0;\n  --news-ink: #8a520a;\n  --finance: #1f8a8a;\n  --finance-tint: #e3f2f2;\n  --finance-ink: #176868;\n  --me: #c2507a;\n  --empty: #f0efec;\n  --map-land: #eef1ec;\n  --map-grid: #dde2da;\n  --map-sea: #f4f6f7;\n  --map-dot: #d3dad4;\n  --font: -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Segoe UI\",\n    sans-serif;\n  --radius: 14px;\n}\n\n@media (prefers-color-scheme: dark) {\n  .kn_app_mNecSG:not([data-theme=\"light\"]) {\n    --bg: #171716;\n    --surface: #201f1e;\n    --sunken: #1b1b1a;\n    --control: #2a2927;\n    --line: #2f2e2c;\n    --ink: #ecebe8;\n    --ink2: #c9c7c2;\n    --muted: #a09e98;\n    --link: #8fb0f5;\n    --primary: #4c7be6;\n    --on-primary: #fff;\n    --strong: #ecebe8;\n    --on-strong: #171716;\n    --ask: #1e2638;\n    --ask-line: #2c3a5c;\n    --scrim: #0009;\n    --health-tint: #1c3226;\n    --health-ink: #8fd3ac;\n    --doing-tint: #2a2547;\n    --doing-ink: #b9aff5;\n    --explore-tint: #1e2a45;\n    --explore-ink: #a9c1f7;\n    --news-tint: #3a2a12;\n    --news-ink: #ebc27f;\n    --finance-tint: #173333;\n    --finance-ink: #8ed1d1;\n    --empty: #2a2927;\n    --map-land: #1f2620;\n    --map-grid: #2d352e;\n    --map-sea: #1a1c1d;\n    --map-dot: #343d36;\n    color-scheme: dark;\n  }\n}\n\n.kn_app_mNecSG[data-theme=\"dark\"] {\n  --bg: #171716;\n  --surface: #201f1e;\n  --sunken: #1b1b1a;\n  --control: #2a2927;\n  --line: #2f2e2c;\n  --ink: #ecebe8;\n  --ink2: #c9c7c2;\n  --muted: #a09e98;\n  --link: #8fb0f5;\n  --primary: #4c7be6;\n  --on-primary: #fff;\n  --strong: #ecebe8;\n  --on-strong: #171716;\n  --ask: #1e2638;\n  --ask-line: #2c3a5c;\n  --scrim: #0009;\n  --health-tint: #1c3226;\n  --health-ink: #8fd3ac;\n  --doing-tint: #2a2547;\n  --doing-ink: #b9aff5;\n  --explore-tint: #1e2a45;\n  --explore-ink: #a9c1f7;\n  --news-tint: #3a2a12;\n  --news-ink: #ebc27f;\n  --finance-tint: #173333;\n  --finance-ink: #8ed1d1;\n  --empty: #2a2927;\n  --map-land: #1f2620;\n  --map-grid: #2d352e;\n  --map-sea: #1a1c1d;\n  --map-dot: #343d36;\n  color-scheme: dark;\n}\n\n.kn_app_mNecSG, .kn_app_mNecSG * {\n  box-sizing: border-box;\n}\n\n.kn_app_mNecSG {\n  background: var(--bg);\n  color: var(--ink);\n  font-family: var(--font);\n  font-size: 15px;\n  line-height: 1.5;\n}\n\n.kn_app_mNecSG a {\n  color: var(--link);\n  font-weight: 500;\n  text-decoration: none;\n}\n\n.kn_app_mNecSG a:hover {\n  text-underline-offset: 3px;\n  text-decoration: underline dotted;\n}\n\n:where(.kn_app_mNecSG) button, :where(.kn_app_mNecSG) input {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_app_mNecSG button {\n  cursor: pointer;\n}\n\n.kn_app_mNecSG h1, .kn_app_mNecSG h2, .kn_app_mNecSG h3, .kn_app_mNecSG p {\n  margin: 0;\n}\n\n.kn_app_mNecSG h1, .kn_app_mNecSG h2, .kn_app_mNecSG h3 {\n  text-wrap: balance;\n}\n\n.kn_num_mNecSG {\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_sr_mNecSG {\n  clip: rect(0 0 0 0);\n  white-space: nowrap;\n  width: 1px;\n  height: 1px;\n  position: absolute;\n  overflow: hidden;\n}\n\n.kn_demo_mNecSG {\n  padding-block: 8px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--sunken);\n  border-bottom: 1px dashed var(--line);\n  color: var(--muted);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 12px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_demo_mNecSG b {\n  color: var(--ink2);\n  font-weight: 600;\n}\n\n.kn_demo_mNecSG button {\n  border: 1px dashed var(--muted);\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 13px;\n}\n\n.kn_demo_mNecSG button[aria-pressed=\"true\"] {\n  border-style: solid;\n  border-color: var(--ink);\n  color: var(--ink);\n  background: var(--surface);\n}\n\n.kn_top_mNecSG {\n  top: env(safe-area-inset-top, 0px);\n  z-index: 5;\n  padding-block: 12px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--bg);\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px 20px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_brand_mNecSG {\n  flex: 120px;\n  align-items: center;\n  gap: 10px;\n  font-size: 18px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_tabs_mNecSG {\n  background: var(--control);\n  border-radius: 12px;\n  flex: 0 auto;\n  gap: 4px;\n  padding: 4px;\n  display: flex;\n}\n\n.kn_tabs_mNecSG button {\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 22px;\n  font-size: 15px;\n  font-weight: 500;\n}\n\n.kn_tabs_mNecSG button[aria-current=\"page\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_tools_mNecSG {\n  flex: 120px;\n  justify-content: flex-end;\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_sync_mNecSG {\n  color: var(--muted);\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_dot_mNecSG {\n  border-radius: 50%;\n  flex: none;\n  width: 7px;\n  height: 7px;\n  display: inline-block;\n}\n\n.kn_btn_mNecSG {\n  white-space: nowrap;\n  border: 0;\n  border-radius: 10px;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  height: 40px;\n  padding: 0 16px;\n  font-size: 15px;\n  font-weight: 500;\n  display: inline-flex;\n}\n\n.kn_btn-primary_mNecSG {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_btn-strong_mNecSG {\n  background: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_btn-quiet_mNecSG {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 400;\n}\n\n.kn_btn-big_mNecSG {\n  height: 44px;\n  padding: 0 20px;\n}\n\n.kn_avatar_mNecSG {\n  background: var(--me);\n  color: #fff;\n  border: 0;\n  border-radius: 50%;\n  width: 40px;\n  height: 40px;\n  font-weight: 600;\n}\n\n.kn_content_mNecSG {\n  max-width: 1040px;\n  padding-block: 28px 72px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  flex-direction: column;\n  gap: 32px;\n  margin: 0 auto;\n  display: flex;\n}\n\n.kn_head_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 16px;\n  display: flex;\n}\n\n.kn_head_mNecSG h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_sub_mNecSG {\n  color: var(--muted);\n  font-size: 14px;\n}\n\n.kn_eyebrow_mNecSG {\n  color: var(--muted);\n  letter-spacing: .06em;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_sec_mNecSG {\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_sec-head_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 12px;\n  display: flex;\n}\n\n.kn_card_mNecSG {\n  background: var(--surface);\n  border-radius: var(--radius);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_chip_mNecSG {\n  white-space: nowrap;\n  border-radius: 6px;\n  align-items: center;\n  gap: 6px;\n  padding: 2px 8px;\n  font-size: 13px;\n  font-weight: 500;\n  line-height: 18px;\n  display: inline-flex;\n}\n\n.kn_capture_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding: 6px;\n  display: flex;\n}\n\n.kn_capture_mNecSG input {\n  background: none;\n  border: 0;\n  border-radius: 10px;\n  flex: 260px;\n  min-width: 0;\n  height: 44px;\n  padding: 0 14px;\n  font-size: 16px;\n}\n\n.kn_capture_mNecSG input::placeholder {\n  color: var(--muted);\n}\n\n.kn_saved_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_focus_mNecSG {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 18px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 24px;\n  padding: 24px;\n  display: flex;\n}\n\n.kn_focus-body_mNecSG {\n  flex-direction: column;\n  flex: 380px;\n  gap: 8px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_focus-title_mNecSG {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_row_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  min-height: 52px;\n  padding: 6px 16px;\n  display: flex;\n}\n\n.kn_row-title_mNecSG {\n  flex: 240px;\n  min-width: 0;\n  font-size: 16px;\n}\n\n.kn_check_mNecSG {\n  border: 1.5px solid var(--muted);\n  color: #0000;\n  background: none;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  display: flex;\n}\n\n.kn_check_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--health);\n  background: var(--health);\n  color: #fff;\n}\n\n.kn_row_mNecSG.kn_is-done_mNecSG .kn_row-title_mNecSG {\n  color: var(--muted);\n  text-decoration: line-through;\n}\n\n.kn_when_mNecSG {\n  text-align: right;\n  width: 64px;\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_ask_mNecSG {\n  background: var(--ask);\n  box-shadow: 0 0 0 1px var(--ask-line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 14px 18px;\n  display: flex;\n}\n\n.kn_ask_mNecSG p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_grid_mNecSG {\n  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_sum_mNecSG {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 14px;\n  padding: 18px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_sum_mNecSG:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_sum-h_mNecSG {\n  align-items: center;\n  gap: 8px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_sum-h_mNecSG span:last-child {\n  color: var(--muted);\n  margin-left: auto;\n  font-size: 13px;\n  font-weight: 400;\n}\n\n.kn_big_mNecSG {\n  font-size: 26px;\n  font-weight: 600;\n  line-height: 32px;\n}\n\n.kn_small_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_pair_mNecSG {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_stack_mNecSG {\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n}\n\n.kn_week_mNecSG {\n  grid-template-columns: repeat(7, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_week_mNecSG span {\n  color: var(--muted);\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_week_mNecSG i {\n  background: var(--empty);\n  border-radius: 5px;\n  width: 100%;\n  height: 18px;\n  display: block;\n}\n\n.kn_bar_mNecSG {\n  background: var(--control);\n  border-radius: 4px;\n  height: 8px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_bar_mNecSG i {\n  height: 100%;\n  display: block;\n}\n\n.kn_fin_mNecSG {\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 0;\n  display: grid;\n  overflow: hidden;\n}\n\n.kn_fin-cell_mNecSG {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_fin-cell_mNecSG:nth-child(4) {\n  border-right: 0;\n}\n\n.kn_fin-wide_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-direction: column;\n  grid-column: 1 / -1;\n  gap: 8px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_fin-pending_mNecSG {\n  flex-flow: wrap;\n  align-items: center;\n  gap: 8px 12px;\n}\n\n@media (width <= 760px) {\n  .kn_fin_mNecSG {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .kn_fin-cell_mNecSG {\n    border-right: 0;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .kn_fin-cell_mNecSG:nth-child(odd) {\n    border-right: 1px solid var(--line);\n  }\n}\n\n.kn_feed-row_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 14px;\n  padding: 10px 4px;\n  display: flex;\n}\n\n.kn_feed-row_mNecSG p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_ini_mNecSG {\n  color: #fff;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 28px;\n  height: 28px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_welcome_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 10px;\n  padding: 32px 28px;\n  display: flex;\n}\n\n.kn_welcome_mNecSG h1 {\n  font-size: 30px;\n  font-weight: 600;\n  line-height: 40px;\n}\n\n.kn_welcome_mNecSG p {\n  max-width: 36em;\n  color: var(--ink2);\n  font-size: 16px;\n}\n\n.kn_starts_mNecSG {\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_start_mNecSG {\n  text-align: left;\n  border: 0;\n  flex-direction: column;\n  gap: 10px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_start_mNecSG h3 {\n  font-size: 17px;\n  font-weight: 600;\n}\n\n.kn_start_mNecSG p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_start_mNecSG .kn_tag_mNecSG {\n  align-self: flex-start;\n}\n\n.kn_subtabs_mNecSG {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_subtabs_mNecSG button {\n  border: 1px solid var(--line);\n  height: 36px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 18px;\n  padding: 0 16px;\n  font-size: 14px;\n}\n\n.kn_subtabs_mNecSG button[aria-pressed=\"true\"] {\n  background: var(--strong);\n  border-color: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_dir_mNecSG {\n  flex-direction: column;\n  gap: 14px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_dir_mNecSG h3 {\n  font-size: 19px;\n  font-weight: 600;\n  line-height: 27px;\n}\n\n.kn_dir_mNecSG dl {\n  grid-template-columns: 4.5em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_dir_mNecSG dt {\n  color: var(--muted);\n}\n\n.kn_dir_mNecSG dd {\n  color: var(--ink);\n  margin: 0;\n}\n\n.kn_attempt_mNecSG {\n  background: var(--sunken);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 6px;\n  padding: 12px 14px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_evidence_mNecSG {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_dir-foot_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_dir_mNecSG.kn_is-paused_mNecSG {\n  background: var(--sunken);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_split_mNecSG {\n  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);\n  gap: 20px;\n  display: grid;\n}\n\n.kn_map-box_mNecSG {\n  padding: 12px;\n  overflow: hidden;\n}\n\n.kn_map-box_mNecSG svg {\n  width: 100%;\n  height: auto;\n  display: block;\n}\n\n.kn_places_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_place_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 4px 12px;\n  padding: 12px 4px;\n  display: flex;\n}\n\n.kn_place_mNecSG b {\n  flex: 120px;\n  font-weight: 600;\n}\n\n.kn_legend_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_legend_mNecSG span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_news_mNecSG {\n  grid-template-columns: 120px minmax(0, 1fr);\n  gap: 16px;\n  padding: 16px;\n  display: grid;\n}\n\n.kn_news_mNecSG .kn_thumb_mNecSG {\n  aspect-ratio: 4 / 3;\n  color: #fff;\n  border-radius: 10px;\n  align-items: flex-end;\n  max-width: 100%;\n  padding: 8px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_news_mNecSG h3 {\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 25px;\n}\n\n.kn_news_mNecSG p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_news-foot_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  margin-top: 4px;\n  display: flex;\n}\n\n.kn_news-foot_mNecSG a {\n  font-size: 14px;\n}\n\n.kn_news-acts_mNecSG {\n  gap: 8px;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_comment_mNecSG {\n  border-left: 2px solid var(--news);\n  color: var(--ink);\n  padding-left: 10px;\n  font-size: 14px;\n}\n\n.kn_mods_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_mod_mNecSG {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 6px;\n  padding: 16px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_mod_mNecSG:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_raw_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 88px minmax(0, 1fr);\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_raw_mNecSG time {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_raw_mNecSG blockquote {\n  margin: 0;\n  font-size: 15px;\n}\n\n.kn_raw_mNecSG .kn_st_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  grid-column: 2;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_scrim_mNecSG {\n  z-index: 20;\n  padding-block: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px));\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--scrim);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  position: fixed;\n  inset: 0;\n}\n\n.kn_dialog_mNecSG {\n  background: var(--surface);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 18px;\n  width: 100%;\n  max-width: 560px;\n  max-height: 100%;\n  padding: 28px;\n  display: flex;\n  overflow: auto;\n  box-shadow: 0 20px 60px #00000040;\n}\n\n.kn_dialog_mNecSG h2 {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_steps_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_choice_mNecSG {\n  border: 1.5px solid var(--line);\n  text-align: left;\n  background: none;\n  border-radius: 14px;\n  align-items: flex-start;\n  gap: 14px;\n  width: 100%;\n  padding: 16px;\n  display: flex;\n}\n\n.kn_choice_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_choice_mNecSG .kn_radio_mNecSG {\n  border: 1.5px solid var(--muted);\n  border-radius: 50%;\n  flex: none;\n  width: 20px;\n  height: 20px;\n  margin-top: 2px;\n}\n\n.kn_choice_mNecSG[aria-pressed=\"true\"] .kn_radio_mNecSG {\n  border: 6px solid var(--primary);\n}\n\n.kn_choice_mNecSG b {\n  font-size: 16px;\n  font-weight: 600;\n  display: block;\n}\n\n.kn_choice_mNecSG span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_toggle_mNecSG {\n  border-top: 1px solid var(--line);\n  align-items: flex-start;\n  gap: 14px;\n  padding: 14px 0;\n  display: flex;\n}\n\n.kn_toggle_mNecSG input {\n  width: 20px;\n  height: 20px;\n  accent-color: var(--primary);\n  flex: none;\n  margin: 2px 0 0;\n}\n\n.kn_toggle_mNecSG label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_toggle_mNecSG label span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_dialog-foot_mNecSG {\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_note_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n@media (width <= 760px) {\n  .kn_split_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_news_mNecSG {\n    grid-template-columns: 84px minmax(0, 1fr);\n  }\n\n  .kn_tools_mNecSG .kn_sync_mNecSG {\n    display: none;\n  }\n\n  .kn_brand_mNecSG {\n    flex-basis: auto;\n  }\n\n  .kn_tabs_mNecSG {\n    flex: 100%;\n    order: 3;\n    justify-content: stretch;\n  }\n\n  .kn_tabs_mNecSG button {\n    flex: 1 1 0;\n    padding: 0 8px;\n  }\n\n  .kn_head_mNecSG h1 {\n    font-size: 24px;\n    line-height: 32px;\n  }\n}\n\n.kn_cal-bar_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 14px;\n  display: flex;\n}\n\n.kn_cal-nav_mNecSG {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_cal-nav_mNecSG button {\n  background: var(--control);\n  min-width: 36px;\n  height: 36px;\n  color: var(--ink);\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 14px;\n}\n\n.kn_cal-title_mNecSG {\n  flex: 200px;\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.kn_seg_mNecSG {\n  background: var(--control);\n  border-radius: 10px;\n  gap: 2px;\n  padding: 3px;\n  display: flex;\n}\n\n.kn_seg_mNecSG button {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_seg_mNecSG button[aria-pressed=\"true\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_cal_mNecSG {\n  --fc-border-color: var(--line);\n  --fc-page-bg-color: var(--surface);\n  --fc-neutral-bg-color: var(--sunken);\n  --fc-today-bg-color: var(--ask);\n  --fc-list-event-hover-bg-color: var(--sunken);\n  --fc-now-indicator-color: var(--news);\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  padding: 8px;\n  overflow: hidden;\n}\n\n.kn_cal_mNecSG [class~=\"fc\"] {\n  color: var(--ink);\n  font-size: 13px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-col-header-cell-cushion\"], .kn_cal_mNecSG [class~=\"fc-daygrid-day-number\"] {\n  color: var(--ink);\n  font-weight: 500;\n}\n\n.kn_cal_mNecSG [class~=\"fc-timegrid-slot-label-cushion\"], .kn_cal_mNecSG [class~=\"fc-timegrid-axis-cushion\"] {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] {\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n  padding: 4px 0;\n  display: flex;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] b {\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 22px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] span {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-day-today\"] [class~=\"fc-dh\"] b {\n  color: var(--primary);\n}\n\n.kn_cal_mNecSG [class~=\"fc-event\"] {\n  cursor: pointer;\n  border-radius: 6px;\n  padding: 1px 2px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-event-main\"] {\n  color: var(--fc-event-text-color);\n  font-weight: 500;\n}\n\n.kn_cal_mNecSG [class~=\"fc-list-day-cushion\"] {\n  background: var(--sunken);\n}\n\n.kn_cal_mNecSG [class~=\"fc-list-event-dot\"] {\n  border-color: var(--dot, var(--explore));\n}\n\n.kn_ev-work_mNecSG {\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  --dot: var(--explore);\n}\n\n.kn_ev-life_mNecSG {\n  --fc-event-bg-color: var(--doing-tint);\n  --fc-event-border-color: var(--doing-tint);\n  --fc-event-text-color: var(--doing-ink);\n  --dot: var(--doing);\n}\n\n.kn_ev-health_mNecSG {\n  --fc-event-bg-color: var(--health-tint);\n  --fc-event-border-color: var(--health-tint);\n  --fc-event-text-color: var(--health-ink);\n  --dot: var(--health);\n}\n\n.kn_ev-suggest_mNecSG {\n  --fc-event-bg-color: var(--surface);\n  --fc-event-border-color: var(--news);\n  --fc-event-text-color: var(--news-ink);\n  --dot: var(--news);\n}\n\n.kn_cal_mNecSG [class~=\"fc-event\"].kn_ev-suggest_mNecSG {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n.kn_cal-legend_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_cal-legend_mNecSG span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_cal-detail_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_cal-detail_mNecSG .kn_stack_mNecSG {\n  flex: 260px;\n  min-width: 0;\n}\n\n.kn_cal-fallback_mNecSG {\n  color: var(--ink2);\n  padding: 24px;\n}\n\n.kn_sub-form_mNecSG {\n  flex-direction: column;\n  gap: 12px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_sub-form_mNecSG .kn_fields_mNecSG {\n  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);\n  gap: 10px;\n  display: grid;\n}\n\n.kn_sub-form_mNecSG label {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_sub-form_mNecSG input {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 40px;\n  color: var(--ink);\n  border-radius: 9px;\n  min-width: 0;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_agenda_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_agenda-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 96px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 14px;\n  padding: 10px 16px;\n  display: grid;\n}\n\n.kn_agenda-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_agenda-row_mNecSG time {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n  font-size: 14px;\n}\n\n@media (width <= 760px) {\n  .kn_sub-form_mNecSG .kn_fields_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_mNecSG {\n    grid-template-columns: 72px minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_mNecSG > :last-child {\n    grid-column: 2;\n  }\n}\n\n.kn_map-hero_mNecSG {\n  background: var(--map-sea);\n  height: clamp(400px, 64vh, 660px);\n  padding: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_map-svg_mNecSG {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_map-svg_mNecSG .kn_city_mNecSG {\n  cursor: pointer;\n  outline: none;\n}\n\n.kn_map-svg_mNecSG .kn_city_mNecSG:focus-visible circle {\n  stroke: var(--explore);\n}\n\n.kn_map-tools_mNecSG {\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 10px;\n  padding: 10px 12px;\n  display: flex;\n  position: absolute;\n  top: 14px;\n  left: 14px;\n}\n\n.kn_layer-chips_mNecSG {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_lchip_mNecSG {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_lchip_mNecSG[aria-pressed=\"true\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_lchip_mNecSG[aria-pressed=\"false\"] .kn_dot_mNecSG {\n  opacity: .35;\n}\n\n.kn_year_mNecSG {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_year_mNecSG input {\n  accent-color: var(--primary);\n}\n\n.kn_map-detail_mNecSG {\n  width: min(320px, 100% - 28px);\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 8px;\n  padding: 14px 16px;\n  display: flex;\n  position: absolute;\n  bottom: 14px;\n  right: 14px;\n}\n\n.kn_map-stats_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 999px;\n  padding: 6px 12px;\n  font-size: 13px;\n  position: absolute;\n  bottom: 14px;\n  left: 14px;\n}\n\n.kn_timeline_mNecSG {\n  gap: 10px;\n  padding-bottom: 6px;\n  display: flex;\n  overflow-x: auto;\n}\n\n.kn_tl-item_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  text-align: left;\n  color: var(--ink);\n  border: 0;\n  border-radius: 12px;\n  flex-direction: column;\n  flex: 0 0 200px;\n  align-items: flex-start;\n  gap: 4px;\n  padding: 12px 14px;\n  display: flex;\n}\n\n.kn_tl-item_mNecSG[aria-pressed=\"true\"] {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.kn_tl-item_mNecSG b {\n  font-size: 16px;\n  font-weight: 600;\n}\n\n.kn_tl-year_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_tl-dot_mNecSG {\n  border-radius: 50%;\n  width: 10px;\n  height: 10px;\n}\n\n@media (width <= 760px) {\n  .kn_map-hero_mNecSG {\n    height: 520px;\n  }\n\n  .kn_map-tools_mNecSG {\n    right: 14px;\n  }\n\n  .kn_layer-chips_mNecSG {\n    flex-wrap: wrap;\n  }\n\n  .kn_map-stats_mNecSG {\n    display: none;\n  }\n}\n\n.kn_mod_mNecSG .kn_sum-h_mNecSG span[aria-hidden] {\n  color: var(--muted);\n  margin-left: auto;\n  font-weight: 400;\n}\n\n.kn_ms_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 8px 16px;\n  display: grid;\n}\n\n.kn_ms-row_mNecSG {\n  align-items: center;\n  gap: 10px;\n  font-size: 15px;\n  display: flex;\n}\n\n.kn_ms-row_mNecSG.kn_is-done_mNecSG {\n  color: var(--muted);\n}\n\n.kn_ms-row_mNecSG .kn_check_mNecSG {\n  width: 20px;\n  height: 20px;\n}\n\n.kn_kv_mNecSG {\n  grid-template-columns: 4em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_kv_mNecSG dt {\n  color: var(--muted);\n}\n\n.kn_kv_mNecSG dd {\n  margin: 0;\n}\n\n.kn_heat_mNecSG {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_heat_mNecSG i {\n  aspect-ratio: 1;\n  background: var(--empty);\n  border-radius: 5px;\n  max-width: 100%;\n}\n\n.kn_sleep_mNecSG {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  align-items: end;\n  gap: 6px;\n  height: 84px;\n  display: grid;\n}\n\n.kn_sleep_mNecSG i {\n  background: var(--health);\n  border-radius: 5px;\n}\n\n.kn_sleep_mNecSG i.kn_miss_mNecSG {\n  height: 18px;\n  box-shadow: inset 0 0 0 1px var(--muted);\n  opacity: .6;\n  background: none;\n  border: 0;\n}\n\n.kn_table-box_mNecSG {\n  overflow-x: auto;\n}\n\n.kn_table-box_mNecSG table {\n  border-collapse: collapse;\n  width: 100%;\n  font-size: 15px;\n}\n\n.kn_table-box_mNecSG th, .kn_table-box_mNecSG td {\n  border-top: 1px solid var(--line);\n  text-align: left;\n  padding: 12px 16px;\n}\n\n.kn_table-box_mNecSG thead th {\n  color: var(--muted);\n  border-top: 0;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_table-box_mNecSG .kn_r_mNecSG {\n  text-align: right;\n}\n\n.kn_note-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: auto minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 0;\n  font-weight: 400;\n  display: grid;\n}\n\n.kn_note-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_note-row_mNecSG:hover {\n  text-decoration: none;\n}\n\n.kn_conn-strip_mNecSG {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_conn-pill_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 10px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 8px;\n  padding: 8px 12px;\n  font-size: 14px;\n  display: inline-flex;\n}\n\n.kn_conn-pill_mNecSG b {\n  font-weight: 600;\n}\n\n.kn_raw_mNecSG time {\n  line-height: 1.4;\n}\n\n.kn_avatar_mNecSG {\n  background-position: center;\n  background-size: cover;\n}\n\n.kn_avatar_mNecSG.kn_has-img_mNecSG {\n  color: #0000;\n}\n\n.kn_me-avatar_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 20px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_me-avatar_mNecSG .kn_avatar_mNecSG {\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 72px;\n  height: 72px;\n  font-size: 28px;\n  display: flex;\n}\n\n.kn_crop-view_mNecSG {\n  background: var(--sunken);\n  touch-action: none;\n  cursor: grab;\n  width: 240px;\n  max-width: 100%;\n  height: 240px;\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 50%;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_crop-view_mNecSG:active {\n  cursor: grabbing;\n}\n\n.kn_crop-view_mNecSG img {\n  transform-origin: 0 0;\n  user-select: none;\n  pointer-events: none;\n  max-width: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.kn_crop-zoom_mNecSG {\n  width: 240px;\n  max-width: 100%;\n  color: var(--muted);\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_crop-zoom_mNecSG input {\n  accent-color: var(--primary);\n  flex: 1;\n}\n\n.kn_menu_mNecSG {\n  top: calc(100% + 6px);\n  right: max(16px, env(safe-area-inset-right, 0px));\n  z-index: 10;\n  background: var(--surface);\n  width: 248px;\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-direction: column;\n  padding: 6px;\n  display: flex;\n  position: absolute;\n}\n\n.kn_menu-head_mNecSG {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 4px;\n  padding: 8px 10px 10px;\n  display: flex;\n}\n\n.kn_menu-head_mNecSG b {\n  font-weight: 600;\n}\n\n.kn_menu_mNecSG button[role=\"menuitem\"] {\n  text-align: left;\n  height: 40px;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_menu_mNecSG button[role=\"menuitem\"]:hover, .kn_menu_mNecSG button[role=\"menuitem\"]:focus-visible {\n  background: var(--sunken);\n}\n\n.kn_me_mNecSG {\n  grid-template-columns: 200px minmax(0, 1fr);\n  align-items: start;\n  gap: 32px;\n  display: grid;\n}\n\n.kn_me-nav_mNecSG {\n  top: calc(env(safe-area-inset-top, 0px) + 84px);\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_me-nav_mNecSG button {\n  text-align: left;\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_me-nav_mNecSG button[aria-current=\"page\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_me-body_mNecSG {\n  flex-direction: column;\n  gap: 28px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_facts_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_fact_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_fact_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_fact_mNecSG p {\n  font-size: 15px;\n}\n\n.kn_fact_mNecSG .kn_src_mNecSG {\n  color: var(--muted);\n  grid-column: 1;\n  font-size: 13px;\n}\n\n.kn_fact_mNecSG .kn_fact-acts_mNecSG {\n  grid-area: 1 / 2 / span 2;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_list-card_mNecSG {\n  padding: 4px 16px;\n}\n\n.kn_conn_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 36px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 12px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_conn_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_conn_mNecSG .kn_logo_mNecSG {\n  color: #fff;\n  border-radius: 10px;\n  grid-row: 1 / span 2;\n  justify-content: center;\n  align-items: center;\n  width: 36px;\n  height: 36px;\n  font-size: 14px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_conn_mNecSG b {\n  align-items: center;\n  gap: 6px;\n  font-weight: 600;\n  display: inline-flex;\n}\n\n.kn_info_mNecSG {\n  border: 1px solid var(--muted);\n  width: 18px;\n  height: 18px;\n  color: var(--muted);\n  background: none;\n  border-radius: 50%;\n  padding: 0;\n  font: italic 600 11px / 1 Georgia, serif;\n}\n\n.kn_info_mNecSG[aria-expanded=\"true\"] {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n\n.kn_conn_mNecSG .kn_hint_mNecSG {\n  background: var(--sunken);\n  color: var(--ink2);\n  border-radius: 8px;\n  grid-column: 2 / -1;\n  margin: 6px 0 0;\n  padding: 8px 10px;\n  font-size: 13px;\n}\n\n.kn_conn_mNecSG .kn_small_mNecSG {\n  grid-column: 2;\n}\n\n.kn_conn_mNecSG > :last-child {\n  grid-area: 1 / 3 / span 2;\n}\n\n.kn_switch-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 16px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_switch-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_switch-row_mNecSG label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_auto-ctl_mNecSG {\n  align-items: center;\n  gap: 12px;\n  display: flex;\n}\n\n.kn_time_mNecSG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 36px;\n  color: var(--ink);\n  font-variant-numeric: tabular-nums;\n  border-radius: 8px;\n  padding: 0 10px;\n  font-size: 15px;\n}\n\n.kn_time_mNecSG:disabled {\n  opacity: .45;\n}\n\n.kn_switch_mNecSG {\n  flex: none;\n  width: 44px;\n  height: 26px;\n  position: relative;\n}\n\n.kn_switch_mNecSG input {\n  opacity: 0;\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_mNecSG i {\n  background: var(--control);\n  box-shadow: inset 0 0 0 1px var(--line);\n  pointer-events: none;\n  border-radius: 13px;\n  transition: background .15s;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_mNecSG i:after {\n  content: \"\";\n  background: #fff;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  transition: transform .15s;\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  box-shadow: 0 1px 2px #00000040;\n}\n\n.kn_switch_mNecSG input:checked + i {\n  background: var(--health);\n}\n\n.kn_switch_mNecSG input:checked + i:after {\n  transform: translateX(18px);\n}\n\n.kn_switch_mNecSG input:focus-visible + i {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n@media (width <= 760px) {\n  .kn_me_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n    gap: 16px;\n  }\n\n  .kn_me-nav_mNecSG {\n    flex-flow: wrap;\n    position: static;\n  }\n\n  .kn_me-nav_mNecSG button {\n    text-align: center;\n    flex: auto;\n  }\n}\n\n.kn_chat_mNecSG {\n  grid-template-columns: 236px minmax(0, 1fr);\n  height: calc(100dvh - 118px);\n  min-height: 560px;\n  display: grid;\n}\n\n.kn_threads_mNecSG {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 16px 12px 16px 0;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_threads_mNecSG h2 {\n  color: var(--muted);\n  letter-spacing: .06em;\n  padding: 14px 10px 4px;\n  font-size: 12px;\n  font-weight: 600;\n}\n\n.kn_thread_mNecSG {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 8px 10px;\n  font-size: 14px;\n  display: block;\n  overflow: hidden;\n}\n\n.kn_thread_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_thread_mNecSG[aria-current=\"true\"] {\n  background: var(--control);\n  font-weight: 600;\n}\n\n.kn_new-thread_mNecSG {\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 6px;\n  font-weight: 500;\n  display: flex;\n}\n\n.kn_convo_mNecSG {\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_msgs_mNecSG {\n  flex-direction: column;\n  flex: auto;\n  gap: 14px;\n  min-height: 0;\n  padding: 28px max(16px, 7%);\n  display: flex;\n  overflow: auto;\n  -webkit-mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n  mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n}\n\n.kn_msg-user_mNecSG {\n  background: var(--ask);\n  overflow-wrap: anywhere;\n  border-radius: 18px;\n  align-self: flex-end;\n  max-width: min(78%, 560px);\n  padding: 10px 16px;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\n.kn_msg-ai_mNecSG {\n  flex-direction: column;\n  gap: 10px;\n  max-width: 680px;\n  font-size: 16px;\n  line-height: 1.7;\n  display: flex;\n}\n\n.kn_msg-ai_mNecSG ul {\n  flex-direction: column;\n  gap: 4px;\n  margin: 0;\n  padding-left: 1.2em;\n  display: flex;\n}\n\n.kn_tool_mNecSG {\n  background: var(--sunken);\n  max-width: 100%;\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 10px;\n  align-self: flex-start;\n  font-size: 14px;\n}\n\n.kn_tool_mNecSG summary {\n  cursor: pointer;\n  align-items: center;\n  gap: 10px;\n  padding: 8px 12px;\n  list-style: none;\n  display: flex;\n}\n\n.kn_tool_mNecSG summary::-webkit-details-marker {\n  display: none;\n}\n\n.kn_tool_mNecSG summary:after {\n  content: \"\";\n  border-right: 1.5px solid var(--muted);\n  border-bottom: 1.5px solid var(--muted);\n  width: 7px;\n  height: 7px;\n  margin-left: 6px;\n  transition: transform .12s;\n  transform: rotate(-45deg);\n}\n\n.kn_tool_mNecSG[open] summary:after {\n  transform: rotate(45deg);\n}\n\n.kn_tool_mNecSG pre {\n  color: var(--muted);\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n  margin: 0;\n  padding: 0 12px 10px 34px;\n  font: 13px / 1.6 ui-monospace, SF Mono, Menlo, monospace;\n}\n\n.kn_st-dot_mNecSG {\n  background: var(--health);\n  border-radius: 50%;\n  flex: none;\n  width: 8px;\n  height: 8px;\n}\n\n.kn_st-dot_mNecSG.kn_run_mNecSG {\n  background: var(--explore);\n}\n\n.kn_thinking_mNecSG {\n  color: var(--muted);\n  align-self: flex-start;\n  font-size: 15px;\n}\n\n.kn_acts_mNecSG {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_act_mNecSG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 34px;\n  color: var(--ink);\n  border-radius: 17px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_act_mNecSG:hover {\n  border-color: var(--muted);\n}\n\n.kn_welcome-chat_mNecSG {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 18px;\n  max-width: 680px;\n  margin: auto 0;\n  display: flex;\n}\n\n.kn_welcome-chat_mNecSG h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_suggest_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 10px;\n  width: 100%;\n  display: grid;\n}\n\n.kn_suggest_mNecSG button {\n  text-align: left;\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 12px;\n  padding: 12px 14px;\n  font-size: 14px;\n}\n\n.kn_suggest_mNecSG button:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  color: var(--ink);\n}\n\n.kn_composer_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 6px;\n  margin: 0 max(16px, 7%) 18px;\n  padding: 12px 12px 10px 16px;\n  display: flex;\n}\n\n.kn_composer_mNecSG:focus-within {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1.5px var(--explore);\n}\n\n.kn_composer_mNecSG textarea {\n  resize: none;\n  width: 100%;\n  min-height: 48px;\n  max-height: 200px;\n  font: inherit;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  outline: none;\n  padding: 4px 0;\n  font-size: 16px;\n  line-height: 1.5;\n}\n\n.kn_composer_mNecSG textarea::placeholder {\n  color: var(--muted);\n}\n\n.kn_c-row_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_c-btn_mNecSG {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_c-btn_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_send_mNecSG {\n  background: var(--strong);\n  width: 36px;\n  height: 36px;\n  color: var(--on-strong);\n  border: 0;\n  border-radius: 50%;\n  justify-content: center;\n  align-items: center;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_send_mNecSG:disabled {\n  opacity: .35;\n  cursor: default;\n}\n\n.kn_mode-wrap_mNecSG {\n  position: relative;\n}\n\n.kn_c-btn_mNecSG.kn_is-full_mNecSG {\n  color: var(--news-ink);\n  background: var(--news-tint);\n}\n\n.kn_mode-pop_mNecSG {\n  z-index: 6;\n  background: var(--surface);\n  width: min(340px, 80vw);\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  text-align: left;\n  border-radius: 14px;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px;\n  display: flex;\n  position: absolute;\n  bottom: calc(100% + 8px);\n  left: 0;\n}\n\n.kn_mode-pop_mNecSG > b {\n  padding: 4px 4px 0;\n  font-weight: 600;\n}\n\n.kn_mode-pop_mNecSG > p {\n  padding: 0 4px;\n}\n\n.kn_mode-opt_mNecSG {\n  text-align: left;\n  background: none;\n  border: 1.5px solid #0000;\n  border-radius: 10px;\n  flex-direction: column;\n  gap: 2px;\n  padding: 10px 12px;\n  display: flex;\n}\n\n.kn_mode-opt_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_mode-opt_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_mode-opt_mNecSG b {\n  font-size: 15px;\n  font-weight: 600;\n}\n\n.kn_mode-opt_mNecSG span {\n  color: var(--ink2);\n  font-size: 13px;\n}\n\n.kn_c-note_mNecSG {\n  text-align: center;\n  color: var(--muted);\n  padding: 0 max(16px, 7%) 10px;\n  font-size: 12px;\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_st-dot_mNecSG.kn_run_mNecSG {\n    animation: 1.2s ease-in-out infinite kn_pulse_mNecSG;\n  }\n\n  @keyframes kn_pulse_mNecSG {\n    50% {\n      opacity: .35;\n    }\n  }\n\n  .kn_thinking_mNecSG span {\n    background: linear-gradient(105deg, var(--muted) 40%, var(--ink) 50%, var(--muted) 60%);\n    color: #0000;\n    background-size: 250% 100%;\n    -webkit-background-clip: text;\n    background-clip: text;\n    animation: 1.8s linear infinite kn_shine_mNecSG;\n  }\n\n  @keyframes kn_shine_mNecSG {\n    from {\n      background-position: 100% 0;\n    }\n\n    to {\n      background-position: -150% 0;\n    }\n  }\n}\n\n@media (width <= 760px) {\n  .kn_chat_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n    height: calc(100dvh - 150px);\n  }\n\n  .kn_threads_mNecSG {\n    display: none;\n  }\n\n  .kn_msgs_mNecSG, .kn_composer_mNecSG, .kn_c-note_mNecSG {\n    margin-left: 0;\n    margin-right: 0;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  .kn_composer_mNecSG {\n    padding-left: 14px;\n    padding-right: 10px;\n  }\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_scrim_mNecSG {\n    animation: .16s ease-out kn_fade_mNecSG;\n  }\n\n  @keyframes kn_fade_mNecSG {\n    from {\n      opacity: 0;\n    }\n\n    to {\n      opacity: 1;\n    }\n  }\n}\n\n.kn_app_mNecSG {\n  --kt-canvas: var(--bg);\n  --kt-subtle: var(--sunken);\n  --kt-control: var(--control);\n  --kt-card: var(--surface);\n  --kt-text: var(--ink);\n  --kt-secondary: var(--ink2);\n  --kt-muted: var(--muted);\n  --kt-faint: var(--muted);\n  --kt-primary: var(--primary);\n  --kt-on-primary: var(--on-primary);\n  --kt-link: var(--link);\n  --kt-accent: var(--explore);\n  --kt-health: var(--health);\n  --kt-health-tint: var(--health-tint);\n  --kt-health-ink: var(--health-ink);\n  --kt-projects: var(--doing);\n  --kt-projects-tint: var(--doing-tint);\n  --kt-projects-ink: var(--doing-ink);\n  --kt-map: var(--explore);\n  --kt-map-tint: var(--explore-tint);\n  --kt-map-ink: var(--explore-ink);\n  --kt-feed: var(--news);\n  --kt-feed-tint: var(--news-tint);\n  --kt-feed-ink: var(--news-ink);\n  --kt-finance: var(--finance);\n  --kt-finance-tint: var(--finance-tint);\n  --kt-finance-ink: var(--finance-ink);\n  --kt-me: var(--me);\n  --kt-me-tint: var(--ask);\n  --kt-me-ink: var(--ink2);\n  --kt-today: var(--ink);\n  --kt-today-tint: var(--control);\n  --kt-today-ink: var(--ink2);\n  --kt-project-slot: var(--doing-tint);\n  --kt-target: var(--health);\n  --kt-estimate: var(--health);\n  --kt-shadow: 0 0 0 1px var(--line);\n  scrollbar-gutter: stable;\n  height: 100%;\n  overflow: auto;\n  container-type: inline-size;\n}\n\n.kn_app_mNecSG [hidden] {\n  display: none !important;\n}\n\n.kn_app_mNecSG button:disabled {\n  opacity: .55;\n  cursor: default;\n}\n\n.kn_app_mNecSG textarea, .kn_app_mNecSG select {\n  font: inherit;\n  color: inherit;\n  background: var(--surface);\n}\n\n.kn_app_mNecSG :focus-visible {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n.kn_content_mNecSG {\n  width: 100%;\n}\n\n.kn_top_mNecSG {\n  padding-left: max(16px, var(--dsh-frame-leading-clearance, 0px));\n}\n\n.kn_brand_mNecSG svg {\n  color: var(--ink);\n}\n\n.kn_avatar_mNecSG {\n  padding: 0;\n  overflow: hidden;\n}\n\n.kn_avatar_mNecSG img {\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n\n.kn_account_mNecSG {\n  position: relative;\n}\n\n.kn_menu_mNecSG {\n  top: 48px;\n  right: 0;\n}\n\n.kn_link_mNecSG {\n  color: var(--link);\n  text-align: start;\n  background: none;\n  border: 0;\n  padding: 0;\n  font-weight: 500;\n}\n\n.kn_summaryButton_mNecSG {\n  text-align: start;\n  cursor: pointer;\n  border: 0;\n}\n\n.kn_error_mNecSG {\n  background: var(--news-tint);\n  border-radius: var(--radius);\n  padding: 14px 18px;\n}\n\n.kn_emptyState_mNecSG {\n  color: var(--muted);\n  padding: 20px;\n}\n\n.kn_detailBody_mNecSG {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_child_mNecSG {\n  min-width: 0;\n}\n\n.kn_child_mNecSG > div > header h1 {\n  font-size: 22px;\n}\n\n.kn_paletteDot_mNecSG {\n  background: var(--explore);\n}\n\n.kn_financeMetric_mNecSG {\n  flex-direction: column;\n  gap: 4px;\n  display: flex;\n}\n\n.kn_calendarShell_mNecSG {\n  min-width: 0;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-header-toolbar\"] {\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-toolbar-title\"] {\n  font-size: 18px;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-event\"][class~=\"suggestion\"] {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n@media (width <= 760px) {\n  .kn_calendarShell_mNecSG [class~=\"fc-toolbar-chunk\"] {\n    flex-wrap: wrap;\n    gap: 4px;\n    display: flex;\n  }\n\n  .kn_calendarShell_mNecSG [class~=\"fc-button\"] {\n    padding: 6px 8px;\n  }\n}\n\n.kn_app_mNecSG .kn_calendarShell_mNecSG button[class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 9px;\n  height: 36px;\n}\n\n.kn_app_mNecSG .kn_calendarShell_mNecSG button[class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--surface);\n  color: var(--ink);\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n@media (width <= 760px) {\n  .kn_mods_mNecSG {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n}\n\n@media (width <= 460px) {\n  .kn_mods_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n.kn_mode-pop_mNecSG {\n  color: var(--ink);\n  border: 0;\n  margin: 0;\n}\n\n.kn_askContent_mNecSG {\n  gap: 0;\n  max-width: 1240px;\n  padding-block: 0;\n}\n\n.kn_shell_eRVxzq {\n  color: var(--ink);\n  font: 14px / 1.6 var(--font);\n  box-sizing: border-box;\n  flex-direction: column;\n  height: 100dvh;\n  min-height: 0;\n  padding: 16px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_shell_eRVxzq button, .kn_shell_eRVxzq select, .kn_shell_eRVxzq textarea {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_shell_eRVxzq button, .kn_shell_eRVxzq select {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 7px 11px;\n}\n\n.kn_shell_eRVxzq button:disabled {\n  opacity: .45;\n  cursor: default;\n}\n\n.kn_header_eRVxzq {\n  align-items: center;\n  gap: 12px;\n  padding: 0 8px 14px;\n  display: flex;\n}\n\n.kn_header_eRVxzq > div {\n  flex: 1;\n}\n\n.kn_header_eRVxzq h1 {\n  margin: 0;\n  font-size: 23px;\n}\n\n.kn_shell_eRVxzq small {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_columns_eRVxzq {\n  flex: 1;\n  grid-template-columns: 180px minmax(330px, 1fr) minmax(320px, 390px);\n  gap: 12px;\n  min-height: 0;\n  display: grid;\n}\n\n.kn_chapters_eRVxzq {\n  padding: 10px 6px;\n  overflow: auto;\n}\n\n.kn_shell_eRVxzq h2 {\n  margin: 4px 0 14px;\n  font-size: 15px;\n}\n\n.kn_chapters_eRVxzq button {\n  text-align: left;\n  overflow-wrap: anywhere;\n  background: none;\n  border-color: #0000;\n  width: 100%;\n  margin-bottom: 8px;\n  display: block;\n}\n\n.kn_chapters_eRVxzq small {\n  font-size: 11px;\n  display: block;\n}\n\n.kn_chapters_eRVxzq button[aria-current], .kn_tabs_eRVxzq button[aria-selected=\"true\"] {\n  color: #245db4;\n  background: #e8f1ff;\n}\n\n.kn_chapters_eRVxzq h2:not(:first-child) {\n  margin-top: 28px;\n}\n\n.kn_manuscript_eRVxzq {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_toolbar_eRVxzq {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 7px;\n  padding: 12px 16px;\n  display: flex;\n}\n\n.kn_toolbar_eRVxzq strong {\n  flex: 1;\n}\n\n.kn_toolbar_eRVxzq button {\n  font-size: 12px;\n}\n\n.kn_editorWrap_eRVxzq {\n  flex: 1;\n  min-height: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_cmHost_eRVxzq {\n  height: 100%;\n}\n\n.kn_selChatBtn_eRVxzq {\n  z-index: 5;\n  position: absolute;\n  background: #e8f1ff !important;\n}\n\n.kn_copyFlash_eRVxzq {\n  background: var(--surface);\n  padding: 6px;\n  position: absolute;\n  bottom: 15px;\n  left: 20px;\n}\n\n.kn_manuscript_eRVxzq footer {\n  color: var(--muted);\n  border-top: 1px solid var(--line);\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 16px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_assistant_eRVxzq {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 10px;\n  min-height: 0;\n  padding: 14px;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_tabs_eRVxzq {\n  gap: 6px;\n  display: flex;\n}\n\n.kn_tabs_eRVxzq button {\n  flex: 1;\n}\n\n.kn_assistant_eRVxzq textarea {\n  box-sizing: border-box;\n  border: 1px solid var(--line);\n  background: var(--surface);\n  resize: vertical;\n  border-radius: 8px;\n  width: 100%;\n  min-height: 75px;\n  padding: 9px;\n}\n\n.kn_shell_eRVxzq .kn_primary_eRVxzq {\n  color: #fff;\n  background: #3478df;\n  border-color: #0000;\n}\n\n.kn_chat_eRVxzq {\n  flex-direction: column;\n  flex: 1;\n  min-height: 260px;\n  display: flex;\n  position: relative;\n}\n\n.kn_chat_eRVxzq > * {\n  flex: 1;\n  min-height: 0;\n}\n\n.kn_candidates_eRVxzq {\n  border-top: 1px solid var(--line);\n  padding-top: 10px;\n}\n\n.kn_candidates_eRVxzq summary {\n  cursor: pointer;\n}\n\n.kn_candidates_eRVxzq summary button {\n  margin-left: 10px;\n  padding: 2px 8px;\n}\n\n.kn_candidates_eRVxzq article {\n  border: 1px solid var(--line);\n  border-radius: 8px;\n  margin-top: 10px;\n  padding: 12px;\n}\n\n.kn_candidates_eRVxzq pre {\n  white-space: pre-wrap;\n  font: inherit;\n  max-height: 230px;\n  overflow: auto;\n}\n\n.kn_error_eRVxzq {\n  color: #853e12;\n  background: #fff0df;\n  margin-bottom: 10px;\n  padding: 10px;\n}\n\n.kn_hint_eRVxzq {\n  padding: 8px 16px;\n}\n\n@media (width <= 1050px) {\n  .kn_columns_eRVxzq {\n    grid-template-columns: 140px minmax(300px, 1fr);\n  }\n\n  .kn_assistant_eRVxzq {\n    grid-column: 1 / -1;\n    min-height: 400px;\n  }\n\n  .kn_columns_eRVxzq:not(.kn_noAssistant_eRVxzq) {\n    grid-template-rows: minmax(0, 1fr) minmax(220px, .7fr);\n  }\n\n  .kn_assistant_eRVxzq {\n    min-height: 0;\n  }\n}\n\n.kn_noAssistant_eRVxzq {\n  grid-template-columns: 155px minmax(330px, 1fr);\n}\n\n.kn_withReference_eRVxzq {\n  grid-template-columns: 145px minmax(280px, 1fr) minmax(330px, 1fr) minmax(290px, 340px);\n}\n\n.kn_withReference_eRVxzq.kn_noAssistant_eRVxzq {\n  grid-template-columns: 145px minmax(280px, 1fr) minmax(330px, 1fr);\n}\n\n.kn_reference_eRVxzq {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_reference_eRVxzq .kn_toolbar_eRVxzq select {\n  width: 100%;\n  min-width: 0;\n}\n\n.kn_reference_eRVxzq .kn_toolbar_eRVxzq {\n  min-width: 0;\n}\n\n.kn_shell_eRVxzq button:focus-visible, .kn_shell_eRVxzq select:focus-visible {\n  outline: 2px solid var(--link);\n  outline-offset: 2px;\n}\n\n@media (width <= 1100px) {\n  .kn_withReference_eRVxzq, .kn_withReference_eRVxzq.kn_noAssistant_eRVxzq {\n    grid-template-columns: 120px minmax(230px, 1fr) minmax(260px, 1fr);\n  }\n\n  .kn_withReference_eRVxzq .kn_assistant_eRVxzq {\n    grid-column: 2 / -1;\n  }\n\n  .kn_withReference_eRVxzq:not(.kn_noAssistant_eRVxzq) {\n    grid-template-rows: minmax(0, 1fr) minmax(220px, .7fr);\n  }\n}\n\n@media (width <= 760px) {\n  .kn_withReference_eRVxzq, .kn_withReference_eRVxzq.kn_noAssistant_eRVxzq {\n    grid-template-columns: 1fr;\n  }\n\n  .kn_withReference_eRVxzq .kn_chapters_eRVxzq {\n    max-height: 160px;\n  }\n\n  .kn_reference_eRVxzq {\n    height: 45vh;\n  }\n\n  .kn_withReference_eRVxzq .kn_assistant_eRVxzq {\n    grid-column: auto;\n  }\n\n  .kn_header_eRVxzq {\n    flex-wrap: wrap;\n  }\n}\n\n.kn_referenceActions_eRVxzq {\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 12px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_referenceActions_eRVxzq button {\n  padding: 4px 8px;\n}\n";
+window.__ModuleLoader__.load({id:"kaitu-novel-workspace",factory:(require)=>{var module={exports:{}};var exports=module.exports;window.__kaituNovelStyles=".kn_app_mNecSG {\n  --bg: #fcfcfb;\n  --surface: #fff;\n  --sunken: #f5f5f3;\n  --control: #f0efec;\n  --line: #ecebe7;\n  --ink: #1f1e1d;\n  --ink2: #4d4c48;\n  --muted: #6b6a66;\n  --link: #2f5fc4;\n  --primary: #2f5fc4;\n  --on-primary: #fff;\n  --strong: #1f1e1d;\n  --on-strong: #fff;\n  --ask: #f2f5fd;\n  --ask-line: #dce4f8;\n  --scrim: #1f1e1d6b;\n  --health: #2e8b57;\n  --health-tint: #e8f3ec;\n  --health-ink: #1f6b43;\n  --doing: #6b5bd6;\n  --doing-tint: #efedfb;\n  --doing-ink: #4b3fb0;\n  --explore: #3d6fe0;\n  --explore-tint: #ecf1fc;\n  --explore-ink: #2a4fa8;\n  --news: #c47a12;\n  --news-tint: #fbefe0;\n  --news-ink: #8a520a;\n  --finance: #1f8a8a;\n  --finance-tint: #e3f2f2;\n  --finance-ink: #176868;\n  --me: #c2507a;\n  --empty: #f0efec;\n  --map-land: #eef1ec;\n  --map-grid: #dde2da;\n  --map-sea: #f4f6f7;\n  --map-dot: #d3dad4;\n  --font: -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Segoe UI\",\n    sans-serif;\n  --radius: 14px;\n}\n\n@media (prefers-color-scheme: dark) {\n  .kn_app_mNecSG:not([data-theme=\"light\"]) {\n    --bg: #171716;\n    --surface: #201f1e;\n    --sunken: #1b1b1a;\n    --control: #2a2927;\n    --line: #2f2e2c;\n    --ink: #ecebe8;\n    --ink2: #c9c7c2;\n    --muted: #a09e98;\n    --link: #8fb0f5;\n    --primary: #4c7be6;\n    --on-primary: #fff;\n    --strong: #ecebe8;\n    --on-strong: #171716;\n    --ask: #1e2638;\n    --ask-line: #2c3a5c;\n    --scrim: #0009;\n    --health-tint: #1c3226;\n    --health-ink: #8fd3ac;\n    --doing-tint: #2a2547;\n    --doing-ink: #b9aff5;\n    --explore-tint: #1e2a45;\n    --explore-ink: #a9c1f7;\n    --news-tint: #3a2a12;\n    --news-ink: #ebc27f;\n    --finance-tint: #173333;\n    --finance-ink: #8ed1d1;\n    --empty: #2a2927;\n    --map-land: #1f2620;\n    --map-grid: #2d352e;\n    --map-sea: #1a1c1d;\n    --map-dot: #343d36;\n    color-scheme: dark;\n  }\n}\n\n.kn_app_mNecSG[data-theme=\"dark\"] {\n  --bg: #171716;\n  --surface: #201f1e;\n  --sunken: #1b1b1a;\n  --control: #2a2927;\n  --line: #2f2e2c;\n  --ink: #ecebe8;\n  --ink2: #c9c7c2;\n  --muted: #a09e98;\n  --link: #8fb0f5;\n  --primary: #4c7be6;\n  --on-primary: #fff;\n  --strong: #ecebe8;\n  --on-strong: #171716;\n  --ask: #1e2638;\n  --ask-line: #2c3a5c;\n  --scrim: #0009;\n  --health-tint: #1c3226;\n  --health-ink: #8fd3ac;\n  --doing-tint: #2a2547;\n  --doing-ink: #b9aff5;\n  --explore-tint: #1e2a45;\n  --explore-ink: #a9c1f7;\n  --news-tint: #3a2a12;\n  --news-ink: #ebc27f;\n  --finance-tint: #173333;\n  --finance-ink: #8ed1d1;\n  --empty: #2a2927;\n  --map-land: #1f2620;\n  --map-grid: #2d352e;\n  --map-sea: #1a1c1d;\n  --map-dot: #343d36;\n  color-scheme: dark;\n}\n\n.kn_app_mNecSG, .kn_app_mNecSG * {\n  box-sizing: border-box;\n}\n\n.kn_app_mNecSG {\n  background: var(--bg);\n  color: var(--ink);\n  font-family: var(--font);\n  font-size: 15px;\n  line-height: 1.5;\n}\n\n.kn_app_mNecSG a {\n  color: var(--link);\n  font-weight: 500;\n  text-decoration: none;\n}\n\n.kn_app_mNecSG a:hover {\n  text-underline-offset: 3px;\n  text-decoration: underline dotted;\n}\n\n:where(.kn_app_mNecSG) button, :where(.kn_app_mNecSG) input {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_app_mNecSG button {\n  cursor: pointer;\n}\n\n.kn_app_mNecSG h1, .kn_app_mNecSG h2, .kn_app_mNecSG h3, .kn_app_mNecSG p {\n  margin: 0;\n}\n\n.kn_app_mNecSG h1, .kn_app_mNecSG h2, .kn_app_mNecSG h3 {\n  text-wrap: balance;\n}\n\n.kn_num_mNecSG {\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_sr_mNecSG {\n  clip: rect(0 0 0 0);\n  white-space: nowrap;\n  width: 1px;\n  height: 1px;\n  position: absolute;\n  overflow: hidden;\n}\n\n.kn_demo_mNecSG {\n  padding-block: 8px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--sunken);\n  border-bottom: 1px dashed var(--line);\n  color: var(--muted);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 12px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_demo_mNecSG b {\n  color: var(--ink2);\n  font-weight: 600;\n}\n\n.kn_demo_mNecSG button {\n  border: 1px dashed var(--muted);\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 13px;\n}\n\n.kn_demo_mNecSG button[aria-pressed=\"true\"] {\n  border-style: solid;\n  border-color: var(--ink);\n  color: var(--ink);\n  background: var(--surface);\n}\n\n.kn_top_mNecSG {\n  top: env(safe-area-inset-top, 0px);\n  z-index: 5;\n  padding-block: 12px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--bg);\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px 20px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_brand_mNecSG {\n  flex: 120px;\n  align-items: center;\n  gap: 10px;\n  font-size: 18px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_tabs_mNecSG {\n  background: var(--control);\n  border-radius: 12px;\n  flex: 0 auto;\n  gap: 4px;\n  padding: 4px;\n  display: flex;\n}\n\n.kn_tabs_mNecSG button {\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 22px;\n  font-size: 15px;\n  font-weight: 500;\n}\n\n.kn_tabs_mNecSG button[aria-current=\"page\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_tools_mNecSG {\n  flex: 120px;\n  justify-content: flex-end;\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_sync_mNecSG {\n  color: var(--muted);\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_dot_mNecSG {\n  border-radius: 50%;\n  flex: none;\n  width: 7px;\n  height: 7px;\n  display: inline-block;\n}\n\n.kn_btn_mNecSG {\n  white-space: nowrap;\n  border: 0;\n  border-radius: 10px;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  height: 40px;\n  padding: 0 16px;\n  font-size: 15px;\n  font-weight: 500;\n  display: inline-flex;\n}\n\n.kn_btn-primary_mNecSG {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_btn-strong_mNecSG {\n  background: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_btn-quiet_mNecSG {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 400;\n}\n\n.kn_btn-big_mNecSG {\n  height: 44px;\n  padding: 0 20px;\n}\n\n.kn_avatar_mNecSG {\n  background: var(--me);\n  color: #fff;\n  border: 0;\n  border-radius: 50%;\n  width: 40px;\n  height: 40px;\n  font-weight: 600;\n}\n\n.kn_content_mNecSG {\n  max-width: 1040px;\n  padding-block: 28px 72px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  flex-direction: column;\n  gap: 32px;\n  margin: 0 auto;\n  display: flex;\n}\n\n.kn_head_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 16px;\n  display: flex;\n}\n\n.kn_head_mNecSG h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_sub_mNecSG {\n  color: var(--muted);\n  font-size: 14px;\n}\n\n.kn_eyebrow_mNecSG {\n  color: var(--muted);\n  letter-spacing: .06em;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_sec_mNecSG {\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_sec-head_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 12px;\n  display: flex;\n}\n\n.kn_card_mNecSG {\n  background: var(--surface);\n  border-radius: var(--radius);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_chip_mNecSG {\n  white-space: nowrap;\n  border-radius: 6px;\n  align-items: center;\n  gap: 6px;\n  padding: 2px 8px;\n  font-size: 13px;\n  font-weight: 500;\n  line-height: 18px;\n  display: inline-flex;\n}\n\n.kn_capture_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding: 6px;\n  display: flex;\n}\n\n.kn_capture_mNecSG input {\n  background: none;\n  border: 0;\n  border-radius: 10px;\n  flex: 260px;\n  min-width: 0;\n  height: 44px;\n  padding: 0 14px;\n  font-size: 16px;\n}\n\n.kn_capture_mNecSG input::placeholder {\n  color: var(--muted);\n}\n\n.kn_saved_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_focus_mNecSG {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 18px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 24px;\n  padding: 24px;\n  display: flex;\n}\n\n.kn_focus-body_mNecSG {\n  flex-direction: column;\n  flex: 380px;\n  gap: 8px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_focus-title_mNecSG {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_row_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  min-height: 52px;\n  padding: 6px 16px;\n  display: flex;\n}\n\n.kn_row-title_mNecSG {\n  flex: 240px;\n  min-width: 0;\n  font-size: 16px;\n}\n\n.kn_check_mNecSG {\n  border: 1.5px solid var(--muted);\n  color: #0000;\n  background: none;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  display: flex;\n}\n\n.kn_check_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--health);\n  background: var(--health);\n  color: #fff;\n}\n\n.kn_row_mNecSG.kn_is-done_mNecSG .kn_row-title_mNecSG {\n  color: var(--muted);\n  text-decoration: line-through;\n}\n\n.kn_when_mNecSG {\n  text-align: right;\n  width: 64px;\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_ask_mNecSG {\n  background: var(--ask);\n  box-shadow: 0 0 0 1px var(--ask-line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 14px 18px;\n  display: flex;\n}\n\n.kn_ask_mNecSG p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_grid_mNecSG {\n  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_sum_mNecSG {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 14px;\n  padding: 18px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_sum_mNecSG:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_sum-h_mNecSG {\n  align-items: center;\n  gap: 8px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_sum-h_mNecSG span:last-child {\n  color: var(--muted);\n  margin-left: auto;\n  font-size: 13px;\n  font-weight: 400;\n}\n\n.kn_big_mNecSG {\n  font-size: 26px;\n  font-weight: 600;\n  line-height: 32px;\n}\n\n.kn_small_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_pair_mNecSG {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_stack_mNecSG {\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n}\n\n.kn_week_mNecSG {\n  grid-template-columns: repeat(7, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_week_mNecSG span {\n  color: var(--muted);\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_week_mNecSG i {\n  background: var(--empty);\n  border-radius: 5px;\n  width: 100%;\n  height: 18px;\n  display: block;\n}\n\n.kn_bar_mNecSG {\n  background: var(--control);\n  border-radius: 4px;\n  height: 8px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_bar_mNecSG i {\n  height: 100%;\n  display: block;\n}\n\n.kn_fin_mNecSG {\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 0;\n  display: grid;\n  overflow: hidden;\n}\n\n.kn_fin-cell_mNecSG {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_fin-cell_mNecSG:nth-child(4) {\n  border-right: 0;\n}\n\n.kn_fin-wide_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-direction: column;\n  grid-column: 1 / -1;\n  gap: 8px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_fin-pending_mNecSG {\n  flex-flow: wrap;\n  align-items: center;\n  gap: 8px 12px;\n}\n\n@media (width <= 760px) {\n  .kn_fin_mNecSG {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .kn_fin-cell_mNecSG {\n    border-right: 0;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .kn_fin-cell_mNecSG:nth-child(odd) {\n    border-right: 1px solid var(--line);\n  }\n}\n\n.kn_feed-row_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 14px;\n  padding: 10px 4px;\n  display: flex;\n}\n\n.kn_feed-row_mNecSG p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_ini_mNecSG {\n  color: #fff;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 28px;\n  height: 28px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_welcome_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 10px;\n  padding: 32px 28px;\n  display: flex;\n}\n\n.kn_welcome_mNecSG h1 {\n  font-size: 30px;\n  font-weight: 600;\n  line-height: 40px;\n}\n\n.kn_welcome_mNecSG p {\n  max-width: 36em;\n  color: var(--ink2);\n  font-size: 16px;\n}\n\n.kn_starts_mNecSG {\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_start_mNecSG {\n  text-align: left;\n  border: 0;\n  flex-direction: column;\n  gap: 10px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_start_mNecSG h3 {\n  font-size: 17px;\n  font-weight: 600;\n}\n\n.kn_start_mNecSG p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_start_mNecSG .kn_tag_mNecSG {\n  align-self: flex-start;\n}\n\n.kn_subtabs_mNecSG {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_subtabs_mNecSG button {\n  border: 1px solid var(--line);\n  height: 36px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 18px;\n  padding: 0 16px;\n  font-size: 14px;\n}\n\n.kn_subtabs_mNecSG button[aria-pressed=\"true\"] {\n  background: var(--strong);\n  border-color: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_dir_mNecSG {\n  flex-direction: column;\n  gap: 14px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_dir_mNecSG h3 {\n  font-size: 19px;\n  font-weight: 600;\n  line-height: 27px;\n}\n\n.kn_dir_mNecSG dl {\n  grid-template-columns: 4.5em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_dir_mNecSG dt {\n  color: var(--muted);\n}\n\n.kn_dir_mNecSG dd {\n  color: var(--ink);\n  margin: 0;\n}\n\n.kn_attempt_mNecSG {\n  background: var(--sunken);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 6px;\n  padding: 12px 14px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_evidence_mNecSG {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_dir-foot_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_dir_mNecSG.kn_is-paused_mNecSG {\n  background: var(--sunken);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_split_mNecSG {\n  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);\n  gap: 20px;\n  display: grid;\n}\n\n.kn_map-box_mNecSG {\n  padding: 12px;\n  overflow: hidden;\n}\n\n.kn_map-box_mNecSG svg {\n  width: 100%;\n  height: auto;\n  display: block;\n}\n\n.kn_places_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_place_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 4px 12px;\n  padding: 12px 4px;\n  display: flex;\n}\n\n.kn_place_mNecSG b {\n  flex: 120px;\n  font-weight: 600;\n}\n\n.kn_legend_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_legend_mNecSG span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_news_mNecSG {\n  grid-template-columns: 120px minmax(0, 1fr);\n  gap: 16px;\n  padding: 16px;\n  display: grid;\n}\n\n.kn_news_mNecSG .kn_thumb_mNecSG {\n  aspect-ratio: 4 / 3;\n  color: #fff;\n  border-radius: 10px;\n  align-items: flex-end;\n  max-width: 100%;\n  padding: 8px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_news_mNecSG h3 {\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 25px;\n}\n\n.kn_news_mNecSG p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_news-foot_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  margin-top: 4px;\n  display: flex;\n}\n\n.kn_news-foot_mNecSG a {\n  font-size: 14px;\n}\n\n.kn_news-acts_mNecSG {\n  gap: 8px;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_comment_mNecSG {\n  border-left: 2px solid var(--news);\n  color: var(--ink);\n  padding-left: 10px;\n  font-size: 14px;\n}\n\n.kn_mods_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_mod_mNecSG {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 6px;\n  padding: 16px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_mod_mNecSG:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_raw_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 88px minmax(0, 1fr);\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_raw_mNecSG time {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_raw_mNecSG blockquote {\n  margin: 0;\n  font-size: 15px;\n}\n\n.kn_raw_mNecSG .kn_st_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  grid-column: 2;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_scrim_mNecSG {\n  z-index: 20;\n  padding-block: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px));\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--scrim);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  position: fixed;\n  inset: 0;\n}\n\n.kn_dialog_mNecSG {\n  background: var(--surface);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 18px;\n  width: 100%;\n  max-width: 560px;\n  max-height: 100%;\n  padding: 28px;\n  display: flex;\n  overflow: auto;\n  box-shadow: 0 20px 60px #00000040;\n}\n\n.kn_dialog_mNecSG h2 {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_steps_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_choice_mNecSG {\n  border: 1.5px solid var(--line);\n  text-align: left;\n  background: none;\n  border-radius: 14px;\n  align-items: flex-start;\n  gap: 14px;\n  width: 100%;\n  padding: 16px;\n  display: flex;\n}\n\n.kn_choice_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_choice_mNecSG .kn_radio_mNecSG {\n  border: 1.5px solid var(--muted);\n  border-radius: 50%;\n  flex: none;\n  width: 20px;\n  height: 20px;\n  margin-top: 2px;\n}\n\n.kn_choice_mNecSG[aria-pressed=\"true\"] .kn_radio_mNecSG {\n  border: 6px solid var(--primary);\n}\n\n.kn_choice_mNecSG b {\n  font-size: 16px;\n  font-weight: 600;\n  display: block;\n}\n\n.kn_choice_mNecSG span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_toggle_mNecSG {\n  border-top: 1px solid var(--line);\n  align-items: flex-start;\n  gap: 14px;\n  padding: 14px 0;\n  display: flex;\n}\n\n.kn_toggle_mNecSG input {\n  width: 20px;\n  height: 20px;\n  accent-color: var(--primary);\n  flex: none;\n  margin: 2px 0 0;\n}\n\n.kn_toggle_mNecSG label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_toggle_mNecSG label span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_dialog-foot_mNecSG {\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_note_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n@media (width <= 760px) {\n  .kn_split_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_news_mNecSG {\n    grid-template-columns: 84px minmax(0, 1fr);\n  }\n\n  .kn_tools_mNecSG .kn_sync_mNecSG {\n    display: none;\n  }\n\n  .kn_brand_mNecSG {\n    flex-basis: auto;\n  }\n\n  .kn_tabs_mNecSG {\n    flex: 100%;\n    order: 3;\n    justify-content: stretch;\n  }\n\n  .kn_tabs_mNecSG button {\n    flex: 1 1 0;\n    padding: 0 8px;\n  }\n\n  .kn_head_mNecSG h1 {\n    font-size: 24px;\n    line-height: 32px;\n  }\n}\n\n.kn_cal-bar_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 14px;\n  display: flex;\n}\n\n.kn_cal-nav_mNecSG {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_cal-nav_mNecSG button {\n  background: var(--control);\n  min-width: 36px;\n  height: 36px;\n  color: var(--ink);\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 14px;\n}\n\n.kn_cal-title_mNecSG {\n  flex: 200px;\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.kn_seg_mNecSG {\n  background: var(--control);\n  border-radius: 10px;\n  gap: 2px;\n  padding: 3px;\n  display: flex;\n}\n\n.kn_seg_mNecSG button {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_seg_mNecSG button[aria-pressed=\"true\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_cal_mNecSG {\n  --fc-border-color: var(--line);\n  --fc-page-bg-color: var(--surface);\n  --fc-neutral-bg-color: var(--sunken);\n  --fc-today-bg-color: var(--ask);\n  --fc-list-event-hover-bg-color: var(--sunken);\n  --fc-now-indicator-color: var(--news);\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  padding: 8px;\n  overflow: hidden;\n}\n\n.kn_cal_mNecSG [class~=\"fc\"] {\n  color: var(--ink);\n  font-size: 13px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-col-header-cell-cushion\"], .kn_cal_mNecSG [class~=\"fc-daygrid-day-number\"] {\n  color: var(--ink);\n  font-weight: 500;\n}\n\n.kn_cal_mNecSG [class~=\"fc-timegrid-slot-label-cushion\"], .kn_cal_mNecSG [class~=\"fc-timegrid-axis-cushion\"] {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] {\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n  padding: 4px 0;\n  display: flex;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] b {\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 22px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] span {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-day-today\"] [class~=\"fc-dh\"] b {\n  color: var(--primary);\n}\n\n.kn_cal_mNecSG [class~=\"fc-event\"] {\n  cursor: pointer;\n  border-radius: 6px;\n  padding: 1px 2px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-event-main\"] {\n  color: var(--fc-event-text-color);\n  font-weight: 500;\n}\n\n.kn_cal_mNecSG [class~=\"fc-list-day-cushion\"] {\n  background: var(--sunken);\n}\n\n.kn_cal_mNecSG [class~=\"fc-list-event-dot\"] {\n  border-color: var(--dot, var(--explore));\n}\n\n.kn_ev-work_mNecSG {\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  --dot: var(--explore);\n}\n\n.kn_ev-life_mNecSG {\n  --fc-event-bg-color: var(--doing-tint);\n  --fc-event-border-color: var(--doing-tint);\n  --fc-event-text-color: var(--doing-ink);\n  --dot: var(--doing);\n}\n\n.kn_ev-health_mNecSG {\n  --fc-event-bg-color: var(--health-tint);\n  --fc-event-border-color: var(--health-tint);\n  --fc-event-text-color: var(--health-ink);\n  --dot: var(--health);\n}\n\n.kn_ev-suggest_mNecSG {\n  --fc-event-bg-color: var(--surface);\n  --fc-event-border-color: var(--news);\n  --fc-event-text-color: var(--news-ink);\n  --dot: var(--news);\n}\n\n.kn_cal_mNecSG [class~=\"fc-event\"].kn_ev-suggest_mNecSG {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n.kn_cal-legend_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_cal-legend_mNecSG span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_cal-detail_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_cal-detail_mNecSG .kn_stack_mNecSG {\n  flex: 260px;\n  min-width: 0;\n}\n\n.kn_cal-fallback_mNecSG {\n  color: var(--ink2);\n  padding: 24px;\n}\n\n.kn_sub-form_mNecSG {\n  flex-direction: column;\n  gap: 12px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_sub-form_mNecSG .kn_fields_mNecSG {\n  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);\n  gap: 10px;\n  display: grid;\n}\n\n.kn_sub-form_mNecSG label {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_sub-form_mNecSG input {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 40px;\n  color: var(--ink);\n  border-radius: 9px;\n  min-width: 0;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_agenda_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_agenda-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 96px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 14px;\n  padding: 10px 16px;\n  display: grid;\n}\n\n.kn_agenda-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_agenda-row_mNecSG time {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n  font-size: 14px;\n}\n\n@media (width <= 760px) {\n  .kn_sub-form_mNecSG .kn_fields_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_mNecSG {\n    grid-template-columns: 72px minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_mNecSG > :last-child {\n    grid-column: 2;\n  }\n}\n\n.kn_map-hero_mNecSG {\n  background: var(--map-sea);\n  height: clamp(400px, 64vh, 660px);\n  padding: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_map-svg_mNecSG {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_map-svg_mNecSG .kn_city_mNecSG {\n  cursor: pointer;\n  outline: none;\n}\n\n.kn_map-svg_mNecSG .kn_city_mNecSG:focus-visible circle {\n  stroke: var(--explore);\n}\n\n.kn_map-tools_mNecSG {\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 10px;\n  padding: 10px 12px;\n  display: flex;\n  position: absolute;\n  top: 14px;\n  left: 14px;\n}\n\n.kn_layer-chips_mNecSG {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_lchip_mNecSG {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_lchip_mNecSG[aria-pressed=\"true\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_lchip_mNecSG[aria-pressed=\"false\"] .kn_dot_mNecSG {\n  opacity: .35;\n}\n\n.kn_year_mNecSG {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_year_mNecSG input {\n  accent-color: var(--primary);\n}\n\n.kn_map-detail_mNecSG {\n  width: min(320px, 100% - 28px);\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 8px;\n  padding: 14px 16px;\n  display: flex;\n  position: absolute;\n  bottom: 14px;\n  right: 14px;\n}\n\n.kn_map-stats_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 999px;\n  padding: 6px 12px;\n  font-size: 13px;\n  position: absolute;\n  bottom: 14px;\n  left: 14px;\n}\n\n.kn_timeline_mNecSG {\n  gap: 10px;\n  padding-bottom: 6px;\n  display: flex;\n  overflow-x: auto;\n}\n\n.kn_tl-item_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  text-align: left;\n  color: var(--ink);\n  border: 0;\n  border-radius: 12px;\n  flex-direction: column;\n  flex: 0 0 200px;\n  align-items: flex-start;\n  gap: 4px;\n  padding: 12px 14px;\n  display: flex;\n}\n\n.kn_tl-item_mNecSG[aria-pressed=\"true\"] {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.kn_tl-item_mNecSG b {\n  font-size: 16px;\n  font-weight: 600;\n}\n\n.kn_tl-year_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_tl-dot_mNecSG {\n  border-radius: 50%;\n  width: 10px;\n  height: 10px;\n}\n\n@media (width <= 760px) {\n  .kn_map-hero_mNecSG {\n    height: 520px;\n  }\n\n  .kn_map-tools_mNecSG {\n    right: 14px;\n  }\n\n  .kn_layer-chips_mNecSG {\n    flex-wrap: wrap;\n  }\n\n  .kn_map-stats_mNecSG {\n    display: none;\n  }\n}\n\n.kn_mod_mNecSG .kn_sum-h_mNecSG span[aria-hidden] {\n  color: var(--muted);\n  margin-left: auto;\n  font-weight: 400;\n}\n\n.kn_ms_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 8px 16px;\n  display: grid;\n}\n\n.kn_ms-row_mNecSG {\n  align-items: center;\n  gap: 10px;\n  font-size: 15px;\n  display: flex;\n}\n\n.kn_ms-row_mNecSG.kn_is-done_mNecSG {\n  color: var(--muted);\n}\n\n.kn_ms-row_mNecSG .kn_check_mNecSG {\n  width: 20px;\n  height: 20px;\n}\n\n.kn_kv_mNecSG {\n  grid-template-columns: 4em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_kv_mNecSG dt {\n  color: var(--muted);\n}\n\n.kn_kv_mNecSG dd {\n  margin: 0;\n}\n\n.kn_heat_mNecSG {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_heat_mNecSG i {\n  aspect-ratio: 1;\n  background: var(--empty);\n  border-radius: 5px;\n  max-width: 100%;\n}\n\n.kn_sleep_mNecSG {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  align-items: end;\n  gap: 6px;\n  height: 84px;\n  display: grid;\n}\n\n.kn_sleep_mNecSG i {\n  background: var(--health);\n  border-radius: 5px;\n}\n\n.kn_sleep_mNecSG i.kn_miss_mNecSG {\n  height: 18px;\n  box-shadow: inset 0 0 0 1px var(--muted);\n  opacity: .6;\n  background: none;\n  border: 0;\n}\n\n.kn_table-box_mNecSG {\n  overflow-x: auto;\n}\n\n.kn_table-box_mNecSG table {\n  border-collapse: collapse;\n  width: 100%;\n  font-size: 15px;\n}\n\n.kn_table-box_mNecSG th, .kn_table-box_mNecSG td {\n  border-top: 1px solid var(--line);\n  text-align: left;\n  padding: 12px 16px;\n}\n\n.kn_table-box_mNecSG thead th {\n  color: var(--muted);\n  border-top: 0;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_table-box_mNecSG .kn_r_mNecSG {\n  text-align: right;\n}\n\n.kn_note-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: auto minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 0;\n  font-weight: 400;\n  display: grid;\n}\n\n.kn_note-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_note-row_mNecSG:hover {\n  text-decoration: none;\n}\n\n.kn_conn-strip_mNecSG {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_conn-pill_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 10px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 8px;\n  padding: 8px 12px;\n  font-size: 14px;\n  display: inline-flex;\n}\n\n.kn_conn-pill_mNecSG b {\n  font-weight: 600;\n}\n\n.kn_raw_mNecSG time {\n  line-height: 1.4;\n}\n\n.kn_avatar_mNecSG {\n  background-position: center;\n  background-size: cover;\n}\n\n.kn_avatar_mNecSG.kn_has-img_mNecSG {\n  color: #0000;\n}\n\n.kn_me-avatar_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 20px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_me-avatar_mNecSG .kn_avatar_mNecSG {\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 72px;\n  height: 72px;\n  font-size: 28px;\n  display: flex;\n}\n\n.kn_crop-view_mNecSG {\n  background: var(--sunken);\n  touch-action: none;\n  cursor: grab;\n  width: 240px;\n  max-width: 100%;\n  height: 240px;\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 50%;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_crop-view_mNecSG:active {\n  cursor: grabbing;\n}\n\n.kn_crop-view_mNecSG img {\n  transform-origin: 0 0;\n  user-select: none;\n  pointer-events: none;\n  max-width: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.kn_crop-zoom_mNecSG {\n  width: 240px;\n  max-width: 100%;\n  color: var(--muted);\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_crop-zoom_mNecSG input {\n  accent-color: var(--primary);\n  flex: 1;\n}\n\n.kn_menu_mNecSG {\n  top: calc(100% + 6px);\n  right: max(16px, env(safe-area-inset-right, 0px));\n  z-index: 10;\n  background: var(--surface);\n  width: 248px;\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-direction: column;\n  padding: 6px;\n  display: flex;\n  position: absolute;\n}\n\n.kn_menu-head_mNecSG {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 4px;\n  padding: 8px 10px 10px;\n  display: flex;\n}\n\n.kn_menu-head_mNecSG b {\n  font-weight: 600;\n}\n\n.kn_menu_mNecSG button[role=\"menuitem\"] {\n  text-align: left;\n  height: 40px;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_menu_mNecSG button[role=\"menuitem\"]:hover, .kn_menu_mNecSG button[role=\"menuitem\"]:focus-visible {\n  background: var(--sunken);\n}\n\n.kn_me_mNecSG {\n  grid-template-columns: 200px minmax(0, 1fr);\n  align-items: start;\n  gap: 32px;\n  display: grid;\n}\n\n.kn_me-nav_mNecSG {\n  top: calc(env(safe-area-inset-top, 0px) + 84px);\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_me-nav_mNecSG button {\n  text-align: left;\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_me-nav_mNecSG button[aria-current=\"page\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_me-body_mNecSG {\n  flex-direction: column;\n  gap: 28px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_facts_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_fact_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_fact_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_fact_mNecSG p {\n  font-size: 15px;\n}\n\n.kn_fact_mNecSG .kn_src_mNecSG {\n  color: var(--muted);\n  grid-column: 1;\n  font-size: 13px;\n}\n\n.kn_fact_mNecSG .kn_fact-acts_mNecSG {\n  grid-area: 1 / 2 / span 2;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_list-card_mNecSG {\n  padding: 4px 16px;\n}\n\n.kn_conn_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 36px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 12px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_conn_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_conn_mNecSG .kn_logo_mNecSG {\n  color: #fff;\n  border-radius: 10px;\n  grid-row: 1 / span 2;\n  justify-content: center;\n  align-items: center;\n  width: 36px;\n  height: 36px;\n  font-size: 14px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_conn_mNecSG b {\n  align-items: center;\n  gap: 6px;\n  font-weight: 600;\n  display: inline-flex;\n}\n\n.kn_info_mNecSG {\n  border: 1px solid var(--muted);\n  width: 18px;\n  height: 18px;\n  color: var(--muted);\n  background: none;\n  border-radius: 50%;\n  padding: 0;\n  font: italic 600 11px / 1 Georgia, serif;\n}\n\n.kn_info_mNecSG[aria-expanded=\"true\"] {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n\n.kn_conn_mNecSG .kn_hint_mNecSG {\n  background: var(--sunken);\n  color: var(--ink2);\n  border-radius: 8px;\n  grid-column: 2 / -1;\n  margin: 6px 0 0;\n  padding: 8px 10px;\n  font-size: 13px;\n}\n\n.kn_conn_mNecSG .kn_small_mNecSG {\n  grid-column: 2;\n}\n\n.kn_conn_mNecSG > :last-child {\n  grid-area: 1 / 3 / span 2;\n}\n\n.kn_switch-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 16px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_switch-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_switch-row_mNecSG label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_auto-ctl_mNecSG {\n  align-items: center;\n  gap: 12px;\n  display: flex;\n}\n\n.kn_time_mNecSG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 36px;\n  color: var(--ink);\n  font-variant-numeric: tabular-nums;\n  border-radius: 8px;\n  padding: 0 10px;\n  font-size: 15px;\n}\n\n.kn_time_mNecSG:disabled {\n  opacity: .45;\n}\n\n.kn_switch_mNecSG {\n  flex: none;\n  width: 44px;\n  height: 26px;\n  position: relative;\n}\n\n.kn_switch_mNecSG input {\n  opacity: 0;\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_mNecSG i {\n  background: var(--control);\n  box-shadow: inset 0 0 0 1px var(--line);\n  pointer-events: none;\n  border-radius: 13px;\n  transition: background .15s;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_mNecSG i:after {\n  content: \"\";\n  background: #fff;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  transition: transform .15s;\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  box-shadow: 0 1px 2px #00000040;\n}\n\n.kn_switch_mNecSG input:checked + i {\n  background: var(--health);\n}\n\n.kn_switch_mNecSG input:checked + i:after {\n  transform: translateX(18px);\n}\n\n.kn_switch_mNecSG input:focus-visible + i {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n@media (width <= 760px) {\n  .kn_me_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n    gap: 16px;\n  }\n\n  .kn_me-nav_mNecSG {\n    flex-flow: wrap;\n    position: static;\n  }\n\n  .kn_me-nav_mNecSG button {\n    text-align: center;\n    flex: auto;\n  }\n}\n\n.kn_chat_mNecSG {\n  grid-template-columns: 236px minmax(0, 1fr);\n  height: calc(100dvh - 118px);\n  min-height: 560px;\n  display: grid;\n}\n\n.kn_threads_mNecSG {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 16px 12px 16px 0;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_threads_mNecSG h2 {\n  color: var(--muted);\n  letter-spacing: .06em;\n  padding: 14px 10px 4px;\n  font-size: 12px;\n  font-weight: 600;\n}\n\n.kn_thread_mNecSG {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 8px 10px;\n  font-size: 14px;\n  display: block;\n  overflow: hidden;\n}\n\n.kn_thread_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_thread_mNecSG[aria-current=\"true\"] {\n  background: var(--control);\n  font-weight: 600;\n}\n\n.kn_new-thread_mNecSG {\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 6px;\n  font-weight: 500;\n  display: flex;\n}\n\n.kn_convo_mNecSG {\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_msgs_mNecSG {\n  flex-direction: column;\n  flex: auto;\n  gap: 14px;\n  min-height: 0;\n  padding: 28px max(16px, 7%);\n  display: flex;\n  overflow: auto;\n  -webkit-mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n  mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n}\n\n.kn_msg-user_mNecSG {\n  background: var(--ask);\n  overflow-wrap: anywhere;\n  border-radius: 18px;\n  align-self: flex-end;\n  max-width: min(78%, 560px);\n  padding: 10px 16px;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\n.kn_msg-ai_mNecSG {\n  flex-direction: column;\n  gap: 10px;\n  max-width: 680px;\n  font-size: 16px;\n  line-height: 1.7;\n  display: flex;\n}\n\n.kn_msg-ai_mNecSG ul {\n  flex-direction: column;\n  gap: 4px;\n  margin: 0;\n  padding-left: 1.2em;\n  display: flex;\n}\n\n.kn_tool_mNecSG {\n  background: var(--sunken);\n  max-width: 100%;\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 10px;\n  align-self: flex-start;\n  font-size: 14px;\n}\n\n.kn_tool_mNecSG summary {\n  cursor: pointer;\n  align-items: center;\n  gap: 10px;\n  padding: 8px 12px;\n  list-style: none;\n  display: flex;\n}\n\n.kn_tool_mNecSG summary::-webkit-details-marker {\n  display: none;\n}\n\n.kn_tool_mNecSG summary:after {\n  content: \"\";\n  border-right: 1.5px solid var(--muted);\n  border-bottom: 1.5px solid var(--muted);\n  width: 7px;\n  height: 7px;\n  margin-left: 6px;\n  transition: transform .12s;\n  transform: rotate(-45deg);\n}\n\n.kn_tool_mNecSG[open] summary:after {\n  transform: rotate(45deg);\n}\n\n.kn_tool_mNecSG pre {\n  color: var(--muted);\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n  margin: 0;\n  padding: 0 12px 10px 34px;\n  font: 13px / 1.6 ui-monospace, SF Mono, Menlo, monospace;\n}\n\n.kn_st-dot_mNecSG {\n  background: var(--health);\n  border-radius: 50%;\n  flex: none;\n  width: 8px;\n  height: 8px;\n}\n\n.kn_st-dot_mNecSG.kn_run_mNecSG {\n  background: var(--explore);\n}\n\n.kn_thinking_mNecSG {\n  color: var(--muted);\n  align-self: flex-start;\n  font-size: 15px;\n}\n\n.kn_acts_mNecSG {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_act_mNecSG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 34px;\n  color: var(--ink);\n  border-radius: 17px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_act_mNecSG:hover {\n  border-color: var(--muted);\n}\n\n.kn_welcome-chat_mNecSG {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 18px;\n  max-width: 680px;\n  margin: auto 0;\n  display: flex;\n}\n\n.kn_welcome-chat_mNecSG h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_suggest_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 10px;\n  width: 100%;\n  display: grid;\n}\n\n.kn_suggest_mNecSG button {\n  text-align: left;\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 12px;\n  padding: 12px 14px;\n  font-size: 14px;\n}\n\n.kn_suggest_mNecSG button:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  color: var(--ink);\n}\n\n.kn_composer_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 6px;\n  margin: 0 max(16px, 7%) 18px;\n  padding: 12px 12px 10px 16px;\n  display: flex;\n}\n\n.kn_composer_mNecSG:focus-within {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1.5px var(--explore);\n}\n\n.kn_composer_mNecSG textarea {\n  resize: none;\n  width: 100%;\n  min-height: 48px;\n  max-height: 200px;\n  font: inherit;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  outline: none;\n  padding: 4px 0;\n  font-size: 16px;\n  line-height: 1.5;\n}\n\n.kn_composer_mNecSG textarea::placeholder {\n  color: var(--muted);\n}\n\n.kn_c-row_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_c-btn_mNecSG {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_c-btn_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_send_mNecSG {\n  background: var(--strong);\n  width: 36px;\n  height: 36px;\n  color: var(--on-strong);\n  border: 0;\n  border-radius: 50%;\n  justify-content: center;\n  align-items: center;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_send_mNecSG:disabled {\n  opacity: .35;\n  cursor: default;\n}\n\n.kn_mode-wrap_mNecSG {\n  position: relative;\n}\n\n.kn_c-btn_mNecSG.kn_is-full_mNecSG {\n  color: var(--news-ink);\n  background: var(--news-tint);\n}\n\n.kn_mode-pop_mNecSG {\n  z-index: 6;\n  background: var(--surface);\n  width: min(340px, 80vw);\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  text-align: left;\n  border-radius: 14px;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px;\n  display: flex;\n  position: absolute;\n  bottom: calc(100% + 8px);\n  left: 0;\n}\n\n.kn_mode-pop_mNecSG > b {\n  padding: 4px 4px 0;\n  font-weight: 600;\n}\n\n.kn_mode-pop_mNecSG > p {\n  padding: 0 4px;\n}\n\n.kn_mode-opt_mNecSG {\n  text-align: left;\n  background: none;\n  border: 1.5px solid #0000;\n  border-radius: 10px;\n  flex-direction: column;\n  gap: 2px;\n  padding: 10px 12px;\n  display: flex;\n}\n\n.kn_mode-opt_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_mode-opt_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_mode-opt_mNecSG b {\n  font-size: 15px;\n  font-weight: 600;\n}\n\n.kn_mode-opt_mNecSG span {\n  color: var(--ink2);\n  font-size: 13px;\n}\n\n.kn_c-note_mNecSG {\n  text-align: center;\n  color: var(--muted);\n  padding: 0 max(16px, 7%) 10px;\n  font-size: 12px;\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_st-dot_mNecSG.kn_run_mNecSG {\n    animation: 1.2s ease-in-out infinite kn_pulse_mNecSG;\n  }\n\n  @keyframes kn_pulse_mNecSG {\n    50% {\n      opacity: .35;\n    }\n  }\n\n  .kn_thinking_mNecSG span {\n    background: linear-gradient(105deg, var(--muted) 40%, var(--ink) 50%, var(--muted) 60%);\n    color: #0000;\n    background-size: 250% 100%;\n    -webkit-background-clip: text;\n    background-clip: text;\n    animation: 1.8s linear infinite kn_shine_mNecSG;\n  }\n\n  @keyframes kn_shine_mNecSG {\n    from {\n      background-position: 100% 0;\n    }\n\n    to {\n      background-position: -150% 0;\n    }\n  }\n}\n\n@media (width <= 760px) {\n  .kn_chat_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n    height: calc(100dvh - 150px);\n  }\n\n  .kn_threads_mNecSG {\n    display: none;\n  }\n\n  .kn_msgs_mNecSG, .kn_composer_mNecSG, .kn_c-note_mNecSG {\n    margin-left: 0;\n    margin-right: 0;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  .kn_composer_mNecSG {\n    padding-left: 14px;\n    padding-right: 10px;\n  }\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_scrim_mNecSG {\n    animation: .16s ease-out kn_fade_mNecSG;\n  }\n\n  @keyframes kn_fade_mNecSG {\n    from {\n      opacity: 0;\n    }\n\n    to {\n      opacity: 1;\n    }\n  }\n}\n\n.kn_app_mNecSG {\n  --kt-canvas: var(--bg);\n  --kt-subtle: var(--sunken);\n  --kt-control: var(--control);\n  --kt-card: var(--surface);\n  --kt-text: var(--ink);\n  --kt-secondary: var(--ink2);\n  --kt-muted: var(--muted);\n  --kt-faint: var(--muted);\n  --kt-primary: var(--primary);\n  --kt-on-primary: var(--on-primary);\n  --kt-link: var(--link);\n  --kt-accent: var(--explore);\n  --kt-health: var(--health);\n  --kt-health-tint: var(--health-tint);\n  --kt-health-ink: var(--health-ink);\n  --kt-projects: var(--doing);\n  --kt-projects-tint: var(--doing-tint);\n  --kt-projects-ink: var(--doing-ink);\n  --kt-map: var(--explore);\n  --kt-map-tint: var(--explore-tint);\n  --kt-map-ink: var(--explore-ink);\n  --kt-feed: var(--news);\n  --kt-feed-tint: var(--news-tint);\n  --kt-feed-ink: var(--news-ink);\n  --kt-finance: var(--finance);\n  --kt-finance-tint: var(--finance-tint);\n  --kt-finance-ink: var(--finance-ink);\n  --kt-me: var(--me);\n  --kt-me-tint: var(--ask);\n  --kt-me-ink: var(--ink2);\n  --kt-today: var(--ink);\n  --kt-today-tint: var(--control);\n  --kt-today-ink: var(--ink2);\n  --kt-project-slot: var(--doing-tint);\n  --kt-target: var(--health);\n  --kt-estimate: var(--health);\n  --kt-shadow: 0 0 0 1px var(--line);\n  scrollbar-gutter: stable;\n  height: 100%;\n  overflow: auto;\n  container-type: inline-size;\n}\n\n.kn_app_mNecSG [hidden] {\n  display: none !important;\n}\n\n.kn_app_mNecSG button:disabled {\n  opacity: .55;\n  cursor: default;\n}\n\n.kn_app_mNecSG textarea, .kn_app_mNecSG select {\n  font: inherit;\n  color: inherit;\n  background: var(--surface);\n}\n\n.kn_app_mNecSG :focus-visible {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n.kn_content_mNecSG {\n  width: 100%;\n}\n\n.kn_top_mNecSG {\n  padding-left: max(16px, var(--dsh-frame-leading-clearance, 0px));\n}\n\n.kn_brand_mNecSG svg {\n  color: var(--ink);\n}\n\n.kn_avatar_mNecSG {\n  padding: 0;\n  overflow: hidden;\n}\n\n.kn_avatar_mNecSG img {\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n\n.kn_account_mNecSG {\n  position: relative;\n}\n\n.kn_menu_mNecSG {\n  top: 48px;\n  right: 0;\n}\n\n.kn_link_mNecSG {\n  color: var(--link);\n  text-align: start;\n  background: none;\n  border: 0;\n  padding: 0;\n  font-weight: 500;\n}\n\n.kn_summaryButton_mNecSG {\n  text-align: start;\n  cursor: pointer;\n  border: 0;\n}\n\n.kn_error_mNecSG {\n  background: var(--news-tint);\n  border-radius: var(--radius);\n  padding: 14px 18px;\n}\n\n.kn_emptyState_mNecSG {\n  color: var(--muted);\n  padding: 20px;\n}\n\n.kn_detailBody_mNecSG {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_child_mNecSG {\n  min-width: 0;\n}\n\n.kn_child_mNecSG > div > header h1 {\n  font-size: 22px;\n}\n\n.kn_paletteDot_mNecSG {\n  background: var(--explore);\n}\n\n.kn_financeMetric_mNecSG {\n  flex-direction: column;\n  gap: 4px;\n  display: flex;\n}\n\n.kn_calendarShell_mNecSG {\n  min-width: 0;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-header-toolbar\"] {\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-toolbar-title\"] {\n  font-size: 18px;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-event\"][class~=\"suggestion\"] {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n@media (width <= 760px) {\n  .kn_calendarShell_mNecSG [class~=\"fc-toolbar-chunk\"] {\n    flex-wrap: wrap;\n    gap: 4px;\n    display: flex;\n  }\n\n  .kn_calendarShell_mNecSG [class~=\"fc-button\"] {\n    padding: 6px 8px;\n  }\n}\n\n.kn_app_mNecSG .kn_calendarShell_mNecSG button[class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 9px;\n  height: 36px;\n}\n\n.kn_app_mNecSG .kn_calendarShell_mNecSG button[class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--surface);\n  color: var(--ink);\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n@media (width <= 760px) {\n  .kn_mods_mNecSG {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n}\n\n@media (width <= 460px) {\n  .kn_mods_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n.kn_mode-pop_mNecSG {\n  color: var(--ink);\n  border: 0;\n  margin: 0;\n}\n\n.kn_askContent_mNecSG {\n  gap: 0;\n  max-width: 1240px;\n  padding-block: 0;\n}\n\n.kn_wrap_GZZZGa {\n  max-width: 1120px;\n  color: var(--ink);\n  font: 15px / 1.6 var(--font);\n  margin: auto;\n  padding: 28px;\n}\n\n.kn_wrap_GZZZGa h1 {\n  margin: 0;\n  font-size: 28px;\n}\n\n.kn_wrap_GZZZGa h2 {\n  font-size: 18px;\n}\n\n.kn_wrap_GZZZGa h3 {\n  font-size: 16px;\n}\n\n.kn_wrap_GZZZGa button, .kn_wrap_GZZZGa input, .kn_wrap_GZZZGa select, .kn_wrap_GZZZGa textarea {\n  font: inherit;\n}\n\n.kn_wrap_GZZZGa input, .kn_wrap_GZZZGa select, .kn_wrap_GZZZGa textarea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  color: var(--ink);\n  border-radius: 7px;\n  min-width: 0;\n  padding: 7px;\n}\n\n.kn_wrap_GZZZGa textarea {\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 85px;\n}\n\n.kn_wrap_GZZZGa label {\n  gap: 4px;\n  display: grid;\n}\n\n.kn_grid_GZZZGa {\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n  display: grid;\n}\n\n.kn_stack_GZZZGa {\n  gap: 14px;\n  display: grid;\n}\n\n.kn_actions_GZZZGa {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 9px;\n  display: flex;\n}\n\n.kn_muted_GZZZGa {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_table_GZZZGa {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.kn_table_GZZZGa th, .kn_table_GZZZGa td {\n  text-align: left;\n  border-bottom: 1px solid var(--line);\n  vertical-align: top;\n  padding: 9px;\n}\n\n.kn_table_GZZZGa th {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_scroll_GZZZGa {\n  overflow: auto;\n}\n\n.kn_quote_GZZZGa {\n  white-space: pre-wrap;\n  background: var(--sunken);\n  border-radius: 8px;\n  max-height: 240px;\n  padding: 15px;\n  overflow: auto;\n}\n\n.kn_card_GZZZGa {\n  border: 1px solid var(--line);\n  border-radius: var(--radius);\n  background: var(--surface);\n  padding: 18px;\n}\n\n.kn_warn_GZZZGa {\n  color: var(--news-ink);\n  background: var(--news-tint);\n  border-radius: 8px;\n  padding: 10px;\n}\n\n.kn_check_GZZZGa {\n  align-items: center;\n  gap: 7px;\n  display: flex !important;\n}\n\n.kn_wrap_GZZZGa a {\n  color: var(--link);\n}\n\n.kn_diff_GZZZGa {\n  grid-template-columns: 1fr 1fr;\n  gap: 10px;\n  display: grid;\n}\n\n.kn_diff_GZZZGa pre {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_selected_GZZZGa {\n  background: var(--doing-tint);\n}\n\n@media (width <= 760px) {\n  .kn_grid_GZZZGa, .kn_diff_GZZZGa {\n    grid-template-columns: 1fr;\n  }\n\n  .kn_wrap_GZZZGa {\n    padding: 15px;\n  }\n\n  .kn_table_GZZZGa td {\n    min-width: 100px;\n  }\n}\n\n.kn_start_GZZZGa h2 {\n  margin: 0;\n}\n\n.kn_start_GZZZGa form {\n  gap: 10px;\n  display: grid;\n}\n\n.kn_start_GZZZGa textarea {\n  resize: vertical;\n  min-height: 100px;\n}\n\n.kn_shortcuts_GZZZGa {\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-top: 16px;\n  display: flex;\n}\n\n.kn_grid_GZZZGa {\n  align-items: start;\n}\n\n.kn_card_GZZZGa select {\n  max-width: 100%;\n}\n\n.kn_card_GZZZGa summary {\n  cursor: pointer;\n  font-weight: 600;\n}\n\n.kn_card_GZZZGa details, details.kn_card_GZZZGa label {\n  margin-top: 12px;\n}\n\n.kn_projectOpen_GZZZGa {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  cursor: pointer;\n  background: none;\n  border: 0;\n  padding: 0;\n  display: block;\n}\n\n.kn_actions_GZZZGa input {\n  flex: 1;\n}\n\n.kn_wrap_GZZZGa button:focus-visible {\n  outline: 2px solid var(--link);\n  outline-offset: 3px;\n}\n\n.kn_projectOpen_GZZZGa:hover {\n  color: var(--link);\n}\n\n.kn_projectOpen_GZZZGa:active {\n  transform: translateY(1px);\n}\n\n.kn_wrap_GZZZGa button:disabled {\n  opacity: .5;\n  cursor: default;\n}\n\n.kn_folderPicker_GZZZGa {\n  border: 1px solid var(--line);\n  background: var(--sunken);\n  border-radius: 8px;\n  padding: 16px;\n}\n\n.kn_folderList_GZZZGa {\n  gap: 6px;\n  max-height: 260px;\n  margin-bottom: 14px;\n  display: grid;\n  overflow: auto;\n}\n\n.kn_folderList_GZZZGa button {\n  text-align: left;\n}\n\n.kn_folderPicker_GZZZGa .kn_actions_GZZZGa {\n  flex-wrap: wrap;\n}\n\n.kn_shell_eRVxzq {\n  color: var(--ink);\n  font: 14px / 1.6 var(--font);\n  box-sizing: border-box;\n  flex-direction: column;\n  height: 100dvh;\n  min-height: 0;\n  padding: 16px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_shell_eRVxzq button, .kn_shell_eRVxzq select, .kn_shell_eRVxzq textarea {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_shell_eRVxzq button, .kn_shell_eRVxzq select {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 7px 11px;\n}\n\n.kn_shell_eRVxzq button:disabled {\n  opacity: .45;\n  cursor: default;\n}\n\n.kn_header_eRVxzq {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px;\n  padding: 0 8px 14px;\n  display: flex;\n}\n\n.kn_header_eRVxzq > div {\n  flex: 1;\n}\n\n.kn_header_eRVxzq h1 {\n  margin: 0;\n  font-size: 23px;\n}\n\n.kn_shell_eRVxzq small {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_columns_eRVxzq {\n  flex: 1;\n  min-width: 0;\n  min-height: 0;\n}\n\n.kn_pane_eRVxzq {\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_pane_eRVxzq > * {\n  box-sizing: border-box;\n  flex: 1;\n  min-width: 0;\n  min-height: 0;\n}\n\n.kn_separator_eRVxzq {\n  outline: none;\n  flex: 0 0 12px;\n  position: relative;\n}\n\n.kn_separator_eRVxzq:after {\n  content: \"\";\n  background: var(--line);\n  border-radius: 4px;\n  position: absolute;\n  inset: 5px;\n}\n\n.kn_separator_eRVxzq:hover:after, .kn_separator_eRVxzq:focus-visible:after, .kn_separator_eRVxzq:active:after {\n  background: #3478df;\n}\n\n.kn_separator_eRVxzq[aria-orientation=\"vertical\"] {\n  cursor: col-resize;\n  width: 12px;\n}\n\n.kn_separator_eRVxzq[aria-orientation=\"horizontal\"] {\n  cursor: row-resize;\n  height: 12px;\n}\n\n.kn_chapters_eRVxzq {\n  padding: 10px 6px;\n  overflow: auto;\n}\n\n.kn_shell_eRVxzq h2 {\n  margin: 4px 0 14px;\n  font-size: 15px;\n}\n\n.kn_chapters_eRVxzq button {\n  text-align: left;\n  overflow-wrap: anywhere;\n  background: none;\n  border-color: #0000;\n  width: 100%;\n  margin-bottom: 8px;\n  display: block;\n}\n\n.kn_chapters_eRVxzq small {\n  font-size: 11px;\n  display: block;\n}\n\n.kn_chapters_eRVxzq button[aria-current], .kn_tabs_eRVxzq button[aria-selected=\"true\"] {\n  color: #245db4;\n  background: #e8f1ff;\n}\n\n.kn_chapters_eRVxzq h2:not(:first-child) {\n  margin-top: 28px;\n}\n\n.kn_manuscript_eRVxzq {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_toolbar_eRVxzq {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 7px;\n  padding: 12px 16px;\n  display: flex;\n}\n\n.kn_toolbar_eRVxzq strong {\n  flex: 1;\n}\n\n.kn_toolbar_eRVxzq button {\n  font-size: 12px;\n}\n\n.kn_editorWrap_eRVxzq {\n  flex: 1;\n  min-height: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_cmHost_eRVxzq {\n  height: 100%;\n}\n\n.kn_selChatBtn_eRVxzq {\n  z-index: 5;\n  position: absolute;\n  background: #e8f1ff !important;\n}\n\n.kn_copyFlash_eRVxzq {\n  background: var(--surface);\n  padding: 6px;\n  position: absolute;\n  bottom: 15px;\n  left: 20px;\n}\n\n.kn_manuscript_eRVxzq footer {\n  color: var(--muted);\n  border-top: 1px solid var(--line);\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 16px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_assistant_eRVxzq {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 10px;\n  min-height: 0;\n  padding: 12px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_assistantHeader_eRVxzq {\n  flex-shrink: 0;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_assistantHeader_eRVxzq h2 {\n  margin: 0;\n}\n\n.kn_assistantHeader_eRVxzq button {\n  padding: 3px 8px;\n  font-size: 12px;\n}\n\n.kn_assistantTools_eRVxzq {\n  flex-direction: column;\n  flex-shrink: 0;\n  gap: 10px;\n  max-height: 45%;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_tabs_eRVxzq {\n  gap: 6px;\n  display: flex;\n}\n\n.kn_tabs_eRVxzq button {\n  flex: 1;\n}\n\n.kn_assistant_eRVxzq textarea {\n  box-sizing: border-box;\n  border: 1px solid var(--line);\n  background: var(--surface);\n  resize: vertical;\n  border-radius: 8px;\n  width: 100%;\n  min-height: 75px;\n  padding: 9px;\n}\n\n.kn_shell_eRVxzq .kn_primary_eRVxzq {\n  color: #fff;\n  background: #3478df;\n  border-color: #0000;\n}\n\n.kn_chat_eRVxzq {\n  flex-direction: column;\n  flex: 1;\n  min-height: 0;\n  display: flex;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_chat_eRVxzq > * {\n  flex: 1;\n  min-height: 0;\n}\n\n.kn_candidates_eRVxzq {\n  border-top: 1px solid var(--line);\n  flex-shrink: 0;\n  max-height: 35%;\n  padding-top: 10px;\n  overflow: auto;\n}\n\n.kn_candidates_eRVxzq summary {\n  cursor: pointer;\n}\n\n.kn_candidates_eRVxzq summary button {\n  margin-left: 10px;\n  padding: 2px 8px;\n}\n\n.kn_candidates_eRVxzq article {\n  border: 1px solid var(--line);\n  border-radius: 8px;\n  margin-top: 10px;\n  padding: 12px;\n}\n\n.kn_candidates_eRVxzq pre {\n  white-space: pre-wrap;\n  font: inherit;\n  max-height: 230px;\n  overflow: auto;\n}\n\n.kn_error_eRVxzq {\n  color: #853e12;\n  background: #fff0df;\n  margin-bottom: 10px;\n  padding: 10px;\n}\n\n.kn_hint_eRVxzq {\n  padding: 8px 16px;\n}\n\n.kn_reference_eRVxzq {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_reference_eRVxzq .kn_toolbar_eRVxzq select {\n  width: 100%;\n  min-width: 0;\n}\n\n.kn_reference_eRVxzq .kn_toolbar_eRVxzq {\n  min-width: 0;\n}\n\n.kn_shell_eRVxzq button:focus-visible, .kn_shell_eRVxzq select:focus-visible {\n  outline: 2px solid var(--link);\n  outline-offset: 2px;\n}\n\n.kn_referenceActions_eRVxzq {\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 12px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_referenceActions_eRVxzq button {\n  padding: 4px 8px;\n}\n";
 "use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -8,13 +8,13 @@ var __export = (target, all) => {
   for (var name2 in all)
     __defProp(target, name2, { get: all[name2], enumerable: true });
 };
-var __copyProps = (to, from, except, desc) => {
+var __copyProps = (to2, from, except, desc) => {
   if (from && typeof from === "object" || typeof from === "function") {
     for (let key of __getOwnPropNames(from))
-      if (!__hasOwnProp.call(to, key) && key !== except)
-        __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+      if (!__hasOwnProp.call(to2, key) && key !== except)
+        __defProp(to2, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
   }
-  return to;
+  return to2;
 };
 var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
@@ -26,7 +26,7 @@ __export(index_exports, {
 });
 module.exports = __toCommonJS(index_exports);
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
 var external_exports = {};
 __export(external_exports, {
   $brand: () => $brand,
@@ -269,7 +269,7 @@ __export(external_exports, {
   xor: () => xor
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js
 var core_exports2 = {};
 __export(core_exports2, {
   $ZodAny: () => $ZodAny,
@@ -548,7 +548,7 @@ __export(core_exports2, {
   version: () => version
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js
 var _a;
 var NEVER = /* @__PURE__ */ Object.freeze({
   status: "aborted"
@@ -589,8 +589,8 @@ function $constructor(name2, initializer3, params) {
     const inst = params?.Parent ? new Definition() : this;
     init(inst, def);
     (_a4 = inst._zod).deferred ?? (_a4.deferred = []);
-    for (const fn of inst._zod.deferred) {
-      fn();
+    for (const fn2 of inst._zod.deferred) {
+      fn2();
     }
     return inst;
   }
@@ -625,7 +625,7 @@ function config(newConfig) {
   return globalConfig;
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js
 var util_exports = {};
 __export(util_exports, {
   BIGINT_FORMAT_RANGES: () => BIGINT_FORMAT_RANGES,
@@ -1321,7 +1321,7 @@ var Class = class {
   }
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js
 var initializer = (inst, def) => {
   inst.name = "$ZodError";
   Object.defineProperty(inst, "_zod", {
@@ -1460,7 +1460,7 @@ function prettifyError(error51) {
   return lines.join("\n");
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js
 var _parse = (_Err) => (schema, value, _ctx, _params) => {
   const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
   const result = schema._zod.run({ value, issues: [] }, ctx);
@@ -1548,7 +1548,7 @@ var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
 };
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync($ZodRealError);
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js
 var regexes_exports = {};
 __export(regexes_exports, {
   base64: () => base64,
@@ -1707,7 +1707,7 @@ var sha512_hex = /^[0-9a-fA-F]{128}$/;
 var sha512_base64 = /* @__PURE__ */ fixedBase64(86, "==");
 var sha512_base64url = /* @__PURE__ */ fixedBase64url(86);
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
   var _a4;
   inst._zod ?? (inst._zod = {});
@@ -2255,7 +2255,7 @@ var $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (ins
   };
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js
 var Doc = class {
   constructor(args = []) {
     this.content = [];
@@ -2263,9 +2263,9 @@ var Doc = class {
     if (this)
       this.args = args;
   }
-  indented(fn) {
+  indented(fn2) {
     this.indent += 1;
-    fn(this);
+    fn2(this);
     this.indent -= 1;
   }
   write(arg) {
@@ -2291,14 +2291,14 @@ var Doc = class {
   }
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js
 var version = {
   major: 4,
   minor: 4,
   patch: 3
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   var _a4;
   inst ?? (inst = {});
@@ -2310,8 +2310,8 @@ var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
     checks.unshift(inst);
   }
   for (const ch of checks) {
-    for (const fn of ch._zod.onattach) {
-      fn(inst);
+    for (const fn2 of ch._zod.onattach) {
+      fn2(inst);
     }
   }
   if (checks.length === 0) {
@@ -3193,8 +3193,8 @@ var $ZodObjectJIT = /* @__PURE__ */ $constructor("$ZodObjectJIT", (inst, def) =>
     }
     doc2.write(`payload.value = newResult;`);
     doc2.write(`return payload;`);
-    const fn = doc2.compile();
-    return (payload, ctx) => fn(shape, payload, ctx);
+    const fn2 = doc2.compile();
+    return (payload, ctx) => fn2(shape, payload, ctx);
   };
   let fastpass;
   const isObject2 = isObject;
@@ -4391,7 +4391,7 @@ function handleRefineResult(result, payload, input, inst) {
   }
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js
 var locales_exports = {};
 __export(locales_exports, {
   ar: () => ar_default,
@@ -4448,7 +4448,7 @@ __export(locales_exports, {
   zhTW: () => zh_TW_default
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js
 var error = () => {
   const Sizable = {
     string: { unit: "\u062D\u0631\u0641", verb: "\u0623\u0646 \u064A\u062D\u0648\u064A" },
@@ -4555,7 +4555,7 @@ function ar_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js
 var error2 = () => {
   const Sizable = {
     string: { unit: "simvol", verb: "olmal\u0131d\u0131r" },
@@ -4661,7 +4661,7 @@ function az_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js
 function getBelarusianPlural(count2, one, few, many) {
   const absCount = Math.abs(count2);
   const lastDigit = absCount % 10;
@@ -4818,7 +4818,7 @@ function be_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js
 var error4 = () => {
   const Sizable = {
     string: { unit: "\u0441\u0438\u043C\u0432\u043E\u043B\u0430", verb: "\u0434\u0430 \u0441\u044A\u0434\u044A\u0440\u0436\u0430" },
@@ -4939,7 +4939,7 @@ function bg_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js
 var error5 = () => {
   const Sizable = {
     string: { unit: "car\xE0cters", verb: "contenir" },
@@ -5048,7 +5048,7 @@ function ca_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js
 var error6 = () => {
   const Sizable = {
     string: { unit: "znak\u016F", verb: "m\xEDt" },
@@ -5160,7 +5160,7 @@ function cs_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js
 var error7 = () => {
   const Sizable = {
     string: { unit: "tegn", verb: "havde" },
@@ -5276,7 +5276,7 @@ function da_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js
 var error8 = () => {
   const Sizable = {
     string: { unit: "Zeichen", verb: "zu haben" },
@@ -5385,7 +5385,7 @@ function de_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js
 var error9 = () => {
   const Sizable = {
     string: { unit: "\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03B5\u03C2", verb: "\u03BD\u03B1 \u03AD\u03C7\u03B5\u03B9" },
@@ -5495,7 +5495,7 @@ function el_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js
 var error10 = () => {
   const Sizable = {
     string: { unit: "characters", verb: "to have" },
@@ -5608,7 +5608,7 @@ function en_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js
 var error11 = () => {
   const Sizable = {
     string: { unit: "karaktrojn", verb: "havi" },
@@ -5718,7 +5718,7 @@ function eo_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js
 var error12 = () => {
   const Sizable = {
     string: { unit: "caracteres", verb: "tener" },
@@ -5851,7 +5851,7 @@ function es_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js
 var error13 = () => {
   const Sizable = {
     string: { unit: "\u06A9\u0627\u0631\u0627\u06A9\u062A\u0631", verb: "\u062F\u0627\u0634\u062A\u0647 \u0628\u0627\u0634\u062F" },
@@ -5966,7 +5966,7 @@ function fa_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js
 var error14 = () => {
   const Sizable = {
     string: { unit: "merkki\xE4", subject: "merkkijonon" },
@@ -6079,7 +6079,7 @@ function fi_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js
 var error15 = () => {
   const Sizable = {
     string: { unit: "caract\xE8res", verb: "avoir" },
@@ -6205,7 +6205,7 @@ function fr_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js
 var error16 = () => {
   const Sizable = {
     string: { unit: "caract\xE8res", verb: "avoir" },
@@ -6313,7 +6313,7 @@ function fr_CA_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js
 var error17 = () => {
   const TypeNames = {
     string: { label: "\u05DE\u05D7\u05E8\u05D5\u05D6\u05EA", gender: "f" },
@@ -6508,7 +6508,7 @@ function he_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js
 var error18 = () => {
   const Sizable = {
     string: { unit: "znakova", verb: "imati" },
@@ -6631,7 +6631,7 @@ function hr_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js
 var error19 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "legyen" },
@@ -6740,7 +6740,7 @@ function hu_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js
 function getArmenianPlural(count2, one, many) {
   return Math.abs(count2) === 1 ? one : many;
 }
@@ -6888,7 +6888,7 @@ function hy_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js
 var error21 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "memiliki" },
@@ -6995,7 +6995,7 @@ function id_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js
 var error22 = () => {
   const Sizable = {
     string: { unit: "stafi", verb: "a\xF0 hafa" },
@@ -7105,7 +7105,7 @@ function is_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js
 var error23 = () => {
   const Sizable = {
     string: { unit: "caratteri", verb: "avere" },
@@ -7214,7 +7214,7 @@ function it_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js
 var error24 = () => {
   const Sizable = {
     string: { unit: "\u6587\u5B57", verb: "\u3067\u3042\u308B" },
@@ -7322,7 +7322,7 @@ function ja_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js
 var error25 = () => {
   const Sizable = {
     string: { unit: "\u10E1\u10D8\u10DB\u10D1\u10DD\u10DA\u10DD", verb: "\u10E3\u10DC\u10D3\u10D0 \u10E8\u10D4\u10D8\u10EA\u10D0\u10D5\u10D3\u10D4\u10E1" },
@@ -7435,7 +7435,7 @@ function ka_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js
 var error26 = () => {
   const Sizable = {
     string: { unit: "\u178F\u17BD\u17A2\u1780\u17D2\u179F\u179A", verb: "\u1782\u17BD\u179A\u1798\u17B6\u1793" },
@@ -7546,12 +7546,12 @@ function km_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js
 function kh_default() {
   return km_default();
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js
 var error27 = () => {
   const Sizable = {
     string: { unit: "\uBB38\uC790", verb: "to have" },
@@ -7663,7 +7663,7 @@ function ko_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js
 var capitalizeFirstCharacter = (text) => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
@@ -7867,7 +7867,7 @@ function lt_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js
 var error29 = () => {
   const Sizable = {
     string: { unit: "\u0437\u043D\u0430\u0446\u0438", verb: "\u0434\u0430 \u0438\u043C\u0430\u0430\u0442" },
@@ -7977,7 +7977,7 @@ function mk_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js
 var error30 = () => {
   const Sizable = {
     string: { unit: "aksara", verb: "mempunyai" },
@@ -8085,7 +8085,7 @@ function ms_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js
 var error31 = () => {
   const Sizable = {
     string: { unit: "tekens", verb: "heeft" },
@@ -8196,7 +8196,7 @@ function nl_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js
 var error32 = () => {
   const Sizable = {
     string: { unit: "tegn", verb: "\xE5 ha" },
@@ -8305,7 +8305,7 @@ function no_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js
 var error33 = () => {
   const Sizable = {
     string: { unit: "harf", verb: "olmal\u0131d\u0131r" },
@@ -8415,7 +8415,7 @@ function ota_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js
 var error34 = () => {
   const Sizable = {
     string: { unit: "\u062A\u0648\u06A9\u064A", verb: "\u0648\u0644\u0631\u064A" },
@@ -8530,7 +8530,7 @@ function ps_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js
 var error35 = () => {
   const Sizable = {
     string: { unit: "znak\xF3w", verb: "mie\u0107" },
@@ -8640,7 +8640,7 @@ function pl_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js
 var error36 = () => {
   const Sizable = {
     string: { unit: "caracteres", verb: "ter" },
@@ -8749,7 +8749,7 @@ function pt_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js
 var error37 = () => {
   const Sizable = {
     string: { unit: "caractere", verb: "s\u0103 aib\u0103" },
@@ -8869,7 +8869,7 @@ function ro_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js
 function getRussianPlural(count2, one, few, many) {
   const absCount = Math.abs(count2);
   const lastDigit = absCount % 10;
@@ -9026,7 +9026,7 @@ function ru_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js
 var error39 = () => {
   const Sizable = {
     string: { unit: "znakov", verb: "imeti" },
@@ -9136,7 +9136,7 @@ function sl_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js
 var error40 = () => {
   const Sizable = {
     string: { unit: "tecken", verb: "att ha" },
@@ -9247,7 +9247,7 @@ function sv_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js
 var error41 = () => {
   const Sizable = {
     string: { unit: "\u0B8E\u0BB4\u0BC1\u0BA4\u0BCD\u0BA4\u0BC1\u0B95\u0BCD\u0B95\u0BB3\u0BCD", verb: "\u0B95\u0BCA\u0BA3\u0BCD\u0B9F\u0BBF\u0BB0\u0BC1\u0B95\u0BCD\u0B95 \u0BB5\u0BC7\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD" },
@@ -9358,7 +9358,7 @@ function ta_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js
 var error42 = () => {
   const Sizable = {
     string: { unit: "\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23", verb: "\u0E04\u0E27\u0E23\u0E21\u0E35" },
@@ -9469,7 +9469,7 @@ function th_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js
 var error43 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "olmal\u0131" },
@@ -9575,7 +9575,7 @@ function tr_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js
 var error44 = () => {
   const Sizable = {
     string: { unit: "\u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432", verb: "\u043C\u0430\u0442\u0438\u043C\u0435" },
@@ -9684,12 +9684,12 @@ function uk_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js
 function ua_default() {
   return uk_default();
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js
 var error45 = () => {
   const Sizable = {
     string: { unit: "\u062D\u0631\u0648\u0641", verb: "\u06C1\u0648\u0646\u0627" },
@@ -9800,7 +9800,7 @@ function ur_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js
 var error46 = () => {
   const Sizable = {
     string: { unit: "belgi", verb: "bo\u2018lishi kerak" },
@@ -9911,7 +9911,7 @@ function uz_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js
 var error47 = () => {
   const Sizable = {
     string: { unit: "k\xFD t\u1EF1", verb: "c\xF3" },
@@ -10020,7 +10020,7 @@ function vi_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js
 var error48 = () => {
   const Sizable = {
     string: { unit: "\u5B57\u7B26", verb: "\u5305\u542B" },
@@ -10130,7 +10130,7 @@ function zh_CN_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js
 var error49 = () => {
   const Sizable = {
     string: { unit: "\u5B57\u5143", verb: "\u64C1\u6709" },
@@ -10238,7 +10238,7 @@ function zh_TW_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js
 var error50 = () => {
   const Sizable = {
     string: { unit: "\xE0mi", verb: "n\xED" },
@@ -10346,7 +10346,7 @@ function yo_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js
 var _a2;
 var $output = /* @__PURE__ */ Symbol("ZodOutput");
 var $input = /* @__PURE__ */ Symbol("ZodInput");
@@ -10396,7 +10396,7 @@ function registry() {
 (_a2 = globalThis).__zod_globalRegistry ?? (_a2.__zod_globalRegistry = registry());
 var globalRegistry = globalThis.__zod_globalRegistry;
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js
 // @__NO_SIDE_EFFECTS__
 function _string(Class2, params) {
   return new Class2({
@@ -11198,10 +11198,10 @@ function _file(Class2, params) {
   });
 }
 // @__NO_SIDE_EFFECTS__
-function _transform(Class2, fn) {
+function _transform(Class2, fn2) {
   return new Class2({
     type: "transform",
-    transform: fn
+    transform: fn2
   });
 }
 // @__NO_SIDE_EFFECTS__
@@ -11289,29 +11289,29 @@ function _promise(Class2, innerType) {
   });
 }
 // @__NO_SIDE_EFFECTS__
-function _custom(Class2, fn, _params) {
+function _custom(Class2, fn2, _params) {
   const norm = normalizeParams(_params);
   norm.abort ?? (norm.abort = true);
   const schema = new Class2({
     type: "custom",
     check: "custom",
-    fn,
+    fn: fn2,
     ...norm
   });
   return schema;
 }
 // @__NO_SIDE_EFFECTS__
-function _refine(Class2, fn, _params) {
+function _refine(Class2, fn2, _params) {
   const schema = new Class2({
     type: "custom",
     check: "custom",
-    fn,
+    fn: fn2,
     ...normalizeParams(_params)
   });
   return schema;
 }
 // @__NO_SIDE_EFFECTS__
-function _superRefine(fn, params) {
+function _superRefine(fn2, params) {
   const ch = /* @__PURE__ */ _check((payload) => {
     payload.addIssue = (issue2) => {
       if (typeof issue2 === "string") {
@@ -11327,17 +11327,17 @@ function _superRefine(fn, params) {
         payload.issues.push(issue(_issue));
       }
     };
-    return fn(payload.value, payload);
+    return fn2(payload.value, payload);
   }, params);
   return ch;
 }
 // @__NO_SIDE_EFFECTS__
-function _check(fn, params) {
+function _check(fn2, params) {
   const ch = new $ZodCheck({
     check: "custom",
     ...normalizeParams(params)
   });
-  ch._zod.check = fn;
+  ch._zod.check = fn2;
   return ch;
 }
 // @__NO_SIDE_EFFECTS__
@@ -11435,7 +11435,7 @@ function _stringFormat(Class2, format, fnOrRegex, _params = {}) {
   return inst;
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js
 function initializeContext(params) {
   let target = params?.target ?? "draft-2020-12";
   if (target === "draft-4")
@@ -11786,15 +11786,15 @@ var createToJSONSchemaMethod = (schema, processors = {}) => (params) => {
   extractDefs(ctx, schema);
   return finalize(ctx, schema);
 };
-var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) => {
+var createStandardJSONSchemaMethod = (schema, io2, processors = {}) => (params) => {
   const { libraryOptions, target } = params ?? {};
-  const ctx = initializeContext({ ...libraryOptions ?? {}, target, io, processors });
+  const ctx = initializeContext({ ...libraryOptions ?? {}, target, io: io2, processors });
   process2(schema, ctx);
   extractDefs(ctx, schema);
   return finalize(ctx, schema);
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js
 var formatMap = {
   guid: "uuid",
   url: "uri",
@@ -12338,7 +12338,7 @@ function toJSONSchema(input, params) {
   return finalize(ctx, input);
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js
 var JSONSchemaGenerator = class {
   /** @deprecated Access via ctx instead */
   get metadataRegistry() {
@@ -12413,10 +12413,10 @@ var JSONSchemaGenerator = class {
   }
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js
 var json_schema_exports = {};
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
 var schemas_exports2 = {};
 __export(schemas_exports2, {
   ZodAny: () => ZodAny,
@@ -12587,7 +12587,7 @@ __export(schemas_exports2, {
   xor: () => xor
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js
 var checks_exports2 = {};
 __export(checks_exports2, {
   endsWith: () => _endsWith,
@@ -12621,7 +12621,7 @@ __export(checks_exports2, {
   uppercase: () => _uppercase
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js
 var iso_exports = {};
 __export(iso_exports, {
   ZodISODate: () => ZodISODate,
@@ -12662,7 +12662,7 @@ function duration2(params) {
   return _isoDuration(ZodISODuration, params);
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js
 var initializer2 = (inst, issues) => {
   $ZodError.init(inst, issues);
   inst.name = "ZodError";
@@ -12702,7 +12702,7 @@ var ZodRealError = /* @__PURE__ */ $constructor("ZodError", initializer2, {
   Parent: Error
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js
 var parse2 = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync2 = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse2 = /* @__PURE__ */ _safeParse(ZodRealError);
@@ -12716,7 +12716,7 @@ var safeDecode2 = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync2 = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync2 = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
 var _installedGroups = /* @__PURE__ */ new WeakMap();
 function _installLazyMethods(inst, group, methods) {
   const proto = Object.getPrototypeOf(inst);
@@ -12729,12 +12729,12 @@ function _installLazyMethods(inst, group, methods) {
     return;
   installed.add(group);
   for (const key in methods) {
-    const fn = methods[key];
+    const fn2 = methods[key];
     Object.defineProperty(proto, key, {
       configurable: true,
       enumerable: false,
       get() {
-        const bound = fn.bind(this);
+        const bound = fn2.bind(this);
         Object.defineProperty(this, key, {
           configurable: true,
           writable: true,
@@ -12808,8 +12808,8 @@ var ZodType = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
     superRefine(refinement, params) {
       return this.check(superRefine(refinement, params));
     },
-    overwrite(fn) {
-      return this.check(_overwrite(fn));
+    overwrite(fn2) {
+      return this.check(_overwrite(fn2));
     },
     optional() {
       return optional(this);
@@ -12871,8 +12871,8 @@ var ZodType = /* @__PURE__ */ $constructor("ZodType", (inst, def) => {
     isNullable() {
       return this.safeParse(null).success;
     },
-    apply(fn) {
-      return fn(this);
+    apply(fn2) {
+      return fn2(this);
     }
   });
   Object.defineProperty(inst, "description", {
@@ -13716,10 +13716,10 @@ var ZodTransform = /* @__PURE__ */ $constructor("ZodTransform", (inst, def) => {
     return payload;
   };
 });
-function transform(fn) {
+function transform(fn2) {
   return new ZodTransform({
     type: "transform",
-    transform: fn
+    transform: fn2
   });
 }
 var ZodOptional = /* @__PURE__ */ $constructor("ZodOptional", (inst, def) => {
@@ -13946,22 +13946,22 @@ var ZodCustom = /* @__PURE__ */ $constructor("ZodCustom", (inst, def) => {
   ZodType.init(inst, def);
   inst._zod.processJSONSchema = (ctx, json2, params) => customProcessor(inst, ctx, json2, params);
 });
-function check(fn) {
+function check(fn2) {
   const ch = new $ZodCheck({
     check: "custom"
     // ...util.normalizeParams(params),
   });
-  ch._zod.check = fn;
+  ch._zod.check = fn2;
   return ch;
 }
-function custom(fn, _params) {
-  return _custom(ZodCustom, fn ?? (() => true), _params);
+function custom(fn2, _params) {
+  return _custom(ZodCustom, fn2 ?? (() => true), _params);
 }
-function refine(fn, _params = {}) {
-  return _refine(ZodCustom, fn, _params);
+function refine(fn2, _params = {}) {
+  return _refine(ZodCustom, fn2, _params);
 }
-function superRefine(fn, params) {
-  return _superRefine(fn, params);
+function superRefine(fn2, params) {
+  return _superRefine(fn2, params);
 }
 var describe2 = describe;
 var meta2 = meta;
@@ -13998,15 +13998,15 @@ function json(params) {
   });
   return jsonSchema;
 }
-function preprocess(fn, schema) {
+function preprocess(fn2, schema) {
   return new ZodPreprocess({
     type: "pipe",
-    in: transform(fn),
+    in: transform(fn2),
     out: schema
   });
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js
 var ZodIssueCode = {
   invalid_type: "invalid_type",
   too_big: "too_big",
@@ -14032,7 +14032,7 @@ var ZodFirstPartyTypeKind;
 /* @__PURE__ */ (function(ZodFirstPartyTypeKind2) {
 })(ZodFirstPartyTypeKind || (ZodFirstPartyTypeKind = {}));
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js
 var z = {
   ...schemas_exports2,
   ...checks_exports2,
@@ -14512,7 +14512,7 @@ function fromJSONSchema(schema, params) {
   return convertSchema(normalized, ctx);
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js
 var coerce_exports = {};
 __export(coerce_exports, {
   bigint: () => bigint3,
@@ -14537,8 +14537,155 @@ function date4(params) {
   return _coercedDate(ZodDate, params);
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
 config(en_default());
+
+// ../../node_modules/.pnpm/@deepseek-ai+dsh-typert-protocol@0.2.1-rc.2_@deepseek-ai+cordis@4.0.5/node_modules/@deepseek-ai/dsh-typert-protocol/lib/types/remote-info.js
+function createTypertRemoteInfo(spec, zod) {
+  return new RemoteInfo(spec, zod);
+}
+var RemoteInfo = class {
+  spec;
+  zod;
+  index;
+  constructor(spec, zod) {
+    this.spec = spec;
+    this.zod = zod;
+  }
+  get package() {
+    return this.spec.package;
+  }
+  get descriptors() {
+    return this.resolve().descriptors;
+  }
+  get methods() {
+    return this.resolve().methods;
+  }
+  resolve() {
+    if (this.index !== void 0)
+      return this.index;
+    const zod = this.zod;
+    const descriptors = [];
+    const methods = /* @__PURE__ */ Object.create(null);
+    for (const [endpoint, definition] of Object.entries(this.spec.methods)) {
+      const separator = endpoint.indexOf("/");
+      const namespace = endpoint.slice(0, separator);
+      const method = endpoint.slice(separator + 1);
+      const parameters = definition.parameters.map((parameter) => ({ ...parameter, wire: parameter.wire ?? parameter.name }));
+      const descriptor = {
+        ...definition,
+        id: `${this.spec.package}#${endpoint}`,
+        namespace,
+        method,
+        parameters,
+        result: definition.result.description === void 0 ? definition.result : new ResultValue(definition.result)
+      };
+      if (definition.invocation.kind === "direct") {
+        const inputs = [];
+        const direct = Object.assign(descriptor, {
+          input(options) {
+            const strict = options?.strict === true;
+            return inputs[strict ? 1 : 0] ??= new NamedInput(parameters, strict, zod);
+          },
+          invoke(remote, input, signal) {
+            const named = input;
+            const values2 = parameters.map((parameter) => named[parameter.wire]);
+            if (definition.cancellation !== void 0)
+              values2.push(signal);
+            const receiver = Reflect.get(remote, namespace);
+            const call = Reflect.get(receiver, method);
+            return call.apply(receiver, values2);
+          }
+        });
+        methods[endpoint] = direct;
+      }
+      descriptors.push(descriptor);
+    }
+    return this.index = { descriptors, methods };
+  }
+};
+function optional2(parameter) {
+  return parameter.source === "json" && parameter.acceptsUndefined === true;
+}
+var NamedInput = class {
+  parameters;
+  strict;
+  zod;
+  schema;
+  projection;
+  constructor(parameters, strict, zod) {
+    this.parameters = parameters;
+    this.strict = strict;
+    this.zod = zod;
+  }
+  codec(parameter) {
+    return this.strict ? parameter.strictCodec : parameter.codec;
+  }
+  create = () => this.schema ??= this.zod.strictObject(Object.fromEntries(this.parameters.map((parameter) => {
+    const value = this.codec(parameter).create();
+    return [parameter.wire, optional2(parameter) ? value.optional() : value.nonoptional()];
+  })));
+  get jsonSchema() {
+    return this.project().jsonSchema;
+  }
+  get jsonSchemaError() {
+    return this.project().jsonSchemaError;
+  }
+  project() {
+    if (this.projection !== void 0)
+      return this.projection;
+    const unavailable = this.parameters.find((parameter) => this.codec(parameter).jsonSchema === void 0);
+    if (unavailable !== void 0) {
+      return this.projection = { jsonSchemaError: this.codec(unavailable).jsonSchemaError ?? `No JSON Schema for parameter ${unavailable.wire}` };
+    }
+    return this.projection = {
+      jsonSchema: {
+        type: "object",
+        properties: Object.fromEntries(this.parameters.map((parameter) => [parameter.wire, {
+          ...this.codec(parameter).jsonSchema,
+          ...parameter.description === void 0 ? {} : { description: parameter.description }
+        }])),
+        required: this.parameters.filter((parameter) => !optional2(parameter)).map((parameter) => parameter.wire),
+        additionalProperties: false
+      }
+    };
+  }
+};
+var ResultValue = class {
+  spec;
+  projection;
+  constructor(spec) {
+    this.spec = spec;
+  }
+  get mode() {
+    return this.spec.mode;
+  }
+  get typeSymbol() {
+    return this.spec.typeSymbol;
+  }
+  get create() {
+    return this.spec.create;
+  }
+  get decode() {
+    return this.spec.decode;
+  }
+  get encode() {
+    return this.spec.encode;
+  }
+  get description() {
+    return this.spec.description;
+  }
+  get jsonSchemaError() {
+    return this.spec.jsonSchemaError;
+  }
+  get jsonSchema() {
+    if (this.projection === void 0) {
+      const schema = this.spec.jsonSchema;
+      this.projection = { value: schema === void 0 ? void 0 : { ...schema, description: this.spec.description } };
+    }
+    return this.projection.value;
+  }
+};
 
 // lib/typert.remote-client.js
 var kaitu_novel_workspace_source_kaituNovel_request_parameter_0$schema$value;
@@ -14547,46 +14694,60 @@ var kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema$value;
 var kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema = () => kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema$value ??= external_exports.string();
 var kaitu_novel_workspace_source_kaituNovel_request_result$schema$value;
 var kaitu_novel_workspace_source_kaituNovel_request_result$schema = () => kaitu_novel_workspace_source_kaituNovel_request_result$schema$value ??= external_exports.string();
-var TYPERT_REMOTE = {
+var kaitu_novel_workspace_source_kaituNovel_request_parameter_0_strict$schema$value;
+var kaitu_novel_workspace_source_kaituNovel_request_parameter_0_strict$schema = () => kaitu_novel_workspace_source_kaituNovel_request_parameter_0_strict$schema$value ??= external_exports.string();
+var kaitu_novel_workspace_source_kaituNovel_request_parameter_1_strict$schema$value;
+var kaitu_novel_workspace_source_kaituNovel_request_parameter_1_strict$schema = () => kaitu_novel_workspace_source_kaituNovel_request_parameter_1_strict$schema$value ??= external_exports.string();
+var TYPERT_REMOTE = createTypertRemoteInfo({
   package: "kaitu-novel-workspace-source",
-  descriptors: [
-    {
-      id: "kaitu-novel-workspace-source#kaituNovel/request",
+  methods: {
+    "kaituNovel/request": {
       service: "kaituNovel",
-      namespace: "kaituNovel",
-      method: "request",
       invocation: { kind: "direct" },
       parameters: [
         {
           name: "operation",
-          wire: "operation",
           source: "json",
           codec: {
             mode: "strict",
             typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:operation",
-            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_0$schema
+            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_0$schema,
+            jsonSchema: { "type": "string" }
+          },
+          strictCodec: {
+            mode: "strict",
+            typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:operation",
+            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_0_strict$schema,
+            jsonSchema: { "type": "string" }
           }
         },
         {
           name: "input",
-          wire: "input",
           source: "json",
           codec: {
             mode: "strict",
             typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:input",
-            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema
+            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema,
+            jsonSchema: { "type": "string" }
+          },
+          strictCodec: {
+            mode: "strict",
+            typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:input",
+            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_1_strict$schema,
+            jsonSchema: { "type": "string" }
           }
         }
       ],
       result: {
         mode: "strict",
         typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:result",
-        create: kaitu_novel_workspace_source_kaituNovel_request_result$schema
+        create: kaitu_novel_workspace_source_kaituNovel_request_result$schema,
+        jsonSchema: { "type": "string" }
       },
       sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 64, "column": 9 }
     }
-  ]
-};
+  }
+}, external_exports);
 var typert_remote_client_default = TYPERT_REMOTE;
 
 // src/client/agent-prompt.ts
@@ -14606,24 +14767,3846 @@ async function openKaituSession(services, workspace, text) {
 }
 
 // src/client/embedded-agent.tsx
-var import_react4 = require("react");
+var import_react6 = require("react");
 
 // src/client/page.tsx
-var import_react3 = require("react");
+var import_react5 = require("react");
 
 // ../dsh-plugin/src/client/Prototype.module.css
-var Prototype_default = { "map-box": "kn_map-box_mNecSG", "r": "kn_r_mNecSG", "shine": "kn_shine_mNecSG", "is-full": "kn_is-full_mNecSG", "logo": "kn_logo_mNecSG", "focus": "kn_focus_mNecSG", "st-dot": "kn_st-dot_mNecSG", "emptyState": "kn_emptyState_mNecSG", "welcome": "kn_welcome_mNecSG", "layer-chips": "kn_layer-chips_mNecSG", "sr": "kn_sr_mNecSG", "crop-view": "kn_crop-view_mNecSG", "start": "kn_start_mNecSG", "heat": "kn_heat_mNecSG", "suggest": "kn_suggest_mNecSG", "c-btn": "kn_c-btn_mNecSG", "ms-row": "kn_ms-row_mNecSG", "pair": "kn_pair_mNecSG", "fact-acts": "kn_fact-acts_mNecSG", "mode-opt": "kn_mode-opt_mNecSG", "week": "kn_week_mNecSG", "map-stats": "kn_map-stats_mNecSG", "crop-zoom": "kn_crop-zoom_mNecSG", "dialog-foot": "kn_dialog-foot_mNecSG", "auto-ctl": "kn_auto-ctl_mNecSG", "btn-quiet": "kn_btn-quiet_mNecSG", "comment": "kn_comment_mNecSG", "map-tools": "kn_map-tools_mNecSG", "brand": "kn_brand_mNecSG", "sec-head": "kn_sec-head_mNecSG", "chat": "kn_chat_mNecSG", "lchip": "kn_lchip_mNecSG", "c-row": "kn_c-row_mNecSG", "summaryButton": "kn_summaryButton_mNecSG", "me-body": "kn_me-body_mNecSG", "msg-ai": "kn_msg-ai_mNecSG", "financeMetric": "kn_financeMetric_mNecSG", "fin-pending": "kn_fin-pending_mNecSG", "sub": "kn_sub_mNecSG", "starts": "kn_starts_mNecSG", "when": "kn_when_mNecSG", "toggle": "kn_toggle_mNecSG", "miss": "kn_miss_mNecSG", "btn-primary": "kn_btn-primary_mNecSG", "dir-foot": "kn_dir-foot_mNecSG", "tabs": "kn_tabs_mNecSG", "map-hero": "kn_map-hero_mNecSG", "seg": "kn_seg_mNecSG", "fin-cell": "kn_fin-cell_mNecSG", "note-row": "kn_note-row_mNecSG", "sum-h": "kn_sum-h_mNecSG", "me-avatar": "kn_me-avatar_mNecSG", "convo": "kn_convo_mNecSG", "tool": "kn_tool_mNecSG", "btn-strong": "kn_btn-strong_mNecSG", "send": "kn_send_mNecSG", "welcome-chat": "kn_welcome-chat_mNecSG", "scrim": "kn_scrim_mNecSG", "news-acts": "kn_news-acts_mNecSG", "raw": "kn_raw_mNecSG", "btn-big": "kn_btn-big_mNecSG", "subtabs": "kn_subtabs_mNecSG", "cal-legend": "kn_cal-legend_mNecSG", "pulse": "kn_pulse_mNecSG", "places": "kn_places_mNecSG", "sec": "kn_sec_mNecSG", "capture": "kn_capture_mNecSG", "facts": "kn_facts_mNecSG", "table-box": "kn_table-box_mNecSG", "agenda-row": "kn_agenda-row_mNecSG", "year": "kn_year_mNecSG", "focus-title": "kn_focus-title_mNecSG", "msg-user": "kn_msg-user_mNecSG", "map-detail": "kn_map-detail_mNecSG", "paletteDot": "kn_paletteDot_mNecSG", "focus-body": "kn_focus-body_mNecSG", "cal-title": "kn_cal-title_mNecSG", "note": "kn_note_mNecSG", "radio": "kn_radio_mNecSG", "grid": "kn_grid_mNecSG", "msgs": "kn_msgs_mNecSG", "conn": "kn_conn_mNecSG", "sum": "kn_sum_mNecSG", "attempt": "kn_attempt_mNecSG", "st": "kn_st_mNecSG", "c-note": "kn_c-note_mNecSG", "eyebrow": "kn_eyebrow_mNecSG", "thumb": "kn_thumb_mNecSG", "ms": "kn_ms_mNecSG", "place": "kn_place_mNecSG", "mode-pop": "kn_mode-pop_mNecSG", "top": "kn_top_mNecSG", "fields": "kn_fields_mNecSG", "sub-form": "kn_sub-form_mNecSG", "row-title": "kn_row-title_mNecSG", "small": "kn_small_mNecSG", "city": "kn_city_mNecSG", "info": "kn_info_mNecSG", "tag": "kn_tag_mNecSG", "act": "kn_act_mNecSG", "child": "kn_child_mNecSG", "btn": "kn_btn_mNecSG", "thinking": "kn_thinking_mNecSG", "head": "kn_head_mNecSG", "menu-head": "kn_menu-head_mNecSG", "map-svg": "kn_map-svg_mNecSG", "mode-wrap": "kn_mode-wrap_mNecSG", "choice": "kn_choice_mNecSG", "fin": "kn_fin_mNecSG", "is-paused": "kn_is-paused_mNecSG", "bar": "kn_bar_mNecSG", "saved": "kn_saved_mNecSG", "fin-wide": "kn_fin-wide_mNecSG", "news-foot": "kn_news-foot_mNecSG", "mod": "kn_mod_mNecSG", "tl-dot": "kn_tl-dot_mNecSG", "acts": "kn_acts_mNecSG", "fade": "kn_fade_mNecSG", "account": "kn_account_mNecSG", "sync": "kn_sync_mNecSG", "cal-nav": "kn_cal-nav_mNecSG", "agenda": "kn_agenda_mNecSG", "demo": "kn_demo_mNecSG", "switch-row": "kn_switch-row_mNecSG", "error": "kn_error_mNecSG", "chip": "kn_chip_mNecSG", "card": "kn_card_mNecSG", "num": "kn_num_mNecSG", "cal": "kn_cal_mNecSG", "steps": "kn_steps_mNecSG", "tl-item": "kn_tl-item_mNecSG", "ev-life": "kn_ev-life_mNecSG", "me-nav": "kn_me-nav_mNecSG", "run": "kn_run_mNecSG", "content": "kn_content_mNecSG", "timeline": "kn_timeline_mNecSG", "new-thread": "kn_new-thread_mNecSG", "me": "kn_me_mNecSG", "check": "kn_check_mNecSG", "is-done": "kn_is-done_mNecSG", "ask": "kn_ask_mNecSG", "link": "kn_link_mNecSG", "conn-strip": "kn_conn-strip_mNecSG", "askContent": "kn_askContent_mNecSG", "tl-year": "kn_tl-year_mNecSG", "detailBody": "kn_detailBody_mNecSG", "dot": "kn_dot_mNecSG", "menu": "kn_menu_mNecSG", "mods": "kn_mods_mNecSG", "src": "kn_src_mNecSG", "feed-row": "kn_feed-row_mNecSG", "cal-bar": "kn_cal-bar_mNecSG", "split": "kn_split_mNecSG", "dialog": "kn_dialog_mNecSG", "avatar": "kn_avatar_mNecSG", "stack": "kn_stack_mNecSG", "app": "kn_app_mNecSG", "fact": "kn_fact_mNecSG", "has-img": "kn_has-img_mNecSG", "dir": "kn_dir_mNecSG", "ev-health": "kn_ev-health_mNecSG", "cal-detail": "kn_cal-detail_mNecSG", "ev-suggest": "kn_ev-suggest_mNecSG", "hint": "kn_hint_mNecSG", "legend": "kn_legend_mNecSG", "tools": "kn_tools_mNecSG", "big": "kn_big_mNecSG", "ev-work": "kn_ev-work_mNecSG", "sleep": "kn_sleep_mNecSG", "row": "kn_row_mNecSG", "news": "kn_news_mNecSG", "conn-pill": "kn_conn-pill_mNecSG", "threads": "kn_threads_mNecSG", "list-card": "kn_list-card_mNecSG", "thread": "kn_thread_mNecSG", "calendarShell": "kn_calendarShell_mNecSG", "kv": "kn_kv_mNecSG", "composer": "kn_composer_mNecSG", "ini": "kn_ini_mNecSG", "cal-fallback": "kn_cal-fallback_mNecSG", "time": "kn_time_mNecSG", "switch": "kn_switch_mNecSG", "evidence": "kn_evidence_mNecSG" };
+var Prototype_default = { "choice": "kn_choice_mNecSG", "conn-strip": "kn_conn-strip_mNecSG", "hint": "kn_hint_mNecSG", "agenda": "kn_agenda_mNecSG", "mode-pop": "kn_mode-pop_mNecSG", "menu": "kn_menu_mNecSG", "scrim": "kn_scrim_mNecSG", "eyebrow": "kn_eyebrow_mNecSG", "conn-pill": "kn_conn-pill_mNecSG", "cal-bar": "kn_cal-bar_mNecSG", "crop-view": "kn_crop-view_mNecSG", "map-box": "kn_map-box_mNecSG", "info": "kn_info_mNecSG", "thinking": "kn_thinking_mNecSG", "tag": "kn_tag_mNecSG", "start": "kn_start_mNecSG", "toggle": "kn_toggle_mNecSG", "cal-nav": "kn_cal-nav_mNecSG", "mod": "kn_mod_mNecSG", "child": "kn_child_mNecSG", "row": "kn_row_mNecSG", "btn-strong": "kn_btn-strong_mNecSG", "pulse": "kn_pulse_mNecSG", "has-img": "kn_has-img_mNecSG", "logo": "kn_logo_mNecSG", "paletteDot": "kn_paletteDot_mNecSG", "map-stats": "kn_map-stats_mNecSG", "map-svg": "kn_map-svg_mNecSG", "ini": "kn_ini_mNecSG", "when": "kn_when_mNecSG", "year": "kn_year_mNecSG", "emptyState": "kn_emptyState_mNecSG", "dir": "kn_dir_mNecSG", "check": "kn_check_mNecSG", "chip": "kn_chip_mNecSG", "fact": "kn_fact_mNecSG", "demo": "kn_demo_mNecSG", "content": "kn_content_mNecSG", "menu-head": "kn_menu-head_mNecSG", "switch": "kn_switch_mNecSG", "sec": "kn_sec_mNecSG", "c-btn": "kn_c-btn_mNecSG", "mode-wrap": "kn_mode-wrap_mNecSG", "heat": "kn_heat_mNecSG", "c-note": "kn_c-note_mNecSG", "btn": "kn_btn_mNecSG", "btn-quiet": "kn_btn-quiet_mNecSG", "row-title": "kn_row-title_mNecSG", "focus": "kn_focus_mNecSG", "ev-health": "kn_ev-health_mNecSG", "btn-primary": "kn_btn-primary_mNecSG", "timeline": "kn_timeline_mNecSG", "sub": "kn_sub_mNecSG", "tl-year": "kn_tl-year_mNecSG", "fields": "kn_fields_mNecSG", "chat": "kn_chat_mNecSG", "card": "kn_card_mNecSG", "fin-cell": "kn_fin-cell_mNecSG", "starts": "kn_starts_mNecSG", "news-acts": "kn_news-acts_mNecSG", "tabs": "kn_tabs_mNecSG", "small": "kn_small_mNecSG", "bar": "kn_bar_mNecSG", "stack": "kn_stack_mNecSG", "legend": "kn_legend_mNecSG", "tl-item": "kn_tl-item_mNecSG", "st": "kn_st_mNecSG", "ask": "kn_ask_mNecSG", "grid": "kn_grid_mNecSG", "layer-chips": "kn_layer-chips_mNecSG", "ev-suggest": "kn_ev-suggest_mNecSG", "sum-h": "kn_sum-h_mNecSG", "cal-fallback": "kn_cal-fallback_mNecSG", "map-hero": "kn_map-hero_mNecSG", "num": "kn_num_mNecSG", "tools": "kn_tools_mNecSG", "sub-form": "kn_sub-form_mNecSG", "me": "kn_me_mNecSG", "msg-user": "kn_msg-user_mNecSG", "fin-pending": "kn_fin-pending_mNecSG", "news-foot": "kn_news-foot_mNecSG", "agenda-row": "kn_agenda-row_mNecSG", "sleep": "kn_sleep_mNecSG", "convo": "kn_convo_mNecSG", "cal": "kn_cal_mNecSG", "steps": "kn_steps_mNecSG", "week": "kn_week_mNecSG", "kv": "kn_kv_mNecSG", "mods": "kn_mods_mNecSG", "dot": "kn_dot_mNecSG", "table-box": "kn_table-box_mNecSG", "place": "kn_place_mNecSG", "news": "kn_news_mNecSG", "me-body": "kn_me-body_mNecSG", "threads": "kn_threads_mNecSG", "note": "kn_note_mNecSG", "run": "kn_run_mNecSG", "focus-body": "kn_focus-body_mNecSG", "is-paused": "kn_is-paused_mNecSG", "mode-opt": "kn_mode-opt_mNecSG", "conn": "kn_conn_mNecSG", "st-dot": "kn_st-dot_mNecSG", "city": "kn_city_mNecSG", "ms": "kn_ms_mNecSG", "note-row": "kn_note-row_mNecSG", "head": "kn_head_mNecSG", "feed-row": "kn_feed-row_mNecSG", "acts": "kn_acts_mNecSG", "summaryButton": "kn_summaryButton_mNecSG", "switch-row": "kn_switch-row_mNecSG", "detailBody": "kn_detailBody_mNecSG", "me-nav": "kn_me-nav_mNecSG", "map-detail": "kn_map-detail_mNecSG", "fade": "kn_fade_mNecSG", "cal-detail": "kn_cal-detail_mNecSG", "comment": "kn_comment_mNecSG", "thread": "kn_thread_mNecSG", "ev-life": "kn_ev-life_mNecSG", "error": "kn_error_mNecSG", "auto-ctl": "kn_auto-ctl_mNecSG", "r": "kn_r_mNecSG", "cal-legend": "kn_cal-legend_mNecSG", "suggest": "kn_suggest_mNecSG", "focus-title": "kn_focus-title_mNecSG", "facts": "kn_facts_mNecSG", "subtabs": "kn_subtabs_mNecSG", "btn-big": "kn_btn-big_mNecSG", "seg": "kn_seg_mNecSG", "ev-work": "kn_ev-work_mNecSG", "ms-row": "kn_ms-row_mNecSG", "list-card": "kn_list-card_mNecSG", "app": "kn_app_mNecSG", "msgs": "kn_msgs_mNecSG", "sr": "kn_sr_mNecSG", "sum": "kn_sum_mNecSG", "capture": "kn_capture_mNecSG", "brand": "kn_brand_mNecSG", "thumb": "kn_thumb_mNecSG", "big": "kn_big_mNecSG", "dialog-foot": "kn_dialog-foot_mNecSG", "src": "kn_src_mNecSG", "tl-dot": "kn_tl-dot_mNecSG", "miss": "kn_miss_mNecSG", "me-avatar": "kn_me-avatar_mNecSG", "is-done": "kn_is-done_mNecSG", "pair": "kn_pair_mNecSG", "crop-zoom": "kn_crop-zoom_mNecSG", "new-thread": "kn_new-thread_mNecSG", "act": "kn_act_mNecSG", "welcome-chat": "kn_welcome-chat_mNecSG", "fin": "kn_fin_mNecSG", "split": "kn_split_mNecSG", "sec-head": "kn_sec-head_mNecSG", "composer": "kn_composer_mNecSG", "tool": "kn_tool_mNecSG", "top": "kn_top_mNecSG", "c-row": "kn_c-row_mNecSG", "account": "kn_account_mNecSG", "lchip": "kn_lchip_mNecSG", "askContent": "kn_askContent_mNecSG", "fin-wide": "kn_fin-wide_mNecSG", "radio": "kn_radio_mNecSG", "cal-title": "kn_cal-title_mNecSG", "attempt": "kn_attempt_mNecSG", "evidence": "kn_evidence_mNecSG", "msg-ai": "kn_msg-ai_mNecSG", "raw": "kn_raw_mNecSG", "dialog": "kn_dialog_mNecSG", "send": "kn_send_mNecSG", "fact-acts": "kn_fact-acts_mNecSG", "map-tools": "kn_map-tools_mNecSG", "places": "kn_places_mNecSG", "avatar": "kn_avatar_mNecSG", "welcome": "kn_welcome_mNecSG", "time": "kn_time_mNecSG", "financeMetric": "kn_financeMetric_mNecSG", "calendarShell": "kn_calendarShell_mNecSG", "is-full": "kn_is-full_mNecSG", "shine": "kn_shine_mNecSG", "link": "kn_link_mNecSG", "sync": "kn_sync_mNecSG", "saved": "kn_saved_mNecSG", "dir-foot": "kn_dir-foot_mNecSG" };
 
 // src/client/Novel.module.css
-var Novel_default = { "selected": "kn_selected_GZZZGa", "warn": "kn_warn_GZZZGa", "wrap": "kn_wrap_GZZZGa", "muted": "kn_muted_GZZZGa", "diff": "kn_diff_GZZZGa", "projectOpen": "kn_projectOpen_GZZZGa", "scroll": "kn_scroll_GZZZGa", "start": "kn_start_GZZZGa", "folderPicker": "kn_folderPicker_GZZZGa", "quote": "kn_quote_GZZZGa", "check": "kn_check_GZZZGa", "card": "kn_card_GZZZGa", "folderList": "kn_folderList_GZZZGa", "table": "kn_table_GZZZGa", "actions": "kn_actions_GZZZGa", "grid": "kn_grid_GZZZGa", "stack": "kn_stack_GZZZGa", "shortcuts": "kn_shortcuts_GZZZGa" };
+var Novel_default = { "card": "kn_card_GZZZGa", "grid": "kn_grid_GZZZGa", "quote": "kn_quote_GZZZGa", "check": "kn_check_GZZZGa", "stack": "kn_stack_GZZZGa", "scroll": "kn_scroll_GZZZGa", "folderPicker": "kn_folderPicker_GZZZGa", "folderList": "kn_folderList_GZZZGa", "start": "kn_start_GZZZGa", "projectOpen": "kn_projectOpen_GZZZGa", "selected": "kn_selected_GZZZGa", "shortcuts": "kn_shortcuts_GZZZGa", "table": "kn_table_GZZZGa", "wrap": "kn_wrap_GZZZGa", "muted": "kn_muted_GZZZGa", "diff": "kn_diff_GZZZGa", "warn": "kn_warn_GZZZGa", "actions": "kn_actions_GZZZGa" };
 
 // src/client/Writer.tsx
-var import_react2 = require("react");
+var import_react4 = require("react");
 
 // src/client/Writer.module.css
-var Writer_default = { "chapters": "kn_chapters_eRVxzq", "toolbar": "kn_toolbar_eRVxzq", "noAssistant": "kn_noAssistant_eRVxzq", "referenceActions": "kn_referenceActions_eRVxzq", "editorWrap": "kn_editorWrap_eRVxzq", "copyFlash": "kn_copyFlash_eRVxzq", "manuscript": "kn_manuscript_eRVxzq", "primary": "kn_primary_eRVxzq", "candidates": "kn_candidates_eRVxzq", "chat": "kn_chat_eRVxzq", "reference": "kn_reference_eRVxzq", "withReference": "kn_withReference_eRVxzq", "header": "kn_header_eRVxzq", "assistant": "kn_assistant_eRVxzq", "columns": "kn_columns_eRVxzq", "error": "kn_error_eRVxzq", "shell": "kn_shell_eRVxzq", "hint": "kn_hint_eRVxzq", "cmHost": "kn_cmHost_eRVxzq", "selChatBtn": "kn_selChatBtn_eRVxzq", "tabs": "kn_tabs_eRVxzq" };
+var Writer_default = { "chapters": "kn_chapters_eRVxzq", "copyFlash": "kn_copyFlash_eRVxzq", "cmHost": "kn_cmHost_eRVxzq", "header": "kn_header_eRVxzq", "hint": "kn_hint_eRVxzq", "reference": "kn_reference_eRVxzq", "manuscript": "kn_manuscript_eRVxzq", "selChatBtn": "kn_selChatBtn_eRVxzq", "referenceActions": "kn_referenceActions_eRVxzq", "assistant": "kn_assistant_eRVxzq", "error": "kn_error_eRVxzq", "tabs": "kn_tabs_eRVxzq", "candidates": "kn_candidates_eRVxzq", "assistantTools": "kn_assistantTools_eRVxzq", "toolbar": "kn_toolbar_eRVxzq", "columns": "kn_columns_eRVxzq", "separator": "kn_separator_eRVxzq", "shell": "kn_shell_eRVxzq", "pane": "kn_pane_eRVxzq", "primary": "kn_primary_eRVxzq", "chat": "kn_chat_eRVxzq", "assistantHeader": "kn_assistantHeader_eRVxzq", "editorWrap": "kn_editorWrap_eRVxzq" };
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@marijn/find-cluster-break/src/index.js
+// src/client/WriterPanels.tsx
+var import_react2 = require("react");
+
+// ../../node_modules/.pnpm/react-resizable-panels@4.14.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/react-resizable-panels/dist/react-resizable-panels.js
+var import_jsx_runtime = require("react/jsx-runtime");
+var import_react = require("react");
+function et(e) {
+  return (typeof e == "number" || typeof e == "string") && e !== "";
+}
+function Te(e) {
+  const t2 = (0, import_react.useId)();
+  return et(e) ? `${e}` : t2;
+}
+var ne = typeof window < "u" ? import_react.useLayoutEffect : import_react.useEffect;
+function Se(e) {
+  const t2 = (0, import_react.useRef)(e);
+  return ne(() => {
+    t2.current = e;
+  }, [e]), (0, import_react.useCallback)(
+    (...n) => t2.current?.(...n),
+    [t2]
+  );
+}
+function Ve(...e) {
+  return Se((t2) => {
+    e.forEach((n) => {
+      if (n)
+        switch (typeof n) {
+          case "function": {
+            n(t2);
+            break;
+          }
+          case "object": {
+            n.current = t2;
+            break;
+          }
+        }
+    });
+  });
+}
+function je(e, t2) {
+  const n = e?.["data-testid"];
+  return et(n) ? `${n}` : et(t2) ? `${t2}` : void 0;
+}
+function lt(e, t2) {
+  return t2 ? e * 2 + 1 : e + 1;
+}
+function Tn(e, t2) {
+  return t2 ? e * 2 - 1 : e;
+}
+function Lt(e, t2, n) {
+  const o = lt(e, n);
+  return t2 === void 0 ? `${o} / -1` : `${o} / span ${Tn(t2, n)}`;
+}
+function Dn(e) {
+  return `${e * 2} / span 1`;
+}
+function kn({
+  crossCount: e,
+  crossSpan: t2,
+  crossStart: n,
+  hasGutters: o
+}) {
+  const r = t2 === void 0 ? e : n + t2;
+  if (n === 0 && r === e)
+    return "1 / -1";
+  let i2 = lt(n, o), a = lt(r - 1, o) + 1;
+  return o && (n > 0 && i2--, r < e && a++), `${i2} / ${a}`;
+}
+function pt(e, t2) {
+  return Number.isInteger(e) && e >= 1 && e < t2;
+}
+function N(e, t2 = "Assertion error") {
+  if (!e)
+    throw Error(t2);
+}
+var sn = (0, import_react.createContext)(null);
+function an() {
+  const e = (0, import_react.useContext)(sn);
+  return N(
+    e,
+    "Grid Context not found; did you render a Cell or Gridline outside of a Grid?"
+  ), e;
+}
+function An({
+  children: e,
+  className: t2,
+  column: n,
+  columnSpan: o = 1,
+  elementRef: r,
+  id: i2,
+  row: a,
+  rowSpan: c = 1,
+  style: s,
+  ...u
+}) {
+  const l = Te(i2), { gutters: d, registerCell: h } = an(), p = (0, import_react.useRef)(null), m = Ve(p, r);
+  return ne(() => {
+    const f = p.current;
+    if (f !== null)
+      return h({
+        column: n,
+        columnSpan: o,
+        element: f,
+        id: l,
+        row: a,
+        rowSpan: c
+      });
+  }, [n, o, l, h, a, c]), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    "div",
+    {
+      ...u,
+      className: t2,
+      "data-cell": true,
+      "data-testid": je(u, i2),
+      id: l,
+      ref: m,
+      style: {
+        overflow: "auto",
+        ...s,
+        // Allow cells to shrink smaller than their content
+        minHeight: 0,
+        minWidth: 0,
+        gridColumn: Lt(n, o, d.column),
+        gridRow: Lt(a, c, d.row)
+      },
+      children: e
+    }
+  );
+}
+An.displayName = "Cell";
+var Xe;
+function $n() {
+  return Xe === void 0 && (typeof matchMedia == "function" ? Xe = !!matchMedia("(pointer:coarse)").matches : Xe = false), Xe;
+}
+function ut({
+  expandHitTargets: e,
+  axis: t2,
+  rect: n
+}) {
+  const o = e ? $n() ? t2.resizeTargetMinimumSize.coarse : t2.resizeTargetMinimumSize.fine : 0;
+  if (n.width < o) {
+    const r = o - n.width;
+    n = new DOMRect(
+      n.x - r / 2,
+      n.y,
+      n.width + r,
+      n.height
+    );
+  }
+  if (n.height < o) {
+    const r = o - n.height;
+    n = new DOMRect(
+      n.x,
+      n.y - r / 2,
+      n.width,
+      n.height + r
+    );
+  }
+  return n;
+}
+function Ct({
+  axis: e,
+  cells: t2,
+  index: n,
+  rect: o
+}) {
+  let r = [o];
+  for (const i2 of t2) {
+    const a = e === "column" ? i2.column : i2.row, c = e === "column" ? i2.columnSpan : i2.rowSpan;
+    if (a >= n || a + c <= n)
+      continue;
+    const s = i2.element.getBoundingClientRect(), u = e === "column" ? s.top : s.left, l = e === "column" ? s.bottom : s.right;
+    l <= u || (r = r.flatMap((d) => {
+      const h = e === "column" ? d.top : d.left, p = e === "column" ? d.bottom : d.right;
+      if (u >= p || l <= h)
+        return [d];
+      const m = [], f = (y, g) => {
+        m.push(
+          e === "column" ? new DOMRect(d.x, y, d.width, g - y) : new DOMRect(y, d.y, g - y, d.height)
+        );
+      };
+      return h < u && f(h, u), p > l && f(l, p), m;
+    }));
+  }
+  return r;
+}
+function On({
+  axis: e,
+  cells: t2,
+  crossTrackCount: n,
+  expandHitTargets: o,
+  resizeAxis: r,
+  axisSize: i2,
+  includeDisabled: a,
+  separatorPlacements: c
+}) {
+  const { items: s, separators: u } = r, l = s.length;
+  let d = -1, h = -1, p = 0;
+  if (s.forEach((x, w) => {
+    x.constraintProps.disabled || (p++, d === -1 && (d = w), h = w);
+  }), !a && p < 2)
+    return [];
+  const m = (x) => a || x > d && x <= h, f = [], y = (x, w, v) => ({
+    axis: r,
+    axisSize: i2,
+    items: [s[x - 1], s[x]],
+    rect: w,
+    separator: v
+  }), g = (x, w) => {
+    let v;
+    for (const M of t2) {
+      const k = e === "column" ? M.row : M.column, P = e === "column" ? M.rowSpan : M.columnSpan;
+      if (w === "start" ? k === x : k + P - 1 === x) {
+        const $ = M.element.getBoundingClientRect();
+        if (w === "start") {
+          const C2 = e === "column" ? $.top : $.left;
+          v = v === void 0 ? C2 : Math.min(v, C2);
+        } else {
+          const C2 = e === "column" ? $.bottom : $.right;
+          v = v === void 0 ? C2 : Math.max(v, C2);
+        }
+      }
+    }
+    return v;
+  }, S2 = /* @__PURE__ */ new Set();
+  for (const x of u) {
+    const w = c.get(x);
+    if (!w || w.index < 1 || w.index >= l || (S2.add(w.index), !a && (x.disabled || x.element.hasAttribute("aria-disabled"))) || !m(w.index))
+      continue;
+    let v = x.element.getBoundingClientRect();
+    const { crossSpan: M, crossStart: k } = w, P = M === void 0 ? n : k + M;
+    let $ = e === "column" ? v.top : v.left, C2 = e === "column" ? v.bottom : v.right;
+    if (k > 0) {
+      const I = g(k - 1, "end");
+      I !== void 0 && I < $ && ($ = I);
+    }
+    if (P < n) {
+      const I = g(P, "start");
+      I !== void 0 && I > C2 && (C2 = I);
+    }
+    v = e === "column" ? new DOMRect(v.x, $, v.width, C2 - $) : new DOMRect($, v.y, C2 - $, v.height), v = ut({ expandHitTargets: o, axis: r, rect: v }), a ? f.push(y(w.index, v, x)) : Ct({
+      axis: e,
+      cells: t2,
+      index: w.index,
+      rect: v
+    }).forEach((I) => {
+      f.push(y(w.index, I, x));
+    });
+  }
+  const z2 = (x, w) => {
+    Ct({
+      axis: e,
+      cells: t2,
+      index: x,
+      rect: ut({ expandHitTargets: o, axis: r, rect: w })
+    }).forEach((v) => {
+      f.push(y(x, v));
+    });
+  }, b = Array.from(
+    { length: n },
+    () => new Array(l)
+  );
+  for (const x of t2) {
+    const [w, v, M, k] = e === "column" ? [x.column, x.columnSpan, x.row, x.rowSpan] : [x.row, x.rowSpan, x.column, x.columnSpan];
+    for (let P = Math.max(0, M); P < Math.min(n, M + k); P++)
+      for (let $ = Math.max(0, w); $ < Math.min(l, w + v); $++)
+        b[P][$] ??= x;
+  }
+  const R = /* @__PURE__ */ new Map(), O = (x) => {
+    let w = R.get(x);
+    if (!w) {
+      const v = x.element.getBoundingClientRect();
+      w = e === "column" ? {
+        crossEnd: v.bottom,
+        crossStart: v.top,
+        end: v.right,
+        start: v.left
+      } : {
+        crossEnd: v.right,
+        crossStart: v.left,
+        end: v.bottom,
+        start: v.top
+      }, R.set(x, w);
+    }
+    return w;
+  }, A = ({ crossEnd: x, crossStart: w, end: v, start: M }) => e === "column" ? new DOMRect(M, w, v - M, x - w) : new DOMRect(w, M, x - w, v - M);
+  for (let x = 1; x < l; x++) {
+    if (S2.has(x) || !m(x))
+      continue;
+    let w;
+    for (let v = 0; v < n; v++) {
+      const M = b[v][x - 1], k = b[v][x];
+      let P;
+      if ((M || k) && M !== k) {
+        const $ = M ? O(M) : void 0, C2 = k ? O(k) : void 0, I = $?.end ?? C2.start, E = C2?.start ?? $.end, q = Math.max(
+          $?.crossStart ?? -1 / 0,
+          C2?.crossStart ?? -1 / 0
+        ), Z = Math.min(
+          $?.crossEnd ?? 1 / 0,
+          C2?.crossEnd ?? 1 / 0
+        );
+        P = {
+          crossEnd: Math.max(q, Z),
+          crossStart: q,
+          end: Math.max(I, E),
+          start: Math.min(I, E)
+        };
+      }
+      P ? w = w ? {
+        crossEnd: Math.max(w.crossEnd, P.crossEnd),
+        crossStart: Math.min(w.crossStart, P.crossStart),
+        end: Math.max(w.end, P.end),
+        start: Math.min(w.start, P.start)
+      } : P : w && (z2(x, A(w)), w = void 0);
+    }
+    w && z2(x, A(w));
+  }
+  return f;
+}
+function le(e) {
+  const t2 = parseFloat(e ?? "");
+  return Number.isFinite(t2) ? t2 : 0;
+}
+function Nn({
+  axis: e,
+  element: t2,
+  gutterSizes: n,
+  hasGutters: o,
+  layout: r,
+  trackIds: i2
+}) {
+  const a = i2.length, c = o ? a * 2 - 1 : a, s = t2.ownerDocument.defaultView?.getComputedStyle(t2), u = e === "column" ? s?.gridTemplateColumns : s?.gridTemplateRows;
+  if (u) {
+    const f = u.trim().split(/\s+/);
+    if (f.length === c && f.every((y) => /^-?[\d.]+px$/.test(y))) {
+      const y = i2.map(
+        (g, S2) => le(f[o ? S2 * 2 : S2])
+      );
+      return {
+        availableSize: y.reduce((g, S2) => g + S2, 0),
+        trackSizes: y
+      };
+    }
+  }
+  const l = e === "column" ? t2.offsetWidth : t2.offsetHeight, d = e === "column" ? le(s?.paddingLeft) + le(s?.paddingRight) + le(s?.borderLeftWidth) + le(s?.borderRightWidth) : le(s?.paddingTop) + le(s?.paddingBottom) + le(s?.borderTopWidth) + le(s?.borderBottomWidth), h = le(e === "column" ? s?.columnGap : s?.rowGap), p = n.reduce((f, y) => f + y, 0), m = Math.max(
+    0,
+    l - d - h * Math.max(0, c - 1) - p
+  );
+  return {
+    availableSize: m,
+    trackSizes: i2.map(
+      (f) => r && r[f] !== void 0 ? r[f] / 100 * m : m / a
+    )
+  };
+}
+function cn(e) {
+  switch (typeof e) {
+    case "number":
+      return [e, "px"];
+    case "string": {
+      const t2 = parseFloat(e);
+      return e.endsWith("%") ? [t2, "%"] : e.endsWith("px") ? [t2, "px"] : e.endsWith("rem") ? [t2, "rem"] : e.endsWith("em") ? [t2, "em"] : e.endsWith("vh") ? [t2, "vh"] : e.endsWith("vw") ? [t2, "vw"] : [t2, "%"];
+    }
+  }
+}
+var ln = class {
+  #e = {};
+  addListener(t2, n) {
+    const o = this.#e[t2];
+    return o === void 0 ? this.#e[t2] = [n] : o.includes(n) || o.push(n), () => {
+      this.removeListener(t2, n);
+    };
+  }
+  emit(t2, n) {
+    const o = this.#e[t2];
+    if (o !== void 0) {
+      if (o.length === 1) {
+        o[0].call(null, n);
+        return;
+      }
+      let r;
+      const i2 = Array.from(o);
+      for (let a = 0; a < i2.length; a++) {
+        const c = i2[a];
+        try {
+          c.call(null, n);
+        } catch (s) {
+          r ??= { error: s };
+        }
+      }
+      if (r)
+        throw r.error;
+    }
+  }
+  removeAllListeners() {
+    this.#e = {};
+  }
+  removeListener(t2, n) {
+    const o = this.#e[t2];
+    if (o !== void 0) {
+      const r = o.indexOf(n);
+      r >= 0 && o.splice(r, 1);
+    }
+  }
+};
+var H = {
+  cursorFlags: 0,
+  state: "inactive"
+};
+var ht = new ln();
+function ie() {
+  return H;
+}
+function gt(e) {
+  return ht.addListener("change", e);
+}
+function Gn(e, t2 = [], n, o = false) {
+  const r = H, i2 = { ...H };
+  i2.cursorFlags = e, i2.state === "active" && (i2.didPointerMove ||= o, i2.previews = t2, n && (i2.previewLayoutMap = n)), H = i2, ht.emit("change", {
+    prev: r,
+    next: i2
+  });
+}
+function fe(e) {
+  const t2 = H;
+  H = e, t2.state === "active" && e.state !== "active" && t2.didPointerMove && t2.hitRegions.forEach(({ separator: n }) => {
+    n && n.element.ownerDocument.activeElement === n.element && n.element.blur();
+  }), ht.emit("change", {
+    prev: t2,
+    next: e
+  });
+}
+function Fn(e) {
+  H.state !== "active" || !H.previews.some((t2) => t2.separator === e) || fe({
+    ...H,
+    previews: H.previews.map(
+      (t2) => t2.separator === e ? { ...t2 } : t2
+    )
+  });
+}
+function _n(e) {
+  if (H.state === "inactive")
+    return;
+  const t2 = H.hitRegions.filter((o) => o.axis !== e), n = H.state === "active" && H.previews.some((o) => o.axis === e);
+  if (!(t2.length === H.hitRegions.length && !n))
+    if (t2.length === 0)
+      fe({ cursorFlags: 0, state: "inactive" });
+    else if (H.state === "active") {
+      const o = new Map(H.initialLayoutMap), r = new Map(H.previewLayoutMap);
+      o.delete(e), r.delete(e), fe({
+        ...H,
+        cursorFlags: 0,
+        hitRegions: t2,
+        initialLayoutMap: o,
+        previewLayoutMap: r,
+        previews: H.previews.filter((i2) => i2.axis !== e)
+      });
+    } else
+      fe({ ...H, hitRegions: t2 });
+}
+var Bn = (e) => e;
+var ct = () => {
+};
+var un = 1;
+var dn = 2;
+var fn = 4;
+var mn = 8;
+var Rt = 3;
+var Et = 12;
+var Ke;
+function Mt() {
+  return Ke === void 0 && (Ke = false, typeof window < "u" && (window.navigator.userAgent.includes("Chrome") || window.navigator.userAgent.includes("Firefox")) && (Ke = true)), Ke;
+}
+function qn({
+  cursorFlags: e,
+  axes: t2,
+  state: n
+}) {
+  let o = 0, r = 0;
+  switch (n) {
+    case "active":
+    case "hover":
+      t2.forEach((i2) => {
+        if (!i2.mutableState.disableCursor)
+          switch (i2.orientation) {
+            case "horizontal": {
+              o++;
+              break;
+            }
+            case "vertical": {
+              r++;
+              break;
+            }
+          }
+      });
+  }
+  if (!(o === 0 && r === 0)) {
+    switch (n) {
+      case "active": {
+        if (e && Mt()) {
+          const i2 = (e & un) !== 0, a = (e & dn) !== 0, c = (e & fn) !== 0, s = (e & mn) !== 0;
+          if (i2)
+            return c ? "se-resize" : s ? "ne-resize" : "e-resize";
+          if (a)
+            return c ? "sw-resize" : s ? "nw-resize" : "w-resize";
+          if (c)
+            return "s-resize";
+          if (s)
+            return "n-resize";
+        }
+        break;
+      }
+    }
+    return Mt() ? o > 0 && r > 0 ? "move" : o > 0 ? "ew-resize" : "ns-resize" : o > 0 && r > 0 ? "grab" : o > 0 ? "col-resize" : "row-resize";
+  }
+}
+var Pt = /* @__PURE__ */ new WeakMap();
+function Tt(e) {
+  if (!e.defaultView || !e.adoptedStyleSheets)
+    return;
+  let { prevStyle: t2, styleSheet: n } = Pt.get(e) ?? {};
+  n === void 0 && (n = new e.defaultView.CSSStyleSheet(), e.adoptedStyleSheets && (Object.isExtensible(e.adoptedStyleSheets) ? e.adoptedStyleSheets.push(n) : e.adoptedStyleSheets = [
+    ...e.adoptedStyleSheets,
+    n
+  ]));
+  let o = ie();
+  switch (o.state !== "inactive" && o.ownerDocument !== e && (o = { cursorFlags: 0, state: "inactive" }), o.state) {
+    case "active":
+    case "hover": {
+      const r = qn({
+        cursorFlags: o.cursorFlags,
+        axes: o.hitRegions.map((a) => a.axis),
+        state: o.state
+      }), i2 = `*, *:hover {cursor: ${r} !important; }`;
+      if (t2 === i2)
+        return;
+      t2 = i2, r ? n.cssRules.length === 0 ? n.insertRule(i2) : n.replaceSync(i2) : n.cssRules.length === 1 && n.deleteRule(0);
+      break;
+    }
+    case "inactive": {
+      t2 = void 0, n.cssRules.length === 1 && n.deleteRule(0);
+      break;
+    }
+  }
+  Pt.set(e, {
+    prevStyle: t2,
+    styleSheet: n
+  });
+}
+function Dt(e) {
+  return e.state === "inactive" ? void 0 : e.ownerDocument;
+}
+function Hn({
+  next: e,
+  prev: t2
+}) {
+  const n = Dt(t2), o = Dt(e);
+  n && n !== o && Tt(n), o && Tt(o);
+}
+function Pe({
+  axis: e
+}) {
+  const { layoutStrategy: t2, orientation: n, items: o } = e;
+  return t2 ? t2.calculateAvailableSize() : o.reduce((r, i2) => (r += n === "horizontal" ? i2.element.offsetWidth : i2.element.offsetHeight, r), 0);
+}
+function yt(e, t2) {
+  const n = e.compareDocumentPosition(t2);
+  return n & Node.DOCUMENT_POSITION_DISCONNECTED ? 0 : n & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : n & Node.DOCUMENT_POSITION_PRECEDING ? 1 : 0;
+}
+function Ge(e, t2) {
+  return Array.from(t2).sort((n, o) => {
+    const r = e === "horizontal" ? Vn(n, o) : jn(n, o);
+    return r !== 0 ? r : yt(n.element, o.element);
+  });
+}
+function Vn(e, t2) {
+  const n = e.element.offsetLeft - t2.element.offsetLeft;
+  return n !== 0 ? n : e.element.offsetWidth - t2.element.offsetWidth;
+}
+function jn(e, t2) {
+  const n = e.element.offsetTop - t2.element.offsetTop;
+  return n !== 0 ? n : e.element.offsetHeight - t2.element.offsetHeight;
+}
+function dt(e) {
+  return e !== null && typeof e == "object" && "nodeType" in e && e.nodeType === Node.ELEMENT_NODE;
+}
+function pn(e, t2) {
+  return {
+    x: e.x >= t2.left && e.x <= t2.right ? 0 : Math.min(
+      Math.abs(e.x - t2.left),
+      Math.abs(e.x - t2.right)
+    ),
+    y: e.y >= t2.top && e.y <= t2.bottom ? 0 : Math.min(
+      Math.abs(e.y - t2.top),
+      Math.abs(e.y - t2.bottom)
+    )
+  };
+}
+function Un({
+  orientation: e,
+  rects: t2,
+  targetRect: n
+}) {
+  const o = {
+    x: n.x + n.width / 2,
+    y: n.y + n.height / 2
+  };
+  let r, i2 = Number.MAX_VALUE;
+  for (const a of t2) {
+    const { x: c, y: s } = pn(o, a), u = e === "horizontal" ? c : s;
+    u < i2 && (i2 = u, r = a);
+  }
+  return N(r, "No rect found"), r;
+}
+function St({
+  expandHitTargets: e = true,
+  axis: t2,
+  includeDisabled: n = false
+}) {
+  if (t2.layoutStrategy)
+    return t2.layoutStrategy.calculateHitRegions({
+      expandHitTargets: e,
+      axis: t2,
+      includeDisabled: n
+    });
+  const { element: o, orientation: r, items: i2, separators: a } = t2, c = Ge(
+    r,
+    Array.from(o.children).filter(dt).filter((g) => !g.hasAttribute("data-resize-preview")).map((g) => ({ element: g }))
+  ).map(({ element: g }) => g), s = [];
+  let u = false, l = false, d = -1, h, p = -1, m = 0, f, y = [];
+  {
+    let g = -1;
+    for (const S2 of c)
+      S2.hasAttribute("data-panel") && (g++, S2.hasAttribute("data-disabled") || (m++, d === -1 && (d = g), p = g));
+  }
+  if (n || m > 1) {
+    let g = -1;
+    for (const S2 of c)
+      if (S2.hasAttribute("data-panel")) {
+        g++;
+        const z2 = i2.find(
+          (b) => b.element === S2
+        );
+        if (z2) {
+          if (f) {
+            const b = f.element.getBoundingClientRect(), R = S2.getBoundingClientRect();
+            let O;
+            if (l) {
+              const A = r === "horizontal" ? new DOMRect(
+                b.right,
+                b.top,
+                0,
+                b.height
+              ) : new DOMRect(
+                b.left,
+                b.bottom,
+                b.width,
+                0
+              ), x = r === "horizontal" ? new DOMRect(R.left, R.top, 0, R.height) : new DOMRect(R.left, R.top, R.width, 0);
+              switch (y.length) {
+                case 0: {
+                  O = [
+                    A,
+                    x
+                  ];
+                  break;
+                }
+                case 1: {
+                  const w = y[0], v = Un({
+                    orientation: r,
+                    rects: [b, R],
+                    targetRect: w.element.getBoundingClientRect()
+                  });
+                  O = [
+                    w,
+                    v === b ? x : A
+                  ];
+                  break;
+                }
+                default: {
+                  O = y;
+                  break;
+                }
+              }
+            } else
+              y.length ? O = y : O = [
+                r === "horizontal" ? new DOMRect(
+                  b.right,
+                  R.top,
+                  R.left - b.right,
+                  R.height
+                ) : new DOMRect(
+                  R.left,
+                  b.bottom,
+                  R.width,
+                  R.top - b.bottom
+                )
+              ];
+            for (const A of O) {
+              const x = ut({
+                expandHitTargets: e,
+                axis: t2,
+                rect: "width" in A ? A : A.element.getBoundingClientRect()
+              }), w = g <= d || g > p;
+              (n || !u && !w) && (h ??= Pe({ axis: t2 }), s.push({
+                axis: t2,
+                axisSize: h,
+                items: [f, z2],
+                separator: "width" in A ? void 0 : A,
+                rect: x
+              })), u = false;
+            }
+          }
+          l = false, f = z2, y = [];
+        }
+      } else if (S2.hasAttribute("data-separator")) {
+        S2.ariaDisabled !== null && (u = true);
+        const z2 = a.find(
+          (b) => b.element === S2
+        );
+        z2 ? y.push(z2) : (f = void 0, y = []);
+      } else
+        l = true;
+  }
+  return s;
+}
+function Wn(e, t2) {
+  const n = getComputedStyle(e), o = parseFloat(n.fontSize);
+  return t2 * o;
+}
+function Yn(e, t2) {
+  const n = getComputedStyle(e.ownerDocument.documentElement), o = parseFloat(n.fontSize);
+  return t2 * o;
+}
+function Xn(e) {
+  return e / 100 * window.innerHeight;
+}
+function Kn(e) {
+  return e / 100 * window.innerWidth;
+}
+function Le({
+  axisSize: e,
+  itemElement: t2,
+  styleProp: n
+}) {
+  let o;
+  const [r, i2] = cn(n);
+  switch (i2) {
+    case "%": {
+      o = r / 100 * e;
+      break;
+    }
+    case "px": {
+      o = r;
+      break;
+    }
+    case "rem": {
+      o = Yn(t2, r);
+      break;
+    }
+    case "em": {
+      o = Wn(t2, r);
+      break;
+    }
+    case "vh": {
+      o = Xn(r);
+      break;
+    }
+    case "vw": {
+      o = Kn(r);
+      break;
+    }
+  }
+  return o;
+}
+function J(e) {
+  return parseFloat(e.toFixed(3));
+}
+function ft(e) {
+  const { items: t2 } = e, n = Pe({ axis: e });
+  return n === 0 ? t2.map((o) => ({
+    groupResizeBehavior: o.constraintProps.groupResizeBehavior,
+    collapsedSize: 0,
+    collapsible: o.constraintProps.collapsible === true,
+    defaultSize: void 0,
+    disabled: o.constraintProps.disabled,
+    minSize: 0,
+    maxSize: 100,
+    itemId: o.id
+  })) : t2.map((o) => {
+    const { element: r, constraintProps: i2 } = o;
+    let a = 0;
+    if (i2.collapsedSize !== void 0) {
+      const d = Le({
+        axisSize: n,
+        itemElement: r,
+        styleProp: i2.collapsedSize
+      });
+      a = J(d / n * 100);
+    }
+    let c;
+    if (i2.collapsedThreshold !== void 0) {
+      const d = Le({
+        axisSize: n,
+        itemElement: r,
+        styleProp: i2.collapsedThreshold
+      });
+      c = J(d / n * 100);
+    }
+    let s;
+    if (i2.defaultSize !== void 0) {
+      const d = Le({
+        axisSize: n,
+        itemElement: r,
+        styleProp: i2.defaultSize
+      });
+      s = J(d / n * 100);
+    }
+    let u = 0;
+    if (i2.minSize !== void 0) {
+      const d = Le({
+        axisSize: n,
+        itemElement: r,
+        styleProp: i2.minSize
+      });
+      u = J(d / n * 100);
+    }
+    let l = 100;
+    if (i2.maxSize !== void 0) {
+      const d = Le({
+        axisSize: n,
+        itemElement: r,
+        styleProp: i2.maxSize
+      });
+      l = J(d / n * 100);
+    }
+    return {
+      groupResizeBehavior: i2.groupResizeBehavior,
+      collapsedSize: a,
+      collapsedThreshold: c,
+      collapsible: i2.collapsible === true,
+      defaultSize: s,
+      disabled: i2.disabled,
+      minSize: u,
+      maxSize: l,
+      itemId: o.id
+    };
+  });
+}
+var de = /* @__PURE__ */ new Map();
+var vt = new ln();
+var Fe = 0;
+var Je = [];
+var Ze;
+function nt() {
+  Fe++;
+}
+function bt() {
+  for (let e = 0; e < Je.length; e++)
+    try {
+      vt.emit("axisChange", Je[e]);
+    } catch (t2) {
+      Ze ??= { error: t2 };
+    }
+  Je.length = 0;
+}
+function ot() {
+  if (Fe === 1 && bt(), Fe--, Fe === 0 && Ze) {
+    const { error: e } = Ze;
+    throw Ze = void 0, e;
+  }
+}
+function Jn(e) {
+  de = new Map(de), de.delete(e);
+}
+function Re(e, t2) {
+  for (const [n] of de)
+    if (n.id === e)
+      return n;
+}
+function ce(e, t2) {
+  for (const [n, o] of de)
+    if (n.id === e)
+      return o;
+  if (t2)
+    throw Error(`Could not find data for Group with id ${e}`);
+}
+function ye() {
+  return de;
+}
+function Be(e, t2) {
+  return vt.addListener("axisChange", (n) => {
+    n.axis.id === e && t2(n);
+  });
+}
+function me(e, t2, n) {
+  const o = de.get(e);
+  de = new Map(de), de.set(e, t2);
+  const r = {
+    axis: e,
+    isUserInteraction: n?.isUserInteraction === true,
+    prev: o,
+    next: t2
+  };
+  Fe > 0 ? Je.push(r) : vt.emit("axisChange", r);
+}
+function hn(e, { pointerId: t2, pointerType: n }) {
+  return t2 === e.pointerId || // There is only one pen, but it may be assigned a new pointerId each time it comes into range
+  n === "pen" && e.pointerType === "pen";
+}
+function rt(e, t2, n = {}) {
+  return e.ownerDocument === t2 && (n.pointerId === void 0 || hn(e, n));
+}
+function Zn(e, t2) {
+  if (e.length !== t2.length)
+    return false;
+  for (let n = 0; n < e.length; n++)
+    if (e[n] != t2[n])
+      return false;
+  return true;
+}
+function W(e, t2, n = 0) {
+  return Math.abs(J(e) - J(t2)) <= n;
+}
+function ue(e, t2) {
+  return W(e, t2) ? 0 : e > t2 ? 1 : -1;
+}
+function Ee({
+  overrideDisabledItems: e,
+  itemConstraints: t2,
+  prevSize: n,
+  size: o
+}) {
+  const {
+    collapsedSize: r = 0,
+    collapsedThreshold: i2,
+    collapsible: a,
+    disabled: c,
+    maxSize: s = 100,
+    minSize: u = 0
+  } = t2;
+  if (c && !e)
+    return n;
+  if (ue(o, u) < 0)
+    if (a) {
+      const l = i2 ?? (u - r) / 2, d = ue(n, r) <= 0, h = d ? r + l : u - l, p = ue(o, h);
+      ue(o, r) <= 0 || p < 0 || i2 !== void 0 && d && p === 0 ? o = r : o = u;
+    } else
+      o = u;
+  return o = Math.min(s, o), o = J(o), o;
+}
+function qe({
+  delta: e,
+  initialLayout: t2,
+  itemConstraints: n,
+  pivotIndices: o,
+  prevLayout: r,
+  trigger: i2
+}) {
+  if (W(e, 0))
+    return t2;
+  const a = i2 === "imperative-api", c = n.map(
+    ({ itemId: m }) => t2[m]
+  ), s = n.map(
+    ({ itemId: m }) => r[m]
+  ), u = [...c], [l, d] = o;
+  N(l != null, "Invalid first pivot index"), N(d != null, "Invalid second pivot index");
+  let h = 0;
+  switch (i2) {
+    case "keyboard": {
+      {
+        const m = e < 0 ? d : l, f = n[m];
+        N(
+          f,
+          `Panel constraints not found for index ${m}`
+        );
+        const {
+          collapsedSize: y = 0,
+          collapsible: g,
+          minSize: S2 = 0
+        } = f;
+        if (g) {
+          const z2 = c[m];
+          if (N(
+            z2 != null,
+            `Previous layout not found for panel index ${m}`
+          ), W(z2, y)) {
+            const b = S2 - z2;
+            ue(b, Math.abs(e)) > 0 && (e = e < 0 ? 0 - b : b);
+          }
+        }
+      }
+      {
+        const m = e < 0 ? l : d, f = n[m];
+        N(
+          f,
+          `No panel constraints found for index ${m}`
+        );
+        const {
+          collapsedSize: y = 0,
+          collapsible: g,
+          minSize: S2 = 0
+        } = f;
+        if (g) {
+          const z2 = c[m];
+          if (N(
+            z2 != null,
+            `Previous layout not found for panel index ${m}`
+          ), W(z2, S2)) {
+            const b = z2 - y;
+            ue(b, Math.abs(e)) > 0 && (e = e < 0 ? 0 - b : b);
+          }
+        }
+      }
+      break;
+    }
+    default: {
+      const m = e < 0 ? d : l, f = n[m];
+      N(
+        f,
+        `Panel constraints not found for index ${m}`
+      );
+      const y = c[m], { collapsedSize: g, collapsedThreshold: S2, collapsible: z2, minSize: b } = f;
+      if (z2 && ue(y, b) < 0) {
+        const R = b - g, O = S2 ?? R / 2, A = y + Math.abs(e);
+        if (ue(A, b) < 0) {
+          const x = ue(Math.abs(e), O), w = S2 === void 0 && e < 0;
+          x > 0 || x === 0 && w ? e = e < 0 ? -R : R : e = 0;
+        }
+      }
+      break;
+    }
+  }
+  {
+    const m = e < 0 ? 1 : -1;
+    let f = e < 0 ? d : l, y = 0;
+    for (; ; ) {
+      const S2 = c[f];
+      N(
+        S2 != null,
+        `Previous layout not found for panel index ${f}`
+      );
+      const b = Ee({
+        overrideDisabledItems: a,
+        itemConstraints: n[f],
+        prevSize: S2,
+        size: 100
+      }) - S2;
+      if (y += b, f += m, f < 0 || f >= n.length)
+        break;
+    }
+    const g = Math.min(Math.abs(e), Math.abs(y));
+    e = e < 0 ? 0 - g : g;
+  }
+  {
+    let f = e < 0 ? l : d;
+    for (; f >= 0 && f < n.length; ) {
+      const y = Math.abs(e) - Math.abs(h), g = c[f];
+      N(
+        g != null,
+        `Previous layout not found for panel index ${f}`
+      );
+      const S2 = g - y, z2 = Ee({
+        overrideDisabledItems: a,
+        itemConstraints: n[f],
+        prevSize: g,
+        size: S2
+      });
+      if (!W(g, z2) && (h += g - z2, u[f] = z2, h.toFixed(3).localeCompare(Math.abs(e).toFixed(3), void 0, {
+        numeric: true
+      }) >= 0))
+        break;
+      e < 0 ? f-- : f++;
+    }
+  }
+  if (Zn(s, u))
+    return r;
+  {
+    const m = e < 0 ? d : l, f = c[m];
+    N(
+      f != null,
+      `Previous layout not found for panel index ${m}`
+    );
+    const y = f + h, g = Ee({
+      overrideDisabledItems: a,
+      itemConstraints: n[m],
+      prevSize: f,
+      size: y
+    });
+    if (u[m] = g, !W(g, y)) {
+      let S2 = y - g, b = e < 0 ? d : l;
+      for (; b >= 0 && b < n.length; ) {
+        const R = u[b];
+        N(
+          R != null,
+          `Previous layout not found for panel index ${b}`
+        );
+        const O = R + S2, A = Ee({
+          overrideDisabledItems: a,
+          itemConstraints: n[b],
+          prevSize: R,
+          size: O
+        });
+        if (W(R, A) || (S2 -= A - R, u[b] = A), W(S2, 0))
+          break;
+        e > 0 ? b-- : b++;
+      }
+    }
+  }
+  const p = Object.values(u).reduce(
+    (m, f) => f + m,
+    0
+  );
+  return W(p, 100, 0.1) ? u.reduce((m, f, y) => (m[n[y].itemId] = f, m), {}) : r;
+}
+function se(e, t2) {
+  if (Object.keys(e).length !== Object.keys(t2).length)
+    return false;
+  for (const n in e)
+    if (t2[n] === void 0 || ue(e[n], t2[n]) !== 0)
+      return false;
+  return true;
+}
+function xt(e) {
+  nt();
+  try {
+    Qn(e);
+  } finally {
+    ot();
+  }
+}
+function Qn({
+  commit: e,
+  event: t2,
+  hitRegions: n,
+  initialLayoutMap: o,
+  mountedAxes: r,
+  pointerDownAtPoint: i2,
+  prevCursorFlags: a
+}) {
+  let c = 0;
+  const s = ie();
+  let u = s.state === "active" ? s.previews : [];
+  const l = new Map(
+    s.state === "active" ? s.previewLayoutMap : void 0
+  );
+  n.forEach((p) => {
+    const { axis: m, axisSize: f } = p, { orientation: y, items: g } = m;
+    if (e && m.resizePreviewMode !== "separator")
+      return;
+    const { disableCursor: S2 } = m.mutableState;
+    let z2 = 0;
+    i2 ? y === "horizontal" ? z2 = (t2.clientX - i2.x) / f * 100 : z2 = (t2.clientY - i2.y) / f * 100 : y === "horizontal" ? z2 = t2.clientX < 0 ? -100 : 100 : z2 = t2.clientY < 0 ? -100 : 100;
+    const b = o.get(m), R = r.get(m);
+    if (!b || !R)
+      return;
+    const {
+      defaultLayoutDeferred: O,
+      derivedItemConstraints: A,
+      axisSize: x,
+      layout: w,
+      separatorToItems: v
+    } = R;
+    if (A && w && v) {
+      const M = m.resizePreviewMode === "separator" ? l.get(m) ?? w : w, k = qe({
+        delta: z2,
+        initialLayout: b,
+        itemConstraints: A,
+        pivotIndices: p.items.map((P) => g.indexOf(P)),
+        prevLayout: M,
+        trigger: "mouse-or-touch"
+      });
+      if (m.resizePreviewMode === "separator" && !e && !se(k, M)) {
+        l.set(m, k);
+        let P = 0;
+        const $ = g.map((C2) => (P += k[C2.id] - b[C2.id], P * (f / 100)));
+        u = u.map((C2) => {
+          if (C2.axis !== m)
+            return C2;
+          const I = $[C2.itemIndex];
+          return I === C2.offset ? C2 : { ...C2, offset: I };
+        });
+      }
+      if (se(k, M) && z2 !== 0 && !S2)
+        switch (y) {
+          case "horizontal": {
+            c |= z2 < 0 ? un : dn;
+            break;
+          }
+          case "vertical": {
+            c |= z2 < 0 ? fn : mn;
+            break;
+          }
+        }
+      (m.resizePreviewMode !== "separator" || e) && !se(k, w) && me(p.axis, {
+        defaultLayoutDeferred: O,
+        derivedItemConstraints: A,
+        axisSize: x,
+        layout: k,
+        requestedAxisSize: x,
+        requestedLayout: k,
+        separatorToItems: v
+      });
+    }
+  });
+  let d = 0;
+  t2.movementX === 0 ? d |= a & Rt : d |= c & Rt, t2.movementY === 0 ? d |= a & Et : d |= c & Et;
+  const h = s.state === "active" && (t2.clientX !== s.pointerDownAtPoint.x || t2.clientY !== s.pointerDownAtPoint.y);
+  Gn(d, u, l, h);
+}
+function gn(e, t2) {
+  const n = ie();
+  if (n.state !== "active" || !rt(n, e, t2))
+    return;
+  const o = ye();
+  nt();
+  try {
+    xt({
+      commit: true,
+      event: t2,
+      hitRegions: n.hitRegions,
+      initialLayoutMap: n.initialLayoutMap,
+      mountedAxes: o,
+      pointerDownAtPoint: n.pointerDownAtPoint,
+      prevCursorFlags: n.cursorFlags
+    }), bt(), fe({
+      cursorFlags: 0,
+      state: "inactive"
+    }), n.hitRegions.length > 0 && (t2.preventDefault?.(), n.hitRegions.forEach((r) => {
+      if (!o.has(r.axis))
+        return;
+      const i2 = ce(r.axis.id, true);
+      me(r.axis, i2, {
+        isUserInteraction: true
+      });
+    }));
+  } finally {
+    ot();
+  }
+}
+function kt(e) {
+  if (e.defaultPrevented)
+    return;
+  const { clientX: t2, clientY: n, movementX: o, movementY: r } = e;
+  gn(e.currentTarget, {
+    clientX: t2,
+    clientY: n,
+    movementX: o,
+    movementY: r
+  });
+}
+function eo(e, t2, n) {
+  let o, r = {
+    x: 1 / 0,
+    y: 1 / 0
+  };
+  for (const i2 of t2) {
+    const a = pn(n, i2.rect);
+    switch (e) {
+      case "horizontal": {
+        (a.x < r.x || a.x === r.x && a.y <= r.y) && (o = i2, r = a);
+        break;
+      }
+      case "vertical": {
+        (a.y < r.y || a.y === r.y && a.x <= r.x) && (o = i2, r = a);
+        break;
+      }
+    }
+  }
+  return o ? {
+    distance: r,
+    hitRegion: o
+  } : void 0;
+}
+function to(e) {
+  return e !== null && typeof e == "object" && "nodeType" in e && e.nodeType === Node.DOCUMENT_FRAGMENT_NODE;
+}
+function no(e, t2) {
+  if (e === t2) throw new Error("Cannot compare node with itself");
+  const n = {
+    a: Ot(e),
+    b: Ot(t2)
+  };
+  let o;
+  for (; n.a.at(-1) === n.b.at(-1); )
+    o = n.a.pop(), n.b.pop();
+  N(
+    o,
+    "Stacking order can only be calculated for elements with a common ancestor"
+  );
+  const r = {
+    a: $t(At(n.a)),
+    b: $t(At(n.b))
+  };
+  if (r.a === r.b) {
+    const i2 = o.childNodes, a = {
+      a: n.a.at(-1),
+      b: n.b.at(-1)
+    };
+    let c = i2.length;
+    for (; c--; ) {
+      const s = i2[c];
+      if (s === a.a) return 1;
+      if (s === a.b) return -1;
+    }
+  }
+  return Math.sign(r.a - r.b);
+}
+var oo = /\b(?:position|zIndex|opacity|transform|webkitTransform|mixBlendMode|filter|webkitFilter|isolation)\b/;
+function ro(e) {
+  const t2 = getComputedStyle(yn(e) ?? e).display;
+  return t2 === "flex" || t2 === "inline-flex";
+}
+function io(e) {
+  const t2 = getComputedStyle(e);
+  return !!(t2.position === "fixed" || t2.zIndex !== "auto" && (t2.position !== "static" || ro(e)) || +t2.opacity < 1 || "transform" in t2 && t2.transform !== "none" || "webkitTransform" in t2 && t2.webkitTransform !== "none" || "mixBlendMode" in t2 && t2.mixBlendMode !== "normal" || "filter" in t2 && t2.filter !== "none" || "webkitFilter" in t2 && t2.webkitFilter !== "none" || "isolation" in t2 && t2.isolation === "isolate" || oo.test(t2.willChange) || t2.webkitOverflowScrolling === "touch");
+}
+function At(e) {
+  let t2 = e.length;
+  for (; t2--; ) {
+    const n = e[t2];
+    if (N(n, "Missing node"), io(n)) return n;
+  }
+  return null;
+}
+function $t(e) {
+  return e && Number(getComputedStyle(e).zIndex) || 0;
+}
+function Ot(e) {
+  const t2 = [];
+  for (; e; )
+    t2.push(e), e = yn(e);
+  return t2;
+}
+function yn(e) {
+  const { parentNode: t2 } = e;
+  return to(t2) ? t2.host : t2;
+}
+function so(e, t2) {
+  return e.x < t2.x + t2.width && e.x + e.width > t2.x && e.y < t2.y + t2.height && e.y + e.height > t2.y;
+}
+function ao(e) {
+  try {
+    return e.matches(":modal");
+  } catch {
+    return false;
+  }
+}
+function co({
+  axisElement: e,
+  hitRegion: t2,
+  pointerEventTarget: n
+}) {
+  if (dt(n)) {
+    const o = n.closest("dialog");
+    if (o && !o.contains(e) && ao(o))
+      return false;
+  }
+  if (!dt(n) || n.contains(e) || e.contains(n))
+    return true;
+  if (no(n, e) > 0) {
+    let o = n;
+    for (; o; ) {
+      if (o.contains(e))
+        return true;
+      if (so(o.getBoundingClientRect(), t2))
+        return false;
+      o = o.parentElement;
+    }
+  }
+  return true;
+}
+function wt(e, t2, n) {
+  const o = [];
+  return t2.forEach((r, i2) => {
+    if (i2.disabled || i2.element.ownerDocument !== n)
+      return;
+    const a = St({ axis: i2 }), c = eo(i2.orientation, a, {
+      x: e.clientX,
+      y: e.clientY
+    });
+    c && c.distance.x <= 0 && c.distance.y <= 0 && co({
+      axisElement: i2.element,
+      hitRegion: c.hitRegion.rect,
+      pointerEventTarget: e.target
+    }) && o.push(c.hitRegion);
+  }), o;
+}
+function ve({
+  layout: e,
+  itemConstraints: t2
+}) {
+  const n = t2.map(({ itemId: a }) => e[a]), o = [...n], r = o.reduce(
+    (a, c) => a + c,
+    0
+  );
+  if (Object.keys(e).length !== t2.length)
+    throw Error(
+      `Invalid ${t2.length} panel layout: ${Object.values(e).map((a) => `${a}%`).join(", ")}`
+    );
+  if (!W(r, 100) && o.length > 0)
+    for (let a = 0; a < t2.length; a++) {
+      const c = o[a];
+      N(c != null, `No layout data found for index ${a}`);
+      const s = 100 / r * c;
+      o[a] = s;
+    }
+  let i2 = 0;
+  for (let a = 0; a < t2.length; a++) {
+    const c = n[a];
+    N(c != null, `No layout data found for index ${a}`);
+    const s = o[a];
+    N(s != null, `No layout data found for index ${a}`);
+    const u = Ee({
+      overrideDisabledItems: true,
+      itemConstraints: t2[a],
+      prevSize: c,
+      size: s
+    });
+    s != u && (i2 += s - u, o[a] = u);
+  }
+  if (!W(i2, 0))
+    for (let a = 0; a < t2.length; a++) {
+      const c = o[a];
+      N(c != null, `No layout data found for index ${a}`);
+      const s = c + i2, u = Ee({
+        overrideDisabledItems: true,
+        itemConstraints: t2[a],
+        prevSize: c,
+        size: s
+      });
+      if (c !== u && (i2 -= u - c, o[a] = u, W(i2, 0)))
+        break;
+    }
+  return o.reduce((a, c, s) => (a[t2[s].itemId] = c, a), {});
+}
+function zt({
+  axisId: e,
+  itemId: t2
+}) {
+  const n = () => {
+    const s = ye();
+    for (const [
+      u,
+      {
+        defaultLayoutDeferred: l,
+        derivedItemConstraints: d,
+        layout: h,
+        axisSize: p,
+        separatorToItems: m
+      }
+    ] of s)
+      if (u.id === e)
+        return {
+          defaultLayoutDeferred: l,
+          derivedItemConstraints: d,
+          axis: u,
+          axisSize: p,
+          layout: h,
+          separatorToItems: m
+        };
+    throw Error(`Group ${e} not found`);
+  }, o = () => {
+    const s = n().derivedItemConstraints.find(
+      (u) => u.itemId === t2
+    );
+    if (s !== void 0)
+      return s;
+    throw Error(`Panel constraints not found for Panel ${t2}`);
+  }, r = () => {
+    const s = n().axis.items.find((u) => u.id === t2);
+    if (s !== void 0)
+      return s;
+    throw Error(`Layout not found for Panel ${t2}`);
+  }, i2 = () => {
+    const s = n().layout[t2];
+    if (s !== void 0)
+      return s;
+    throw Error(`Layout not found for Panel ${t2}`);
+  }, a = ({
+    nextSize: s,
+    items: u,
+    prevLayout: l,
+    derivedItemConstraints: d
+  }) => {
+    const h = i2(), p = u.findIndex((g) => g.id === t2), m = p === 0, f = p === u.length - 1;
+    if (f && s < h && (m || u.slice(0, p).every((g, S2) => {
+      const z2 = d[S2];
+      return z2?.collapsible && W(z2.collapsedSize, l[z2.itemId]);
+    }))) {
+      const g = u.slice(0, p).reduce((S2, z2) => S2 + l[z2.id], 0);
+      return {
+        ...l,
+        [t2]: J(100 - g)
+      };
+    }
+    return qe({
+      delta: f ? h - s : s - h,
+      initialLayout: l,
+      itemConstraints: d,
+      pivotIndices: f ? [p - 1, p] : [p, p + 1],
+      prevLayout: l,
+      trigger: "imperative-api"
+    });
+  }, c = (s) => {
+    const u = i2();
+    if (s === u)
+      return;
+    const {
+      defaultLayoutDeferred: l,
+      derivedItemConstraints: d,
+      axis: h,
+      axisSize: p,
+      layout: m,
+      separatorToItems: f
+    } = n(), y = a({
+      nextSize: s,
+      items: h.items,
+      prevLayout: m,
+      derivedItemConstraints: d
+    }), g = ve({
+      layout: y,
+      itemConstraints: d
+    });
+    se(m, g) || me(h, {
+      defaultLayoutDeferred: l,
+      derivedItemConstraints: d,
+      axisSize: p,
+      layout: g,
+      requestedAxisSize: p,
+      requestedLayout: g,
+      separatorToItems: f
+    });
+  };
+  return {
+    collapse: () => {
+      const { collapsible: s, collapsedSize: u } = o(), { mutableValues: l } = r(), d = i2();
+      s && d !== u && (l.expandToSize = d, c(u));
+    },
+    expand: () => {
+      const { collapsible: s, collapsedSize: u, minSize: l } = o(), { mutableValues: d } = r(), h = i2();
+      if (s && h === u) {
+        let p = d.expandToSize ?? l;
+        p === 0 && (p = 1), c(p);
+      }
+    },
+    getSize: () => {
+      const { axis: s } = n(), u = i2(), { element: l } = r(), d = s.layoutStrategy ? s.layoutStrategy.getItemSizeInPixels(t2) : s.orientation === "horizontal" ? l.offsetWidth : l.offsetHeight;
+      return {
+        asPercentage: u,
+        inPixels: d
+      };
+    },
+    isCollapsed: () => {
+      const { collapsible: s, collapsedSize: u } = o(), l = i2();
+      return s && W(u, l);
+    },
+    resize: (s) => {
+      const { axis: u } = n(), { element: l } = r(), d = Pe({ axis: u }), h = Le({
+        axisSize: d,
+        itemElement: l,
+        styleProp: s
+      }), p = J(h / d * 100);
+      c(p);
+    }
+  };
+}
+function Nt(e) {
+  if (e.defaultPrevented)
+    return;
+  const t2 = ye();
+  wt(
+    e,
+    t2,
+    e.currentTarget
+  ).forEach((o) => {
+    if (o.separator && !o.separator.disableDoubleClick) {
+      const r = o.items.find(
+        (i2) => i2.constraintProps.defaultSize !== void 0
+      );
+      if (r) {
+        const i2 = r.constraintProps.defaultSize, a = zt({
+          axisId: o.axis.id,
+          itemId: r.id
+        });
+        a && i2 !== void 0 && (a.resize(i2), e.preventDefault());
+      }
+    }
+  });
+}
+function Sn(e) {
+  const t2 = ye();
+  for (const [n] of t2)
+    if (n.separators.some(
+      (o) => o.element === e
+    ))
+      return n;
+  throw Error("Could not find parent Group for separator element");
+}
+function _e({
+  axisId: e
+}) {
+  const t2 = () => {
+    const n = ye();
+    for (const [o, r] of n)
+      if (o.id === e)
+        return { axis: o, ...r };
+    throw Error(`Could not find Group with id "${e}"`);
+  };
+  return {
+    getLayout() {
+      const { defaultLayoutDeferred: n, layout: o } = t2();
+      return n ? {} : o;
+    },
+    setLayout(n) {
+      const {
+        defaultLayoutDeferred: o,
+        derivedItemConstraints: r,
+        axis: i2,
+        axisSize: a,
+        layout: c,
+        separatorToItems: s
+      } = t2(), u = ve({
+        layout: n,
+        itemConstraints: r
+      });
+      return o ? c : (se(c, u) || me(i2, {
+        defaultLayoutDeferred: o,
+        derivedItemConstraints: r,
+        axisSize: a,
+        layout: u,
+        requestedAxisSize: a,
+        requestedLayout: u,
+        separatorToItems: s
+      }), u);
+    }
+  };
+}
+function xe(e, t2) {
+  const n = Sn(e), o = ce(n.id, true), r = n.separators.find(
+    (d) => d.element === e
+  );
+  N(r, "Matching separator not found");
+  const i2 = o.separatorToItems.get(r);
+  N(i2, "Matching panels not found");
+  const a = i2.map((d) => n.items.indexOf(d)), s = _e({ axisId: n.id }).getLayout(), u = qe({
+    delta: t2,
+    initialLayout: s,
+    itemConstraints: o.derivedItemConstraints,
+    pivotIndices: a,
+    prevLayout: s,
+    trigger: "keyboard"
+  }), l = ve({
+    layout: u,
+    itemConstraints: o.derivedItemConstraints
+  });
+  se(s, l) || me(
+    n,
+    {
+      defaultLayoutDeferred: o.defaultLayoutDeferred,
+      derivedItemConstraints: o.derivedItemConstraints,
+      axisSize: o.axisSize,
+      layout: l,
+      requestedAxisSize: o.axisSize,
+      requestedLayout: l,
+      separatorToItems: o.separatorToItems
+    },
+    // Keyboard resizes (arrow keys, Home/End, Enter collapse/expand) originate
+    // from a real DOM event on the separator, so they are user interactions
+    // just like pointer drags. This function is only reached from
+    // onDocumentKeyDown. See #716.
+    { isUserInteraction: true }
+  );
+}
+function Gt(e) {
+  if (e.defaultPrevented)
+    return;
+  const t2 = e.currentTarget, n = Sn(t2);
+  if (!(n.disabled || n.separators.find(
+    (r) => r.element === t2
+  )?.disabled))
+    switch (e.key) {
+      case "ArrowDown": {
+        e.preventDefault(), n.orientation === "vertical" && xe(t2, 5);
+        break;
+      }
+      case "ArrowLeft": {
+        e.preventDefault(), n.orientation === "horizontal" && xe(t2, -5);
+        break;
+      }
+      case "ArrowRight": {
+        e.preventDefault(), n.orientation === "horizontal" && xe(t2, 5);
+        break;
+      }
+      case "ArrowUp": {
+        e.preventDefault(), n.orientation === "vertical" && xe(t2, -5);
+        break;
+      }
+      case "End": {
+        e.preventDefault(), xe(t2, 100);
+        break;
+      }
+      case "Enter": {
+        e.preventDefault();
+        const r = ce(n.id, true), { derivedItemConstraints: i2, layout: a, separatorToItems: c } = r, s = n.separators.find(
+          (h) => h.element === t2
+        );
+        N(s, "Matching separator not found");
+        const u = c.get(s);
+        N(u, "Matching panels not found");
+        const l = u[0], d = i2.find(
+          (h) => h.itemId === l.id
+        );
+        if (N(d, "Panel metadata not found"), d.collapsible) {
+          const h = a[l.id], p = d.collapsedSize === h ? n.mutableState.expandedItemSizes[l.id] ?? d.minSize : d.collapsedSize;
+          xe(t2, p - h);
+        }
+        break;
+      }
+      case "F6": {
+        e.preventDefault();
+        const r = n.separators.map(
+          (s) => s.element
+        ), i2 = Array.from(r).findIndex(
+          (s) => s === e.currentTarget
+        );
+        N(i2 !== null, "Index not found");
+        const a = e.shiftKey ? i2 > 0 ? i2 - 1 : r.length - 1 : i2 + 1 < r.length ? i2 + 1 : 0;
+        r[a].focus({
+          preventScroll: true
+        });
+        break;
+      }
+      case "Home": {
+        e.preventDefault(), xe(t2, -100);
+        break;
+      }
+    }
+}
+function De(e, t2) {
+  const n = ie();
+  if (n.state !== "active" || !rt(n, e, t2))
+    return false;
+  const o = ye();
+  nt();
+  try {
+    n.previewLayoutMap.forEach((r, i2) => {
+      const a = o.get(i2);
+      i2.resizePreviewMode === "separator" && a && !se(r, a.layout) && me(i2, {
+        ...a,
+        layout: r,
+        requestedAxisSize: a.axisSize,
+        requestedLayout: r
+      });
+    }), bt(), fe({
+      cursorFlags: 0,
+      state: "inactive"
+    }), n.hitRegions.forEach((r) => {
+      if (!o.has(r.axis))
+        return;
+      const i2 = ce(r.axis.id, true);
+      me(r.axis, i2, {
+        isUserInteraction: true
+      });
+    });
+  } finally {
+    ot();
+  }
+  return true;
+}
+function Ft(e) {
+  const t2 = ie();
+  if (t2.state !== "active")
+    return;
+  const n = t2.hitRegions.flatMap(
+    ({ separator: o }) => o ? [o.element] : []
+  );
+  !n.some((o) => o === e.target) || n.some(
+    (o) => o.hasPointerCapture?.(e.pointerId)
+  ) || De(e.currentTarget, e);
+}
+function _t(e) {
+  De(e.currentTarget, e);
+}
+function lo(e, t2) {
+  const { element: n, orientation: o, items: r } = e, i2 = n.getBoundingClientRect(), a = o === "horizontal";
+  return St({
+    expandHitTargets: false,
+    axis: e,
+    includeDisabled: true
+  }).map(({ items: s, rect: u, separator: l }, d) => {
+    const h = r.indexOf(s[0]), p = a ? u.left + u.width / 2 : u.top + u.height / 2;
+    return {
+      active: t2.some((f) => {
+        if (f.axis !== e || f.items[0] !== s[0])
+          return false;
+        if (l || f.separator)
+          return f.separator === l;
+        const y = a ? f.rect.left + f.rect.width / 2 : f.rect.top + f.rect.height / 2;
+        return W(p, y);
+      }),
+      axis: e,
+      key: l ? `separator-${l.id}` : `panel-${s[0].id}-${d}`,
+      offset: 0,
+      itemIndex: h,
+      rect: new DOMRect(
+        (a && !l ? p : u.left) - i2.left - n.clientLeft + n.scrollLeft,
+        (!a && !l ? p : u.top) - i2.top - n.clientTop + n.scrollTop,
+        a && !l ? 0 : u.width,
+        !a && !l ? 0 : u.height
+      ),
+      separator: l
+    };
+  });
+}
+function Bt(e) {
+  if (e.defaultPrevented)
+    return;
+  if (e.pointerType === "mouse" && e.button > 0)
+    return;
+  const t2 = ie();
+  if (t2.state === "active") {
+    hn(t2, e) && De(
+      t2.ownerDocument,
+      t2
+    );
+    return;
+  }
+  const n = ye(), o = wt(
+    e,
+    n,
+    e.currentTarget
+  );
+  if (o.length === 0)
+    return;
+  const r = /* @__PURE__ */ new Map();
+  let i2 = false;
+  o.forEach((c) => {
+    c.separator && (i2 || (i2 = true, c.separator.element.focus({
+      // @ts-expect-error https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/focus#browser_compatibility
+      focusVisible: false,
+      preventScroll: true
+    })));
+    const s = n.get(c.axis);
+    s && r.set(c.axis, s.layout);
+  });
+  const a = Array.from(r.keys()).flatMap(
+    (c) => c.resizePreviewMode === "separator" ? lo(c, o) : []
+  );
+  fe({
+    cursorFlags: 0,
+    didPointerMove: false,
+    hitRegions: o,
+    initialLayoutMap: r,
+    ownerDocument: e.currentTarget,
+    pointerDownAtPoint: { x: e.clientX, y: e.clientY },
+    pointerId: e.pointerId,
+    pointerType: e.pointerType,
+    previewLayoutMap: new Map(r),
+    previews: a,
+    state: "active"
+  }), e.preventDefault();
+}
+function qt(e) {
+  const t2 = e.currentTarget, n = ye(), o = ie();
+  switch (o.state) {
+    case "active": {
+      if (!rt(o, t2, e))
+        return;
+      xt({
+        commit: false,
+        event: e,
+        hitRegions: o.hitRegions,
+        initialLayoutMap: o.initialLayoutMap,
+        mountedAxes: n,
+        prevCursorFlags: o.cursorFlags
+      });
+    }
+  }
+}
+function Ht(e) {
+  if (e.defaultPrevented)
+    return;
+  const t2 = e.currentTarget, n = ie(), o = ye();
+  switch (n.state) {
+    case "active": {
+      if (!rt(n, t2, e))
+        return;
+      if (
+        // Skip this check for "pointerleave" events, else Firefox triggers a false positive (see #514)
+        e.buttons === 0
+      ) {
+        De(t2, e);
+        return;
+      }
+      for (const r of n.hitRegions)
+        if (r.separator) {
+          const { element: i2 } = r.separator;
+          i2.isConnected && !i2.hasPointerCapture?.(e.pointerId) && i2.setPointerCapture?.(e.pointerId);
+        }
+      xt({
+        commit: false,
+        event: e,
+        hitRegions: n.hitRegions,
+        initialLayoutMap: n.initialLayoutMap,
+        mountedAxes: o,
+        pointerDownAtPoint: n.pointerDownAtPoint,
+        prevCursorFlags: n.cursorFlags
+      });
+      break;
+    }
+    default: {
+      const r = wt(
+        e,
+        o,
+        t2
+      );
+      r.length === 0 ? n.state !== "inactive" && fe({
+        cursorFlags: 0,
+        state: "inactive"
+      }) : fe({
+        cursorFlags: 0,
+        hitRegions: r,
+        ownerDocument: t2,
+        state: "hover"
+      });
+      break;
+    }
+  }
+}
+function Vt(e) {
+  if (e.relatedTarget instanceof HTMLIFrameElement) {
+    const t2 = ie();
+    switch (t2.state) {
+      case "hover":
+        t2.ownerDocument === e.currentTarget && fe({
+          cursorFlags: 0,
+          state: "inactive"
+        });
+    }
+  }
+}
+function jt(e) {
+  e.defaultPrevented || e.pointerType === "mouse" && e.button > 0 || gn(e.currentTarget, e);
+}
+function Ut(e) {
+  e.target === e.currentTarget && De(e.currentTarget.document);
+}
+function Wt(e) {
+  De(e.currentTarget.document);
+}
+function uo(e) {
+  let t2 = 0, n = 0;
+  const o = {};
+  for (const i2 of e)
+    if (i2.defaultSize !== void 0) {
+      t2++;
+      const a = J(i2.defaultSize);
+      n += a, o[i2.itemId] = a;
+    } else
+      o[i2.itemId] = void 0;
+  const r = e.length - t2;
+  if (r !== 0) {
+    const i2 = J((100 - n) / r);
+    for (const a of e)
+      a.defaultSize === void 0 && (o[a.itemId] = i2);
+  }
+  return o;
+}
+function fo(e, t2) {
+  const n = e.map((r) => r.id), o = Object.keys(t2);
+  if (n.length !== o.length)
+    return false;
+  for (const r of n)
+    if (!o.includes(r))
+      return false;
+  return true;
+}
+function Yt({
+  axis: e,
+  itemConstraints: t2
+}) {
+  const n = e.items.map(({ id: r }) => r).join(","), o = e.mutableState.defaultLayout;
+  return e.mutableState.layouts[n] ?? (o && fo(e.items, o) ? o : uo(t2));
+}
+function Xt({
+  itemIds: e,
+  layout: t2
+}) {
+  return ve({
+    layout: t2,
+    itemConstraints: e.map((n) => ({
+      collapsedSize: 0,
+      collapsible: false,
+      defaultSize: void 0,
+      disabled: void 0,
+      itemId: n,
+      maxSize: 100,
+      minSize: 0
+    }))
+  });
+}
+function mo(e, t2, n) {
+  if (!n[0])
+    return;
+  const r = e.items.find((u) => u.element === t2);
+  if (!r || !r.onResize)
+    return;
+  const i2 = Pe({ axis: e }), a = e.orientation === "horizontal" ? r.element.offsetWidth : r.element.offsetHeight, c = r.mutableValues.prevSize, s = {
+    asPercentage: J(a / i2 * 100),
+    inPixels: a
+  };
+  r.mutableValues.prevSize = s, r.onResize(s, r.id, c);
+}
+function vn(e, t2) {
+  if (Object.keys(e).length !== Object.keys(t2).length)
+    return false;
+  for (const o in e)
+    if (e[o] !== t2[o])
+      return false;
+  return true;
+}
+function po(e, t2) {
+  return e.length !== t2.length ? false : e.every((n, o) => vn(n, t2[o]));
+}
+function ho({
+  axis: e,
+  nextAxisSize: t2,
+  prevAxisSize: n,
+  prevLayout: o
+}) {
+  if (n <= 0 || t2 <= 0 || n === t2)
+    return o;
+  let r = 0, i2 = 0, a = false;
+  const c = /* @__PURE__ */ new Map(), s = [];
+  for (const d of e.items) {
+    const h = o[d.id] ?? 0;
+    switch (d.constraintProps.groupResizeBehavior) {
+      case "preserve-pixel-size": {
+        a = true;
+        const p = h / 100 * n, m = J(
+          p / t2 * 100
+        );
+        c.set(d.id, m), r += m;
+        break;
+      }
+      case "preserve-relative-size":
+      default: {
+        s.push(d.id), i2 += h;
+        break;
+      }
+    }
+  }
+  if (!a || s.length === 0)
+    return o;
+  const u = 100 - r, l = { ...o };
+  if (c.forEach((d, h) => {
+    l[h] = d;
+  }), i2 > 0)
+    for (const d of s) {
+      const h = o[d] ?? 0;
+      l[d] = J(
+        h / i2 * u
+      );
+    }
+  else {
+    const d = J(u / s.length);
+    for (const h of s)
+      l[h] = d;
+  }
+  return l;
+}
+var Ie = /* @__PURE__ */ new Map();
+var Kt = false;
+function bn(e) {
+  let t2 = true;
+  N(
+    e.element.ownerDocument.defaultView,
+    "Cannot register an unmounted Group"
+  );
+  const n = e.element.ownerDocument.defaultView.ResizeObserver, o = /* @__PURE__ */ new Set(), r = /* @__PURE__ */ new Set(), i2 = new n((m) => {
+    let f;
+    nt();
+    try {
+      for (const y of m) {
+        const { borderBoxSize: g, target: S2 } = y;
+        if (S2 === e.element) {
+          if (t2) {
+            const z2 = Pe({ axis: e });
+            if (z2 === 0)
+              break;
+            const b = ce(e.id);
+            if (!b)
+              break;
+            const R = ft(e);
+            let O = b.requestedAxisSize, A = b.requestedLayout;
+            b.defaultLayoutDeferred && (O = z2, A = Xt({
+              itemIds: e.items.map(({ id: v }) => v),
+              layout: Yt({
+                axis: e,
+                itemConstraints: R
+              })
+            }));
+            const x = ho({
+              axis: e,
+              nextAxisSize: z2,
+              prevAxisSize: O,
+              prevLayout: A
+            }), w = ve({
+              layout: x,
+              itemConstraints: R
+            });
+            if (!b.defaultLayoutDeferred && se(b.layout, w) && po(
+              b.derivedItemConstraints,
+              R
+            ) && b.axisSize === z2)
+              continue;
+            me(e, {
+              defaultLayoutDeferred: false,
+              derivedItemConstraints: R,
+              axisSize: z2,
+              layout: w,
+              requestedAxisSize: O,
+              requestedLayout: A,
+              separatorToItems: b.separatorToItems
+            });
+          }
+        } else
+          try {
+            mo(e, S2, g);
+          } catch (z2) {
+            f ??= { error: z2 };
+          }
+      }
+    } finally {
+      ot();
+    }
+    if (f)
+      throw f.error;
+  });
+  i2.observe(e.element), e.items.forEach((m) => {
+    N(
+      !o.has(m.id),
+      `Panel ids must be unique; id "${m.id}" was used more than once`
+    ), o.add(m.id), m.onResize && i2.observe(m.element);
+  });
+  const a = Pe({ axis: e }), c = ft(e), s = Yt({
+    axis: e,
+    itemConstraints: c
+  }), u = ve({
+    layout: s,
+    itemConstraints: c
+  }), l = e.element.ownerDocument, d = l.defaultView;
+  Ie.set(
+    l,
+    (Ie.get(l) ?? 0) + 1
+  );
+  const h = /* @__PURE__ */ new Map();
+  return St({ axis: e, includeDisabled: true }).forEach((m) => {
+    m.separator && h.set(m.separator, m.items);
+  }), me(e, {
+    defaultLayoutDeferred: a === 0,
+    derivedItemConstraints: c,
+    axisSize: a,
+    layout: u,
+    requestedAxisSize: a,
+    requestedLayout: Xt({
+      itemIds: e.items.map(({ id: m }) => m),
+      layout: s
+    }),
+    separatorToItems: h
+  }), e.separators.forEach((m) => {
+    N(
+      !r.has(m.id),
+      `Separator ids must be unique; id "${m.id}" was used more than once`
+    ), r.add(m.id), m.element.addEventListener("keydown", Gt);
+  }), Kt || (Kt = true, gt(Hn)), Ie.get(l) === 1 && (l.addEventListener("contextmenu", kt, true), l.addEventListener("dblclick", Nt, true), l.addEventListener(
+    "lostpointercapture",
+    Ft,
+    true
+  ), l.addEventListener(
+    "pointercancel",
+    _t,
+    true
+  ), l.addEventListener("pointerdown", Bt, true), l.addEventListener("pointerleave", qt), l.addEventListener("pointermove", Ht), l.addEventListener("pointerout", Vt), l.addEventListener("pointerup", jt, true), d?.addEventListener("blur", Ut), d?.addEventListener("pagehide", Wt)), function() {
+    t2 = false, Ie.set(
+      l,
+      Math.max(0, (Ie.get(l) ?? 0) - 1)
+    ), Jn(e), _n(e), e.separators.forEach((f) => {
+      f.element.removeEventListener("keydown", Gt);
+    }), Ie.get(l) || (l.removeEventListener(
+      "contextmenu",
+      kt,
+      true
+    ), l.removeEventListener(
+      "dblclick",
+      Nt,
+      true
+    ), l.removeEventListener(
+      "lostpointercapture",
+      Ft,
+      true
+    ), l.removeEventListener(
+      "pointercancel",
+      _t,
+      true
+    ), l.removeEventListener(
+      "pointerdown",
+      Bt,
+      true
+    ), l.removeEventListener("pointerleave", qt), l.removeEventListener("pointermove", Ht), l.removeEventListener("pointerout", Vt), l.removeEventListener("pointerup", jt, true), d?.removeEventListener("blur", Ut), d?.removeEventListener("pagehide", Wt)), i2.disconnect();
+  };
+}
+function xn({
+  derivedItemConstraints: e,
+  axis: t2,
+  layout: n,
+  prevLayout: o,
+  requestedLayout: r
+}) {
+  const i2 = t2.items.map(({ id: a }) => a).join(",");
+  t2.mutableState.layouts[i2] = r, o && e.forEach((a) => {
+    if (a.collapsible) {
+      const c = W(
+        a.collapsedSize,
+        n[a.itemId]
+      ), s = W(
+        a.collapsedSize,
+        o[a.itemId]
+      );
+      c && !s && (t2.mutableState.expandedItemSizes[a.itemId] = o[a.itemId]);
+    }
+  });
+}
+function wn() {
+  const [e, t2] = (0, import_react.useState)({}), n = (0, import_react.useCallback)(() => t2({}), []);
+  return [e, n];
+}
+function it(e) {
+  const t2 = (0, import_react.useRef)({ ...e });
+  return ne(() => {
+    for (const n in e)
+      t2.current[n] = e[n];
+  }, [e]), t2.current;
+}
+var It = (0, import_react.createContext)(null);
+function go({
+  layout: e,
+  itemConstraints: t2,
+  itemId: n,
+  itemIndex: o
+}) {
+  let r, i2;
+  const a = e[n], c = t2.find(
+    (s) => s.itemId === n
+  );
+  if (c) {
+    const s = c.maxSize, u = c.collapsible ? c.collapsedSize : c.minSize, l = [o, o + 1];
+    i2 = ve({
+      layout: qe({
+        delta: u - a,
+        initialLayout: e,
+        itemConstraints: t2,
+        pivotIndices: l,
+        prevLayout: e
+      }),
+      itemConstraints: t2
+    })[n], r = ve({
+      layout: qe({
+        delta: s - a,
+        initialLayout: e,
+        itemConstraints: t2,
+        pivotIndices: l,
+        prevLayout: e
+      }),
+      itemConstraints: t2
+    })[n];
+  }
+  return {
+    valueControls: n,
+    valueMax: r,
+    valueMin: i2,
+    valueNow: a
+  };
+}
+function zn({
+  attributes: e,
+  axisId: t2,
+  axisOrientation: n,
+  children: o,
+  className: r,
+  "data-testid": i2,
+  disableCursor: a,
+  disabled: c,
+  disableDoubleClick: s,
+  elementRef: u,
+  id: l,
+  isSharedHitRegion: d,
+  preview: h,
+  registerSeparator: p,
+  requiredStyle: m,
+  style: f,
+  styleDefaults: y,
+  tabIndex: g = 0,
+  updateSeparatorProps: S2
+}) {
+  const z2 = it({
+    disabled: c,
+    disableDoubleClick: s,
+    children: o,
+    className: r,
+    preview: h,
+    style: f
+  }), [b, R] = (0, import_react.useState)({}), [O, A] = (0, import_react.useState)("inactive"), [x, w] = (0, import_react.useState)(false), v = (0, import_react.useRef)(null), M = (0, import_react.useRef)(null), k = Ve(v, u), P = n === "horizontal" ? "vertical" : "horizontal";
+  ne(() => {
+    const I = v.current;
+    if (I !== null) {
+      const E = {
+        disabled: z2.disabled,
+        disableDoubleClick: z2.disableDoubleClick,
+        element: I,
+        id: l,
+        get children() {
+          return z2.children;
+        },
+        get className() {
+          return z2.className;
+        },
+        get preview() {
+          return z2.preview;
+        },
+        get style() {
+          return z2.style;
+        }
+      };
+      M.current = E;
+      const q = p(E), Z = gt(
+        (K) => {
+          A(
+            K.next.state !== "inactive" && K.next.hitRegions.some(
+              (ae) => ae.separator === E || (d?.(ae) ?? false)
+            ) ? K.next.state : "inactive"
+          );
+        }
+      ), X = Be(
+        t2,
+        (K) => {
+          const { derivedItemConstraints: ae, layout: we, separatorToItems: ke } = K.next, ze = ke.get(E);
+          if (ze) {
+            const L = ze[0], T = ae.findIndex(
+              (G) => G.itemId === L.id
+            ), { layoutStrategy: F } = K.axis;
+            R({
+              ...go({
+                layout: we,
+                itemConstraints: ae,
+                itemId: L.id,
+                itemIndex: T
+              }),
+              // Items without DOM elements of their own (e.g. Grid tracks) control other elements
+              ...F?.getItemAriaControls && {
+                valueControls: F.getItemAriaControls(
+                  L.id
+                )
+              }
+            });
+          }
+        }
+      );
+      return () => {
+        M.current = null, Z(), X(), q();
+      };
+    }
+  }, [t2, l, d, p, z2]), ne(() => {
+    const I = M.current;
+    I && Fn(I);
+  }, [h]), (0, import_react.useEffect)(() => {
+    S2(l, { disabled: c, disableDoubleClick: s });
+  }, [c, s, l, S2]);
+  let $;
+  c && !a && ($ = "not-allowed");
+  let C2;
+  if (c)
+    C2 = "disabled";
+  else
+    switch (O) {
+      case "active": {
+        C2 = "active";
+        break;
+      }
+      default:
+        x ? C2 = "focus" : C2 = O;
+    }
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    "div",
+    {
+      ...e,
+      "aria-controls": b.valueControls,
+      "aria-disabled": c || void 0,
+      "aria-orientation": P,
+      "aria-valuemax": b.valueMax,
+      "aria-valuemin": b.valueMin,
+      "aria-valuenow": b.valueNow,
+      children: o,
+      className: r,
+      "data-separator": C2,
+      "data-testid": i2,
+      id: l,
+      onBlur: () => w(false),
+      onFocus: () => w(true),
+      ref: k,
+      role: "separator",
+      style: {
+        ...y,
+        cursor: $,
+        ...f,
+        ...m,
+        // Inform the browser that the library is handling touch events for this element
+        // See github.com/bvaughn/react-resizable-panels/issues/662
+        touchAction: "none"
+      },
+      tabIndex: c ? void 0 : g
+    }
+  );
+}
+function Jt({
+  axis: e,
+  children: t2,
+  className: n,
+  crossSpan: o,
+  crossStart: r,
+  disabled: i2,
+  elementRef: a,
+  index: c,
+  style: s
+}) {
+  const u = Te(void 0), {
+    getDisableCursor: l,
+    getResizeAxisId: d,
+    gutters: h,
+    registerSeparator: p,
+    separatorPlacements: m,
+    trackCounts: f,
+    updateSeparatorProps: y
+  } = an(), g = d(e), S2 = e === "column" ? "row" : "column", z2 = f[S2], b = !!i2 || !pt(c, f[e]);
+  let R = true;
+  for (const v of m.values())
+    if (v.axis === e && v.index === c && !v.disabled && v.crossStart < r) {
+      R = false;
+      break;
+    }
+  const O = (0, import_react.useCallback)(
+    (v) => v.axis.id === g && v.axis.items.indexOf(v.items[1]) === c,
+    [g, c]
+  ), A = (0, import_react.useCallback)(
+    (v) => p(
+      {
+        axis: e,
+        crossSpan: o,
+        crossStart: r,
+        disabled: !!i2,
+        index: c
+      },
+      v
+    ),
+    [e, o, r, i2, c, p]
+  ), x = Dn(c), w = kn({
+    crossCount: z2,
+    crossSpan: o,
+    crossStart: r,
+    hasGutters: h[S2]
+  });
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    zn,
+    {
+      axisId: g,
+      axisOrientation: e === "column" ? "horizontal" : "vertical",
+      className: n,
+      disableCursor: l(),
+      disabled: b,
+      disableDoubleClick: void 0,
+      elementRef: a,
+      id: u,
+      isSharedHitRegion: O,
+      registerSeparator: A,
+      requiredStyle: {
+        gridColumn: e === "column" ? x : w,
+        gridRow: e === "row" ? x : w
+      },
+      style: s,
+      tabIndex: R ? 0 : -1,
+      updateSeparatorProps: y,
+      children: t2
+    }
+  );
+}
+function In(e) {
+  const { children: t2, className: n, disabled: o, elementRef: r, style: i2 } = e;
+  return e.type === "column" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    Jt,
+    {
+      axis: "column",
+      className: n,
+      crossSpan: e.rowSpan,
+      crossStart: e.row ?? 0,
+      disabled: o,
+      elementRef: r,
+      index: e.column,
+      style: i2,
+      children: t2
+    }
+  ) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    Jt,
+    {
+      axis: "row",
+      className: n,
+      crossSpan: e.columnSpan,
+      crossStart: e.column ?? 0,
+      disabled: o,
+      elementRef: r,
+      index: e.row,
+      style: i2,
+      children: t2
+    }
+  );
+}
+In.displayName = "Gridline";
+var Ce = ["column", "row"];
+var Zt = { columns: {}, rows: {} };
+function yo({
+  children: e,
+  className: t2,
+  columns: n,
+  defaultLayout: o,
+  disableCursor: r,
+  disabled: i2,
+  elementRef: a,
+  gridRef: c,
+  id: s,
+  onLayoutChange: u,
+  onLayoutChanged: l,
+  resizeTargetMinimumSize: d = {
+    coarse: 20,
+    fine: 10
+  },
+  rows: h,
+  style: p,
+  ...m
+}) {
+  const f = Te(s), y = (0, import_react.useCallback)(
+    (L) => L === "column" ? `${f}:columns` : `${f}:rows`,
+    [f]
+  ), g = Qt(n, "columns"), S2 = Qt(h, "rows"), z2 = (L) => L === "column" ? g : S2, b = (0, import_react.useRef)({
+    onLayoutChange: Zt,
+    onLayoutChanged: Zt
+  }), R = Se((L) => {
+    en(b.current.onLayoutChange, L) || (b.current.onLayoutChange = L, u?.(L));
+  }), O = Se(
+    (L, T, F) => {
+      en(b.current.onLayoutChanged, L) || (b.current.onLayoutChanged = L, l?.(L, { isUserInteraction: T, requestedLayout: F }));
+    }
+  ), A = (0, import_react.useRef)(null), x = Ve(A, a), [w, v] = wn(), M = (0, import_react.useRef)({
+    cells: [],
+    column: { expandedItemSizes: {}, layouts: {} },
+    loggedErrors: /* @__PURE__ */ new Set(),
+    row: { expandedItemSizes: {}, layouts: {} },
+    separators: /* @__PURE__ */ new Map()
+  }), k = { column: false, row: false };
+  for (const L of M.current.separators.values())
+    k[L.axis] = true;
+  Ln(e, k);
+  const P = it({
+    defaultLayout: o,
+    disableCursor: r,
+    resizeTargetMinimumSize: d
+  }), $ = Se(() => !!P.disableCursor), C2 = (0, import_react.useCallback)(
+    (L) => {
+      const T = M.current;
+      return T.cells = [...T.cells, L], v(), () => {
+        T.cells = T.cells.filter(
+          (F) => F !== L
+        ), v();
+      };
+    },
+    [v]
+  ), I = (0, import_react.useCallback)(
+    (L, T) => {
+      const F = M.current;
+      return F.separators = new Map(F.separators), F.separators.set(T, L), v(), () => {
+        F.separators = new Map(F.separators), F.separators.delete(T), v();
+      };
+    },
+    [v]
+  ), E = (0, import_react.useCallback)(
+    (L, {
+      disabled: T,
+      disableDoubleClick: F
+    }) => {
+      for (const G of M.current.separators.keys())
+        G.id === L && (G.disabled = T, G.disableDoubleClick = F);
+    },
+    []
+  ), q = M.current.separators, Z = (0, import_react.useMemo)(
+    () => ({
+      getDisableCursor: $,
+      getResizeAxisId: y,
+      gutters: {
+        column: k.column,
+        row: k.row
+      },
+      id: f,
+      registerCell: C2,
+      registerSeparator: I,
+      separatorPlacements: q,
+      trackCounts: {
+        column: g.length,
+        row: S2.length
+      },
+      updateSeparatorProps: E
+    }),
+    [
+      g.length,
+      $,
+      y,
+      k.column,
+      k.row,
+      f,
+      C2,
+      I,
+      S2.length,
+      q,
+      E
+    ]
+  ), X = (0, import_react.useRef)([]);
+  ne(() => {
+    const L = A.current;
+    if (L === null)
+      return;
+    const T = M.current, F = vo({
+      cells: T.cells,
+      separatorPlacements: T.separators,
+      trackCounts: { column: g.length, row: S2.length }
+    });
+    F.forEach((D) => {
+      T.loggedErrors.has(D) || console.error(D);
+    }), T.loggedErrors = new Set(F);
+    const G = (D) => Array.from(T.separators.entries()).filter(([, U]) => U.axis === D).sort(([, U], [, pe]) => U.index - pe.index).map(([U]) => U), _ = (D) => {
+      const U = D === "column" ? g : S2, pe = D === "column" ? S2 : g, he = U.map((Q) => Q.id), Ue = y(D), We = G(D), be = We.length > 0, Ye = U.map(
+        ({ id: Q, ...oe }, ee) => ({
+          // Tracks don't have DOM elements of their own;
+          // the Grid element is used to resolve relative size constraints (e.g. "em")
+          element: L,
+          id: he[ee],
+          idIsStable: true,
+          mutableValues: {
+            expandToSize: void 0,
+            prevSize: void 0
+          },
+          onResize: void 0,
+          constraintProps: oe
+        })
+      ), $e = () => {
+        const Q = [];
+        if (be) {
+          for (const [oe, ee] of T.separators)
+            if (ee.axis === D && pt(ee.index, U.length)) {
+              const Ne = oe.element.getBoundingClientRect();
+              Q[ee.index] = Math.max(
+                Q[ee.index] ?? 0,
+                D === "column" ? Ne.width : Ne.height
+              );
+            }
+        }
+        return Nn({
+          axis: D,
+          element: L,
+          gutterSizes: Q.filter((oe) => oe !== void 0),
+          hasGutters: be,
+          layout: ce(Ue)?.layout,
+          trackIds: he
+        });
+      };
+      let Oe;
+      const at = P.defaultLayout?.[D === "column" ? "columns" : "rows"];
+      if (at !== void 0 && Object.keys(at).length === he.length) {
+        Oe = {};
+        for (const Q of he) {
+          const oe = at[Q];
+          oe !== void 0 && (Oe[Q] = oe);
+        }
+      }
+      return {
+        disabled: !!i2,
+        element: L,
+        id: Ue,
+        layoutStrategy: {
+          getItemAriaControls: (Q) => {
+            const oe = he.indexOf(Q);
+            return T.cells.filter((ee) => {
+              const Ne = D === "column" ? ee.column : ee.row, Rn = D === "column" ? ee.columnSpan : ee.rowSpan;
+              return Ne <= oe && oe < Ne + Rn;
+            }).map((ee) => ee.element.id).filter(Boolean).join(" ") || void 0;
+          },
+          calculateAvailableSize: () => $e().availableSize,
+          calculateHitRegions: ({
+            expandHitTargets: Q,
+            axis: oe,
+            includeDisabled: ee
+          }) => On({
+            axis: D,
+            cells: T.cells,
+            crossTrackCount: pe.length,
+            expandHitTargets: Q,
+            resizeAxis: oe,
+            axisSize: $e().availableSize,
+            includeDisabled: ee,
+            separatorPlacements: T.separators
+          }),
+          getItemSizeInPixels: (Q) => $e().trackSizes[he.indexOf(Q)] ?? 0
+        },
+        mutableState: {
+          defaultLayout: Oe,
+          disableCursor: !!P.disableCursor,
+          expandedItemSizes: T[D].expandedItemSizes,
+          layouts: T[D].layouts
+        },
+        orientation: D === "column" ? "horizontal" : "vertical",
+        items: Ye,
+        resizePreviewMode: "panel",
+        get resizeTargetMinimumSize() {
+          return P.resizeTargetMinimumSize;
+        },
+        separators: We
+      };
+    }, V = Ce.map(_);
+    X.current = V;
+    const j = V.map((D) => bn(D)), te = () => {
+      const [D, U] = V.map(
+        (pe) => ce(pe.id)
+      );
+      if (!(!D || !U || D.defaultLayoutDeferred || U.defaultLayoutDeferred))
+        return {
+          layout: { columns: D.layout, rows: U.layout },
+          requestedLayout: {
+            columns: D.requestedLayout,
+            rows: U.requestedLayout
+          }
+        };
+    };
+    {
+      const D = te();
+      if (D)
+        try {
+          try {
+            R(D.layout);
+          } finally {
+            O(
+              D.layout,
+              false,
+              D.requestedLayout
+            );
+          }
+        } catch (U) {
+          throw X.current = [], j.forEach((pe) => pe()), U;
+        }
+    }
+    const Ae = V.map(
+      (D) => Be(D.id, (U) => {
+        const {
+          defaultLayoutDeferred: pe,
+          derivedItemConstraints: he,
+          layout: Ue,
+          requestedLayout: We
+        } = U.next;
+        if (pe || he.length === 0)
+          return;
+        xn({
+          derivedItemConstraints: he,
+          axis: D,
+          layout: Ue,
+          prevLayout: U.prev?.layout,
+          requestedLayout: We
+        });
+        const be = te();
+        if (be) {
+          const Ye = ie(), $e = Ye.state !== "active" || !Ye.hitRegions.some(
+            (Oe) => V.includes(Oe.axis)
+          );
+          try {
+            R(be.layout);
+          } finally {
+            $e && O(
+              be.layout,
+              U.isUserInteraction,
+              be.requestedLayout
+            );
+          }
+        }
+      })
+    );
+    return () => {
+      X.current = [], j.forEach((D) => D()), Ae.forEach((D) => D());
+    };
+  }, [
+    g,
+    i2,
+    y,
+    f,
+    O,
+    R,
+    S2,
+    w,
+    P
+  ]), (0, import_react.useEffect)(() => {
+    X.current.forEach((L) => {
+      L.mutableState.defaultLayout = o?.[L.orientation === "horizontal" ? "columns" : "rows"], L.mutableState.disableCursor = !!r;
+    });
+  }), (0, import_react.useImperativeHandle)(c, () => {
+    const L = () => {
+      const [G, _] = Ce.map(y);
+      return !Re(G) || !Re(_) ? { columns: {}, rows: {} } : {
+        columns: _e({
+          axisId: G
+        }).getLayout(),
+        rows: _e({ axisId: _ }).getLayout()
+      };
+    }, T = (G) => G.map((_) => `"${_}"`).join(", "), F = (G, _) => {
+      const V = y(G), j = () => {
+        const te = Re(V);
+        return N(te, `Grid "${f}" has not been mounted`), N(
+          te.items.some((Ae) => Ae.id === _),
+          `Grid "${f}" no longer contains a ${G} with id "${_}"; ${G} ids are ${T(te.items.map((Ae) => Ae.id))}`
+        ), zt({ axisId: V, itemId: _ });
+      };
+      return {
+        collapse: () => j().collapse(),
+        expand: () => j().expand(),
+        getSize: () => j().getSize(),
+        isCollapsed: () => j().isCollapsed(),
+        resize: (te) => j().resize(te)
+      };
+    };
+    return {
+      getLayout: L,
+      getTrackById: (G, _) => {
+        const V = G === "column" ? g : S2, j = `${_}`;
+        return N(
+          V.some((te) => te.id === j),
+          `Grid "${f}" does not contain a ${G} with id "${j}"; ${G} ids are ${T(V.map((te) => te.id))}`
+        ), F(G, j);
+      },
+      getTrackByIndex: (G, _) => {
+        const V = G === "column" ? g : S2, j = Number.isInteger(_) ? V[_] : void 0;
+        return N(
+          j,
+          `Grid "${f}" does not contain a ${G} at index ${_}; it has ${V.length} ${G}s`
+        ), F(G, j.id);
+      },
+      setLayout: (G) => (Ce.forEach((_) => {
+        const V = G[_ === "column" ? "columns" : "rows"], j = y(_);
+        V && Re(j) && _e({ axisId: j }).setLayout(V);
+      }), L())
+    };
+  }, [g, y, f, S2]);
+  const K = () => Ce.map((L) => {
+    const T = ce(y(L)), F = z2(L);
+    return (T && !T.defaultLayoutDeferred ? F.map((_) => `minmax(0, ${T.layout[_.id] ?? 1}fr)`) : So(
+      F,
+      o?.[L === "column" ? "columns" : "rows"]
+    )).join(k[L] ? " auto " : " ");
+  }).join("|"), ae = (0, import_react.useCallback)(
+    (L) => {
+      const T = Ce.map(
+        (F) => Be(y(F), L)
+      );
+      return () => T.forEach((F) => F());
+    },
+    [y]
+  ), we = (0, import_react.useSyncExternalStore)(
+    ae,
+    K,
+    K
+  ), [ke, ze] = we.split("|");
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(sn.Provider, { value: Z, children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    "div",
+    {
+      ...m,
+      className: t2,
+      "data-grid": true,
+      "data-testid": je(m, s),
+      id: f,
+      ref: x,
+      style: {
+        height: "100%",
+        width: "100%",
+        overflow: "hidden",
+        ...p,
+        display: "grid",
+        gridTemplateColumns: ke,
+        gridTemplateRows: ze,
+        // Inform the browser that the library is handling touch events for this element
+        // NOTE This is not an inherited style
+        touchAction: "none"
+      },
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(It.Provider, { value: null, children: e })
+    }
+  ) });
+}
+yo.displayName = "Grid";
+function Qt(e, t2) {
+  const n = JSON.stringify(e);
+  return (0, import_react.useMemo)(() => {
+    const o = typeof e == "number" ? Array.from({ length: e }, (r, i2) => ({ id: `${i2}` })) : e.map((r, i2) => ({
+      ...r,
+      id: `${r.id ?? i2}`
+    }));
+    return N(
+      o.length > 0,
+      `Grid must have at least one track; "${t2}" is ${n}`
+    ), o;
+  }, [n]);
+}
+function Ln(e, t2) {
+  import_react.Children.forEach(e, (n) => {
+    if ((0, import_react.isValidElement)(n))
+      if (n.type === In) {
+        const { type: o } = n.props;
+        o === "column" ? t2.column = true : o === "row" && (t2.row = true);
+      } else
+        typeof n.type == "symbol" && n.props !== null && typeof n.props == "object" && "children" in n.props && Ln(n.props.children, t2);
+  });
+}
+function So(e, t2) {
+  if (t2)
+    return e.map(
+      (i2) => `minmax(0, ${t2[i2.id] ?? 1}fr)`
+    );
+  const n = e.map(
+    (i2) => i2.defaultSize === void 0 ? void 0 : cn(i2.defaultSize)
+  );
+  let o = 100, r = 0;
+  return n.forEach((i2) => {
+    i2 === void 0 ? r++ : i2[1] === "%" && (o -= i2[0]);
+  }), n.map((i2) => {
+    if (i2 === void 0)
+      return `minmax(0, ${Math.max(0, o) / Math.max(1, r)}fr)`;
+    const [a, c] = i2;
+    return c === "%" ? `minmax(0, ${a}fr)` : `${a}${c}`;
+  });
+}
+function vo({
+  cells: e,
+  separatorPlacements: t2,
+  trackCounts: n
+}) {
+  const o = [];
+  for (const c of e)
+    Ce.forEach((s) => {
+      const [u, l] = s === "column" ? [c.column, c.columnSpan] : [c.row, c.rowSpan], d = n[s];
+      (!Number.isInteger(u) || !Number.isInteger(l) || u < 0 || l < 1 || u + l > d) && o.push(
+        `Invalid Cell ${s} placement (${s}: ${u}, ${s}Span: ${l}); Grid has ${d} ${s}s`
+      );
+    });
+  const r = ({
+    axis: c,
+    crossSpan: s,
+    crossStart: u,
+    disabled: l,
+    index: d
+  }) => {
+    const h = c === "column" ? "row" : "column";
+    let p = `type="${c}" ${c}={${d}}`;
+    return (u !== 0 || s !== void 0) && (p += ` ${h}={${u}}`), s !== void 0 && (p += ` ${h}Span={${s}}`), l && (p += " disabled"), `<Gridline ${p} />`;
+  }, i2 = Array.from(t2.values()).filter(
+    (c) => {
+      const { axis: s, crossSpan: u, crossStart: l, index: d } = c, h = s === "column" ? "row" : "column", p = n[s], m = n[h];
+      let f = true;
+      return pt(d, p) || (o.push(
+        `Invalid ${s} Gridline ${s} (${d}); must be between 1 and ${p - 1}`
+      ), f = false), !Number.isInteger(l) || l < 0 || l >= m ? (o.push(
+        `Invalid ${s} Gridline ${h} (${l}); must be between 0 and ${m - 1}`
+      ), f = false) : u !== void 0 && (!Number.isInteger(u) || u < 1 || l + u > m) && (o.push(
+        `Invalid ${s} Gridline ${h}Span (${u}); Grid has ${m} ${h}s`
+      ), f = false), f;
+    }
+  ), a = (c) => {
+    const s = n[c.axis === "column" ? "row" : "column"];
+    return [
+      c.crossStart,
+      c.crossSpan === void 0 ? s : c.crossStart + c.crossSpan
+    ];
+  };
+  return i2.forEach((c, s) => {
+    const { axis: u, index: l } = c, [d, h] = a(c);
+    for (const p of e) {
+      const [m, f, y, g] = u === "column" ? [p.column, p.columnSpan, p.row, p.rowSpan] : [p.row, p.rowSpan, p.column, p.columnSpan];
+      if (m < l && l < m + f && y < h && d < y + g) {
+        const S2 = u === "column" ? "row" : "column";
+        o.push(
+          `${r(c)} overlaps a Cell that spans across it (${u}: ${m}, ${u}Span: ${f}, ${S2}: ${y}, ${S2}Span: ${g}); use the ${S2} and ${S2}Span props to render gridlines beside the Cell instead`
+        );
+      }
+    }
+    for (const p of i2.slice(s + 1))
+      if (p.axis === u && p.index === l) {
+        const [m, f] = a(p);
+        m < h && d < f && o.push(`${r(c)} overlaps ${r(p)}`);
+      }
+  }), o;
+}
+function en(e, t2) {
+  return se(e.columns, t2.columns) && se(e.rows, t2.rows);
+}
+function xo(e) {
+  for (let t2 = 1; t2 < e.length; t2++)
+    if (yt(e[t2 - 1], e[t2]) > 0)
+      return false;
+  return true;
+}
+function wo({
+  separator: e
+}) {
+  const { element: t2 } = e, n = (0, import_react.useRef)(null);
+  return ne(() => {
+    const o = t2.cloneNode(true), r = [t2, ...t2.querySelectorAll("*")], i2 = [o, ...o.querySelectorAll("*")], a = t2.ownerDocument.defaultView;
+    return r.forEach((c, s) => {
+      const u = i2[s];
+      if (u instanceof a.HTMLElement || u instanceof a.SVGElement) {
+        const l = a.getComputedStyle(c);
+        for (let d = 0; d < l.length; d++) {
+          const h = l.item(d);
+          u.style.setProperty(
+            h,
+            l.getPropertyValue(h)
+          );
+        }
+      }
+      u.removeAttribute("data-testid"), u.removeAttribute("id");
+    }), Object.assign(o.style, {
+      boxSizing: "border-box",
+      height: "100%",
+      margin: "0",
+      position: "static",
+      transform: "none",
+      width: "100%"
+    }), n.current.appendChild(o), () => o.remove();
+  }, [t2]), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    "div",
+    {
+      ref: n,
+      style: {
+        height: "100%",
+        opacity: 0.65,
+        pointerEvents: "none",
+        width: "100%"
+      }
+    }
+  );
+}
+function st() {
+  const e = (0, import_react.useContext)(It);
+  return N(
+    e,
+    "Group Context not found; did you render a Panel or Separator outside of a Group?"
+  ), e;
+}
+function Cn(e) {
+  const { registerOverlay: t2 } = st(), n = (0, import_react.useRef)(e);
+  vn(n.current, e) || (n.current = e);
+  const o = n.current;
+  return ne(
+    () => t2(o),
+    [t2, o]
+  ), null;
+}
+Cn.displayName = "SeparatorOverlay";
+function zo({
+  active: e,
+  orientation: t2,
+  style: n,
+  ...o
+}) {
+  let r;
+  switch (t2) {
+    case "horizontal": {
+      r = {
+        height: "100%",
+        minWidth: "1px"
+      };
+      break;
+    }
+    case "vertical": {
+      r = {
+        minHeight: "1px",
+        width: "100%"
+      };
+      break;
+    }
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    "div",
+    {
+      ...o,
+      "data-separator-overlay": e ? "active" : "inactive",
+      style: {
+        ...r,
+        ...n,
+        flexShrink: 0,
+        pointerEvents: "none"
+      }
+    }
+  );
+}
+function Io({
+  overlay: e,
+  preview: t2
+}) {
+  const { axis: n, offset: o, rect: r, separator: i2 } = t2, a = n.orientation === "horizontal";
+  let c = i2?.preview, s = e;
+  return (0, import_react.isValidElement)(c) && c.type === Cn && (s = c.props, c = void 0), c == null && (s ? c = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    zo,
+    {
+      ...s,
+      active: t2.active,
+      orientation: n.orientation
+    }
+  ) : i2 && (c = /* @__PURE__ */ (0, import_jsx_runtime.jsx)(wo, { separator: i2 }))), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    "div",
+    {
+      "aria-hidden": "true",
+      "data-resize-preview": true,
+      inert: true,
+      style: {
+        height: r.height,
+        left: r.left,
+        pointerEvents: "none",
+        position: "absolute",
+        top: r.top,
+        transform: a ? `translateX(${o}px)` : `translateY(${o}px)`,
+        width: r.width
+      },
+      children: c
+    }
+  );
+}
+function Lo(e) {
+  return Array.from(e).sort(yt);
+}
+function Co(e, t2) {
+  const n = (0, import_react.useRef)({
+    getLayout: () => ({}),
+    setLayout: Bn
+  });
+  (0, import_react.useImperativeHandle)(t2, () => n.current, []), ne(() => {
+    Object.assign(
+      n.current,
+      _e({ axisId: e })
+    );
+  });
+}
+function Ro({
+  groupId: e,
+  resizePreviewMode: t2
+}) {
+  const [n, o] = (0, import_react.useState)([]), r = (0, import_react.useRef)(n);
+  return ne(() => {
+    const i2 = (c) => {
+      const s = Re(e), u = t2 === "separator" && c.state === "active" ? c.previews.filter(
+        (d) => d.axis === s && (d.active || !W(d.offset, 0))
+      ) : [], l = r.current;
+      l.length === u.length && u.every(
+        (d, h) => d === l[h]
+      ) || (r.current = u, o(u));
+    };
+    if (t2 !== "separator") {
+      i2(ie());
+      return;
+    }
+    const a = gt(
+      ({ next: c }) => i2(c)
+    );
+    return i2(ie()), a;
+  }, [e, t2]), n;
+}
+function Eo({
+  children: e,
+  className: t2,
+  defaultLayout: n,
+  disableCursor: o,
+  disabled: r,
+  elementRef: i2,
+  groupRef: a,
+  id: c,
+  onLayoutChange: s,
+  onLayoutChanged: u,
+  orientation: l = "horizontal",
+  resizePreviewMode: d = "panel",
+  resizeTargetMinimumSize: h = {
+    coarse: 20,
+    fine: 10
+  },
+  style: p,
+  ...m
+}) {
+  const f = (0, import_react.useRef)({
+    onLayoutChange: {},
+    onLayoutChanged: {}
+  }), y = Se((I) => {
+    se(f.current.onLayoutChange, I) || (f.current.onLayoutChange = I, s?.(I));
+  }), g = Se(
+    (I, E, q) => {
+      se(f.current.onLayoutChanged, I) || (f.current.onLayoutChanged = I, u?.(I, { isUserInteraction: E, requestedLayout: q }));
+    }
+  ), S2 = Te(c), [z2, b] = (0, import_react.useState)(), R = Ro({
+    groupId: S2,
+    resizePreviewMode: d
+  }), O = (0, import_react.useRef)(null), [A, x] = wn(), w = (0, import_react.useRef)([]), v = (0, import_react.useRef)({
+    lastExpandedPanelSizes: {},
+    layouts: {},
+    panels: [],
+    separators: []
+  }), M = Ve(O, i2);
+  Co(S2, a);
+  const k = Se(
+    (I, E) => {
+      const q = ce(I);
+      if (q)
+        return {
+          flexGrow: q.layout[E] ?? 1
+        };
+      if (n?.[E])
+        return {
+          flexGrow: n?.[E]
+        };
+    }
+  ), P = it({
+    defaultLayout: n,
+    disableCursor: o,
+    resizeTargetMinimumSize: h
+  }), $ = (0, import_react.useMemo)(
+    () => ({
+      get disableCursor() {
+        return !!P.disableCursor;
+      },
+      getPanelStyles: k,
+      id: S2,
+      orientation: l,
+      registerPanel: (I) => {
+        const E = v.current;
+        return E.panels = Ge(l, [
+          ...E.panels,
+          I
+        ]), x(), () => {
+          E.panels = E.panels.filter(
+            (q) => q !== I
+          ), x();
+        };
+      },
+      registerOverlay: (I) => (b(I), () => {
+        b(void 0);
+      }),
+      registerSeparator: (I) => {
+        const E = v.current;
+        return E.separators = Ge(l, [
+          ...E.separators,
+          I
+        ]), x(), () => {
+          E.separators = E.separators.filter(
+            (q) => q !== I
+          ), x();
+        };
+      },
+      updatePanelProps: (I, { disabled: E }) => {
+        const Z = v.current.panels.find(
+          (ae) => ae.id === I
+        );
+        Z && (Z.constraintProps.disabled = E);
+        const X = Re(S2), K = ce(S2);
+        X && K && me(X, {
+          ...K,
+          derivedItemConstraints: ft(X)
+        });
+      },
+      updateSeparatorProps: (I, {
+        disabled: E,
+        disableDoubleClick: q
+      }) => {
+        const X = v.current.separators.find(
+          (K) => K.id === I
+        );
+        X && (X.disabled = E, X.disableDoubleClick = q);
+      }
+    }),
+    [k, S2, x, l, P]
+  ), C2 = (0, import_react.useRef)(null);
+  return ne(() => {
+    const I = O.current;
+    if (I === null)
+      return;
+    const E = v.current;
+    E.panels = Ge(
+      l,
+      E.panels
+    ), E.separators = Ge(
+      l,
+      E.separators
+    ), w.current = Lo([
+      ...E.panels.map(({ element: L }) => L),
+      ...E.separators.map(({ element: L }) => L)
+    ]);
+    let q;
+    if (P.defaultLayout !== void 0 && Object.keys(P.defaultLayout).length === E.panels.length) {
+      q = {};
+      for (const L of E.panels) {
+        const T = P.defaultLayout[L.id];
+        T !== void 0 && (q[L.id] = T);
+      }
+    }
+    const Z = {
+      disabled: !!r,
+      element: I,
+      id: S2,
+      mutableState: {
+        defaultLayout: q,
+        disableCursor: !!P.disableCursor,
+        expandedItemSizes: v.current.lastExpandedPanelSizes,
+        layouts: v.current.layouts
+      },
+      orientation: l,
+      items: E.panels,
+      resizePreviewMode: d,
+      get resizeTargetMinimumSize() {
+        return P.resizeTargetMinimumSize;
+      },
+      separators: E.separators
+    };
+    C2.current = Z;
+    const X = bn(Z), {
+      defaultLayoutDeferred: K,
+      derivedItemConstraints: ae,
+      layout: we,
+      requestedLayout: ke
+    } = ce(Z.id, true);
+    if (!K && ae.length > 0)
+      try {
+        try {
+          y(we);
+        } finally {
+          g(we, false, ke);
+        }
+      } catch (L) {
+        throw C2.current = null, X(), L;
+      }
+    const ze = Be(S2, (L) => {
+      const {
+        defaultLayoutDeferred: T,
+        derivedItemConstraints: F,
+        layout: G,
+        requestedLayout: _
+      } = L.next;
+      if (T || F.length === 0)
+        return;
+      xn({
+        derivedItemConstraints: F,
+        axis: Z,
+        layout: G,
+        prevLayout: L.prev?.layout,
+        requestedLayout: _
+      });
+      const V = ie(), j = V.state !== "active" || !V.hitRegions.some((te) => te.axis === Z);
+      try {
+        y(G);
+      } finally {
+        j && g(
+          G,
+          L.isUserInteraction,
+          _
+        );
+      }
+    });
+    return () => {
+      C2.current = null, X(), ze();
+    };
+  }, [
+    r,
+    S2,
+    g,
+    y,
+    l,
+    A,
+    d,
+    P
+  ]), ne(() => {
+    xo(w.current) || x();
+  }), (0, import_react.useEffect)(() => {
+    const I = C2.current;
+    I && (I.mutableState.defaultLayout = n, I.mutableState.disableCursor = !!o);
+  }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(It.Provider, { value: $, children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(
+    "div",
+    {
+      ...m,
+      className: t2,
+      "data-group": true,
+      "data-testid": je(m, c),
+      id: S2,
+      ref: M,
+      style: {
+        height: "100%",
+        width: "100%",
+        overflow: "hidden",
+        position: d === "separator" ? "relative" : void 0,
+        ...p,
+        display: "flex",
+        flexDirection: l === "horizontal" ? "row" : "column",
+        flexWrap: "nowrap",
+        // Inform the browser that the library is handling touch events for this element
+        // but still allow users to scroll content within panels in the non-resizing direction
+        // NOTE This is not an inherited style
+        // See github.com/bvaughn/react-resizable-panels/issues/662
+        touchAction: l === "horizontal" ? "pan-y" : "pan-x"
+      },
+      children: [
+        e,
+        R.map((I) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+          Io,
+          {
+            overlay: z2,
+            preview: I
+          },
+          I.key
+        ))
+      ]
+    }
+  ) });
+}
+Eo.displayName = "Group";
+function Qe(e, t2) {
+  return `react-resizable-panels:${[e, ...t2].join(":")}`;
+}
+function Mo({
+  id: e,
+  panelIds: t2,
+  storage: n
+}) {
+  const o = Qe(e, []), r = n.getItem(o);
+  if (r)
+    try {
+      const i2 = JSON.parse(r);
+      if (t2) {
+        const a = t2.join(","), c = i2[a];
+        if (c && Array.isArray(c.layout) && t2.length === c.layout.length) {
+          const s = {};
+          for (let u = 0; u < t2.length; u++)
+            s[t2[u]] = c.layout[u];
+          return s;
+        }
+      } else {
+        const a = Object.keys(i2);
+        if (a.length === 1) {
+          const c = i2[a[0]];
+          if (c && Array.isArray(c.layout)) {
+            const s = a[0].split(",");
+            if (s.length === c.layout.length) {
+              const u = {};
+              for (let l = 0; l < s.length; l++)
+                u[s[l]] = c.layout[l];
+              return u;
+            }
+          }
+        }
+      }
+    } catch {
+    }
+}
+function qo({
+  debounceSaveMs: e = 100,
+  onlySaveAfterUserInteractions: t2,
+  panelIds: n,
+  storage: o = localStorage,
+  ...r
+}) {
+  const i2 = n !== void 0, a = "id" in r ? r.id : r.groupId, c = Qe(a, n ?? []), s = (0, import_react.useSyncExternalStore)(
+    Po,
+    () => o.getItem(c),
+    () => o.getItem(c)
+  ), u = (0, import_react.useMemo)(() => {
+    if (s) {
+      const y = JSON.parse(s), g = Object.values(y);
+      if (Array.from(g).every((S2) => typeof S2 == "number"))
+        return y;
+    }
+  }, [s]), l = (0, import_react.useMemo)(() => {
+    if (!u)
+      return Mo({
+        id: a,
+        panelIds: n,
+        storage: o
+      });
+  }, [u, a, n, o]), d = u ?? l, h = (0, import_react.useRef)(null), p = (0, import_react.useCallback)(() => {
+    const y = h.current;
+    y && (h.current = null, clearTimeout(y));
+  }, []);
+  (0, import_react.useLayoutEffect)(() => () => {
+    p();
+  }, [p]);
+  const m = (0, import_react.useCallback)(
+    // The hook persists every layout commit -- including library-driven ones --
+    // because it owns its own storage and the goal is to remember whatever
+    // layout the user is currently looking at. Consumers that only want to
+    // persist on user interaction should branch on `isUserInteraction` in
+    // their own callback (see #716) rather than via this hook.
+    (y, g) => {
+      if (t2 && !g.isUserInteraction)
+        return;
+      p();
+      const S2 = g.requestedLayout ?? y;
+      let z2;
+      i2 ? z2 = Qe(a, Object.keys(S2)) : z2 = Qe(a, []);
+      try {
+        o.setItem(z2, JSON.stringify(S2));
+      } catch (b) {
+        console.error(b);
+      }
+    },
+    [
+      p,
+      i2,
+      a,
+      t2,
+      o
+    ]
+  ), f = (0, import_react.useCallback)(
+    (y) => {
+      p(), e === 0 ? m(y, { isUserInteraction: false }) : h.current = setTimeout(() => {
+        m(y, { isUserInteraction: false });
+      }, e);
+    },
+    [p, e, m]
+  );
+  return {
+    /**
+     * Pass this value to `Group` as the `defaultLayout` prop.
+     */
+    defaultLayout: d,
+    /**
+     * Attach this callback on the `Group` as the `onLayoutChange` prop.
+     *
+     * @deprecated Use the {@link onLayoutChanged} prop instead.
+     */
+    onLayoutChange: f,
+    /**
+     * Attach this callback on the `Group` as the `onLayoutChanged` prop.
+     */
+    onLayoutChanged: m
+  };
+}
+function Po() {
+  return function() {
+  };
+}
+function To(e, t2) {
+  const { id: n } = st(), o = (0, import_react.useRef)({
+    collapse: ct,
+    expand: ct,
+    getSize: () => ({
+      asPercentage: 0,
+      inPixels: 0
+    }),
+    isCollapsed: () => false,
+    resize: ct
+  });
+  (0, import_react.useImperativeHandle)(t2, () => o.current, []), ne(() => {
+    Object.assign(
+      o.current,
+      zt({ axisId: n, itemId: e })
+    );
+  });
+}
+function Do({
+  children: e,
+  className: t2,
+  collapsedSize: n = "0%",
+  collapsedThreshold: o,
+  collapsible: r = false,
+  defaultSize: i2,
+  disabled: a,
+  elementRef: c,
+  groupResizeBehavior: s = "preserve-relative-size",
+  id: u,
+  maxSize: l = "100%",
+  minSize: d = "0%",
+  onResize: h,
+  panelRef: p,
+  style: m,
+  ...f
+}) {
+  const y = et(u), g = Te(u), S2 = it({
+    disabled: a
+  }), z2 = (0, import_react.useRef)(null), b = Ve(z2, c), {
+    getPanelStyles: R,
+    id: O,
+    orientation: A,
+    registerPanel: x,
+    updatePanelProps: w
+  } = st(), v = h !== null, M = Se(
+    (C2, I, E) => {
+      h?.(C2, u, E);
+    }
+  );
+  ne(() => {
+    const C2 = z2.current;
+    if (C2 !== null) {
+      const I = {
+        element: C2,
+        id: g,
+        idIsStable: y,
+        mutableValues: {
+          expandToSize: void 0,
+          prevSize: void 0
+        },
+        onResize: v ? M : void 0,
+        constraintProps: {
+          groupResizeBehavior: s,
+          collapsedSize: n,
+          collapsedThreshold: o,
+          collapsible: r,
+          defaultSize: i2,
+          disabled: S2.disabled,
+          maxSize: l,
+          minSize: d
+        }
+      };
+      return x(I);
+    }
+  }, [
+    s,
+    n,
+    o,
+    r,
+    i2,
+    v,
+    g,
+    y,
+    l,
+    d,
+    M,
+    x,
+    S2
+  ]), (0, import_react.useEffect)(() => {
+    w(g, { disabled: a });
+  }, [a, g, w]), To(g, p);
+  const k = () => {
+    const C2 = R(O, g);
+    if (C2)
+      return JSON.stringify(C2);
+  }, P = (0, import_react.useSyncExternalStore)(
+    (C2) => Be(O, C2),
+    k,
+    k
+  );
+  let $;
+  return P ? $ = JSON.parse(P) : i2 !== void 0 ? $ = {
+    flexGrow: void 0,
+    flexShrink: void 0,
+    flexBasis: i2
+  } : $ = { flexGrow: 1 }, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    "div",
+    {
+      ...f,
+      "data-disabled": a || void 0,
+      "data-panel": true,
+      "data-testid": je(f, u),
+      id: g,
+      ref: b,
+      style: {
+        ...ko,
+        display: "flex",
+        flexBasis: 0,
+        flexShrink: 1,
+        overflow: "visible",
+        ...$
+      },
+      children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+        "div",
+        {
+          className: t2,
+          style: {
+            maxHeight: "100%",
+            maxWidth: "100%",
+            flexGrow: 1,
+            overflow: "auto",
+            ...m,
+            // Inform the browser that the library is handling touch events for this element
+            // but still allow users to scroll content within panels in the non-resizing direction
+            // NOTE This is not an inherited style
+            // See github.com/bvaughn/react-resizable-panels/issues/662
+            touchAction: A === "horizontal" ? "pan-y" : "pan-x"
+          },
+          children: e
+        }
+      )
+    }
+  );
+}
+Do.displayName = "Panel";
+var ko = {
+  minHeight: 0,
+  maxHeight: "100%",
+  height: "auto",
+  minWidth: 0,
+  maxWidth: "100%",
+  width: "auto",
+  border: "none",
+  borderWidth: 0,
+  padding: 0,
+  margin: 0
+};
+var Ao = { flexBasis: "auto" };
+var $o = { flexGrow: 0, flexShrink: 0 };
+function Oo({
+  children: e,
+  className: t2,
+  disabled: n,
+  disableDoubleClick: o,
+  elementRef: r,
+  id: i2,
+  preview: a,
+  style: c,
+  ...s
+}) {
+  const u = Te(i2), {
+    disableCursor: l,
+    id: d,
+    orientation: h,
+    registerSeparator: p,
+    updateSeparatorProps: m
+  } = st();
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+    zn,
+    {
+      attributes: s,
+      axisId: d,
+      axisOrientation: h,
+      className: t2,
+      "data-testid": je(s, i2),
+      disableCursor: l,
+      disabled: n,
+      disableDoubleClick: o,
+      elementRef: r,
+      id: u,
+      preview: a,
+      registerSeparator: p,
+      requiredStyle: $o,
+      style: c,
+      styleDefaults: Ao,
+      updateSeparatorProps: m,
+      children: e
+    }
+  );
+}
+Oo.displayName = "Separator";
+
+// src/client/WriterPanels.tsx
+var import_jsx_runtime2 = require("react/jsx-runtime");
+function WriterPanels({
+  storageKey,
+  navigation,
+  reference,
+  manuscript,
+  assistant
+}) {
+  const container = (0, import_react2.useRef)(null);
+  const [vertical, setVertical] = (0, import_react2.useState)(false);
+  (0, import_react2.useEffect)(() => {
+    const element = container.current;
+    if (!element) return;
+    const observer = new ResizeObserver(([entry]) => {
+      if (entry) setVertical(entry.contentRect.width < 760);
+    });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+  const panes = [
+    { id: "navigation", label: "\u7AE0\u8282\u4E0E\u8D44\u6599", content: navigation, min: vertical ? 60 : 90, size: "12%" },
+    { id: "reference", label: "\u5BF9\u7167\u8D44\u6599", content: reference, min: vertical ? 120 : 180, size: "27%" },
+    { id: "manuscript", label: "\u5C0F\u8BF4\u6B63\u6587", content: manuscript, min: vertical ? 160 : 220, size: void 0 },
+    { id: "assistant", label: "\u5199\u4F5C\u52A9\u624B", content: assistant, min: vertical ? 200 : 280, size: "34%" }
+  ].filter((pane) => pane.content);
+  const { defaultLayout, onLayoutChanged } = qo({
+    id: `${storageKey}:${vertical ? "vertical" : "horizontal"}`,
+    panelIds: panes.map((pane) => pane.id),
+    onlySaveAfterUserInteractions: true
+  });
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: Writer_default.columns, ref: container, children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+    Eo,
+    {
+      orientation: vertical ? "vertical" : "horizontal",
+      defaultLayout,
+      onLayoutChanged,
+      style: { width: "100%", height: "100%" },
+      children: panes.map((pane, index) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(PanelWithSeparator, { pane, previous: panes[index - 1]?.label }, pane.id))
+    }
+  ) });
+}
+function PanelWithSeparator({
+  pane,
+  previous
+}) {
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(import_jsx_runtime2.Fragment, { children: [
+    previous && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      Oo,
+      {
+        className: Writer_default.separator,
+        "aria-label": `\u8C03\u6574${previous}\u4E0E${pane.label}\u5BBD\u5EA6`,
+        title: "\u62D6\u52A8\u8C03\u6574\uFF0C\u6216\u4F7F\u7528\u65B9\u5411\u952E"
+      }
+    ),
+    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Do, { id: pane.id, minSize: pane.min, defaultSize: pane.size, className: Writer_default.pane, children: pane.content })
+  ] });
+}
+
+// ../../node_modules/.pnpm/@marijn+find-cluster-break@1.0.4/node_modules/@marijn/find-cluster-break/src/index.js
 var rangeFrom = [];
 var rangeTo = [];
 (() => {
@@ -14633,12 +18616,12 @@ var rangeTo = [];
 })();
 function isExtendingChar(code2) {
   if (code2 < 768) return false;
-  for (let from = 0, to = rangeFrom.length; ; ) {
-    let mid = from + to >> 1;
-    if (code2 < rangeFrom[mid]) to = mid;
+  for (let from = 0, to2 = rangeFrom.length; ; ) {
+    let mid = from + to2 >> 1;
+    if (code2 < rangeFrom[mid]) to2 = mid;
     else if (code2 >= rangeTo[mid]) from = mid + 1;
     else return true;
-    if (from == to) return false;
+    if (from == to2) return false;
   }
 }
 function isRegionalIndicator(code2) {
@@ -14697,7 +18680,7 @@ function codePointSize(code2) {
   return code2 < 65536 ? 1 : 2;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/state/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+state@6.7.6/node_modules/@codemirror/state/dist/index.js
 var Text = class _Text {
   /**
   Get the line description around the given position.
@@ -14718,8 +18701,8 @@ var Text = class _Text {
   /**
   Replace a range of the text with the given content.
   */
-  replace(from, to, text) {
-    [from, to] = clip(this, from, to);
+  replace(from, to2, text) {
+    [from, to2] = clip(this, from, to2);
     let parts = [];
     this.decompose(
       0,
@@ -14737,13 +18720,13 @@ var Text = class _Text {
         /* Open.To */
       );
     this.decompose(
-      to,
+      to2,
       this.length,
       parts,
       1
       /* Open.From */
     );
-    return TextNode.from(parts, this.length - (to - from) + text.length);
+    return TextNode.from(parts, this.length - (to2 - from) + text.length);
   }
   /**
   Append another document to this one.
@@ -14754,11 +18737,11 @@ var Text = class _Text {
   /**
   Retrieve the text between the given points.
   */
-  slice(from, to = this.length) {
-    [from, to] = clip(this, from, to);
+  slice(from, to2 = this.length) {
+    [from, to2] = clip(this, from, to2);
     let parts = [];
-    this.decompose(from, to, parts, 0);
-    return TextNode.from(parts, to - from);
+    this.decompose(from, to2, parts, 0);
+    return TextNode.from(parts, to2 - from);
   }
   /**
   Test whether this text is equal to another instance.
@@ -14793,8 +18776,8 @@ var Text = class _Text {
   Iterate over a range of the text. When `from` > `to`, the
   iterator will run in reverse.
   */
-  iterRange(from, to = this.length) {
-    return new PartialTextCursor(this, from, to);
+  iterRange(from, to2 = this.length) {
+    return new PartialTextCursor(this, from, to2);
   }
   /**
   Return a cursor that iterates over the given range of lines,
@@ -14803,15 +18786,15 @@ var Text = class _Text {
   
   When `from` and `to` are given, they should be 1-based line numbers.
   */
-  iterLines(from, to) {
+  iterLines(from, to2) {
     let inner;
     if (from == null) {
       inner = this.iter();
     } else {
-      if (to == null)
-        to = this.lines + 1;
+      if (to2 == null)
+        to2 = this.lines + 1;
       let start = this.line(from).from;
-      inner = this.iterRange(start, Math.max(start, to == this.lines + 1 ? this.length : to <= 1 ? 0 : this.line(to - 1).to));
+      inner = this.iterRange(start, Math.max(start, to2 == this.lines + 1 ? this.length : to2 <= 1 ? 0 : this.line(to2 - 1).to));
     }
     return new LineCursor(inner);
   }
@@ -14868,8 +18851,8 @@ var TextLeaf = class _TextLeaf extends Text {
       line++;
     }
   }
-  decompose(from, to, target, open) {
-    let text = from <= 0 && to >= this.length ? this : new _TextLeaf(sliceText(this.text, from, to), Math.min(to, this.length) - Math.max(0, from));
+  decompose(from, to2, target, open) {
+    let text = from <= 0 && to2 >= this.length ? this : new _TextLeaf(sliceText(this.text, from, to2), Math.min(to2, this.length) - Math.max(0, from));
     if (open & 1) {
       let prev = target.pop();
       let joined = appendText(text.text, prev.text.slice(), 0, text.length);
@@ -14883,25 +18866,25 @@ var TextLeaf = class _TextLeaf extends Text {
       target.push(text);
     }
   }
-  replace(from, to, text) {
+  replace(from, to2, text) {
     if (!(text instanceof _TextLeaf))
-      return super.replace(from, to, text);
-    [from, to] = clip(this, from, to);
-    let lines = appendText(this.text, appendText(text.text, sliceText(this.text, 0, from)), to);
-    let newLen = this.length + text.length - (to - from);
+      return super.replace(from, to2, text);
+    [from, to2] = clip(this, from, to2);
+    let lines = appendText(this.text, appendText(text.text, sliceText(this.text, 0, from)), to2);
+    let newLen = this.length + text.length - (to2 - from);
     if (lines.length <= 32)
       return new _TextLeaf(lines, newLen);
     return TextNode.from(_TextLeaf.split(lines, []), newLen);
   }
-  sliceString(from, to = this.length, lineSep = "\n") {
-    [from, to] = clip(this, from, to);
+  sliceString(from, to2 = this.length, lineSep = "\n") {
+    [from, to2] = clip(this, from, to2);
     let result = "";
-    for (let pos = 0, i2 = 0; pos <= to && i2 < this.text.length; i2++) {
+    for (let pos = 0, i2 = 0; pos <= to2 && i2 < this.text.length; i2++) {
       let line = this.text[i2], end = pos + line.length;
       if (pos > from && i2)
         result += lineSep;
-      if (from < end && to > pos)
-        result += line.slice(Math.max(0, from - pos), to - pos);
+      if (from < end && to2 > pos)
+        result += line.slice(Math.max(0, from - pos), to2 - pos);
       pos = end + 1;
     }
     return result;
@@ -14947,47 +18930,47 @@ var TextNode = class _TextNode extends Text {
       line = endLine + 1;
     }
   }
-  decompose(from, to, target, open) {
-    for (let i2 = 0, pos = 0; pos <= to && i2 < this.children.length; i2++) {
+  decompose(from, to2, target, open) {
+    for (let i2 = 0, pos = 0; pos <= to2 && i2 < this.children.length; i2++) {
       let child = this.children[i2], end = pos + child.length;
-      if (from <= end && to >= pos) {
-        let childOpen = open & ((pos <= from ? 1 : 0) | (end >= to ? 2 : 0));
-        if (pos >= from && end <= to && !childOpen)
+      if (from <= end && to2 >= pos) {
+        let childOpen = open & ((pos <= from ? 1 : 0) | (end >= to2 ? 2 : 0));
+        if (pos >= from && end <= to2 && !childOpen)
           target.push(child);
         else
-          child.decompose(from - pos, to - pos, target, childOpen);
+          child.decompose(from - pos, to2 - pos, target, childOpen);
       }
       pos = end + 1;
     }
   }
-  replace(from, to, text) {
-    [from, to] = clip(this, from, to);
+  replace(from, to2, text) {
+    [from, to2] = clip(this, from, to2);
     if (text.lines < this.lines)
       for (let i2 = 0, pos = 0; i2 < this.children.length; i2++) {
         let child = this.children[i2], end = pos + child.length;
-        if (from >= pos && to <= end) {
-          let updated = child.replace(from - pos, to - pos, text);
+        if (from >= pos && to2 <= end) {
+          let updated = child.replace(from - pos, to2 - pos, text);
           let totalLines = this.lines - child.lines + updated.lines;
           if (updated.lines < totalLines >> 5 - 1 && updated.lines > totalLines >> 5 + 1) {
             let copy = this.children.slice();
             copy[i2] = updated;
-            return new _TextNode(copy, this.length - (to - from) + text.length);
+            return new _TextNode(copy, this.length - (to2 - from) + text.length);
           }
           return super.replace(pos, end, updated);
         }
         pos = end + 1;
       }
-    return super.replace(from, to, text);
+    return super.replace(from, to2, text);
   }
-  sliceString(from, to = this.length, lineSep = "\n") {
-    [from, to] = clip(this, from, to);
+  sliceString(from, to2 = this.length, lineSep = "\n") {
+    [from, to2] = clip(this, from, to2);
     let result = "";
-    for (let i2 = 0, pos = 0; i2 < this.children.length && pos <= to; i2++) {
+    for (let i2 = 0, pos = 0; i2 < this.children.length && pos <= to2; i2++) {
       let child = this.children[i2], end = pos + child.length;
       if (pos > from && i2)
         result += lineSep;
-      if (from < end && to > pos)
-        result += child.sliceString(from - pos, to - pos, lineSep);
+      if (from < end && to2 > pos)
+        result += child.sliceString(from - pos, to2 - pos, lineSep);
       pos = end + 1;
     }
     return result;
@@ -15066,12 +19049,12 @@ function textLength(text) {
     length += line.length + 1;
   return length;
 }
-function appendText(text, target, from = 0, to = 1e9) {
-  for (let pos = 0, i2 = 0, first = true; i2 < text.length && pos <= to; i2++) {
+function appendText(text, target, from = 0, to2 = 1e9) {
+  for (let pos = 0, i2 = 0, first = true; i2 < text.length && pos <= to2; i2++) {
     let line = text[i2], end = pos + line.length;
     if (end >= from) {
-      if (end > to)
-        line = line.slice(0, to - pos);
+      if (end > to2)
+        line = line.slice(0, to2 - pos);
       if (pos < from)
         line = line.slice(from - pos);
       if (first) {
@@ -15084,8 +19067,8 @@ function appendText(text, target, from = 0, to = 1e9) {
   }
   return target;
 }
-function sliceText(text, from, to) {
-  return appendText(text, [""], from, to);
+function sliceText(text, from, to2) {
+  return appendText(text, [""], from, to2);
 }
 var RawTextCursor = class {
   constructor(text, dir = 1) {
@@ -15231,9 +19214,9 @@ var Line = class {
   /**
   @internal
   */
-  constructor(from, to, number5, text) {
+  constructor(from, to2, number5, text) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.number = number5;
     this.text = text;
   }
@@ -15244,9 +19227,9 @@ var Line = class {
     return this.to - this.from;
   }
 };
-function clip(text, from, to) {
+function clip(text, from, to2) {
   from = Math.max(0, Math.min(text.length, from));
-  return [from, Math.max(from, Math.min(text.length, to))];
+  return [from, Math.max(from, Math.min(text.length, to2))];
 }
 function findClusterBreak2(str, pos, forward = true, includeExtending = true) {
   return findClusterBreak(str, pos, forward, includeExtending);
@@ -15404,11 +19387,11 @@ var ChangeDesc = class _ChangeDesc {
   changes entirely covers the range, the string `"cover"` is
   returned.
   */
-  touchesRange(from, to = from) {
-    for (let i2 = 0, pos = 0; i2 < this.sections.length && pos <= to; ) {
+  touchesRange(from, to2 = from) {
+    for (let i2 = 0, pos = 0; i2 < this.sections.length && pos <= to2; ) {
       let len = this.sections[i2++], ins = this.sections[i2++], end = pos + len;
-      if (ins >= 0 && pos <= to && end >= from)
-        return pos < from && end > to ? "cover" : true;
+      if (ins >= 0 && pos <= to2 && end >= from)
+        return pos < from && end > to2 ? "cover" : true;
       pos = end;
     }
     return false;
@@ -15610,20 +19593,20 @@ var ChangeSet = class _ChangeSet extends ChangeDesc {
         flush();
         total = total ? total.compose(spec.map(total)) : spec;
       } else {
-        let { from, to = from, insert: insert2 } = spec;
-        if (from > to || from < 0 || to > length)
-          throw new RangeError(`Invalid change range ${from} to ${to} (in doc of length ${length})`);
+        let { from, to: to2 = from, insert: insert2 } = spec;
+        if (from > to2 || from < 0 || to2 > length)
+          throw new RangeError(`Invalid change range ${from} to ${to2} (in doc of length ${length})`);
         let insText = !insert2 ? Text.empty : typeof insert2 == "string" ? Text.of(insert2.split(lineSep || DefaultSplit)) : insert2;
         let insLen = insText.length;
-        if (from == to && insLen == 0)
+        if (from == to2 && insLen == 0)
           return;
         if (from < pos)
           flush();
         if (from > pos)
           addSection(sections, from - pos, -1);
-        addSection(sections, to - from, insLen);
+        addSection(sections, to2 - from, insLen);
         addInsert(inserted, sections, insText);
-        pos = to;
+        pos = to2;
       }
     }
     process3(changes);
@@ -15862,9 +19845,9 @@ var SectionIter = class {
   }
 };
 var SelectionRange = class _SelectionRange {
-  constructor(from, to, flags, goalColumn) {
+  constructor(from, to2, flags, goalColumn) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.flags = flags;
     this.goalColumn = goalColumn;
   }
@@ -15920,22 +19903,22 @@ var SelectionRange = class _SelectionRange {
   updated document.
   */
   map(change, assoc = -1) {
-    let from, to;
+    let from, to2;
     if (this.empty) {
-      from = to = change.mapPos(this.from, assoc);
+      from = to2 = change.mapPos(this.from, assoc);
     } else {
       from = change.mapPos(this.from, 1);
-      to = change.mapPos(this.to, -1);
+      to2 = change.mapPos(this.to, -1);
     }
-    return from == this.from && to == this.to ? this : new _SelectionRange(from, to, this.flags, this.goalColumn);
+    return from == this.from && to2 == this.to ? this : new _SelectionRange(from, to2, this.flags, this.goalColumn);
   }
   /**
   Extend this range to cover at least `from` to `to`.
   */
-  extend(from, to = from, assoc = 0) {
-    if (from <= this.anchor && to >= this.anchor)
-      return EditorSelection.range(from, to, void 0, void 0, assoc);
-    let head = Math.abs(from - this.anchor) > Math.abs(to - this.anchor) ? from : to;
+  extend(from, to2 = from, assoc = 0) {
+    if (from <= this.anchor && to2 >= this.anchor)
+      return EditorSelection.range(from, to2, void 0, void 0, assoc);
+    let head = Math.abs(from - this.anchor) > Math.abs(to2 - this.anchor) ? from : to2;
     return EditorSelection.range(this.anchor, head, void 0, void 0, assoc);
   }
   /**
@@ -15962,8 +19945,8 @@ var SelectionRange = class _SelectionRange {
   /**
   @internal
   */
-  static create(from, to, flags, goalColumn) {
-    return new _SelectionRange(from, to, flags, goalColumn);
+  static create(from, to2, flags, goalColumn) {
+    return new _SelectionRange(from, to2, flags, goalColumn);
   }
 };
 var EditorSelection = class _EditorSelection {
@@ -16082,8 +20065,8 @@ var EditorSelection = class _EditorSelection {
   Create an [undirectional](https://codemirror.net/6/docs/ref/#state.SelectionRange.undirectional)
   selection range.
   */
-  static undirectionalRange(from, to) {
-    return SelectionRange.create(from, to, 64, void 0);
+  static undirectionalRange(from, to2) {
+    return SelectionRange.create(from, to2, 64, void 0);
   }
   /**
   @internal
@@ -16095,10 +20078,10 @@ var EditorSelection = class _EditorSelection {
     for (let i2 = 1; i2 < ranges.length; i2++) {
       let range = ranges[i2], prev = ranges[i2 - 1];
       if (range.empty ? range.from <= prev.to : range.from < prev.to) {
-        let from = prev.from, to = Math.max(range.to, prev.to);
+        let from = prev.from, to2 = Math.max(range.to, prev.to);
         if (i2 <= mainIndex)
           mainIndex--;
-        ranges.splice(--i2, 2, range.anchor > range.head ? _EditorSelection.range(to, from) : _EditorSelection.range(from, to));
+        ranges.splice(--i2, 2, range.anchor > range.head ? _EditorSelection.range(to2, from) : _EditorSelection.range(from, to2));
       }
     }
     return new _EditorSelection(ranges, mainIndex);
@@ -16768,19 +20751,19 @@ Transaction.remote = /* @__PURE__ */ Annotation.define();
 function joinRanges(a, b) {
   let result = [];
   for (let iA = 0, iB = 0; ; ) {
-    let from, to;
+    let from, to2;
     if (iA < a.length && (iB == b.length || b[iB] >= a[iA])) {
       from = a[iA++];
-      to = a[iA++];
+      to2 = a[iA++];
     } else if (iB < b.length) {
       from = b[iB++];
-      to = b[iB++];
+      to2 = b[iB++];
     } else
       return result;
     if (!result.length || result[result.length - 1] < from)
-      result.push(from, to);
-    else if (result[result.length - 1] < to)
-      result[result.length - 1] = to;
+      result.push(from, to2);
+    else if (result[result.length - 1] < to2)
+      result[result.length - 1] = to2;
   }
 }
 function mergeTransaction(a, b, sequential) {
@@ -17050,8 +21033,8 @@ var EditorState = class _EditorState {
   /**
   Return the given range of the document as a string.
   */
-  sliceDoc(from = 0, to = this.doc.length) {
-    return this.doc.sliceString(from, to, this.lineBreak);
+  sliceDoc(from = 0, to2 = this.doc.length) {
+    return this.doc.sliceString(from, to2, this.lineBreak);
   }
   /**
   Get the value of a state [facet](https://codemirror.net/6/docs/ref/#state.Facet).
@@ -17280,8 +21263,8 @@ var RangeValue = class {
   /**
   Create a [range](https://codemirror.net/6/docs/ref/#state.Range) with this value.
   */
-  range(from, to = from) {
-    return Range.create(from, to, this);
+  range(from, to2 = from) {
+    return Range.create(from, to2, this);
   }
 };
 RangeValue.prototype.startSide = RangeValue.prototype.endSide = 0;
@@ -17291,25 +21274,25 @@ function cmpVal(a, b) {
   return a == b || a.constructor == b.constructor && a.eq(b);
 }
 var Range = class _Range {
-  constructor(from, to, value) {
+  constructor(from, to2, value) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.value = value;
   }
   /**
   @internal
   */
-  static create(from, to, value) {
-    return new _Range(from, to, value);
+  static create(from, to2, value) {
+    return new _Range(from, to2, value);
   }
 };
 function cmpRange(a, b) {
   return a.from - b.from || a.value.startSide - b.value.startSide;
 }
 var Chunk = class _Chunk {
-  constructor(from, to, value, maxPoint) {
+  constructor(from, to2, value, maxPoint) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.value = value;
     this.maxPoint = maxPoint;
   }
@@ -17320,26 +21303,26 @@ var Chunk = class _Chunk {
   // `from` pos when `end == false`, `to` when `end == true`.
   findIndex(pos, side, end, startAt = 0) {
     let arr = end ? this.to : this.from;
-    for (let lo = startAt, hi = arr.length; ; ) {
-      if (lo == hi)
-        return lo;
-      let mid = lo + hi >> 1;
+    for (let lo2 = startAt, hi = arr.length; ; ) {
+      if (lo2 == hi)
+        return lo2;
+      let mid = lo2 + hi >> 1;
       let diff = arr[mid] - pos || (end ? this.value[mid].endSide : this.value[mid].startSide) - side;
-      if (mid == lo)
-        return diff >= 0 ? lo : hi;
+      if (mid == lo2)
+        return diff >= 0 ? lo2 : hi;
       if (diff >= 0)
         hi = mid;
       else
-        lo = mid + 1;
+        lo2 = mid + 1;
     }
   }
-  between(offset, from, to, f) {
-    for (let i2 = this.findIndex(from, -1e9, true), e = this.findIndex(to, 1e9, false, i2); i2 < e; i2++)
+  between(offset, from, to2, f) {
+    for (let i2 = this.findIndex(from, -1e9, true), e = this.findIndex(to2, 1e9, false, i2); i2 < e; i2++)
       if (f(this.from[i2] + offset, this.to[i2] + offset, this.value[i2]) === false)
         return false;
   }
   map(offset, changes, basePos, baseSide, spill) {
-    let value = [], from = [], to = [], newPos = -1, maxPoint = -1;
+    let value = [], from = [], to2 = [], newPos = -1, maxPoint = -1;
     iter: for (let i2 = 0; i2 < this.value.length; i2++) {
       let val = this.value[i2], curFrom = this.from[i2] + offset, curTo = this.to[i2] + offset, newFrom, newTo;
       if (curFrom == curTo) {
@@ -17367,16 +21350,16 @@ var Chunk = class _Chunk {
       if ((newFrom - basePos || val.startSide - baseSide) >= 0) {
         value.push(val);
         from.push(newFrom - newPos);
-        to.push(newTo - newPos);
+        to2.push(newTo - newPos);
         basePos = newTo;
         baseSide = val.endSide;
       } else {
         if (newFrom == newTo) {
           for (let i3 = value.length; i3 > 0; i3--) {
-            if ((newFrom - (to[i3 - 1] + newPos) || val.startSide - value[i3 - 1].endSide) >= 0) {
+            if ((newFrom - (to2[i3 - 1] + newPos) || val.startSide - value[i3 - 1].endSide) >= 0) {
               value.splice(i3, 0, val);
               from.splice(i3, 0, newFrom - newPos);
-              to.splice(i3, 0, newTo - newPos);
+              to2.splice(i3, 0, newTo - newPos);
               continue iter;
             }
             if ((newFrom - (from[i3 - 1] + newPos) || val.endSide - value[i3 - 1].startSide) > 0)
@@ -17386,7 +21369,7 @@ var Chunk = class _Chunk {
         spill(newFrom, newTo, val);
       }
     }
-    return { mapped: value.length ? new _Chunk(from, to, value, maxPoint) : null, pos: newPos };
+    return { mapped: value.length ? new _Chunk(from, to2, value, maxPoint) : null, pos: newPos };
   }
 };
 var RangeSet = class _RangeSet {
@@ -17471,10 +21454,10 @@ var RangeSet = class _RangeSet {
       return this;
     let chunks = [], chunkPos = [], maxPoint = -1;
     let spilled;
-    let spill = (from, to, value) => {
+    let spill = (from, to2, value) => {
       if (!spilled)
         spilled = new RangeSetBuilder();
-      spilled.addRange(from, to, value, false);
+      spilled.addRange(from, to2, value, false);
     };
     for (let i2 = 0; i2 < this.chunk.length; i2++) {
       let start = this.chunkPos[i2], chunk = this.chunk[i2];
@@ -17504,15 +21487,15 @@ var RangeSet = class _RangeSet {
   be reported in any specific order. When the callback returns
   `false`, iteration stops.
   */
-  between(from, to, f) {
+  between(from, to2, f) {
     if (this.isEmpty)
       return;
     for (let i2 = 0; i2 < this.chunk.length; i2++) {
       let start = this.chunkPos[i2], chunk = this.chunk[i2];
-      if (to >= start && from <= start + chunk.length && chunk.between(start, from - start, to - start, f) === false)
+      if (to2 >= start && from <= start + chunk.length && chunk.between(start, from - start, to2 - start, f) === false)
         return;
     }
-    this.nextLayer.between(from, to, f);
+    this.nextLayer.between(from, to2, f);
   }
   /**
   Iterate over the ranges in this set, in order, including all
@@ -17552,9 +21535,9 @@ var RangeSet = class _RangeSet {
   Compare the contents of two groups of range sets, returning true
   if they are equivalent in the given range.
   */
-  static eq(oldSets, newSets, from = 0, to) {
-    if (to == null)
-      to = 1e9 - 1;
+  static eq(oldSets, newSets, from = 0, to2) {
+    if (to2 == null)
+      to2 = 1e9 - 1;
     let a = oldSets.filter((set2) => !set2.isEmpty && newSets.indexOf(set2) < 0);
     let b = newSets.filter((set2) => !set2.isEmpty && oldSets.indexOf(set2) < 0);
     if (a.length != b.length)
@@ -17566,7 +21549,7 @@ var RangeSet = class _RangeSet {
     for (; ; ) {
       if (sideA.to != sideB.to || !sameValues(sideA.active, sideB.active) || sideA.point && (!sideB.point || !cmpVal(sideA.point, sideB.point)))
         return false;
-      if (sideA.to > to)
+      if (sideA.to > to2)
         return true;
       sideA.next();
       sideB.next();
@@ -17579,11 +21562,11 @@ var RangeSet = class _RangeSet {
   [`SpanIterator.span`](https://codemirror.net/6/docs/ref/#state.SpanIterator.span)) at the end
   of the iteration.
   */
-  static spans(sets, from, to, iterator, minPointSize = -1) {
+  static spans(sets, from, to2, iterator, minPointSize = -1) {
     let cursor = new SpanCursor(sets, null, minPointSize).goto(from), pos = from;
     let openRanges = cursor.openStart;
     for (; ; ) {
-      let curTo = Math.min(cursor.to, to);
+      let curTo = Math.min(cursor.to, to2);
       if (cursor.point) {
         let active = cursor.activeForPoint(cursor.to);
         let openCount = cursor.pointFrom < from ? active.length + 1 : cursor.point.startSide < 0 ? active.length : Math.min(active.length, openRanges);
@@ -17593,8 +21576,8 @@ var RangeSet = class _RangeSet {
         iterator.span(pos, curTo, cursor.active, openRanges);
         openRanges = cursor.openEnd(curTo);
       }
-      if (cursor.to > to)
-        return openRanges + (cursor.point && cursor.to > to ? 1 : 0);
+      if (cursor.to > to2)
+        return openRanges + (cursor.point && cursor.to > to2 ? 1 : 0);
       pos = cursor.to;
       cursor.next();
     }
@@ -17675,20 +21658,20 @@ var RangeSetBuilder = class _RangeSetBuilder {
   Add a range. Ranges should be added in sorted (by `from` and
   `value.startSide`) order.
   */
-  add(from, to, value) {
-    this.addRange(from, to, value, true);
+  add(from, to2, value) {
+    this.addRange(from, to2, value, true);
   }
   /**
   @internal
   */
-  addRange(from, to, value, strict) {
-    if (!this.addInner(from, to, value, strict))
-      (this.nextLayer || (this.nextLayer = new _RangeSetBuilder())).addRange(from, to, value, strict);
+  addRange(from, to2, value, strict) {
+    if (!this.addInner(from, to2, value, strict))
+      (this.nextLayer || (this.nextLayer = new _RangeSetBuilder())).addRange(from, to2, value, strict);
   }
   /**
   @internal
   */
-  addInner(from, to, value, strict) {
+  addInner(from, to2, value, strict) {
     let diff = from - this.lastTo || value.startSide - this.last.endSide;
     if (strict && diff <= 0 && (from - this.lastFrom || value.startSide - this.last.startSide) < 0)
       throw new Error("Ranges must be added sorted by `from` position and `startSide`");
@@ -17699,13 +21682,13 @@ var RangeSetBuilder = class _RangeSetBuilder {
     if (this.chunkStart < 0)
       this.chunkStart = from;
     this.from.push(from - this.chunkStart);
-    this.to.push(to - this.chunkStart);
+    this.to.push(to2 - this.chunkStart);
     this.last = value;
     this.lastFrom = from;
-    this.lastTo = to;
+    this.lastTo = to2;
     this.value.push(value);
     if (value.point)
-      this.maxPoint = Math.max(this.maxPoint, to - from);
+      this.maxPoint = Math.max(this.maxPoint, to2 - from);
     return true;
   }
   /**
@@ -17940,11 +21923,11 @@ var SpanCursor = class {
     this.minActive = findMinIndex(this.active, this.activeTo);
   }
   addActive(trackOpen) {
-    let i2 = 0, { value, to, rank } = this.cursor;
-    while (i2 < this.activeRank.length && (rank - this.activeRank[i2] || to - this.activeTo[i2]) > 0)
+    let i2 = 0, { value, to: to2, rank } = this.cursor;
+    while (i2 < this.activeRank.length && (rank - this.activeRank[i2] || to2 - this.activeTo[i2]) > 0)
       i2++;
     insert(this.active, i2, value);
-    insert(this.activeTo, i2, to);
+    insert(this.activeTo, i2, to2);
     insert(this.activeRank, i2, rank);
     if (trackOpen)
       insert(trackOpen, i2, this.cursor.from);
@@ -17999,21 +21982,21 @@ var SpanCursor = class {
         this.openStart++;
     }
   }
-  activeForPoint(to) {
+  activeForPoint(to2) {
     if (!this.active.length)
       return this.active;
     let active = [];
     for (let i2 = this.active.length - 1; i2 >= 0; i2--) {
       if (this.activeRank[i2] < this.pointRank)
         break;
-      if (this.activeTo[i2] > to || this.activeTo[i2] == to && this.active[i2].endSide >= this.point.endSide)
+      if (this.activeTo[i2] > to2 || this.activeTo[i2] == to2 && this.active[i2].endSide >= this.point.endSide)
         active.push(this.active[i2]);
     }
     return active.reverse();
   }
-  openEnd(to) {
+  openEnd(to2) {
     let open = 0;
-    for (let i2 = this.activeTo.length - 1; i2 >= 0 && this.activeTo[i2] > to; i2--)
+    for (let i2 = this.activeTo.length - 1; i2 >= 0 && this.activeTo[i2] > to2; i2--)
       open++;
     return open;
   }
@@ -18078,9 +22061,9 @@ function findMinIndex(value, array2) {
     }
   return found;
 }
-function countColumn(string5, tabSize, to = string5.length) {
+function countColumn(string5, tabSize, to2 = string5.length) {
   let n = 0;
-  for (let i2 = 0; i2 < to && i2 < string5.length; ) {
+  for (let i2 = 0; i2 < to2 && i2 < string5.length; ) {
     if (string5.charCodeAt(i2) == 9) {
       n += tabSize - n % tabSize;
       i2++;
@@ -18103,7 +22086,7 @@ function findColumn(string5, col, tabSize, strict) {
   return strict === true ? -1 : string5.length;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/style-mod/src/style-mod.js
+// ../../node_modules/.pnpm/style-mod@4.1.4/node_modules/style-mod/src/style-mod.js
 var C = "\u037C";
 var COUNT = typeof Symbol == "undefined" ? "__" + C : Symbol.for(C);
 var SET = typeof Symbol == "undefined" ? "__styleSet" + Math.floor(Math.random() * 1e8) : /* @__PURE__ */ Symbol("styleSet");
@@ -18239,7 +22222,7 @@ var StyleSet = class {
   }
 };
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/w3c-keyname/index.js
+// ../../node_modules/.pnpm/w3c-keyname@2.2.8/node_modules/w3c-keyname/index.js
 var base = {
   8: "Backspace",
   9: "Tab",
@@ -18321,7 +22304,7 @@ var shift = {
   222: '"'
 };
 var mac3 = typeof navigator != "undefined" && /Mac/.test(navigator.platform);
-var ie = typeof navigator != "undefined" && /MSIE \d|Trident\/(?:[7-9]|\d{2,})\..*rv:(\d+)/.exec(navigator.userAgent);
+var ie2 = typeof navigator != "undefined" && /MSIE \d|Trident\/(?:[7-9]|\d{2,})\..*rv:(\d+)/.exec(navigator.userAgent);
 for (i = 0; i < 10; i++) base[48 + i] = base[96 + i] = String(i);
 var i;
 for (i = 1; i <= 24; i++) base[i + 111] = "F" + i;
@@ -18334,7 +22317,7 @@ var i;
 for (code in base) if (!shift.hasOwnProperty(code)) shift[code] = base[code];
 var code;
 function keyName(event) {
-  var ignoreKey = mac3 && event.metaKey && event.shiftKey && !event.ctrlKey && !event.altKey || ie && event.shiftKey && event.key && event.key.length == 1 || event.key == "Unidentified";
+  var ignoreKey = mac3 && event.metaKey && event.shiftKey && !event.ctrlKey && !event.altKey || ie2 && event.shiftKey && event.key && event.key.length == 1 || event.key == "Unidentified";
   var name2 = !ignoreKey && event.key || (event.shiftKey ? shift : base)[event.keyCode] || event.key || "Unidentified";
   if (name2 == "Esc") name2 = "Escape";
   if (name2 == "Del") name2 = "Delete";
@@ -18345,23 +22328,23 @@ function keyName(event) {
   return name2;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/view/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+view@6.43.14/node_modules/@codemirror/view/dist/index.js
 var nav = typeof navigator != "undefined" ? navigator : { userAgent: "", vendor: "", platform: "" };
 var doc = typeof document != "undefined" ? document : { documentElement: { style: {} } };
 var ie_edge = /* @__PURE__ */ /Edge\/(\d+)/.exec(nav.userAgent);
 var ie_upto10 = /* @__PURE__ */ /MSIE \d/.test(nav.userAgent);
 var ie_11up = /* @__PURE__ */ /Trident\/(?:[7-9]|\d{2,})\..*rv:(\d+)/.exec(nav.userAgent);
-var ie2 = !!(ie_upto10 || ie_11up || ie_edge);
-var gecko = !ie2 && /* @__PURE__ */ /gecko\/(\d+)/i.test(nav.userAgent);
-var chrome = !ie2 && /* @__PURE__ */ /Chrome\/(\d+)/.exec(nav.userAgent);
+var ie3 = !!(ie_upto10 || ie_11up || ie_edge);
+var gecko = !ie3 && /* @__PURE__ */ /gecko\/(\d+)/i.test(nav.userAgent);
+var chrome = !ie3 && /* @__PURE__ */ /Chrome\/(\d+)/.exec(nav.userAgent);
 var webkit = "webkitFontSmoothing" in doc.documentElement.style;
-var safari = !ie2 && /* @__PURE__ */ /Apple Computer/.test(nav.vendor);
+var safari = !ie3 && /* @__PURE__ */ /Apple Computer/.test(nav.vendor);
 var ios = safari && (/* @__PURE__ */ /Mobile\/\w+/.test(nav.userAgent) || nav.maxTouchPoints > 2);
 var browser = {
   mac: ios || /* @__PURE__ */ /Mac/.test(nav.platform),
   windows: /* @__PURE__ */ /Win/.test(nav.platform),
   linux: /* @__PURE__ */ /Linux|X11/.test(nav.platform),
-  ie: ie2,
+  ie: ie3,
   ie_version: ie_upto10 ? doc.documentMode || 6 : ie_11up ? +ie_11up[1] : ie_edge ? +ie_edge[1] : 0,
   gecko,
   gecko_version: gecko ? +(/* @__PURE__ */ /Firefox\/(\d+)/.exec(nav.userAgent) || [0, 0])[1] : 0,
@@ -18624,10 +22607,10 @@ var MarkDecoration = class _MarkDecoration extends Decoration {
   eq(other) {
     return this == other || other instanceof _MarkDecoration && this.tagName == other.tagName && attrsEq(this.attrs, other.attrs);
   }
-  range(from, to = from) {
-    if (from >= to)
+  range(from, to2 = from) {
+    if (from >= to2)
       throw new RangeError("Mark decorations may not be empty");
-    return super.range(from, to);
+    return super.range(from, to2);
   }
 };
 MarkDecoration.prototype.point = false;
@@ -18638,10 +22621,10 @@ var LineDecoration = class _LineDecoration extends Decoration {
   eq(other) {
     return other instanceof _LineDecoration && this.spec.class == other.spec.class && attrsEq(this.spec.attributes, other.spec.attributes);
   }
-  range(from, to = from) {
-    if (to != from)
+  range(from, to2 = from) {
+    if (to2 != from)
       throw new RangeError("Line decoration ranges must be zero-length");
-    return super.range(from, to);
+    return super.range(from, to2);
   }
 };
 LineDecoration.prototype.mapMode = MapMode.TrackBefore;
@@ -18663,12 +22646,12 @@ var PointDecoration = class _PointDecoration extends Decoration {
   eq(other) {
     return other instanceof _PointDecoration && widgetsEq(this.widget, other.widget) && this.block == other.block && this.startSide == other.startSide && this.endSide == other.endSide;
   }
-  range(from, to = from) {
-    if (this.isReplace && (from > to || from == to && this.startSide > 0 && this.endSide <= 0))
+  range(from, to2 = from) {
+    if (this.isReplace && (from > to2 || from == to2 && this.startSide > 0 && this.endSide <= 0))
       throw new RangeError("Invalid range for replacement decoration");
-    if (!this.isReplace && to != from)
+    if (!this.isReplace && to2 != from)
       throw new RangeError("Widget decorations can only have zero-length ranges");
-    return super.range(from, to);
+    return super.range(from, to2);
   }
 };
 PointDecoration.prototype.point = true;
@@ -18683,12 +22666,12 @@ function getInclusive(spec, block = false) {
 function widgetsEq(a, b) {
   return a == b || !!(a && b && a.compare(b));
 }
-function addRange(from, to, ranges, margin = 0) {
+function addRange(from, to2, ranges, margin = 0) {
   let last2 = ranges.length - 1;
   if (last2 >= 0 && ranges[last2] + margin >= from)
-    ranges[last2] = Math.max(ranges[last2], to);
+    ranges[last2] = Math.max(ranges[last2], to2);
   else
-    ranges.push(from, to);
+    ranges.push(from, to2);
 }
 var BlockWrapper = class _BlockWrapper extends RangeValue {
   constructor(tagName, attributes, rank) {
@@ -18991,9 +22974,9 @@ function focusPreventScroll(dom) {
   }
 }
 var scratchRange;
-function textRange(node, from, to = from) {
+function textRange(node, from, to2 = from) {
   let range = scratchRange || (scratchRange = document.createRange());
-  range.setEnd(node, to);
+  range.setEnd(node, to2);
   range.setStart(node, from);
   return range;
 }
@@ -19129,9 +23112,9 @@ var BidiSpan = class {
   /**
   @internal
   */
-  constructor(from, to, level) {
+  constructor(from, to2, level) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.level = level;
   }
   /**
@@ -19178,9 +23161,9 @@ function isolatesEq(a, b) {
 var types = [];
 function computeCharTypes(line, rFrom, rTo, isolates, outerType) {
   for (let iI = 0; iI <= isolates.length; iI++) {
-    let from = iI ? isolates[iI - 1].to : rFrom, to = iI < isolates.length ? isolates[iI].from : rTo;
+    let from = iI ? isolates[iI - 1].to : rFrom, to2 = iI < isolates.length ? isolates[iI].from : rTo;
     let prevType = iI ? 256 : outerType;
-    for (let i2 = from, prev = prevType, prevStrong = prevType; i2 < to; i2++) {
+    for (let i2 = from, prev = prevType, prevStrong = prevType; i2 < to2; i2++) {
       let type = charType(line.charCodeAt(i2));
       if (type == 512)
         type = prev;
@@ -19191,16 +23174,16 @@ function computeCharTypes(line, rFrom, rTo, isolates, outerType) {
         prevStrong = type;
       prev = type;
     }
-    for (let i2 = from, prev = prevType, prevStrong = prevType; i2 < to; i2++) {
+    for (let i2 = from, prev = prevType, prevStrong = prevType; i2 < to2; i2++) {
       let type = types[i2];
       if (type == 128) {
-        if (i2 < to - 1 && prev == types[i2 + 1] && prev & 24)
+        if (i2 < to2 - 1 && prev == types[i2 + 1] && prev & 24)
           type = types[i2] = prev;
         else
           types[i2] = 256;
       } else if (type == 64) {
         let end = i2 + 1;
-        while (end < to && types[end] == 64)
+        while (end < to2 && types[end] == 64)
           end++;
         let replace2 = i2 && prev == 8 || end < rTo && types[end] == 8 ? prevStrong == 1 ? 1 : 8 : 256;
         for (let j = i2; j < end; j++)
@@ -19218,8 +23201,8 @@ function computeCharTypes(line, rFrom, rTo, isolates, outerType) {
 function processBracketPairs(line, rFrom, rTo, isolates, outerType) {
   let oppositeType = outerType == 1 ? 2 : 1;
   for (let iI = 0, sI = 0, context = 0; iI <= isolates.length; iI++) {
-    let from = iI ? isolates[iI - 1].to : rFrom, to = iI < isolates.length ? isolates[iI].from : rTo;
-    for (let i2 = from, ch, br, type; i2 < to; i2++) {
+    let from = iI ? isolates[iI - 1].to : rFrom, to2 = iI < isolates.length ? isolates[iI].from : rTo;
+    for (let i2 = from, ch, br, type; i2 < to2; i2++) {
       if (br = Brackets[ch = line.charCodeAt(i2)]) {
         if (br < 0) {
           for (let sJ = sI - 3; sJ >= 0; sJ -= 3) {
@@ -19260,17 +23243,17 @@ function processBracketPairs(line, rFrom, rTo, isolates, outerType) {
 }
 function processNeutrals(rFrom, rTo, isolates, outerType) {
   for (let iI = 0, prev = outerType; iI <= isolates.length; iI++) {
-    let from = iI ? isolates[iI - 1].to : rFrom, to = iI < isolates.length ? isolates[iI].from : rTo;
-    for (let i2 = from; i2 < to; ) {
+    let from = iI ? isolates[iI - 1].to : rFrom, to2 = iI < isolates.length ? isolates[iI].from : rTo;
+    for (let i2 = from; i2 < to2; ) {
       let type = types[i2];
       if (type == 256) {
         let end = i2 + 1;
         for (; ; ) {
-          if (end == to) {
+          if (end == to2) {
             if (iI == isolates.length)
               break;
             end = isolates[iI++].to;
-            to = iI < isolates.length ? isolates[iI].from : rTo;
+            to2 = iI < isolates.length ? isolates[iI].from : rTo;
           } else if (types[end] == 256) {
             end++;
           } else {
@@ -19295,10 +23278,10 @@ function processNeutrals(rFrom, rTo, isolates, outerType) {
     }
   }
 }
-function emitSpans(line, from, to, level, baseLevel, isolates, order) {
+function emitSpans(line, from, to2, level, baseLevel, isolates, order) {
   let ourType = level % 2 ? 2 : 1;
   if (level % 2 == baseLevel % 2) {
-    for (let iCh = from, iI = 0; iCh < to; ) {
+    for (let iCh = from, iI = 0; iCh < to2; ) {
       let sameDir = true, isNum = false;
       if (iI == isolates.length || iCh < isolates[iI].from) {
         let next = types[iCh];
@@ -19317,7 +23300,7 @@ function emitSpans(line, from, to, level, baseLevel, isolates, order) {
           let iso = isolates[iI];
           if (!sameDir)
             for (let upto = iso.to, jI = iI + 1; ; ) {
-              if (upto == to)
+              if (upto == to2)
                 break run;
               if (jI < isolates.length && isolates[jI].from == upto)
                 upto = isolates[jI++].to;
@@ -19337,7 +23320,7 @@ function emitSpans(line, from, to, level, baseLevel, isolates, order) {
             iCh = iso.to;
           }
           iScan = iso.to;
-        } else if (iScan == to || (sameDir ? types[iScan] != ourType : types[iScan] == ourType)) {
+        } else if (iScan == to2 || (sameDir ? types[iScan] != ourType : types[iScan] == ourType)) {
           break;
         } else {
           iScan++;
@@ -19350,7 +23333,7 @@ function emitSpans(line, from, to, level, baseLevel, isolates, order) {
       iCh = iScan;
     }
   } else {
-    for (let iCh = to, iI = isolates.length; iCh > from; ) {
+    for (let iCh = to2, iI = isolates.length; iCh > from; ) {
       let sameDir = true, isNum = false;
       if (!iI || iCh > isolates[iI - 1].to) {
         let next = types[iCh - 1];
@@ -19402,12 +23385,12 @@ function emitSpans(line, from, to, level, baseLevel, isolates, order) {
     }
   }
 }
-function computeSectionOrder(line, level, baseLevel, isolates, from, to, order) {
+function computeSectionOrder(line, level, baseLevel, isolates, from, to2, order) {
   let outerType = level % 2 ? 2 : 1;
-  computeCharTypes(line, from, to, isolates, outerType);
-  processBracketPairs(line, from, to, isolates, outerType);
-  processNeutrals(from, to, isolates, outerType);
-  emitSpans(line, from, to, level, baseLevel, isolates, order);
+  computeCharTypes(line, from, to2, isolates, outerType);
+  processBracketPairs(line, from, to2, isolates, outerType);
+  processNeutrals(from, to2, isolates, outerType);
+  emitSpans(line, from, to2, level, baseLevel, isolates, order);
 }
 function computeOrder(line, direction, isolates) {
   if (!line)
@@ -19463,8 +23446,8 @@ function moveVisually(line, order, dir, start, forward) {
   }
   return EditorSelection.cursor(nextIndex + line.from, span.forward(forward, dir) ? -1 : 1, span.level);
 }
-function autoDirection(text, from, to) {
-  for (let i2 = from; i2 < to; i2++) {
+function autoDirection(text, from, to2) {
+  for (let i2 = from; i2 < to2; i2++) {
     let type = charType(text.charCodeAt(i2));
     if (type == 1)
       return LTR;
@@ -19639,17 +23622,17 @@ function getIsolatedRanges(view, line) {
     point() {
     },
     span(fromDoc, toDoc, active, open) {
-      let from = fromDoc - line.from, to = toDoc - line.from;
+      let from = fromDoc - line.from, to2 = toDoc - line.from;
       let level = result;
       for (let i2 = active.length - 1; i2 >= 0; i2--, open--) {
         let direction = active[i2].spec.bidiIsolate, update;
         if (direction == null)
-          direction = autoDirection(line.text, from, to);
+          direction = autoDirection(line.text, from, to2);
         if (open > 0 && level.length && (update = level[level.length - 1]).to == from && update.direction == direction) {
-          update.to = to;
+          update.to = to2;
           level = update.inner;
         } else {
-          let add = { from, to, direction, inner: [] };
+          let add = { from, to: to2, direction, inner: [] };
           level.push(add);
           level = add.inner;
         }
@@ -19688,17 +23671,17 @@ var ChangedRange = class _ChangedRange {
     return new _ChangedRange(Math.min(this.fromA, other.fromA), Math.max(this.toA, other.toA), Math.min(this.fromB, other.fromB), Math.max(this.toB, other.toB));
   }
   addToSet(set2) {
-    let i2 = set2.length, me = this;
+    let i2 = set2.length, me2 = this;
     for (; i2 > 0; i2--) {
       let range = set2[i2 - 1];
-      if (range.fromA > me.toA)
+      if (range.fromA > me2.toA)
         continue;
-      if (range.toA < me.fromA)
+      if (range.toA < me2.fromA)
         break;
-      me = me.join(range);
+      me2 = me2.join(range);
       set2.splice(i2 - 1, 1);
     }
-    set2.splice(i2, 0, me);
+    set2.splice(i2, 0, me2);
     return set2;
   }
   // Extend a set to cover all the content in `ranges`, which is a
@@ -20195,24 +24178,24 @@ var TextTile = class _TextTile extends Tile {
     let length = this.dom.nodeValue.length;
     if (pos > length)
       pos = length;
-    let from = pos, to = pos, flatten2 = 0;
+    let from = pos, to2 = pos, flatten2 = 0;
     if (pos == 0 && side < 0 || pos == length && side >= 0) {
       if (!(browser.chrome || browser.gecko)) {
         if (pos) {
           from--;
           flatten2 = 1;
-        } else if (to < length) {
-          to++;
+        } else if (to2 < length) {
+          to2++;
           flatten2 = -1;
         }
       }
     } else {
       if (side < 0)
         from--;
-      else if (to < length)
-        to++;
+      else if (to2 < length)
+        to2++;
     }
-    let rects = textRange(this.dom, from, to).getClientRects();
+    let rects = textRange(this.dom, from, to2).getClientRects();
     if (!rects.length)
       return null;
     let rect = rects[(flatten2 ? flatten2 < 0 : side >= 0) ? 0 : rects.length - 1];
@@ -20375,9 +24358,9 @@ var TilePointer = class {
   }
 };
 var OpenWrapper = class {
-  constructor(from, to, wrapper, rank) {
+  constructor(from, to2, wrapper, rank) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.wrapper = wrapper;
     this.rank = rank;
   }
@@ -20746,7 +24729,7 @@ var TileUpdate = class {
     );
     this.old = new TilePointer(old);
     this.reuseWalker = {
-      skip: (tile, from, to) => {
+      skip: (tile, from, to2) => {
         this.cache.add(tile);
         if (tile.isComposite())
           return false;
@@ -20794,12 +24777,12 @@ var TileUpdate = class {
   preserve(length, incStart, incEnd) {
     let activeMarks = getMarks(this.old), openMarks = this.openMarks;
     this.old.advance(length, incEnd ? 1 : -1, {
-      skip: (tile, from, to) => {
+      skip: (tile, from, to2) => {
         if (tile.isWidget()) {
           if (this.openWidget) {
-            this.builder.continueWidget(to - from);
+            this.builder.continueWidget(to2 - from);
           } else {
-            let widget = to > 0 || from < tile.length ? WidgetTile.of(tile.widget, this.view, to - from, tile.flags & 496, this.cache.maybeReuse(tile)) : this.cache.reuse(tile);
+            let widget = to2 > 0 || from < tile.length ? WidgetTile.of(tile.widget, this.view, to2 - from, tile.flags & 496, this.cache.maybeReuse(tile)) : this.cache.reuse(tile);
             if (widget.flags & 256) {
               widget.flags &= -2;
               this.builder.addBlockWidget(widget);
@@ -20811,11 +24794,11 @@ var TileUpdate = class {
           }
         } else if (tile.isText()) {
           this.builder.ensureLine(null);
-          if (!from && to == tile.length && !this.cache.reused.has(tile)) {
+          if (!from && to2 == tile.length && !this.cache.reused.has(tile)) {
             this.builder.addText(tile.text, activeMarks, openMarks, this.cache.reuse(tile));
           } else {
             this.cache.add(tile);
-            this.builder.addText(tile.text.slice(from, to), activeMarks, openMarks);
+            this.builder.addText(tile.text.slice(from, to2), activeMarks, openMarks);
           }
           openMarks = activeMarks.length;
         } else if (tile.isLine()) {
@@ -20868,25 +24851,25 @@ var TileUpdate = class {
     });
     this.text.skip(length);
   }
-  emit(from, to) {
+  emit(from, to2) {
     let pendingLineAttrs = null;
     let b = this.builder, markCount = -1;
-    let openEnd = RangeSet.spans(this.decorations, from, to, {
-      point: (from2, to2, deco, active, openStart, index) => {
+    let openEnd = RangeSet.spans(this.decorations, from, to2, {
+      point: (from2, to3, deco, active, openStart, index) => {
         if (deco instanceof PointDecoration) {
           if (this.disallowBlockEffectsFor[index]) {
             if (deco.block)
               throw new RangeError("Block decorations may not be specified via plugins");
-            if (to2 > this.view.state.doc.lineAt(from2).to)
+            if (to3 > this.view.state.doc.lineAt(from2).to)
               throw new RangeError("Decorations that replace line breaks may not be specified via plugins");
           }
           markCount = active.length;
           if (openStart > active.length) {
-            b.continueWidget(to2 - from2);
+            b.continueWidget(to3 - from2);
           } else {
             let widget = deco.widget || (deco.block ? NullWidget.block : NullWidget.inline);
             let flags = widgetFlags(deco);
-            let tile = this.cache.findWidget(widget, to2 - from2, flags) || WidgetTile.of(widget, this.view, to2 - from2, flags);
+            let tile = this.cache.findWidget(widget, to3 - from2, flags) || WidgetTile.of(widget, this.view, to3 - from2, flags);
             if (deco.block) {
               if (deco.startSide > 0)
                 b.addLineStartIfNotCovered(pendingLineAttrs);
@@ -20900,12 +24883,12 @@ var TileUpdate = class {
         } else {
           pendingLineAttrs = addLineDeco(pendingLineAttrs, deco);
         }
-        if (to2 > from2)
-          this.text.skip(to2 - from2);
+        if (to3 > from2)
+          this.text.skip(to3 - from2);
       },
-      span: (from2, to2, active, openStart) => {
-        for (let pos = from2; pos < to2; ) {
-          let chars = this.text.next(Math.min(512, to2 - pos));
+      span: (from2, to3, active, openStart) => {
+        for (let pos = from2; pos < to3; ) {
+          let chars = this.text.next(Math.min(512, to3 - pos));
           if (chars == null) {
             b.addLineStartIfNotCovered(pendingLineAttrs);
             b.addBreak();
@@ -20926,12 +24909,12 @@ var TileUpdate = class {
       b.addLineStartIfNotCovered(pendingLineAttrs);
     this.openMarks = openEnd;
   }
-  forward(from, to, side = 1) {
-    if (to - from <= 10) {
-      this.old.advance(to - from, side, this.reuseWalker);
+  forward(from, to2, side = 1) {
+    if (to2 - from <= 10) {
+      this.old.advance(to2 - from, side, this.reuseWalker);
     } else {
       this.old.advance(5, -1, this.reuseWalker);
-      this.old.advance(to - from - 10, -1);
+      this.old.advance(to2 - from - 10, -1);
       this.old.advance(5, side, this.reuseWalker);
     }
   }
@@ -21074,8 +25057,8 @@ var DocView = class {
     let composition = readCompositionAt > -1 ? findCompositionRange(this.view, update.changes, readCompositionAt) : null;
     this.domChanged = null;
     if (this.hasComposition) {
-      let { from, to } = this.hasComposition;
-      changedRanges = new ChangedRange(from, to, update.changes.mapPos(from, -1), update.changes.mapPos(to, 1)).addToSet(changedRanges.slice());
+      let { from, to: to2 } = this.hasComposition;
+      changedRanges = new ChangedRange(from, to2, update.changes.mapPos(from, -1), update.changes.mapPos(to2, 1)).addToSet(changedRanges.slice());
     }
     this.hasComposition = composition ? { from: composition.range.fromB, to: composition.range.toB } : null;
     if ((browser.ie || browser.chrome) && !composition && update && update.state.doc.lines != update.startState.doc.lines)
@@ -21375,14 +25358,14 @@ var DocView = class {
     return scan(tile, offset);
   }
   measureVisibleLineHeights(viewport) {
-    let result = [], { from, to } = viewport;
+    let result = [], { from, to: to2 } = viewport;
     let contentWidth = this.view.contentDOM.clientWidth;
     let isWider = contentWidth > Math.max(this.view.scrollDOM.clientWidth, this.minWidth) + 1;
     let widest = -1, ltr = this.view.textDirection == Direction.LTR;
     let spaceAbove = 0;
     let scan = (tile, pos, measureBounds) => {
       for (let i2 = 0; i2 < tile.children.length; i2++) {
-        if (pos > to)
+        if (pos > to2)
           break;
         let child = tile.children[i2], end = pos + child.length;
         let childRect = child.dom.getBoundingClientRect(), { height } = childRect;
@@ -21598,13 +25581,13 @@ function findCompositionRange(view, changes, headPos) {
   let found = findCompositionNode(view, headPos);
   if (!found)
     return null;
-  let { node: textNode, from, to } = found, text = textNode.nodeValue;
+  let { node: textNode, from, to: to2 } = found, text = textNode.nodeValue;
   if (/[\n\r]/.test(text))
     return null;
   if (view.state.doc.sliceString(found.from, found.to) != text)
     return null;
   let inv = changes.invertedDesc;
-  return { range: new ChangedRange(inv.mapPos(from), inv.mapPos(to), from, to), text: textNode };
+  return { range: new ChangedRange(inv.mapPos(from), inv.mapPos(to2), from, to2), text: textNode };
 }
 function nextToUneditable(node, offset) {
   if (!isElt(node))
@@ -21615,11 +25598,11 @@ var DecorationComparator$1 = class DecorationComparator {
   constructor() {
     this.changes = [];
   }
-  compareRange(from, to) {
-    addRange(from, to, this.changes);
+  compareRange(from, to2) {
+    addRange(from, to2, this.changes);
   }
-  comparePoint(from, to) {
-    addRange(from, to, this.changes);
+  comparePoint(from, to2) {
+    addRange(from, to2, this.changes);
   }
   boundChange(pos) {
     addRange(pos, pos, this.changes);
@@ -21634,8 +25617,8 @@ var WrapperComparator = class {
   constructor() {
     this.changes = [];
   }
-  compareRange(from, to) {
-    addRange(from, to, this.changes);
+  compareRange(from, to2) {
+    addRange(from, to2, this.changes);
   }
   comparePoint() {
   }
@@ -21658,8 +25641,8 @@ function inUneditable(node, inside) {
 function touchesComposition(changes, composition) {
   let touched = false;
   if (composition)
-    changes.iterChangedRanges((from, to) => {
-      if (from < composition.to && to > composition.from)
+    changes.iterChangedRanges((from, to2) => {
+      if (from < composition.to && to2 > composition.from)
         touched = true;
     });
   return touched;
@@ -21701,25 +25684,25 @@ function groupAt(state, pos, bias = 1) {
     bias = 1;
   else if (linePos == line.length)
     bias = -1;
-  let from = linePos, to = linePos;
+  let from = linePos, to2 = linePos;
   if (bias < 0)
     from = findClusterBreak2(line.text, linePos, false);
   else
-    to = findClusterBreak2(line.text, linePos);
-  let cat = categorize(line.text.slice(from, to));
+    to2 = findClusterBreak2(line.text, linePos);
+  let cat = categorize(line.text.slice(from, to2));
   while (from > 0) {
     let prev = findClusterBreak2(line.text, from, false);
     if (categorize(line.text.slice(prev, from)) != cat)
       break;
     from = prev;
   }
-  while (to < line.length) {
-    let next = findClusterBreak2(line.text, to);
-    if (categorize(line.text.slice(to, next)) != cat)
+  while (to2 < line.length) {
+    let next = findClusterBreak2(line.text, to2);
+    if (categorize(line.text.slice(to2, next)) != cat)
       break;
-    to = next;
+    to2 = next;
   }
-  return EditorSelection.undirectionalRange(from + line.from, to + line.from);
+  return EditorSelection.undirectionalRange(from + line.from, to2 + line.from);
 }
 function posAtCoordsImprecise(view, contentRect, block, x, y) {
   let into = Math.round((x - contentRect.left) * view.defaultCharacterWidth);
@@ -21831,10 +25814,10 @@ function skipAtomicRanges(atoms, pos, bias) {
   for (; ; ) {
     let moved = 0;
     for (let set2 of atoms) {
-      set2.between(pos - 1, pos + 1, (from, to, value) => {
-        if (pos > from && pos < to) {
-          let side = moved || bias || (pos - from < to - pos ? -1 : 1);
-          pos = side < 0 ? from : to;
+      set2.between(pos - 1, pos + 1, (from, to2, value) => {
+        if (pos > from && pos < to2) {
+          let side = moved || bias || (pos - from < to2 - pos ? -1 : 1);
+          pos = side < 0 ? from : to2;
           moved = side;
         }
       });
@@ -21853,12 +25836,12 @@ function skipAtomsForSelection(atoms, sel) {
         updated = EditorSelection.cursor(pos, -1);
     } else {
       let from = skipAtomicRanges(atoms, range.from, -1);
-      let to = skipAtomicRanges(atoms, range.to, 1);
-      if (from != range.from || to != range.to) {
+      let to2 = skipAtomicRanges(atoms, range.to, 1);
+      if (from != range.from || to2 != range.to) {
         if (range.undirectional)
           updated = EditorSelection.undirectionalRange(range.from, range.to);
         else
-          updated = EditorSelection.range(range.from == range.anchor ? from : to, range.from == range.head ? from : to);
+          updated = EditorSelection.range(range.from == range.anchor ? from : to2, range.from == range.head ? from : to2);
       }
     }
     if (updated) {
@@ -21941,9 +25924,9 @@ var InlineCoordsScan = class {
     return spans[BidiSpan.find(spans, pos - line.from, -1, side)].dir;
   }
   // Used to short-circuit bidi tests for content with a uniform direction
-  bidiIn(from, to) {
+  bidiIn(from, to2) {
     let { spans, line } = this.bidiSpansAt(from);
-    return spans.length > 1 || spans.length && (spans[0].level != this.baseDir || spans[0].to + line.from < to);
+    return spans.length > 1 || spans.length && (spans[0].level != this.baseDir || spans[0].to + line.from < to2);
   }
   // Scan through the rectangles for the content of a tile with inline
   // content, looking for one that overlaps the queried position
@@ -21953,12 +25936,12 @@ var InlineCoordsScan = class {
   // a text tile, these will be character clusters, for a composite
   // tile, these will be child tiles.
   scan(positions, getRects, recursed = false) {
-    let lo = 0, hi = positions.length - 1, seen = /* @__PURE__ */ new Set();
+    let lo2 = 0, hi = positions.length - 1, seen = /* @__PURE__ */ new Set();
     let bidi = this.bidiIn(positions[0], positions[hi]);
     let above, below;
     let closestI = -1, closestDx = 1e9, closestRect;
-    search: while (lo < hi) {
-      let dist2 = hi - lo, mid = lo + hi >> 1;
+    search: while (lo2 < hi) {
+      let dist2 = hi - lo2, mid = lo2 + hi >> 1;
       adjust: if (seen.has(mid)) {
         for (let i2 = 1; i2 < dist2; i2++) {
           let scan = mid + i2;
@@ -22001,7 +25984,7 @@ var InlineCoordsScan = class {
       if (side == -1 && (!bidi || this.baseDirAt(positions[mid], 1)))
         hi = mid;
       else if (side == 1 && (!bidi || this.baseDirAt(positions[mid + 1], -1)))
-        lo = mid + 1;
+        lo2 = mid + 1;
     }
     if (!closestRect) {
       if (!below && !above)
@@ -22107,12 +26090,12 @@ var DOMReader = class {
     for (let point of this.points)
       if (point.node == node)
         point.pos = this.text.length + Math.min(point.offset, text.length);
-    for (let off = 0, re = this.lineSeparator ? null : /\r\n?|\n/g; ; ) {
+    for (let off = 0, re2 = this.lineSeparator ? null : /\r\n?|\n/g; ; ) {
       let nextBreak = -1, breakSize = 1, m;
       if (this.lineSeparator) {
         nextBreak = text.indexOf(this.lineSeparator, off);
         breakSize = this.lineSeparator.length;
-      } else if (m = re.exec(text)) {
+      } else if (m = re2.exec(text)) {
         nextBreak = m.index;
         breakSize = m[0].length;
       }
@@ -22216,9 +26199,9 @@ var DOMChange = class {
       let anchor = iAnchor && iAnchor.node == domSel.anchorNode && iAnchor.offset == domSel.anchorOffset || !contains(view.contentDOM, domSel.anchorNode) ? curSel.main.anchor : view.docView.posFromDOM(domSel.anchorNode, domSel.anchorOffset);
       let vp = view.viewport;
       if ((browser.ios || browser.chrome) && head != anchor && Math.min(head, anchor) <= curSel.main.from && Math.max(head, anchor) >= curSel.main.to && (vp.from > 0 || vp.to < view.state.doc.length)) {
-        let from = Math.min(head, anchor), to = Math.max(head, anchor);
-        let offFrom = vp.from - from, offTo = vp.to - to;
-        if ((offFrom == 0 || offFrom == 1 || from == 0) && (offTo == 0 || offTo == -1 || to == view.state.doc.length)) {
+        let from = Math.min(head, anchor), to2 = Math.max(head, anchor);
+        let offFrom = vp.from - from, offTo = vp.to - to2;
+        if ((offFrom == 0 || offFrom == 1 || from == 0) && (offTo == 0 || offTo == -1 || to2 == view.state.doc.length)) {
           head = 0;
           anchor = view.state.doc.length;
         }
@@ -22236,18 +26219,18 @@ var DOMChange = class {
     }
   }
 };
-function domBoundsAround(tile, from, to, offset) {
+function domBoundsAround(tile, from, to2, offset) {
   if (tile.isComposite()) {
     let fromI = -1, fromStart = -1, toI = -1, toEnd = -1;
     for (let i2 = 0, pos = offset, prevEnd = offset; i2 < tile.children.length; i2++) {
       let child = tile.children[i2], end = pos + child.length;
-      if (pos < from && end > to)
-        return domBoundsAround(child, from, to, pos);
+      if (pos < from && end > to2)
+        return domBoundsAround(child, from, to2, pos);
       if (end >= from && fromI == -1) {
         fromI = i2;
         fromStart = pos;
       }
-      if (pos > to && child.dom.parentNode == tile.dom) {
+      if (pos > to2 && child.dom.parentNode == tile.dom) {
         toI = i2;
         toEnd = prevEnd;
         break;
@@ -22272,14 +26255,14 @@ function applyDOMChange(view, domChange) {
   let { newSel } = domChange, { state } = view, sel = state.selection.main;
   let lastKey = view.inputState.lastKeyTime > Date.now() - 100 ? view.inputState.lastKeyCode : -1;
   if (domChange.bounds) {
-    let { from, to } = domChange.bounds;
+    let { from, to: to2 } = domChange.bounds;
     let preferredPos = sel.from, preferredSide = null;
-    if (lastKey === 8 || browser.android && domChange.text.length < to - from) {
+    if (lastKey === 8 || browser.android && domChange.text.length < to2 - from) {
       preferredPos = sel.to;
       preferredSide = "end";
     }
-    let cmp = state.doc.sliceString(from, to, LineBreakPlaceholder), selEnd, diff;
-    if (!sel.empty && sel.from >= from && sel.to <= to && (domChange.typeOver || cmp != domChange.text) && cmp.slice(0, sel.from - from) == domChange.text.slice(0, sel.from - from) && cmp.slice(sel.to - from) == domChange.text.slice(selEnd = domChange.text.length - (cmp.length - (sel.to - from)))) {
+    let cmp = state.doc.sliceString(from, to2, LineBreakPlaceholder), selEnd, diff;
+    if (!sel.empty && sel.from >= from && sel.to <= to2 && (domChange.typeOver || cmp != domChange.text) && cmp.slice(0, sel.from - from) == domChange.text.slice(0, sel.from - from) && cmp.slice(sel.to - from) == domChange.text.slice(selEnd = domChange.text.length - (cmp.length - (sel.to - from)))) {
       change = {
         from: sel.from,
         to: sel.to,
@@ -22381,14 +26364,14 @@ function applyDefaultInsert(view, change, newSel) {
       tr = startState.changeByRange((range) => {
         if (range.from == sel.from && range.to == sel.to)
           return { changes, range: mainSel || range.map(changes) };
-        let to = range.to - offset, from = to - replaced.length;
-        if (view.state.sliceDoc(from, to) != replaced || // Unfortunately, there's no way to make multiple
+        let to2 = range.to - offset, from = to2 - replaced.length;
+        if (view.state.sliceDoc(from, to2) != replaced || // Unfortunately, there's no way to make multiple
         // changes in the same node work without aborting
         // composition, so cursors in the composition range are
         // ignored.
-        to >= compositionRange.from && from <= compositionRange.to)
+        to2 >= compositionRange.from && from <= compositionRange.to)
           return { range };
-        let rangeChanges = startState.changes({ from, to, insert: change.insert }), selOff = range.to - sel.to;
+        let rangeChanges = startState.changes({ from, to: to2, insert: change.insert }), selOff = range.to - sel.to;
         return {
           changes: rangeChanges,
           range: !mainSel ? range.map(rangeChanges) : EditorSelection.range(Math.max(0, mainSel.anchor + selOff), Math.max(0, mainSel.head + selOff))
@@ -22925,10 +26908,10 @@ function rangeForClick(view, pos, bias, type) {
     return groupAt(view.state, pos, bias);
   } else {
     let visual = view.docView.lineAt(pos, bias), line = view.state.doc.lineAt(visual ? visual.posAtEnd : pos);
-    let from = visual ? visual.posAtStart : line.from, to = visual ? visual.posAtEnd : line.to;
-    if (to < view.state.doc.length && to == line.to)
-      to++;
-    return EditorSelection.undirectionalRange(from, to);
+    let from = visual ? visual.posAtStart : line.from, to2 = visual ? visual.posAtEnd : line.to;
+    if (to2 < view.state.doc.length && to2 == line.to)
+      to2++;
+    return EditorSelection.undirectionalRange(from, to2);
   }
 }
 var BadMouseDetail = browser.ie && browser.ie_version <= 11;
@@ -22958,8 +26941,8 @@ function basicMouseSelection(view, event) {
       let range = rangeForClick(view, cur.pos, cur.assoc, type);
       if (start.pos != cur.pos && !extend2) {
         let startRange = rangeForClick(view, start.pos, start.assoc, type);
-        let from = Math.min(startRange.from, range.from), to = Math.max(startRange.to, range.to);
-        range = from < range.from ? EditorSelection.range(from, to, range.assoc) : EditorSelection.range(to, from, range.assoc);
+        let from = Math.min(startRange.from, range.from), to2 = Math.max(startRange.to, range.to);
+        range = from < range.from ? EditorSelection.range(from, to2, range.assoc) : EditorSelection.range(to2, from, range.assoc);
       }
       if (extend2)
         return startSel.replaceRange(startSel.main.extend(range.from, range.to, range.assoc));
@@ -22974,8 +26957,8 @@ function basicMouseSelection(view, event) {
 }
 function removeRangeAround(sel, pos) {
   for (let i2 = 0; i2 < sel.ranges.length; i2++) {
-    let { from, to } = sel.ranges[i2];
-    if (from <= pos && to >= pos)
+    let { from, to: to2 } = sel.ranges[i2];
+    if (from <= pos && to2 >= pos)
       return EditorSelection.create(sel.ranges.slice(0, i2).concat(sel.ranges.slice(i2 + 1)), sel.mainIndex == i2 ? 0 : sel.mainIndex - (sel.mainIndex > i2 ? 1 : 0));
   }
   return null;
@@ -22985,9 +26968,9 @@ handlers.dragstart = (view, event) => {
   if (event.target.draggable) {
     let tile = view.docView.tile.nearest(event.target);
     if (tile && tile.isWidget()) {
-      let from = tile.posAtStart, to = from + tile.length;
-      if (from >= range.to || to <= range.from)
-        range = EditorSelection.undirectionalRange(from, to);
+      let from = tile.posAtStart, to2 = from + tile.length;
+      if (from >= range.to || to2 <= range.from)
+        range = EditorSelection.undirectionalRange(from, to2);
     }
   }
   let { inputState } = view;
@@ -23208,8 +27191,8 @@ handlers.beforeinput = (view, event) => {
     let text = (_a4 = event.dataTransfer) === null || _a4 === void 0 ? void 0 : _a4.getData("text/plain"), ranges = event.getTargetRanges();
     if (text && ranges.length) {
       let r = ranges[0];
-      let from = view.posAtDOM(r.startContainer, r.startOffset), to = view.posAtDOM(r.endContainer, r.endOffset);
-      applyDOMChangeInner(view, { from, to, insert: view.state.toText(text) }, null);
+      let from = view.posAtDOM(r.startContainer, r.startOffset), to2 = view.posAtDOM(r.endContainer, r.endOffset);
+      applyDOMChangeInner(view, { from, to: to2, insert: view.state.toText(text) }, null);
       return true;
     }
   }
@@ -23260,10 +27243,10 @@ var HeightOracle = class {
     this.textHeight = 14;
     this.lineLength = 30;
   }
-  heightForGap(from, to) {
-    let lines = this.doc.lineAt(to).number - this.doc.lineAt(from).number + 1;
+  heightForGap(from, to2) {
+    let lines = this.doc.lineAt(to2).number - this.doc.lineAt(from).number + 1;
     if (this.lineWrapping)
-      lines += Math.max(0, Math.ceil((to - from - lines * this.lineLength * 0.5) / this.lineLength));
+      lines += Math.max(0, Math.ceil((to2 - from - lines * this.lineLength * 0.5) / this.lineLength));
     return this.lineHeight * lines;
   }
   heightForLine(length) {
@@ -23415,11 +27398,11 @@ var HeightMap = class _HeightMap {
     result.push(this);
   }
   applyChanges(decorations2, oldDoc, oracle, changes) {
-    let me = this, doc2 = oracle.doc;
+    let me2 = this, doc2 = oracle.doc;
     for (let i2 = changes.length - 1; i2 >= 0; i2--) {
       let { fromA, toA, fromB, toB } = changes[i2];
-      let start = me.lineAt(fromA, QueryType.ByPosNoHeight, oracle.setDoc(oldDoc), 0, 0);
-      let end = start.to >= toA ? start : me.lineAt(toA, QueryType.ByPosNoHeight, oracle, 0, 0);
+      let start = me2.lineAt(fromA, QueryType.ByPosNoHeight, oracle.setDoc(oldDoc), 0, 0);
+      let end = start.to >= toA ? start : me2.lineAt(toA, QueryType.ByPosNoHeight, oracle, 0, 0);
       toB += end.to - toA;
       toA = end.to;
       while (i2 > 0 && start.from <= changes[i2 - 1].toA) {
@@ -23427,14 +27410,14 @@ var HeightMap = class _HeightMap {
         fromB = changes[i2 - 1].fromB;
         i2--;
         if (fromA < start.from)
-          start = me.lineAt(fromA, QueryType.ByPosNoHeight, oracle, 0, 0);
+          start = me2.lineAt(fromA, QueryType.ByPosNoHeight, oracle, 0, 0);
       }
       fromB += start.from - fromA;
       fromA = start.from;
       let nodes = NodeBuilder.build(oracle.setDoc(doc2), decorations2, fromB, toB);
-      me = replace(me, me.replace(fromA, toA, nodes));
+      me2 = replace(me2, me2.replace(fromA, toA, nodes));
     }
-    return me.updateHeight(oracle, 0);
+    return me2.updateHeight(oracle, 0);
   }
   static empty() {
     return new HeightMapText(0, 0, 0);
@@ -23514,8 +27497,8 @@ var HeightMapBlock = class extends HeightMap {
     let main = this.mainBlock(top2, offset);
     return this.spaceAbove ? this.blockAt(0, oracle, top2, offset).join(main) : main;
   }
-  forEachLine(from, to, oracle, top2, offset, f) {
-    if (from <= offset + this.length && to >= offset)
+  forEachLine(from, to2, oracle, top2, offset, f) {
+    if (from <= offset + this.length && to2 >= offset)
       f(this.lineAt(0, QueryType.ByPos, oracle, top2, offset));
   }
   setMeasuredHeight(measured) {
@@ -23612,8 +27595,8 @@ var HeightMapGap = class _HeightMapGap extends HeightMap {
     if (type == QueryType.ByHeight)
       return this.blockAt(value, oracle, top2, offset);
     if (type == QueryType.ByPosNoHeight) {
-      let { from, to } = oracle.doc.lineAt(value);
-      return new BlockInfo(from, to - from, 0, 0, 0);
+      let { from, to: to2 } = oracle.doc.lineAt(value);
+      return new BlockInfo(from, to2 - from, 0, 0, 0);
     }
     let { firstLine, perLine, perChar } = this.heightMetrics(oracle, offset);
     let line = oracle.doc.lineAt(value), lineHeight = perLine + line.length * perChar;
@@ -23621,11 +27604,11 @@ var HeightMapGap = class _HeightMapGap extends HeightMap {
     let lineTop = top2 + perLine * linesAbove + perChar * (line.from - offset - linesAbove);
     return new BlockInfo(line.from, line.length, Math.max(top2, Math.min(lineTop, top2 + this.height - lineHeight)), lineHeight, 0);
   }
-  forEachLine(from, to, oracle, top2, offset, f) {
+  forEachLine(from, to2, oracle, top2, offset, f) {
     from = Math.max(from, offset);
-    to = Math.min(to, offset + this.length);
+    to2 = Math.min(to2, offset + this.length);
     let { firstLine, perLine, perChar } = this.heightMetrics(oracle, offset);
-    for (let pos = from, lineTop = top2; pos <= to; ) {
+    for (let pos = from, lineTop = top2; pos <= to2; ) {
       let line = oracle.doc.lineAt(pos);
       if (pos == from) {
         let linesAbove = line.number - firstLine;
@@ -23637,8 +27620,8 @@ var HeightMapGap = class _HeightMapGap extends HeightMap {
       pos = line.to + 1;
     }
   }
-  replace(from, to, nodes) {
-    let after = this.length - to;
+  replace(from, to2, nodes) {
+    let after = this.length - to2;
     if (after > 0) {
       let last2 = nodes[nodes.length - 1];
       if (last2 instanceof _HeightMapGap)
@@ -23655,8 +27638,8 @@ var HeightMapGap = class _HeightMapGap extends HeightMap {
     }
     return HeightMap.of(nodes);
   }
-  decomposeLeft(to, result) {
-    result.push(new _HeightMapGap(to - 1), null);
+  decomposeLeft(to2, result) {
+    result.push(new _HeightMapGap(to2 - 1), null);
   }
   decomposeRight(from, result) {
     result.push(null, new _HeightMapGap(this.length - from - 1));
@@ -23729,29 +27712,29 @@ var HeightMapBranch = class extends HeightMap {
     else
       return this.left.lineAt(rightOffset, subQuery, oracle, top2, offset).join(base2);
   }
-  forEachLine(from, to, oracle, top2, offset, f) {
+  forEachLine(from, to2, oracle, top2, offset, f) {
     let rightTop = top2 + this.left.height, rightOffset = offset + this.left.length + this.break;
     if (this.break) {
       if (from < rightOffset)
-        this.left.forEachLine(from, to, oracle, top2, offset, f);
-      if (to >= rightOffset)
-        this.right.forEachLine(from, to, oracle, rightTop, rightOffset, f);
+        this.left.forEachLine(from, to2, oracle, top2, offset, f);
+      if (to2 >= rightOffset)
+        this.right.forEachLine(from, to2, oracle, rightTop, rightOffset, f);
     } else {
       let mid = this.lineAt(rightOffset, QueryType.ByPos, oracle, top2, offset);
       if (from < mid.from)
-        this.left.forEachLine(from, Math.min(to, mid.from - 1), oracle, top2, offset, f);
-      if (mid.to >= from && mid.from <= to)
+        this.left.forEachLine(from, Math.min(to2, mid.from - 1), oracle, top2, offset, f);
+      if (mid.to >= from && mid.from <= to2)
         f(mid);
-      if (to > mid.to)
-        this.right.forEachLine(Math.max(from, mid.to + 1), to, oracle, rightTop, rightOffset, f);
+      if (to2 > mid.to)
+        this.right.forEachLine(Math.max(from, mid.to + 1), to2, oracle, rightTop, rightOffset, f);
     }
   }
-  replace(from, to, nodes) {
+  replace(from, to2, nodes) {
     let rightStart = this.left.length + this.break;
-    if (to < rightStart)
-      return this.balanced(this.left.replace(from, to, nodes), this.right);
+    if (to2 < rightStart)
+      return this.balanced(this.left.replace(from, to2, nodes), this.right);
     if (from > this.left.length)
-      return this.balanced(this.left, this.right.replace(from - rightStart, to - rightStart, nodes));
+      return this.balanced(this.left, this.right.replace(from - rightStart, to2 - rightStart, nodes));
     let result = [];
     if (from > 0)
       this.decomposeLeft(from, result);
@@ -23760,25 +27743,25 @@ var HeightMapBranch = class extends HeightMap {
       result.push(node);
     if (from > 0)
       mergeGaps(result, left - 1);
-    if (to < this.length) {
+    if (to2 < this.length) {
       let right = result.length;
-      this.decomposeRight(to, result);
+      this.decomposeRight(to2, result);
       mergeGaps(result, right);
     }
     return HeightMap.of(result);
   }
-  decomposeLeft(to, result) {
+  decomposeLeft(to2, result) {
     let left = this.left.length;
-    if (to <= left)
-      return this.left.decomposeLeft(to, result);
+    if (to2 <= left)
+      return this.left.decomposeLeft(to2, result);
     result.push(this.left);
     if (this.break) {
       left++;
-      if (to >= left)
+      if (to2 >= left)
         result.push(null);
     }
-    if (to > left)
-      this.right.decomposeLeft(to - left, result);
+    if (to2 > left)
+      this.right.decomposeLeft(to2 - left, result);
   }
   decomposeRight(from, result) {
     let left = this.left.length, right = left + this.break;
@@ -23840,36 +27823,36 @@ var NodeBuilder = class _NodeBuilder {
   get isCovered() {
     return this.covering && this.nodes[this.nodes.length - 1] == this.covering;
   }
-  span(_from, to) {
+  span(_from, to2) {
     if (this.lineStart > -1) {
-      let end = Math.min(to, this.lineEnd), last2 = this.nodes[this.nodes.length - 1];
+      let end = Math.min(to2, this.lineEnd), last2 = this.nodes[this.nodes.length - 1];
       if (last2 instanceof HeightMapText)
         last2.length += end - this.pos;
       else if (end > this.pos || !this.isCovered)
         this.nodes.push(new HeightMapText(end - this.pos, -1, 0));
       this.writtenTo = end;
-      if (to > end) {
+      if (to2 > end) {
         this.nodes.push(null);
         this.writtenTo++;
         this.lineStart = -1;
       }
     }
-    this.pos = to;
+    this.pos = to2;
   }
-  point(from, to, deco) {
-    if (from < to || deco.heightRelevant) {
+  point(from, to2, deco) {
+    if (from < to2 || deco.heightRelevant) {
       let height = deco.widget ? deco.widget.estimatedHeight : 0;
       let breaks = deco.widget ? deco.widget.lineBreaks : 0;
       if (height < 0)
         height = this.oracle.lineHeight;
-      let len = to - from;
+      let len = to2 - from;
       if (deco.block) {
         this.addBlock(new HeightMapBlock(len, height, deco));
       } else if (len || breaks || height >= relevantWidgetHeight) {
         this.addLineDeco(height, breaks, len);
       }
-    } else if (to > from) {
-      this.span(from, to);
+    } else if (to2 > from) {
+      this.span(from, to2);
     }
     if (this.lineEnd > -1 && this.lineEnd < this.pos)
       this.lineEnd = this.oracle.doc.lineAt(this.pos).to;
@@ -23877,9 +27860,9 @@ var NodeBuilder = class _NodeBuilder {
   enterLine() {
     if (this.lineStart > -1)
       return;
-    let { from, to } = this.oracle.doc.lineAt(this.pos);
+    let { from, to: to2 } = this.oracle.doc.lineAt(this.pos);
     this.lineStart = from;
-    this.lineEnd = to;
+    this.lineEnd = to2;
     if (this.writtenTo < from) {
       if (this.writtenTo < from - 1 || this.nodes[this.nodes.length - 1] == null)
         this.nodes.push(this.blankContent(this.writtenTo, from - 1));
@@ -23889,9 +27872,9 @@ var NodeBuilder = class _NodeBuilder {
       this.nodes.push(new HeightMapText(this.pos - from, -1, 0));
     this.writtenTo = this.pos;
   }
-  blankContent(from, to) {
-    let gap = new HeightMapGap(to - from);
-    if (this.oracle.doc.lineAt(from).to == to)
+  blankContent(from, to2) {
+    let gap = new HeightMapGap(to2 - from);
+    if (this.oracle.doc.lineAt(from).to == to2)
       gap.flags |= 4;
     return gap;
   }
@@ -23941,9 +27924,9 @@ var NodeBuilder = class _NodeBuilder {
   // The returned array uses null to indicate line breaks, but never
   // starts or ends in a line break, or has multiple line breaks next
   // to each other.
-  static build(oracle, decorations2, from, to) {
+  static build(oracle, decorations2, from, to2) {
     let builder = new _NodeBuilder(from, oracle);
-    RangeSet.spans(decorations2, from, to, builder, 0);
+    RangeSet.spans(decorations2, from, to2, builder, 0);
     return builder.finish(from);
   }
 };
@@ -23958,9 +27941,9 @@ var DecorationComparator2 = class {
   }
   compareRange() {
   }
-  comparePoint(from, to, a, b) {
-    if (from < to || a && a.heightRelevant || b && b.heightRelevant)
-      addRange(from, to, this.changes, 5);
+  comparePoint(from, to2, a, b) {
+    if (from < to2 || a && a.heightRelevant || b && b.heightRelevant)
+      addRange(from, to2, this.changes, 5);
   }
 };
 function visiblePixelRange(dom, paddingTop) {
@@ -24006,9 +27989,9 @@ function fullPixelRange(dom, paddingTop) {
   };
 }
 var LineGap = class {
-  constructor(from, to, size, displaySize) {
+  constructor(from, to2, size, displaySize) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.size = size;
     this.displaySize = displaySize;
   }
@@ -24096,9 +28079,9 @@ var ViewState = class {
     let viewports = [this.viewport], { main } = this.state.selection;
     for (let i2 = 0; i2 <= 1; i2++) {
       let pos = i2 ? main.head : main.anchor;
-      if (!viewports.some(({ from, to }) => pos >= from && pos <= to)) {
-        let { from, to } = this.lineBlockAt(pos);
-        viewports.push(new Viewport(from, to));
+      if (!viewports.some(({ from, to: to2 }) => pos >= from && pos <= to2)) {
+        let { from, to: to2 } = this.lineBlockAt(pos);
+        viewports.push(new Viewport(from, to2));
       }
     }
     this.viewports = viewports.sort((a, b) => a.from - b.from);
@@ -24282,22 +28265,22 @@ var ViewState = class {
     return viewport;
   }
   mapViewport(viewport, changes) {
-    let from = changes.mapPos(viewport.from, -1), to = changes.mapPos(viewport.to, 1);
-    return new Viewport(this.heightMap.lineAt(from, QueryType.ByPos, this.heightOracle, 0, 0).from, this.heightMap.lineAt(to, QueryType.ByPos, this.heightOracle, 0, 0).to);
+    let from = changes.mapPos(viewport.from, -1), to2 = changes.mapPos(viewport.to, 1);
+    return new Viewport(this.heightMap.lineAt(from, QueryType.ByPos, this.heightOracle, 0, 0).from, this.heightMap.lineAt(to2, QueryType.ByPos, this.heightOracle, 0, 0).to);
   }
   // Checks if a given viewport covers the visible part of the
   // document and not too much beyond that.
-  viewportIsAppropriate({ from, to }, bias = 0) {
+  viewportIsAppropriate({ from, to: to2 }, bias = 0) {
     if (!this.inView)
       return true;
     let { top: top2 } = this.heightMap.lineAt(from, QueryType.ByPos, this.heightOracle, 0, 0);
-    let { bottom } = this.heightMap.lineAt(to, QueryType.ByPos, this.heightOracle, 0, 0);
+    let { bottom } = this.heightMap.lineAt(to2, QueryType.ByPos, this.heightOracle, 0, 0);
     let { visibleTop, visibleBottom } = this;
     return (from == 0 || top2 <= visibleTop - Math.max(10, Math.min(
       -bias,
       250
       /* VP.MaxCoverMargin */
-    ))) && (to == this.state.doc.length || bottom >= visibleBottom + Math.max(10, Math.min(
+    ))) && (to2 == this.state.doc.length || bottom >= visibleBottom + Math.max(10, Math.min(
       bias,
       250
       /* VP.MaxCoverMargin */
@@ -24325,29 +28308,29 @@ var ViewState = class {
     if (this.defaultTextDirection != Direction.LTR && !wrapping)
       return [];
     let gaps = [];
-    let addGap = (from, to, line, structure) => {
-      if (to - from < halfMargin)
+    let addGap = (from, to2, line, structure) => {
+      if (to2 - from < halfMargin)
         return;
       let sel = this.state.selection.main, avoid = [sel.from];
       if (!sel.empty)
         avoid.push(sel.to);
       for (let pos of avoid) {
-        if (pos > from && pos < to) {
+        if (pos > from && pos < to2) {
           addGap(from, pos - 10, line, structure);
-          addGap(pos + 10, to, line, structure);
+          addGap(pos + 10, to2, line, structure);
           return;
         }
       }
-      let gap = find(current, (gap2) => gap2.from >= line.from && gap2.to <= line.to && Math.abs(gap2.from - from) < halfMargin && Math.abs(gap2.to - to) < halfMargin && !avoid.some((pos) => gap2.from < pos && gap2.to > pos));
+      let gap = find(current, (gap2) => gap2.from >= line.from && gap2.to <= line.to && Math.abs(gap2.from - from) < halfMargin && Math.abs(gap2.to - to2) < halfMargin && !avoid.some((pos) => gap2.from < pos && gap2.to > pos));
       if (!gap) {
-        if (to < line.to && mayMeasure && wrapping && mayMeasure.visibleRanges.some((r) => r.from <= to && r.to >= to)) {
-          let lineStart = mayMeasure.moveToLineBoundary(EditorSelection.cursor(to), false, true).head;
+        if (to2 < line.to && mayMeasure && wrapping && mayMeasure.visibleRanges.some((r) => r.from <= to2 && r.to >= to2)) {
+          let lineStart = mayMeasure.moveToLineBoundary(EditorSelection.cursor(to2), false, true).head;
           if (lineStart > from)
-            to = lineStart;
+            to2 = lineStart;
         }
-        let size = this.gapSize(line, from, to, structure);
+        let size = this.gapSize(line, from, to2, structure);
         let displaySize = wrapping || size < 2e6 ? size : 2e6;
-        gap = new LineGap(from, to, size, displaySize);
+        gap = new LineGap(from, to2, size, displaySize);
       }
       gaps.push(gap);
     };
@@ -24409,8 +28392,8 @@ var ViewState = class {
     }
     return gaps;
   }
-  gapSize(line, from, to, structure) {
-    let fraction = findFraction(structure, to) - findFraction(structure, from);
+  gapSize(line, from, to2, structure) {
+    let fraction = findFraction(structure, to2) - findFraction(structure, from);
     if (this.heightOracle.lineWrapping) {
       return line.height * fraction;
     } else {
@@ -24429,8 +28412,8 @@ var ViewState = class {
       deco = deco.concat(this.lineGapDeco);
     let ranges = [];
     RangeSet.spans(deco, this.viewport.from, this.viewport.to, {
-      span(from, to) {
-        ranges.push({ from, to });
+      span(from, to2) {
+        ranges.push({ from, to: to2 });
       },
       point() {
       }
@@ -24475,27 +28458,27 @@ var ViewState = class {
   }
 };
 var Viewport = class {
-  constructor(from, to) {
+  constructor(from, to2) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
   }
 };
-function lineStructure(from, to, stateDeco) {
+function lineStructure(from, to2, stateDeco) {
   let ranges = [], pos = from, total = 0;
-  RangeSet.spans(stateDeco, from, to, {
+  RangeSet.spans(stateDeco, from, to2, {
     span() {
     },
-    point(from2, to2) {
+    point(from2, to3) {
       if (from2 > pos) {
         ranges.push({ from: pos, to: from2 });
         total += from2 - pos;
       }
-      pos = to2;
+      pos = to3;
     }
   }, 20);
-  if (pos < to) {
-    ranges.push({ from: pos, to });
-    total += to - pos;
+  if (pos < to2) {
+    ranges.push({ from: pos, to: to2 });
+    total += to2 - pos;
   }
   return { total, ranges };
 }
@@ -24506,7 +28489,7 @@ function findPosition({ total, ranges }, ratio) {
     return ranges[ranges.length - 1].to;
   let dist2 = Math.floor(total * ratio);
   for (let i2 = 0; ; i2++) {
-    let { from, to } = ranges[i2], size = to - from;
+    let { from, to: to2 } = ranges[i2], size = to2 - from;
     if (dist2 <= size)
       return from + dist2;
     dist2 -= size;
@@ -24514,12 +28497,12 @@ function findPosition({ total, ranges }, ratio) {
 }
 function findFraction(structure, pos) {
   let counted = 0;
-  for (let { from, to } of structure.ranges) {
-    if (pos <= to) {
+  for (let { from, to: to2 } of structure.ranges) {
+    if (pos <= to2) {
       counted += pos - from;
       break;
     }
-    counted += to - from;
+    counted += to2 - from;
   }
   return counted / structure.total;
 }
@@ -24551,11 +28534,11 @@ function staticDeco(state) {
 var BigScaler = class _BigScaler {
   constructor(oracle, heightMap, viewports) {
     let vpHeight = 0, base2 = 0, domBase = 0;
-    this.viewports = viewports.map(({ from, to }) => {
+    this.viewports = viewports.map(({ from, to: to2 }) => {
       let top2 = heightMap.lineAt(from, QueryType.ByPos, oracle, 0, 0).top;
-      let bottom = heightMap.lineAt(to, QueryType.ByPos, oracle, 0, 0).bottom;
+      let bottom = heightMap.lineAt(to2, QueryType.ByPos, oracle, 0, 0).bottom;
       vpHeight += bottom - top2;
-      return { from, to, top: top2, bottom, domTop: 0, domBottom: 0 };
+      return { from, to: to2, top: top2, bottom, domTop: 0, domBottom: 0 };
     });
     this.scale = (7e6 - vpHeight) / (heightMap.height - vpHeight);
     for (let obj of this.viewports) {
@@ -25199,7 +29182,7 @@ var DOMObserver = class {
     let records = this.pendingRecords();
     if (records.length)
       this.queue = [];
-    let from = -1, to = -1, typeOver = false;
+    let from = -1, to2 = -1, typeOver = false;
     for (let record2 of records) {
       let range = this.readMutation(record2);
       if (!range)
@@ -25207,16 +29190,16 @@ var DOMObserver = class {
       if (range.typeOver)
         typeOver = true;
       if (from == -1) {
-        ({ from, to } = range);
+        ({ from, to: to2 } = range);
       } else {
         from = Math.min(range.from, from);
-        to = Math.max(range.to, to);
+        to2 = Math.max(range.to, to2);
       }
     }
-    return { from, to, typeOver };
+    return { from, to: to2, typeOver };
   }
   readChange() {
-    let { from, to, typeOver } = this.processRecords();
+    let { from, to: to2, typeOver } = this.processRecords();
     let newSel = this.selectionChanged && hasSelection(this.dom, this.selectionRange);
     if (from < 0 && !newSel)
       return null;
@@ -25224,7 +29207,7 @@ var DOMObserver = class {
       this.lastChange = Date.now();
     this.view.inputState.lastFocusTime = 0;
     this.selectionChanged = false;
-    let change = new DOMChange(this.view, from, to, typeOver);
+    let change = new DOMChange(this.view, from, to2, typeOver);
     this.view.docView.domChanged = { newSel: change.newSel ? change.newSel.main : null };
     return change;
   }
@@ -25371,15 +29354,15 @@ var EditContextManager = class {
     });
     this.handlers.textupdate = (e) => {
       let main = view.state.selection.main, { anchor, head } = main;
-      let from = this.toEditorPos(e.updateRangeStart), to = this.toEditorPos(e.updateRangeEnd);
+      let from = this.toEditorPos(e.updateRangeStart), to2 = this.toEditorPos(e.updateRangeEnd);
       if (view.inputState.composing >= 0 && !this.composing)
         this.composing = { contextBase: e.updateRangeStart, editorBase: from, drifted: false };
-      let deletes = to - from > e.text.length;
+      let deletes = to2 - from > e.text.length;
       if (from == this.from && anchor < this.from)
         from = anchor;
-      else if (to == this.to && anchor > this.to)
-        to = anchor;
-      let diff = findDiff(view.state.sliceDoc(from, to), e.text, (deletes ? main.from : main.to) - from, deletes ? "end" : null);
+      else if (to2 == this.to && anchor > this.to)
+        to2 = anchor;
+      let diff = findDiff(view.state.sliceDoc(from, to2), e.text, (deletes ? main.from : main.to) - from, deletes ? "end" : null);
       if (!diff) {
         let newSel = EditorSelection.single(this.toEditorPos(e.selectionStart), this.toEditorPos(e.selectionEnd));
         if (!sameSelPos(newSel, main))
@@ -25392,7 +29375,7 @@ var EditContextManager = class {
         insert: Text.of(e.text.slice(diff.from, diff.toB).split("\n"))
       };
       if ((browser.mac || browser.android) && change.from == head - 1 && /^\. ?$/.test(e.text) && view.contentDOM.getAttribute("autocorrect") == "off")
-        change = { from, to, insert: Text.of([e.text.replace(".", " ")]) };
+        change = { from, to: to2, insert: Text.of([e.text.replace(".", " ")]) };
       this.pendingContextChange = change;
       if (!view.state.readOnly) {
         let newLen = this.to - this.from + (change.to - change.from + change.insert.length);
@@ -25419,10 +29402,10 @@ var EditContextManager = class {
       for (let format of e.getTextFormats()) {
         let lineStyle = format.underlineStyle, thickness = format.underlineThickness;
         if (!/none/i.test(lineStyle) && !/none/i.test(thickness)) {
-          let from = this.toEditorPos(format.rangeStart), to = this.toEditorPos(format.rangeEnd);
-          if (from < to) {
+          let from = this.toEditorPos(format.rangeStart), to2 = this.toEditorPos(format.rangeEnd);
+          if (from < to2) {
             let style = `text-decoration: underline ${/^[a-z]/.test(lineStyle) ? lineStyle + " " : lineStyle == "Dashed" ? "dashed " : lineStyle == "Squiggle" ? "wavy " : ""}${/thin/i.test(thickness) ? 1 : 2}px`;
-            deco.push(Decoration.mark({ attributes: { style } }).range(from, to));
+            deco.push(Decoration.mark({ attributes: { style } }).range(from, to2));
           }
         }
       }
@@ -26412,13 +30395,13 @@ var EditorView = class _EditorView {
   temporarily enables the mode until that number of milliseconds
   have passed or another non-Tab key is pressed.
   */
-  setTabFocusMode(to) {
-    if (to == null)
+  setTabFocusMode(to2) {
+    if (to2 == null)
       this.inputState.tabFocusMode = this.inputState.tabFocusMode < 0 ? 0 : -1;
-    else if (typeof to == "boolean")
-      this.inputState.tabFocusMode = to ? 0 : -1;
+    else if (typeof to2 == "boolean")
+      this.inputState.tabFocusMode = to2 ? 0 : -1;
     else if (this.inputState.tabFocusMode != 0)
-      this.inputState.tabFocusMode = Date.now() + to;
+      this.inputState.tabFocusMode = Date.now() + to2;
   }
   /**
   Returns an extension that can be used to add DOM event handlers.
@@ -26532,9 +30515,9 @@ EditorView.announce = /* @__PURE__ */ StateEffect.define();
 var MaxBidiLine = 4096;
 var BadMeasure = {};
 var CachedOrder = class _CachedOrder {
-  constructor(from, to, dir, isolates, fresh, order) {
+  constructor(from, to2, dir, isolates, fresh, order) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.dir = dir;
     this.isolates = isolates;
     this.fresh = fresh;
@@ -26820,19 +30803,19 @@ function wrappedLine(view, pos, side, inside) {
 function rectanglesForRange(view, className, range) {
   if (range.to <= view.viewport.from || range.from >= view.viewport.to)
     return [];
-  let from = Math.max(range.from, view.viewport.from), to = Math.min(range.to, view.viewport.to);
+  let from = Math.max(range.from, view.viewport.from), to2 = Math.min(range.to, view.viewport.to);
   let ltr = view.textDirection == Direction.LTR;
   let content2 = view.contentDOM, contentRect = content2.getBoundingClientRect(), base2 = getBase(view);
   let lineElt = content2.querySelector(".cm-line"), lineStyle = lineElt && window.getComputedStyle(lineElt);
   let leftSide = contentRect.left + (lineStyle ? parseInt(lineStyle.paddingLeft) + Math.min(0, parseInt(lineStyle.textIndent)) : 0);
   let rightSide = contentRect.right - (lineStyle ? parseInt(lineStyle.paddingRight) : 0);
-  let startBlock = blockAt(view, from, 1), endBlock = blockAt(view, to, -1);
+  let startBlock = blockAt(view, from, 1), endBlock = blockAt(view, to2, -1);
   let visualStart = startBlock.type == BlockType.Text ? startBlock : null;
   let visualEnd = endBlock.type == BlockType.Text ? endBlock : null;
   if (visualStart && (view.lineWrapping || startBlock.widgetLineBreaks))
     visualStart = wrappedLine(view, from, 1, visualStart);
   if (visualEnd && (view.lineWrapping || endBlock.widgetLineBreaks))
-    visualEnd = wrappedLine(view, to, -1, visualEnd);
+    visualEnd = wrappedLine(view, to2, -1, visualEnd);
   if (visualStart && visualEnd && visualStart.from == visualEnd.from && visualStart.to == visualEnd.to) {
     return pieces(drawForLine(range.from, range.to, visualStart));
   } else {
@@ -26854,11 +30837,11 @@ function rectanglesForRange(view, className, range) {
       pieces2.push(piece(horizontal[i2], top2, horizontal[i2 + 1], bottom));
     return pieces2;
   }
-  function drawForLine(from2, to2, line) {
+  function drawForLine(from2, to3, line) {
     let top2 = 1e9, bottom = -1e9, horizontal = [];
-    function addSpan(from3, fromOpen, to3, toOpen, dir) {
+    function addSpan(from3, fromOpen, to4, toOpen, dir) {
       let fromCoords = view.coordsAtPos(from3, from3 == line.to ? -2 : 2);
-      let toCoords = view.coordsAtPos(to3, to3 == line.from ? 2 : -2);
+      let toCoords = view.coordsAtPos(to4, to4 == line.from ? 2 : -2);
       if (!fromCoords || !toCoords)
         return;
       top2 = Math.min(fromCoords.top, toCoords.top, top2);
@@ -26868,7 +30851,7 @@ function rectanglesForRange(view, className, range) {
       else
         horizontal.push(!ltr && toOpen ? leftSide : toCoords.left, !ltr && fromOpen ? rightSide : fromCoords.right);
     }
-    let start = from2 !== null && from2 !== void 0 ? from2 : line.from, end = to2 !== null && to2 !== void 0 ? to2 : line.to;
+    let start = from2 !== null && from2 !== void 0 ? from2 : line.from, end = to3 !== null && to3 !== void 0 ? to3 : line.to;
     for (let r of view.visibleRanges)
       if (r.to > start && r.from < end) {
         for (let pos = Math.max(r.from, start), endPos = Math.min(r.to, end); ; ) {
@@ -26878,7 +30861,7 @@ function rectanglesForRange(view, className, range) {
             if (spanFrom >= endPos)
               break;
             if (spanTo > pos)
-              addSpan(Math.max(spanFrom, pos), from2 == null && spanFrom <= start, Math.min(spanTo, endPos), to2 == null && spanTo >= end, span.dir);
+              addSpan(Math.max(spanFrom, pos), from2 == null && spanFrom <= start, Math.min(spanTo, endPos), to3 == null && spanTo >= end, span.dir);
           }
           pos = docLine.to + 1;
           if (pos >= endPos)
@@ -26886,7 +30869,7 @@ function rectanglesForRange(view, className, range) {
         }
       }
     if (horizontal.length == 0)
-      addSpan(start, from2 == null, end, to2 == null, view.textDirection);
+      addSpan(start, from2 == null, end, to3 == null, view.textDirection);
     return { top: top2, bottom, horizontal };
   }
   function drawForWidget(block, top2) {
@@ -27170,15 +31153,15 @@ GutterMarker.prototype.startSide = GutterMarker.prototype.endSide = -1;
 GutterMarker.prototype.point = true;
 
 // src/client/editor/CodeEditor.tsx
-var import_react = require("react");
+var import_react3 = require("react");
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/common/dist/index.js
+// ../../node_modules/.pnpm/@lezer+common@1.5.3/node_modules/@lezer/common/dist/index.js
 var DefaultBufferLength = 1024;
 var nextPropID = 0;
 var Range2 = class {
-  constructor(from, to) {
+  constructor(from, to2) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
   }
 };
 var NodeProp = class {
@@ -27495,11 +31478,11 @@ var Tree = class _Tree {
   not have its children iterated over (or `leave` called).
   */
   iterate(spec) {
-    let { enter, leave, from = 0, to = this.length } = spec;
+    let { enter, leave, from = 0, to: to2 = this.length } = spec;
     let mode = spec.mode || 0, anon = (mode & IterMode.IncludeAnonymous) > 0;
     for (let c = this.cursor(mode | IterMode.IncludeAnonymous); ; ) {
       let entered = false;
-      if (c.from <= to && c.to >= from && (!anon && c.type.isAnonymous || enter(c) !== false)) {
+      if (c.from <= to2 && c.to >= from && (!anon && c.type.isAnonymous || enter(c) !== false)) {
         if (c.firstChild())
           continue;
         entered = true;
@@ -27645,25 +31628,25 @@ var TreeBuffer = class _TreeBuffer {
     for (let i2 = startI, j = 0; i2 < endI; ) {
       copy[j++] = b[i2++];
       copy[j++] = b[i2++] - from;
-      let to = copy[j++] = b[i2++] - from;
+      let to2 = copy[j++] = b[i2++] - from;
       copy[j++] = b[i2++] - startI;
-      len = Math.max(len, to);
+      len = Math.max(len, to2);
     }
     return new _TreeBuffer(copy, len, this.set);
   }
 };
-function checkSide(side, pos, from, to) {
+function checkSide(side, pos, from, to2) {
   switch (side) {
     case -2:
       return from < pos;
     case -1:
-      return to >= pos && from < pos;
+      return to2 >= pos && from < pos;
     case 0:
-      return from < pos && to > pos;
+      return from < pos && to2 > pos;
     case 1:
-      return from <= pos && to > pos;
+      return from <= pos && to2 > pos;
     case 2:
-      return to > pos;
+      return to2 > pos;
     case 4:
       return true;
   }
@@ -27822,8 +31805,8 @@ var TreeNode = class _TreeNode extends BaseNode {
     let mounted;
     if (!(mode & IterMode.IgnoreOverlays) && (mounted = MountedTree.get(this._tree)) && mounted.overlay) {
       let rPos = pos - this.from, enterBracketed = mode & IterMode.EnterBracketed && mounted.bracketed;
-      for (let { from, to } of mounted.overlay) {
-        if ((side > 0 || enterBracketed ? from <= rPos : from < rPos) && (side < 0 || enterBracketed ? to >= rPos : to > rPos))
+      for (let { from, to: to2 } of mounted.overlay) {
+        if ((side > 0 || enterBracketed ? from <= rPos : from < rPos) && (side < 0 || enterBracketed ? to2 >= rPos : to2 > rPos))
           return new _TreeNode(mounted.tree, mounted.overlay[0].from + this.from, -1, this);
       }
     }
@@ -28525,13 +32508,13 @@ function buildTree(data2) {
       return makeTree(type, children2, positions2, length2, lookAhead2, contextHash2);
     };
   }
-  function makeRepeatLeaf(children2, positions2, base2, i2, from, to, type, lookAhead2, contextHash2) {
+  function makeRepeatLeaf(children2, positions2, base2, i2, from, to2, type, lookAhead2, contextHash2) {
     let localChildren = [], localPositions = [];
     while (children2.length > i2) {
       localChildren.push(children2.pop());
       localPositions.push(positions2.pop() + base2 - from);
     }
-    children2.push(makeTree(nodeSet.types[type], localChildren, localPositions, to - from, lookAhead2 - to, contextHash2));
+    children2.push(makeTree(nodeSet.types[type], localChildren, localPositions, to2 - from, lookAhead2 - to2, contextHash2));
     positions2.push(from - base2);
   }
   function makeTree(type, children2, positions2, length2, lookAhead2, contextHash2, props) {
@@ -28633,20 +32616,20 @@ function nodeSize(balanceType, node) {
   }
   return size;
 }
-function balanceRange(balanceType, children, positions, from, to, start, length, mkTop, mkTree) {
+function balanceRange(balanceType, children, positions, from, to2, start, length, mkTop, mkTree) {
   let total = 0;
-  for (let i2 = from; i2 < to; i2++)
+  for (let i2 = from; i2 < to2; i2++)
     total += nodeSize(balanceType, children[i2]);
   let maxChild = Math.ceil(
     total * 1.5 / 8
     /* Balance.BranchFactor */
   );
   let localChildren = [], localPositions = [];
-  function divide(children2, positions2, from2, to2, offset) {
-    for (let i2 = from2; i2 < to2; ) {
+  function divide(children2, positions2, from2, to3, offset) {
+    for (let i2 = from2; i2 < to3; ) {
       let groupFrom = i2, groupStart = positions2[i2], groupSize = nodeSize(balanceType, children2[i2]);
       i2++;
-      for (; i2 < to2; i2++) {
+      for (; i2 < to3; i2++) {
         let nextSize = nodeSize(balanceType, children2[i2]);
         if (groupSize + nextSize >= maxChild)
           break;
@@ -28666,7 +32649,7 @@ function balanceRange(balanceType, children, positions, from, to, start, length,
       localPositions.push(groupStart + offset - start);
     }
   }
-  divide(children, positions, from, to, 0);
+  divide(children, positions, from, to2, 0);
   return (mkTop || mkTree)(localChildren, localPositions, length);
 }
 var NodeWeakMap = class {
@@ -28722,9 +32705,9 @@ var TreeFragment = class _TreeFragment {
   [`applyChanges`](#common.TreeFragment^applyChanges) instead of
   calling this directly.
   */
-  constructor(from, to, tree, offset, openStart = false, openEnd = false) {
+  constructor(from, to2, tree, offset, openStart = false, openEnd = false) {
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.tree = tree;
     this.offset = offset;
     this.open = (openStart ? 1 : 0) | (openEnd ? 2 : 0);
@@ -28836,8 +32819,8 @@ var StringInput = class {
   get lineChunks() {
     return false;
   }
-  read(from, to) {
-    return this.string.slice(from, to);
+  read(from, to2) {
+    return this.string.slice(from, to2);
   }
 };
 function parseMixed(nest) {
@@ -28943,9 +32926,9 @@ var MixedParse = class {
           let match = overlay.mounts.find((m) => m.frag.from <= cursor.from && m.frag.to >= cursor.to && m.mount.overlay);
           if (match)
             for (let r of match.mount.overlay) {
-              let from = r.from + match.pos, to = r.to + match.pos;
-              if (from >= cursor.from && to <= cursor.to && !overlay.ranges.some((r2) => r2.from < to && r2.to > from))
-                overlay.ranges.push({ from, to });
+              let from = r.from + match.pos, to2 = r.to + match.pos;
+              if (from >= cursor.from && to2 <= cursor.to && !overlay.ranges.some((r2) => r2.from < to2 && r2.to > from))
+                overlay.ranges.push({ from, to: to2 });
             }
         }
         enter = false;
@@ -29010,12 +32993,12 @@ var MixedParse = class {
     }
   }
 };
-function checkCover(covered, from, to) {
+function checkCover(covered, from, to2) {
   for (let range of covered) {
-    if (range.from >= to)
+    if (range.from >= to2)
       break;
     if (range.to > from)
-      return range.from <= from && range.to >= to ? 2 : 1;
+      return range.from <= from && range.to >= to2 ? 2 : 1;
   }
   return 0;
 }
@@ -29039,9 +33022,9 @@ function materialize(cursor) {
     let targetI = stack[stackPos];
     let children = [], positions = [];
     sliceBuf(buf, startI, targetI, children, positions, innerOffset);
-    let from = b[targetI + 1], to = b[targetI + 2];
+    let from = b[targetI + 1], to2 = b[targetI + 2];
     newStack.push(children.length);
-    let child = stackPos ? split(targetI + 4, b[targetI + 3], buf.set.types[b[targetI]], from, to - from, stackPos - 1) : node.toTree();
+    let child = stackPos ? split(targetI + 4, b[targetI + 3], buf.set.types[b[targetI]], from, to2 - from, stackPos - 1) : node.toTree();
     children.push(child);
     positions.push(from - innerOffset);
     sliceBuf(buf, b[targetI + 3], endI, children, positions, innerOffset);
@@ -29167,14 +33150,14 @@ function punchRanges(outer, ranges) {
   }
   return current;
 }
-function findCoverChanges(a, b, from, to) {
+function findCoverChanges(a, b, from, to2) {
   let iA = 0, iB = 0, inA = false, inB = false, pos = -1e9;
   let result = [];
   for (; ; ) {
     let nextA = iA == a.length ? 1e9 : inA ? a[iA].to : a[iA].from;
     let nextB = iB == b.length ? 1e9 : inB ? b[iB].to : b[iB].from;
     if (inA != inB) {
-      let start = Math.max(pos, from), end = Math.min(nextA, nextB, to);
+      let start = Math.max(pos, from), end = Math.min(nextA, nextB, to2);
       if (start < end)
         result.push(new Range2(start, end));
     }
@@ -29204,12 +33187,12 @@ function enterFragments(mounts, ranges) {
   let result = [];
   for (let { pos, mount, frag } of mounts) {
     let startPos = pos + (mount.overlay ? mount.overlay[0].from : 0), endPos = startPos + mount.tree.length;
-    let from = Math.max(frag.from, startPos), to = Math.min(frag.to, endPos);
+    let from = Math.max(frag.from, startPos), to2 = Math.min(frag.to, endPos);
     if (mount.overlay) {
       let overlay = mount.overlay.map((r) => new Range2(r.from + pos, r.to + pos));
-      let changes = findCoverChanges(ranges, overlay, from, to);
+      let changes = findCoverChanges(ranges, overlay, from, to2);
       for (let i2 = 0, pos2 = from; ; i2++) {
-        let last2 = i2 == changes.length, end = last2 ? to : changes[i2].from;
+        let last2 = i2 == changes.length, end = last2 ? to2 : changes[i2].from;
         if (end > pos2)
           result.push(new TreeFragment(pos2, end, mount.tree, -startPos, frag.from >= pos2 || frag.openStart, frag.to <= end || frag.openEnd));
         if (last2)
@@ -29217,13 +33200,13 @@ function enterFragments(mounts, ranges) {
         pos2 = changes[i2].to;
       }
     } else {
-      result.push(new TreeFragment(from, to, mount.tree, -startPos, frag.from >= startPos || frag.openStart, frag.to <= endPos || frag.openEnd));
+      result.push(new TreeFragment(from, to2, mount.tree, -startPos, frag.from >= startPos || frag.openStart, frag.to <= endPos || frag.openEnd));
     }
   }
   return result;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/highlight/dist/index.js
+// ../../node_modules/.pnpm/@lezer+highlight@1.2.5/node_modules/@lezer/highlight/dist/index.js
 var nextTagID = 0;
 var Tag = class _Tag {
   /**
@@ -29847,7 +33830,7 @@ var classHighlighter = tagHighlighter([
   { tag: tags.punctuation, class: "tok-punctuation" }
 ]);
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/language/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+language@6.13.1/node_modules/@codemirror/language/dist/index.js
 var _a3;
 var languageDataProp = /* @__PURE__ */ new NodeProp();
 function defineLanguageFacet(baseData) {
@@ -30011,12 +33994,12 @@ var DocInput = class {
   get lineChunks() {
     return true;
   }
-  read(from, to) {
+  read(from, to2) {
     let stringStart = this.cursorPos - this.string.length;
-    if (from < stringStart || to >= this.cursorPos)
-      return this.doc.sliceString(from, to);
+    if (from < stringStart || to2 >= this.cursorPos)
+      return this.doc.sliceString(from, to2);
     else
-      return this.string.slice(from - stringStart, to - stringStart);
+      return this.string.slice(from - stringStart, to2 - stringStart);
   }
 };
 var currentContext = null;
@@ -30127,9 +34110,9 @@ var ParseContext = class _ParseContext {
       if (this.skipped.length) {
         skipped = [];
         for (let r of this.skipped) {
-          let from = changes.mapPos(r.from, 1), to = changes.mapPos(r.to, -1);
-          if (from < to)
-            skipped.push({ from, to });
+          let from = changes.mapPos(r.from, 1), to2 = changes.mapPos(r.to, -1);
+          if (from < to2)
+            skipped.push({ from, to: to2 });
         }
       }
     }
@@ -30144,9 +34127,9 @@ var ParseContext = class _ParseContext {
     this.viewport = viewport;
     let startLen = this.skipped.length;
     for (let i2 = 0; i2 < this.skipped.length; i2++) {
-      let { from, to } = this.skipped[i2];
-      if (from < viewport.to && to > viewport.from) {
-        this.fragments = cutFragments(this.fragments, from, to);
+      let { from, to: to2 } = this.skipped[i2];
+      if (from < viewport.to && to2 > viewport.from) {
+        this.fragments = cutFragments(this.fragments, from, to2);
         this.skipped.splice(i2--, 1);
       }
     }
@@ -30169,8 +34152,8 @@ var ParseContext = class _ParseContext {
   because it wasn't in view, and the parse should be restarted
   when it comes into view.
   */
-  skipUntilInView(from, to) {
-    this.skipped.push({ from, to });
+  skipUntilInView(from, to2) {
+    this.skipped.push({ from, to: to2 });
   }
   /**
   Returns a parser intended to be used as placeholder when
@@ -30184,7 +34167,7 @@ var ParseContext = class _ParseContext {
   static getSkippingParser(until) {
     return new class extends Parser {
       createParse(input, fragments, ranges) {
-        let from = ranges[0].from, to = ranges[ranges.length - 1].to;
+        let from = ranges[0].from, to2 = ranges[ranges.length - 1].to;
         let parser5 = {
           parsedPos: from,
           advance() {
@@ -30195,8 +34178,8 @@ var ParseContext = class _ParseContext {
               if (until)
                 cx.scheduleOn = cx.scheduleOn ? Promise.all([cx.scheduleOn, until]) : until;
             }
-            this.parsedPos = to;
-            return new Tree(NodeType.none, [], [], to - from);
+            this.parsedPos = to2;
+            return new Tree(NodeType.none, [], [], to2 - from);
           },
           stoppedAt: null,
           stopAt() {
@@ -30222,8 +34205,8 @@ var ParseContext = class _ParseContext {
     return currentContext;
   }
 };
-function cutFragments(fragments, from, to) {
-  return TreeFragment.applyChanges(fragments, [{ fromA: from, toA: to, fromB: from, toB: to }]);
+function cutFragments(fragments, from, to2) {
+  return TreeFragment.applyChanges(fragments, [{ fromA: from, toA: to2, fromB: from, toB: to2 }]);
 }
 var LanguageState = class _LanguageState {
   constructor(context) {
@@ -30999,7 +34982,7 @@ var marks = {
   auto: /* @__PURE__ */ Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "auto" }, bidiIsolate: null })
 };
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/commands/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+commands@6.11.1/node_modules/@codemirror/commands/dist/index.js
 var toggleComment = (target) => {
   let { state } = target, line = state.doc.lineAt(state.selection.main.from), config2 = getConfig(target.state, line.from);
   return config2.line ? toggleLineComment(target) : config2.block ? toggleBlockCommentByLine(target) : false;
@@ -31035,23 +35018,23 @@ function getConfig(state, pos) {
   return data2.length ? data2[0] : {};
 }
 var SearchMargin = 50;
-function findBlockComment(state, { open, close }, from, to) {
+function findBlockComment(state, { open, close }, from, to2) {
   let textBefore = state.sliceDoc(from - SearchMargin, from);
-  let textAfter = state.sliceDoc(to, to + SearchMargin);
+  let textAfter = state.sliceDoc(to2, to2 + SearchMargin);
   let spaceBefore = /\s*$/.exec(textBefore)[0].length, spaceAfter = /^\s*/.exec(textAfter)[0].length;
   let beforeOff = textBefore.length - spaceBefore;
   if (textBefore.slice(beforeOff - open.length, beforeOff) == open && textAfter.slice(spaceAfter, spaceAfter + close.length) == close) {
     return {
       open: { pos: from - spaceBefore, margin: spaceBefore && 1 },
-      close: { pos: to + spaceAfter, margin: spaceAfter && 1 }
+      close: { pos: to2 + spaceAfter, margin: spaceAfter && 1 }
     };
   }
   let startText, endText;
-  if (to - from <= 2 * SearchMargin) {
-    startText = endText = state.sliceDoc(from, to);
+  if (to2 - from <= 2 * SearchMargin) {
+    startText = endText = state.sliceDoc(from, to2);
   } else {
     startText = state.sliceDoc(from, from + SearchMargin);
-    endText = state.sliceDoc(to - SearchMargin, to);
+    endText = state.sliceDoc(to2 - SearchMargin, to2);
   }
   let startSpace = /^\s*/.exec(startText)[0].length, endSpace = /\s*$/.exec(endText)[0].length;
   let endOff = endText.length - endSpace - close.length;
@@ -31062,7 +35045,7 @@ function findBlockComment(state, { open, close }, from, to) {
         margin: /\s/.test(startText.charAt(startSpace + open.length)) ? 1 : 0
       },
       close: {
-        pos: to - endSpace - close.length,
+        pos: to2 - endSpace - close.length,
         margin: /\s/.test(endText.charAt(endOff - 1)) ? 1 : 0
       }
     };
@@ -31109,16 +35092,16 @@ function changeBlockComment(option, state, ranges = state.selection.ranges) {
 function changeLineComment(option, state, ranges = state.selection.ranges) {
   let lines = [];
   let prevLine = -1;
-  ranges: for (let { from, to } of ranges) {
+  ranges: for (let { from, to: to2 } of ranges) {
     let startI = lines.length, minIndent = 1e9, token;
-    for (let pos = from; pos <= to; ) {
+    for (let pos = from; pos <= to2; ) {
       let line = state.doc.lineAt(pos);
       if (token == void 0) {
         token = getConfig(state, line.from).line;
         if (!token)
           continue ranges;
       }
-      if (line.from > prevLine && (from == to || to > line.from)) {
+      if (line.from > prevLine && (from == to2 || to2 > line.from)) {
         prevLine = line.from;
         let indent = /^\s*/.exec(line.text)[0].length;
         let empty = indent == line.length;
@@ -31148,10 +35131,10 @@ function changeLineComment(option, state, ranges = state.selection.ranges) {
     let changes = [];
     for (let { line, comment: comment2, token } of lines)
       if (comment2 >= 0) {
-        let from = line.from + comment2, to = from + token.length;
-        if (line.text[to - line.from] == " ")
-          to++;
-        changes.push({ from, to });
+        let from = line.from + comment2, to2 = from + token.length;
+        if (line.text[to2 - line.from] == " ")
+          to2++;
+        changes.push({ from, to: to2 });
       }
     return { changes };
   }
@@ -31165,7 +35148,7 @@ var historyConfig = /* @__PURE__ */ Facet.define({
     return combineConfig(configs, {
       minDepth: 100,
       newGroupDelay: 500,
-      joinToEvent: (_t, isAdjacent2) => isAdjacent2
+      joinToEvent: (_t2, isAdjacent2) => isAdjacent2
     }, {
       minDepth: Math.max,
       newGroupDelay: Math.min,
@@ -31285,19 +35268,19 @@ var HistEvent = class _HistEvent {
     return new _HistEvent(void 0, none2, void 0, void 0, selections);
   }
 };
-function updateBranch(branch, to, maxLen, newEvent) {
-  let start = to + 1 > maxLen + 20 ? to - maxLen - 1 : 0;
-  let newBranch = branch.slice(start, to);
+function updateBranch(branch, to2, maxLen, newEvent) {
+  let start = to2 + 1 > maxLen + 20 ? to2 - maxLen - 1 : 0;
+  let newBranch = branch.slice(start, to2);
   newBranch.push(newEvent);
   return newBranch;
 }
 function isAdjacent(a, b) {
   let ranges = [], isAdjacent2 = false;
   a.iterChangedRanges((f, t2) => ranges.push(f, t2));
-  b.iterChangedRanges((_f, _t, f, t2) => {
+  b.iterChangedRanges((_f, _t2, f, t2) => {
     for (let i2 = 0; i2 < ranges.length; ) {
-      let from = ranges[i2++], to = ranges[i2++];
-      if (t2 >= from && f <= to)
+      let from = ranges[i2++], to2 = ranges[i2++];
+      if (t2 >= from && f <= to2)
         isAdjacent2 = true;
     }
   });
@@ -31637,7 +35620,7 @@ var selectAll = ({ state, dispatch }) => {
   return true;
 };
 var selectLine = ({ state, dispatch }) => {
-  let ranges = selectedLineBlocks(state).map(({ from, to }) => EditorSelection.undirectionalRange(from, Math.min(to + 1, state.doc.length)));
+  let ranges = selectedLineBlocks(state).map(({ from, to: to2 }) => EditorSelection.undirectionalRange(from, Math.min(to2 + 1, state.doc.length)));
   dispatch(state.update({ selection: EditorSelection.create(ranges), userEvent: "select" }));
   return true;
 };
@@ -31702,8 +35685,8 @@ function deleteBy(target, by) {
     return false;
   let event = "delete.selection", { state } = target;
   let changes = state.changeByRange((range) => {
-    let { from, to } = range;
-    if (from == to) {
+    let { from, to: to2 } = range;
+    if (from == to2) {
       let towards = by(range);
       if (towards < from) {
         event = "delete.backward";
@@ -31713,12 +35696,12 @@ function deleteBy(target, by) {
         towards = skipAtomic(target, towards, true);
       }
       from = Math.min(from, towards);
-      to = Math.max(to, towards);
+      to2 = Math.max(to2, towards);
     } else {
       from = skipAtomic(target, from, false);
-      to = skipAtomic(target, to, true);
+      to2 = skipAtomic(target, to2, true);
     }
-    return from == to ? { range } : { changes: { from, to }, range: EditorSelection.cursor(from, from < range.head ? -1 : 1) };
+    return from == to2 ? { range } : { changes: { from, to: to2 }, range: EditorSelection.cursor(from, from < range.head ? -1 : 1) };
   });
   if (changes.changes.empty)
     return false;
@@ -31732,9 +35715,9 @@ function deleteBy(target, by) {
 function skipAtomic(target, pos, forward) {
   if (target instanceof EditorView)
     for (let ranges of target.state.facet(EditorView.atomicRanges).map((f) => f(target)))
-      ranges.between(pos, pos, (from, to) => {
-        if (from < pos && to > pos)
-          pos = forward ? to : from;
+      ranges.between(pos, pos, (from, to2) => {
+        if (from < pos && to2 > pos)
+          pos = forward ? to2 : from;
       });
   return pos;
 }
@@ -31812,10 +35795,10 @@ var transposeChars = ({ state, dispatch }) => {
       return { range };
     let pos = range.from, line = state.doc.lineAt(pos);
     let from = pos == line.from ? pos - 1 : findClusterBreak2(line.text, pos - line.from, false) + line.from;
-    let to = pos == line.to ? pos + 1 : findClusterBreak2(line.text, pos - line.from, true) + line.from;
+    let to2 = pos == line.to ? pos + 1 : findClusterBreak2(line.text, pos - line.from, true) + line.from;
     return {
-      changes: { from, to, insert: state.doc.slice(pos, to).append(state.doc.slice(from, pos)) },
-      range: EditorSelection.cursor(to)
+      changes: { from, to: to2, insert: state.doc.slice(pos, to2).append(state.doc.slice(from, pos)) },
+      range: EditorSelection.cursor(to2)
     };
   });
   if (changes.changes.empty)
@@ -31895,12 +35878,12 @@ var copyLineDown = ({ state, dispatch }) => copyLine(state, dispatch, true);
 var deleteLine = (view) => {
   if (view.state.readOnly)
     return false;
-  let { state } = view, changes = state.changes(selectedLineBlocks(state).map(({ from, to }) => {
+  let { state } = view, changes = state.changes(selectedLineBlocks(state).map(({ from, to: to2 }) => {
     if (from > 0)
       from--;
-    else if (to < state.doc.length)
-      to++;
-    return { from, to };
+    else if (to2 < state.doc.length)
+      to2++;
+    return { from, to: to2 };
   }));
   let selection = updateSel(state.selection, (range) => {
     let dist2 = void 0;
@@ -31930,25 +35913,25 @@ function newlineAndIndent(atEof) {
     if (state.readOnly)
       return false;
     let changes = state.changeByRange((range) => {
-      let { from, to } = range, line = state.doc.lineAt(from);
-      let explode = !atEof && from == to && isBetweenBrackets(state, from);
+      let { from, to: to2 } = range, line = state.doc.lineAt(from);
+      let explode = !atEof && from == to2 && isBetweenBrackets(state, from);
       if (atEof)
-        from = to = (to <= line.to ? line : state.doc.lineAt(to)).to;
+        from = to2 = (to2 <= line.to ? line : state.doc.lineAt(to2)).to;
       let cx = new IndentContext(state, { simulateBreak: from, simulateDoubleBreak: !!explode });
       let indent = getIndentation(cx, from);
       if (indent == null)
         indent = countColumn(/^\s*/.exec(state.doc.lineAt(from).text)[0], state.tabSize);
-      while (to < line.to && /\s/.test(line.text[to - line.from]))
-        to++;
+      while (to2 < line.to && /\s/.test(line.text[to2 - line.from]))
+        to2++;
       if (explode)
-        ({ from, to } = explode);
+        ({ from, to: to2 } = explode);
       else if (from > line.from && from < line.from + 100 && !/\S/.test(line.text.slice(0, from)))
         from = line.from;
       let insert2 = ["", indentString(state, indent)];
       if (explode)
         insert2.push(indentString(state, cx.lineIndent(line.from, -1)));
       return {
-        changes: { from, to, insert: Text.of(insert2) },
+        changes: { from, to: to2, insert: Text.of(insert2) },
         range: EditorSelection.cursor(from + 1 + insert2[1].length)
       };
     });
@@ -32093,7 +36076,7 @@ var defaultKeymap = /* @__PURE__ */ [
   { key: "Ctrl-m", mac: "Shift-Alt-m", run: toggleTabFocusMode }
 ].concat(standardKeymap);
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/autocomplete/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+autocomplete@6.20.3/node_modules/@codemirror/autocomplete/dist/index.js
 var CompletionContext = class {
   /**
   Create a new completion context. (Mostly useful for testing
@@ -32334,23 +36317,23 @@ var baseTheme2 = /* @__PURE__ */ EditorView.baseTheme({
   }
 });
 var FieldPos = class {
-  constructor(field, line, from, to) {
+  constructor(field, line, from, to2) {
     this.field = field;
     this.line = line;
     this.from = from;
-    this.to = to;
+    this.to = to2;
   }
 };
 var FieldRange = class _FieldRange {
-  constructor(field, from, to) {
+  constructor(field, from, to2) {
     this.field = field;
     this.from = from;
-    this.to = to;
+    this.to = to2;
   }
   map(changes) {
     let from = changes.mapPos(this.from, -1, MapMode.TrackDel);
-    let to = changes.mapPos(this.to, 1, MapMode.TrackDel);
-    return from == null || to == null ? null : new _FieldRange(this.field, from, to);
+    let to2 = changes.mapPos(this.to, 1, MapMode.TrackDel);
+    return from == null || to2 == null ? null : new _FieldRange(this.field, from, to2);
   }
 };
 var Snippet = class _Snippet {
@@ -32481,11 +36464,11 @@ function fieldSelection(ranges, field) {
 }
 function snippet(template) {
   let snippet2 = Snippet.parse(template);
-  return (editor, completion, from, to) => {
+  return (editor, completion, from, to2) => {
     let { text, ranges } = snippet2.instantiate(editor.state, from);
     let { main } = editor.state.selection;
     let spec = {
-      changes: { from, to: to == main.from ? main.to : to, insert: Text.of(text) },
+      changes: { from, to: to2 == main.from ? main.to : to2, insert: Text.of(text) },
       scrollIntoView: true,
       annotations: completion ? [pickedCompletion.of(completion), Transaction.userEvent.of("input.complete")] : void 0
     };
@@ -32558,7 +36541,7 @@ closedBracket.startSide = 1;
 closedBracket.endSide = -1;
 var android = typeof navigator == "object" && /* @__PURE__ */ /Android\b/.test(navigator.userAgent);
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/markdown/dist/index.js
+// ../../node_modules/.pnpm/@lezer+markdown@1.8.0/node_modules/@lezer/markdown/dist/index.js
 var CompositeBlock = class _CompositeBlock {
   static create(type, value, from, parentHash, end) {
     let hash3 = parentHash + (parentHash << 8) + type + (value << 4) | 0;
@@ -32699,9 +36682,9 @@ var Line2 = class {
   parsers](#BlockParser.parse) or [markup skipping
   functions](#NodeSpec.composite).
   */
-  moveBase(to) {
-    this.basePos = to;
-    this.baseIndent = this.countIndent(to, this.pos, this.indent);
+  moveBase(to2) {
+    this.basePos = to2;
+    this.baseIndent = this.countIndent(to2, this.pos, this.indent);
   }
   /**
   Move the line's base position forward to the given _column_.
@@ -32722,8 +36705,8 @@ var Line2 = class {
   Find the column position at `to`, optionally starting at a given
   position and column.
   */
-  countIndent(to, from = 0, indent = 0) {
-    for (let i2 = from; i2 < to; i2++)
+  countIndent(to2, from = 0, indent = 0) {
+    for (let i2 = from; i2 < to2; i2++)
       indent += this.text.charCodeAt(i2) == 9 ? 4 - indent % 4 : 1;
     return indent;
   }
@@ -32785,8 +36768,8 @@ function skipSpace(line, i2 = 0) {
     i2++;
   return i2;
 }
-function skipSpaceBack(line, i2, to) {
-  while (i2 > to && space(line.charCodeAt(i2 - 1)))
+function skipSpaceBack(line, i2, to2) {
+  while (i2 > to2 && space(line.charCodeAt(i2 - 1)))
     i2--;
   return i2;
 }
@@ -32896,12 +36879,12 @@ function getListIndent(line, pos) {
   let indented = line.countIndent(skipped, pos, indentAfter);
   return indented >= indentAfter + 5 || skipped == line.text.length ? indentAfter + 1 : indented;
 }
-function addCodeText(marks2, from, to) {
+function addCodeText(marks2, from, to2) {
   let last2 = marks2.length - 1;
   if (last2 >= 0 && marks2[last2].to == from && marks2[last2].type == Type.CodeText)
-    marks2[last2].to = to;
+    marks2[last2].to = to2;
   else
-    marks2.push(elt(Type.CodeText, from, to));
+    marks2.push(elt(Type.CodeText, from, to2));
 }
 var DefaultBlockParsers = {
   LinkReference: void 0,
@@ -32910,9 +36893,9 @@ var DefaultBlockParsers = {
     if (line.indent < base2)
       return false;
     let start = line.findColumn(base2);
-    let from = cx.lineStart + start, to = cx.lineStart + line.text.length;
+    let from = cx.lineStart + start, to2 = cx.lineStart + line.text.length;
     let marks2 = [], pendingMarks = [];
-    addCodeText(marks2, from, to);
+    addCodeText(marks2, from, to2);
     while (cx.nextLine() && line.depth >= cx.stack.length) {
       if (line.pos == line.text.length) {
         addCodeText(pendingMarks, cx.lineStart - 1, cx.lineStart);
@@ -32933,10 +36916,10 @@ var DefaultBlockParsers = {
         addCodeText(marks2, cx.lineStart - 1, cx.lineStart);
         for (let m of line.markers)
           marks2.push(m);
-        to = cx.lineStart + line.text.length;
+        to2 = cx.lineStart + line.text.length;
         let codeStart = cx.lineStart + line.findColumn(line.baseIndent + 4);
-        if (codeStart < to)
-          addCodeText(marks2, codeStart, to);
+        if (codeStart < to2)
+          addCodeText(marks2, codeStart, to2);
       }
     }
     if (pendingMarks.length) {
@@ -32944,7 +36927,7 @@ var DefaultBlockParsers = {
       if (pendingMarks.length)
         line.markers = pendingMarks.concat(line.markers);
     }
-    cx.addNode(cx.buffer.writeElements(marks2, -from).finish(Type.CodeBlock, to - from), from);
+    cx.addNode(cx.buffer.writeElements(marks2, -from).finish(Type.CodeBlock, to2 - from), from);
     return true;
   },
   FencedCode(cx, line) {
@@ -33063,8 +37046,8 @@ var DefaultBlockParsers = {
     if (trailing)
       cx.nextLine();
     let nodeType = end == CommentEnd ? Type.CommentBlock : end == ProcessingEnd ? Type.ProcessingInstructionBlock : Type.HTMLBlock;
-    let to = cx.prevLineEnd();
-    cx.addNode(cx.buffer.writeElements(marks2, -from).finish(nodeType, to - from), from);
+    let to2 = cx.prevLineEnd();
+    cx.addNode(cx.buffer.writeElements(marks2, -from).finish(nodeType, to2 - from), from);
     return true;
   },
   SetextHeading: void 0
@@ -33427,9 +37410,9 @@ var BlockContext = class {
   /**
   @internal
   */
-  addNode(block, from, to) {
+  addNode(block, from, to2) {
     if (typeof block == "number")
-      block = new Tree(this.parser.nodeSet.types[block], none3, none3, (to !== null && to !== void 0 ? to : this.prevLineEnd()) - from);
+      block = new Tree(this.parser.nodeSet.types[block], none3, none3, (to2 !== null && to2 !== void 0 ? to2 : this.prevLineEnd()) - from);
     this.block.addChild(block, from - this.block.from);
   }
   /**
@@ -33474,9 +37457,9 @@ var BlockContext = class {
     let inline = injectMarks(this.parser.parseInline(leaf.content, leaf.start), leaf.marks);
     this.addNode(this.buffer.writeElements(inline, -leaf.start).finish(Type.Paragraph, leaf.content.length), leaf.start);
   }
-  elt(type, from, to, children) {
+  elt(type, from, to2, children) {
     if (typeof type == "string")
-      return elt(this.parser.getNodeType(type), from, to, children);
+      return elt(this.parser.getNodeType(type), from, to2, children);
     return new TreeElement(type, from);
   }
   /**
@@ -33699,8 +37682,8 @@ var Buffer2 = class {
     this.content = [];
     this.nodes = [];
   }
-  write(type, from, to, children = 0) {
-    this.content.push(type, from, to, 4 + children * 4);
+  write(type, from, to2, children = 0) {
+    this.content.push(type, from, to2, 4 + children * 4);
     return this;
   }
   writeElements(elts, offset = 0) {
@@ -33722,10 +37705,10 @@ var Element = class {
   /**
   @internal
   */
-  constructor(type, from, to, children = none3) {
+  constructor(type, from, to2, children = none3) {
     this.type = type;
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.children = children;
   }
   /**
@@ -33765,18 +37748,18 @@ var TreeElement = class {
     return this.tree;
   }
 };
-function elt(type, from, to, children) {
-  return new Element(type, from, to, children);
+function elt(type, from, to2, children) {
+  return new Element(type, from, to2, children);
 }
 var EmphasisUnderscore = { resolve: "Emphasis", mark: "EmphasisMark" };
 var EmphasisAsterisk = { resolve: "Emphasis", mark: "EmphasisMark" };
 var LinkStart = {};
 var ImageStart = {};
 var InlineDelimiter = class {
-  constructor(type, from, to, side, size = to - from) {
+  constructor(type, from, to2, side, size = to2 - from) {
     this.type = type;
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.side = side;
     this.size = size;
   }
@@ -34043,8 +38026,8 @@ var InlineContext = class {
   Get a substring of this inline section. Again uses
   document-relative positions.
   */
-  slice(from, to) {
-    return this.text.slice(from - this.offset, to - this.offset);
+  slice(from, to2) {
+    return this.text.slice(from - this.offset, to2 - this.offset);
   }
   /**
   @internal
@@ -34059,8 +38042,8 @@ var InlineContext = class {
   or both. Returns the end of the delimiter, for convenient
   returning from [parse functions](#InlineParser.parse).
   */
-  addDelimiter(type, from, to, open, close) {
-    return this.append(new InlineDelimiter(type, from, to, (open ? 1 : 0) | (close ? 2 : 0)));
+  addDelimiter(type, from, to2, open, close) {
+    return this.append(new InlineDelimiter(type, from, to2, (open ? 1 : 0) | (close ? 2 : 0)));
   }
   /**
   Returns true when there is an unmatched link or image opening
@@ -34178,9 +38161,9 @@ var InlineContext = class {
   skipSpace(from) {
     return skipSpace(this.text, from - this.offset) + this.offset;
   }
-  elt(type, from, to, children) {
+  elt(type, from, to2, children) {
     if (typeof type == "string")
-      return elt(this.parser.getNodeType(type), from, to, children);
+      return elt(this.parser.getNodeType(type), from, to2, children);
     return new TreeElement(type, from);
   }
 };
@@ -34328,10 +38311,10 @@ var markdownHighlighting = styleTags({
   Paragraph: tags.content
 });
 var parser = new MarkdownParser(new NodeSet(nodeTypes).extend(markdownHighlighting), Object.keys(DefaultBlockParsers).map((n) => DefaultBlockParsers[n]), Object.keys(DefaultBlockParsers).map((n) => DefaultLeafBlocks[n]), Object.keys(DefaultBlockParsers), DefaultEndLeaf, DefaultSkipMarkup, Object.keys(DefaultInline).map((n) => DefaultInline[n]), Object.keys(DefaultInline), []);
-function leftOverSpace(node, from, to) {
+function leftOverSpace(node, from, to2) {
   let ranges = [];
   for (let n = node.firstChild, pos = from; ; n = n.nextSibling) {
-    let nextPos = n ? n.from : to;
+    let nextPos = n ? n.from : to2;
     if (nextPos > pos)
       ranges.push({ from: pos, to: nextPos });
     if (!n)
@@ -34507,9 +38490,9 @@ var urlRE = /[\w-]+(\.[\w-]+)+(:\d+)?(\/[^\s<]*)?/gy;
 var lastTwoDomainWords = /[\w-]+\.[\w-]+($|[/:])/;
 var emailRE = /[\w.+-]+@[\w-]+(\.[\w.-]+)+/gy;
 var xmppResourceRE = /\/[a-zA-Z\d@.]+/gy;
-function count(str, from, to, ch) {
+function count(str, from, to2, ch) {
   let result = 0;
-  for (let i2 = from; i2 < to; i2++)
+  for (let i2 = from; i2 < to2; i2++)
     if (str[i2] == ch)
       result++;
   return result;
@@ -34625,7 +38608,7 @@ var Emoji = {
   }]
 };
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/lr/dist/index.js
+// ../../node_modules/.pnpm/@lezer+lr@1.4.11/node_modules/@lezer/lr/dist/index.js
 var Stack = class _Stack {
   /**
   @internal
@@ -35411,19 +39394,19 @@ var InputStream = class {
   /**
   @internal
   */
-  read(from, to) {
-    if (from >= this.chunkPos && to <= this.chunkPos + this.chunk.length)
-      return this.chunk.slice(from - this.chunkPos, to - this.chunkPos);
-    if (from >= this.chunk2Pos && to <= this.chunk2Pos + this.chunk2.length)
-      return this.chunk2.slice(from - this.chunk2Pos, to - this.chunk2Pos);
-    if (from >= this.range.from && to <= this.range.to)
-      return this.input.read(from, to);
+  read(from, to2) {
+    if (from >= this.chunkPos && to2 <= this.chunkPos + this.chunk.length)
+      return this.chunk.slice(from - this.chunkPos, to2 - this.chunkPos);
+    if (from >= this.chunk2Pos && to2 <= this.chunk2Pos + this.chunk2.length)
+      return this.chunk2.slice(from - this.chunk2Pos, to2 - this.chunk2Pos);
+    if (from >= this.range.from && to2 <= this.range.to)
+      return this.input.read(from, to2);
     let result = "";
     for (let r of this.ranges) {
-      if (r.from >= to)
+      if (r.from >= to2)
         break;
       if (r.to > from)
-        result += this.input.read(Math.max(r.from, from), Math.min(r.to, to));
+        result += this.input.read(Math.max(r.from, from), Math.min(r.to, to2));
     }
     return result;
   }
@@ -35504,10 +39487,10 @@ function readToken(data2, input, stack, group, precTable, precOffset) {
     for (; low < high; ) {
       let mid = low + high >> 1;
       let index = accEnd + mid + (mid << 1);
-      let from = data2[index], to = data2[index + 1] || 65536;
+      let from = data2[index], to2 = data2[index + 1] || 65536;
       if (next < from)
         high = mid;
-      else if (next >= to)
+      else if (next >= to2)
         low = mid + 1;
       else {
         state = data2[index + 2];
@@ -36403,7 +40386,7 @@ function getSpecializer(spec) {
   return spec.get;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/html/dist/index.js
+// ../../node_modules/.pnpm/@lezer+html@1.3.13/node_modules/@lezer/html/dist/index.js
 var scriptText = 55;
 var StartCloseScriptTag = 1;
 var styleText = 56;
@@ -36720,9 +40703,9 @@ function configureNesting(tags3 = [], attributes = []) {
       if (tagName) for (let tag of other) {
         if (tag.tag == tagName && (!tag.attrs || tag.attrs(attrs2 || (attrs2 = getAttrs2(open, input))))) {
           let close = n.lastChild;
-          let to = close.type.id == CloseTag ? close.from : n.to;
-          if (to > open.to)
-            return { parser: tag.parser, overlay: [{ from: open.to, to }] };
+          let to2 = close.type.id == CloseTag ? close.from : n.to;
+          if (to2 > open.to)
+            return { parser: tag.parser, overlay: [{ from: open.to, to: to2 }] };
         }
       }
     }
@@ -36735,8 +40718,8 @@ function configureNesting(tags3 = [], attributes = []) {
           let value = n.lastChild;
           if (value.type.id == AttributeValue) {
             let from = value.from + 1;
-            let last2 = value.lastChild, to = value.to - (last2 && last2.isError ? 0 : 1);
-            if (to > from) return { parser: attr.parser, overlay: [{ from, to }], bracketed: true };
+            let last2 = value.lastChild, to2 = value.to - (last2 && last2.isError ? 0 : 1);
+            if (to2 > from) return { parser: attr.parser, overlay: [{ from, to: to2 }], bracketed: true };
           } else if (value.type.id == UnquotedAttributeValue) {
             return { parser: attr.parser, overlay: [{ from: value.from, to: value.to }] };
           }
@@ -36747,7 +40730,7 @@ function configureNesting(tags3 = [], attributes = []) {
   });
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/css/dist/index.js
+// ../../node_modules/.pnpm/@lezer+css@1.3.9/node_modules/@lezer/css/dist/index.js
 var descendantOp = 148;
 var Unit = 1;
 var identifier = 149;
@@ -36927,7 +40910,7 @@ var parser3 = LRParser.deserialize({
   tokenPrec: 2433
 });
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/lang-css/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+lang-css@6.3.1/node_modules/@codemirror/lang-css/dist/index.js
 var _properties = null;
 function properties() {
   if (!_properties && typeof document == "object" && document.body) {
@@ -37788,7 +41771,7 @@ function css() {
   return new LanguageSupport(cssLanguage, cssLanguage.data.of({ autocomplete: cssCompletionSource }));
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/javascript/dist/index.js
+// ../../node_modules/.pnpm/@lezer+javascript@1.5.6/node_modules/@lezer/javascript/dist/index.js
 var noSemi = 317;
 var noSemiType = 318;
 var incdec = 1;
@@ -37834,7 +41817,7 @@ var slash2 = 47;
 var star = 42;
 var plus = 43;
 var minus = 45;
-var lt = 60;
+var lt2 = 60;
 var comma = 44;
 var question2 = 63;
 var dot = 46;
@@ -37880,8 +41863,8 @@ var operatorToken = new ExternalTokenizer((input, stack) => {
 function identifierChar(ch, start) {
   return ch >= 65 && ch <= 90 || ch >= 97 && ch <= 122 || ch == 95 || ch >= 192 || !start && ch >= 48 && ch <= 57;
 }
-var jsx = new ExternalTokenizer((input, stack) => {
-  if (input.next != lt || !stack.dialectEnabled(Dialect_jsx)) return;
+var jsx2 = new ExternalTokenizer((input, stack) => {
+  if (input.next != lt2 || !stack.dialectEnabled(Dialect_jsx)) return;
   input.advance();
   if (input.next == slash2) return;
   let back = 0;
@@ -37992,7 +41975,7 @@ var parser4 = LRParser.deserialize({
   skippedNodes: [0, 5, 6, 279],
   repeatNodeCount: 37,
   tokenData: "$Fq07[R!bOX%ZXY+gYZ-yZ[+g[]%Z]^.c^p%Zpq+gqr/mrs3cst:_tuEruvJSvwLkwx! Yxy!'iyz!(sz{!)}{|!,q|}!.O}!O!,q!O!P!/Y!P!Q!9j!Q!R#:O!R![#<_![!]#I_!]!^#Jk!^!_#Ku!_!`$![!`!a$$v!a!b$*T!b!c$,r!c!}Er!}#O$-|#O#P$/W#P#Q$4o#Q#R$5y#R#SEr#S#T$7W#T#o$8b#o#p$<r#p#q$=h#q#r$>x#r#s$@U#s$f%Z$f$g+g$g#BYEr#BY#BZ$A`#BZ$ISEr$IS$I_$A`$I_$I|Er$I|$I}$Dk$I}$JO$Dk$JO$JTEr$JT$JU$A`$JU$KVEr$KV$KW$A`$KW&FUEr&FU&FV$A`&FV;'SEr;'S;=`I|<%l?HTEr?HT?HU$A`?HUOEr(n%d_$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z&j&hT$j&jO!^&c!_#o&c#p;'S&c;'S;=`&w<%lO&c&j&zP;=`<%l&c'|'U]$j&j([!bOY&}YZ&cZw&}wx&cx!^&}!^!_'}!_#O&}#O#P&c#P#o&}#o#p'}#p;'S&};'S;=`(l<%lO&}!b(SU([!bOY'}Zw'}x#O'}#P;'S'};'S;=`(f<%lO'}!b(iP;=`<%l'}'|(oP;=`<%l&}'[(y]$j&j(XpOY(rYZ&cZr(rrs&cs!^(r!^!_)r!_#O(r#O#P&c#P#o(r#o#p)r#p;'S(r;'S;=`*a<%lO(rp)wU(XpOY)rZr)rs#O)r#P;'S)r;'S;=`*Z<%lO)rp*^P;=`<%l)r'[*dP;=`<%l(r#S*nX(Xp([!bOY*gZr*grs'}sw*gwx)rx#O*g#P;'S*g;'S;=`+Z<%lO*g#S+^P;=`<%l*g(n+dP;=`<%l%Z07[+rq$j&j(Xp([!b'}0/lOX%ZXY+gYZ&cZ[+g[p%Zpq+gqr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p$f%Z$f$g+g$g#BY%Z#BY#BZ+g#BZ$IS%Z$IS$I_+g$I_$JT%Z$JT$JU+g$JU$KV%Z$KV$KW+g$KW&FU%Z&FU&FV+g&FV;'S%Z;'S;=`+a<%l?HT%Z?HT?HU+g?HUO%Z07[.ST(Y#S$j&j(O0/lO!^&c!_#o&c#p;'S&c;'S;=`&w<%lO&c07[.n_$j&j(Xp([!b(O0/lOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z)3p/x`$j&j!p),Q(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`0z!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KW1V`#w(Ch$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`2X!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KW2d_#w(Ch$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'At3l_(W':f$j&j([!bOY4kYZ5qZr4krs7nsw4kwx5qx!^4k!^!_8p!_#O4k#O#P5q#P#o4k#o#p8p#p;'S4k;'S;=`:X<%lO4k(^4r_$j&j([!bOY4kYZ5qZr4krs7nsw4kwx5qx!^4k!^!_8p!_#O4k#O#P5q#P#o4k#o#p8p#p;'S4k;'S;=`:X<%lO4k&z5vX$j&jOr5qrs6cs!^5q!^!_6y!_#o5q#o#p6y#p;'S5q;'S;=`7h<%lO5q&z6jT$e`$j&jO!^&c!_#o&c#p;'S&c;'S;=`&w<%lO&c`6|TOr6yrs7]s;'S6y;'S;=`7b<%lO6y`7bO$e``7eP;=`<%l6y&z7kP;=`<%l5q(^7w]$e`$j&j([!bOY&}YZ&cZw&}wx&cx!^&}!^!_'}!_#O&}#O#P&c#P#o&}#o#p'}#p;'S&};'S;=`(l<%lO&}!r8uZ([!bOY8pYZ6yZr8prs9hsw8pwx6yx#O8p#O#P6y#P;'S8p;'S;=`:R<%lO8p!r9oU$e`([!bOY'}Zw'}x#O'}#P;'S'};'S;=`(f<%lO'}!r:UP;=`<%l8p(^:[P;=`<%l4k%9[:hh$j&j(Xp([!bOY%ZYZ&cZq%Zqr<Srs&}st%ZtuCruw%Zwx(rx!^%Z!^!_*g!_!c%Z!c!}Cr!}#O%Z#O#P&c#P#R%Z#R#SCr#S#T%Z#T#oCr#o#p*g#p$g%Z$g;'SCr;'S;=`El<%lOCr(r<__WS$j&j(Xp([!bOY<SYZ&cZr<Srs=^sw<Swx@nx!^<S!^!_Bm!_#O<S#O#P>`#P#o<S#o#pBm#p;'S<S;'S;=`Cl<%lO<S(Q=g]WS$j&j([!bOY=^YZ&cZw=^wx>`x!^=^!^!_?q!_#O=^#O#P>`#P#o=^#o#p?q#p;'S=^;'S;=`@h<%lO=^&n>gXWS$j&jOY>`YZ&cZ!^>`!^!_?S!_#o>`#o#p?S#p;'S>`;'S;=`?k<%lO>`S?XSWSOY?SZ;'S?S;'S;=`?e<%lO?SS?hP;=`<%l?S&n?nP;=`<%l>`!f?xWWS([!bOY?qZw?qwx?Sx#O?q#O#P?S#P;'S?q;'S;=`@b<%lO?q!f@eP;=`<%l?q(Q@kP;=`<%l=^'`@w]WS$j&j(XpOY@nYZ&cZr@nrs>`s!^@n!^!_Ap!_#O@n#O#P>`#P#o@n#o#pAp#p;'S@n;'S;=`Bg<%lO@ntAwWWS(XpOYApZrAprs?Ss#OAp#O#P?S#P;'SAp;'S;=`Ba<%lOAptBdP;=`<%lAp'`BjP;=`<%l@n#WBvYWS(Xp([!bOYBmZrBmrs?qswBmwxApx#OBm#O#P?S#P;'SBm;'S;=`Cf<%lOBm#WCiP;=`<%lBm(rCoP;=`<%l<S%9[C}i$j&j(p%1l(Xp([!bOY%ZYZ&cZr%Zrs&}st%ZtuCruw%Zwx(rx!Q%Z!Q![Cr![!^%Z!^!_*g!_!c%Z!c!}Cr!}#O%Z#O#P&c#P#R%Z#R#SCr#S#T%Z#T#oCr#o#p*g#p$g%Z$g;'SCr;'S;=`El<%lOCr%9[EoP;=`<%lCr07[FRk$j&j(Xp([!b$^#t(U,2j(f$I[OY%ZYZ&cZr%Zrs&}st%ZtuEruw%Zwx(rx}%Z}!OGv!O!Q%Z!Q![Er![!^%Z!^!_*g!_!c%Z!c!}Er!}#O%Z#O#P&c#P#R%Z#R#SEr#S#T%Z#T#oEr#o#p*g#p$g%Z$g;'SEr;'S;=`I|<%lOEr+dHRk$j&j(Xp([!b$^#tOY%ZYZ&cZr%Zrs&}st%ZtuGvuw%Zwx(rx}%Z}!OGv!O!Q%Z!Q![Gv![!^%Z!^!_*g!_!c%Z!c!}Gv!}#O%Z#O#P&c#P#R%Z#R#SGv#S#T%Z#T#oGv#o#p*g#p$g%Z$g;'SGv;'S;=`Iv<%lOGv+dIyP;=`<%lGv07[JPP;=`<%lEr(KWJ_`$j&j(Xp([!b#q(ChOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KWKl_$j&j$R(Ch(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z,#xLva({+JY$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sv%ZvwM{wx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KWNW`$j&j#{(Ch(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'At! c_(Z';W$j&j(XpOY!!bYZ!#hZr!!brs!#hsw!!bwx!$xx!^!!b!^!_!%z!_#O!!b#O#P!#h#P#o!!b#o#p!%z#p;'S!!b;'S;=`!'c<%lO!!b'l!!i_$j&j(XpOY!!bYZ!#hZr!!brs!#hsw!!bwx!$xx!^!!b!^!_!%z!_#O!!b#O#P!#h#P#o!!b#o#p!%z#p;'S!!b;'S;=`!'c<%lO!!b&z!#mX$j&jOw!#hwx6cx!^!#h!^!_!$Y!_#o!#h#o#p!$Y#p;'S!#h;'S;=`!$r<%lO!#h`!$]TOw!$Ywx7]x;'S!$Y;'S;=`!$l<%lO!$Y`!$oP;=`<%l!$Y&z!$uP;=`<%l!#h'l!%R]$e`$j&j(XpOY(rYZ&cZr(rrs&cs!^(r!^!_)r!_#O(r#O#P&c#P#o(r#o#p)r#p;'S(r;'S;=`*a<%lO(r!Q!&PZ(XpOY!%zYZ!$YZr!%zrs!$Ysw!%zwx!&rx#O!%z#O#P!$Y#P;'S!%z;'S;=`!']<%lO!%z!Q!&yU$e`(XpOY)rZr)rs#O)r#P;'S)r;'S;=`*Z<%lO)r!Q!'`P;=`<%l!%z'l!'fP;=`<%l!!b/5|!'t_!l/.^$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z#&U!)O_!k!Lf$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z-!n!*[b$j&j(Xp([!b(V%&f#r(ChOY%ZYZ&cZr%Zrs&}sw%Zwx(rxz%Zz{!+d{!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KW!+o`$j&j(Xp([!b#o(ChOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z+;x!,|`$j&j(Xp([!br+4YOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z,$U!.Z_!]+Jf$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z07[!/ec$j&j(Xp([!b!Q.2^OY%ZYZ&cZr%Zrs&}sw%Zwx(rx!O%Z!O!P!0p!P!Q%Z!Q![!3Y![!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z#%|!0ya$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!O%Z!O!P!2O!P!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z#%|!2Z_![!L^$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad!3eg$j&j(Xp([!bs'9tOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q![!3Y![!^%Z!^!_*g!_!g%Z!g!h!4|!h#O%Z#O#P&c#P#R%Z#R#S!3Y#S#X%Z#X#Y!4|#Y#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad!5Vg$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx{%Z{|!6n|}%Z}!O!6n!O!Q%Z!Q![!8S![!^%Z!^!_*g!_#O%Z#O#P&c#P#R%Z#R#S!8S#S#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad!6wc$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q![!8S![!^%Z!^!_*g!_#O%Z#O#P&c#P#R%Z#R#S!8S#S#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad!8_c$j&j(Xp([!bs'9tOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q![!8S![!^%Z!^!_*g!_#O%Z#O#P&c#P#R%Z#R#S!8S#S#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z07[!9uf$j&j(Xp([!b#p(ChOY!;ZYZ&cZr!;Zrs!<nsw!;Zwx!Lcxz!;Zz{#-}{!P!;Z!P!Q#/d!Q!^!;Z!^!_#(i!_!`#7S!`!a#8i!a!}!;Z!}#O#,f#O#P!Dy#P#o!;Z#o#p#(i#p;'S!;Z;'S;=`#-w<%lO!;Z?O!;fb$j&j(Xp([!b!X7`OY!;ZYZ&cZr!;Zrs!<nsw!;Zwx!Lcx!P!;Z!P!Q#&`!Q!^!;Z!^!_#(i!_!}!;Z!}#O#,f#O#P!Dy#P#o!;Z#o#p#(i#p;'S!;Z;'S;=`#-w<%lO!;Z>^!<w`$j&j([!b!X7`OY!<nYZ&cZw!<nwx!=yx!P!<n!P!Q!Eq!Q!^!<n!^!_!Gr!_!}!<n!}#O!KS#O#P!Dy#P#o!<n#o#p!Gr#p;'S!<n;'S;=`!L]<%lO!<n<z!>Q^$j&j!X7`OY!=yYZ&cZ!P!=y!P!Q!>|!Q!^!=y!^!_!@c!_!}!=y!}#O!CW#O#P!Dy#P#o!=y#o#p!@c#p;'S!=y;'S;=`!Ek<%lO!=y<z!?Td$j&j!X7`O!^&c!_#W&c#W#X!>|#X#Z&c#Z#[!>|#[#]&c#]#^!>|#^#a&c#a#b!>|#b#g&c#g#h!>|#h#i&c#i#j!>|#j#k!>|#k#m&c#m#n!>|#n#o&c#p;'S&c;'S;=`&w<%lO&c7`!@hX!X7`OY!@cZ!P!@c!P!Q!AT!Q!}!@c!}#O!Ar#O#P!Bq#P;'S!@c;'S;=`!CQ<%lO!@c7`!AYW!X7`#W#X!AT#Z#[!AT#]#^!AT#a#b!AT#g#h!AT#i#j!AT#j#k!AT#m#n!AT7`!AuVOY!ArZ#O!Ar#O#P!B[#P#Q!@c#Q;'S!Ar;'S;=`!Bk<%lO!Ar7`!B_SOY!ArZ;'S!Ar;'S;=`!Bk<%lO!Ar7`!BnP;=`<%l!Ar7`!BtSOY!@cZ;'S!@c;'S;=`!CQ<%lO!@c7`!CTP;=`<%l!@c<z!C][$j&jOY!CWYZ&cZ!^!CW!^!_!Ar!_#O!CW#O#P!DR#P#Q!=y#Q#o!CW#o#p!Ar#p;'S!CW;'S;=`!Ds<%lO!CW<z!DWX$j&jOY!CWYZ&cZ!^!CW!^!_!Ar!_#o!CW#o#p!Ar#p;'S!CW;'S;=`!Ds<%lO!CW<z!DvP;=`<%l!CW<z!EOX$j&jOY!=yYZ&cZ!^!=y!^!_!@c!_#o!=y#o#p!@c#p;'S!=y;'S;=`!Ek<%lO!=y<z!EnP;=`<%l!=y>^!Ezl$j&j([!b!X7`OY&}YZ&cZw&}wx&cx!^&}!^!_'}!_#O&}#O#P&c#P#W&}#W#X!Eq#X#Z&}#Z#[!Eq#[#]&}#]#^!Eq#^#a&}#a#b!Eq#b#g&}#g#h!Eq#h#i&}#i#j!Eq#j#k!Eq#k#m&}#m#n!Eq#n#o&}#o#p'}#p;'S&};'S;=`(l<%lO&}8r!GyZ([!b!X7`OY!GrZw!Grwx!@cx!P!Gr!P!Q!Hl!Q!}!Gr!}#O!JU#O#P!Bq#P;'S!Gr;'S;=`!J|<%lO!Gr8r!Hse([!b!X7`OY'}Zw'}x#O'}#P#W'}#W#X!Hl#X#Z'}#Z#[!Hl#[#]'}#]#^!Hl#^#a'}#a#b!Hl#b#g'}#g#h!Hl#h#i'}#i#j!Hl#j#k!Hl#k#m'}#m#n!Hl#n;'S'};'S;=`(f<%lO'}8r!JZX([!bOY!JUZw!JUwx!Arx#O!JU#O#P!B[#P#Q!Gr#Q;'S!JU;'S;=`!Jv<%lO!JU8r!JyP;=`<%l!JU8r!KPP;=`<%l!Gr>^!KZ^$j&j([!bOY!KSYZ&cZw!KSwx!CWx!^!KS!^!_!JU!_#O!KS#O#P!DR#P#Q!<n#Q#o!KS#o#p!JU#p;'S!KS;'S;=`!LV<%lO!KS>^!LYP;=`<%l!KS>^!L`P;=`<%l!<n=l!Ll`$j&j(Xp!X7`OY!LcYZ&cZr!Lcrs!=ys!P!Lc!P!Q!Mn!Q!^!Lc!^!_# o!_!}!Lc!}#O#%P#O#P!Dy#P#o!Lc#o#p# o#p;'S!Lc;'S;=`#&Y<%lO!Lc=l!Mwl$j&j(Xp!X7`OY(rYZ&cZr(rrs&cs!^(r!^!_)r!_#O(r#O#P&c#P#W(r#W#X!Mn#X#Z(r#Z#[!Mn#[#](r#]#^!Mn#^#a(r#a#b!Mn#b#g(r#g#h!Mn#h#i(r#i#j!Mn#j#k!Mn#k#m(r#m#n!Mn#n#o(r#o#p)r#p;'S(r;'S;=`*a<%lO(r8Q# vZ(Xp!X7`OY# oZr# ors!@cs!P# o!P!Q#!i!Q!}# o!}#O#$R#O#P!Bq#P;'S# o;'S;=`#$y<%lO# o8Q#!pe(Xp!X7`OY)rZr)rs#O)r#P#W)r#W#X#!i#X#Z)r#Z#[#!i#[#])r#]#^#!i#^#a)r#a#b#!i#b#g)r#g#h#!i#h#i)r#i#j#!i#j#k#!i#k#m)r#m#n#!i#n;'S)r;'S;=`*Z<%lO)r8Q#$WX(XpOY#$RZr#$Rrs!Ars#O#$R#O#P!B[#P#Q# o#Q;'S#$R;'S;=`#$s<%lO#$R8Q#$vP;=`<%l#$R8Q#$|P;=`<%l# o=l#%W^$j&j(XpOY#%PYZ&cZr#%Prs!CWs!^#%P!^!_#$R!_#O#%P#O#P!DR#P#Q!Lc#Q#o#%P#o#p#$R#p;'S#%P;'S;=`#&S<%lO#%P=l#&VP;=`<%l#%P=l#&]P;=`<%l!Lc?O#&kn$j&j(Xp([!b!X7`OY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#W%Z#W#X#&`#X#Z%Z#Z#[#&`#[#]%Z#]#^#&`#^#a%Z#a#b#&`#b#g%Z#g#h#&`#h#i%Z#i#j#&`#j#k#&`#k#m%Z#m#n#&`#n#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z9d#(r](Xp([!b!X7`OY#(iZr#(irs!Grsw#(iwx# ox!P#(i!P!Q#)k!Q!}#(i!}#O#+`#O#P!Bq#P;'S#(i;'S;=`#,`<%lO#(i9d#)th(Xp([!b!X7`OY*gZr*grs'}sw*gwx)rx#O*g#P#W*g#W#X#)k#X#Z*g#Z#[#)k#[#]*g#]#^#)k#^#a*g#a#b#)k#b#g*g#g#h#)k#h#i*g#i#j#)k#j#k#)k#k#m*g#m#n#)k#n;'S*g;'S;=`+Z<%lO*g9d#+gZ(Xp([!bOY#+`Zr#+`rs!JUsw#+`wx#$Rx#O#+`#O#P!B[#P#Q#(i#Q;'S#+`;'S;=`#,Y<%lO#+`9d#,]P;=`<%l#+`9d#,cP;=`<%l#(i?O#,o`$j&j(Xp([!bOY#,fYZ&cZr#,frs!KSsw#,fwx#%Px!^#,f!^!_#+`!_#O#,f#O#P!DR#P#Q!;Z#Q#o#,f#o#p#+`#p;'S#,f;'S;=`#-q<%lO#,f?O#-tP;=`<%l#,f?O#-zP;=`<%l!;Z07[#.[b$j&j(Xp([!b(P0/l!X7`OY!;ZYZ&cZr!;Zrs!<nsw!;Zwx!Lcx!P!;Z!P!Q#&`!Q!^!;Z!^!_#(i!_!}!;Z!}#O#,f#O#P!Dy#P#o!;Z#o#p#(i#p;'S!;Z;'S;=`#-w<%lO!;Z07[#/o_$j&j(Xp([!bT0/lOY#/dYZ&cZr#/drs#0nsw#/dwx#4Ox!^#/d!^!_#5}!_#O#/d#O#P#1p#P#o#/d#o#p#5}#p;'S#/d;'S;=`#6|<%lO#/d06j#0w]$j&j([!bT0/lOY#0nYZ&cZw#0nwx#1px!^#0n!^!_#3R!_#O#0n#O#P#1p#P#o#0n#o#p#3R#p;'S#0n;'S;=`#3x<%lO#0n05W#1wX$j&jT0/lOY#1pYZ&cZ!^#1p!^!_#2d!_#o#1p#o#p#2d#p;'S#1p;'S;=`#2{<%lO#1p0/l#2iST0/lOY#2dZ;'S#2d;'S;=`#2u<%lO#2d0/l#2xP;=`<%l#2d05W#3OP;=`<%l#1p01O#3YW([!bT0/lOY#3RZw#3Rwx#2dx#O#3R#O#P#2d#P;'S#3R;'S;=`#3r<%lO#3R01O#3uP;=`<%l#3R06j#3{P;=`<%l#0n05x#4X]$j&j(XpT0/lOY#4OYZ&cZr#4Ors#1ps!^#4O!^!_#5Q!_#O#4O#O#P#1p#P#o#4O#o#p#5Q#p;'S#4O;'S;=`#5w<%lO#4O00^#5XW(XpT0/lOY#5QZr#5Qrs#2ds#O#5Q#O#P#2d#P;'S#5Q;'S;=`#5q<%lO#5Q00^#5tP;=`<%l#5Q05x#5zP;=`<%l#4O01p#6WY(Xp([!bT0/lOY#5}Zr#5}rs#3Rsw#5}wx#5Qx#O#5}#O#P#2d#P;'S#5};'S;=`#6v<%lO#5}01p#6yP;=`<%l#5}07[#7PP;=`<%l#/d)3h#7ab$j&j$R(Ch(Xp([!b!X7`OY!;ZYZ&cZr!;Zrs!<nsw!;Zwx!Lcx!P!;Z!P!Q#&`!Q!^!;Z!^!_#(i!_!}!;Z!}#O#,f#O#P!Dy#P#o!;Z#o#p#(i#p;'S!;Z;'S;=`#-w<%lO!;ZAt#8vb$[#t$j&j(Xp([!b!X7`OY!;ZYZ&cZr!;Zrs!<nsw!;Zwx!Lcx!P!;Z!P!Q#&`!Q!^!;Z!^!_#(i!_!}!;Z!}#O#,f#O#P!Dy#P#o!;Z#o#p#(i#p;'S!;Z;'S;=`#-w<%lO!;Z'Ad#:Zp$j&j(Xp([!bs'9tOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!O%Z!O!P!3Y!P!Q%Z!Q![#<_![!^%Z!^!_*g!_!g%Z!g!h!4|!h#O%Z#O#P&c#P#R%Z#R#S#<_#S#U%Z#U#V#?i#V#X%Z#X#Y!4|#Y#b%Z#b#c#>_#c#d#Bq#d#l%Z#l#m#Es#m#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad#<jk$j&j(Xp([!bs'9tOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!O%Z!O!P!3Y!P!Q%Z!Q![#<_![!^%Z!^!_*g!_!g%Z!g!h!4|!h#O%Z#O#P&c#P#R%Z#R#S#<_#S#X%Z#X#Y!4|#Y#b%Z#b#c#>_#c#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad#>j_$j&j(Xp([!bs'9tOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad#?rd$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q!R#AQ!R!S#AQ!S!^%Z!^!_*g!_#O%Z#O#P&c#P#R%Z#R#S#AQ#S#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad#A]f$j&j(Xp([!bs'9tOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q!R#AQ!R!S#AQ!S!^%Z!^!_*g!_#O%Z#O#P&c#P#R%Z#R#S#AQ#S#b%Z#b#c#>_#c#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad#Bzc$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q!Y#DV!Y!^%Z!^!_*g!_#O%Z#O#P&c#P#R%Z#R#S#DV#S#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad#Dbe$j&j(Xp([!bs'9tOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q!Y#DV!Y!^%Z!^!_*g!_#O%Z#O#P&c#P#R%Z#R#S#DV#S#b%Z#b#c#>_#c#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad#E|g$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q![#Ge![!^%Z!^!_*g!_!c%Z!c!i#Ge!i#O%Z#O#P&c#P#R%Z#R#S#Ge#S#T%Z#T#Z#Ge#Z#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z'Ad#Gpi$j&j(Xp([!bs'9tOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!Q%Z!Q![#Ge![!^%Z!^!_*g!_!c%Z!c!i#Ge!i#O%Z#O#P&c#P#R%Z#R#S#Ge#S#T%Z#T#Z#Ge#Z#b%Z#b#c#>_#c#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z*)x#Il_!g$b$j&j$P)Lv(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z)[#Jv_al$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z04f#LS^h#)`#R-<U(Xp([!b$o7`OY*gZr*grs'}sw*gwx)rx!P*g!P!Q#MO!Q!^*g!^!_#Mt!_!`$ f!`#O*g#P;'S*g;'S;=`+Z<%lO*g(n#MXX$l&j(Xp([!bOY*gZr*grs'}sw*gwx)rx#O*g#P;'S*g;'S;=`+Z<%lO*g(El#M}Z#s(Ch(Xp([!bOY*gZr*grs'}sw*gwx)rx!_*g!_!`#Np!`#O*g#P;'S*g;'S;=`+Z<%lO*g(El#NyX$R(Ch(Xp([!bOY*gZr*grs'}sw*gwx)rx#O*g#P;'S*g;'S;=`+Z<%lO*g(El$ oX#t(Ch(Xp([!bOY*gZr*grs'}sw*gwx)rx#O*g#P;'S*g;'S;=`+Z<%lO*g*)x$!ga#`*!Y$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`0z!`!a$#l!a#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(K[$#w_#l(Cl$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z*)x$%Vag!*r#t(Ch$g#|$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`$&[!`!a$'f!a#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KW$&g_#t(Ch$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KW$'qa#s(Ch$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`!a$(v!a#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KW$)R`#s(Ch$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(Kd$*`a(s(Ct$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!a%Z!a!b$+e!b#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KW$+p`$j&j#|(Ch(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z%#`$,}_!|$Ip$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z04f$.X_!S0,v$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(n$/]Z$j&jO!^$0O!^!_$0f!_#i$0O#i#j$0k#j#l$0O#l#m$2^#m#o$0O#o#p$0f#p;'S$0O;'S;=`$4i<%lO$0O(n$0VT_#S$j&jO!^&c!_#o&c#p;'S&c;'S;=`&w<%lO&c#S$0kO_#S(n$0p[$j&jO!Q&c!Q![$1f![!^&c!_!c&c!c!i$1f!i#T&c#T#Z$1f#Z#o&c#o#p$3|#p;'S&c;'S;=`&w<%lO&c(n$1kZ$j&jO!Q&c!Q![$2^![!^&c!_!c&c!c!i$2^!i#T&c#T#Z$2^#Z#o&c#p;'S&c;'S;=`&w<%lO&c(n$2cZ$j&jO!Q&c!Q![$3U![!^&c!_!c&c!c!i$3U!i#T&c#T#Z$3U#Z#o&c#p;'S&c;'S;=`&w<%lO&c(n$3ZZ$j&jO!Q&c!Q![$0O![!^&c!_!c&c!c!i$0O!i#T&c#T#Z$0O#Z#o&c#p;'S&c;'S;=`&w<%lO&c#S$4PR!Q![$4Y!c!i$4Y#T#Z$4Y#S$4]S!Q![$4Y!c!i$4Y#T#Z$4Y#q#r$0f(n$4lP;=`<%l$0O#1[$4z_!Y#)l$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z(KW$6U`#y(Ch$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z+;p$7c_$j&j(Xp([!b(b+4QOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z07[$8qk$j&j(Xp([!b(U,2j$`#t(f$I[OY%ZYZ&cZr%Zrs&}st%Ztu$8buw%Zwx(rx}%Z}!O$:f!O!Q%Z!Q![$8b![!^%Z!^!_*g!_!c%Z!c!}$8b!}#O%Z#O#P&c#P#R%Z#R#S$8b#S#T%Z#T#o$8b#o#p*g#p$g%Z$g;'S$8b;'S;=`$<l<%lO$8b+d$:qk$j&j(Xp([!b$`#tOY%ZYZ&cZr%Zrs&}st%Ztu$:fuw%Zwx(rx}%Z}!O$:f!O!Q%Z!Q![$:f![!^%Z!^!_*g!_!c%Z!c!}$:f!}#O%Z#O#P&c#P#R%Z#R#S$:f#S#T%Z#T#o$:f#o#p*g#p$g%Z$g;'S$:f;'S;=`$<f<%lO$:f+d$<iP;=`<%l$:f07[$<oP;=`<%l$8b#Jf$<{X!_#Hb(Xp([!bOY*gZr*grs'}sw*gwx)rx#O*g#P;'S*g;'S;=`+Z<%lO*g,#x$=sa(z+JY$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_!`Ka!`#O%Z#O#P&c#P#o%Z#o#p*g#p#q$+e#q;'S%Z;'S;=`+a<%lO%Z)>v$?V_!^(CdvBr$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z?O$@a_!q7`$j&j(Xp([!bOY%ZYZ&cZr%Zrs&}sw%Zwx(rx!^%Z!^!_*g!_#O%Z#O#P&c#P#o%Z#o#p*g#p;'S%Z;'S;=`+a<%lO%Z07[$Aq|$j&j(Xp([!b'}0/l$^#t(U,2j(f$I[OX%ZXY+gYZ&cZ[+g[p%Zpq+gqr%Zrs&}st%ZtuEruw%Zwx(rx}%Z}!OGv!O!Q%Z!Q![Er![!^%Z!^!_*g!_!c%Z!c!}Er!}#O%Z#O#P&c#P#R%Z#R#SEr#S#T%Z#T#oEr#o#p*g#p$f%Z$f$g+g$g#BYEr#BY#BZ$A`#BZ$ISEr$IS$I_$A`$I_$JTEr$JT$JU$A`$JU$KVEr$KV$KW$A`$KW&FUEr&FU&FV$A`&FV;'SEr;'S;=`I|<%l?HTEr?HT?HU$A`?HUOEr07[$D|k$j&j(Xp([!b(O0/l$^#t(U,2j(f$I[OY%ZYZ&cZr%Zrs&}st%ZtuEruw%Zwx(rx}%Z}!OGv!O!Q%Z!Q![Er![!^%Z!^!_*g!_!c%Z!c!}Er!}#O%Z#O#P&c#P#R%Z#R#SEr#S#T%Z#T#oEr#o#p*g#p$g%Z$g;'SEr;'S;=`I|<%lOEr",
-  tokenizers: [noSemicolon, noSemicolonType, operatorToken, jsx, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, insertSemicolon, new LocalTokenGroup("$S~RRtu[#O#Pg#S#T#|~_P#o#pb~gOx~~jVO#i!P#i#j!U#j#l!P#l#m!q#m;'S!P;'S;=`#v<%lO!P~!UO!U~~!XS!Q![!e!c!i!e#T#Z!e#o#p#Z~!hR!Q![!q!c!i!q#T#Z!q~!tR!Q![!}!c!i!}#T#Z!}~#QR!Q![!P!c!i!P#T#Z!P~#^R!Q![#g!c!i#g#T#Z#g~#jS!Q![#g!c!i#g#T#Z#g#q#r!P~#yP;=`<%l!P~$RO(d~~", 141, 341), new LocalTokenGroup("j~RQYZXz{^~^O(R~~aP!P!Qd~iO(S~~", 25, 324)],
+  tokenizers: [noSemicolon, noSemicolonType, operatorToken, jsx2, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, insertSemicolon, new LocalTokenGroup("$S~RRtu[#O#Pg#S#T#|~_P#o#pb~gOx~~jVO#i!P#i#j!U#j#l!P#l#m!q#m;'S!P;'S;=`#v<%lO!P~!UO!U~~!XS!Q![!e!c!i!e#T#Z!e#o#p#Z~!hR!Q![!q!c!i!q#T#Z!q~!tR!Q![!}!c!i!}#T#Z!}~#QR!Q![!P!c!i!P#T#Z!P~#^R!Q![#g!c!i#g#T#Z#g~#jS!Q![#g!c!i#g#T#Z#g#q#r!P~#yP;=`<%l!P~$RO(d~~", 141, 341), new LocalTokenGroup("j~RQYZXz{^~^O(R~~aP!P!Qd~iO(S~~", 25, 324)],
   topRules: { "Script": [0, 7], "SingleExpression": [1, 277], "SingleClassItem": [2, 278] },
   dialects: { jsx: 0, ts: 15179 },
   dynamicPrecedences: { "80": 1, "82": 1, "94": 1, "170": 1, "200": 1 },
@@ -38000,7 +41983,7 @@ var parser4 = LRParser.deserialize({
   tokenPrec: 15205
 });
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/lang-javascript/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+lang-javascript@6.2.5/node_modules/@codemirror/lang-javascript/dist/index.js
 var snippets = [
   /* @__PURE__ */ snippetCompletion("function ${name}(${params}) {\n	${}\n}", {
     label: "function",
@@ -38278,8 +42261,8 @@ function elementName(doc2, tree, max = doc2.length) {
   return "";
 }
 var android2 = typeof navigator == "object" && /* @__PURE__ */ /Android\b/.test(navigator.userAgent);
-var autoCloseTags = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to, text, defaultInsert) => {
-  if ((android2 ? view.composing : view.compositionStarted) || view.state.readOnly || from != to || text != ">" && text != "/" || !javascriptLanguage.isActiveAt(view.state, from, -1))
+var autoCloseTags = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to2, text, defaultInsert) => {
+  if ((android2 ? view.composing : view.compositionStarted) || view.state.readOnly || from != to2 || text != ">" && text != "/" || !javascriptLanguage.isActiveAt(view.state, from, -1))
     return false;
   let base2 = defaultInsert(), { state } = base2;
   let closeTags = state.changeByRange((range) => {
@@ -38312,7 +42295,7 @@ var autoCloseTags = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to, 
   return true;
 });
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/lang-html/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+lang-html@6.4.12/node_modules/@codemirror/lang-html/dist/index.js
 var Targets = ["_blank", "_self", "_top", "_parent"];
 var Charsets = ["ascii", "utf-8", "utf-16", "latin1", "latin1"];
 var Methods = ["get", "post", "put", "delete"];
@@ -38784,12 +42767,12 @@ function openTags(doc2, tree) {
   return open;
 }
 var identifier3 = /^[:\-\.\w\u00b7-\uffff]*$/;
-function completeTag(state, schema, tree, from, to) {
-  let end = /\s*>/.test(state.sliceDoc(to, to + 5)) ? "" : ">";
+function completeTag(state, schema, tree, from, to2) {
+  let end = /\s*>/.test(state.sliceDoc(to2, to2 + 5)) ? "" : ">";
   let parent = findParentElement(tree, tree.name == "StartTag" || tree.name == "TagName");
   return {
     from,
-    to,
+    to: to2,
     options: allowedChildren(state.doc, parent, schema).map((tagName) => ({ label: tagName, type: "type" })).concat(openTags(state.doc, tree).map((tag, i2) => ({
       label: "/" + tag,
       apply: "/" + tag + end,
@@ -38799,11 +42782,11 @@ function completeTag(state, schema, tree, from, to) {
     validFor: /^\/?[:\-\.\w\u00b7-\uffff]*$/
   };
 }
-function completeCloseTag(state, tree, from, to) {
-  let end = /\s*>/.test(state.sliceDoc(to, to + 5)) ? "" : ">";
+function completeCloseTag(state, tree, from, to2) {
+  let end = /\s*>/.test(state.sliceDoc(to2, to2 + 5)) ? "" : ">";
   return {
     from,
-    to,
+    to: to2,
     options: openTags(state.doc, tree).map((tag, i2) => ({ label: tag, apply: tag + end, type: "type", boost: 99 - i2 })),
     validFor: identifier3
   };
@@ -38816,18 +42799,18 @@ function completeStartTag(state, schema, tree, pos) {
     options.push({ label: "</" + open + ">", type: "type", boost: 99 - level++ });
   return { from: pos, to: pos, options, validFor: /^<\/?[:\-\.\w\u00b7-\uffff]*$/ };
 }
-function completeAttrName(state, schema, tree, from, to) {
+function completeAttrName(state, schema, tree, from, to2) {
   let elt2 = findParentElement(tree), info = elt2 ? schema.tags[elementName2(state.doc, elt2)] : null;
   let localAttrs = info && info.attrs ? Object.keys(info.attrs) : [];
   let names = info && info.globalAttrs === false ? localAttrs : localAttrs.length ? localAttrs.concat(schema.globalAttrNames) : schema.globalAttrNames;
   return {
     from,
-    to,
+    to: to2,
     options: names.map((attrName) => ({ label: attrName, type: "property" })),
     validFor: identifier3
   };
 }
-function completeAttrValue(state, schema, tree, from, to) {
+function completeAttrValue(state, schema, tree, from, to2) {
   var _a4;
   let nameNode = (_a4 = tree.parent) === null || _a4 === void 0 ? void 0 : _a4.getChild("AttributeName");
   let options = [], token = void 0;
@@ -38839,11 +42822,11 @@ function completeAttrValue(state, schema, tree, from, to) {
       attrs = (info === null || info === void 0 ? void 0 : info.attrs) && info.attrs[attrName];
     }
     if (attrs) {
-      let base2 = state.sliceDoc(from, to).toLowerCase(), quoteStart = '"', quoteEnd = '"';
+      let base2 = state.sliceDoc(from, to2).toLowerCase(), quoteStart = '"', quoteEnd = '"';
       if (/^['"]/.test(base2)) {
         token = base2[0] == '"' ? /^[^"]*$/ : /^[^']*$/;
         quoteStart = "";
-        quoteEnd = state.sliceDoc(to, to + 1) == base2[0] ? "" : base2[0];
+        quoteEnd = state.sliceDoc(to2, to2 + 1) == base2[0] ? "" : base2[0];
         base2 = base2.slice(1);
         from++;
       } else {
@@ -38853,7 +42836,7 @@ function completeAttrValue(state, schema, tree, from, to) {
         options.push({ label: value, apply: quoteStart + value + quoteEnd, type: "constant" });
     }
   }
-  return { from, to, options, validFor: token };
+  return { from, to: to2, options, validFor: token };
 }
 function htmlCompletionFor(schema, context) {
   let { state, pos } = context, tree = syntaxTree(state).resolveInner(pos, -1), around = tree.resolve(pos);
@@ -39012,8 +42995,8 @@ function isClosed(doc2, elt2, name2) {
     elt2 = next;
   }
 }
-var autoCloseTags2 = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to, text, insertTransaction) => {
-  if (view.composing || view.state.readOnly || from != to || text != ">" && text != "/" || !htmlLanguage.isActiveAt(view.state, from, -1))
+var autoCloseTags2 = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to2, text, insertTransaction) => {
+  if (view.composing || view.state.readOnly || from != to2 || text != ">" && text != "/" || !htmlLanguage.isActiveAt(view.state, from, -1))
     return false;
   let base2 = insertTransaction(), { state } = base2;
   let closeTags = state.changeByRange((range) => {
@@ -39023,18 +43006,18 @@ var autoCloseTags2 = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to,
     if (didType && text == ">" && after.name == "EndTag") {
       let tag = after.parent;
       if ((name2 = elementName2(state.doc, tag.parent, head)) && !selfClosers2.has(name2) && !isClosed(state.doc, tag.parent, name2)) {
-        let to2 = head + (state.doc.sliceString(head, head + 1) === ">" ? 1 : 0);
+        let to3 = head + (state.doc.sliceString(head, head + 1) === ">" ? 1 : 0);
         let insert2 = `</${name2}>`;
-        return { range, changes: { from: head, to: to2, insert: insert2 } };
+        return { range, changes: { from: head, to: to3, insert: insert2 } };
       }
     } else if (didType && text == "/" && after.name == "IncompleteCloseTag") {
       let tag = after.parent;
       if (after.from == head - 2 && ((_a4 = tag.lastChild) === null || _a4 === void 0 ? void 0 : _a4.name) != "CloseTag" && (name2 = elementName2(state.doc, tag, head)) && !selfClosers2.has(name2)) {
-        let to2 = head + (state.doc.sliceString(head, head + 1) === ">" ? 1 : 0);
+        let to3 = head + (state.doc.sliceString(head, head + 1) === ">" ? 1 : 0);
         let insert2 = `${name2}>`;
         return {
           range: EditorSelection.cursor(head + insert2.length, -1),
-          changes: { from: head, to: to2, insert: insert2 }
+          changes: { from: head, to: to3, insert: insert2 }
         };
       }
     }
@@ -39052,7 +43035,7 @@ var autoCloseTags2 = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to,
   return true;
 });
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/lang-markdown/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+lang-markdown@6.5.2/node_modules/@codemirror/lang-markdown/dist/index.js
 var data = /* @__PURE__ */ defineLanguageFacet({ commentTokens: { block: { open: "<!--", close: "-->" } } });
 var headingProp = /* @__PURE__ */ new NodeProp();
 var commonmark = /* @__PURE__ */ parser.configure({
@@ -39129,10 +43112,10 @@ function getCodeParser(languages, defaultLanguage) {
   };
 }
 var Context = class {
-  constructor(node, from, to, spaceBefore, spaceAfter, type, item) {
+  constructor(node, from, to2, spaceBefore, spaceAfter, type, item) {
     this.node = node;
     this.from = from;
-    this.to = to;
+    this.to = to2;
     this.spaceBefore = spaceBefore;
     this.spaceAfter = spaceAfter;
     this.type = type;
@@ -39515,7 +43498,7 @@ function workbenchEditorExtensions(opts) {
 }
 
 // src/client/editor/CodeEditor.tsx
-var import_jsx_runtime = require("react/jsx-runtime");
+var import_jsx_runtime3 = require("react/jsx-runtime");
 function CodeEditor({
   path,
   value,
@@ -39528,23 +43511,23 @@ function CodeEditor({
   onCursor,
   onReady
 }) {
-  const hostRef = (0, import_react.useRef)(null);
-  const viewRef = (0, import_react.useRef)(null);
-  const modeCompartmentRef = (0, import_react.useRef)(null);
-  const onChangeRef = (0, import_react.useRef)(onChange);
-  const onSaveRef = (0, import_react.useRef)(onSave);
-  const onAddToChatRef = (0, import_react.useRef)(onAddToChat);
-  const onCursorRef = (0, import_react.useRef)(onCursor);
+  const hostRef = (0, import_react3.useRef)(null);
+  const viewRef = (0, import_react3.useRef)(null);
+  const modeCompartmentRef = (0, import_react3.useRef)(null);
+  const onChangeRef = (0, import_react3.useRef)(onChange);
+  const onSaveRef = (0, import_react3.useRef)(onSave);
+  const onAddToChatRef = (0, import_react3.useRef)(onAddToChat);
+  const onCursorRef = (0, import_react3.useRef)(onCursor);
   onCursorRef.current = onCursor;
-  const applyingRef = (0, import_react.useRef)(false);
-  const selRef = (0, import_react.useRef)(null);
-  const [sel, setSel2] = (0, import_react.useState)(null);
-  const [flash, setFlash] = (0, import_react.useState)(null);
-  const flashTimer = (0, import_react.useRef)(null);
+  const applyingRef = (0, import_react3.useRef)(false);
+  const selRef = (0, import_react3.useRef)(null);
+  const [sel, setSel2] = (0, import_react3.useState)(null);
+  const [flash, setFlash] = (0, import_react3.useState)(null);
+  const flashTimer = (0, import_react3.useRef)(null);
   onChangeRef.current = onChange;
   onSaveRef.current = onSave;
   onAddToChatRef.current = onAddToChat;
-  const syncSelection = (0, import_react.useCallback)((state) => {
+  const syncSelection = (0, import_react3.useCallback)((state) => {
     const view = viewRef.current;
     const host = hostRef.current;
     if (view === null || host === null) return;
@@ -39575,7 +43558,7 @@ function CodeEditor({
     selRef.current = next;
     setSel2(next);
   }, []);
-  (0, import_react.useEffect)(() => {
+  (0, import_react3.useEffect)(() => {
     const parent = hostRef.current;
     if (parent === null) return;
     const modeCompartment = new Compartment();
@@ -39620,7 +43603,7 @@ function CodeEditor({
       modeCompartmentRef.current = null;
     };
   }, [path, label, syncSelection]);
-  (0, import_react.useEffect)(() => {
+  (0, import_react3.useEffect)(() => {
     const view = viewRef.current;
     const compartment = modeCompartmentRef.current;
     if (view === null || compartment === null) return;
@@ -39631,7 +43614,7 @@ function CodeEditor({
       ])
     });
   }, [readOnly2]);
-  (0, import_react.useEffect)(() => {
+  (0, import_react3.useEffect)(() => {
     const view = viewRef.current;
     if (view === null) return;
     if (view.state.doc.toString() === value) return;
@@ -39641,7 +43624,7 @@ function CodeEditor({
     });
     applyingRef.current = false;
   }, [value]);
-  (0, import_react.useEffect)(
+  (0, import_react3.useEffect)(
     () => () => {
       if (flashTimer.current !== null) clearTimeout(flashTimer.current);
     },
@@ -39666,9 +43649,9 @@ function CodeEditor({
     selRef.current = null;
     setSel2(null);
   };
-  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: Writer_default.editorWrap, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { ref: hostRef, className: Writer_default.cmHost, "data-path": path }),
-    sel !== null && onAddToChat !== void 0 ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Writer_default.editorWrap, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { ref: hostRef, className: Writer_default.cmHost, "data-path": path }),
+    sel !== null && onAddToChat !== void 0 ? /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
       "button",
       {
         type: "button",
@@ -39679,15 +43662,15 @@ function CodeEditor({
           event.preventDefault();
         },
         onClick: addSelectionToChat,
-        children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "\u8BA8\u8BBA\u8FD9\u6BB5" })
+        children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { children: "\u8BA8\u8BBA\u8FD9\u6BB5" })
       }
     ) : null,
-    flash !== null ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: Writer_default.copyFlash, role: "status", children: flash }) : null
+    flash !== null ? /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Writer_default.copyFlash, role: "status", children: flash }) : null
   ] });
 }
 
 // src/client/Writer.tsx
-var import_jsx_runtime2 = require("react/jsx-runtime");
+var import_jsx_runtime4 = require("react/jsx-runtime");
 function Writer({
   project,
   title,
@@ -39696,32 +43679,36 @@ function Writer({
   onView,
   onBack
 }) {
-  const [view, setView] = (0, import_react2.useState)();
-  const [source, setSource] = (0, import_react2.useState)();
-  const [text, setText] = (0, import_react2.useState)("");
-  const [error51, setError] = (0, import_react2.useState)("");
-  const [notice, setNotice] = (0, import_react2.useState)("");
-  const [busy, setBusy] = (0, import_react2.useState)(false);
-  const [intent, setIntent] = (0, import_react2.useState)("");
-  const [selected, setSelected] = (0, import_react2.useState)("");
-  const [action, setAction] = (0, import_react2.useState)("check");
-  const [cursor, setCursor] = (0, import_react2.useState)(0);
-  const [epoch, setEpoch] = (0, import_react2.useState)(0);
-  const [reference, setReference] = (0, import_react2.useState)(null);
-  const [referenceText, setReferenceText] = (0, import_react2.useState)("");
-  const referenceLatest = (0, import_react2.useRef)({ reference, text: referenceText });
-  referenceLatest.current = { reference, text: referenceText };
-  const [referenceId, setReferenceId] = (0, import_react2.useState)("");
-  const [assistantOpen, setAssistantOpen] = (0, import_react2.useState)(true);
-  const editor = (0, import_react2.useRef)(null);
-  const latest = (0, import_react2.useRef)({ source, text });
-  latest.current = { source, text };
   const key = `kaitu-writer:${project}`;
+  const [toolsOpen, setToolsOpen] = (0, import_react4.useState)(
+    () => localStorage.getItem(`${key}:assistant-tools`) !== "closed"
+  );
+  const [navigationOpen, setNavigationOpen] = (0, import_react4.useState)(true);
+  const [view, setView] = (0, import_react4.useState)();
+  const [source, setSource] = (0, import_react4.useState)();
+  const [text, setText] = (0, import_react4.useState)("");
+  const [error51, setError] = (0, import_react4.useState)("");
+  const [notice, setNotice] = (0, import_react4.useState)("");
+  const [busy, setBusy] = (0, import_react4.useState)(false);
+  const [intent, setIntent] = (0, import_react4.useState)("");
+  const [selected, setSelected] = (0, import_react4.useState)("");
+  const [action, setAction] = (0, import_react4.useState)("check");
+  const [cursor, setCursor] = (0, import_react4.useState)(0);
+  const [epoch, setEpoch] = (0, import_react4.useState)(0);
+  const [reference, setReference] = (0, import_react4.useState)(null);
+  const [referenceText, setReferenceText] = (0, import_react4.useState)("");
+  const referenceLatest = (0, import_react4.useRef)({ reference, text: referenceText });
+  referenceLatest.current = { reference, text: referenceText };
+  const [referenceId, setReferenceId] = (0, import_react4.useState)("");
+  const [assistantOpen, setAssistantOpen] = (0, import_react4.useState)(true);
+  const editor = (0, import_react4.useRef)(null);
+  const latest = (0, import_react4.useRef)({ source, text });
+  latest.current = { source, text };
   const dirty = !!source && text !== source.text;
   const referenceDirty = !!reference && referenceText !== reference.text;
   const writing = view?.data.writingMode === "writing";
   const editable2 = writing && !!source && /\.(md|txt)$/i.test(source.path);
-  const update = (0, import_react2.useCallback)(
+  const update = (0, import_react4.useCallback)(
     (v) => {
       setView(v);
       onView(v);
@@ -39733,7 +43720,7 @@ function Writer({
     update(v);
     return v;
   }
-  const load = (0, import_react2.useCallback)(
+  const load = (0, import_react4.useCallback)(
     async (id2) => {
       const s = await request("scene", { project, scene: id2 });
       setSource(s);
@@ -39752,7 +43739,7 @@ function Writer({
     },
     [key, project, request]
   );
-  (0, import_react2.useEffect)(() => {
+  (0, import_react4.useEffect)(() => {
     let live = true;
     void request("view", { project }).then(async (v) => {
       if (!live) return;
@@ -39781,13 +43768,13 @@ function Writer({
       live = false;
     };
   }, [project, key, request, load, update]);
-  (0, import_react2.useEffect)(() => {
+  (0, import_react4.useEffect)(() => {
     if (!source) return;
     const cache2 = `${key}:draft:${source.scene.id}`;
     if (dirty) sessionStorage.setItem(cache2, JSON.stringify({ text, fileHash: source.anchor.fileHash }));
     else sessionStorage.removeItem(cache2);
   }, [source, text, dirty, key]);
-  (0, import_react2.useEffect)(() => {
+  (0, import_react4.useEffect)(() => {
     const prevent = (e) => {
       if (latest.current.source && latest.current.text !== latest.current.source.text || referenceLatest.current.reference && referenceLatest.current.text !== referenceLatest.current.reference.text) {
         e.preventDefault();
@@ -39797,11 +43784,11 @@ function Writer({
     window.addEventListener("beforeunload", prevent);
     return () => window.removeEventListener("beforeunload", prevent);
   }, []);
-  async function run(fn) {
+  async function run(fn2) {
     setBusy(true);
     setError("");
     try {
-      await fn();
+      await fn2();
     } catch (e) {
       setError(e.message);
     } finally {
@@ -39835,7 +43822,7 @@ function Writer({
     setReference(draft ? { ...ref, fileHash: draft.fileHash } : ref);
     setReferenceText(draft?.text ?? ref.text);
   }
-  (0, import_react2.useEffect)(() => {
+  (0, import_react4.useEffect)(() => {
     if (!reference) return;
     const cache2 = `${key}:reference-draft:${reference.path}`;
     if (referenceDirty)
@@ -39909,13 +43896,22 @@ ${context}`
   }) ?? [];
   const documents = view?.data.documents.filter((d) => d.classification && d.classification.role !== "manuscript") ?? [];
   const drafts = view?.data.drafts?.filter((d) => d.scene === source?.scene.id && !d.applied) ?? [];
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: Writer_default.shell, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("header", { className: Writer_default.header, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h1", { children: title }),
-        /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("small", { children: dirty ? "\u672A\u4FDD\u5B58" : notice || "\u6B63\u6587\u5DE5\u4F5C\u53F0" })
+  return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: Writer_default.shell, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("header", { className: Writer_default.header, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h1", { children: title }),
+        /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: dirty ? "\u672A\u4FDD\u5B58" : notice || "\u6B63\u6587\u5DE5\u4F5C\u53F0" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+        "button",
+        {
+          type: "button",
+          "aria-expanded": navigationOpen,
+          onClick: () => setNavigationOpen((open) => !open),
+          children: navigationOpen ? "\u6536\u8D77\u76EE\u5F55" : "\u7AE0\u8282\u76EE\u5F55"
+        }
+      ),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
         "button",
         {
           type: "button",
@@ -39931,8 +43927,8 @@ ${context}`
           children: reference ? "\u6536\u8D77\u5BF9\u7167" : "\u5BF9\u7167\u8D44\u6599"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { type: "button", onClick: () => setAssistantOpen((v) => !v), children: assistantOpen ? "\u6536\u8D77\u52A9\u624B" : "\u5199\u4F5C\u52A9\u624B" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { type: "button", onClick: () => setAssistantOpen((v) => !v), children: assistantOpen ? "\u6536\u8D77\u52A9\u624B" : "\u5199\u4F5C\u52A9\u624B" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
         "select",
         {
           "aria-label": "\u4F5C\u54C1\u6A21\u5F0F",
@@ -39949,12 +43945,12 @@ ${context}`
             });
           },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("option", { value: "read_only", children: "\u53EA\u8BFB" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("option", { value: "writing", children: "\u5199\u4F5C" })
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("option", { value: "read_only", children: "\u53EA\u8BFB" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("option", { value: "writing", children: "\u5199\u4F5C" })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
         "button",
         {
           type: "button",
@@ -39967,10 +43963,10 @@ ${context}`
         }
       )
     ] }),
-    error51 && /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { role: "alert", className: Writer_default.error, children: [
+    error51 && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { role: "alert", className: Writer_default.error, children: [
       error51,
       " ",
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
         "button",
         {
           type: "button",
@@ -39986,225 +43982,240 @@ ${context}`
         }
       )
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
-      "div",
+    /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+      WriterPanels,
       {
-        className: `${Writer_default.columns} ${reference ? Writer_default.withReference : ""} ${!assistantOpen ? Writer_default.noAssistant : ""}`,
-        children: [
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("nav", { className: Writer_default.chapters, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h2", { children: "\u7AE0\u8282" }),
-            scenes.map((s) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
-              "button",
-              {
-                type: "button",
-                disabled: busy,
-                "aria-current": s.id === source?.scene.id ? "page" : void 0,
-                onClick: () => void run(() => switchScene(s.id)),
-                children: [
-                  s.title,
-                  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("small", { children: s.path.split("/").at(-1) })
-                ]
+        storageKey: `${key}:panels`,
+        navigation: navigationOpen && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("nav", { className: Writer_default.chapters, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h2", { children: "\u7AE0\u8282" }),
+          scenes.map((s) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+            "button",
+            {
+              type: "button",
+              disabled: busy,
+              "aria-current": s.id === source?.scene.id ? "page" : void 0,
+              onClick: () => void run(() => switchScene(s.id)),
+              children: [
+                s.title,
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: s.path.split("/").at(-1) })
+              ]
+            },
+            s.id
+          )),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h2", { children: "\u8D44\u6599" }),
+          documents.map((d) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)(
+            "button",
+            {
+              type: "button",
+              disabled: busy,
+              onClick: () => {
+                void run(() => openReference(d.id));
               },
-              s.id
-            )),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h2", { children: "\u8D44\u6599" }),
-            documents.map((d) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)(
+              children: [
+                d.path.split("/").at(-1),
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: d.classification?.role === "setting" ? "\u4E16\u754C\u4E66 / \u8BBE\u5B9A" : "\u5927\u7EB2 / \u53C2\u8003\u8D44\u6599" })
+              ]
+            },
+            d.id
+          )),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+            "button",
+            {
+              type: "button",
+              disabled: busy,
+              onClick: () => void run(async () => {
+                await save();
+                const v = await refresh();
+                await request("edit", { project, revision: v.revision, command: { type: "refresh" } });
+                const fresh = await refresh();
+                const s = fresh.data.scenes.find((s2) => s2.id === source?.scene.id) ?? fresh.data.scenes.find((s2) => s2.path === source?.scene.path) ?? fresh.data.scenes.find((s2) => {
+                  const role = fresh.data.documents.find((d) => d.id === s2.documentId)?.classification?.role;
+                  return !role || role === "manuscript";
+                });
+                if (s) await load(s.id);
+                else {
+                  setSource(void 0);
+                  setText("");
+                }
+              }),
+              children: "\u5237\u65B0\u6587\u4EF6"
+            }
+          )
+        ] }),
+        reference: reference && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: Writer_default.reference, "aria-label": "\u5BF9\u7167\u8D44\u6599", children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: Writer_default.toolbar, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+              "select",
+              {
+                "aria-label": "\u5BF9\u7167\u6587\u4EF6",
+                value: referenceId,
+                disabled: busy,
+                onChange: (e) => void run(() => openReference(e.target.value)),
+                children: documents.map((d) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("option", { value: d.id, children: d.path.split("/").at(-1) }, d.id))
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
               "button",
               {
                 type: "button",
-                disabled: busy,
                 onClick: () => {
-                  void run(() => openReference(d.id));
+                  void run(closeReference);
                 },
-                children: [
-                  d.path.split("/").at(-1),
-                  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("small", { children: d.classification?.role === "setting" ? "\u4E16\u754C\u4E66 / \u8BBE\u5B9A" : "\u5927\u7EB2 / \u53C2\u8003\u8D44\u6599" })
-                ]
-              },
-              d.id
-            )),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-              "button",
-              {
-                type: "button",
-                disabled: busy,
-                onClick: () => void run(async () => {
-                  await save();
-                  const v = await refresh();
-                  await request("edit", { project, revision: v.revision, command: { type: "refresh" } });
-                  const fresh = await refresh();
-                  const s = fresh.data.scenes.find((s2) => s2.id === source?.scene.id) ?? fresh.data.scenes.find((s2) => s2.path === source?.scene.path) ?? fresh.data.scenes.find((s2) => {
-                    const role = fresh.data.documents.find((d) => d.id === s2.documentId)?.classification?.role;
-                    return !role || role === "manuscript";
-                  });
-                  if (s) await load(s.id);
-                  else {
-                    setSource(void 0);
-                    setText("");
-                  }
-                }),
-                children: "\u5237\u65B0\u6587\u4EF6"
+                "aria-label": "\u5173\u95ED\u5BF9\u7167\u8D44\u6599",
+                children: "\u5173\u95ED"
               }
             )
           ] }),
-          reference && /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { className: Writer_default.reference, "aria-label": "\u5BF9\u7167\u8D44\u6599", children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: Writer_default.toolbar, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-                "select",
-                {
-                  "aria-label": "\u5BF9\u7167\u6587\u4EF6",
-                  value: referenceId,
-                  disabled: busy,
-                  onChange: (e) => void run(() => openReference(e.target.value)),
-                  children: documents.map((d) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("option", { value: d.id, children: d.path.split("/").at(-1) }, d.id))
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => {
-                    void run(closeReference);
-                  },
-                  "aria-label": "\u5173\u95ED\u5BF9\u7167\u8D44\u6599",
-                  children: "\u5173\u95ED"
-                }
-              )
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: Writer_default.referenceActions, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("span", { children: referenceDirty ? "\u8D44\u6599\u672A\u4FDD\u5B58" : "\u8D44\u6599\u5DF2\u4FDD\u5B58" }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-                "button",
-                {
-                  type: "button",
-                  disabled: !writing || !referenceDirty || busy,
-                  onClick: () => void run(saveReference),
-                  children: "\u4FDD\u5B58\u8D44\u6599 \u2318S"
-                }
-              ),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-                "button",
-                {
-                  type: "button",
-                  disabled: !writing || busy || referenceDirty || view?.data.editorUndo?.path !== reference.relativePath,
-                  onClick: () => void run(async () => {
-                    const fresh = await refresh();
-                    await request("undoScene", { project, revision: fresh.revision });
-                    const updated = await refresh();
-                    const scene = updated.data.scenes.find((s) => s.path === reference.relativePath);
-                    if (scene)
-                      restoreReference(
-                        await request("document", { project, scene: scene.id })
-                      );
-                  }),
-                  children: "\u64A4\u9500\u8D44\u6599\u4FDD\u5B58"
-                }
-              )
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-              CodeEditor,
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: Writer_default.referenceActions, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("span", { children: referenceDirty ? "\u8D44\u6599\u672A\u4FDD\u5B58" : "\u8D44\u6599\u5DF2\u4FDD\u5B58" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+              "button",
               {
-                path: reference.path,
-                label: "\u5BF9\u7167\u8D44\u6599\u5185\u5BB9",
-                value: referenceText,
-                onChange: setReferenceText,
-                onSave: () => {
-                  if (writing && !busy) void run(saveReference);
-                },
-                readOnly: !writing || busy || !/\.(md|txt)$/i.test(reference.path),
-                cursor: 0,
-                onCursor: () => {
-                }
-              },
-              reference.path
+                type: "button",
+                disabled: !writing || !referenceDirty || busy,
+                onClick: () => void run(saveReference),
+                children: "\u4FDD\u5B58\u8D44\u6599 \u2318S"
+              }
+            ),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+              "button",
+              {
+                type: "button",
+                disabled: !writing || busy || referenceDirty || view?.data.editorUndo?.path !== reference.relativePath,
+                onClick: () => void run(async () => {
+                  const fresh = await refresh();
+                  await request("undoScene", { project, revision: fresh.revision });
+                  const updated = await refresh();
+                  const scene = updated.data.scenes.find((s) => s.path === reference.relativePath);
+                  if (scene)
+                    restoreReference(
+                      await request("document", { project, scene: scene.id })
+                    );
+                }),
+                children: "\u64A4\u9500\u8D44\u6599\u4FDD\u5B58"
+              }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { className: Writer_default.manuscript, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className: Writer_default.toolbar, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: source?.scene.title ?? "\u9009\u62E9\u7AE0\u8282" }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { type: "button", disabled: !editable2 || !dirty || busy, onClick: () => void run(save), children: "\u4FDD\u5B58 \u2318S" }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-                "button",
-                {
-                  type: "button",
-                  disabled: !writing || !view?.data.editorUndo || view.data.editorUndo.path !== source?.scene.path || dirty || busy,
-                  onClick: () => void run(async () => {
-                    const v = await refresh();
-                    const r = await request("undoScene", { project, revision: v.revision });
-                    const fresh = await refresh();
-                    const s = fresh.data.scenes.find((s2) => s2.id === source?.scene.id) ?? fresh.data.scenes.find((s2) => s2.path === r.path);
-                    if (s) await load(s.id);
-                    setNotice("\u5DF2\u64A4\u9500\u4E0A\u6B21\u4FDD\u5B58");
-                  }),
-                  children: "\u64A4\u9500\u4FDD\u5B58"
-                }
-              )
-            ] }),
-            source && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-              CodeEditor,
-              {
-                path: source.path,
-                label: "\u5C0F\u8BF4\u6B63\u6587",
-                value: text,
-                onChange: setText,
-                onSave: () => {
-                  if (editable2 && !busy) void run(save);
-                },
-                readOnly: !editable2 || busy,
-                cursor,
-                onCursor: (p) => {
-                  setCursor(p);
-                  localStorage.setItem(`${key}:${source.scene.id}`, String(p));
-                },
-                onReady: (v) => {
-                  editor.current = v;
-                },
-                onAddToChat: (value) => {
-                  setSelected(value);
-                  setIntent("\u8BF7\u5206\u6790\u8FD9\u6BB5");
-                  return true;
-                }
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+            CodeEditor,
+            {
+              path: reference.path,
+              label: "\u5BF9\u7167\u8D44\u6599\u5185\u5BB9",
+              value: referenceText,
+              onChange: setReferenceText,
+              onSave: () => {
+                if (writing && !busy) void run(saveReference);
               },
-              `${source.scene.id}:${epoch}`
-            ),
-            source && !/\.(md|txt)$/i.test(source.path) && /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("p", { className: Writer_default.hint, children: [
-              "DOCX \u9605\u8BFB\u89C6\u56FE \xB7",
-              " ",
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-                "button",
-                {
-                  type: "button",
-                  onClick: () => void run(() => request("open", { project, scene: source.scene.id })),
-                  children: "\u5728\u539F\u7F16\u8F91\u5668\u4FEE\u6539"
-                }
-              )
-            ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("footer", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("span", { children: [
-                Array.from(text.replace(/\s/g, "")).length,
-                " \u5B57\u7B26 \xB7 \u5DF2\u8BB0\u4F4F\u5149\u6807\u4F4D\u7F6E"
-              ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-                "button",
-                {
-                  type: "button",
-                  disabled: !editable2 || busy,
-                  onClick: () => {
-                    setAction("continue");
-                    void run(() => send("continue"));
-                  },
-                  children: "\u4ECE\u8FD9\u91CC\u7EED\u5199"
-                }
-              )
-            ] })
+              readOnly: !writing || busy || !/\.(md|txt)$/i.test(reference.path),
+              cursor: 0,
+              onCursor: () => {
+              }
+            },
+            reference.path
+          )
+        ] }),
+        manuscript: /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("section", { className: Writer_default.manuscript, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: Writer_default.toolbar, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: source?.scene.title ?? "\u9009\u62E9\u7AE0\u8282" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { type: "button", disabled: !editable2 || !dirty || busy, onClick: () => void run(save), children: "\u4FDD\u5B58 \u2318S" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+              "button",
+              {
+                type: "button",
+                disabled: !writing || !view?.data.editorUndo || view.data.editorUndo.path !== source?.scene.path || dirty || busy,
+                onClick: () => void run(async () => {
+                  const v = await refresh();
+                  const r = await request("undoScene", { project, revision: v.revision });
+                  const fresh = await refresh();
+                  const s = fresh.data.scenes.find((s2) => s2.id === source?.scene.id) ?? fresh.data.scenes.find((s2) => s2.path === r.path);
+                  if (s) await load(s.id);
+                  setNotice("\u5DF2\u64A4\u9500\u4E0A\u6B21\u4FDD\u5B58");
+                }),
+                children: "\u64A4\u9500\u4FDD\u5B58"
+              }
+            )
           ] }),
-          assistantOpen && /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("aside", { className: Writer_default.assistant, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h2", { children: "\u5199\u4F5C\u52A9\u624B" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: Writer_default.tabs, children: [
+          source && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+            CodeEditor,
+            {
+              path: source.path,
+              label: "\u5C0F\u8BF4\u6B63\u6587",
+              value: text,
+              onChange: setText,
+              onSave: () => {
+                if (editable2 && !busy) void run(save);
+              },
+              readOnly: !editable2 || busy,
+              cursor,
+              onCursor: (p) => {
+                setCursor(p);
+                localStorage.setItem(`${key}:${source.scene.id}`, String(p));
+              },
+              onReady: (v) => {
+                editor.current = v;
+              },
+              onAddToChat: (value) => {
+                setSelected(value);
+                setIntent("\u8BF7\u5206\u6790\u8FD9\u6BB5");
+                return true;
+              }
+            },
+            `${source.scene.id}:${epoch}`
+          ),
+          source && !/\.(md|txt)$/i.test(source.path) && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("p", { className: Writer_default.hint, children: [
+            "DOCX \u9605\u8BFB\u89C6\u56FE \xB7",
+            " ",
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+              "button",
+              {
+                type: "button",
+                onClick: () => void run(() => request("open", { project, scene: source.scene.id })),
+                children: "\u5728\u539F\u7F16\u8F91\u5668\u4FEE\u6539"
+              }
+            )
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("footer", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("span", { children: [
+              Array.from(text.replace(/\s/g, "")).length,
+              " \u5B57\u7B26 \xB7 \u5DF2\u8BB0\u4F4F\u5149\u6807\u4F4D\u7F6E"
+            ] }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+              "button",
+              {
+                type: "button",
+                disabled: !editable2 || busy,
+                onClick: () => {
+                  setAction("continue");
+                  void run(() => send("continue"));
+                },
+                children: "\u4ECE\u8FD9\u91CC\u7EED\u5199"
+              }
+            )
+          ] })
+        ] }),
+        assistant: assistantOpen && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("aside", { className: Writer_default.assistant, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: Writer_default.assistantHeader, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("h2", { children: "\u5199\u4F5C\u52A9\u624B" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+              "button",
+              {
+                type: "button",
+                "aria-expanded": toolsOpen,
+                onClick: () => {
+                  const open = !toolsOpen;
+                  setToolsOpen(open);
+                  localStorage.setItem(`${key}:assistant-tools`, open ? "open" : "closed");
+                },
+                children: toolsOpen ? "\u6536\u8D77\u64CD\u4F5C" : "\u5C55\u5F00\u64CD\u4F5C"
+              }
+            )
+          ] }),
+          toolsOpen && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { className: Writer_default.assistantTools, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: Writer_default.tabs, children: [
               ["check", "\u67E5\u8BBE\u5B9A"],
               ["plot", "\u60F3\u5267\u60C5"],
               ["continue", "\u63A5\u7740\u5199"]
-            ].map(([id2, label]) => /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            ].map(([id2, label]) => /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
               "button",
               {
                 type: "button",
@@ -40214,8 +44225,8 @@ ${context}`
               },
               id2
             )) }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("small", { children: "\u5F53\u524D\u7AE0\u8282 + Agent \u81EA\u52A8\u67E5\u627E\u7684\u4E16\u754C\u4E66\u4E0E\u8D44\u6599" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: "\u5F53\u524D\u7AE0\u8282 + Agent \u81EA\u52A8\u67E5\u627E\u7684\u4E16\u754C\u4E66\u4E0E\u8D44\u6599" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
               "textarea",
               {
                 "aria-label": "\u7ED9\u5199\u4F5C\u52A9\u624B\u7684\u8981\u6C42",
@@ -40224,17 +44235,17 @@ ${context}`
                 onChange: (e) => setIntent(e.target.value)
               }
             ),
-            selected && /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("details", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("summary", { children: [
+            selected && /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("details", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("summary", { children: [
                 "\u5DF2\u9009\u4E2D ",
                 selected.length,
                 " \u5B57",
                 " ",
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { type: "button", onClick: () => setSelected(""), children: "\u6E05\u9664" })
+                /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { type: "button", onClick: () => setSelected(""), children: "\u6E05\u9664" })
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("blockquote", { children: selected })
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("blockquote", { children: selected })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
               "button",
               {
                 type: "button",
@@ -40244,49 +44255,49 @@ ${context}`
                 children: action === "check" ? "\u68C0\u67E5\u5F53\u524D\u7AE0\u8282" : action === "plot" ? "\u63A8\u8350\u63A5\u4E0B\u6765\u7684\u5267\u60C5" : "\u751F\u6210\u7EED\u5199\u5019\u9009"
               }
             ),
-            !agent && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("small", { children: "\u5728 DSH \u4E2D\u6253\u5F00\u53EF\u4F7F\u7528\u5199\u4F5C\u52A9\u624B\u3002" }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { className: Writer_default.chat, children: agent?.render(project, () => {
-              void refresh().catch((e) => setError(e.message));
-            }) }),
-            /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("details", { className: Writer_default.candidates, open: true, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("summary", { children: [
-                "\u7EED\u5199\u5019\u9009",
-                " ",
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("button", { type: "button", disabled: busy, onClick: () => void run(refresh), children: "\u5237\u65B0" })
-              ] }),
-              drafts.map((d) => /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("article", { children: [
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("strong", { children: d.title }),
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("pre", { children: d.text }),
-                /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-                  "button",
-                  {
-                    type: "button",
-                    disabled: !editable2 || busy,
-                    onClick: () => void run(async () => {
-                      if (d.sourceHash !== source?.anchor.fileHash)
-                        throw new Error("\u8FD9\u4EFD\u5019\u9009\u57FA\u4E8E\u65E7\u7A3F\uFF0C\u8BF7\u8BA9 Agent \u5BF9\u7167\u5F53\u524D\u7AE0\u8282\u66F4\u65B0");
-                      const cm = editor.current;
-                      if (cm) {
-                        const at = cm.state.selection.main.head;
-                        cm.dispatch({
-                          changes: { from: at, insert: `
+            !agent && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: "\u5728 DSH \u4E2D\u6253\u5F00\u53EF\u4F7F\u7528\u5199\u4F5C\u52A9\u624B\u3002" })
+          ] }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("div", { className: Writer_default.chat, children: agent?.render(project, () => {
+            void refresh().catch((e) => setError(e.message));
+          }) }),
+          /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("details", { className: Writer_default.candidates, open: true, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("summary", { children: [
+              "\u7EED\u5199\u5019\u9009",
+              " ",
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("button", { type: "button", disabled: busy, onClick: () => void run(refresh), children: "\u5237\u65B0" })
+            ] }),
+            drafts.map((d) => /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("article", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("strong", { children: d.title }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("pre", { children: d.text }),
+              /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+                "button",
+                {
+                  type: "button",
+                  disabled: !editable2 || busy,
+                  onClick: () => void run(async () => {
+                    if (d.sourceHash !== source?.anchor.fileHash)
+                      throw new Error("\u8FD9\u4EFD\u5019\u9009\u57FA\u4E8E\u65E7\u7A3F\uFF0C\u8BF7\u8BA9 Agent \u5BF9\u7167\u5F53\u524D\u7AE0\u8282\u66F4\u65B0");
+                    const cm = editor.current;
+                    if (cm) {
+                      const at = cm.state.selection.main.head;
+                      cm.dispatch({
+                        changes: { from: at, insert: `
 
 ${d.text}
 ` },
-                          selection: { anchor: at + d.text.length + 3 }
-                        });
-                        cm.focus();
-                        setNotice("\u5019\u9009\u5DF2\u63D2\u5165\uFF0C\u4FDD\u5B58\u540E\u5199\u5165\u539F\u7A3F\uFF1B\u2318Z \u53EF\u64A4\u9500");
-                      }
-                    }),
-                    children: "\u91C7\u7EB3\u5230\u5149\u6807\u4F4D\u7F6E"
-                  }
-                )
-              ] }, d.id)),
-              !drafts.length && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("small", { children: "\u7EED\u5199\u5B8C\u6210\u540E\u4F1A\u663E\u793A\u5728\u8FD9\u91CC\u3002" })
-            ] })
+                        selection: { anchor: at + d.text.length + 3 }
+                      });
+                      cm.focus();
+                      setNotice("\u5019\u9009\u5DF2\u63D2\u5165\uFF0C\u4FDD\u5B58\u540E\u5199\u5165\u539F\u7A3F\uFF1B\u2318Z \u53EF\u64A4\u9500");
+                    }
+                  }),
+                  children: "\u91C7\u7EB3\u5230\u5149\u6807\u4F4D\u7F6E"
+                }
+              )
+            ] }, d.id)),
+            !drafts.length && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: "\u7EED\u5199\u5B8C\u6210\u540E\u4F1A\u663E\u793A\u5728\u8FD9\u91CC\u3002" })
           ] })
-        ]
+        ] })
       }
     )
   ] });
@@ -40362,7 +44373,7 @@ ${scene ? `\u5F53\u524D\u573A\u666F\uFF1A${scene.title}\uFF1B\u6587\u4EF6\uFF1A$
 }
 
 // src/client/page.tsx
-var import_jsx_runtime3 = require("react/jsx-runtime");
+var import_jsx_runtime5 = require("react/jsx-runtime");
 var status = { planned: "\u5F85\u5199", draft: "\u8FDB\u884C\u4E2D", done: "\u5B8C\u6210" };
 var roles = {
   manuscript: "\u6B63\u6587",
@@ -40398,35 +44409,35 @@ function NovelPage({
   writerAgent,
   onBrowseFolder
 }) {
-  const [catalog, setCatalog] = (0, import_react3.useState)({
+  const [catalog, setCatalog] = (0, import_react5.useState)({
     projects: [],
     science: false
   });
-  const [project, setProject] = (0, import_react3.useState)("");
-  const [view, setView] = (0, import_react3.useState)(null);
-  const [source, setSource] = (0, import_react3.useState)(null);
-  const [tab, setTab] = (0, import_react3.useState)("overview");
-  const [error51, setError] = (0, import_react3.useState)("");
-  const [busy, setBusy] = (0, import_react3.useState)(false);
-  const [receipt, setReceipt] = (0, import_react3.useState)("");
-  const [completed, setCompleted] = (0, import_react3.useState)("");
-  const [next, setNext] = (0, import_react3.useState)("");
-  const [writingIntent, setWritingIntent] = (0, import_react3.useState)("");
-  const [agentIntent, setAgentIntent] = (0, import_react3.useState)("");
-  const [adding, setAdding] = (0, import_react3.useState)(false);
-  const [folder, setFolder] = (0, import_react3.useState)("");
-  const [newTitle, setNewTitle] = (0, import_react3.useState)("");
-  const [importMode, setImportMode] = (0, import_react3.useState)("copy");
-  const [showHidden, setShowHidden] = (0, import_react3.useState)(false);
-  const [removing, setRemoving] = (0, import_react3.useState)("");
-  const [folders, setFolders] = (0, import_react3.useState)(null);
-  const refresh = (0, import_react3.useCallback)(async () => {
+  const [project, setProject] = (0, import_react5.useState)("");
+  const [view, setView] = (0, import_react5.useState)(null);
+  const [source, setSource] = (0, import_react5.useState)(null);
+  const [tab, setTab] = (0, import_react5.useState)("overview");
+  const [error51, setError] = (0, import_react5.useState)("");
+  const [busy, setBusy] = (0, import_react5.useState)(false);
+  const [receipt, setReceipt] = (0, import_react5.useState)("");
+  const [completed, setCompleted] = (0, import_react5.useState)("");
+  const [next, setNext] = (0, import_react5.useState)("");
+  const [writingIntent, setWritingIntent] = (0, import_react5.useState)("");
+  const [agentIntent, setAgentIntent] = (0, import_react5.useState)("");
+  const [adding, setAdding] = (0, import_react5.useState)(false);
+  const [folder, setFolder] = (0, import_react5.useState)("");
+  const [newTitle, setNewTitle] = (0, import_react5.useState)("");
+  const [importMode, setImportMode] = (0, import_react5.useState)("copy");
+  const [showHidden, setShowHidden] = (0, import_react5.useState)(false);
+  const [removing, setRemoving] = (0, import_react5.useState)("");
+  const [folders, setFolders] = (0, import_react5.useState)(null);
+  const refresh = (0, import_react5.useCallback)(async () => {
     const info = await request("projects");
     setCatalog(info);
     if (project && info.projects.some((p) => p.slug === project && p.linked))
       setView(await request("view", { project }));
   }, [request, project]);
-  (0, import_react3.useEffect)(() => {
+  (0, import_react5.useEffect)(() => {
     void refresh().catch((e) => setError(e.message));
   }, [refresh]);
   const run = async (op, message = "\u5DF2\u4FDD\u5B58") => {
@@ -40474,7 +44485,7 @@ function NovelPage({
   const title = catalog.projects.find((p) => p.slug === project)?.title;
   const last2 = data2?.sessions.at(-1);
   if (project && view && tab === "writer")
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Prototype_default.app, style: { height: "100%" }, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Prototype_default.app, style: { height: "100%" }, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
       Writer,
       {
         project,
@@ -40486,13 +44497,13 @@ function NovelPage({
       },
       project
     ) });
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Prototype_default.app, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.wrap, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("header", { className: Novel_default.actions, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { style: { flex: 1 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: Novel_default.muted, children: "\u5F00\u56FE \xB7 \u5C0F\u8BF4\u5DE5\u4F5C\u53F0" }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h1", { children: title ?? "\u4F60\u7684\u4F5C\u54C1" })
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Prototype_default.app, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.wrap, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("header", { className: Novel_default.actions, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { style: { flex: 1 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: Novel_default.muted, children: "\u5F00\u56FE \xB7 \u5C0F\u8BF4\u5DE5\u4F5C\u53F0" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h1", { children: title ?? "\u4F60\u7684\u4F5C\u54C1" })
       ] }),
-      !project && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+      !project && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -40502,7 +44513,7 @@ function NovelPage({
           children: "\u6DFB\u52A0\u4F5C\u54C1"
         }
       ),
-      project && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+      project && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -40514,7 +44525,7 @@ function NovelPage({
           children: "\u5168\u90E8\u4F5C\u54C1"
         }
       ),
-      onAgent && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+      onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -40526,11 +44537,11 @@ function NovelPage({
         }
       )
     ] }),
-    error51 && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { role: "alert", className: Novel_default.warn, children: error51 }),
-    receipt && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("output", { className: Novel_default.muted, children: receipt }),
-    !project && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: "\u7EE7\u7EED\u5199\u4F5C\uFF0C\u627E\u56DE\u8D44\u6599\uFF0C\u68C0\u67E5\u8BBE\u5B9A\u3002" }),
-      adding && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+    error51 && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { role: "alert", className: Novel_default.warn, children: error51 }),
+    receipt && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("output", { className: Novel_default.muted, children: receipt }),
+    !project && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: "\u7EE7\u7EED\u5199\u4F5C\uFF0C\u627E\u56DE\u8D44\u6599\uFF0C\u68C0\u67E5\u8BBE\u5B9A\u3002" }),
+      adding && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
         "form",
         {
           className: `${Novel_default.card} ${Novel_default.stack}`,
@@ -40553,11 +44564,11 @@ function NovelPage({
             }, "\u4F5C\u54C1\u5DF2\u6DFB\u52A0");
           },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u6DFB\u52A0\u4F5C\u54C1" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6DFB\u52A0\u4F5C\u54C1" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u4F5C\u54C1\u6587\u4EF6\u5939",
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                   "input",
                   {
                     required: true,
@@ -40566,7 +44577,7 @@ function NovelPage({
                     onChange: (e) => setFolder(e.target.value)
                   }
                 ),
-                onBrowseFolder && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                onBrowseFolder && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                   "button",
                   {
                     type: "button",
@@ -40580,8 +44591,8 @@ function NovelPage({
                 )
               ] })
             ] }),
-            folders && onBrowseFolder && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: Novel_default.folderPicker, "aria-label": "\u9009\u62E9\u4F5C\u54C1\u6587\u4EF6\u5939", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Novel_default.actions, children: folders.crumbs.map((c) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            folders && onBrowseFolder && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.folderPicker, "aria-label": "\u9009\u62E9\u4F5C\u54C1\u6587\u4EF6\u5939", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.actions, children: folders.crumbs.map((c) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "button",
                 {
                   type: "button",
@@ -40592,8 +44603,8 @@ function NovelPage({
                 },
                 c.path
               )) }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: Novel_default.muted, children: folders.path }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Novel_default.folderList, children: folders.entries.filter((e) => !e.hidden).map((entry) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: folders.path }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.folderList, children: folders.entries.filter((e) => !e.hidden).map((entry) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
                 "button",
                 {
                   type: "button",
@@ -40607,9 +44618,9 @@ function NovelPage({
                 },
                 entry.path
               )) }),
-              folders.truncated && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: "\u6B64\u76EE\u5F55\u5185\u5BB9\u8F83\u591A\uFF0C\u53EF\u5728\u8DEF\u5F84\u6846\u4E2D\u8F93\u5165\u76EE\u6807\u5B50\u76EE\u5F55\u3002" }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              folders.truncated && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: "\u6B64\u76EE\u5F55\u5185\u5BB9\u8F83\u591A\uFF0C\u53EF\u5728\u8DEF\u5F84\u6846\u4E2D\u8F93\u5165\u76EE\u6807\u5B50\u76EE\u5F55\u3002" }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                   "button",
                   {
                     type: "button",
@@ -40623,12 +44634,12 @@ function NovelPage({
                     children: "\u4F7F\u7528\u6B64\u6587\u4EF6\u5939"
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: Prototype_default.btn, onClick: () => setFolders(null), children: "\u53D6\u6D88\u9009\u62E9" })
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { type: "button", className: Prototype_default.btn, onClick: () => setFolders(null), children: "\u53D6\u6D88\u9009\u62E9" })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u4F5C\u54C1\u540D\u79F0",
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "input",
                 {
                   value: newTitle,
@@ -40637,16 +44648,16 @@ function NovelPage({
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u4F7F\u7528\u65B9\u5F0F",
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("select", { value: importMode, onChange: (e) => setImportMode(e.target.value), children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("option", { value: "copy", children: "\u5BFC\u5165\u526F\u672C\uFF0C\u5728\u63D2\u4EF6\u91CC\u5199\u4F5C" }),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("option", { value: "link", children: "\u5173\u8054\u539F\u76EE\u5F55\uFF0C\u4E0E Obsidian \u5171\u7528\u6587\u4EF6" })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("select", { value: importMode, onChange: (e) => setImportMode(e.target.value), children: [
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "copy", children: "\u5BFC\u5165\u526F\u672C\uFF0C\u5728\u63D2\u4EF6\u91CC\u5199\u4F5C" }),
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "link", children: "\u5173\u8054\u539F\u76EE\u5F55\uFF0C\u4E0E Obsidian \u5171\u7528\u6587\u4EF6" })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: Novel_default.muted, children: importMode === "copy" ? "\u6B63\u6587\u3001\u5927\u7EB2\u548C\u8D44\u6599\u4E00\u8D77\u590D\u5236\u5230\u63D2\u4EF6\u5DE5\u4F5C\u533A\uFF1B\u4E24\u4E2A\u76EE\u5F55\u72EC\u7ACB\u4FDD\u5B58\u3002" : "\u63D2\u4EF6\u4E0E Obsidian \u8BFB\u53D6\u540C\u4E00\u4EFD\u6587\u4EF6\uFF0C\u4FDD\u5B58\u4F1A\u5199\u56DE\u539F\u76EE\u5F55\u3002" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: importMode === "copy" ? "\u6B63\u6587\u3001\u5927\u7EB2\u548C\u8D44\u6599\u4E00\u8D77\u590D\u5236\u5230\u63D2\u4EF6\u5DE5\u4F5C\u533A\uFF1B\u4E24\u4E2A\u76EE\u5F55\u72EC\u7ACB\u4FDD\u5B58\u3002" : "\u63D2\u4EF6\u4E0E Obsidian \u8BFB\u53D6\u540C\u4E00\u4EFD\u6587\u4EF6\uFF0C\u4FDD\u5B58\u4F1A\u5199\u56DE\u539F\u76EE\u5F55\u3002" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "button",
                 {
                   type: "submit",
@@ -40655,12 +44666,12 @@ function NovelPage({
                   children: busy ? "\u6B63\u5728\u6DFB\u52A0\u2026" : "\u6DFB\u52A0\u5E76\u6253\u5F00"
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { type: "button", className: Prototype_default.btn, disabled: busy, onClick: () => setAdding(false), children: "\u53D6\u6D88" })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { type: "button", className: Prototype_default.btn, disabled: busy, onClick: () => setAdding(false), children: "\u53D6\u6D88" })
             ] })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Novel_default.actions, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.actions, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -40670,8 +44681,8 @@ function NovelPage({
           children: showHidden ? "\u8FD4\u56DE\u4F5C\u54C1" : `\u5DF2\u9690\u85CF\uFF08${catalog.projects.filter((p) => p.hidden).length}\uFF09`
         }
       ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Novel_default.grid, children: [...catalog.projects].filter((p) => !!p.hidden === showHidden).sort((a, b) => Number(b.pinned) - Number(a.pinned)).map((p) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: Novel_default.card, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.grid, children: [...catalog.projects].filter((p) => !!p.hidden === showHidden).sort((a, b) => Number(b.pinned) - Number(a.pinned)).map((p) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
           "button",
           {
             type: "button",
@@ -40679,16 +44690,16 @@ function NovelPage({
             disabled: busy,
             onClick: () => void run(() => choose(p), "\u4F5C\u54C1\u5DF2\u6253\u5F00"),
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("small", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
                 p.pinned ? "\u5DF2\u56FA\u5B9A \xB7 " : "",
                 p.linked ? `${p.scenes} \u573A\u666F \xB7 ${p.words} \u5B57\u8BCD` : "\u5F85\u63A5\u5165\u5C0F\u8BF4\u8D44\u6599"
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: p.title })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: p.title })
             ]
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               type: "button",
@@ -40701,7 +44712,7 @@ function NovelPage({
               children: p.hidden ? "\u6062\u590D\u663E\u793A" : "\u9690\u85CF"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               type: "button",
@@ -40712,13 +44723,13 @@ function NovelPage({
             }
           )
         ] }),
-        removing === p.slug && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { "aria-label": `\u79FB\u9664${p.title}`, className: Novel_default.warn, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+        removing === p.slug && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { "aria-label": `\u79FB\u9664${p.title}`, className: Novel_default.warn, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
             "\u79FB\u9664\u300A",
             p.title,
             "\u300B\uFF1F\u63D2\u4EF6\u8D44\u6599\u4E0E\u5BFC\u5165\u526F\u672C\u79FB\u5165\u56DE\u6536\u76EE\u5F55\uFF0C\u5173\u8054\u7684\u539F\u76EE\u5F55\u4FDD\u7559\u3002"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               type: "button",
@@ -40731,7 +44742,7 @@ function NovelPage({
               children: "\u786E\u8BA4\u79FB\u9664"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               type: "button",
@@ -40743,18 +44754,18 @@ function NovelPage({
           )
         ] })
       ] }, p.slug)) }),
-      !catalog.projects.some((p) => !!p.hidden === showHidden) && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: showHidden ? "\u6CA1\u6709\u9690\u85CF\u7684\u4F5C\u54C1\u3002" : "\u70B9\u51FB\u201C\u6DFB\u52A0\u4F5C\u54C1\u201D\uFF0C\u9009\u62E9\u4F60\u7684\u6B63\u6587\u3001\u5927\u7EB2\u4E0E\u8D44\u6599\u6240\u5728\u6587\u4EF6\u5939\u3002" })
+      !catalog.projects.some((p) => !!p.hidden === showHidden) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: showHidden ? "\u6CA1\u6709\u9690\u85CF\u7684\u4F5C\u54C1\u3002" : "\u70B9\u51FB\u201C\u6DFB\u52A0\u4F5C\u54C1\u201D\uFF0C\u9009\u62E9\u4F60\u7684\u6B63\u6587\u3001\u5927\u7EB2\u4E0E\u8D44\u6599\u6240\u5728\u6587\u4EF6\u5939\u3002" })
     ] }),
-    project && !data2 && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: "\u8BA9 Agent \u8BFB\u53D6\u8FD9\u4E2A\u9879\u76EE\u7684\u76EE\u5F55\u5E76\u63A5\u5165\u7D22\u5F15\u5373\u53EF\u5F00\u59CB\u3002" }),
-    data2 && view && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Prototype_default.subtabs, role: "tablist", children: [
+    project && !data2 && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: "\u8BA9 Agent \u8BFB\u53D6\u8FD9\u4E2A\u9879\u76EE\u7684\u76EE\u5F55\u5E76\u63A5\u5165\u7D22\u5F15\u5373\u53EF\u5F00\u59CB\u3002" }),
+    data2 && view && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Prototype_default.subtabs, role: "tablist", children: [
         ["writer", "\u6B63\u6587\u5DE5\u4F5C\u53F0"],
         ["overview", "\u6982\u89C8"],
         ["chapters", "\u7AE0\u8282"],
         ["facts", "\u8D44\u6599"],
         ...catalog.science ? [["science", "\u4E16\u754C\u4E66\u4E0E\u6821\u5BF9"]] : [],
         ["drafts", "\u7EED\u5199\u5019\u9009"]
-      ].map(([id2, label]) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+      ].map(([id2, label]) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -40765,14 +44776,14 @@ function NovelPage({
         },
         id2
       )) }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("span", { className: Novel_default.muted, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: Novel_default.muted, children: [
           scenes.length,
           " \u573A\u666F \xB7 ",
           scenes.reduce((n, s) => n + s.words, 0),
           " \u5B57\u8BCD"
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.link,
@@ -40782,7 +44793,7 @@ function NovelPage({
             children: "\u5237\u65B0"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.link,
@@ -40792,7 +44803,7 @@ function NovelPage({
             children: data2.pinned ? "\u53D6\u6D88\u56FA\u5B9A" : "\u56FA\u5B9A\u4F5C\u54C1"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.link,
@@ -40801,20 +44812,20 @@ function NovelPage({
             children: "\u5BFC\u51FA\u8D44\u6599"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: Novel_default.muted, children: data2.writingMode === "writing" ? "\u7EED\u5199\u6A21\u5F0F" : "\u53EA\u8BFB\u6A21\u5F0F" })
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: Novel_default.muted, children: data2.writingMode === "writing" ? "\u7EED\u5199\u6A21\u5F0F" : "\u53EA\u8BFB\u6A21\u5F0F" })
       ] }),
-      data2.issues.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("details", { className: Novel_default.warn, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("summary", { children: [
+      data2.issues.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("details", { className: Novel_default.warn, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("summary", { children: [
           data2.issues.length,
           " \u9879\u7D22\u5F15\u63D0\u793A"
         ] }),
-        data2.issues.map((i2) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: i2 }, i2))
+        data2.issues.map((i2) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: i2 }, i2))
       ] }),
-      tab === "overview" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.stack, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: `${Novel_default.card} ${Novel_default.start}`, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u4F60\u60F3\u505A\u4EC0\u4E48\uFF1F" }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: Novel_default.muted, children: "\u76F4\u63A5\u8BF4\u9700\u6C42\uFF0CAgent \u4F1A\u7ED3\u5408\u8FD9\u90E8\u4F5C\u54C1\u7684\u6B63\u6587\u548C\u4E16\u754C\u4E66\u5904\u7406\u3002" }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+      tab === "overview" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: `${Novel_default.card} ${Novel_default.start}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u4F60\u60F3\u505A\u4EC0\u4E48\uFF1F" }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u76F4\u63A5\u8BF4\u9700\u6C42\uFF0CAgent \u4F1A\u7ED3\u5408\u8FD9\u90E8\u4F5C\u54C1\u7684\u6B63\u6587\u548C\u4E16\u754C\u4E66\u5904\u7406\u3002" }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
             "form",
             {
               onSubmit: (event) => {
@@ -40828,7 +44839,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                   );
               },
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                   "textarea",
                   {
                     "aria-label": "\u4F60\u60F3\u505A\u4EC0\u4E48",
@@ -40838,8 +44849,8 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                     disabled: busy || !onAgent
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                     "button",
                     {
                       className: `${Prototype_default.btn} ${Prototype_default.primary}`,
@@ -40848,13 +44859,13 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                       children: "\u6253\u5F00 Agent \u5BF9\u8BDD"
                     }
                   ),
-                  /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("small", { className: Novel_default.muted, children: "\u9700\u6C42\u4F1A\u5E26\u5165 DSH \u4F1A\u8BDD\uFF0C\u53D1\u9001\u540E\u5F00\u59CB\u5904\u7406\u3002" })
+                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { className: Novel_default.muted, children: "\u9700\u6C42\u4F1A\u5E26\u5165 DSH \u4F1A\u8BDD\uFF0C\u53D1\u9001\u540E\u5F00\u59CB\u5904\u7406\u3002" })
                 ] })
               ]
             }
           ),
-          onAgent && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.shortcuts, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.shortcuts, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -40866,7 +44877,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 children: "\u6574\u7406\u4EBA\u7269\u4E0E\u8BBE\u5B9A"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -40878,7 +44889,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 children: "\u6821\u5BF9\u5F53\u524D\u7AE0\u8282"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -40890,7 +44901,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 children: "\u51C6\u5907\u7EED\u5199"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -40904,10 +44915,10 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             )
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.grid, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: Novel_default.card, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u5F53\u524D\u7AE0\u8282" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.grid, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u5F53\u524D\u7AE0\u8282" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
               "select",
               {
                 "aria-label": "\u5F53\u524D\u7AE0\u8282",
@@ -40918,8 +44929,8 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 ),
                 disabled: busy,
                 children: [
-                  !source && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("option", { value: "", children: "\u9009\u62E9\u7AE0\u8282" }),
-                  scenes.map((scene) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("option", { value: scene.id, children: [
+                  !source && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "", children: "\u9009\u62E9\u7AE0\u8282" }),
+                  scenes.map((scene) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("option", { value: scene.id, children: [
                     scene.path.split(/[/\\]/).at(-1)?.replace(/\.(md|txt|docx)$/i, ""),
                     " ",
                     "\xB7 ",
@@ -40928,19 +44939,19 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 ]
               }
             ),
-            last2 && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+            last2 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
                 "\u4E0A\u6B21\uFF1A",
                 last2.completed
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
                 "\u4E0B\u6B21\uFF1A",
                 last2.next || "\u672A\u586B\u5199"
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: Prototype_default.btn, type: "button", onClick: () => setTab("chapters"), children: "\u67E5\u770B\u7AE0\u8282" }),
-              source && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { className: Prototype_default.btn, type: "button", onClick: () => setTab("chapters"), children: "\u67E5\u770B\u7AE0\u8282" }),
+              source && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "button",
                 {
                   className: Prototype_default.btn,
@@ -40957,17 +44968,17 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               )
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("details", { className: Novel_default.card, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("summary", { children: "\u8BB0\u5F55\u672C\u6B21\u8FDB\u5C55 / \u4E0B\u6B21\u63A5\u7740\u5199" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("details", { className: Novel_default.card, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("summary", { children: "\u8BB0\u5F55\u672C\u6B21\u8FDB\u5C55 / \u4E0B\u6B21\u63A5\u7740\u5199" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u672C\u6B21\u5904\u7406",
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("textarea", { value: completed, onChange: (e) => setCompleted(e.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("textarea", { value: completed, onChange: (e) => setCompleted(e.target.value) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u672A\u5B8C\u6210\u4E8B\u9879 / \u4E0B\u6B21\u5165\u53E3",
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("textarea", { value: next, onChange: (e) => setNext(e.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("textarea", { value: next, onChange: (e) => setNext(e.target.value) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -40987,23 +44998,23 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: Novel_default.card, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u5F85\u5904\u7406" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u5F85\u5904\u7406" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
               data2.proposals.filter((p) => p.state === "pending").length,
               " \u9879\u63D0\u6848 \xB7",
               " ",
               view.staleFacts.length,
               " \u9879\u6765\u6E90\u9648\u65E7"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: Prototype_default.link, type: "button", onClick: () => setTab("facts"), children: "\u67E5\u770B\u8D44\u6599" })
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { className: Prototype_default.link, type: "button", onClick: () => setTab("facts"), children: "\u67E5\u770B\u8D44\u6599" })
           ] }),
-          data2.sessions.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: Novel_default.card, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u6700\u8FD1\u4EA4\u63A5" }),
-            data2.sessions.slice(-4).reverse().map((s) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("small", { className: Novel_default.muted, children: s.savedAt }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: s.completed }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+          data2.sessions.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6700\u8FD1\u4EA4\u63A5" }),
+            data2.sessions.slice(-4).reverse().map((s) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { className: Novel_default.muted, children: s.savedAt }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: s.completed }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
                 "\u4E0B\u6B21\uFF1A",
                 s.next
               ] })
@@ -41011,18 +45022,18 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
           ] })
         ] })
       ] }),
-      tab === "chapters" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)(import_jsx_runtime3.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Novel_default.scroll, children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("table", { className: Novel_default.table, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("tr", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "\u7AE0\u8282 / \u573A\u666F" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "\u53D9\u8FF0\u987A\u5E8F" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "\u72B6\u6001" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "\u5B57\u8BCD / \u5B57\u7B26" }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("th", { children: "\u4E16\u754C\u5185\u65F6\u95F4" })
+      tab === "chapters" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.scroll, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("table", { className: Novel_default.table, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u7AE0\u8282 / \u573A\u666F" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u53D9\u8FF0\u987A\u5E8F" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u72B6\u6001" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u5B57\u8BCD / \u5B57\u7B26" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u4E16\u754C\u5185\u65F6\u95F4" })
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("tbody", { children: scenes.map((s) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("tr", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("td", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("tbody", { children: scenes.map((s) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("td", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "button",
                 {
                   className: Prototype_default.link,
@@ -41039,14 +45050,14 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                   children: s.title
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("small", { className: Novel_default.muted, style: { display: "block" }, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { className: Novel_default.muted, style: { display: "block" }, children: [
                 s.path,
                 " \xB7",
                 " ",
                 origins[data2.documents.find((doc2) => doc2.id === s.documentId)?.classification?.origin ?? "unknown"]
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "input",
               {
                 "aria-label": `${s.title}\u53D9\u8FF0\u987A\u5E8F`,
@@ -41066,7 +45077,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               },
               `${s.id}-o-${s.order}`
             ) }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "select",
               {
                 "aria-label": `${s.title}\u72B6\u6001`,
@@ -41078,15 +45089,15 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                     status: e.target.value
                   })
                 ),
-                children: Object.entries(status).map(([k, v]) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("option", { value: k, children: v }, k))
+                children: Object.entries(status).map(([k, v]) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: k, children: v }, k))
               }
             ) }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("td", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("td", { children: [
               s.words,
               " / ",
               s.characters
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "input",
               {
                 "aria-label": `${s.title}\u4E16\u754C\u5185\u65F6\u95F4`,
@@ -41107,22 +45118,22 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             ) })
           ] }, s.id)) })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: Novel_default.muted, children: "\u53D9\u8FF0\u987A\u5E8F\u4E0E\u4E16\u754C\u5185\u65F6\u95F4\u5206\u5F00\u3002\u5B57\u8BCD v1\uFF1A\u6C49\u5B57\u6309\u5B57\uFF0C\u8FDE\u7EED\u5B57\u6BCD\uFF0F\u6570\u5B57\u6309\u8BCD\uFF0C\u6392\u9664 YAML \u548C\u4EE3\u7801\u5757\uFF1B\u4E0D\u7B49\u540C\u4E8E\u7F16\u8F91\u5668\u5B57\u6570\u3002" }),
-        source && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Evidence, { source })
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u53D9\u8FF0\u987A\u5E8F\u4E0E\u4E16\u754C\u5185\u65F6\u95F4\u5206\u5F00\u3002\u5B57\u8BCD v1\uFF1A\u6C49\u5B57\u6309\u5B57\uFF0C\u8FDE\u7EED\u5B57\u6BCD\uFF0F\u6570\u5B57\u6309\u8BCD\uFF0C\u6392\u9664 YAML \u548C\u4EE3\u7801\u5757\uFF1B\u4E0D\u7B49\u540C\u4E8E\u7F16\u8F91\u5668\u5B57\u6570\u3002" }),
+        source && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Evidence, { source })
       ] }),
-      tab === "facts" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.stack, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u4F5C\u54C1\u6587\u4EF6\u4E0E\u6765\u6E90\u7EBF\u7D22" }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: Novel_default.muted, children: "\u660E\u786E\u6807\u8BB0\u76F4\u63A5\u8BB0\u5F55\uFF1B\u683C\u5F0F\u7EBF\u7D22\u53EA\u63D0\u793A\uFF0C\u4E0D\u6539\u53D8\u8BBE\u5B9A\u662F\u5426\u88AB\u4F5C\u8005\u786E\u8BA4\u3002" }),
-        data2.documents.map((doc2) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("strong", { children: doc2.path }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+      tab === "facts" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u4F5C\u54C1\u6587\u4EF6\u4E0E\u6765\u6E90\u7EBF\u7D22" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u660E\u786E\u6807\u8BB0\u76F4\u63A5\u8BB0\u5F55\uFF1B\u683C\u5F0F\u7EBF\u7D22\u53EA\u63D0\u793A\uFF0C\u4E0D\u6539\u53D8\u8BBE\u5B9A\u662F\u5426\u88AB\u4F5C\u8005\u786E\u8BA4\u3002" }),
+        data2.documents.map((doc2) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: doc2.path }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
             roles[doc2.classification?.role ?? "manuscript"],
             " \xB7",
             " ",
             origins[doc2.classification?.origin ?? "unknown"]
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("small", { children: doc2.classification?.evidence.join("\uFF1B") }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { children: data2.scenes.filter((scene) => scene.documentId === doc2.id).map((scene) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: doc2.classification?.evidence.join("\uFF1B") }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { children: data2.scenes.filter((scene) => scene.documentId === doc2.id).map((scene) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               className: Prototype_default.link,
@@ -41141,8 +45152,8 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             scene.id
           )) })
         ] }, doc2.id)),
-        source && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Evidence, { source }),
-        onAgent && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+        source && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Evidence, { source }),
+        onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.btn,
@@ -41153,41 +45164,41 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             children: "\u8BA9 Agent \u6574\u7406\u4EBA\u7269\u4E0E\u5730\u70B9"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("div", { className: Novel_default.grid, children: data2.facts.map((f) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("small", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.grid, children: data2.facts.map((f) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
             canon[f.canon],
             " \xB7 ",
             f.kind === "person" ? "\u4EBA\u7269" : "\u5730\u70B9"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: f.name }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: f.text }),
-          view.staleFacts.includes(f.id) && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: Novel_default.warn, children: "\u6765\u6E90\u5DF2\u9648\u65E7" }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Sources, { anchors: f.sources })
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: f.name }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: f.text }),
+          view.staleFacts.includes(f.id) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.warn, children: "\u6765\u6E90\u5DF2\u9648\u65E7" }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Sources, { anchors: f.sources })
         ] }, f.id)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u63D0\u6848\u4E0E\u64A4\u9500" }),
-        data2.proposals.slice().reverse().map((p) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("h3", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u63D0\u6848\u4E0E\u64A4\u9500" }),
+        data2.proposals.slice().reverse().map((p) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("h3", { children: [
             p.after.name,
             " \xB7 ",
             canon[p.after.canon]
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.diff, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("small", { children: "\u539F\u503C" }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: p.before?.text ?? "\u65B0\u589E" })
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.diff, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: "\u539F\u503C" }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: p.before?.text ?? "\u65B0\u589E" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("small", { children: "\u63D0\u8BAE\u503C" }),
-              /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: p.after.text })
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: "\u63D0\u8BAE\u503C" }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: p.after.text })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Sources, { anchors: p.after.sources }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("small", { children: p.state }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Sources, { anchors: p.after.sources }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: p.state }),
             p.state === "pending" ? [
               ["approve", "\u91C7\u7EB3"],
               ["reject", "\u62D2\u7EDD"]
-            ].map(([decision, label]) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            ].map(([decision, label]) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -41203,7 +45214,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 children: label
               },
               decision
-            )) : p.state === "approved" && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            )) : p.state === "approved" && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -41223,12 +45234,12 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
           ] })
         ] }, p.id))
       ] }),
-      tab === "science" && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(SciencePanel, { request, project, onAgent }),
-      tab === "drafts" && /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.stack, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u7EED\u5199\u6A21\u5F0F" }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: Novel_default.check, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+      tab === "science" && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(SciencePanel, { request, project, onAgent }),
+      tab === "drafts" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u7EED\u5199\u6A21\u5F0F" }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: Novel_default.check, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "input",
               {
                 type: "checkbox",
@@ -41243,9 +45254,9 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             ),
             "\u5141\u8BB8\u4FDD\u5B58\u7EED\u5199\u5019\u9009\u4E0E\u5408\u7A3F"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("label", { className: Novel_default.stack, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: Novel_default.stack, children: [
             "\u8FD9\u6B21\u60F3\u600E\u4E48\u7EED\u5199\uFF08\u9009\u586B\uFF09",
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "textarea",
               {
                 value: writingIntent,
@@ -41255,8 +45266,8 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { className: Novel_default.muted, children: "\u672C\u5730 Agent \u8BFB\u53D6\u6B63\u6587\u3001\u4E16\u754C\u4E66\u548C\u6587\u98CE\u6837\u672C\uFF0C\u6574\u7406\u6210\u5305\u542B\u5B9E\u9645\u6750\u6599\u7684\u5B8C\u6574\u63D0\u793A\u8BCD\u3002 \u590D\u5236\u7ED9 Gemini \u7B49\u5916\u90E8\u804A\u5929\u6A21\u578B\u5373\u53EF\u7EED\u5199\u3002" }),
-          onAgent && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u672C\u5730 Agent \u8BFB\u53D6\u6B63\u6587\u3001\u4E16\u754C\u4E66\u548C\u6587\u98CE\u6837\u672C\uFF0C\u6574\u7406\u6210\u5305\u542B\u5B9E\u9645\u6750\u6599\u7684\u5B8C\u6574\u63D0\u793A\u8BCD\u3002 \u590D\u5236\u7ED9 Gemini \u7B49\u5916\u90E8\u804A\u5929\u6A21\u578B\u5373\u53EF\u7EED\u5199\u3002" }),
+          onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               className: Prototype_default.btn,
@@ -41267,7 +45278,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               children: "\u6574\u7406\u5916\u90E8\u7EED\u5199\u63D0\u793A\u8BCD"
             }
           ),
-          onAgent && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               className: Prototype_default.btn,
@@ -41277,16 +45288,16 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             }
           )
         ] }),
-        data2.drafts?.map((d) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: d.title }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("small", { children: [
+        data2.drafts?.map((d) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: d.title }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
             d.applied ? "\u5DF2\u5408\u7A3F" : "\u72EC\u7ACB\u5019\u9009",
             " \xB7 ",
             d.created
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("pre", { className: Novel_default.quote, style: { maxHeight: "none" }, children: d.text }),
-          /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("pre", { className: Novel_default.quote, style: { maxHeight: "none" }, children: d.text }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -41298,7 +45309,7 @@ ${d.text}
                 children: "\u5BFC\u51FA Markdown"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -41322,38 +45333,38 @@ ${d.text}
   ] }) });
 }
 function Sources({ anchors }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("details", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("summary", { children: "\u539F\u6587\u51FA\u5904" }),
-    anchors.map((a) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("blockquote", { className: Novel_default.quote, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("small", { children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("details", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("summary", { children: "\u539F\u6587\u51FA\u5904" }),
+    anchors.map((a) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("blockquote", { className: Novel_default.quote, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
         a.path,
         " : ",
         a.line
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("br", {}),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("br", {}),
       a.quote
     ] }, `${a.path}${a.quoteHash}`))
   ] });
 }
 function Evidence({ source }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("section", { className: Novel_default.card, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u6B63\u6587\u5FEB\u7167" }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { className: Novel_default.muted, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6B63\u6587\u5FEB\u7167" }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { className: Novel_default.muted, children: [
       source.path,
       " : ",
       source.scene.line
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("pre", { className: Novel_default.quote, children: source.text })
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("pre", { className: Novel_default.quote, children: source.text })
   ] });
 }
 function SciencePanel({ request, project, onAgent }) {
-  const [view, setView] = (0, import_react3.useState)(null);
-  const [error51, setError] = (0, import_react3.useState)("");
-  const load = (0, import_react3.useCallback)(
+  const [view, setView] = (0, import_react5.useState)(null);
+  const [error51, setError] = (0, import_react5.useState)("");
+  const load = (0, import_react5.useCallback)(
     async () => setView(await request("sf:view", { project })),
     [request, project]
   );
-  (0, import_react3.useEffect)(() => {
+  (0, import_react5.useEffect)(() => {
     void load().catch((e) => setError(e.message));
   }, [load]);
   const run = async (op) => {
@@ -41366,10 +45377,10 @@ function SciencePanel({ request, project, onAgent }) {
     }
   };
   const latest = view?.data.rules.filter((rule) => view.data.rules.filter((r) => r.id === rule.id).at(-1) === rule) ?? [];
-  return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.stack, children: [
-    error51 && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { role: "alert", className: Novel_default.warn, children: error51 }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-      onAgent && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
+    error51 && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { role: "alert", className: Novel_default.warn, children: error51 }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+      onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           className: `${Prototype_default.btn} ${Prototype_default["btn-strong"]}`,
@@ -41382,8 +45393,8 @@ function SciencePanel({ request, project, onAgent }) {
           children: "\u8BA9 Agent \u5BFC\u5165\u8BBE\u5B9A\u5E76\u6821\u5BF9"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("button", { className: Prototype_default.link, type: "button", onClick: () => void load(), children: "\u5237\u65B0\u7ED3\u679C" }),
-      view && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { className: Prototype_default.link, type: "button", onClick: () => void load(), children: "\u5237\u65B0\u7ED3\u679C" }),
+      view && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           className: Prototype_default.link,
@@ -41393,41 +45404,41 @@ function SciencePanel({ request, project, onAgent }) {
         }
       )
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { className: Novel_default.muted, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { className: Novel_default.muted, children: [
       latest.length,
       " \u5F20\u8BBE\u5B9A\u5361 \xB7 ",
       view?.data.findings.length ?? 0,
       " \u9879\u6821\u5BF9\u3002\u6708\u9762\u91CD\u529B\u53C2\u8003 NASA 1.62 m/s\xB2\uFF1B\u4F5C\u54C1\u4E2D\u7684\u7279\u6B8A\u8BBE\u65BD\u4E0E\u4F8B\u5916\u53E6\u884C\u5224\u65AD\u3002"
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u6821\u5BF9\u7ED3\u679C" }),
-    view?.data.findings.slice().reverse().map((f) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h3", { children: {
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6821\u5BF9\u7ED3\u679C" }),
+    view?.data.findings.slice().reverse().map((f) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: {
           hard_rule_conflict: "\u660E\u786E\u89C4\u5219\u51B2\u7A81",
           information_missing: "\u9700\u8981\u8865\u5145\u6761\u4EF6",
           plausibility_note: "\u6821\u5BF9\u63D0\u793A"
         }[f.result.type] ?? f.result.type }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("small", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
           "\u5F71\u54CD\uFF1A",
           f.result.type === "hard_rule_conflict" ? "\u4E2D" : "\u4F4E",
           " \xB7",
           " ",
           f.result.type === "hard_rule_conflict" ? "\u6761\u4EF6\u5DF2\u786E\u8BA4" : "\u4F9B\u4F5C\u8005\u5224\u65AD"
         ] }),
-        view.stale.includes(f.id) && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("span", { className: Novel_default.warn, children: "\u6765\u6E90\u6216\u89C4\u5219\u5DF2\u53D8\u5316\uFF0C\u9700\u8981\u91CD\u67E5" })
+        view.stale.includes(f.id) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: Novel_default.warn, children: "\u6765\u6E90\u6216\u89C4\u5219\u5DF2\u53D8\u5316\uFF0C\u9700\u8981\u91CD\u67E5" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: f.result.conclusion }),
-      f.result.missing?.length ? /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("ul", { children: f.result.missing.map((m) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("li", { children: m }, m)) }) : null,
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Sources, { anchors: [f.anchor, ...f.relatedAnchors ?? []] }),
-      f.result.references?.map((r) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("a", { href: r.url, target: "_blank", rel: "noreferrer", children: r.title }) }, r.url)),
-      f.result.calculation && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("pre", { className: Novel_default.quote, children: JSON.stringify(f.result.calculation, null, 2) }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className: Novel_default.actions, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("small", { children: f.status }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: f.result.conclusion }),
+      f.result.missing?.length ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { children: f.result.missing.map((m) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", { children: m }, m)) }) : null,
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Sources, { anchors: [f.anchor, ...f.relatedAnchors ?? []] }),
+      f.result.references?.map((r) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("a", { href: r.url, target: "_blank", rel: "noreferrer", children: r.title }) }, r.url)),
+      f.result.calculation && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("pre", { className: Novel_default.quote, children: JSON.stringify(f.result.calculation, null, 2) }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: f.status }),
         [
           ["confirmed", "\u786E\u8BA4\u95EE\u9898"],
           ["deferred", "\u6682\u7F13"],
           ["false_positive", "\u8BEF\u62A5"]
-        ].map(([state, label]) => /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(
+        ].map(([state, label]) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.btn,
@@ -41445,23 +45456,23 @@ function SciencePanel({ request, project, onAgent }) {
         ))
       ] })
     ] }, f.id)),
-    /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h2", { children: "\u4E16\u754C\u4E66\u4E0E\u8BBE\u5B9A" }),
-    latest.map((r) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("article", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("h3", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u4E16\u754C\u4E66\u4E0E\u8BBE\u5B9A" }),
+    latest.map((r) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("h3", { children: [
         r.title,
         " ",
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("small", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
           "v",
           r.version,
           " \xB7 ",
           canon[r.canon]
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("details", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("summary", { children: "\u67E5\u770B\u8BBE\u5B9A" }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("p", { style: { whiteSpace: "pre-wrap" }, children: r.statement }),
-        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Sources, { anchors: r.sources }),
-        r.exceptions.map((e) => /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("p", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("details", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("summary", { children: "\u67E5\u770B\u8BBE\u5B9A" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { style: { whiteSpace: "pre-wrap" }, children: r.statement }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Sources, { anchors: r.sources }),
+        r.exceptions.map((e) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
           "\u4F8B\u5916\uFF1A",
           e.statement,
           " \xB7 ",
@@ -41473,9 +45484,9 @@ function SciencePanel({ request, project, onAgent }) {
 }
 
 // src/client/embedded-agent.tsx
-var import_jsx_runtime4 = require("react/jsx-runtime");
+var import_jsx_runtime6 = require("react/jsx-runtime");
 function ChatView(props) {
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(import_jsx_runtime4.Fragment, { children: props.renderSlot("conversation.session", { view: "chat" }) });
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_jsx_runtime6.Fragment, { children: props.renderSlot("conversation.session", { view: "chat" }) });
 }
 function WriterChat({
   useSession,
@@ -41485,8 +45496,8 @@ function WriterChat({
 }) {
   const session = useSession((v) => v);
   const conversation = useConversation((v) => v);
-  const wasRunning = (0, import_react4.useRef)(false);
-  (0, import_react4.useEffect)(() => {
+  const wasRunning = (0, import_react6.useRef)(false);
+  (0, import_react6.useEffect)(() => {
     if (wasRunning.current && !session.running) onReply();
     wasRunning.current = session.running;
   }, [session.running, onReply]);
@@ -41505,16 +45516,16 @@ function EmbeddedNovelPage({
   SessionProvider,
   renderSlot
 }) {
-  const references = (0, import_react4.useRef)(/* @__PURE__ */ new Map());
-  const [, redraw] = (0, import_react4.useState)(0);
-  (0, import_react4.useEffect)(
+  const references = (0, import_react6.useRef)(/* @__PURE__ */ new Map());
+  const [, redraw] = (0, import_react6.useState)(0);
+  (0, import_react6.useEffect)(
     () => () => {
       for (const ref of references.current.values()) ref.release();
       references.current.clear();
     },
     []
   );
-  return /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
     NovelPage,
     {
       request,
@@ -41546,7 +45557,7 @@ function EmbeddedNovelPage({
         },
         render(project, onReply) {
           const ref = references.current.get(project);
-          return ref ? /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(SessionProvider, { session: ref, children: renderSlot("novel.writer.chat", { onReply }) }, ref.sessionId) : /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("p", { style: { color: "var(--muted)", padding: "20px 6px" }, children: "\u9009\u62E9\u4E0A\u65B9\u64CD\u4F5C\u5F00\u59CB\u3002\u5BF9\u8BDD\u4F1A\u663E\u793A\u5728\u8FD9\u91CC\uFF0C\u53EF\u7EE7\u7EED\u8FFD\u95EE\u3001\u9009\u62E9\u6A21\u578B\u6216\u505C\u6B62\u751F\u6210\u3002" });
+          return ref ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(SessionProvider, { session: ref, children: renderSlot("novel.writer.chat", { onReply }) }, ref.sessionId) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { style: { color: "var(--muted)", padding: "20px 6px" }, children: "\u9009\u62E9\u4E0A\u65B9\u64CD\u4F5C\u5F00\u59CB\u3002\u5BF9\u8BDD\u4F1A\u663E\u793A\u5728\u8FD9\u91CC\uFF0C\u53EF\u7EE7\u7EED\u8FFD\u95EE\u3001\u9009\u62E9\u6A21\u578B\u6216\u505C\u6B62\u751F\u6210\u3002" });
         }
       }
     }
@@ -41554,7 +45565,7 @@ function EmbeddedNovelPage({
 }
 
 // src/client/index.tsx
-var import_jsx_runtime5 = require("react/jsx-runtime");
+var import_jsx_runtime7 = require("react/jsx-runtime");
 var inject = ["slots", "remote", "layout"];
 var panel = "kaitu-novel";
 async function apply(ctx) {
@@ -41614,7 +45625,7 @@ async function apply(ctx) {
         "sidebar.panellist",
         () => ctx2.slots.register(
           { name: "sidebar.panellist", id: panel, order: 25, label: () => "\u5C0F\u8BF4\u5DE5\u4F5C\u53F0" },
-          () => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { "aria-hidden": "true", children: "\u4E66" })
+          () => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { "aria-hidden": "true", children: "\u4E66" })
         )
       );
     }

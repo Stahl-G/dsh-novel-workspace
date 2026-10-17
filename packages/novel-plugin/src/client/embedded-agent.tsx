@@ -3,7 +3,11 @@ import type {
   SessionReference,
   SessionSnapshot,
 } from "@deepseek-ai/dsh-api-session-controller/client";
-import type { ConversationViewsProps } from "@deepseek-ai/dsh-client-ui-conversation/client";
+import type {
+  ConversationSnapshot,
+  ConversationViewsProps,
+} from "@deepseek-ai/dsh-client-ui-conversation/client";
+import type {} from "@deepseek-ai/dsh-client-ui-session/client";
 import type { PropsRenderFactories, PropsRenderSlots, PropsRuntime } from "@deepseek-ai/dsh-client-ui-slots";
 import { useEffect, useRef, useState } from "react";
 import { type FolderListing, NovelPage, type Request } from "./page.js";
@@ -28,7 +32,7 @@ export function WriterChat({
   onReply,
 }: PropsRuntime<"novel.writer.chat"> & PropsRenderFactories) {
   const session = useSession((v: SessionSnapshot) => v);
-  const conversation = useConversation((v) => v);
+  const conversation = useConversation((v: ConversationSnapshot) => v);
   const wasRunning = useRef(false);
   useEffect(() => {
     if (wasRunning.current && !session.running) onReply();
