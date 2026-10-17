@@ -7,6 +7,7 @@ import { type Anchor, type Document, type Fact, type NovelData, type Scene, fact
 import { changeStore, hash, id, readStore } from "./store.js";
 export type * from "./model.js";
 import { classifyNovelDocument } from "./classify.js";
+import { type PortraitSource, applyStory } from "./interview.js";
 export { classifyNovelDocument } from "./classify.js";
 export type { NovelClassification } from "./classify.js";
 
@@ -396,6 +397,16 @@ export function editNovel(ws: Workspace, project: string, revision: string, inpu
         ids: z.array(z.string()).min(1),
         decision: z.enum(["approve", "reject", "undo"]),
       }),
+      z.object({
+        type: z.literal("story"),
+        op: z.enum(["spark", "answer", "correct", "beat", "note", "outline"]),
+        text: z.string().optional(),
+        choice: z.string().optional(),
+        custom: z.string().optional(),
+        id: z.string().optional(),
+        canon: z.string().optional(),
+        chapter: z.number().optional(),
+      }),
     ])
     .parse(input);
   return changeStore(novelFile(ws, project), initial, revision, (data) => {
@@ -458,7 +469,22 @@ export function editNovel(ws: Workspace, project: string, revision: string, inpu
         }
       }
     }
+    if (command.type === "story") data.story = applyStory(data.story, command, portraitSources(data));
   });
+}
+
+function portraitSources(data: NovelData): PortraitSource[] {
+  const sources: PortraitSource[] = [];
+  for (const doc of data.documents) {
+    try {
+      const text = readSource(data, doc.path).text;
+      const classification = doc.classification ?? classifyNovelDocument(doc.path, text);
+      sources.push({ role: classification.role, origin: classification.origin, text: text.slice(0, 4000) });
+    } catch {
+      /* Missing or unreadable files stay out of the portrait. */
+    }
+  }
+  return sources;
 }
 
 function linkedSource(ws: Workspace, project: string): Pick<NovelData, "sourceRoot" | "include" | "exclude"> {

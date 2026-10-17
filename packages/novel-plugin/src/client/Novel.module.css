@@ -40,6 +40,15 @@
   display: grid;
   gap: 4px;
 }
+.choices {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+}
+.choices button {
+  text-align: left;
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -24241,7 +24241,7 @@ ${obj.gpgsig ? obj.gpgsig : ""}`;
       dir,
       gitdir = join22(dir, ".git"),
       start,
-      finish
+      finish: finish2
     }) {
       const shallows = await GitShallowManager.read({ fs: fs6, gitdir });
       const startingSet = /* @__PURE__ */ new Set();
@@ -24249,7 +24249,7 @@ ${obj.gpgsig ? obj.gpgsig : ""}`;
       for (const ref of start) {
         startingSet.add(await GitRefManager.resolve({ fs: fs6, gitdir, ref }));
       }
-      for (const ref of finish) {
+      for (const ref of finish2) {
         try {
           const oid = await GitRefManager.resolve({ fs: fs6, gitdir, ref });
           finishingSet.add(oid);
@@ -24456,7 +24456,7 @@ ${obj.gpgsig ? obj.gpgsig : ""}`;
       const thinPack = !httpRemote.capabilities.has("no-thin");
       let objects = /* @__PURE__ */ new Set();
       if (!_delete) {
-        const finish = [...httpRemote.refs.values()];
+        const finish2 = [...httpRemote.refs.values()];
         let skipObjects = /* @__PURE__ */ new Set();
         if (oldoid !== "0000000000000000000000000000000000000000") {
           let mergebase = [];
@@ -24470,18 +24470,18 @@ ${obj.gpgsig ? obj.gpgsig : ""}`;
           } catch (e) {
             mergebase = [];
           }
-          for (const oid2 of mergebase) finish.push(oid2);
+          for (const oid2 of mergebase) finish2.push(oid2);
           if (thinPack) {
             skipObjects = await listObjects({ fs: fs6, cache, gitdir, oids: mergebase });
           }
         }
-        if (!finish.includes(oid)) {
+        if (!finish2.includes(oid)) {
           const commits = await listCommitsAndTags({
             fs: fs6,
             cache,
             gitdir,
             start: [oid],
-            finish
+            finish: finish2
           });
           objects = await listObjects({ fs: fs6, cache, gitdir, oids: commits });
         }
@@ -57920,7 +57920,7 @@ function healthCandidates(zone) {
       }
     }
   }
-  function finish() {
+  function finish2() {
     for (const pair of pressure.values()) {
       if (pair.systolic === void 0 || pair.diastolic === void 0) {
         ignored.incomplete_bp = (ignored.incomplete_bp ?? 0) + 1;
@@ -57939,14 +57939,14 @@ function healthCandidates(zone) {
         const sources = types.get(type);
         return sources ? Math.max(...sources.values()) : void 0;
       };
-      const steps = max2("StepCount");
+      const steps2 = max2("StepCount");
       const active = max2("ActiveEnergyBurned");
       const basal = max2("BasalEnergyBurned");
       candidates.push({
         ...candidate("activity", {
           ts: isoInZone(localTimeToInstant(`${date9}T00:00:00`, zone), zone),
           date: date9,
-          ...steps === void 0 ? {} : { steps: Math.round(steps) },
+          ...steps2 === void 0 ? {} : { steps: Math.round(steps2) },
           ...active === void 0 ? {} : { active_kcal: active },
           ...active === void 0 && basal === void 0 ? {} : { total_kcal: (active ?? 0) + (basal ?? 0) },
           source: "apple-health"
@@ -57978,7 +57978,7 @@ function healthCandidates(zone) {
     }
     return { candidates, ignored };
   }
-  return { add: add2, finish };
+  return { add: add2, finish: finish2 };
 }
 async function parseAppleHealth(inputFile, zone) {
   const collector = healthCandidates(zone);
@@ -68723,6 +68723,220 @@ ${header.split("\n").find((line) => /^#\s/.test(line)) ?? ""}`;
   return result;
 }
 
+// ../core/dist/novel/interview.js
+var steps = ["conflict", "dilemma", "reader", "keep"];
+var questions = {
+  conflict: {
+    id: "conflict",
+    prompt: "\u4F60\u6700\u60F3\u5148\u8C08\u54EA\u4E00\u79CD\u77DB\u76FE\uFF1F",
+    choices: [
+      { id: "want-vs-world", label: "\u4EBA\u7269\u60F3\u8981\u7684\uFF0C\u548C\u8FD9\u4E2A\u4E16\u754C\u5141\u8BB8\u7684\uFF0C\u4E0D\u4E00\u6837" },
+      { id: "two-wants", label: "\u4E24\u4E2A\u4EBA\u8981\u7684\u7ED3\u679C\u76F8\u53CD" },
+      { id: "setting-only", label: "\u6211\u53EA\u559C\u6B22\u8FD9\u4E2A\u8BBE\u5B9A\uFF0C\u4E3B\u9898\u8FD8\u6CA1\u5B9A" },
+      { id: "stay-open", label: "\u5148\u522B\u6536\u6210\u4E00\u79CD\u77DB\u76FE" }
+    ],
+    canon: {
+      "want-vs-world": "confirmed",
+      "two-wants": "confirmed",
+      "setting-only": "open",
+      "stay-open": "open"
+    }
+  },
+  dilemma: {
+    id: "dilemma",
+    prompt: "\u5982\u679C\u6709\u4EBA\u60F3\u79BB\u5F00\uFF0C\u53E6\u4E00\u4E2A\u4EBA\u60F3\u7559\u4F4F\u627F\u8BFA\uFF0C\u4F60\u5E0C\u671B\u5148\u5199\u8C01\u7684\u56F0\u5883\uFF1F",
+    choices: [
+      { id: "leaver", label: "\u5148\u5199\u60F3\u79BB\u5F00\u7684\u4EBA\u7684\u56F0\u5883" },
+      { id: "keeper", label: "\u5148\u5199\u60F3\u7559\u4E0B\u627F\u8BFA\u7684\u4EBA\u7684\u56F0\u5883" },
+      { id: "both", label: "\u4E24\u8FB9\u90FD\u5199\uFF0C\u4E0D\u5224\u8C01\u5BF9" },
+      { id: "undecided", label: "\u8FD8\u6CA1\u51B3\u5B9A\u6545\u4E8B\u7AD9\u5728\u8C01\u90A3\u8FB9" }
+    ],
+    canon: { leaver: "confirmed", keeper: "confirmed", both: "confirmed", undecided: "open" }
+  },
+  reader: {
+    id: "reader",
+    prompt: "\u8BFB\u5B8C\u4E4B\u540E\uFF0C\u4F60\u5E0C\u671B\u8BFB\u8005\u5E26\u7740\u4EC0\u4E48\u79BB\u5F00\uFF1F",
+    choices: [
+      { id: "unease", label: "\u611F\u5230\u4E0D\u5B89\uFF0C\u4F46\u8BF4\u4E0D\u6E05\u9519\u5728\u8C01" },
+      { id: "tenderness", label: "\u4ECD\u613F\u610F\u9760\u8FD1\u8FD9\u4E9B\u4EBA" },
+      { id: "question", label: "\u5E26\u7740\u4E00\u4E2A\u95EE\u9898\u79BB\u5F00" },
+      { id: "unset", label: "\u7ED3\u5C40\u60C5\u7EEA\u5148\u5F00\u653E" }
+    ],
+    canon: { unease: "confirmed", tenderness: "confirmed", question: "confirmed", unset: "open" }
+  },
+  keep: {
+    id: "keep",
+    prompt: "\u6709\u4EC0\u4E48\u8981\u7559\u4E0B\u6765\uFF0C\u5148\u4E0D\u8981\u88AB\u89E3\u91CA\u6389\uFF1F",
+    choices: [
+      { id: "motive", label: "\u4E0D\u8981\u89E3\u91CA\u89D2\u8272\u4E3A\u4EC0\u4E48\u65E0\u6CD5\u4EB2\u5BC6" },
+      { id: "world", label: "\u4E0D\u8981\u628A\u8BBE\u5B9A\u8BB2\u6210\u8BF4\u660E\u4E66" },
+      { id: "accident", label: "\u4FDD\u7559\u7A81\u7136\u51FA\u73B0\u3001\u8FD8\u6CA1\u547D\u540D\u7684\u7EC6\u8282" },
+      { id: "later", label: "\u8FD9\u4E9B\u90FD\u53EF\u4EE5\u540E\u6765\u518D\u5B9A" }
+    ],
+    canon: { motive: "confirmed", world: "confirmed", accident: "confirmed", later: "open" }
+  }
+};
+function voiceNote(sources) {
+  const sample = sources.filter((source) => source.role === "manuscript" && source.origin !== "ai" && source.origin !== "likely_ai").map((source) => source.text).join("\n");
+  if (sample.trim().length < 40)
+    return "\u8FD8\u6CA1\u6709\u8DB3\u591F\u7684\u672A\u6807\u8BB0\u6B63\u6587\u6765\u5224\u65AD\u4EBA\u79F0\u3002AI \u6807\u8BB0\u548C\u5019\u9009\u7A3F\u4E0D\u62FF\u6765\u5F53\u6587\u98CE\u3002";
+  const first = (sample.match(/我/g) ?? []).length;
+  const third = (sample.match(/他|她/g) ?? []).length;
+  if (first >= 3 && first >= third)
+    return "\u672A\u6807\u8BB0\u6B63\u6587\u91CC\u7B2C\u4E00\u4EBA\u79F0\u6BD4\u8F83\u591A\u3002\u8FD9\u662F\u6570\u51FA\u6765\u7684\uFF0C\u53EF\u4EE5\u6539\u3002";
+  if (third >= 3 && third > first)
+    return "\u672A\u6807\u8BB0\u6B63\u6587\u91CC\u7B2C\u4E09\u4EBA\u79F0\u6BD4\u8F83\u591A\u3002\u8FD9\u662F\u6570\u51FA\u6765\u7684\uFF0C\u53EF\u4EE5\u6539\u3002";
+  return "\u672A\u6807\u8BB0\u6B63\u6587\u7684\u4EBA\u79F0\u8FD8\u4E0D\u660E\u663E\uFF0C\u5148\u4E0D\u89C4\u5B9A\u89C6\u89D2\u3002";
+}
+function portraitFrom(sources) {
+  const notes = [
+    {
+      id: "sample",
+      canon: "ai_inference",
+      text: "\u6587\u98CE\u53EA\u53C2\u8003\u672A\u6807\u6210 AI \u7684\u6B63\u6587\u3002\u6807\u4E86 AI\u3001\u683C\u5F0F\u7591\u4F3C AI\uFF0C\u6216\u89D2\u8272\u662F\u5019\u9009\u7A3F\u7684\u6587\u4EF6\uFF0C\u4E0D\u8FDB\u5165\u753B\u50CF\u3002"
+    },
+    { id: "voice", canon: "ai_inference", text: voiceNote(sources) }
+  ];
+  return {
+    authorDocuments: sources.filter((source) => source.role === "manuscript" && source.origin === "author").length,
+    unmarkedManuscripts: sources.filter((source) => source.role === "manuscript" && source.origin === "unknown").length,
+    aiMarked: sources.filter((source) => source.origin === "ai" || source.role === "candidate").length,
+    likelyAi: sources.filter((source) => source.origin === "likely_ai").length,
+    notes
+  };
+}
+function lists(story) {
+  story.confirmed = story.claims.filter((claim2) => claim2.canon === "confirmed").map((claim2) => claim2.text);
+  story.open = story.claims.filter((claim2) => claim2.canon === "open").map((claim2) => claim2.text);
+}
+function confirmedText(story, kind) {
+  return story.claims.find((claim2) => claim2.kind === kind && claim2.canon === "confirmed")?.text;
+}
+function outlineFrom(story) {
+  const conflict = confirmedText(story, "conflict");
+  const dilemma = confirmedText(story, "dilemma");
+  const reader = confirmedText(story, "reader");
+  const keep = confirmedText(story, "keep");
+  const lines = [
+    `\u53EA\u5448\u73B0\u8FD9\u4E2A\u8BBE\u5B9A\uFF1A${story.spark}\u3002\u8FD9\u4E00\u7AE0\u4E0D\u89E3\u91CA\u4E3B\u9898\u3002`,
+    conflict ? `\u8BA9\u8FD9\u4EF6\u4E8B\u53D1\u751F\u4E00\u6B21\uFF0C\u5148\u4E0D\u7ED9\u7B54\u6848\uFF1A${conflict}` : "\u77DB\u76FE\u8FD8\u5F00\u7740\u3002\u8FD9\u4E00\u7AE0\u53EA\u8BA9\u4EBA\u7269\u78B0\u5230\u4E00\u4EF6\u5177\u4F53\u7684\u5C0F\u4E8B\uFF0C\u4E0D\u547D\u540D\u4E3B\u9898\u3002",
+    "\u5199\u4E00\u6BB5\u5173\u7CFB\u91CC\u7684\u65E5\u5E38\u3002\u4E0D\u63A8\u8FDB\u7ED3\u5C40\uFF0C\u5141\u8BB8\u51FA\u73B0\u8FD8\u6CA1\u7528\u4E0A\u7684\u7EC6\u8282\u3002",
+    dilemma ? `\u8FD9\u4E00\u7AE0\u7AD9\u5728\u8FD9\u4E2A\u56F0\u5883\u91CC\uFF1A${dilemma}` : "\u8FD8\u6CA1\u51B3\u5B9A\u6545\u4E8B\u7AD9\u5728\u8C01\u90A3\u8FB9\u3002\u4E24\u79CD\u5904\u5883\u90FD\u51FA\u73B0\uFF0C\u4E0D\u66FF\u4F5C\u8005\u9009\u62E9\u3002",
+    "\u7559\u4E00\u5904\u4F5C\u8005\u8FD8\u6CA1\u547D\u540D\u7684\u610F\u5916\uFF0C\u4E0D\u56DE\u6536\u6210\u4F0F\u7B14\u8BF4\u660E\u3002",
+    reader ? `\u8BFB\u8005\u8BFB\u5B8C\u8FD9\u4E00\u7AE0\u5E94\u9760\u8FD1\u8FD9\u79CD\u4F53\u9A8C\uFF1A${reader}` : "\u8BFB\u8005\u4F53\u9A8C\u8FD8\u5F00\u653E\u3002\u8FD9\u4E00\u7AE0\u4E0D\u8BBE\u8BA1\u60C5\u7EEA\u843D\u70B9\u3002",
+    keep ? `\u8FD9\u91CC\u9075\u5B88\u4F5C\u8005\u8981\u4FDD\u7559\u7684\u5F00\u653E\uFF1A${keep}` : "\u4F5C\u8005\u8FD8\u6CA1\u6307\u5B9A\u4EC0\u4E48\u4E0D\u80FD\u89E3\u91CA\u3002\u4E0D\u8981\u4E3B\u52A8\u8865\u5B8C\u8EAB\u4E16\u6216\u8BBE\u5B9A\u8BF4\u660E\u4E66\u3002",
+    "\u505C\u5728\u4ECD\u672A\u51B3\u5B9A\u7684\u95EE\u9898\u4E0A\u3002\u4E0D\u5199\u6700\u7EC8\u7ED3\u5C40\uFF0C\u4E0D\u6539\u5DF2\u6709\u6B63\u6587\u3002"
+  ];
+  return lines.map((text2, index) => ({ chapter: index + 1, text: text2, canon: "tentative" }));
+}
+function finish(story) {
+  lists(story);
+  if (story.step === "outline")
+    story.question = null;
+  else {
+    const question = questions[story.step];
+    story.question = { id: question.id, prompt: question.prompt, choices: question.choices };
+  }
+  story.updatedAt = (/* @__PURE__ */ new Date()).toISOString();
+}
+function claimText(label, custom3, canon2) {
+  const text2 = (custom3 ?? "").trim();
+  if (text2.length > 280)
+    throw new Error("\u8FD9\u4E00\u53E5\u592A\u957F\uFF0C\u5148\u7559\u80FD\u8BFB\u5B8C\u7684\u4E00\u53E5");
+  if (canon2 === "confirmed" && text2)
+    return text2;
+  if (canon2 === "open" && text2)
+    return text2;
+  return label;
+}
+function applyStory(story, input2, sources) {
+  const command = input2;
+  if (command.op === "spark") {
+    const text2 = (command.text ?? "").trim();
+    if (!text2)
+      throw new Error("\u5148\u7528\u4E00\u53E5\u8BDD\u5199\u4E0B\u8FD9\u4E2A\u6545\u4E8B");
+    if (text2.length > 500)
+      throw new Error("\u8FD9\u4E00\u53E5\u592A\u957F\uFF0C\u5148\u7559\u4E00\u53E5\u80FD\u8BFB\u5B8C\u7684\u7075\u611F");
+    const next2 = {
+      spark: text2,
+      claims: [],
+      beats: [],
+      portrait: portraitFrom(sources),
+      step: "conflict",
+      confirmed: [],
+      open: [],
+      question: null,
+      updatedAt: ""
+    };
+    finish(next2);
+    return next2;
+  }
+  if (!story?.spark)
+    throw new Error("\u5148\u7528\u4E00\u53E5\u8BDD\u5199\u4E0B\u8FD9\u4E2A\u6545\u4E8B");
+  const next = {
+    ...story,
+    claims: story.claims.map((claim2) => ({ ...claim2 })),
+    beats: story.beats.map((beat) => ({ ...beat })),
+    portrait: { ...story.portrait, notes: story.portrait.notes.map((note2) => ({ ...note2 })) }
+  };
+  if (command.op === "answer") {
+    if (next.step === "outline")
+      throw new Error("\u8BBF\u8C08\u5DF2\u7ECF\u6536\u6210\u63D0\u7EB2\uFF0C\u53EF\u4EE5\u6539\u6BCF\u4E00\u7AE0\u7684\u786E\u8BA4\u72B6\u6001");
+    const question = questions[next.step];
+    const choice = question.choices.find((item) => item.id === command.choice);
+    if (!choice)
+      throw new Error("\u8BF7\u9009\u62E9\u8FD9\u4E00\u8F6E\u7684\u4E00\u4E2A\u56DE\u7B54");
+    const canon2 = question.canon[choice.id] ?? "open";
+    next.claims = next.claims.filter((claim2) => claim2.kind !== question.id);
+    next.claims.push({
+      id: question.id,
+      kind: question.id,
+      text: claimText(choice.label, command.custom, canon2),
+      canon: canon2
+    });
+    const index = steps.indexOf(next.step);
+    const following = steps[index + 1];
+    if (following)
+      next.step = following;
+    else {
+      next.step = "outline";
+      next.beats = outlineFrom(next);
+    }
+  } else if (command.op === "correct") {
+    const claim2 = next.claims.find((item) => item.id === command.id);
+    if (!claim2)
+      throw new Error("\u627E\u4E0D\u5230\u8FD9\u6761\u610F\u56FE");
+    const text2 = (command.text ?? "").trim();
+    if (!text2 || text2.length > 280)
+      throw new Error("\u6539\u6210\u4E00\u53E5\u80FD\u8BFB\u5B8C\u7684\u8BDD");
+    if (command.canon !== "confirmed" && command.canon !== "open")
+      throw new Error("\u786E\u8BA4\u6216\u4FDD\u6301\u5F00\u653E");
+    claim2.text = text2;
+    claim2.canon = command.canon;
+  } else if (command.op === "note") {
+    const note2 = next.portrait.notes.find((item) => item.id === command.id);
+    if (!note2)
+      throw new Error("\u627E\u4E0D\u5230\u8FD9\u6761\u753B\u50CF");
+    if (command.canon !== "confirmed" && command.canon !== "open")
+      throw new Error("\u786E\u8BA4\u6216\u4FDD\u6301\u5F00\u653E");
+    note2.canon = command.canon;
+  } else if (command.op === "beat") {
+    const beat = next.beats.find((item) => item.chapter === command.chapter);
+    if (!beat)
+      throw new Error("\u63D0\u7EB2\u8FD8\u6CA1\u751F\u6210");
+    if (command.canon !== "tentative" && command.canon !== "confirmed" && command.canon !== "open")
+      throw new Error("\u7AE0\u8282\u53EF\u4EE5\u786E\u8BA4\u3001\u6062\u590D\u5F85\u5B9A\uFF0C\u6216\u4FDD\u6301\u5F00\u653E");
+    beat.canon = command.canon;
+  } else if (command.op === "outline") {
+    if (next.step !== "outline")
+      throw new Error("\u56DB\u8F6E\u95EE\u7B54\u4E4B\u540E\u518D\u6536\u6210\u63D0\u7EB2");
+    next.beats = outlineFrom(next);
+  } else
+    throw new Error("\u672A\u77E5\u6784\u601D\u64CD\u4F5C");
+  finish(next);
+  return next;
+}
+
 // ../core/dist/novel/index.js
 function manuscriptScenes(data) {
   return data.scenes.filter((scene) => {
@@ -69059,6 +69273,16 @@ function editNovel(ws, project, revision2, input2) {
       type: external_exports.literal("decide"),
       ids: external_exports.array(external_exports.string()).min(1),
       decision: external_exports.enum(["approve", "reject", "undo"])
+    }),
+    external_exports.object({
+      type: external_exports.literal("story"),
+      op: external_exports.enum(["spark", "answer", "correct", "beat", "note", "outline"]),
+      text: external_exports.string().optional(),
+      choice: external_exports.string().optional(),
+      custom: external_exports.string().optional(),
+      id: external_exports.string().optional(),
+      canon: external_exports.string().optional(),
+      chapter: external_exports.number().optional()
     })
   ]).parse(input2);
   return changeStore(novelFile(ws, project), initial, revision2, (data) => {
@@ -69125,7 +69349,21 @@ function editNovel(ws, project, revision2, input2) {
         }
       }
     }
+    if (command.type === "story")
+      data.story = applyStory(data.story, command, portraitSources(data));
   });
+}
+function portraitSources(data) {
+  const sources = [];
+  for (const doc of data.documents) {
+    try {
+      const text2 = readSource(data, doc.path).text;
+      const classification = doc.classification ?? classifyNovelDocument(doc.path, text2);
+      sources.push({ role: classification.role, origin: classification.origin, text: text2.slice(0, 4e3) });
+    } catch {
+    }
+  }
+  return sources;
 }
 function linkedSource(ws, project) {
   const file4 = novelFile(ws, project);

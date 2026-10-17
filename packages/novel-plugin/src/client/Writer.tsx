@@ -18,6 +18,7 @@ export function Writer({
   agent,
   onView,
   onBack,
+  onInterview,
 }: {
   project: string;
   title: string;
@@ -25,6 +26,7 @@ export function Writer({
   agent?: WriterAgent;
   onView(view: NovelView): void;
   onBack(): void;
+  onInterview?(): void;
 }) {
   const key = `kaitu-writer:${project}`;
   const [toolsOpen, setToolsOpen] = useState(
@@ -229,7 +231,7 @@ export function Writer({
       kind === "check"
         ? "检查当前章节与已有设定、人物位置、年龄、事件时间和科学细节是否冲突。逐项引用正文原句与资料文件/标题，区分明确冲突、条件不足和可选建议。客观常识自行查证；尊重虚构例外，人物谎言或比喻不当作世界事实。只报告有依据的问题。"
         : kind === "plot"
-          ? "结合现有伏笔和人物动机，提出 2–3 个下一步剧情方向：具体人物动作、阻力、科学或环境细节、后果及可回收的伏笔。先给可讨论的短方案。"
+          ? `创作访谈里已确认：${view?.data.story?.confirmed.join("；") || "无"}。仍开放：${view?.data.story?.open.join("；") || "无"}。只提出不关闭开放项的短方案，不要把提纲写进原稿。结合现有伏笔和人物动机，给出 2–3 个下一步：具体人物动作、阻力、后果。`
           : "从下面标记的光标位置续写，先读相关原稿样本和世界书，保持视角、语感、对白和细节取舍；不要重复已有正文。用 kaitu_novel_draft 保存独立候选，scene 使用下方章节定位，styleSources 写已读场景。直接返回简短说明，正文留在候选中。";
     const position = editor.current?.state.selection.main.head ?? cursor;
     const context = `${saved.text.slice(Math.max(0, position - 10000), position)}\n【作者光标】\n${saved.text.slice(position, position + 3000)}`;
@@ -604,15 +606,27 @@ export function Writer({
                   <button
                     type="button"
                     className={css.primary}
-                    disabled={!source || !agent || busy || (action === "continue" && !writing)}
-                    onClick={() => void run(() => send())}
+                    disabled={!source || busy || (action === "continue" && !writing) || (action !== "plot" && !agent)}
+                    onClick={() => {
+                      if (action === "plot" && onInterview) onInterview();
+                      else void run(() => send());
+                    }}
                   >
                     {action === "check"
                       ? "检查当前章节"
                       : action === "plot"
-                        ? "推荐接下来的剧情"
+                        ? "开始构思访谈"
                         : "生成续写候选"}
                   </button>
+                  {action === "plot" && (
+                    <button
+                      type="button"
+                      disabled={!source || !agent || busy || !view?.data.story?.claims.length}
+                      onClick={() => void run(() => send("plot"))}
+                    >
+                      按已确认意图让 Agent 提议
+                    </button>
+                  )}
                   {!agent && <small>在 DSH 中打开可使用写作助手。</small>}
                 </div>
               )}
