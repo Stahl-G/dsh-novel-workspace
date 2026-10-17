@@ -69,6 +69,7 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
   const [completed, setCompleted] = useState("");
   const [next, setNext] = useState("");
   const [writingIntent, setWritingIntent] = useState("");
+  const [agentIntent, setAgentIntent] = useState("");
   const refresh = useCallback(async () => {
     const info = await request<Catalog>("projects");
     setCatalog(info);
@@ -98,11 +99,17 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
     setView(null);
     setSource(null);
     setWritingIntent("");
+    setAgentIntent("");
     setTab("overview");
     if (p.linked) {
       const v = await request<NovelView>("view", { project: p.slug });
       setView(v);
-      const scene = v.data.sessions.at(-1)?.scene ?? v.data.scenes[0]?.id;
+      const scene =
+        v.data.sessions.at(-1)?.scene ??
+        v.data.scenes.find((item) => {
+          const role = v.data.documents.find((doc) => doc.id === item.documentId)?.classification?.role;
+          return !role || role === "manuscript";
+        })?.id;
       if (scene)
         try {
           setSource(await request<Source>("scene", { project: p.slug, scene }));
@@ -247,93 +254,200 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
               </details>
             )}
             {tab === "overview" && (
-              <div className={css.grid}>
-                <section className={css.card}>
-                  <h2>继续写作</h2>
-                  <p>{source?.scene.title ?? "从章节选择场景"}</p>
-                  {last && (
-                    <>
-                      <p>上次：{last.completed}</p>
-                      <p>下次：{last.next || "未填写"}</p>
-                    </>
-                  )}
-                  <div className={css.actions}>
-                    <button className={base.btn} type="button" onClick={() => setTab("chapters")}>
-                      查看章节
-                    </button>
-                    {source && (
+              <div className={css.stack}>
+                <section className={`${css.card} ${css.start}`}>
+                  <h2>你想做什么？</h2>
+                  <p className={css.muted}>直接说需求，Agent 会结合这部作品的正文和世界书处理。</p>
+                  <form
+                    onSubmit={(event) => {
+                      event.preventDefault();
+                      if (agentIntent.trim())
+                        void ask(
+                          `作品：${title ?? project}（项目 ${project}）。\n${source ? `当前章节：${source.scene.path} / ${source.scene.title}。\n` : ""}作者的需求：${agentIntent.trim()}\n先读取相关正文、设定与已有资料，再完成任务。`,
+                        );
+                    }}
+                  >
+                    <textarea
+                      aria-label="你想做什么"
+                      placeholder="例如：对照世界书检查这一章，或者整理人物关系、准备下一段续写……"
+                      value={agentIntent}
+                      onChange={(event) => setAgentIntent(event.target.value)}
+                      disabled={busy || !onAgent}
+                    />
+                    <div className={css.actions}>
+                      <button
+                        className={`${base.btn} ${base.primary}`}
+                        type="submit"
+                        disabled={busy || !onAgent || !agentIntent.trim()}
+                      >
+                        打开 Agent 对话
+                      </button>
+                      <small className={css.muted}>需求会带入 DSH 会话，发送后开始处理。</small>
+                    </div>
+                  </form>
+                  {onAgent && (
+                    <div className={css.shortcuts}>
                       <button
                         className={base.btn}
                         type="button"
+                        disabled={busy}
                         onClick={() =>
-                          void run(
-                            () =>
-                              request("open", {
-                                project,
-                                scene: source.scene.id,
-                              }),
-                            "已交给原编辑器",
+                          void ask(
+                            `请整理作品 ${project} 的人物、地点和世界书，主动读取文件，以现有来源为依据保存资料。`,
                           )
                         }
                       >
-                        打开正文
+                        整理人物与设定
                       </button>
+                      <button
+                        className={base.btn}
+                        type="button"
+                        disabled={busy || !source}
+                        onClick={() =>
+                          void ask(
+                            `请对照作品 ${project} 的世界书与设定集，校对章节 ${source?.scene.path} / ${source?.scene.title}。给出有原文出处的冲突、缺少条件或合理性提示，保留虚构例外。`,
+                          )
+                        }
+                      >
+                        校对当前章节
+                      </button>
+                      <button
+                        className={base.btn}
+                        type="button"
+                        disabled={busy || !source}
+                        onClick={() => {
+                          setTab("drafts");
+                        }}
+                      >
+                        准备续写
+                      </button>
+                      <button
+                        className={base.btn}
+                        type="button"
+                        disabled={busy || !source}
+                        onClick={() =>
+                          void ask(
+                            externalContinuationPrompt(data, title ?? project, source?.scene, agentIntent),
+                          )
+                        }
+                      >
+                        生成外部续写提示词
+                      </button>
+                    </div>
+                  )}
+                </section>
+                <div className={css.grid}>
+                  <section className={css.card}>
+                    <h2>当前章节</h2>
+                    <select
+                      aria-label="当前章节"
+                      value={source?.scene.id ?? ""}
+                      onChange={(event) =>
+                        void run(
+                          async () =>
+                            setSource(await request<Source>("scene", { project, scene: event.target.value })),
+                          "已切换章节",
+                        )
+                      }
+                      disabled={busy}
+                    >
+                      {!source && <option value="">选择章节</option>}
+                      {scenes.map((scene) => (
+                        <option key={scene.id} value={scene.id}>
+                          {scene.path
+                            .split(/[/\\]/)
+                            .at(-1)
+                            ?.replace(/\.(md|txt|docx)$/i, "")}{" "}
+                          · {scene.title}
+                        </option>
+                      ))}
+                    </select>
+                    {last && (
+                      <>
+                        <p>上次：{last.completed}</p>
+                        <p>下次：{last.next || "未填写"}</p>
+                      </>
                     )}
-                  </div>
-                </section>
-                <section className={css.card}>
-                  <h2>写作交接</h2>
-                  <label>
-                    本次处理
-                    <textarea value={completed} onChange={(e) => setCompleted(e.target.value)} />
-                  </label>
-                  <label>
-                    未完成事项 / 下次入口
-                    <textarea value={next} onChange={(e) => setNext(e.target.value)} />
-                  </label>
-                  <button
-                    className={base.btn}
-                    type="button"
-                    disabled={busy || !source || !completed}
-                    onClick={() =>
-                      void run(async () => {
-                        await edit({
-                          type: "session",
-                          scene: source?.scene.id,
-                          completed,
-                          next,
-                        });
-                        setCompleted("");
-                        setNext("");
-                      })
-                    }
-                  >
-                    保存交接
-                  </button>
-                </section>
-                <section className={css.card}>
-                  <h2>待处理</h2>
-                  <p>
-                    {data.proposals.filter((p) => p.state === "pending").length} 项提案 ·{" "}
-                    {view.staleFacts.length} 项来源陈旧
-                  </p>
-                  <button className={base.link} type="button" onClick={() => setTab("facts")}>
-                    查看资料
-                  </button>
-                </section>
-                <section className={css.card}>
-                  <h2>最近交接</h2>
-                  {data.sessions
-                    .slice(-4)
-                    .reverse()
-                    .map((s) => (
-                      <div key={s.id}>
-                        <small className={css.muted}>{s.savedAt}</small>
-                        <p>{s.completed}</p>
-                        <p>下次：{s.next}</p>
-                      </div>
-                    ))}
-                </section>
+                    <div className={css.actions}>
+                      <button className={base.btn} type="button" onClick={() => setTab("chapters")}>
+                        查看章节
+                      </button>
+                      {source && (
+                        <button
+                          className={base.btn}
+                          type="button"
+                          onClick={() =>
+                            void run(
+                              () =>
+                                request("open", {
+                                  project,
+                                  scene: source.scene.id,
+                                }),
+                              "已交给原编辑器",
+                            )
+                          }
+                        >
+                          打开正文
+                        </button>
+                      )}
+                    </div>
+                  </section>
+                  <details className={css.card}>
+                    <summary>记录本次进展 / 下次接着写</summary>
+                    <label>
+                      本次处理
+                      <textarea value={completed} onChange={(e) => setCompleted(e.target.value)} />
+                    </label>
+                    <label>
+                      未完成事项 / 下次入口
+                      <textarea value={next} onChange={(e) => setNext(e.target.value)} />
+                    </label>
+                    <button
+                      className={base.btn}
+                      type="button"
+                      disabled={busy || !source || !completed}
+                      onClick={() =>
+                        void run(async () => {
+                          await edit({
+                            type: "session",
+                            scene: source?.scene.id,
+                            completed,
+                            next,
+                          });
+                          setCompleted("");
+                          setNext("");
+                        })
+                      }
+                    >
+                      保存交接
+                    </button>
+                  </details>
+                  <section className={css.card}>
+                    <h2>待处理</h2>
+                    <p>
+                      {data.proposals.filter((p) => p.state === "pending").length} 项提案 ·{" "}
+                      {view.staleFacts.length} 项来源陈旧
+                    </p>
+                    <button className={base.link} type="button" onClick={() => setTab("facts")}>
+                      查看资料
+                    </button>
+                  </section>
+                  {data.sessions.length > 0 && (
+                    <section className={css.card}>
+                      <h2>最近交接</h2>
+                      {data.sessions
+                        .slice(-4)
+                        .reverse()
+                        .map((s) => (
+                          <div key={s.id}>
+                            <small className={css.muted}>{s.savedAt}</small>
+                            <p>{s.completed}</p>
+                            <p>下次：{s.next}</p>
+                          </div>
+                        ))}
+                    </section>
+                  )}
+                </div>
               </div>
             )}
             {tab === "chapters" && (
