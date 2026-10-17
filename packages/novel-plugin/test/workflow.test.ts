@@ -25,6 +25,8 @@ import {
   reviewScienceFinding,
   runScienceCheck,
   saveNovelDraft,
+  saveNovelScene,
+  undoNovelScene,
   saveScienceRule,
   scienceView,
 } from "@kaitu/core";
@@ -294,4 +296,34 @@ describe("轻量小说插件真实文件闭环", () => {
     ).toContain("nasa.gov");
     expect(fingerprints(source)).toEqual(originals);
   });
+});
+
+it("章节编辑保留前后正文、拒绝覆盖外部修改、撤销恢复原始字节", async () => {
+  const { ws, project, source, options } = await fixture("headings");
+  const path = join(source, "第一章.md");
+  const original = fs.readFileSync(path, "utf8").replace(/\n/g, "\r\n");
+  fs.writeFileSync(path, original);
+  connectNovel(ws, { ...options, preview: false });
+  const first = novelView(ws, project).data.scenes.find((s) => s.title === "观测站")!;
+  const current = novelScene(ws, project, first.id);
+  const save = (text: string) =>
+    saveNovelScene(ws, project, novelView(ws, project).revision, {
+      scene: first.id,
+      fileHash: current.anchor.fileHash,
+      text,
+    });
+  expect(() => save(current.text + "续写")).toThrow(/写作模式/);
+  editNovel(ws, project, novelView(ws, project).revision, { type: "mode", mode: "writing" });
+  save(current.text.replace("一秒", "两秒") + "\n新的段落。\n");
+  const updated = fs.readFileSync(path, "utf8");
+  expect(updated.startsWith("---\r\nprivate: metadata\r\n---\r\n")).toBe(true);
+  expect(updated.endsWith("## 交接\r\n林舟在实验室记录结果。\r\n")).toBe(true);
+  expect(updated).toContain("两秒");
+  expect(() => save("旧窗口的内容")).toThrow(/其他地方修改/);
+  fs.appendFileSync(path, "外部新增");
+  expect(() => undoNovelScene(ws, project, novelView(ws, project).revision)).toThrow(/新修改/);
+  expect(fs.readFileSync(path, "utf8")).toContain("外部新增");
+  fs.writeFileSync(path, updated);
+  undoNovelScene(ws, project, novelView(ws, project).revision);
+  expect(fs.readFileSync(path, "utf8")).toBe(original);
 });

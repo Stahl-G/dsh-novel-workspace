@@ -68888,7 +68888,7 @@ var source = join21(root, "manuscript");
 cpSync2(fileURLToPath2(new URL("../examples/first-men-in-the-moon", import.meta.url)), source, { recursive: true });
 var ws = await initWorkspace(join21(root, "workspace"), { timeZone: "UTC" });
 var p = await createProject(ws, { title: "\u6708\u7403\u4E0A\u6700\u65E9\u7684\u4EBA\u7C7B", kind: "personal", local_only: true, links: [{ path: source, role: "manuscript" }] });
-connectNovel(ws, { project: p.slug, sourceRoot: source, mode: "files", include: ["**/*.txt", "**/*.md"], preview: false });
+connectNovel(ws, { project: p.slug, sourceRoot: source, mode: "headings", include: ["**/*.txt", "**/*.md"], preview: false });
 console.log(JSON.stringify({ workspace: ws.root, project: p.slug, sourceRoot: source }, null, 2));
 /*! Bundled license information:
 

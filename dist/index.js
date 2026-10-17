@@ -46823,12 +46823,7 @@ import fs3 from "node:fs";
 import { isAbsolute as isAbsolute5, join as join14, matchesGlob as matchesGlob2, relative as relative5, resolve as resolve5, sep as sep3 } from "node:path";
 
 // ../core/dist/novel/model.js
-var canon = external_exports.enum([
-  "confirmed",
-  "tentative",
-  "ai_inference",
-  "excerpt"
-]);
+var canon = external_exports.enum(["confirmed", "tentative", "ai_inference", "excerpt"]);
 var anchorSchema = external_exports.object({
   documentId: external_exports.string(),
   path: external_exports.string(),
@@ -47386,12 +47381,7 @@ function connectNovelAutomatically(ws, project) {
     sourceRoot: root,
     mode: "headings",
     include: ["**/*.md", "**/*.txt", "**/*.docx"],
-    exclude: [
-      "archived/**",
-      "archive/**",
-      "08_\u5236\u4F5C\u8D44\u6E90/**",
-      "**/node_modules/**"
-    ],
+    exclude: ["archived/**", "archive/**", "08_\u5236\u4F5C\u8D44\u6E90/**", "**/node_modules/**"],
     preview: false
   });
 }
@@ -47456,6 +47446,58 @@ ${draft.text}
       draft.applied = void 0;
     scan(data);
     return { path: scene.path, operation };
+  });
+}
+function saveNovelScene(ws, project, revision2, input2) {
+  const args = external_exports.object({ scene: external_exports.string(), fileHash: external_exports.string(), text: external_exports.string() }).parse(input2);
+  return changeStore(novelFile(ws, project), initial, revision2, (data) => {
+    if (data.writingMode !== "writing")
+      throw new Error("\u5207\u6362\u5230\u5199\u4F5C\u6A21\u5F0F\u540E\u53EF\u4EE5\u4FDD\u5B58\u6B63\u6587");
+    const source = novelScene(ws, project, args.scene);
+    if (!/\.(md|txt)$/i.test(source.scene.path))
+      throw new Error("DOCX \u8BF7\u5728\u539F\u7F16\u8F91\u5668\u4E2D\u4FEE\u6539\uFF1B\u5DE5\u4F5C\u53F0\u652F\u6301\u7F16\u8F91 Markdown \u548C TXT");
+    const path = sourcePath(data, source.scene.path);
+    const before = fs3.readFileSync(path, "utf8");
+    if (hash2(before) !== args.fileHash)
+      throw new Error("\u539F\u6587\u4EF6\u5DF2\u5728\u5176\u4ED6\u5730\u65B9\u4FEE\u6539\u3002\u4F60\u7684\u7F16\u8F91\u4ECD\u4FDD\u7559\u5728\u5DE5\u4F5C\u53F0\uFF0C\u8BF7\u5148\u5BF9\u7167\u6700\u65B0\u539F\u6587");
+    const lines = before.split("\n");
+    const start = lines.slice(0, source.scene.line - 1).join("\n").length + (source.scene.line > 1 ? 1 : 0);
+    const next = data.scenes.filter((s) => s.path === source.scene.path && s.line > source.scene.line).sort((a, b) => a.line - b.line)[0];
+    const end = next ? lines.slice(0, next.line - 1).join("\n").length + 1 : before.length;
+    const newline = before.includes("\r\n") ? "\r\n" : "\n";
+    const section = args.text.replace(/\r?\n/g, newline);
+    const replacement = next ? section.replace(/(?:\r?\n)*$/, "") + newline : section;
+    const after = before.slice(0, start) + replacement + before.slice(end);
+    const backup = { path: source.scene.path, before, afterHash: hash2(after) };
+    fs3.mkdirSync(join14(data.managedRoot, "source-backups"), { recursive: true });
+    fs3.writeFileSync(join14(data.managedRoot, "source-backups", "editor-last.json"), JSON.stringify(backup), {
+      mode: 384
+    });
+    const temporary = `${path}.kaitu-${id()}.tmp`;
+    fs3.writeFileSync(temporary, after, { mode: fs3.statSync(path).mode });
+    fs3.renameSync(temporary, path);
+    data.editorUndo = backup;
+    scan(data);
+    const updated = data.scenes.find((s) => s.path === source.scene.path && s.line === source.scene.line);
+    return { scene: updated?.id ?? data.scenes.find((s) => s.path === source.scene.path)?.id };
+  });
+}
+function undoNovelScene(ws, project, revision2) {
+  return changeStore(novelFile(ws, project), initial, revision2, (data) => {
+    if (data.writingMode !== "writing")
+      throw new Error("\u5207\u6362\u5230\u5199\u4F5C\u6A21\u5F0F\u540E\u53EF\u4EE5\u64A4\u9500\u4FDD\u5B58");
+    const edit = data.editorUndo;
+    if (!edit)
+      throw new Error("\u6CA1\u6709\u53EF\u64A4\u9500\u7684\u6B63\u6587\u4FDD\u5B58");
+    const path = sourcePath(data, edit.path);
+    if (hash2(fs3.readFileSync(path)) !== edit.afterHash)
+      throw new Error("\u539F\u6587\u4EF6\u5DF2\u6709\u65B0\u4FEE\u6539\uFF0C\u8BF7\u5148\u5BF9\u7167\u539F\u6587");
+    const temporary = `${path}.kaitu-${id()}.tmp`;
+    fs3.writeFileSync(temporary, edit.before, { mode: fs3.statSync(path).mode });
+    fs3.renameSync(temporary, path);
+    data.editorUndo = void 0;
+    scan(data);
+    return { path: edit.path };
   });
 }
 
@@ -62103,7 +62145,7 @@ var TYPERT = {
         typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:result",
         create: kaitu_novel_workspace_source_kaituNovel_request_result$schema
       },
-      sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 54, "column": 9 }
+      sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 56, "column": 9 }
     }
   ],
   model: {
@@ -62189,6 +62231,12 @@ var NovelService = class extends (_a6 = TypertRemoteService, _request_dec = [Rem
         break;
       case "edit":
         result = editNovel(ws, project, String(args.revision), args.command);
+        break;
+      case "saveScene":
+        result = saveNovelScene(ws, project, String(args.revision), args.input);
+        break;
+      case "undoScene":
+        result = undoNovelScene(ws, project, String(args.revision));
         break;
       case "draft":
         result = saveNovelDraft(ws, project, String(args.revision), args.input);

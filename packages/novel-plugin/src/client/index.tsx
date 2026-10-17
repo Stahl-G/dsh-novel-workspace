@@ -5,7 +5,9 @@ import type {} from "@deepseek-ai/dsh-client-ui-renderer/client";
 import type {} from "@deepseek-ai/dsh-client-ui-sidebar/client";
 import contribution from "../../lib/typert.remote-client.js";
 import { type KaituSessionServices, openKaituSession } from "./agent-prompt.js";
-import { NovelPage, type Request } from "./page.js";
+import { EmbeddedNovelPage, WriterChat } from "./embedded-agent.js";
+import type { ISessions } from "@deepseek-ai/dsh-api-session-controller/client";
+import { type Request } from "./page.js";
 export const inject = ["slots", "remote", "layout"];
 const panel = "kaitu-novel" as MainPanelId;
 declare global {
@@ -43,7 +45,27 @@ export async function apply(ctx: Context) {
         );
       };
       ctx.slots.inject("main", () =>
-        ctx.slots.register({ name: "main", key: panel, inject: () => ({ request, onAgent }) }, NovelPage),
+        ctx.slots.register(
+          {
+            name: "main",
+            key: panel,
+            children: { "novel.writer.chat": { kind: "single", scope: "session" } },
+            inject: () => ({
+              request,
+              onAgent,
+              services: {
+                sessions: ctx.get("sessions") as ISessions,
+                workspaces: ctx.get("workspaces") as {
+                  create(input: { path: string }): Promise<{ workspaceId: string }>;
+                },
+              },
+            }),
+          },
+          EmbeddedNovelPage,
+        ),
+      );
+      ctx.slots.inject("novel.writer.chat", () =>
+        ctx.slots.register({ name: "novel.writer.chat" }, WriterChat),
       );
       ctx.slots.inject("sidebar.panellist", () =>
         ctx.slots.register(

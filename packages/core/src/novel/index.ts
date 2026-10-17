@@ -552,3 +552,56 @@ export function applyNovelDraft(
     return { path: scene.path, operation };
   });
 }
+
+// Replace only the selected section. The surrounding file (including frontmatter)
+// stays byte-for-byte intact, and a concurrent editor change stops the save.
+export function saveNovelScene(ws: Workspace, project: string, revision: string, input: unknown) {
+  const args = z.object({ scene: z.string(), fileHash: z.string(), text: z.string() }).parse(input);
+  return changeStore(novelFile(ws, project), initial, revision, (data) => {
+    if (data.writingMode !== "writing") throw new Error("切换到写作模式后可以保存正文");
+    const source = novelScene(ws, project, args.scene);
+    if (!/\.(md|txt)$/i.test(source.scene.path))
+      throw new Error("DOCX 请在原编辑器中修改；工作台支持编辑 Markdown 和 TXT");
+    const path = sourcePath(data, source.scene.path);
+    const before = fs.readFileSync(path, "utf8");
+    if (hash(before) !== args.fileHash)
+      throw new Error("原文件已在其他地方修改。你的编辑仍保留在工作台，请先对照最新原文");
+    const lines = before.split("\n");
+    const start = lines.slice(0, source.scene.line - 1).join("\n").length + (source.scene.line > 1 ? 1 : 0);
+    const next = data.scenes
+      .filter((s) => s.path === source.scene.path && s.line > source.scene.line)
+      .sort((a, b) => a.line - b.line)[0];
+    const end = next ? lines.slice(0, next.line - 1).join("\n").length + 1 : before.length;
+    const newline = before.includes("\r\n") ? "\r\n" : "\n";
+    const section = args.text.replace(/\r?\n/g, newline);
+    const replacement = next ? section.replace(/(?:\r?\n)*$/, "") + newline : section;
+    const after = before.slice(0, start) + replacement + before.slice(end);
+    const backup = { path: source.scene.path, before, afterHash: hash(after) };
+    fs.mkdirSync(join(data.managedRoot, "source-backups"), { recursive: true });
+    fs.writeFileSync(join(data.managedRoot, "source-backups", "editor-last.json"), JSON.stringify(backup), {
+      mode: 0o600,
+    });
+    const temporary = `${path}.kaitu-${id()}.tmp`;
+    fs.writeFileSync(temporary, after, { mode: fs.statSync(path).mode });
+    fs.renameSync(temporary, path);
+    data.editorUndo = backup;
+    scan(data);
+    const updated = data.scenes.find((s) => s.path === source.scene.path && s.line === source.scene.line);
+    return { scene: updated?.id ?? data.scenes.find((s) => s.path === source.scene.path)?.id };
+  });
+}
+export function undoNovelScene(ws: Workspace, project: string, revision: string) {
+  return changeStore(novelFile(ws, project), initial, revision, (data) => {
+    if (data.writingMode !== "writing") throw new Error("切换到写作模式后可以撤销保存");
+    const edit = data.editorUndo;
+    if (!edit) throw new Error("没有可撤销的正文保存");
+    const path = sourcePath(data, edit.path);
+    if (hash(fs.readFileSync(path)) !== edit.afterHash) throw new Error("原文件已有新修改，请先对照原文");
+    const temporary = `${path}.kaitu-${id()}.tmp`;
+    fs.writeFileSync(temporary, edit.before, { mode: fs.statSync(path).mode });
+    fs.renameSync(temporary, path);
+    data.editorUndo = undefined;
+    scan(data);
+    return { path: edit.path };
+  });
+}

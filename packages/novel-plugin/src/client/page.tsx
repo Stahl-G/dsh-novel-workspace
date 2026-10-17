@@ -2,6 +2,7 @@ import type { Anchor, Finding, NovelData, NovelView, WorldRule } from "@kaitu/co
 import { useCallback, useEffect, useState } from "react";
 import base from "../../../dsh-plugin/src/client/Prototype.module.css";
 import css from "./Novel.module.css";
+import { Writer, type WriterAgent } from "./Writer.js";
 import { continuationPrompt, externalContinuationPrompt } from "./continuation-prompt.js";
 export type Request = <T = unknown>(operation: string, input?: object) => Promise<T>;
 type Agent = (text: string) => Promise<void>;
@@ -54,7 +55,11 @@ function download(name: string, value: string, type = "text/markdown") {
   a.click();
   URL.revokeObjectURL(url);
 }
-export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Agent }) {
+export function NovelPage({
+  request,
+  onAgent,
+  writerAgent,
+}: { request: Request; onAgent?: Agent; writerAgent?: WriterAgent }) {
   const [catalog, setCatalog] = useState<Catalog>({
     projects: [],
     science: false,
@@ -100,7 +105,7 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
     setSource(null);
     setWritingIntent("");
     setAgentIntent("");
-    setTab("overview");
+    setTab("writer");
     if (p.linked) {
       const v = await request<NovelView>("view", { project: p.slug });
       setView(v);
@@ -127,6 +132,20 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
     }) ?? [];
   const title = catalog.projects.find((p) => p.slug === project)?.title;
   const last = data?.sessions.at(-1);
+  if (project && view && tab === "writer")
+    return (
+      <div className={base.app} style={{ height: "100%" }}>
+        <Writer
+          key={project}
+          project={project}
+          title={title ?? project}
+          request={request}
+          agent={writerAgent}
+          onView={setView}
+          onBack={() => setTab("overview")}
+        />
+      </div>
+    );
   return (
     <div className={base.app}>
       <div className={css.wrap}>
@@ -197,6 +216,7 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
           <>
             <div className={base.subtabs} role="tablist">
               {[
+                ["writer", "正文工作台"],
                 ["overview", "概览"],
                 ["chapters", "章节"],
                 ["facts", "资料"],

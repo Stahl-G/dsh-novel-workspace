@@ -6,8 +6,29 @@
     "jsx": "react-jsx",
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "lib": ["ES2023", "DOM"],
-    "emitDeclarationOnly": true
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "emitDeclarationOnly": true,
+    "paths": {
+      "@deepseek-ai/dsh-client-ui-slots": [
+        "./node_modules/@deepseek-ai/dsh-client-ui-slots/lib/types/index.d.ts"
+      ],
+      "@deepseek-ai/dsh-api-remotes/client": [
+        "./node_modules/@deepseek-ai/dsh-api-remotes/lib/types/client/index.d.ts"
+      ],
+      "@deepseek-ai/cordis": [
+        "./node_modules/@deepseek-ai/cordis/lib/types/index.d.ts"
+      ],
+      "@deepseek-ai/dsh-typert-protocol": [
+        "./node_modules/@deepseek-ai/dsh-typert-protocol/lib/types/index.d.ts"
+      ]
+    }
   },
-  "include": ["src/client", "src/standalone", "src/types.ts"]
+  "include": [
+    "src/client",
+    "src/standalone",
+    "src/types.ts"
+  ]
 }

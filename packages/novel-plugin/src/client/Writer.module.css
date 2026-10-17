@@ -1,0 +1,225 @@
+.shell {
+  color: var(--ink);
+  font: 14px / 1.6 var(--font);
+  height: 100%;
+  min-height: 650px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  box-sizing: border-box;
+}
+.shell button,
+.shell select,
+.shell textarea {
+  font: inherit;
+  color: inherit;
+}
+.shell button,
+.shell select {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 11px;
+  cursor: pointer;
+}
+.shell button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 0 8px 14px;
+}
+.header > div {
+  flex: 1;
+}
+.header h1 {
+  margin: 0;
+  font-size: 23px;
+}
+.shell small {
+  color: var(--muted);
+  font-size: 12px;
+}
+.columns {
+  display: grid;
+  grid-template-columns: 180px minmax(330px, 1fr) minmax(320px, 390px);
+  gap: 12px;
+  flex: 1;
+  min-height: 0;
+}
+.chapters {
+  overflow: auto;
+  padding: 10px 6px;
+}
+.shell h2 {
+  font-size: 15px;
+  margin: 4px 0 14px;
+}
+.chapters button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 8px;
+  border-color: transparent;
+  background: transparent;
+  overflow-wrap: anywhere;
+}
+.chapters small {
+  display: block;
+  font-size: 11px;
+}
+.chapters button[aria-current],
+.tabs button[aria-selected="true"] {
+  background: #e8f1ff;
+  color: #245db4;
+}
+.chapters h2:not(:first-child) {
+  margin-top: 28px;
+}
+.manuscript {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+}
+.toolbar strong {
+  flex: 1;
+}
+.toolbar button {
+  font-size: 12px;
+}
+.editorWrap {
+  position: relative;
+  flex: 1;
+  min-height: 280px;
+  overflow: hidden;
+}
+.cmHost {
+  height: 100%;
+}
+.selChatBtn {
+  position: absolute;
+  z-index: 5;
+  background: #e8f1ff !important;
+}
+.copyFlash {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+  background: var(--surface);
+  padding: 6px;
+}
+.manuscript footer {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+.assistant {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 0;
+  overflow: auto;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+.tabs {
+  display: flex;
+  gap: 6px;
+}
+.tabs button {
+  flex: 1;
+}
+.assistant textarea {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 75px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 9px;
+  resize: vertical;
+}
+.shell .primary {
+  background: #3478df;
+  color: white;
+  border-color: transparent;
+}
+.chat {
+  flex: 1;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.chat > * {
+  flex: 1;
+  min-height: 0;
+}
+.candidates {
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+}
+.candidates summary {
+  cursor: pointer;
+}
+.candidates summary button {
+  margin-left: 10px;
+  padding: 2px 8px;
+}
+.candidates article {
+  border: 1px solid var(--line);
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+.candidates pre {
+  white-space: pre-wrap;
+  font: inherit;
+  max-height: 230px;
+  overflow: auto;
+}
+.error {
+  padding: 10px;
+  background: #fff0df;
+  color: #853e12;
+  margin-bottom: 10px;
+}
+.hint {
+  padding: 8px 16px;
+}
+@media (max-width: 1050px) {
+  .columns {
+    grid-template-columns: 140px minmax(300px, 1fr);
+  }
+  .assistant {
+    grid-column: 1 / -1;
+    min-height: 400px;
+  }
+  .shell {
+    height: auto;
+  }
+  .manuscript {
+    height: 70vh;
+  }
+}

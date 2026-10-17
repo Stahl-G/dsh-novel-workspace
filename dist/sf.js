@@ -45286,12 +45286,7 @@ import fs2 from "node:fs";
 import { isAbsolute as isAbsolute4, join as join8, matchesGlob, relative as relative4, resolve as resolve4, sep as sep3 } from "node:path";
 
 // ../core/dist/novel/model.js
-var canon = external_exports.enum([
-  "confirmed",
-  "tentative",
-  "ai_inference",
-  "excerpt"
-]);
+var canon = external_exports.enum(["confirmed", "tentative", "ai_inference", "excerpt"]);
 var anchorSchema = external_exports.object({
   documentId: external_exports.string(),
   path: external_exports.string(),

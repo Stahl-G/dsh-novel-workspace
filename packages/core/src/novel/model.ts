@@ -79,6 +79,7 @@ export interface NovelData {
     created: string;
     applied?: { path: string; before: string; afterHash: string };
   }[];
+  editorUndo?: { path: string; before: string; afterHash: string };
   facts: Fact[];
   proposals: Proposal[];
   sessions: {

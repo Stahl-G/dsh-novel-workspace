@@ -18,6 +18,8 @@ import {
   proposeNovelFact,
   readNovel,
   saveNovelDraft,
+  saveNovelScene,
+  undoNovelScene,
 } from "@kaitu/core";
 import { TYPERT } from "../lib/typert.host.js";
 
@@ -78,6 +80,12 @@ export class NovelService extends TypertRemoteService {
         break;
       case "edit":
         result = editNovel(ws, project, String(args.revision), args.command);
+        break;
+      case "saveScene":
+        result = saveNovelScene(ws, project, String(args.revision), args.input);
+        break;
+      case "undoScene":
+        result = undoNovelScene(ws, project, String(args.revision));
         break;
       case "draft":
         result = saveNovelDraft(ws, project, String(args.revision), args.input);
