@@ -1,0 +1,37 @@
+{
+  "name": "@kaitu/core",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./experience-time": {
+      "types": "./dist/experience-time.d.ts",
+      "default": "./dist/experience-time.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "fflate": "^0.8.3",
+    "ical.js": "^2.2.1",
+    "isomorphic-git": "^1.27.0",
+    "read-excel-file": "9.3.12",
+    "saxes": "^6.0.0",
+    "xls-reader": "0.7.0",
+    "yahoo-finance2": "4.0.3",
+    "yaml": "^2.6.0",
+    "zod": "^4.6.7"
+  },
+  "files": ["dist", "data"]
+}

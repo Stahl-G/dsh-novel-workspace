@@ -1,0 +1,12 @@
+node_modules/
+.DS_Store
+.env*
+*.log
+.novel-run/
+coverage/
+*.tgz
+packages/core/dist/
+packages/novel-plugin/dist/
+packages/sf-plugin/dist/
+
+node_modules

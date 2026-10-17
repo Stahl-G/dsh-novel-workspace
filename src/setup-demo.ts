@@ -1,0 +1,15 @@
+import { cpSync, existsSync, mkdirSync } from 'node:fs';
+import { resolve, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { initWorkspace, createProject, connectNovel } from '../packages/core/src/index.js';
+const target = process.argv[2];
+if (!target) throw new Error('用法：node dist/setup-demo.js <新建示例目录>');
+const root = resolve(target);
+if (existsSync(root)) throw new Error('请选择一个尚不存在的示例目录');
+mkdirSync(root, {recursive:true});
+const source = join(root,'manuscript');
+cpSync(fileURLToPath(new URL('../examples/first-men-in-the-moon',import.meta.url)),source,{recursive:true});
+const ws = await initWorkspace(join(root,'workspace'),{timeZone:'UTC'});
+const p = await createProject(ws,{title:'The First Men in the Moon',kind:'personal',local_only:true,links:[{path:source,role:'manuscript'}]});
+connectNovel(ws,{project:p.slug,sourceRoot:source,mode:'files',include:['**/*.txt','**/*.md'],preview:false});
+console.log(JSON.stringify({workspace:ws.root,project:p.slug,sourceRoot:source},null,2));

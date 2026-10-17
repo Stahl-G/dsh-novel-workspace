@@ -1,0 +1,5 @@
+- insert:
+    - id: kaitu-novel-workspace
+      name: kaitu-novel-workspace
+    - id: kaitu-sf-consistency
+      name: kaitu-novel-workspace/sf
