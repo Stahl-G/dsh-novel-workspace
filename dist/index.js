@@ -68839,6 +68839,40 @@ function finish(story) {
   }
   story.updatedAt = (/* @__PURE__ */ new Date()).toISOString();
 }
+function writeLikeMe(sources) {
+  const usable = sources.filter((source) => source.role === "manuscript" && source.origin !== "ai" && source.origin !== "likely_ai" && source.text.trim().length > 40);
+  return {
+    voice: voiceNote(sources),
+    samples: usable.slice(0, 3).map((source) => ({
+      path: source.path ?? "",
+      text: source.text.replace(/\s+/g, " ").trim().slice(0, 280)
+    })),
+    questions: steps.map((step) => {
+      const question = questions[step];
+      return {
+        id: question.id,
+        prompt: question.prompt,
+        options: question.choices.map((choice) => ({ id: choice.id, label: choice.label }))
+      };
+    })
+  };
+}
+function answerChoice(step, label) {
+  const question = questions[step];
+  if (!question)
+    throw new Error("\u672A\u77E5\u95EE\u9898");
+  const picked = (label ?? "").trim();
+  if (picked) {
+    const match = question.choices.find((choice) => choice.label === picked);
+    if (!match)
+      throw new Error("\u8FD9\u4E2A\u9009\u9879\u5DF2\u7ECF\u4E0D\u5728\u8FD9\u4E00\u9898\u91CC");
+    return match.id;
+  }
+  const open2 = question.choices.find((choice) => question.canon[choice.id] === "open");
+  if (!open2)
+    throw new Error("\u8BF7\u9009\u62E9\u4E00\u4E2A\u9009\u9879");
+  return open2.id;
+}
 function claimText(label, custom3, canon2) {
   const text2 = (custom3 ?? "").trim();
   if (text2.length > 280)
@@ -69359,11 +69393,19 @@ function portraitSources(data) {
     try {
       const text2 = readSource(data, doc.path).text;
       const classification = doc.classification ?? classifyNovelDocument(doc.path, text2);
-      sources.push({ role: classification.role, origin: classification.origin, text: text2.slice(0, 4e3) });
+      sources.push({
+        path: doc.path,
+        role: classification.role,
+        origin: classification.origin,
+        text: text2.slice(0, 4e3)
+      });
     } catch {
     }
   }
   return sources;
+}
+function novelVoice(ws, project) {
+  return writeLikeMe(portraitSources(readNovel(ws, project).value));
 }
 function linkedSource(ws, project) {
   const file4 = novelFile(ws, project);
@@ -84169,7 +84211,7 @@ var $remote = createTypertRemoteInfo({
         create: kaitu_novel_workspace_source_kaituNovel_request_result$schema,
         jsonSchema: { "type": "string" }
       },
-      sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 64, "column": 9 }
+      sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 133, "column": 9 }
     }
   }
 }, external_exports2);
@@ -84359,6 +84401,60 @@ var NovelService = class extends (_a6 = TypertRemoteService, _request_dec = [Rem
   snapshot(project) {
     return novelView(this.workspace, project);
   }
+  async grill(ws, project, args) {
+    const voice = novelVoice(ws, project);
+    const asker = this.ctx.get("userQuestions");
+    if (!asker) throw new Error("\u5F53\u524D DSH \u6CA1\u6709\u63D0\u95EE\u5361\u7247");
+    const session = String(args.session ?? "");
+    const registry3 = this.ctx.get("agents");
+    const agent = session ? registry3?.get(session) : void 0;
+    if (!agent) throw new Error("\u5199\u4F5C\u4F1A\u8BDD\u8FD8\u6CA1\u5C31\u7EEA\uFF0C\u8BF7\u518D\u70B9\u4E00\u6B21");
+    const spark = String(args.spark ?? "").trim().slice(0, 500) || "\u4ECE\u5F53\u524D\u7AE0\u8282\u63A5\u7740\u5199\u4E00\u6BB5";
+    let revision2 = novelView(ws, project).revision;
+    editNovel(ws, project, revision2, { type: "story", op: "spark", text: spark });
+    const answers = [];
+    for (const question of voice.questions) {
+      let batch;
+      try {
+        batch = await asker.ask({
+          agent,
+          questions: [
+            {
+              id: question.id,
+              header: "\u6784\u601D",
+              question: question.prompt,
+              options: question.options.map((option) => ({ label: option.label }))
+            }
+          ]
+        });
+      } catch (error112) {
+        const code = error112 && typeof error112 === "object" && "code" in error112 ? String(error112.code) : "";
+        const message = error112 instanceof Error ? error112.message : "";
+        if (code === "ASK_CANCELLED" || message.includes("the user cancelled"))
+          throw new Error(answers.length ? "\u8FD9\u9898\u5148\u653E\u4E0B\u4E86\uFF0C\u5DF2\u8BB0\u4E0B\u7684\u9009\u62E9\u8FD8\u5728" : "\u8FD9\u9898\u5148\u653E\u4E0B\u4E86");
+        if (answers.length === 0 && (code === "NO_PROVIDER" || message.includes("no user-questions answerer")))
+          throw new Error("\u63D0\u95EE\u5361\u7247\u6CA1\u6709\u63A5\u4E0A");
+        if (answers.length > 0) throw new Error("\u63D0\u95EE\u4E2D\u65AD\uFF0C\u5DF2\u8BB0\u4E0B\u7684\u9009\u62E9\u8FD8\u5728\uFF0C\u8BF7\u518D\u70B9\u4E00\u6B21");
+        throw error112 instanceof Error ? error112 : new Error("\u63D0\u95EE\u6CA1\u6709\u5B8C\u6210");
+      }
+      const answer = batch.answers.find((item) => item.id === question.id) ?? batch.answers[0];
+      if (!answer) throw new Error("\u8FD9\u4E00\u9898\u6CA1\u6709\u56DE\u7B54");
+      revision2 = novelView(ws, project).revision;
+      editNovel(ws, project, revision2, {
+        type: "story",
+        op: "answer",
+        choice: answerChoice(question.id, answer.selected[0]),
+        custom: answer.custom
+      });
+      answers.push({
+        id: question.id,
+        selected: [...answer.selected],
+        ...answer.custom ? { custom: answer.custom } : {}
+      });
+    }
+    const story = novelView(ws, project).data.story;
+    return { voice, answers, confirmed: story?.confirmed ?? [], open: story?.open ?? [] };
+  }
   scene(project, scene) {
     return novelScene(this.workspace, project, scene);
   }
@@ -84439,6 +84535,12 @@ var NovelService = class extends (_a6 = TypertRemoteService, _request_dec = [Rem
         break;
       case "export":
         result = readNovel(ws, project).value;
+        break;
+      case "voice":
+        result = novelVoice(ws, project);
+        break;
+      case "grill":
+        result = await this.grill(ws, project, args);
         break;
       case "open": {
         const source = this.scene(project, String(args.scene));

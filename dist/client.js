@@ -1,4 +1,4 @@
-window.__ModuleLoader__.load({id:"kaitu-novel-workspace",factory:(require)=>{var module={exports:{}};var exports=module.exports;window.__kaituNovelStyles=".kn_app_MW2Eja {\n  --bg: #fcfcfb;\n  --surface: #fff;\n  --sunken: #f5f5f3;\n  --control: #f0efec;\n  --line: #ecebe7;\n  --ink: #1f1e1d;\n  --ink2: #4d4c48;\n  --muted: #6b6a66;\n  --link: #2f5fc4;\n  --primary: #2f5fc4;\n  --on-primary: #fff;\n  --strong: #1f1e1d;\n  --on-strong: #fff;\n  --ask: #f2f5fd;\n  --ask-line: #dce4f8;\n  --scrim: #1f1e1d6b;\n  --health: #2e8b57;\n  --health-tint: #e8f3ec;\n  --health-ink: #1f6b43;\n  --doing: #6b5bd6;\n  --doing-tint: #efedfb;\n  --doing-ink: #4b3fb0;\n  --explore: #3d6fe0;\n  --explore-tint: #ecf1fc;\n  --explore-ink: #2a4fa8;\n  --news: #c47a12;\n  --news-tint: #fbefe0;\n  --news-ink: #8a520a;\n  --finance: #1f8a8a;\n  --finance-tint: #e3f2f2;\n  --finance-ink: #176868;\n  --me: #c2507a;\n  --empty: #f0efec;\n  --map-land: #eef1ec;\n  --map-grid: #dde2da;\n  --map-sea: #f4f6f7;\n  --map-dot: #d3dad4;\n  --font: -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Segoe UI\",\n    sans-serif;\n  --radius: 14px;\n}\n\n@media (prefers-color-scheme: dark) {\n  .kn_app_MW2Eja:not([data-theme=\"light\"]) {\n    --bg: #171716;\n    --surface: #201f1e;\n    --sunken: #1b1b1a;\n    --control: #2a2927;\n    --line: #2f2e2c;\n    --ink: #ecebe8;\n    --ink2: #c9c7c2;\n    --muted: #a09e98;\n    --link: #8fb0f5;\n    --primary: #4c7be6;\n    --on-primary: #fff;\n    --strong: #ecebe8;\n    --on-strong: #171716;\n    --ask: #1e2638;\n    --ask-line: #2c3a5c;\n    --scrim: #0009;\n    --health-tint: #1c3226;\n    --health-ink: #8fd3ac;\n    --doing-tint: #2a2547;\n    --doing-ink: #b9aff5;\n    --explore-tint: #1e2a45;\n    --explore-ink: #a9c1f7;\n    --news-tint: #3a2a12;\n    --news-ink: #ebc27f;\n    --finance-tint: #173333;\n    --finance-ink: #8ed1d1;\n    --empty: #2a2927;\n    --map-land: #1f2620;\n    --map-grid: #2d352e;\n    --map-sea: #1a1c1d;\n    --map-dot: #343d36;\n    color-scheme: dark;\n  }\n}\n\n.kn_app_MW2Eja[data-theme=\"dark\"] {\n  --bg: #171716;\n  --surface: #201f1e;\n  --sunken: #1b1b1a;\n  --control: #2a2927;\n  --line: #2f2e2c;\n  --ink: #ecebe8;\n  --ink2: #c9c7c2;\n  --muted: #a09e98;\n  --link: #8fb0f5;\n  --primary: #4c7be6;\n  --on-primary: #fff;\n  --strong: #ecebe8;\n  --on-strong: #171716;\n  --ask: #1e2638;\n  --ask-line: #2c3a5c;\n  --scrim: #0009;\n  --health-tint: #1c3226;\n  --health-ink: #8fd3ac;\n  --doing-tint: #2a2547;\n  --doing-ink: #b9aff5;\n  --explore-tint: #1e2a45;\n  --explore-ink: #a9c1f7;\n  --news-tint: #3a2a12;\n  --news-ink: #ebc27f;\n  --finance-tint: #173333;\n  --finance-ink: #8ed1d1;\n  --empty: #2a2927;\n  --map-land: #1f2620;\n  --map-grid: #2d352e;\n  --map-sea: #1a1c1d;\n  --map-dot: #343d36;\n  color-scheme: dark;\n}\n\n.kn_app_MW2Eja, .kn_app_MW2Eja * {\n  box-sizing: border-box;\n}\n\n.kn_app_MW2Eja {\n  background: var(--bg);\n  color: var(--ink);\n  font-family: var(--font);\n  font-size: 15px;\n  line-height: 1.5;\n}\n\n.kn_app_MW2Eja a {\n  color: var(--link);\n  font-weight: 500;\n  text-decoration: none;\n}\n\n.kn_app_MW2Eja a:hover {\n  text-underline-offset: 3px;\n  text-decoration: underline dotted;\n}\n\n:where(.kn_app_MW2Eja) button, :where(.kn_app_MW2Eja) input {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_app_MW2Eja button {\n  cursor: pointer;\n}\n\n.kn_app_MW2Eja h1, .kn_app_MW2Eja h2, .kn_app_MW2Eja h3, .kn_app_MW2Eja p {\n  margin: 0;\n}\n\n.kn_app_MW2Eja h1, .kn_app_MW2Eja h2, .kn_app_MW2Eja h3 {\n  text-wrap: balance;\n}\n\n.kn_num_MW2Eja {\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_sr_MW2Eja {\n  clip: rect(0 0 0 0);\n  white-space: nowrap;\n  width: 1px;\n  height: 1px;\n  position: absolute;\n  overflow: hidden;\n}\n\n.kn_demo_MW2Eja {\n  padding-block: 8px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--sunken);\n  border-bottom: 1px dashed var(--line);\n  color: var(--muted);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 12px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_demo_MW2Eja b {\n  color: var(--ink2);\n  font-weight: 600;\n}\n\n.kn_demo_MW2Eja button {\n  border: 1px dashed var(--muted);\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 13px;\n}\n\n.kn_demo_MW2Eja button[aria-pressed=\"true\"] {\n  border-style: solid;\n  border-color: var(--ink);\n  color: var(--ink);\n  background: var(--surface);\n}\n\n.kn_top_MW2Eja {\n  top: env(safe-area-inset-top, 0px);\n  z-index: 5;\n  padding-block: 12px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--bg);\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px 20px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_brand_MW2Eja {\n  flex: 120px;\n  align-items: center;\n  gap: 10px;\n  font-size: 18px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_tabs_MW2Eja {\n  background: var(--control);\n  border-radius: 12px;\n  flex: 0 auto;\n  gap: 4px;\n  padding: 4px;\n  display: flex;\n}\n\n.kn_tabs_MW2Eja button {\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 22px;\n  font-size: 15px;\n  font-weight: 500;\n}\n\n.kn_tabs_MW2Eja button[aria-current=\"page\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_tools_MW2Eja {\n  flex: 120px;\n  justify-content: flex-end;\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_sync_MW2Eja {\n  color: var(--muted);\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_dot_MW2Eja {\n  border-radius: 50%;\n  flex: none;\n  width: 7px;\n  height: 7px;\n  display: inline-block;\n}\n\n.kn_btn_MW2Eja {\n  white-space: nowrap;\n  border: 0;\n  border-radius: 10px;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  height: 40px;\n  padding: 0 16px;\n  font-size: 15px;\n  font-weight: 500;\n  display: inline-flex;\n}\n\n.kn_btn-primary_MW2Eja {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_btn-strong_MW2Eja {\n  background: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_btn-quiet_MW2Eja {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 400;\n}\n\n.kn_btn-big_MW2Eja {\n  height: 44px;\n  padding: 0 20px;\n}\n\n.kn_avatar_MW2Eja {\n  background: var(--me);\n  color: #fff;\n  border: 0;\n  border-radius: 50%;\n  width: 40px;\n  height: 40px;\n  font-weight: 600;\n}\n\n.kn_content_MW2Eja {\n  max-width: 1040px;\n  padding-block: 28px 72px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  flex-direction: column;\n  gap: 32px;\n  margin: 0 auto;\n  display: flex;\n}\n\n.kn_head_MW2Eja {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 16px;\n  display: flex;\n}\n\n.kn_head_MW2Eja h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_sub_MW2Eja {\n  color: var(--muted);\n  font-size: 14px;\n}\n\n.kn_eyebrow_MW2Eja {\n  color: var(--muted);\n  letter-spacing: .06em;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_sec_MW2Eja {\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_sec-head_MW2Eja {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 12px;\n  display: flex;\n}\n\n.kn_card_MW2Eja {\n  background: var(--surface);\n  border-radius: var(--radius);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_chip_MW2Eja {\n  white-space: nowrap;\n  border-radius: 6px;\n  align-items: center;\n  gap: 6px;\n  padding: 2px 8px;\n  font-size: 13px;\n  font-weight: 500;\n  line-height: 18px;\n  display: inline-flex;\n}\n\n.kn_capture_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding: 6px;\n  display: flex;\n}\n\n.kn_capture_MW2Eja input {\n  background: none;\n  border: 0;\n  border-radius: 10px;\n  flex: 260px;\n  min-width: 0;\n  height: 44px;\n  padding: 0 14px;\n  font-size: 16px;\n}\n\n.kn_capture_MW2Eja input::placeholder {\n  color: var(--muted);\n}\n\n.kn_saved_MW2Eja {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_focus_MW2Eja {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 18px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 24px;\n  padding: 24px;\n  display: flex;\n}\n\n.kn_focus-body_MW2Eja {\n  flex-direction: column;\n  flex: 380px;\n  gap: 8px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_focus-title_MW2Eja {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_row_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  min-height: 52px;\n  padding: 6px 16px;\n  display: flex;\n}\n\n.kn_row-title_MW2Eja {\n  flex: 240px;\n  min-width: 0;\n  font-size: 16px;\n}\n\n.kn_check_MW2Eja {\n  border: 1.5px solid var(--muted);\n  color: #0000;\n  background: none;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  display: flex;\n}\n\n.kn_check_MW2Eja[aria-pressed=\"true\"] {\n  border-color: var(--health);\n  background: var(--health);\n  color: #fff;\n}\n\n.kn_row_MW2Eja.kn_is-done_MW2Eja .kn_row-title_MW2Eja {\n  color: var(--muted);\n  text-decoration: line-through;\n}\n\n.kn_when_MW2Eja {\n  text-align: right;\n  width: 64px;\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_ask_MW2Eja {\n  background: var(--ask);\n  box-shadow: 0 0 0 1px var(--ask-line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 14px 18px;\n  display: flex;\n}\n\n.kn_ask_MW2Eja p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_grid_MW2Eja {\n  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_sum_MW2Eja {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 14px;\n  padding: 18px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_sum_MW2Eja:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_sum-h_MW2Eja {\n  align-items: center;\n  gap: 8px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_sum-h_MW2Eja span:last-child {\n  color: var(--muted);\n  margin-left: auto;\n  font-size: 13px;\n  font-weight: 400;\n}\n\n.kn_big_MW2Eja {\n  font-size: 26px;\n  font-weight: 600;\n  line-height: 32px;\n}\n\n.kn_small_MW2Eja {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_pair_MW2Eja {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_stack_MW2Eja {\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n}\n\n.kn_week_MW2Eja {\n  grid-template-columns: repeat(7, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_week_MW2Eja span {\n  color: var(--muted);\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_week_MW2Eja i {\n  background: var(--empty);\n  border-radius: 5px;\n  width: 100%;\n  height: 18px;\n  display: block;\n}\n\n.kn_bar_MW2Eja {\n  background: var(--control);\n  border-radius: 4px;\n  height: 8px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_bar_MW2Eja i {\n  height: 100%;\n  display: block;\n}\n\n.kn_fin_MW2Eja {\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 0;\n  display: grid;\n  overflow: hidden;\n}\n\n.kn_fin-cell_MW2Eja {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_fin-cell_MW2Eja:nth-child(4) {\n  border-right: 0;\n}\n\n.kn_fin-wide_MW2Eja {\n  border-top: 1px solid var(--line);\n  flex-direction: column;\n  grid-column: 1 / -1;\n  gap: 8px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_fin-pending_MW2Eja {\n  flex-flow: wrap;\n  align-items: center;\n  gap: 8px 12px;\n}\n\n@media (width <= 760px) {\n  .kn_fin_MW2Eja {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .kn_fin-cell_MW2Eja {\n    border-right: 0;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .kn_fin-cell_MW2Eja:nth-child(odd) {\n    border-right: 1px solid var(--line);\n  }\n}\n\n.kn_feed-row_MW2Eja {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 14px;\n  padding: 10px 4px;\n  display: flex;\n}\n\n.kn_feed-row_MW2Eja p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_ini_MW2Eja {\n  color: #fff;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 28px;\n  height: 28px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_welcome_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 10px;\n  padding: 32px 28px;\n  display: flex;\n}\n\n.kn_welcome_MW2Eja h1 {\n  font-size: 30px;\n  font-weight: 600;\n  line-height: 40px;\n}\n\n.kn_welcome_MW2Eja p {\n  max-width: 36em;\n  color: var(--ink2);\n  font-size: 16px;\n}\n\n.kn_starts_MW2Eja {\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_start_MW2Eja {\n  text-align: left;\n  border: 0;\n  flex-direction: column;\n  gap: 10px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_start_MW2Eja h3 {\n  font-size: 17px;\n  font-weight: 600;\n}\n\n.kn_start_MW2Eja p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_start_MW2Eja .kn_tag_MW2Eja {\n  align-self: flex-start;\n}\n\n.kn_subtabs_MW2Eja {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_subtabs_MW2Eja button {\n  border: 1px solid var(--line);\n  height: 36px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 18px;\n  padding: 0 16px;\n  font-size: 14px;\n}\n\n.kn_subtabs_MW2Eja button[aria-pressed=\"true\"] {\n  background: var(--strong);\n  border-color: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_dir_MW2Eja {\n  flex-direction: column;\n  gap: 14px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_dir_MW2Eja h3 {\n  font-size: 19px;\n  font-weight: 600;\n  line-height: 27px;\n}\n\n.kn_dir_MW2Eja dl {\n  grid-template-columns: 4.5em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_dir_MW2Eja dt {\n  color: var(--muted);\n}\n\n.kn_dir_MW2Eja dd {\n  color: var(--ink);\n  margin: 0;\n}\n\n.kn_attempt_MW2Eja {\n  background: var(--sunken);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 6px;\n  padding: 12px 14px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_evidence_MW2Eja {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_dir-foot_MW2Eja {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_dir_MW2Eja.kn_is-paused_MW2Eja {\n  background: var(--sunken);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_split_MW2Eja {\n  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);\n  gap: 20px;\n  display: grid;\n}\n\n.kn_map-box_MW2Eja {\n  padding: 12px;\n  overflow: hidden;\n}\n\n.kn_map-box_MW2Eja svg {\n  width: 100%;\n  height: auto;\n  display: block;\n}\n\n.kn_places_MW2Eja {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_place_MW2Eja {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 4px 12px;\n  padding: 12px 4px;\n  display: flex;\n}\n\n.kn_place_MW2Eja b {\n  flex: 120px;\n  font-weight: 600;\n}\n\n.kn_legend_MW2Eja {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_legend_MW2Eja span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_news_MW2Eja {\n  grid-template-columns: 120px minmax(0, 1fr);\n  gap: 16px;\n  padding: 16px;\n  display: grid;\n}\n\n.kn_news_MW2Eja .kn_thumb_MW2Eja {\n  aspect-ratio: 4 / 3;\n  color: #fff;\n  border-radius: 10px;\n  align-items: flex-end;\n  max-width: 100%;\n  padding: 8px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_news_MW2Eja h3 {\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 25px;\n}\n\n.kn_news_MW2Eja p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_news-foot_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  margin-top: 4px;\n  display: flex;\n}\n\n.kn_news-foot_MW2Eja a {\n  font-size: 14px;\n}\n\n.kn_news-acts_MW2Eja {\n  gap: 8px;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_comment_MW2Eja {\n  border-left: 2px solid var(--news);\n  color: var(--ink);\n  padding-left: 10px;\n  font-size: 14px;\n}\n\n.kn_mods_MW2Eja {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_mod_MW2Eja {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 6px;\n  padding: 16px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_mod_MW2Eja:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_raw_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 88px minmax(0, 1fr);\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_raw_MW2Eja time {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_raw_MW2Eja blockquote {\n  margin: 0;\n  font-size: 15px;\n}\n\n.kn_raw_MW2Eja .kn_st_MW2Eja {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  grid-column: 2;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_scrim_MW2Eja {\n  z-index: 20;\n  padding-block: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px));\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--scrim);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  position: fixed;\n  inset: 0;\n}\n\n.kn_dialog_MW2Eja {\n  background: var(--surface);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 18px;\n  width: 100%;\n  max-width: 560px;\n  max-height: 100%;\n  padding: 28px;\n  display: flex;\n  overflow: auto;\n  box-shadow: 0 20px 60px #00000040;\n}\n\n.kn_dialog_MW2Eja h2 {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_steps_MW2Eja {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_choice_MW2Eja {\n  border: 1.5px solid var(--line);\n  text-align: left;\n  background: none;\n  border-radius: 14px;\n  align-items: flex-start;\n  gap: 14px;\n  width: 100%;\n  padding: 16px;\n  display: flex;\n}\n\n.kn_choice_MW2Eja[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_choice_MW2Eja .kn_radio_MW2Eja {\n  border: 1.5px solid var(--muted);\n  border-radius: 50%;\n  flex: none;\n  width: 20px;\n  height: 20px;\n  margin-top: 2px;\n}\n\n.kn_choice_MW2Eja[aria-pressed=\"true\"] .kn_radio_MW2Eja {\n  border: 6px solid var(--primary);\n}\n\n.kn_choice_MW2Eja b {\n  font-size: 16px;\n  font-weight: 600;\n  display: block;\n}\n\n.kn_choice_MW2Eja span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_toggle_MW2Eja {\n  border-top: 1px solid var(--line);\n  align-items: flex-start;\n  gap: 14px;\n  padding: 14px 0;\n  display: flex;\n}\n\n.kn_toggle_MW2Eja input {\n  width: 20px;\n  height: 20px;\n  accent-color: var(--primary);\n  flex: none;\n  margin: 2px 0 0;\n}\n\n.kn_toggle_MW2Eja label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_toggle_MW2Eja label span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_dialog-foot_MW2Eja {\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_note_MW2Eja {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n@media (width <= 760px) {\n  .kn_split_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_news_MW2Eja {\n    grid-template-columns: 84px minmax(0, 1fr);\n  }\n\n  .kn_tools_MW2Eja .kn_sync_MW2Eja {\n    display: none;\n  }\n\n  .kn_brand_MW2Eja {\n    flex-basis: auto;\n  }\n\n  .kn_tabs_MW2Eja {\n    flex: 100%;\n    order: 3;\n    justify-content: stretch;\n  }\n\n  .kn_tabs_MW2Eja button {\n    flex: 1 1 0;\n    padding: 0 8px;\n  }\n\n  .kn_head_MW2Eja h1 {\n    font-size: 24px;\n    line-height: 32px;\n  }\n}\n\n.kn_cal-bar_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 14px;\n  display: flex;\n}\n\n.kn_cal-nav_MW2Eja {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_cal-nav_MW2Eja button {\n  background: var(--control);\n  min-width: 36px;\n  height: 36px;\n  color: var(--ink);\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 14px;\n}\n\n.kn_cal-title_MW2Eja {\n  flex: 200px;\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.kn_seg_MW2Eja {\n  background: var(--control);\n  border-radius: 10px;\n  gap: 2px;\n  padding: 3px;\n  display: flex;\n}\n\n.kn_seg_MW2Eja button {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_seg_MW2Eja button[aria-pressed=\"true\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_cal_MW2Eja {\n  --fc-border-color: var(--line);\n  --fc-page-bg-color: var(--surface);\n  --fc-neutral-bg-color: var(--sunken);\n  --fc-today-bg-color: var(--ask);\n  --fc-list-event-hover-bg-color: var(--sunken);\n  --fc-now-indicator-color: var(--news);\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  padding: 8px;\n  overflow: hidden;\n}\n\n.kn_cal_MW2Eja [class~=\"fc\"] {\n  color: var(--ink);\n  font-size: 13px;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-col-header-cell-cushion\"], .kn_cal_MW2Eja [class~=\"fc-daygrid-day-number\"] {\n  color: var(--ink);\n  font-weight: 500;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-timegrid-slot-label-cushion\"], .kn_cal_MW2Eja [class~=\"fc-timegrid-axis-cushion\"] {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-dh\"] {\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n  padding: 4px 0;\n  display: flex;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-dh\"] b {\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 22px;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-dh\"] span {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-day-today\"] [class~=\"fc-dh\"] b {\n  color: var(--primary);\n}\n\n.kn_cal_MW2Eja [class~=\"fc-event\"] {\n  cursor: pointer;\n  border-radius: 6px;\n  padding: 1px 2px;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-event-main\"] {\n  color: var(--fc-event-text-color);\n  font-weight: 500;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-list-day-cushion\"] {\n  background: var(--sunken);\n}\n\n.kn_cal_MW2Eja [class~=\"fc-list-event-dot\"] {\n  border-color: var(--dot, var(--explore));\n}\n\n.kn_ev-work_MW2Eja {\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  --dot: var(--explore);\n}\n\n.kn_ev-life_MW2Eja {\n  --fc-event-bg-color: var(--doing-tint);\n  --fc-event-border-color: var(--doing-tint);\n  --fc-event-text-color: var(--doing-ink);\n  --dot: var(--doing);\n}\n\n.kn_ev-health_MW2Eja {\n  --fc-event-bg-color: var(--health-tint);\n  --fc-event-border-color: var(--health-tint);\n  --fc-event-text-color: var(--health-ink);\n  --dot: var(--health);\n}\n\n.kn_ev-suggest_MW2Eja {\n  --fc-event-bg-color: var(--surface);\n  --fc-event-border-color: var(--news);\n  --fc-event-text-color: var(--news-ink);\n  --dot: var(--news);\n}\n\n.kn_cal_MW2Eja [class~=\"fc-event\"].kn_ev-suggest_MW2Eja {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n.kn_cal-legend_MW2Eja {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_cal-legend_MW2Eja span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_cal-detail_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_cal-detail_MW2Eja .kn_stack_MW2Eja {\n  flex: 260px;\n  min-width: 0;\n}\n\n.kn_cal-fallback_MW2Eja {\n  color: var(--ink2);\n  padding: 24px;\n}\n\n.kn_sub-form_MW2Eja {\n  flex-direction: column;\n  gap: 12px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_sub-form_MW2Eja .kn_fields_MW2Eja {\n  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);\n  gap: 10px;\n  display: grid;\n}\n\n.kn_sub-form_MW2Eja label {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_sub-form_MW2Eja input {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 40px;\n  color: var(--ink);\n  border-radius: 9px;\n  min-width: 0;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_agenda_MW2Eja {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_agenda-row_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 96px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 14px;\n  padding: 10px 16px;\n  display: grid;\n}\n\n.kn_agenda-row_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_agenda-row_MW2Eja time {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n  font-size: 14px;\n}\n\n@media (width <= 760px) {\n  .kn_sub-form_MW2Eja .kn_fields_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_MW2Eja {\n    grid-template-columns: 72px minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_MW2Eja > :last-child {\n    grid-column: 2;\n  }\n}\n\n.kn_map-hero_MW2Eja {\n  background: var(--map-sea);\n  height: clamp(400px, 64vh, 660px);\n  padding: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_map-svg_MW2Eja {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_map-svg_MW2Eja .kn_city_MW2Eja {\n  cursor: pointer;\n  outline: none;\n}\n\n.kn_map-svg_MW2Eja .kn_city_MW2Eja:focus-visible circle {\n  stroke: var(--explore);\n}\n\n.kn_map-tools_MW2Eja {\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 10px;\n  padding: 10px 12px;\n  display: flex;\n  position: absolute;\n  top: 14px;\n  left: 14px;\n}\n\n.kn_layer-chips_MW2Eja {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_lchip_MW2Eja {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_lchip_MW2Eja[aria-pressed=\"true\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_lchip_MW2Eja[aria-pressed=\"false\"] .kn_dot_MW2Eja {\n  opacity: .35;\n}\n\n.kn_year_MW2Eja {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_year_MW2Eja input {\n  accent-color: var(--primary);\n}\n\n.kn_map-detail_MW2Eja {\n  width: min(320px, 100% - 28px);\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 8px;\n  padding: 14px 16px;\n  display: flex;\n  position: absolute;\n  bottom: 14px;\n  right: 14px;\n}\n\n.kn_map-stats_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 999px;\n  padding: 6px 12px;\n  font-size: 13px;\n  position: absolute;\n  bottom: 14px;\n  left: 14px;\n}\n\n.kn_timeline_MW2Eja {\n  gap: 10px;\n  padding-bottom: 6px;\n  display: flex;\n  overflow-x: auto;\n}\n\n.kn_tl-item_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  text-align: left;\n  color: var(--ink);\n  border: 0;\n  border-radius: 12px;\n  flex-direction: column;\n  flex: 0 0 200px;\n  align-items: flex-start;\n  gap: 4px;\n  padding: 12px 14px;\n  display: flex;\n}\n\n.kn_tl-item_MW2Eja[aria-pressed=\"true\"] {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.kn_tl-item_MW2Eja b {\n  font-size: 16px;\n  font-weight: 600;\n}\n\n.kn_tl-year_MW2Eja {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_tl-dot_MW2Eja {\n  border-radius: 50%;\n  width: 10px;\n  height: 10px;\n}\n\n@media (width <= 760px) {\n  .kn_map-hero_MW2Eja {\n    height: 520px;\n  }\n\n  .kn_map-tools_MW2Eja {\n    right: 14px;\n  }\n\n  .kn_layer-chips_MW2Eja {\n    flex-wrap: wrap;\n  }\n\n  .kn_map-stats_MW2Eja {\n    display: none;\n  }\n}\n\n.kn_mod_MW2Eja .kn_sum-h_MW2Eja span[aria-hidden] {\n  color: var(--muted);\n  margin-left: auto;\n  font-weight: 400;\n}\n\n.kn_ms_MW2Eja {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 8px 16px;\n  display: grid;\n}\n\n.kn_ms-row_MW2Eja {\n  align-items: center;\n  gap: 10px;\n  font-size: 15px;\n  display: flex;\n}\n\n.kn_ms-row_MW2Eja.kn_is-done_MW2Eja {\n  color: var(--muted);\n}\n\n.kn_ms-row_MW2Eja .kn_check_MW2Eja {\n  width: 20px;\n  height: 20px;\n}\n\n.kn_kv_MW2Eja {\n  grid-template-columns: 4em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_kv_MW2Eja dt {\n  color: var(--muted);\n}\n\n.kn_kv_MW2Eja dd {\n  margin: 0;\n}\n\n.kn_heat_MW2Eja {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_heat_MW2Eja i {\n  aspect-ratio: 1;\n  background: var(--empty);\n  border-radius: 5px;\n  max-width: 100%;\n}\n\n.kn_sleep_MW2Eja {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  align-items: end;\n  gap: 6px;\n  height: 84px;\n  display: grid;\n}\n\n.kn_sleep_MW2Eja i {\n  background: var(--health);\n  border-radius: 5px;\n}\n\n.kn_sleep_MW2Eja i.kn_miss_MW2Eja {\n  height: 18px;\n  box-shadow: inset 0 0 0 1px var(--muted);\n  opacity: .6;\n  background: none;\n  border: 0;\n}\n\n.kn_table-box_MW2Eja {\n  overflow-x: auto;\n}\n\n.kn_table-box_MW2Eja table {\n  border-collapse: collapse;\n  width: 100%;\n  font-size: 15px;\n}\n\n.kn_table-box_MW2Eja th, .kn_table-box_MW2Eja td {\n  border-top: 1px solid var(--line);\n  text-align: left;\n  padding: 12px 16px;\n}\n\n.kn_table-box_MW2Eja thead th {\n  color: var(--muted);\n  border-top: 0;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_table-box_MW2Eja .kn_r_MW2Eja {\n  text-align: right;\n}\n\n.kn_note-row_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: auto minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 0;\n  font-weight: 400;\n  display: grid;\n}\n\n.kn_note-row_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_note-row_MW2Eja:hover {\n  text-decoration: none;\n}\n\n.kn_conn-strip_MW2Eja {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_conn-pill_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 10px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 8px;\n  padding: 8px 12px;\n  font-size: 14px;\n  display: inline-flex;\n}\n\n.kn_conn-pill_MW2Eja b {\n  font-weight: 600;\n}\n\n.kn_raw_MW2Eja time {\n  line-height: 1.4;\n}\n\n.kn_avatar_MW2Eja {\n  background-position: center;\n  background-size: cover;\n}\n\n.kn_avatar_MW2Eja.kn_has-img_MW2Eja {\n  color: #0000;\n}\n\n.kn_me-avatar_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 20px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_me-avatar_MW2Eja .kn_avatar_MW2Eja {\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 72px;\n  height: 72px;\n  font-size: 28px;\n  display: flex;\n}\n\n.kn_crop-view_MW2Eja {\n  background: var(--sunken);\n  touch-action: none;\n  cursor: grab;\n  width: 240px;\n  max-width: 100%;\n  height: 240px;\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 50%;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_crop-view_MW2Eja:active {\n  cursor: grabbing;\n}\n\n.kn_crop-view_MW2Eja img {\n  transform-origin: 0 0;\n  user-select: none;\n  pointer-events: none;\n  max-width: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.kn_crop-zoom_MW2Eja {\n  width: 240px;\n  max-width: 100%;\n  color: var(--muted);\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_crop-zoom_MW2Eja input {\n  accent-color: var(--primary);\n  flex: 1;\n}\n\n.kn_menu_MW2Eja {\n  top: calc(100% + 6px);\n  right: max(16px, env(safe-area-inset-right, 0px));\n  z-index: 10;\n  background: var(--surface);\n  width: 248px;\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-direction: column;\n  padding: 6px;\n  display: flex;\n  position: absolute;\n}\n\n.kn_menu-head_MW2Eja {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 4px;\n  padding: 8px 10px 10px;\n  display: flex;\n}\n\n.kn_menu-head_MW2Eja b {\n  font-weight: 600;\n}\n\n.kn_menu_MW2Eja button[role=\"menuitem\"] {\n  text-align: left;\n  height: 40px;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_menu_MW2Eja button[role=\"menuitem\"]:hover, .kn_menu_MW2Eja button[role=\"menuitem\"]:focus-visible {\n  background: var(--sunken);\n}\n\n.kn_me_MW2Eja {\n  grid-template-columns: 200px minmax(0, 1fr);\n  align-items: start;\n  gap: 32px;\n  display: grid;\n}\n\n.kn_me-nav_MW2Eja {\n  top: calc(env(safe-area-inset-top, 0px) + 84px);\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_me-nav_MW2Eja button {\n  text-align: left;\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_me-nav_MW2Eja button[aria-current=\"page\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_me-body_MW2Eja {\n  flex-direction: column;\n  gap: 28px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_facts_MW2Eja {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_fact_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_fact_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_fact_MW2Eja p {\n  font-size: 15px;\n}\n\n.kn_fact_MW2Eja .kn_src_MW2Eja {\n  color: var(--muted);\n  grid-column: 1;\n  font-size: 13px;\n}\n\n.kn_fact_MW2Eja .kn_fact-acts_MW2Eja {\n  grid-area: 1 / 2 / span 2;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_list-card_MW2Eja {\n  padding: 4px 16px;\n}\n\n.kn_conn_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 36px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 12px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_conn_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_conn_MW2Eja .kn_logo_MW2Eja {\n  color: #fff;\n  border-radius: 10px;\n  grid-row: 1 / span 2;\n  justify-content: center;\n  align-items: center;\n  width: 36px;\n  height: 36px;\n  font-size: 14px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_conn_MW2Eja b {\n  align-items: center;\n  gap: 6px;\n  font-weight: 600;\n  display: inline-flex;\n}\n\n.kn_info_MW2Eja {\n  border: 1px solid var(--muted);\n  width: 18px;\n  height: 18px;\n  color: var(--muted);\n  background: none;\n  border-radius: 50%;\n  padding: 0;\n  font: italic 600 11px / 1 Georgia, serif;\n}\n\n.kn_info_MW2Eja[aria-expanded=\"true\"] {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n\n.kn_conn_MW2Eja .kn_hint_MW2Eja {\n  background: var(--sunken);\n  color: var(--ink2);\n  border-radius: 8px;\n  grid-column: 2 / -1;\n  margin: 6px 0 0;\n  padding: 8px 10px;\n  font-size: 13px;\n}\n\n.kn_conn_MW2Eja .kn_small_MW2Eja {\n  grid-column: 2;\n}\n\n.kn_conn_MW2Eja > :last-child {\n  grid-area: 1 / 3 / span 2;\n}\n\n.kn_switch-row_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 16px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_switch-row_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_switch-row_MW2Eja label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_auto-ctl_MW2Eja {\n  align-items: center;\n  gap: 12px;\n  display: flex;\n}\n\n.kn_time_MW2Eja {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 36px;\n  color: var(--ink);\n  font-variant-numeric: tabular-nums;\n  border-radius: 8px;\n  padding: 0 10px;\n  font-size: 15px;\n}\n\n.kn_time_MW2Eja:disabled {\n  opacity: .45;\n}\n\n.kn_switch_MW2Eja {\n  flex: none;\n  width: 44px;\n  height: 26px;\n  position: relative;\n}\n\n.kn_switch_MW2Eja input {\n  opacity: 0;\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_MW2Eja i {\n  background: var(--control);\n  box-shadow: inset 0 0 0 1px var(--line);\n  pointer-events: none;\n  border-radius: 13px;\n  transition: background .15s;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_MW2Eja i:after {\n  content: \"\";\n  background: #fff;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  transition: transform .15s;\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  box-shadow: 0 1px 2px #00000040;\n}\n\n.kn_switch_MW2Eja input:checked + i {\n  background: var(--health);\n}\n\n.kn_switch_MW2Eja input:checked + i:after {\n  transform: translateX(18px);\n}\n\n.kn_switch_MW2Eja input:focus-visible + i {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n@media (width <= 760px) {\n  .kn_me_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n    gap: 16px;\n  }\n\n  .kn_me-nav_MW2Eja {\n    flex-flow: wrap;\n    position: static;\n  }\n\n  .kn_me-nav_MW2Eja button {\n    text-align: center;\n    flex: auto;\n  }\n}\n\n.kn_chat_MW2Eja {\n  grid-template-columns: 236px minmax(0, 1fr);\n  height: calc(100dvh - 118px);\n  min-height: 560px;\n  display: grid;\n}\n\n.kn_threads_MW2Eja {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 16px 12px 16px 0;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_threads_MW2Eja h2 {\n  color: var(--muted);\n  letter-spacing: .06em;\n  padding: 14px 10px 4px;\n  font-size: 12px;\n  font-weight: 600;\n}\n\n.kn_thread_MW2Eja {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 8px 10px;\n  font-size: 14px;\n  display: block;\n  overflow: hidden;\n}\n\n.kn_thread_MW2Eja:hover {\n  background: var(--sunken);\n}\n\n.kn_thread_MW2Eja[aria-current=\"true\"] {\n  background: var(--control);\n  font-weight: 600;\n}\n\n.kn_new-thread_MW2Eja {\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 6px;\n  font-weight: 500;\n  display: flex;\n}\n\n.kn_convo_MW2Eja {\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_msgs_MW2Eja {\n  flex-direction: column;\n  flex: auto;\n  gap: 14px;\n  min-height: 0;\n  padding: 28px max(16px, 7%);\n  display: flex;\n  overflow: auto;\n  -webkit-mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n  mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n}\n\n.kn_msg-user_MW2Eja {\n  background: var(--ask);\n  overflow-wrap: anywhere;\n  border-radius: 18px;\n  align-self: flex-end;\n  max-width: min(78%, 560px);\n  padding: 10px 16px;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\n.kn_msg-ai_MW2Eja {\n  flex-direction: column;\n  gap: 10px;\n  max-width: 680px;\n  font-size: 16px;\n  line-height: 1.7;\n  display: flex;\n}\n\n.kn_msg-ai_MW2Eja ul {\n  flex-direction: column;\n  gap: 4px;\n  margin: 0;\n  padding-left: 1.2em;\n  display: flex;\n}\n\n.kn_tool_MW2Eja {\n  background: var(--sunken);\n  max-width: 100%;\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 10px;\n  align-self: flex-start;\n  font-size: 14px;\n}\n\n.kn_tool_MW2Eja summary {\n  cursor: pointer;\n  align-items: center;\n  gap: 10px;\n  padding: 8px 12px;\n  list-style: none;\n  display: flex;\n}\n\n.kn_tool_MW2Eja summary::-webkit-details-marker {\n  display: none;\n}\n\n.kn_tool_MW2Eja summary:after {\n  content: \"\";\n  border-right: 1.5px solid var(--muted);\n  border-bottom: 1.5px solid var(--muted);\n  width: 7px;\n  height: 7px;\n  margin-left: 6px;\n  transition: transform .12s;\n  transform: rotate(-45deg);\n}\n\n.kn_tool_MW2Eja[open] summary:after {\n  transform: rotate(45deg);\n}\n\n.kn_tool_MW2Eja pre {\n  color: var(--muted);\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n  margin: 0;\n  padding: 0 12px 10px 34px;\n  font: 13px / 1.6 ui-monospace, SF Mono, Menlo, monospace;\n}\n\n.kn_st-dot_MW2Eja {\n  background: var(--health);\n  border-radius: 50%;\n  flex: none;\n  width: 8px;\n  height: 8px;\n}\n\n.kn_st-dot_MW2Eja.kn_run_MW2Eja {\n  background: var(--explore);\n}\n\n.kn_thinking_MW2Eja {\n  color: var(--muted);\n  align-self: flex-start;\n  font-size: 15px;\n}\n\n.kn_acts_MW2Eja {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_act_MW2Eja {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 34px;\n  color: var(--ink);\n  border-radius: 17px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_act_MW2Eja:hover {\n  border-color: var(--muted);\n}\n\n.kn_welcome-chat_MW2Eja {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 18px;\n  max-width: 680px;\n  margin: auto 0;\n  display: flex;\n}\n\n.kn_welcome-chat_MW2Eja h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_suggest_MW2Eja {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 10px;\n  width: 100%;\n  display: grid;\n}\n\n.kn_suggest_MW2Eja button {\n  text-align: left;\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 12px;\n  padding: 12px 14px;\n  font-size: 14px;\n}\n\n.kn_suggest_MW2Eja button:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  color: var(--ink);\n}\n\n.kn_composer_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 6px;\n  margin: 0 max(16px, 7%) 18px;\n  padding: 12px 12px 10px 16px;\n  display: flex;\n}\n\n.kn_composer_MW2Eja:focus-within {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1.5px var(--explore);\n}\n\n.kn_composer_MW2Eja textarea {\n  resize: none;\n  width: 100%;\n  min-height: 48px;\n  max-height: 200px;\n  font: inherit;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  outline: none;\n  padding: 4px 0;\n  font-size: 16px;\n  line-height: 1.5;\n}\n\n.kn_composer_MW2Eja textarea::placeholder {\n  color: var(--muted);\n}\n\n.kn_c-row_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_c-btn_MW2Eja {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_c-btn_MW2Eja:hover {\n  background: var(--sunken);\n}\n\n.kn_send_MW2Eja {\n  background: var(--strong);\n  width: 36px;\n  height: 36px;\n  color: var(--on-strong);\n  border: 0;\n  border-radius: 50%;\n  justify-content: center;\n  align-items: center;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_send_MW2Eja:disabled {\n  opacity: .35;\n  cursor: default;\n}\n\n.kn_mode-wrap_MW2Eja {\n  position: relative;\n}\n\n.kn_c-btn_MW2Eja.kn_is-full_MW2Eja {\n  color: var(--news-ink);\n  background: var(--news-tint);\n}\n\n.kn_mode-pop_MW2Eja {\n  z-index: 6;\n  background: var(--surface);\n  width: min(340px, 80vw);\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  text-align: left;\n  border-radius: 14px;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px;\n  display: flex;\n  position: absolute;\n  bottom: calc(100% + 8px);\n  left: 0;\n}\n\n.kn_mode-pop_MW2Eja > b {\n  padding: 4px 4px 0;\n  font-weight: 600;\n}\n\n.kn_mode-pop_MW2Eja > p {\n  padding: 0 4px;\n}\n\n.kn_mode-opt_MW2Eja {\n  text-align: left;\n  background: none;\n  border: 1.5px solid #0000;\n  border-radius: 10px;\n  flex-direction: column;\n  gap: 2px;\n  padding: 10px 12px;\n  display: flex;\n}\n\n.kn_mode-opt_MW2Eja:hover {\n  background: var(--sunken);\n}\n\n.kn_mode-opt_MW2Eja[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_mode-opt_MW2Eja b {\n  font-size: 15px;\n  font-weight: 600;\n}\n\n.kn_mode-opt_MW2Eja span {\n  color: var(--ink2);\n  font-size: 13px;\n}\n\n.kn_c-note_MW2Eja {\n  text-align: center;\n  color: var(--muted);\n  padding: 0 max(16px, 7%) 10px;\n  font-size: 12px;\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_st-dot_MW2Eja.kn_run_MW2Eja {\n    animation: 1.2s ease-in-out infinite kn_pulse_MW2Eja;\n  }\n\n  @keyframes kn_pulse_MW2Eja {\n    50% {\n      opacity: .35;\n    }\n  }\n\n  .kn_thinking_MW2Eja span {\n    background: linear-gradient(105deg, var(--muted) 40%, var(--ink) 50%, var(--muted) 60%);\n    color: #0000;\n    background-size: 250% 100%;\n    -webkit-background-clip: text;\n    background-clip: text;\n    animation: 1.8s linear infinite kn_shine_MW2Eja;\n  }\n\n  @keyframes kn_shine_MW2Eja {\n    from {\n      background-position: 100% 0;\n    }\n\n    to {\n      background-position: -150% 0;\n    }\n  }\n}\n\n@media (width <= 760px) {\n  .kn_chat_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n    height: calc(100dvh - 150px);\n  }\n\n  .kn_threads_MW2Eja {\n    display: none;\n  }\n\n  .kn_msgs_MW2Eja, .kn_composer_MW2Eja, .kn_c-note_MW2Eja {\n    margin-left: 0;\n    margin-right: 0;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  .kn_composer_MW2Eja {\n    padding-left: 14px;\n    padding-right: 10px;\n  }\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_scrim_MW2Eja {\n    animation: .16s ease-out kn_fade_MW2Eja;\n  }\n\n  @keyframes kn_fade_MW2Eja {\n    from {\n      opacity: 0;\n    }\n\n    to {\n      opacity: 1;\n    }\n  }\n}\n\n.kn_app_MW2Eja {\n  --kt-canvas: var(--bg);\n  --kt-subtle: var(--sunken);\n  --kt-control: var(--control);\n  --kt-card: var(--surface);\n  --kt-text: var(--ink);\n  --kt-secondary: var(--ink2);\n  --kt-muted: var(--muted);\n  --kt-faint: var(--muted);\n  --kt-primary: var(--primary);\n  --kt-on-primary: var(--on-primary);\n  --kt-link: var(--link);\n  --kt-accent: var(--explore);\n  --kt-health: var(--health);\n  --kt-health-tint: var(--health-tint);\n  --kt-health-ink: var(--health-ink);\n  --kt-projects: var(--doing);\n  --kt-projects-tint: var(--doing-tint);\n  --kt-projects-ink: var(--doing-ink);\n  --kt-map: var(--explore);\n  --kt-map-tint: var(--explore-tint);\n  --kt-map-ink: var(--explore-ink);\n  --kt-feed: var(--news);\n  --kt-feed-tint: var(--news-tint);\n  --kt-feed-ink: var(--news-ink);\n  --kt-finance: var(--finance);\n  --kt-finance-tint: var(--finance-tint);\n  --kt-finance-ink: var(--finance-ink);\n  --kt-me: var(--me);\n  --kt-me-tint: var(--ask);\n  --kt-me-ink: var(--ink2);\n  --kt-today: var(--ink);\n  --kt-today-tint: var(--control);\n  --kt-today-ink: var(--ink2);\n  --kt-project-slot: var(--doing-tint);\n  --kt-target: var(--health);\n  --kt-estimate: var(--health);\n  --kt-shadow: 0 0 0 1px var(--line);\n  scrollbar-gutter: stable;\n  height: 100%;\n  overflow: auto;\n  container-type: inline-size;\n}\n\n.kn_app_MW2Eja [hidden] {\n  display: none !important;\n}\n\n.kn_app_MW2Eja button:disabled {\n  opacity: .55;\n  cursor: default;\n}\n\n.kn_app_MW2Eja textarea, .kn_app_MW2Eja select {\n  font: inherit;\n  color: inherit;\n  background: var(--surface);\n}\n\n.kn_app_MW2Eja :focus-visible {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n.kn_content_MW2Eja {\n  width: 100%;\n}\n\n.kn_top_MW2Eja {\n  padding-left: max(16px, var(--dsh-frame-leading-clearance, 0px));\n}\n\n.kn_brand_MW2Eja svg {\n  color: var(--ink);\n}\n\n.kn_avatar_MW2Eja {\n  padding: 0;\n  overflow: hidden;\n}\n\n.kn_avatar_MW2Eja img {\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n\n.kn_account_MW2Eja {\n  position: relative;\n}\n\n.kn_menu_MW2Eja {\n  top: 48px;\n  right: 0;\n}\n\n.kn_link_MW2Eja {\n  color: var(--link);\n  text-align: start;\n  background: none;\n  border: 0;\n  padding: 0;\n  font-weight: 500;\n}\n\n.kn_summaryButton_MW2Eja {\n  text-align: start;\n  cursor: pointer;\n  border: 0;\n}\n\n.kn_error_MW2Eja {\n  background: var(--news-tint);\n  border-radius: var(--radius);\n  padding: 14px 18px;\n}\n\n.kn_emptyState_MW2Eja {\n  color: var(--muted);\n  padding: 20px;\n}\n\n.kn_detailBody_MW2Eja {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_child_MW2Eja {\n  min-width: 0;\n}\n\n.kn_child_MW2Eja > div > header h1 {\n  font-size: 22px;\n}\n\n.kn_paletteDot_MW2Eja {\n  background: var(--explore);\n}\n\n.kn_financeMetric_MW2Eja {\n  flex-direction: column;\n  gap: 4px;\n  display: flex;\n}\n\n.kn_calendarShell_MW2Eja {\n  min-width: 0;\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-header-toolbar\"] {\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-toolbar-title\"] {\n  font-size: 18px;\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-event\"][class~=\"suggestion\"] {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n@media (width <= 760px) {\n  .kn_calendarShell_MW2Eja [class~=\"fc-toolbar-chunk\"] {\n    flex-wrap: wrap;\n    gap: 4px;\n    display: flex;\n  }\n\n  .kn_calendarShell_MW2Eja [class~=\"fc-button\"] {\n    padding: 6px 8px;\n  }\n}\n\n.kn_app_MW2Eja .kn_calendarShell_MW2Eja button[class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 9px;\n  height: 36px;\n}\n\n.kn_app_MW2Eja .kn_calendarShell_MW2Eja button[class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--surface);\n  color: var(--ink);\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n@media (width <= 760px) {\n  .kn_mods_MW2Eja {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n}\n\n@media (width <= 460px) {\n  .kn_mods_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n.kn_mode-pop_MW2Eja {\n  color: var(--ink);\n  border: 0;\n  margin: 0;\n}\n\n.kn_askContent_MW2Eja {\n  gap: 0;\n  max-width: 1240px;\n  padding-block: 0;\n}\n\n.kn_wrap_UkDTyq {\n  max-width: 1120px;\n  color: var(--ink);\n  font: 15px / 1.6 var(--font);\n  margin: auto;\n  padding: 28px;\n}\n\n.kn_wrap_UkDTyq h1 {\n  margin: 0;\n  font-size: 28px;\n}\n\n.kn_wrap_UkDTyq h2 {\n  font-size: 18px;\n}\n\n.kn_wrap_UkDTyq h3 {\n  font-size: 16px;\n}\n\n.kn_wrap_UkDTyq button, .kn_wrap_UkDTyq input, .kn_wrap_UkDTyq select, .kn_wrap_UkDTyq textarea {\n  font: inherit;\n}\n\n.kn_wrap_UkDTyq input, .kn_wrap_UkDTyq select, .kn_wrap_UkDTyq textarea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  color: var(--ink);\n  border-radius: 7px;\n  min-width: 0;\n  padding: 7px;\n}\n\n.kn_wrap_UkDTyq textarea {\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 85px;\n}\n\n.kn_wrap_UkDTyq label {\n  gap: 4px;\n  display: grid;\n}\n\n.kn_choices_UkDTyq {\n  flex-direction: column;\n  align-items: stretch;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_choices_UkDTyq button {\n  text-align: left;\n}\n\n.kn_grid_UkDTyq {\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n  display: grid;\n}\n\n.kn_stack_UkDTyq {\n  gap: 14px;\n  display: grid;\n}\n\n.kn_actions_UkDTyq {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 9px;\n  display: flex;\n}\n\n.kn_muted_UkDTyq {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_table_UkDTyq {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.kn_table_UkDTyq th, .kn_table_UkDTyq td {\n  text-align: left;\n  border-bottom: 1px solid var(--line);\n  vertical-align: top;\n  padding: 9px;\n}\n\n.kn_table_UkDTyq th {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_scroll_UkDTyq {\n  overflow: auto;\n}\n\n.kn_quote_UkDTyq {\n  white-space: pre-wrap;\n  background: var(--sunken);\n  border-radius: 8px;\n  max-height: 240px;\n  padding: 15px;\n  overflow: auto;\n}\n\n.kn_card_UkDTyq {\n  border: 1px solid var(--line);\n  border-radius: var(--radius);\n  background: var(--surface);\n  padding: 18px;\n}\n\n.kn_warn_UkDTyq {\n  color: var(--news-ink);\n  background: var(--news-tint);\n  border-radius: 8px;\n  padding: 10px;\n}\n\n.kn_check_UkDTyq {\n  align-items: center;\n  gap: 7px;\n  display: flex !important;\n}\n\n.kn_wrap_UkDTyq a {\n  color: var(--link);\n}\n\n.kn_diff_UkDTyq {\n  grid-template-columns: 1fr 1fr;\n  gap: 10px;\n  display: grid;\n}\n\n.kn_diff_UkDTyq pre {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_selected_UkDTyq {\n  background: var(--doing-tint);\n}\n\n@media (width <= 760px) {\n  .kn_grid_UkDTyq, .kn_diff_UkDTyq {\n    grid-template-columns: 1fr;\n  }\n\n  .kn_wrap_UkDTyq {\n    padding: 15px;\n  }\n\n  .kn_table_UkDTyq td {\n    min-width: 100px;\n  }\n}\n\n.kn_start_UkDTyq h2 {\n  margin: 0;\n}\n\n.kn_start_UkDTyq form {\n  gap: 10px;\n  display: grid;\n}\n\n.kn_start_UkDTyq textarea {\n  resize: vertical;\n  min-height: 100px;\n}\n\n.kn_shortcuts_UkDTyq {\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-top: 16px;\n  display: flex;\n}\n\n.kn_grid_UkDTyq {\n  align-items: start;\n}\n\n.kn_card_UkDTyq select {\n  max-width: 100%;\n}\n\n.kn_card_UkDTyq summary {\n  cursor: pointer;\n  font-weight: 600;\n}\n\n.kn_card_UkDTyq details, details.kn_card_UkDTyq label {\n  margin-top: 12px;\n}\n\n.kn_projectOpen_UkDTyq {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  cursor: pointer;\n  background: none;\n  border: 0;\n  padding: 0;\n  display: block;\n}\n\n.kn_actions_UkDTyq input {\n  flex: 1;\n}\n\n.kn_wrap_UkDTyq button:focus-visible {\n  outline: 2px solid var(--link);\n  outline-offset: 3px;\n}\n\n.kn_projectOpen_UkDTyq:hover {\n  color: var(--link);\n}\n\n.kn_projectOpen_UkDTyq:active {\n  transform: translateY(1px);\n}\n\n.kn_wrap_UkDTyq button:disabled {\n  opacity: .5;\n  cursor: default;\n}\n\n.kn_folderPicker_UkDTyq {\n  border: 1px solid var(--line);\n  background: var(--sunken);\n  border-radius: 8px;\n  padding: 16px;\n}\n\n.kn_folderList_UkDTyq {\n  gap: 6px;\n  max-height: 260px;\n  margin-bottom: 14px;\n  display: grid;\n  overflow: auto;\n}\n\n.kn_folderList_UkDTyq button {\n  text-align: left;\n}\n\n.kn_folderPicker_UkDTyq .kn_actions_UkDTyq {\n  flex-wrap: wrap;\n}\n\n.kn_shell_Q5qtea {\n  color: var(--ink);\n  font: 14px / 1.6 var(--font);\n  box-sizing: border-box;\n  flex-direction: column;\n  height: 100dvh;\n  min-height: 0;\n  padding: 16px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_shell_Q5qtea button, .kn_shell_Q5qtea select, .kn_shell_Q5qtea textarea {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_shell_Q5qtea button, .kn_shell_Q5qtea select {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 7px 11px;\n}\n\n.kn_shell_Q5qtea button:disabled {\n  opacity: .45;\n  cursor: default;\n}\n\n.kn_header_Q5qtea {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px;\n  padding: 0 8px 14px;\n  display: flex;\n}\n\n.kn_header_Q5qtea > div {\n  flex: 1;\n}\n\n.kn_header_Q5qtea h1 {\n  margin: 0;\n  font-size: 23px;\n}\n\n.kn_shell_Q5qtea small {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_columns_Q5qtea {\n  flex: 1;\n  min-width: 0;\n  min-height: 0;\n}\n\n.kn_pane_Q5qtea {\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_pane_Q5qtea > * {\n  box-sizing: border-box;\n  flex: 1;\n  min-width: 0;\n  min-height: 0;\n}\n\n.kn_separator_Q5qtea {\n  outline: none;\n  flex: 0 0 12px;\n  position: relative;\n}\n\n.kn_separator_Q5qtea:after {\n  content: \"\";\n  background: var(--line);\n  border-radius: 4px;\n  position: absolute;\n  inset: 5px;\n}\n\n.kn_separator_Q5qtea:hover:after, .kn_separator_Q5qtea:focus-visible:after, .kn_separator_Q5qtea:active:after {\n  background: #3478df;\n}\n\n.kn_separator_Q5qtea[aria-orientation=\"vertical\"] {\n  cursor: col-resize;\n  width: 12px;\n}\n\n.kn_separator_Q5qtea[aria-orientation=\"horizontal\"] {\n  cursor: row-resize;\n  height: 12px;\n}\n\n.kn_chapters_Q5qtea {\n  padding: 10px 6px;\n  overflow: auto;\n}\n\n.kn_shell_Q5qtea h2 {\n  margin: 4px 0 14px;\n  font-size: 15px;\n}\n\n.kn_chapters_Q5qtea button {\n  text-align: left;\n  overflow-wrap: anywhere;\n  background: none;\n  border-color: #0000;\n  width: 100%;\n  margin-bottom: 8px;\n  display: block;\n}\n\n.kn_chapters_Q5qtea small {\n  font-size: 11px;\n  display: block;\n}\n\n.kn_chapters_Q5qtea button[aria-current], .kn_tabs_Q5qtea button[aria-selected=\"true\"] {\n  color: #245db4;\n  background: #e8f1ff;\n}\n\n.kn_chapters_Q5qtea h2:not(:first-child) {\n  margin-top: 28px;\n}\n\n.kn_manuscript_Q5qtea {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_toolbar_Q5qtea {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 7px;\n  padding: 12px 16px;\n  display: flex;\n}\n\n.kn_toolbar_Q5qtea strong {\n  flex: 1;\n}\n\n.kn_toolbar_Q5qtea button {\n  font-size: 12px;\n}\n\n.kn_editorWrap_Q5qtea {\n  flex: 1;\n  min-height: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_cmHost_Q5qtea {\n  height: 100%;\n}\n\n.kn_selChatBtn_Q5qtea {\n  z-index: 5;\n  position: absolute;\n  background: #e8f1ff !important;\n}\n\n.kn_copyFlash_Q5qtea {\n  background: var(--surface);\n  padding: 6px;\n  position: absolute;\n  bottom: 15px;\n  left: 20px;\n}\n\n.kn_manuscript_Q5qtea footer {\n  color: var(--muted);\n  border-top: 1px solid var(--line);\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 16px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_assistant_Q5qtea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 10px;\n  min-height: 0;\n  padding: 12px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_assistantHeader_Q5qtea {\n  flex-shrink: 0;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_assistantHeader_Q5qtea h2 {\n  margin: 0;\n}\n\n.kn_assistantHeader_Q5qtea button {\n  padding: 3px 8px;\n  font-size: 12px;\n}\n\n.kn_assistantTools_Q5qtea {\n  flex-direction: column;\n  flex-shrink: 0;\n  gap: 10px;\n  max-height: 45%;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_tabs_Q5qtea {\n  gap: 6px;\n  display: flex;\n}\n\n.kn_tabs_Q5qtea button {\n  flex: 1;\n}\n\n.kn_assistant_Q5qtea textarea {\n  box-sizing: border-box;\n  border: 1px solid var(--line);\n  background: var(--surface);\n  resize: vertical;\n  border-radius: 8px;\n  width: 100%;\n  min-height: 75px;\n  padding: 9px;\n}\n\n.kn_shell_Q5qtea .kn_primary_Q5qtea {\n  color: #fff;\n  background: #3478df;\n  border-color: #0000;\n}\n\n.kn_chat_Q5qtea {\n  flex-direction: column;\n  flex: 1;\n  min-height: 0;\n  display: flex;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_chat_Q5qtea > * {\n  flex: 1;\n  min-height: 0;\n}\n\n.kn_candidates_Q5qtea {\n  border-top: 1px solid var(--line);\n  flex-shrink: 0;\n  max-height: 35%;\n  padding-top: 10px;\n  overflow: auto;\n}\n\n.kn_candidates_Q5qtea summary {\n  cursor: pointer;\n}\n\n.kn_candidates_Q5qtea summary button {\n  margin-left: 10px;\n  padding: 2px 8px;\n}\n\n.kn_candidates_Q5qtea article {\n  border: 1px solid var(--line);\n  border-radius: 8px;\n  margin-top: 10px;\n  padding: 12px;\n}\n\n.kn_candidates_Q5qtea pre {\n  white-space: pre-wrap;\n  font: inherit;\n  max-height: 230px;\n  overflow: auto;\n}\n\n.kn_error_Q5qtea {\n  color: #853e12;\n  background: #fff0df;\n  margin-bottom: 10px;\n  padding: 10px;\n}\n\n.kn_hint_Q5qtea {\n  padding: 8px 16px;\n}\n\n.kn_reference_Q5qtea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_reference_Q5qtea .kn_toolbar_Q5qtea select {\n  width: 100%;\n  min-width: 0;\n}\n\n.kn_reference_Q5qtea .kn_toolbar_Q5qtea {\n  min-width: 0;\n}\n\n.kn_shell_Q5qtea button:focus-visible, .kn_shell_Q5qtea select:focus-visible {\n  outline: 2px solid var(--link);\n  outline-offset: 2px;\n}\n\n.kn_referenceActions_Q5qtea {\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 12px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_referenceActions_Q5qtea button {\n  padding: 4px 8px;\n}\n";
+window.__ModuleLoader__.load({id:"kaitu-novel-workspace",factory:(require)=>{var module={exports:{}};var exports=module.exports;window.__kaituNovelStyles=".kn_app_MW2Eja {\n  --bg: #fcfcfb;\n  --surface: #fff;\n  --sunken: #f5f5f3;\n  --control: #f0efec;\n  --line: #ecebe7;\n  --ink: #1f1e1d;\n  --ink2: #4d4c48;\n  --muted: #6b6a66;\n  --link: #2f5fc4;\n  --primary: #2f5fc4;\n  --on-primary: #fff;\n  --strong: #1f1e1d;\n  --on-strong: #fff;\n  --ask: #f2f5fd;\n  --ask-line: #dce4f8;\n  --scrim: #1f1e1d6b;\n  --health: #2e8b57;\n  --health-tint: #e8f3ec;\n  --health-ink: #1f6b43;\n  --doing: #6b5bd6;\n  --doing-tint: #efedfb;\n  --doing-ink: #4b3fb0;\n  --explore: #3d6fe0;\n  --explore-tint: #ecf1fc;\n  --explore-ink: #2a4fa8;\n  --news: #c47a12;\n  --news-tint: #fbefe0;\n  --news-ink: #8a520a;\n  --finance: #1f8a8a;\n  --finance-tint: #e3f2f2;\n  --finance-ink: #176868;\n  --me: #c2507a;\n  --empty: #f0efec;\n  --map-land: #eef1ec;\n  --map-grid: #dde2da;\n  --map-sea: #f4f6f7;\n  --map-dot: #d3dad4;\n  --font: -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Segoe UI\",\n    sans-serif;\n  --radius: 14px;\n}\n\n@media (prefers-color-scheme: dark) {\n  .kn_app_MW2Eja:not([data-theme=\"light\"]) {\n    --bg: #171716;\n    --surface: #201f1e;\n    --sunken: #1b1b1a;\n    --control: #2a2927;\n    --line: #2f2e2c;\n    --ink: #ecebe8;\n    --ink2: #c9c7c2;\n    --muted: #a09e98;\n    --link: #8fb0f5;\n    --primary: #4c7be6;\n    --on-primary: #fff;\n    --strong: #ecebe8;\n    --on-strong: #171716;\n    --ask: #1e2638;\n    --ask-line: #2c3a5c;\n    --scrim: #0009;\n    --health-tint: #1c3226;\n    --health-ink: #8fd3ac;\n    --doing-tint: #2a2547;\n    --doing-ink: #b9aff5;\n    --explore-tint: #1e2a45;\n    --explore-ink: #a9c1f7;\n    --news-tint: #3a2a12;\n    --news-ink: #ebc27f;\n    --finance-tint: #173333;\n    --finance-ink: #8ed1d1;\n    --empty: #2a2927;\n    --map-land: #1f2620;\n    --map-grid: #2d352e;\n    --map-sea: #1a1c1d;\n    --map-dot: #343d36;\n    color-scheme: dark;\n  }\n}\n\n.kn_app_MW2Eja[data-theme=\"dark\"] {\n  --bg: #171716;\n  --surface: #201f1e;\n  --sunken: #1b1b1a;\n  --control: #2a2927;\n  --line: #2f2e2c;\n  --ink: #ecebe8;\n  --ink2: #c9c7c2;\n  --muted: #a09e98;\n  --link: #8fb0f5;\n  --primary: #4c7be6;\n  --on-primary: #fff;\n  --strong: #ecebe8;\n  --on-strong: #171716;\n  --ask: #1e2638;\n  --ask-line: #2c3a5c;\n  --scrim: #0009;\n  --health-tint: #1c3226;\n  --health-ink: #8fd3ac;\n  --doing-tint: #2a2547;\n  --doing-ink: #b9aff5;\n  --explore-tint: #1e2a45;\n  --explore-ink: #a9c1f7;\n  --news-tint: #3a2a12;\n  --news-ink: #ebc27f;\n  --finance-tint: #173333;\n  --finance-ink: #8ed1d1;\n  --empty: #2a2927;\n  --map-land: #1f2620;\n  --map-grid: #2d352e;\n  --map-sea: #1a1c1d;\n  --map-dot: #343d36;\n  color-scheme: dark;\n}\n\n.kn_app_MW2Eja, .kn_app_MW2Eja * {\n  box-sizing: border-box;\n}\n\n.kn_app_MW2Eja {\n  background: var(--bg);\n  color: var(--ink);\n  font-family: var(--font);\n  font-size: 15px;\n  line-height: 1.5;\n}\n\n.kn_app_MW2Eja a {\n  color: var(--link);\n  font-weight: 500;\n  text-decoration: none;\n}\n\n.kn_app_MW2Eja a:hover {\n  text-underline-offset: 3px;\n  text-decoration: underline dotted;\n}\n\n:where(.kn_app_MW2Eja) button, :where(.kn_app_MW2Eja) input {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_app_MW2Eja button {\n  cursor: pointer;\n}\n\n.kn_app_MW2Eja h1, .kn_app_MW2Eja h2, .kn_app_MW2Eja h3, .kn_app_MW2Eja p {\n  margin: 0;\n}\n\n.kn_app_MW2Eja h1, .kn_app_MW2Eja h2, .kn_app_MW2Eja h3 {\n  text-wrap: balance;\n}\n\n.kn_num_MW2Eja {\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_sr_MW2Eja {\n  clip: rect(0 0 0 0);\n  white-space: nowrap;\n  width: 1px;\n  height: 1px;\n  position: absolute;\n  overflow: hidden;\n}\n\n.kn_demo_MW2Eja {\n  padding-block: 8px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--sunken);\n  border-bottom: 1px dashed var(--line);\n  color: var(--muted);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 12px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_demo_MW2Eja b {\n  color: var(--ink2);\n  font-weight: 600;\n}\n\n.kn_demo_MW2Eja button {\n  border: 1px dashed var(--muted);\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 13px;\n}\n\n.kn_demo_MW2Eja button[aria-pressed=\"true\"] {\n  border-style: solid;\n  border-color: var(--ink);\n  color: var(--ink);\n  background: var(--surface);\n}\n\n.kn_top_MW2Eja {\n  top: env(safe-area-inset-top, 0px);\n  z-index: 5;\n  padding-block: 12px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--bg);\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px 20px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_brand_MW2Eja {\n  flex: 120px;\n  align-items: center;\n  gap: 10px;\n  font-size: 18px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_tabs_MW2Eja {\n  background: var(--control);\n  border-radius: 12px;\n  flex: 0 auto;\n  gap: 4px;\n  padding: 4px;\n  display: flex;\n}\n\n.kn_tabs_MW2Eja button {\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 22px;\n  font-size: 15px;\n  font-weight: 500;\n}\n\n.kn_tabs_MW2Eja button[aria-current=\"page\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_tools_MW2Eja {\n  flex: 120px;\n  justify-content: flex-end;\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_sync_MW2Eja {\n  color: var(--muted);\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_dot_MW2Eja {\n  border-radius: 50%;\n  flex: none;\n  width: 7px;\n  height: 7px;\n  display: inline-block;\n}\n\n.kn_btn_MW2Eja {\n  white-space: nowrap;\n  border: 0;\n  border-radius: 10px;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  height: 40px;\n  padding: 0 16px;\n  font-size: 15px;\n  font-weight: 500;\n  display: inline-flex;\n}\n\n.kn_btn-primary_MW2Eja {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_btn-strong_MW2Eja {\n  background: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_btn-quiet_MW2Eja {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 400;\n}\n\n.kn_btn-big_MW2Eja {\n  height: 44px;\n  padding: 0 20px;\n}\n\n.kn_avatar_MW2Eja {\n  background: var(--me);\n  color: #fff;\n  border: 0;\n  border-radius: 50%;\n  width: 40px;\n  height: 40px;\n  font-weight: 600;\n}\n\n.kn_content_MW2Eja {\n  max-width: 1040px;\n  padding-block: 28px 72px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  flex-direction: column;\n  gap: 32px;\n  margin: 0 auto;\n  display: flex;\n}\n\n.kn_head_MW2Eja {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 16px;\n  display: flex;\n}\n\n.kn_head_MW2Eja h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_sub_MW2Eja {\n  color: var(--muted);\n  font-size: 14px;\n}\n\n.kn_eyebrow_MW2Eja {\n  color: var(--muted);\n  letter-spacing: .06em;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_sec_MW2Eja {\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_sec-head_MW2Eja {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 12px;\n  display: flex;\n}\n\n.kn_card_MW2Eja {\n  background: var(--surface);\n  border-radius: var(--radius);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_chip_MW2Eja {\n  white-space: nowrap;\n  border-radius: 6px;\n  align-items: center;\n  gap: 6px;\n  padding: 2px 8px;\n  font-size: 13px;\n  font-weight: 500;\n  line-height: 18px;\n  display: inline-flex;\n}\n\n.kn_capture_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding: 6px;\n  display: flex;\n}\n\n.kn_capture_MW2Eja input {\n  background: none;\n  border: 0;\n  border-radius: 10px;\n  flex: 260px;\n  min-width: 0;\n  height: 44px;\n  padding: 0 14px;\n  font-size: 16px;\n}\n\n.kn_capture_MW2Eja input::placeholder {\n  color: var(--muted);\n}\n\n.kn_saved_MW2Eja {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_focus_MW2Eja {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 18px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 24px;\n  padding: 24px;\n  display: flex;\n}\n\n.kn_focus-body_MW2Eja {\n  flex-direction: column;\n  flex: 380px;\n  gap: 8px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_focus-title_MW2Eja {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_row_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  min-height: 52px;\n  padding: 6px 16px;\n  display: flex;\n}\n\n.kn_row-title_MW2Eja {\n  flex: 240px;\n  min-width: 0;\n  font-size: 16px;\n}\n\n.kn_check_MW2Eja {\n  border: 1.5px solid var(--muted);\n  color: #0000;\n  background: none;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  display: flex;\n}\n\n.kn_check_MW2Eja[aria-pressed=\"true\"] {\n  border-color: var(--health);\n  background: var(--health);\n  color: #fff;\n}\n\n.kn_row_MW2Eja.kn_is-done_MW2Eja .kn_row-title_MW2Eja {\n  color: var(--muted);\n  text-decoration: line-through;\n}\n\n.kn_when_MW2Eja {\n  text-align: right;\n  width: 64px;\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_ask_MW2Eja {\n  background: var(--ask);\n  box-shadow: 0 0 0 1px var(--ask-line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 14px 18px;\n  display: flex;\n}\n\n.kn_ask_MW2Eja p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_grid_MW2Eja {\n  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_sum_MW2Eja {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 14px;\n  padding: 18px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_sum_MW2Eja:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_sum-h_MW2Eja {\n  align-items: center;\n  gap: 8px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_sum-h_MW2Eja span:last-child {\n  color: var(--muted);\n  margin-left: auto;\n  font-size: 13px;\n  font-weight: 400;\n}\n\n.kn_big_MW2Eja {\n  font-size: 26px;\n  font-weight: 600;\n  line-height: 32px;\n}\n\n.kn_small_MW2Eja {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_pair_MW2Eja {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_stack_MW2Eja {\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n}\n\n.kn_week_MW2Eja {\n  grid-template-columns: repeat(7, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_week_MW2Eja span {\n  color: var(--muted);\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_week_MW2Eja i {\n  background: var(--empty);\n  border-radius: 5px;\n  width: 100%;\n  height: 18px;\n  display: block;\n}\n\n.kn_bar_MW2Eja {\n  background: var(--control);\n  border-radius: 4px;\n  height: 8px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_bar_MW2Eja i {\n  height: 100%;\n  display: block;\n}\n\n.kn_fin_MW2Eja {\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 0;\n  display: grid;\n  overflow: hidden;\n}\n\n.kn_fin-cell_MW2Eja {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_fin-cell_MW2Eja:nth-child(4) {\n  border-right: 0;\n}\n\n.kn_fin-wide_MW2Eja {\n  border-top: 1px solid var(--line);\n  flex-direction: column;\n  grid-column: 1 / -1;\n  gap: 8px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_fin-pending_MW2Eja {\n  flex-flow: wrap;\n  align-items: center;\n  gap: 8px 12px;\n}\n\n@media (width <= 760px) {\n  .kn_fin_MW2Eja {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .kn_fin-cell_MW2Eja {\n    border-right: 0;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .kn_fin-cell_MW2Eja:nth-child(odd) {\n    border-right: 1px solid var(--line);\n  }\n}\n\n.kn_feed-row_MW2Eja {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 14px;\n  padding: 10px 4px;\n  display: flex;\n}\n\n.kn_feed-row_MW2Eja p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_ini_MW2Eja {\n  color: #fff;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 28px;\n  height: 28px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_welcome_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 10px;\n  padding: 32px 28px;\n  display: flex;\n}\n\n.kn_welcome_MW2Eja h1 {\n  font-size: 30px;\n  font-weight: 600;\n  line-height: 40px;\n}\n\n.kn_welcome_MW2Eja p {\n  max-width: 36em;\n  color: var(--ink2);\n  font-size: 16px;\n}\n\n.kn_starts_MW2Eja {\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_start_MW2Eja {\n  text-align: left;\n  border: 0;\n  flex-direction: column;\n  gap: 10px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_start_MW2Eja h3 {\n  font-size: 17px;\n  font-weight: 600;\n}\n\n.kn_start_MW2Eja p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_start_MW2Eja .kn_tag_MW2Eja {\n  align-self: flex-start;\n}\n\n.kn_subtabs_MW2Eja {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_subtabs_MW2Eja button {\n  border: 1px solid var(--line);\n  height: 36px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 18px;\n  padding: 0 16px;\n  font-size: 14px;\n}\n\n.kn_subtabs_MW2Eja button[aria-pressed=\"true\"] {\n  background: var(--strong);\n  border-color: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_dir_MW2Eja {\n  flex-direction: column;\n  gap: 14px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_dir_MW2Eja h3 {\n  font-size: 19px;\n  font-weight: 600;\n  line-height: 27px;\n}\n\n.kn_dir_MW2Eja dl {\n  grid-template-columns: 4.5em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_dir_MW2Eja dt {\n  color: var(--muted);\n}\n\n.kn_dir_MW2Eja dd {\n  color: var(--ink);\n  margin: 0;\n}\n\n.kn_attempt_MW2Eja {\n  background: var(--sunken);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 6px;\n  padding: 12px 14px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_evidence_MW2Eja {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_dir-foot_MW2Eja {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_dir_MW2Eja.kn_is-paused_MW2Eja {\n  background: var(--sunken);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_split_MW2Eja {\n  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);\n  gap: 20px;\n  display: grid;\n}\n\n.kn_map-box_MW2Eja {\n  padding: 12px;\n  overflow: hidden;\n}\n\n.kn_map-box_MW2Eja svg {\n  width: 100%;\n  height: auto;\n  display: block;\n}\n\n.kn_places_MW2Eja {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_place_MW2Eja {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 4px 12px;\n  padding: 12px 4px;\n  display: flex;\n}\n\n.kn_place_MW2Eja b {\n  flex: 120px;\n  font-weight: 600;\n}\n\n.kn_legend_MW2Eja {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_legend_MW2Eja span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_news_MW2Eja {\n  grid-template-columns: 120px minmax(0, 1fr);\n  gap: 16px;\n  padding: 16px;\n  display: grid;\n}\n\n.kn_news_MW2Eja .kn_thumb_MW2Eja {\n  aspect-ratio: 4 / 3;\n  color: #fff;\n  border-radius: 10px;\n  align-items: flex-end;\n  max-width: 100%;\n  padding: 8px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_news_MW2Eja h3 {\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 25px;\n}\n\n.kn_news_MW2Eja p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_news-foot_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  margin-top: 4px;\n  display: flex;\n}\n\n.kn_news-foot_MW2Eja a {\n  font-size: 14px;\n}\n\n.kn_news-acts_MW2Eja {\n  gap: 8px;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_comment_MW2Eja {\n  border-left: 2px solid var(--news);\n  color: var(--ink);\n  padding-left: 10px;\n  font-size: 14px;\n}\n\n.kn_mods_MW2Eja {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_mod_MW2Eja {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 6px;\n  padding: 16px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_mod_MW2Eja:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_raw_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 88px minmax(0, 1fr);\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_raw_MW2Eja time {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_raw_MW2Eja blockquote {\n  margin: 0;\n  font-size: 15px;\n}\n\n.kn_raw_MW2Eja .kn_st_MW2Eja {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  grid-column: 2;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_scrim_MW2Eja {\n  z-index: 20;\n  padding-block: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px));\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--scrim);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  position: fixed;\n  inset: 0;\n}\n\n.kn_dialog_MW2Eja {\n  background: var(--surface);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 18px;\n  width: 100%;\n  max-width: 560px;\n  max-height: 100%;\n  padding: 28px;\n  display: flex;\n  overflow: auto;\n  box-shadow: 0 20px 60px #00000040;\n}\n\n.kn_dialog_MW2Eja h2 {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_steps_MW2Eja {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_choice_MW2Eja {\n  border: 1.5px solid var(--line);\n  text-align: left;\n  background: none;\n  border-radius: 14px;\n  align-items: flex-start;\n  gap: 14px;\n  width: 100%;\n  padding: 16px;\n  display: flex;\n}\n\n.kn_choice_MW2Eja[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_choice_MW2Eja .kn_radio_MW2Eja {\n  border: 1.5px solid var(--muted);\n  border-radius: 50%;\n  flex: none;\n  width: 20px;\n  height: 20px;\n  margin-top: 2px;\n}\n\n.kn_choice_MW2Eja[aria-pressed=\"true\"] .kn_radio_MW2Eja {\n  border: 6px solid var(--primary);\n}\n\n.kn_choice_MW2Eja b {\n  font-size: 16px;\n  font-weight: 600;\n  display: block;\n}\n\n.kn_choice_MW2Eja span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_toggle_MW2Eja {\n  border-top: 1px solid var(--line);\n  align-items: flex-start;\n  gap: 14px;\n  padding: 14px 0;\n  display: flex;\n}\n\n.kn_toggle_MW2Eja input {\n  width: 20px;\n  height: 20px;\n  accent-color: var(--primary);\n  flex: none;\n  margin: 2px 0 0;\n}\n\n.kn_toggle_MW2Eja label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_toggle_MW2Eja label span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_dialog-foot_MW2Eja {\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_note_MW2Eja {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n@media (width <= 760px) {\n  .kn_split_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_news_MW2Eja {\n    grid-template-columns: 84px minmax(0, 1fr);\n  }\n\n  .kn_tools_MW2Eja .kn_sync_MW2Eja {\n    display: none;\n  }\n\n  .kn_brand_MW2Eja {\n    flex-basis: auto;\n  }\n\n  .kn_tabs_MW2Eja {\n    flex: 100%;\n    order: 3;\n    justify-content: stretch;\n  }\n\n  .kn_tabs_MW2Eja button {\n    flex: 1 1 0;\n    padding: 0 8px;\n  }\n\n  .kn_head_MW2Eja h1 {\n    font-size: 24px;\n    line-height: 32px;\n  }\n}\n\n.kn_cal-bar_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 14px;\n  display: flex;\n}\n\n.kn_cal-nav_MW2Eja {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_cal-nav_MW2Eja button {\n  background: var(--control);\n  min-width: 36px;\n  height: 36px;\n  color: var(--ink);\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 14px;\n}\n\n.kn_cal-title_MW2Eja {\n  flex: 200px;\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.kn_seg_MW2Eja {\n  background: var(--control);\n  border-radius: 10px;\n  gap: 2px;\n  padding: 3px;\n  display: flex;\n}\n\n.kn_seg_MW2Eja button {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_seg_MW2Eja button[aria-pressed=\"true\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_cal_MW2Eja {\n  --fc-border-color: var(--line);\n  --fc-page-bg-color: var(--surface);\n  --fc-neutral-bg-color: var(--sunken);\n  --fc-today-bg-color: var(--ask);\n  --fc-list-event-hover-bg-color: var(--sunken);\n  --fc-now-indicator-color: var(--news);\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  padding: 8px;\n  overflow: hidden;\n}\n\n.kn_cal_MW2Eja [class~=\"fc\"] {\n  color: var(--ink);\n  font-size: 13px;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-col-header-cell-cushion\"], .kn_cal_MW2Eja [class~=\"fc-daygrid-day-number\"] {\n  color: var(--ink);\n  font-weight: 500;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-timegrid-slot-label-cushion\"], .kn_cal_MW2Eja [class~=\"fc-timegrid-axis-cushion\"] {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-dh\"] {\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n  padding: 4px 0;\n  display: flex;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-dh\"] b {\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 22px;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-dh\"] span {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-day-today\"] [class~=\"fc-dh\"] b {\n  color: var(--primary);\n}\n\n.kn_cal_MW2Eja [class~=\"fc-event\"] {\n  cursor: pointer;\n  border-radius: 6px;\n  padding: 1px 2px;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-event-main\"] {\n  color: var(--fc-event-text-color);\n  font-weight: 500;\n}\n\n.kn_cal_MW2Eja [class~=\"fc-list-day-cushion\"] {\n  background: var(--sunken);\n}\n\n.kn_cal_MW2Eja [class~=\"fc-list-event-dot\"] {\n  border-color: var(--dot, var(--explore));\n}\n\n.kn_ev-work_MW2Eja {\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  --dot: var(--explore);\n}\n\n.kn_ev-life_MW2Eja {\n  --fc-event-bg-color: var(--doing-tint);\n  --fc-event-border-color: var(--doing-tint);\n  --fc-event-text-color: var(--doing-ink);\n  --dot: var(--doing);\n}\n\n.kn_ev-health_MW2Eja {\n  --fc-event-bg-color: var(--health-tint);\n  --fc-event-border-color: var(--health-tint);\n  --fc-event-text-color: var(--health-ink);\n  --dot: var(--health);\n}\n\n.kn_ev-suggest_MW2Eja {\n  --fc-event-bg-color: var(--surface);\n  --fc-event-border-color: var(--news);\n  --fc-event-text-color: var(--news-ink);\n  --dot: var(--news);\n}\n\n.kn_cal_MW2Eja [class~=\"fc-event\"].kn_ev-suggest_MW2Eja {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n.kn_cal-legend_MW2Eja {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_cal-legend_MW2Eja span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_cal-detail_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_cal-detail_MW2Eja .kn_stack_MW2Eja {\n  flex: 260px;\n  min-width: 0;\n}\n\n.kn_cal-fallback_MW2Eja {\n  color: var(--ink2);\n  padding: 24px;\n}\n\n.kn_sub-form_MW2Eja {\n  flex-direction: column;\n  gap: 12px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_sub-form_MW2Eja .kn_fields_MW2Eja {\n  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);\n  gap: 10px;\n  display: grid;\n}\n\n.kn_sub-form_MW2Eja label {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_sub-form_MW2Eja input {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 40px;\n  color: var(--ink);\n  border-radius: 9px;\n  min-width: 0;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_agenda_MW2Eja {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_agenda-row_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 96px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 14px;\n  padding: 10px 16px;\n  display: grid;\n}\n\n.kn_agenda-row_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_agenda-row_MW2Eja time {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n  font-size: 14px;\n}\n\n@media (width <= 760px) {\n  .kn_sub-form_MW2Eja .kn_fields_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_MW2Eja {\n    grid-template-columns: 72px minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_MW2Eja > :last-child {\n    grid-column: 2;\n  }\n}\n\n.kn_map-hero_MW2Eja {\n  background: var(--map-sea);\n  height: clamp(400px, 64vh, 660px);\n  padding: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_map-svg_MW2Eja {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_map-svg_MW2Eja .kn_city_MW2Eja {\n  cursor: pointer;\n  outline: none;\n}\n\n.kn_map-svg_MW2Eja .kn_city_MW2Eja:focus-visible circle {\n  stroke: var(--explore);\n}\n\n.kn_map-tools_MW2Eja {\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 10px;\n  padding: 10px 12px;\n  display: flex;\n  position: absolute;\n  top: 14px;\n  left: 14px;\n}\n\n.kn_layer-chips_MW2Eja {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_lchip_MW2Eja {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_lchip_MW2Eja[aria-pressed=\"true\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_lchip_MW2Eja[aria-pressed=\"false\"] .kn_dot_MW2Eja {\n  opacity: .35;\n}\n\n.kn_year_MW2Eja {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_year_MW2Eja input {\n  accent-color: var(--primary);\n}\n\n.kn_map-detail_MW2Eja {\n  width: min(320px, 100% - 28px);\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 8px;\n  padding: 14px 16px;\n  display: flex;\n  position: absolute;\n  bottom: 14px;\n  right: 14px;\n}\n\n.kn_map-stats_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 999px;\n  padding: 6px 12px;\n  font-size: 13px;\n  position: absolute;\n  bottom: 14px;\n  left: 14px;\n}\n\n.kn_timeline_MW2Eja {\n  gap: 10px;\n  padding-bottom: 6px;\n  display: flex;\n  overflow-x: auto;\n}\n\n.kn_tl-item_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  text-align: left;\n  color: var(--ink);\n  border: 0;\n  border-radius: 12px;\n  flex-direction: column;\n  flex: 0 0 200px;\n  align-items: flex-start;\n  gap: 4px;\n  padding: 12px 14px;\n  display: flex;\n}\n\n.kn_tl-item_MW2Eja[aria-pressed=\"true\"] {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.kn_tl-item_MW2Eja b {\n  font-size: 16px;\n  font-weight: 600;\n}\n\n.kn_tl-year_MW2Eja {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_tl-dot_MW2Eja {\n  border-radius: 50%;\n  width: 10px;\n  height: 10px;\n}\n\n@media (width <= 760px) {\n  .kn_map-hero_MW2Eja {\n    height: 520px;\n  }\n\n  .kn_map-tools_MW2Eja {\n    right: 14px;\n  }\n\n  .kn_layer-chips_MW2Eja {\n    flex-wrap: wrap;\n  }\n\n  .kn_map-stats_MW2Eja {\n    display: none;\n  }\n}\n\n.kn_mod_MW2Eja .kn_sum-h_MW2Eja span[aria-hidden] {\n  color: var(--muted);\n  margin-left: auto;\n  font-weight: 400;\n}\n\n.kn_ms_MW2Eja {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 8px 16px;\n  display: grid;\n}\n\n.kn_ms-row_MW2Eja {\n  align-items: center;\n  gap: 10px;\n  font-size: 15px;\n  display: flex;\n}\n\n.kn_ms-row_MW2Eja.kn_is-done_MW2Eja {\n  color: var(--muted);\n}\n\n.kn_ms-row_MW2Eja .kn_check_MW2Eja {\n  width: 20px;\n  height: 20px;\n}\n\n.kn_kv_MW2Eja {\n  grid-template-columns: 4em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_kv_MW2Eja dt {\n  color: var(--muted);\n}\n\n.kn_kv_MW2Eja dd {\n  margin: 0;\n}\n\n.kn_heat_MW2Eja {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_heat_MW2Eja i {\n  aspect-ratio: 1;\n  background: var(--empty);\n  border-radius: 5px;\n  max-width: 100%;\n}\n\n.kn_sleep_MW2Eja {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  align-items: end;\n  gap: 6px;\n  height: 84px;\n  display: grid;\n}\n\n.kn_sleep_MW2Eja i {\n  background: var(--health);\n  border-radius: 5px;\n}\n\n.kn_sleep_MW2Eja i.kn_miss_MW2Eja {\n  height: 18px;\n  box-shadow: inset 0 0 0 1px var(--muted);\n  opacity: .6;\n  background: none;\n  border: 0;\n}\n\n.kn_table-box_MW2Eja {\n  overflow-x: auto;\n}\n\n.kn_table-box_MW2Eja table {\n  border-collapse: collapse;\n  width: 100%;\n  font-size: 15px;\n}\n\n.kn_table-box_MW2Eja th, .kn_table-box_MW2Eja td {\n  border-top: 1px solid var(--line);\n  text-align: left;\n  padding: 12px 16px;\n}\n\n.kn_table-box_MW2Eja thead th {\n  color: var(--muted);\n  border-top: 0;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_table-box_MW2Eja .kn_r_MW2Eja {\n  text-align: right;\n}\n\n.kn_note-row_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: auto minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 0;\n  font-weight: 400;\n  display: grid;\n}\n\n.kn_note-row_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_note-row_MW2Eja:hover {\n  text-decoration: none;\n}\n\n.kn_conn-strip_MW2Eja {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_conn-pill_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 10px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 8px;\n  padding: 8px 12px;\n  font-size: 14px;\n  display: inline-flex;\n}\n\n.kn_conn-pill_MW2Eja b {\n  font-weight: 600;\n}\n\n.kn_raw_MW2Eja time {\n  line-height: 1.4;\n}\n\n.kn_avatar_MW2Eja {\n  background-position: center;\n  background-size: cover;\n}\n\n.kn_avatar_MW2Eja.kn_has-img_MW2Eja {\n  color: #0000;\n}\n\n.kn_me-avatar_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 20px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_me-avatar_MW2Eja .kn_avatar_MW2Eja {\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 72px;\n  height: 72px;\n  font-size: 28px;\n  display: flex;\n}\n\n.kn_crop-view_MW2Eja {\n  background: var(--sunken);\n  touch-action: none;\n  cursor: grab;\n  width: 240px;\n  max-width: 100%;\n  height: 240px;\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 50%;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_crop-view_MW2Eja:active {\n  cursor: grabbing;\n}\n\n.kn_crop-view_MW2Eja img {\n  transform-origin: 0 0;\n  user-select: none;\n  pointer-events: none;\n  max-width: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.kn_crop-zoom_MW2Eja {\n  width: 240px;\n  max-width: 100%;\n  color: var(--muted);\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_crop-zoom_MW2Eja input {\n  accent-color: var(--primary);\n  flex: 1;\n}\n\n.kn_menu_MW2Eja {\n  top: calc(100% + 6px);\n  right: max(16px, env(safe-area-inset-right, 0px));\n  z-index: 10;\n  background: var(--surface);\n  width: 248px;\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-direction: column;\n  padding: 6px;\n  display: flex;\n  position: absolute;\n}\n\n.kn_menu-head_MW2Eja {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 4px;\n  padding: 8px 10px 10px;\n  display: flex;\n}\n\n.kn_menu-head_MW2Eja b {\n  font-weight: 600;\n}\n\n.kn_menu_MW2Eja button[role=\"menuitem\"] {\n  text-align: left;\n  height: 40px;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_menu_MW2Eja button[role=\"menuitem\"]:hover, .kn_menu_MW2Eja button[role=\"menuitem\"]:focus-visible {\n  background: var(--sunken);\n}\n\n.kn_me_MW2Eja {\n  grid-template-columns: 200px minmax(0, 1fr);\n  align-items: start;\n  gap: 32px;\n  display: grid;\n}\n\n.kn_me-nav_MW2Eja {\n  top: calc(env(safe-area-inset-top, 0px) + 84px);\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_me-nav_MW2Eja button {\n  text-align: left;\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_me-nav_MW2Eja button[aria-current=\"page\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_me-body_MW2Eja {\n  flex-direction: column;\n  gap: 28px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_facts_MW2Eja {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_fact_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_fact_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_fact_MW2Eja p {\n  font-size: 15px;\n}\n\n.kn_fact_MW2Eja .kn_src_MW2Eja {\n  color: var(--muted);\n  grid-column: 1;\n  font-size: 13px;\n}\n\n.kn_fact_MW2Eja .kn_fact-acts_MW2Eja {\n  grid-area: 1 / 2 / span 2;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_list-card_MW2Eja {\n  padding: 4px 16px;\n}\n\n.kn_conn_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 36px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 12px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_conn_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_conn_MW2Eja .kn_logo_MW2Eja {\n  color: #fff;\n  border-radius: 10px;\n  grid-row: 1 / span 2;\n  justify-content: center;\n  align-items: center;\n  width: 36px;\n  height: 36px;\n  font-size: 14px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_conn_MW2Eja b {\n  align-items: center;\n  gap: 6px;\n  font-weight: 600;\n  display: inline-flex;\n}\n\n.kn_info_MW2Eja {\n  border: 1px solid var(--muted);\n  width: 18px;\n  height: 18px;\n  color: var(--muted);\n  background: none;\n  border-radius: 50%;\n  padding: 0;\n  font: italic 600 11px / 1 Georgia, serif;\n}\n\n.kn_info_MW2Eja[aria-expanded=\"true\"] {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n\n.kn_conn_MW2Eja .kn_hint_MW2Eja {\n  background: var(--sunken);\n  color: var(--ink2);\n  border-radius: 8px;\n  grid-column: 2 / -1;\n  margin: 6px 0 0;\n  padding: 8px 10px;\n  font-size: 13px;\n}\n\n.kn_conn_MW2Eja .kn_small_MW2Eja {\n  grid-column: 2;\n}\n\n.kn_conn_MW2Eja > :last-child {\n  grid-area: 1 / 3 / span 2;\n}\n\n.kn_switch-row_MW2Eja {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 16px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_switch-row_MW2Eja:first-child {\n  border-top: 0;\n}\n\n.kn_switch-row_MW2Eja label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_auto-ctl_MW2Eja {\n  align-items: center;\n  gap: 12px;\n  display: flex;\n}\n\n.kn_time_MW2Eja {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 36px;\n  color: var(--ink);\n  font-variant-numeric: tabular-nums;\n  border-radius: 8px;\n  padding: 0 10px;\n  font-size: 15px;\n}\n\n.kn_time_MW2Eja:disabled {\n  opacity: .45;\n}\n\n.kn_switch_MW2Eja {\n  flex: none;\n  width: 44px;\n  height: 26px;\n  position: relative;\n}\n\n.kn_switch_MW2Eja input {\n  opacity: 0;\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_MW2Eja i {\n  background: var(--control);\n  box-shadow: inset 0 0 0 1px var(--line);\n  pointer-events: none;\n  border-radius: 13px;\n  transition: background .15s;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_MW2Eja i:after {\n  content: \"\";\n  background: #fff;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  transition: transform .15s;\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  box-shadow: 0 1px 2px #00000040;\n}\n\n.kn_switch_MW2Eja input:checked + i {\n  background: var(--health);\n}\n\n.kn_switch_MW2Eja input:checked + i:after {\n  transform: translateX(18px);\n}\n\n.kn_switch_MW2Eja input:focus-visible + i {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n@media (width <= 760px) {\n  .kn_me_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n    gap: 16px;\n  }\n\n  .kn_me-nav_MW2Eja {\n    flex-flow: wrap;\n    position: static;\n  }\n\n  .kn_me-nav_MW2Eja button {\n    text-align: center;\n    flex: auto;\n  }\n}\n\n.kn_chat_MW2Eja {\n  grid-template-columns: 236px minmax(0, 1fr);\n  height: calc(100dvh - 118px);\n  min-height: 560px;\n  display: grid;\n}\n\n.kn_threads_MW2Eja {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 16px 12px 16px 0;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_threads_MW2Eja h2 {\n  color: var(--muted);\n  letter-spacing: .06em;\n  padding: 14px 10px 4px;\n  font-size: 12px;\n  font-weight: 600;\n}\n\n.kn_thread_MW2Eja {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 8px 10px;\n  font-size: 14px;\n  display: block;\n  overflow: hidden;\n}\n\n.kn_thread_MW2Eja:hover {\n  background: var(--sunken);\n}\n\n.kn_thread_MW2Eja[aria-current=\"true\"] {\n  background: var(--control);\n  font-weight: 600;\n}\n\n.kn_new-thread_MW2Eja {\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 6px;\n  font-weight: 500;\n  display: flex;\n}\n\n.kn_convo_MW2Eja {\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_msgs_MW2Eja {\n  flex-direction: column;\n  flex: auto;\n  gap: 14px;\n  min-height: 0;\n  padding: 28px max(16px, 7%);\n  display: flex;\n  overflow: auto;\n  -webkit-mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n  mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n}\n\n.kn_msg-user_MW2Eja {\n  background: var(--ask);\n  overflow-wrap: anywhere;\n  border-radius: 18px;\n  align-self: flex-end;\n  max-width: min(78%, 560px);\n  padding: 10px 16px;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\n.kn_msg-ai_MW2Eja {\n  flex-direction: column;\n  gap: 10px;\n  max-width: 680px;\n  font-size: 16px;\n  line-height: 1.7;\n  display: flex;\n}\n\n.kn_msg-ai_MW2Eja ul {\n  flex-direction: column;\n  gap: 4px;\n  margin: 0;\n  padding-left: 1.2em;\n  display: flex;\n}\n\n.kn_tool_MW2Eja {\n  background: var(--sunken);\n  max-width: 100%;\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 10px;\n  align-self: flex-start;\n  font-size: 14px;\n}\n\n.kn_tool_MW2Eja summary {\n  cursor: pointer;\n  align-items: center;\n  gap: 10px;\n  padding: 8px 12px;\n  list-style: none;\n  display: flex;\n}\n\n.kn_tool_MW2Eja summary::-webkit-details-marker {\n  display: none;\n}\n\n.kn_tool_MW2Eja summary:after {\n  content: \"\";\n  border-right: 1.5px solid var(--muted);\n  border-bottom: 1.5px solid var(--muted);\n  width: 7px;\n  height: 7px;\n  margin-left: 6px;\n  transition: transform .12s;\n  transform: rotate(-45deg);\n}\n\n.kn_tool_MW2Eja[open] summary:after {\n  transform: rotate(45deg);\n}\n\n.kn_tool_MW2Eja pre {\n  color: var(--muted);\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n  margin: 0;\n  padding: 0 12px 10px 34px;\n  font: 13px / 1.6 ui-monospace, SF Mono, Menlo, monospace;\n}\n\n.kn_st-dot_MW2Eja {\n  background: var(--health);\n  border-radius: 50%;\n  flex: none;\n  width: 8px;\n  height: 8px;\n}\n\n.kn_st-dot_MW2Eja.kn_run_MW2Eja {\n  background: var(--explore);\n}\n\n.kn_thinking_MW2Eja {\n  color: var(--muted);\n  align-self: flex-start;\n  font-size: 15px;\n}\n\n.kn_acts_MW2Eja {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_act_MW2Eja {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 34px;\n  color: var(--ink);\n  border-radius: 17px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_act_MW2Eja:hover {\n  border-color: var(--muted);\n}\n\n.kn_welcome-chat_MW2Eja {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 18px;\n  max-width: 680px;\n  margin: auto 0;\n  display: flex;\n}\n\n.kn_welcome-chat_MW2Eja h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_suggest_MW2Eja {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 10px;\n  width: 100%;\n  display: grid;\n}\n\n.kn_suggest_MW2Eja button {\n  text-align: left;\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 12px;\n  padding: 12px 14px;\n  font-size: 14px;\n}\n\n.kn_suggest_MW2Eja button:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  color: var(--ink);\n}\n\n.kn_composer_MW2Eja {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 6px;\n  margin: 0 max(16px, 7%) 18px;\n  padding: 12px 12px 10px 16px;\n  display: flex;\n}\n\n.kn_composer_MW2Eja:focus-within {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1.5px var(--explore);\n}\n\n.kn_composer_MW2Eja textarea {\n  resize: none;\n  width: 100%;\n  min-height: 48px;\n  max-height: 200px;\n  font: inherit;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  outline: none;\n  padding: 4px 0;\n  font-size: 16px;\n  line-height: 1.5;\n}\n\n.kn_composer_MW2Eja textarea::placeholder {\n  color: var(--muted);\n}\n\n.kn_c-row_MW2Eja {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_c-btn_MW2Eja {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_c-btn_MW2Eja:hover {\n  background: var(--sunken);\n}\n\n.kn_send_MW2Eja {\n  background: var(--strong);\n  width: 36px;\n  height: 36px;\n  color: var(--on-strong);\n  border: 0;\n  border-radius: 50%;\n  justify-content: center;\n  align-items: center;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_send_MW2Eja:disabled {\n  opacity: .35;\n  cursor: default;\n}\n\n.kn_mode-wrap_MW2Eja {\n  position: relative;\n}\n\n.kn_c-btn_MW2Eja.kn_is-full_MW2Eja {\n  color: var(--news-ink);\n  background: var(--news-tint);\n}\n\n.kn_mode-pop_MW2Eja {\n  z-index: 6;\n  background: var(--surface);\n  width: min(340px, 80vw);\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  text-align: left;\n  border-radius: 14px;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px;\n  display: flex;\n  position: absolute;\n  bottom: calc(100% + 8px);\n  left: 0;\n}\n\n.kn_mode-pop_MW2Eja > b {\n  padding: 4px 4px 0;\n  font-weight: 600;\n}\n\n.kn_mode-pop_MW2Eja > p {\n  padding: 0 4px;\n}\n\n.kn_mode-opt_MW2Eja {\n  text-align: left;\n  background: none;\n  border: 1.5px solid #0000;\n  border-radius: 10px;\n  flex-direction: column;\n  gap: 2px;\n  padding: 10px 12px;\n  display: flex;\n}\n\n.kn_mode-opt_MW2Eja:hover {\n  background: var(--sunken);\n}\n\n.kn_mode-opt_MW2Eja[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_mode-opt_MW2Eja b {\n  font-size: 15px;\n  font-weight: 600;\n}\n\n.kn_mode-opt_MW2Eja span {\n  color: var(--ink2);\n  font-size: 13px;\n}\n\n.kn_c-note_MW2Eja {\n  text-align: center;\n  color: var(--muted);\n  padding: 0 max(16px, 7%) 10px;\n  font-size: 12px;\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_st-dot_MW2Eja.kn_run_MW2Eja {\n    animation: 1.2s ease-in-out infinite kn_pulse_MW2Eja;\n  }\n\n  @keyframes kn_pulse_MW2Eja {\n    50% {\n      opacity: .35;\n    }\n  }\n\n  .kn_thinking_MW2Eja span {\n    background: linear-gradient(105deg, var(--muted) 40%, var(--ink) 50%, var(--muted) 60%);\n    color: #0000;\n    background-size: 250% 100%;\n    -webkit-background-clip: text;\n    background-clip: text;\n    animation: 1.8s linear infinite kn_shine_MW2Eja;\n  }\n\n  @keyframes kn_shine_MW2Eja {\n    from {\n      background-position: 100% 0;\n    }\n\n    to {\n      background-position: -150% 0;\n    }\n  }\n}\n\n@media (width <= 760px) {\n  .kn_chat_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n    height: calc(100dvh - 150px);\n  }\n\n  .kn_threads_MW2Eja {\n    display: none;\n  }\n\n  .kn_msgs_MW2Eja, .kn_composer_MW2Eja, .kn_c-note_MW2Eja {\n    margin-left: 0;\n    margin-right: 0;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  .kn_composer_MW2Eja {\n    padding-left: 14px;\n    padding-right: 10px;\n  }\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_scrim_MW2Eja {\n    animation: .16s ease-out kn_fade_MW2Eja;\n  }\n\n  @keyframes kn_fade_MW2Eja {\n    from {\n      opacity: 0;\n    }\n\n    to {\n      opacity: 1;\n    }\n  }\n}\n\n.kn_app_MW2Eja {\n  --kt-canvas: var(--bg);\n  --kt-subtle: var(--sunken);\n  --kt-control: var(--control);\n  --kt-card: var(--surface);\n  --kt-text: var(--ink);\n  --kt-secondary: var(--ink2);\n  --kt-muted: var(--muted);\n  --kt-faint: var(--muted);\n  --kt-primary: var(--primary);\n  --kt-on-primary: var(--on-primary);\n  --kt-link: var(--link);\n  --kt-accent: var(--explore);\n  --kt-health: var(--health);\n  --kt-health-tint: var(--health-tint);\n  --kt-health-ink: var(--health-ink);\n  --kt-projects: var(--doing);\n  --kt-projects-tint: var(--doing-tint);\n  --kt-projects-ink: var(--doing-ink);\n  --kt-map: var(--explore);\n  --kt-map-tint: var(--explore-tint);\n  --kt-map-ink: var(--explore-ink);\n  --kt-feed: var(--news);\n  --kt-feed-tint: var(--news-tint);\n  --kt-feed-ink: var(--news-ink);\n  --kt-finance: var(--finance);\n  --kt-finance-tint: var(--finance-tint);\n  --kt-finance-ink: var(--finance-ink);\n  --kt-me: var(--me);\n  --kt-me-tint: var(--ask);\n  --kt-me-ink: var(--ink2);\n  --kt-today: var(--ink);\n  --kt-today-tint: var(--control);\n  --kt-today-ink: var(--ink2);\n  --kt-project-slot: var(--doing-tint);\n  --kt-target: var(--health);\n  --kt-estimate: var(--health);\n  --kt-shadow: 0 0 0 1px var(--line);\n  scrollbar-gutter: stable;\n  height: 100%;\n  overflow: auto;\n  container-type: inline-size;\n}\n\n.kn_app_MW2Eja [hidden] {\n  display: none !important;\n}\n\n.kn_app_MW2Eja button:disabled {\n  opacity: .55;\n  cursor: default;\n}\n\n.kn_app_MW2Eja textarea, .kn_app_MW2Eja select {\n  font: inherit;\n  color: inherit;\n  background: var(--surface);\n}\n\n.kn_app_MW2Eja :focus-visible {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n.kn_content_MW2Eja {\n  width: 100%;\n}\n\n.kn_top_MW2Eja {\n  padding-left: max(16px, var(--dsh-frame-leading-clearance, 0px));\n}\n\n.kn_brand_MW2Eja svg {\n  color: var(--ink);\n}\n\n.kn_avatar_MW2Eja {\n  padding: 0;\n  overflow: hidden;\n}\n\n.kn_avatar_MW2Eja img {\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n\n.kn_account_MW2Eja {\n  position: relative;\n}\n\n.kn_menu_MW2Eja {\n  top: 48px;\n  right: 0;\n}\n\n.kn_link_MW2Eja {\n  color: var(--link);\n  text-align: start;\n  background: none;\n  border: 0;\n  padding: 0;\n  font-weight: 500;\n}\n\n.kn_summaryButton_MW2Eja {\n  text-align: start;\n  cursor: pointer;\n  border: 0;\n}\n\n.kn_error_MW2Eja {\n  background: var(--news-tint);\n  border-radius: var(--radius);\n  padding: 14px 18px;\n}\n\n.kn_emptyState_MW2Eja {\n  color: var(--muted);\n  padding: 20px;\n}\n\n.kn_detailBody_MW2Eja {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_child_MW2Eja {\n  min-width: 0;\n}\n\n.kn_child_MW2Eja > div > header h1 {\n  font-size: 22px;\n}\n\n.kn_paletteDot_MW2Eja {\n  background: var(--explore);\n}\n\n.kn_financeMetric_MW2Eja {\n  flex-direction: column;\n  gap: 4px;\n  display: flex;\n}\n\n.kn_calendarShell_MW2Eja {\n  min-width: 0;\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-header-toolbar\"] {\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-toolbar-title\"] {\n  font-size: 18px;\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_calendarShell_MW2Eja [class~=\"fc-event\"][class~=\"suggestion\"] {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n@media (width <= 760px) {\n  .kn_calendarShell_MW2Eja [class~=\"fc-toolbar-chunk\"] {\n    flex-wrap: wrap;\n    gap: 4px;\n    display: flex;\n  }\n\n  .kn_calendarShell_MW2Eja [class~=\"fc-button\"] {\n    padding: 6px 8px;\n  }\n}\n\n.kn_app_MW2Eja .kn_calendarShell_MW2Eja button[class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 9px;\n  height: 36px;\n}\n\n.kn_app_MW2Eja .kn_calendarShell_MW2Eja button[class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--surface);\n  color: var(--ink);\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n@media (width <= 760px) {\n  .kn_mods_MW2Eja {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n}\n\n@media (width <= 460px) {\n  .kn_mods_MW2Eja {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n.kn_mode-pop_MW2Eja {\n  color: var(--ink);\n  border: 0;\n  margin: 0;\n}\n\n.kn_askContent_MW2Eja {\n  gap: 0;\n  max-width: 1240px;\n  padding-block: 0;\n}\n\n.kn_wrap_UkDTyq {\n  max-width: 1120px;\n  color: var(--ink);\n  font: 15px / 1.6 var(--font);\n  margin: auto;\n  padding: 28px;\n}\n\n.kn_wrap_UkDTyq h1 {\n  margin: 0;\n  font-size: 28px;\n}\n\n.kn_wrap_UkDTyq h2 {\n  font-size: 18px;\n}\n\n.kn_wrap_UkDTyq h3 {\n  font-size: 16px;\n}\n\n.kn_wrap_UkDTyq button, .kn_wrap_UkDTyq input, .kn_wrap_UkDTyq select, .kn_wrap_UkDTyq textarea {\n  font: inherit;\n}\n\n.kn_wrap_UkDTyq input, .kn_wrap_UkDTyq select, .kn_wrap_UkDTyq textarea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  color: var(--ink);\n  border-radius: 7px;\n  min-width: 0;\n  padding: 7px;\n}\n\n.kn_wrap_UkDTyq textarea {\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 85px;\n}\n\n.kn_wrap_UkDTyq label {\n  gap: 4px;\n  display: grid;\n}\n\n.kn_grid_UkDTyq {\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n  display: grid;\n}\n\n.kn_stack_UkDTyq {\n  gap: 14px;\n  display: grid;\n}\n\n.kn_actions_UkDTyq {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 9px;\n  display: flex;\n}\n\n.kn_muted_UkDTyq {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_table_UkDTyq {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.kn_table_UkDTyq th, .kn_table_UkDTyq td {\n  text-align: left;\n  border-bottom: 1px solid var(--line);\n  vertical-align: top;\n  padding: 9px;\n}\n\n.kn_table_UkDTyq th {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_scroll_UkDTyq {\n  overflow: auto;\n}\n\n.kn_quote_UkDTyq {\n  white-space: pre-wrap;\n  background: var(--sunken);\n  border-radius: 8px;\n  max-height: 240px;\n  padding: 15px;\n  overflow: auto;\n}\n\n.kn_card_UkDTyq {\n  border: 1px solid var(--line);\n  border-radius: var(--radius);\n  background: var(--surface);\n  padding: 18px;\n}\n\n.kn_warn_UkDTyq {\n  color: var(--news-ink);\n  background: var(--news-tint);\n  border-radius: 8px;\n  padding: 10px;\n}\n\n.kn_check_UkDTyq {\n  align-items: center;\n  gap: 7px;\n  display: flex !important;\n}\n\n.kn_wrap_UkDTyq a {\n  color: var(--link);\n}\n\n.kn_diff_UkDTyq {\n  grid-template-columns: 1fr 1fr;\n  gap: 10px;\n  display: grid;\n}\n\n.kn_diff_UkDTyq pre {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_selected_UkDTyq {\n  background: var(--doing-tint);\n}\n\n@media (width <= 760px) {\n  .kn_grid_UkDTyq, .kn_diff_UkDTyq {\n    grid-template-columns: 1fr;\n  }\n\n  .kn_wrap_UkDTyq {\n    padding: 15px;\n  }\n\n  .kn_table_UkDTyq td {\n    min-width: 100px;\n  }\n}\n\n.kn_start_UkDTyq h2 {\n  margin: 0;\n}\n\n.kn_start_UkDTyq form {\n  gap: 10px;\n  display: grid;\n}\n\n.kn_start_UkDTyq textarea {\n  resize: vertical;\n  min-height: 100px;\n}\n\n.kn_shortcuts_UkDTyq {\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-top: 16px;\n  display: flex;\n}\n\n.kn_grid_UkDTyq {\n  align-items: start;\n}\n\n.kn_card_UkDTyq select {\n  max-width: 100%;\n}\n\n.kn_card_UkDTyq summary {\n  cursor: pointer;\n  font-weight: 600;\n}\n\n.kn_card_UkDTyq details, details.kn_card_UkDTyq label {\n  margin-top: 12px;\n}\n\n.kn_projectOpen_UkDTyq {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  cursor: pointer;\n  background: none;\n  border: 0;\n  padding: 0;\n  display: block;\n}\n\n.kn_actions_UkDTyq input {\n  flex: 1;\n}\n\n.kn_wrap_UkDTyq button:focus-visible {\n  outline: 2px solid var(--link);\n  outline-offset: 3px;\n}\n\n.kn_projectOpen_UkDTyq:hover {\n  color: var(--link);\n}\n\n.kn_projectOpen_UkDTyq:active {\n  transform: translateY(1px);\n}\n\n.kn_wrap_UkDTyq button:disabled {\n  opacity: .5;\n  cursor: default;\n}\n\n.kn_folderPicker_UkDTyq {\n  border: 1px solid var(--line);\n  background: var(--sunken);\n  border-radius: 8px;\n  padding: 16px;\n}\n\n.kn_folderList_UkDTyq {\n  gap: 6px;\n  max-height: 260px;\n  margin-bottom: 14px;\n  display: grid;\n  overflow: auto;\n}\n\n.kn_folderList_UkDTyq button {\n  text-align: left;\n}\n\n.kn_folderPicker_UkDTyq .kn_actions_UkDTyq {\n  flex-wrap: wrap;\n}\n\n.kn_shell_Q5qtea {\n  color: var(--ink);\n  font: 14px / 1.6 var(--font);\n  box-sizing: border-box;\n  flex-direction: column;\n  height: 100dvh;\n  min-height: 0;\n  padding: 16px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_shell_Q5qtea button, .kn_shell_Q5qtea select, .kn_shell_Q5qtea textarea {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_shell_Q5qtea button, .kn_shell_Q5qtea select {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 7px 11px;\n}\n\n.kn_shell_Q5qtea button:disabled {\n  opacity: .45;\n  cursor: default;\n}\n\n.kn_header_Q5qtea {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px;\n  padding: 0 8px 14px;\n  display: flex;\n}\n\n.kn_header_Q5qtea > div {\n  flex: 1;\n}\n\n.kn_header_Q5qtea h1 {\n  margin: 0;\n  font-size: 23px;\n}\n\n.kn_shell_Q5qtea small {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_columns_Q5qtea {\n  flex: 1;\n  min-width: 0;\n  min-height: 0;\n}\n\n.kn_pane_Q5qtea {\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_pane_Q5qtea > * {\n  box-sizing: border-box;\n  flex: 1;\n  min-width: 0;\n  min-height: 0;\n}\n\n.kn_separator_Q5qtea {\n  outline: none;\n  flex: 0 0 12px;\n  position: relative;\n}\n\n.kn_separator_Q5qtea:after {\n  content: \"\";\n  background: var(--line);\n  border-radius: 4px;\n  position: absolute;\n  inset: 5px;\n}\n\n.kn_separator_Q5qtea:hover:after, .kn_separator_Q5qtea:focus-visible:after, .kn_separator_Q5qtea:active:after {\n  background: #3478df;\n}\n\n.kn_separator_Q5qtea[aria-orientation=\"vertical\"] {\n  cursor: col-resize;\n  width: 12px;\n}\n\n.kn_separator_Q5qtea[aria-orientation=\"horizontal\"] {\n  cursor: row-resize;\n  height: 12px;\n}\n\n.kn_chapters_Q5qtea {\n  padding: 10px 6px;\n  overflow: auto;\n}\n\n.kn_shell_Q5qtea h2 {\n  margin: 4px 0 14px;\n  font-size: 15px;\n}\n\n.kn_chapters_Q5qtea button {\n  text-align: left;\n  overflow-wrap: anywhere;\n  background: none;\n  border-color: #0000;\n  width: 100%;\n  margin-bottom: 8px;\n  display: block;\n}\n\n.kn_chapters_Q5qtea small {\n  font-size: 11px;\n  display: block;\n}\n\n.kn_chapters_Q5qtea button[aria-current], .kn_tabs_Q5qtea button[aria-selected=\"true\"] {\n  color: #245db4;\n  background: #e8f1ff;\n}\n\n.kn_chapters_Q5qtea h2:not(:first-child) {\n  margin-top: 28px;\n}\n\n.kn_manuscript_Q5qtea {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_toolbar_Q5qtea {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 7px;\n  padding: 12px 16px;\n  display: flex;\n}\n\n.kn_toolbar_Q5qtea strong {\n  flex: 1;\n}\n\n.kn_toolbar_Q5qtea button {\n  font-size: 12px;\n}\n\n.kn_editorWrap_Q5qtea {\n  flex: 1;\n  min-height: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_cmHost_Q5qtea {\n  height: 100%;\n}\n\n.kn_selChatBtn_Q5qtea {\n  z-index: 5;\n  position: absolute;\n  background: #e8f1ff !important;\n}\n\n.kn_copyFlash_Q5qtea {\n  background: var(--surface);\n  padding: 6px;\n  position: absolute;\n  bottom: 15px;\n  left: 20px;\n}\n\n.kn_manuscript_Q5qtea footer {\n  color: var(--muted);\n  border-top: 1px solid var(--line);\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 16px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_assistant_Q5qtea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 10px;\n  min-height: 0;\n  padding: 12px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_assistantHeader_Q5qtea {\n  flex-shrink: 0;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_assistantHeader_Q5qtea h2 {\n  margin: 0;\n}\n\n.kn_assistantHeader_Q5qtea button {\n  padding: 3px 8px;\n  font-size: 12px;\n}\n\n.kn_assistantTools_Q5qtea {\n  flex-direction: column;\n  flex-shrink: 0;\n  gap: 10px;\n  max-height: 45%;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_tabs_Q5qtea {\n  gap: 6px;\n  display: flex;\n}\n\n.kn_tabs_Q5qtea button {\n  flex: 1;\n}\n\n.kn_assistant_Q5qtea textarea {\n  box-sizing: border-box;\n  border: 1px solid var(--line);\n  background: var(--surface);\n  resize: vertical;\n  border-radius: 8px;\n  width: 100%;\n  min-height: 75px;\n  padding: 9px;\n}\n\n.kn_shell_Q5qtea .kn_primary_Q5qtea {\n  color: #fff;\n  background: #3478df;\n  border-color: #0000;\n}\n\n.kn_chat_Q5qtea {\n  flex-direction: column;\n  flex: 1;\n  min-height: 0;\n  display: flex;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_chat_Q5qtea > * {\n  flex: 1;\n  min-height: 0;\n}\n\n.kn_candidates_Q5qtea {\n  border-top: 1px solid var(--line);\n  flex-shrink: 0;\n  max-height: 35%;\n  padding-top: 10px;\n  overflow: auto;\n}\n\n.kn_candidates_Q5qtea summary {\n  cursor: pointer;\n}\n\n.kn_candidates_Q5qtea summary button {\n  margin-left: 10px;\n  padding: 2px 8px;\n}\n\n.kn_candidates_Q5qtea article {\n  border: 1px solid var(--line);\n  border-radius: 8px;\n  margin-top: 10px;\n  padding: 12px;\n}\n\n.kn_candidates_Q5qtea pre {\n  white-space: pre-wrap;\n  font: inherit;\n  max-height: 230px;\n  overflow: auto;\n}\n\n.kn_error_Q5qtea {\n  color: #853e12;\n  background: #fff0df;\n  margin-bottom: 10px;\n  padding: 10px;\n}\n\n.kn_hint_Q5qtea {\n  padding: 8px 16px;\n}\n\n.kn_reference_Q5qtea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_reference_Q5qtea .kn_toolbar_Q5qtea select {\n  width: 100%;\n  min-width: 0;\n}\n\n.kn_reference_Q5qtea .kn_toolbar_Q5qtea {\n  min-width: 0;\n}\n\n.kn_shell_Q5qtea button:focus-visible, .kn_shell_Q5qtea select:focus-visible {\n  outline: 2px solid var(--link);\n  outline-offset: 2px;\n}\n\n.kn_referenceActions_Q5qtea {\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  padding: 8px 12px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_referenceActions_Q5qtea button {\n  padding: 4px 8px;\n}\n";
 "use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -14744,7 +14744,7 @@ var TYPERT_REMOTE = createTypertRemoteInfo({
         create: kaitu_novel_workspace_source_kaituNovel_request_result$schema,
         jsonSchema: { "type": "string" }
       },
-      sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 64, "column": 9 }
+      sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 133, "column": 9 }
     }
   }
 }, external_exports);
@@ -14767,22 +14767,22 @@ async function openKaituSession(services, workspace, text) {
 }
 
 // src/client/embedded-agent.tsx
-var import_react7 = require("react");
-
-// src/client/page.tsx
 var import_react6 = require("react");
 
+// src/client/page.tsx
+var import_react5 = require("react");
+
 // ../dsh-plugin/src/client/Prototype.module.css
-var Prototype_default = { "hint": "kn_hint_MW2Eja", "threads": "kn_threads_MW2Eja", "mode-pop": "kn_mode-pop_MW2Eja", "c-note": "kn_c-note_MW2Eja", "emptyState": "kn_emptyState_MW2Eja", "detailBody": "kn_detailBody_MW2Eja", "top": "kn_top_MW2Eja", "account": "kn_account_MW2Eja", "focus": "kn_focus_MW2Eja", "ev-work": "kn_ev-work_MW2Eja", "sub-form": "kn_sub-form_MW2Eja", "thumb": "kn_thumb_MW2Eja", "news-acts": "kn_news-acts_MW2Eja", "week": "kn_week_MW2Eja", "is-paused": "kn_is-paused_MW2Eja", "tl-item": "kn_tl-item_MW2Eja", "map-stats": "kn_map-stats_MW2Eja", "tl-year": "kn_tl-year_MW2Eja", "msg-user": "kn_msg-user_MW2Eja", "focus-title": "kn_focus-title_MW2Eja", "split": "kn_split_MW2Eja", "welcome-chat": "kn_welcome-chat_MW2Eja", "dialog-foot": "kn_dialog-foot_MW2Eja", "suggest": "kn_suggest_MW2Eja", "content": "kn_content_MW2Eja", "dialog": "kn_dialog_MW2Eja", "cal-nav": "kn_cal-nav_MW2Eja", "ms-row": "kn_ms-row_MW2Eja", "summaryButton": "kn_summaryButton_MW2Eja", "shine": "kn_shine_MW2Eja", "r": "kn_r_MW2Eja", "kv": "kn_kv_MW2Eja", "sum": "kn_sum_MW2Eja", "cal-title": "kn_cal-title_MW2Eja", "logo": "kn_logo_MW2Eja", "mode-opt": "kn_mode-opt_MW2Eja", "btn": "kn_btn_MW2Eja", "steps": "kn_steps_MW2Eja", "check": "kn_check_MW2Eja", "btn-big": "kn_btn-big_MW2Eja", "calendarShell": "kn_calendarShell_MW2Eja", "map-tools": "kn_map-tools_MW2Eja", "new-thread": "kn_new-thread_MW2Eja", "cal-bar": "kn_cal-bar_MW2Eja", "st": "kn_st_MW2Eja", "ev-suggest": "kn_ev-suggest_MW2Eja", "cal-fallback": "kn_cal-fallback_MW2Eja", "note-row": "kn_note-row_MW2Eja", "switch": "kn_switch_MW2Eja", "conn": "kn_conn_MW2Eja", "is-full": "kn_is-full_MW2Eja", "map-detail": "kn_map-detail_MW2Eja", "msg-ai": "kn_msg-ai_MW2Eja", "mode-wrap": "kn_mode-wrap_MW2Eja", "sr": "kn_sr_MW2Eja", "dot": "kn_dot_MW2Eja", "me-body": "kn_me-body_MW2Eja", "pulse": "kn_pulse_MW2Eja", "me": "kn_me_MW2Eja", "switch-row": "kn_switch-row_MW2Eja", "note": "kn_note_MW2Eja", "mod": "kn_mod_MW2Eja", "stack": "kn_stack_MW2Eja", "cal": "kn_cal_MW2Eja", "run": "kn_run_MW2Eja", "grid": "kn_grid_MW2Eja", "avatar": "kn_avatar_MW2Eja", "card": "kn_card_MW2Eja", "conn-strip": "kn_conn-strip_MW2Eja", "act": "kn_act_MW2Eja", "dir": "kn_dir_MW2Eja", "list-card": "kn_list-card_MW2Eja", "dir-foot": "kn_dir-foot_MW2Eja", "sum-h": "kn_sum-h_MW2Eja", "tabs": "kn_tabs_MW2Eja", "big": "kn_big_MW2Eja", "evidence": "kn_evidence_MW2Eja", "raw": "kn_raw_MW2Eja", "agenda": "kn_agenda_MW2Eja", "chat": "kn_chat_MW2Eja", "fact": "kn_fact_MW2Eja", "feed-row": "kn_feed-row_MW2Eja", "saved": "kn_saved_MW2Eja", "c-btn": "kn_c-btn_MW2Eja", "st-dot": "kn_st-dot_MW2Eja", "timeline": "kn_timeline_MW2Eja", "brand": "kn_brand_MW2Eja", "news": "kn_news_MW2Eja", "legend": "kn_legend_MW2Eja", "num": "kn_num_MW2Eja", "ms": "kn_ms_MW2Eja", "chip": "kn_chip_MW2Eja", "ev-health": "kn_ev-health_MW2Eja", "place": "kn_place_MW2Eja", "me-avatar": "kn_me-avatar_MW2Eja", "thread": "kn_thread_MW2Eja", "cal-legend": "kn_cal-legend_MW2Eja", "convo": "kn_convo_MW2Eja", "when": "kn_when_MW2Eja", "head": "kn_head_MW2Eja", "news-foot": "kn_news-foot_MW2Eja", "pair": "kn_pair_MW2Eja", "radio": "kn_radio_MW2Eja", "app": "kn_app_MW2Eja", "map-hero": "kn_map-hero_MW2Eja", "city": "kn_city_MW2Eja", "bar": "kn_bar_MW2Eja", "menu-head": "kn_menu-head_MW2Eja", "tool": "kn_tool_MW2Eja", "sec-head": "kn_sec-head_MW2Eja", "row": "kn_row_MW2Eja", "crop-zoom": "kn_crop-zoom_MW2Eja", "financeMetric": "kn_financeMetric_MW2Eja", "is-done": "kn_is-done_MW2Eja", "btn-strong": "kn_btn-strong_MW2Eja", "sub": "kn_sub_MW2Eja", "c-row": "kn_c-row_MW2Eja", "fin-wide": "kn_fin-wide_MW2Eja", "layer-chips": "kn_layer-chips_MW2Eja", "msgs": "kn_msgs_MW2Eja", "small": "kn_small_MW2Eja", "eyebrow": "kn_eyebrow_MW2Eja", "fin": "kn_fin_MW2Eja", "conn-pill": "kn_conn-pill_MW2Eja", "row-title": "kn_row-title_MW2Eja", "places": "kn_places_MW2Eja", "sync": "kn_sync_MW2Eja", "heat": "kn_heat_MW2Eja", "fact-acts": "kn_fact-acts_MW2Eja", "time": "kn_time_MW2Eja", "composer": "kn_composer_MW2Eja", "send": "kn_send_MW2Eja", "cal-detail": "kn_cal-detail_MW2Eja", "child": "kn_child_MW2Eja", "fin-cell": "kn_fin-cell_MW2Eja", "paletteDot": "kn_paletteDot_MW2Eja", "sleep": "kn_sleep_MW2Eja", "demo": "kn_demo_MW2Eja", "fin-pending": "kn_fin-pending_MW2Eja", "focus-body": "kn_focus-body_MW2Eja", "attempt": "kn_attempt_MW2Eja", "year": "kn_year_MW2Eja", "welcome": "kn_welcome_MW2Eja", "tools": "kn_tools_MW2Eja", "table-box": "kn_table-box_MW2Eja", "tl-dot": "kn_tl-dot_MW2Eja", "facts": "kn_facts_MW2Eja", "auto-ctl": "kn_auto-ctl_MW2Eja", "start": "kn_start_MW2Eja", "tag": "kn_tag_MW2Eja", "fields": "kn_fields_MW2Eja", "btn-quiet": "kn_btn-quiet_MW2Eja", "comment": "kn_comment_MW2Eja", "askContent": "kn_askContent_MW2Eja", "link": "kn_link_MW2Eja", "ev-life": "kn_ev-life_MW2Eja", "me-nav": "kn_me-nav_MW2Eja", "ini": "kn_ini_MW2Eja", "sec": "kn_sec_MW2Eja", "map-svg": "kn_map-svg_MW2Eja", "has-img": "kn_has-img_MW2Eja", "thinking": "kn_thinking_MW2Eja", "choice": "kn_choice_MW2Eja", "acts": "kn_acts_MW2Eja", "ask": "kn_ask_MW2Eja", "seg": "kn_seg_MW2Eja", "menu": "kn_menu_MW2Eja", "error": "kn_error_MW2Eja", "fade": "kn_fade_MW2Eja", "toggle": "kn_toggle_MW2Eja", "capture": "kn_capture_MW2Eja", "subtabs": "kn_subtabs_MW2Eja", "crop-view": "kn_crop-view_MW2Eja", "info": "kn_info_MW2Eja", "btn-primary": "kn_btn-primary_MW2Eja", "map-box": "kn_map-box_MW2Eja", "agenda-row": "kn_agenda-row_MW2Eja", "starts": "kn_starts_MW2Eja", "lchip": "kn_lchip_MW2Eja", "mods": "kn_mods_MW2Eja", "miss": "kn_miss_MW2Eja", "src": "kn_src_MW2Eja", "scrim": "kn_scrim_MW2Eja" };
+var Prototype_default = { "ms": "kn_ms_MW2Eja", "attempt": "kn_attempt_MW2Eja", "ask": "kn_ask_MW2Eja", "row-title": "kn_row-title_MW2Eja", "news-foot": "kn_news-foot_MW2Eja", "toggle": "kn_toggle_MW2Eja", "timeline": "kn_timeline_MW2Eja", "card": "kn_card_MW2Eja", "threads": "kn_threads_MW2Eja", "eyebrow": "kn_eyebrow_MW2Eja", "grid": "kn_grid_MW2Eja", "shine": "kn_shine_MW2Eja", "error": "kn_error_MW2Eja", "child": "kn_child_MW2Eja", "dot": "kn_dot_MW2Eja", "btn-primary": "kn_btn-primary_MW2Eja", "check": "kn_check_MW2Eja", "welcome": "kn_welcome_MW2Eja", "choice": "kn_choice_MW2Eja", "hint": "kn_hint_MW2Eja", "agenda-row": "kn_agenda-row_MW2Eja", "switch": "kn_switch_MW2Eja", "map-stats": "kn_map-stats_MW2Eja", "heat": "kn_heat_MW2Eja", "note-row": "kn_note-row_MW2Eja", "logo": "kn_logo_MW2Eja", "tools": "kn_tools_MW2Eja", "raw": "kn_raw_MW2Eja", "fin-cell": "kn_fin-cell_MW2Eja", "cal": "kn_cal_MW2Eja", "city": "kn_city_MW2Eja", "auto-ctl": "kn_auto-ctl_MW2Eja", "cal-legend": "kn_cal-legend_MW2Eja", "st": "kn_st_MW2Eja", "radio": "kn_radio_MW2Eja", "run": "kn_run_MW2Eja", "is-done": "kn_is-done_MW2Eja", "mode-opt": "kn_mode-opt_MW2Eja", "feed-row": "kn_feed-row_MW2Eja", "sleep": "kn_sleep_MW2Eja", "tool": "kn_tool_MW2Eja", "financeMetric": "kn_financeMetric_MW2Eja", "pulse": "kn_pulse_MW2Eja", "has-img": "kn_has-img_MW2Eja", "pair": "kn_pair_MW2Eja", "calendarShell": "kn_calendarShell_MW2Eja", "info": "kn_info_MW2Eja", "new-thread": "kn_new-thread_MW2Eja", "dir": "kn_dir_MW2Eja", "when": "kn_when_MW2Eja", "row": "kn_row_MW2Eja", "ini": "kn_ini_MW2Eja", "tl-year": "kn_tl-year_MW2Eja", "conn": "kn_conn_MW2Eja", "brand": "kn_brand_MW2Eja", "me-nav": "kn_me-nav_MW2Eja", "askContent": "kn_askContent_MW2Eja", "sec": "kn_sec_MW2Eja", "c-note": "kn_c-note_MW2Eja", "emptyState": "kn_emptyState_MW2Eja", "note": "kn_note_MW2Eja", "map-detail": "kn_map-detail_MW2Eja", "convo": "kn_convo_MW2Eja", "btn": "kn_btn_MW2Eja", "starts": "kn_starts_MW2Eja", "content": "kn_content_MW2Eja", "btn-strong": "kn_btn-strong_MW2Eja", "map-svg": "kn_map-svg_MW2Eja", "tl-dot": "kn_tl-dot_MW2Eja", "evidence": "kn_evidence_MW2Eja", "me": "kn_me_MW2Eja", "me-body": "kn_me-body_MW2Eja", "list-card": "kn_list-card_MW2Eja", "time": "kn_time_MW2Eja", "welcome-chat": "kn_welcome-chat_MW2Eja", "head": "kn_head_MW2Eja", "focus": "kn_focus_MW2Eja", "sum": "kn_sum_MW2Eja", "mod": "kn_mod_MW2Eja", "dialog": "kn_dialog_MW2Eja", "kv": "kn_kv_MW2Eja", "fact": "kn_fact_MW2Eja", "fade": "kn_fade_MW2Eja", "summaryButton": "kn_summaryButton_MW2Eja", "msg-user": "kn_msg-user_MW2Eja", "ev-health": "kn_ev-health_MW2Eja", "map-hero": "kn_map-hero_MW2Eja", "demo": "kn_demo_MW2Eja", "focus-title": "kn_focus-title_MW2Eja", "split": "kn_split_MW2Eja", "thumb": "kn_thumb_MW2Eja", "facts": "kn_facts_MW2Eja", "mods": "kn_mods_MW2Eja", "lchip": "kn_lchip_MW2Eja", "chat": "kn_chat_MW2Eja", "tl-item": "kn_tl-item_MW2Eja", "thread": "kn_thread_MW2Eja", "msg-ai": "kn_msg-ai_MW2Eja", "me-avatar": "kn_me-avatar_MW2Eja", "map-tools": "kn_map-tools_MW2Eja", "comment": "kn_comment_MW2Eja", "acts": "kn_acts_MW2Eja", "sum-h": "kn_sum-h_MW2Eja", "seg": "kn_seg_MW2Eja", "num": "kn_num_MW2Eja", "subtabs": "kn_subtabs_MW2Eja", "ev-suggest": "kn_ev-suggest_MW2Eja", "c-row": "kn_c-row_MW2Eja", "cal-bar": "kn_cal-bar_MW2Eja", "place": "kn_place_MW2Eja", "fin-wide": "kn_fin-wide_MW2Eja", "switch-row": "kn_switch-row_MW2Eja", "send": "kn_send_MW2Eja", "start": "kn_start_MW2Eja", "places": "kn_places_MW2Eja", "cal-detail": "kn_cal-detail_MW2Eja", "sub-form": "kn_sub-form_MW2Eja", "bar": "kn_bar_MW2Eja", "miss": "kn_miss_MW2Eja", "fact-acts": "kn_fact-acts_MW2Eja", "sub": "kn_sub_MW2Eja", "saved": "kn_saved_MW2Eja", "conn-pill": "kn_conn-pill_MW2Eja", "crop-view": "kn_crop-view_MW2Eja", "ev-life": "kn_ev-life_MW2Eja", "st-dot": "kn_st-dot_MW2Eja", "c-btn": "kn_c-btn_MW2Eja", "btn-quiet": "kn_btn-quiet_MW2Eja", "focus-body": "kn_focus-body_MW2Eja", "fin": "kn_fin_MW2Eja", "fin-pending": "kn_fin-pending_MW2Eja", "src": "kn_src_MW2Eja", "sr": "kn_sr_MW2Eja", "news": "kn_news_MW2Eja", "app": "kn_app_MW2Eja", "r": "kn_r_MW2Eja", "cal-fallback": "kn_cal-fallback_MW2Eja", "btn-big": "kn_btn-big_MW2Eja", "sync": "kn_sync_MW2Eja", "menu-head": "kn_menu-head_MW2Eja", "tag": "kn_tag_MW2Eja", "top": "kn_top_MW2Eja", "dialog-foot": "kn_dialog-foot_MW2Eja", "scrim": "kn_scrim_MW2Eja", "cal-title": "kn_cal-title_MW2Eja", "ev-work": "kn_ev-work_MW2Eja", "small": "kn_small_MW2Eja", "ms-row": "kn_ms-row_MW2Eja", "act": "kn_act_MW2Eja", "fields": "kn_fields_MW2Eja", "link": "kn_link_MW2Eja", "capture": "kn_capture_MW2Eja", "table-box": "kn_table-box_MW2Eja", "steps": "kn_steps_MW2Eja", "menu": "kn_menu_MW2Eja", "msgs": "kn_msgs_MW2Eja", "composer": "kn_composer_MW2Eja", "paletteDot": "kn_paletteDot_MW2Eja", "week": "kn_week_MW2Eja", "detailBody": "kn_detailBody_MW2Eja", "avatar": "kn_avatar_MW2Eja", "sec-head": "kn_sec-head_MW2Eja", "chip": "kn_chip_MW2Eja", "big": "kn_big_MW2Eja", "agenda": "kn_agenda_MW2Eja", "cal-nav": "kn_cal-nav_MW2Eja", "crop-zoom": "kn_crop-zoom_MW2Eja", "map-box": "kn_map-box_MW2Eja", "layer-chips": "kn_layer-chips_MW2Eja", "suggest": "kn_suggest_MW2Eja", "year": "kn_year_MW2Eja", "conn-strip": "kn_conn-strip_MW2Eja", "mode-wrap": "kn_mode-wrap_MW2Eja", "is-full": "kn_is-full_MW2Eja", "account": "kn_account_MW2Eja", "stack": "kn_stack_MW2Eja", "is-paused": "kn_is-paused_MW2Eja", "legend": "kn_legend_MW2Eja", "thinking": "kn_thinking_MW2Eja", "dir-foot": "kn_dir-foot_MW2Eja", "tabs": "kn_tabs_MW2Eja", "news-acts": "kn_news-acts_MW2Eja", "mode-pop": "kn_mode-pop_MW2Eja" };
 
 // src/client/Novel.module.css
-var Novel_default = { "muted": "kn_muted_UkDTyq", "table": "kn_table_UkDTyq", "scroll": "kn_scroll_UkDTyq", "selected": "kn_selected_UkDTyq", "folderPicker": "kn_folderPicker_UkDTyq", "wrap": "kn_wrap_UkDTyq", "card": "kn_card_UkDTyq", "shortcuts": "kn_shortcuts_UkDTyq", "projectOpen": "kn_projectOpen_UkDTyq", "diff": "kn_diff_UkDTyq", "grid": "kn_grid_UkDTyq", "choices": "kn_choices_UkDTyq", "stack": "kn_stack_UkDTyq", "quote": "kn_quote_UkDTyq", "check": "kn_check_UkDTyq", "start": "kn_start_UkDTyq", "actions": "kn_actions_UkDTyq", "folderList": "kn_folderList_UkDTyq", "warn": "kn_warn_UkDTyq" };
+var Novel_default = { "table": "kn_table_UkDTyq", "stack": "kn_stack_UkDTyq", "card": "kn_card_UkDTyq", "actions": "kn_actions_UkDTyq", "scroll": "kn_scroll_UkDTyq", "muted": "kn_muted_UkDTyq", "selected": "kn_selected_UkDTyq", "folderPicker": "kn_folderPicker_UkDTyq", "folderList": "kn_folderList_UkDTyq", "projectOpen": "kn_projectOpen_UkDTyq", "quote": "kn_quote_UkDTyq", "warn": "kn_warn_UkDTyq", "diff": "kn_diff_UkDTyq", "start": "kn_start_UkDTyq", "shortcuts": "kn_shortcuts_UkDTyq", "check": "kn_check_UkDTyq", "wrap": "kn_wrap_UkDTyq", "grid": "kn_grid_UkDTyq" };
 
 // src/client/Writer.tsx
 var import_react4 = require("react");
 
 // src/client/Writer.module.css
-var Writer_default = { "selChatBtn": "kn_selChatBtn_Q5qtea", "candidates": "kn_candidates_Q5qtea", "pane": "kn_pane_Q5qtea", "hint": "kn_hint_Q5qtea", "shell": "kn_shell_Q5qtea", "columns": "kn_columns_Q5qtea", "editorWrap": "kn_editorWrap_Q5qtea", "reference": "kn_reference_Q5qtea", "separator": "kn_separator_Q5qtea", "chapters": "kn_chapters_Q5qtea", "tabs": "kn_tabs_Q5qtea", "chat": "kn_chat_Q5qtea", "referenceActions": "kn_referenceActions_Q5qtea", "error": "kn_error_Q5qtea", "toolbar": "kn_toolbar_Q5qtea", "manuscript": "kn_manuscript_Q5qtea", "primary": "kn_primary_Q5qtea", "header": "kn_header_Q5qtea", "cmHost": "kn_cmHost_Q5qtea", "copyFlash": "kn_copyFlash_Q5qtea", "assistant": "kn_assistant_Q5qtea", "assistantHeader": "kn_assistantHeader_Q5qtea", "assistantTools": "kn_assistantTools_Q5qtea" };
+var Writer_default = { "assistant": "kn_assistant_Q5qtea", "pane": "kn_pane_Q5qtea", "candidates": "kn_candidates_Q5qtea", "editorWrap": "kn_editorWrap_Q5qtea", "assistantHeader": "kn_assistantHeader_Q5qtea", "reference": "kn_reference_Q5qtea", "cmHost": "kn_cmHost_Q5qtea", "hint": "kn_hint_Q5qtea", "selChatBtn": "kn_selChatBtn_Q5qtea", "referenceActions": "kn_referenceActions_Q5qtea", "tabs": "kn_tabs_Q5qtea", "primary": "kn_primary_Q5qtea", "shell": "kn_shell_Q5qtea", "chapters": "kn_chapters_Q5qtea", "assistantTools": "kn_assistantTools_Q5qtea", "manuscript": "kn_manuscript_Q5qtea", "chat": "kn_chat_Q5qtea", "separator": "kn_separator_Q5qtea", "columns": "kn_columns_Q5qtea", "copyFlash": "kn_copyFlash_Q5qtea", "error": "kn_error_Q5qtea", "toolbar": "kn_toolbar_Q5qtea", "header": "kn_header_Q5qtea" };
 
 // src/client/WriterPanels.tsx
 var import_react2 = require("react");
@@ -43677,8 +43677,7 @@ function Writer({
   request,
   agent,
   onView,
-  onBack,
-  onInterview
+  onBack
 }) {
   const key = `kaitu-writer:${project}`;
   const [toolsOpen, setToolsOpen] = (0, import_react4.useState)(
@@ -43864,13 +43863,73 @@ function Writer({
     localStorage.setItem(`${key}:reference`, documentId);
     setAssistantOpen(false);
   }
+  async function grill() {
+    setAssistantOpen(true);
+    if (!agent || !source) return;
+    await saveReference();
+    const saved = await save();
+    if (!saved) return;
+    const session = await agent.session(project);
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    let grilled;
+    try {
+      grilled = await request("grill", { project, session, spark: intent });
+    } catch (error52) {
+      if (!(error52 instanceof Error) || error52.message !== "\u63D0\u95EE\u5361\u7247\u6CA1\u6709\u63A5\u4E0A") throw error52;
+      const voice = await request(
+        "voice",
+        { project }
+      );
+      const cards = voice.questions.map((question3) => `${question3.prompt}
+${question3.options.map((option) => `- ${option.label}`).join("\n")}`).join("\n\n");
+      const samples2 = voice.samples.map((sample) => `\u3010${sample.path}\u3011${sample.text}`).join("\n");
+      await agent.send(
+        project,
+        `\u8BF7\u7528 ask_user_question \u4E00\u6B21\u53EA\u95EE\u4E00\u9898\u3002\u9898\u76EE\u548C\u9009\u9879\u5FC5\u987B\u539F\u6837\u4F7F\u7528\uFF0C\u4E0D\u8981\u6539\u5199\uFF0C\u4E0D\u8981\u4E00\u6B21\u95EE\u5B8C\uFF1A
+${cards}
+\u4F5C\u8005\u70B9\u9009\u6216\u81EA\u5DF1\u5199\u4E00\u53E5\u4E4B\u540E\uFF0C\u518D\u5199\u6B63\u6587\u3002\u5DF2\u8DF3\u8FC7\u6216\u6807\u6210\u5148\u5F00\u653E\u7684\uFF0C\u4E0D\u8981\u6536\u6210\u7ED3\u8BBA\u3002
+\u6587\u98CE\uFF1A${voice.voice}
+\u6A21\u4EFF\u8FD9\u4E9B\u4F5C\u8005\u539F\u7A3F\uFF0C\u4E0D\u8981\u5B66\u4E60\u5019\u9009\u7A3F\u6216\u6807\u6210 AI \u7684\u6587\u5B57\uFF1A
+${samples2 || "\u6CA1\u6709\u8DB3\u591F\u7684\u4F5C\u8005\u539F\u7A3F\uFF0C\u6309\u5F53\u524D\u7AE0\u8282\u5DF2\u6709\u53E5\u5B50\u5199\u3002"}
+\u5199\u4E00\u6BB5\u7EA6\u56DB\u767E\u5230\u516B\u767E\u5B57\uFF0C\u7528 kaitu_novel_draft \u4FDD\u5B58\u72EC\u7ACB\u5019\u9009\uFF0Cscene \u4E3A ${saved.path}#${saved.scene.title}\u3002\u4E0D\u8981\u4FEE\u6539\u539F\u7A3F\u3002\u5F53\u524D\u6A21\u5F0F\uFF1A${writing ? "\u5199\u4F5C" : "\u53EA\u8BFB"}\u3002\u53EA\u8BFB\u65F6\u6B63\u6587\u7559\u5728\u5BF9\u8BDD\u91CC\u3002
+\u4F5C\u8005\u8865\u5145\uFF1A${intent || "\u65E0"}`
+      );
+      setNotice("\u63D0\u95EE\u6539\u7531\u5199\u4F5C\u52A9\u624B\u53D1\u51FA");
+      return;
+    }
+    await refresh();
+    const picks = grilled.answers.map((answer) => `${answer.custom?.trim() || answer.selected.join("\u3001") || "\u8DF3\u8FC7"}`).join("\n");
+    const samples = grilled.voice.samples.map((sample) => `\u3010${sample.path}\u3011${sample.text}`).join("\n");
+    const position = editor.current?.state.selection.main.head ?? cursor;
+    const context = `${saved.text.slice(Math.max(0, position - 4e3), position)}
+\u3010\u4F5C\u8005\u5149\u6807\u3011
+${saved.text.slice(position, position + 1500)}`;
+    await agent.send(
+      project,
+      `\u4F5C\u54C1\uFF1A${title}\uFF1B\u9879\u76EE\uFF1A${project}
+\u5F53\u524D\u6587\u4EF6\uFF1A${saved.path}
+\u7AE0\u8282\u5B9A\u4F4D\uFF1A${saved.path}#${saved.scene.title}
+\u4F5C\u8005\u5DF2\u5728\u63D0\u95EE\u5361\u7247\u91CC\u9009\u5B8C\u3002\u5DF2\u786E\u8BA4\uFF1A${grilled.confirmed.join("\uFF1B") || "\u65E0"}\u3002\u4ECD\u5F00\u653E\uFF1A${grilled.open.join("\uFF1B") || "\u65E0"}\u3002
+\u9010\u9898\uFF1A
+${picks}
+\u6587\u98CE\uFF1A${grilled.voice.voice}
+\u6309\u8FD9\u4E9B\u4F5C\u8005\u539F\u7A3F\u7684\u8282\u594F\u3001\u4EBA\u79F0\u548C\u7528\u8BCD\u5199\uFF0C\u4E0D\u8981\u5B66\u4E60\u5019\u9009\u7A3F\u6216\u6807\u6210 AI \u7684\u6587\u5B57\uFF1A
+${samples || "\u6CA1\u6709\u8DB3\u591F\u7684\u4F5C\u8005\u539F\u7A3F\uFF0C\u6309\u5F53\u524D\u7AE0\u8282\u5DF2\u6709\u53E5\u5B50\u5199\u3002"}
+\u5199\u4E00\u6BB5\u53EF\u4EE5\u76F4\u63A5\u653E\u8FDB\u8FD9\u4E00\u7AE0\u7684\u6B63\u6587\uFF0C\u5927\u7EA6\u56DB\u767E\u5230\u516B\u767E\u5B57\u3002\u5F00\u653E\u9879\u4E0D\u8981\u6536\u6210\u7ED3\u8BBA\u3002\u7528 kaitu_novel_draft \u4FDD\u5B58\u72EC\u7ACB\u5019\u9009\uFF0Cscene \u4F7F\u7528\u4E0A\u9762\u7684\u7AE0\u8282\u5B9A\u4F4D\u3002\u4E0D\u8981\u4FEE\u6539\u539F\u7A3F\u3002
+\u5F53\u524D\u6A21\u5F0F\uFF1A${writing ? "\u5199\u4F5C" : "\u53EA\u8BFB"}\u3002\u53EA\u8BFB\u65F6\u6B63\u6587\u7559\u5728\u5BF9\u8BDD\u91CC\uFF0C\u4E0D\u8981\u4FDD\u5B58\u5019\u9009\u3002
+\u4F5C\u8005\u8865\u5145\uFF1A${intent || "\u65E0"}
+\u5149\u6807\u9644\u8FD1\uFF1A
+${context}`
+    );
+    setNotice("\u5DF2\u6309\u4F60\u7684\u9009\u62E9\u4EA4\u7ED9\u5199\u4F5C\u52A9\u624B");
+  }
   async function send(kind = action) {
     setAssistantOpen(true);
     if (!agent || !source) return;
     await saveReference();
     const saved = await save();
     if (!saved) return;
-    const task = kind === "check" ? "\u68C0\u67E5\u5F53\u524D\u7AE0\u8282\u4E0E\u5DF2\u6709\u8BBE\u5B9A\u3001\u4EBA\u7269\u4F4D\u7F6E\u3001\u5E74\u9F84\u3001\u4E8B\u4EF6\u65F6\u95F4\u548C\u79D1\u5B66\u7EC6\u8282\u662F\u5426\u51B2\u7A81\u3002\u9010\u9879\u5F15\u7528\u6B63\u6587\u539F\u53E5\u4E0E\u8D44\u6599\u6587\u4EF6/\u6807\u9898\uFF0C\u533A\u5206\u660E\u786E\u51B2\u7A81\u3001\u6761\u4EF6\u4E0D\u8DB3\u548C\u53EF\u9009\u5EFA\u8BAE\u3002\u5BA2\u89C2\u5E38\u8BC6\u81EA\u884C\u67E5\u8BC1\uFF1B\u5C0A\u91CD\u865A\u6784\u4F8B\u5916\uFF0C\u4EBA\u7269\u8C0E\u8A00\u6216\u6BD4\u55BB\u4E0D\u5F53\u4F5C\u4E16\u754C\u4E8B\u5B9E\u3002\u53EA\u62A5\u544A\u6709\u4F9D\u636E\u7684\u95EE\u9898\u3002" : kind === "plot" ? `\u521B\u4F5C\u8BBF\u8C08\u91CC\u5DF2\u786E\u8BA4\uFF1A${view?.data.story?.confirmed.join("\uFF1B") || "\u65E0"}\u3002\u4ECD\u5F00\u653E\uFF1A${view?.data.story?.open.join("\uFF1B") || "\u65E0"}\u3002\u53EA\u63D0\u51FA\u4E0D\u5173\u95ED\u5F00\u653E\u9879\u7684\u77ED\u65B9\u6848\uFF0C\u4E0D\u8981\u628A\u63D0\u7EB2\u5199\u8FDB\u539F\u7A3F\u3002\u7ED3\u5408\u73B0\u6709\u4F0F\u7B14\u548C\u4EBA\u7269\u52A8\u673A\uFF0C\u7ED9\u51FA 2\u20133 \u4E2A\u4E0B\u4E00\u6B65\uFF1A\u5177\u4F53\u4EBA\u7269\u52A8\u4F5C\u3001\u963B\u529B\u3001\u540E\u679C\u3002` : "\u4ECE\u4E0B\u9762\u6807\u8BB0\u7684\u5149\u6807\u4F4D\u7F6E\u7EED\u5199\uFF0C\u5148\u8BFB\u76F8\u5173\u539F\u7A3F\u6837\u672C\u548C\u4E16\u754C\u4E66\uFF0C\u4FDD\u6301\u89C6\u89D2\u3001\u8BED\u611F\u3001\u5BF9\u767D\u548C\u7EC6\u8282\u53D6\u820D\uFF1B\u4E0D\u8981\u91CD\u590D\u5DF2\u6709\u6B63\u6587\u3002\u7528 kaitu_novel_draft \u4FDD\u5B58\u72EC\u7ACB\u5019\u9009\uFF0Cscene \u4F7F\u7528\u4E0B\u65B9\u7AE0\u8282\u5B9A\u4F4D\uFF0CstyleSources \u5199\u5DF2\u8BFB\u573A\u666F\u3002\u76F4\u63A5\u8FD4\u56DE\u7B80\u77ED\u8BF4\u660E\uFF0C\u6B63\u6587\u7559\u5728\u5019\u9009\u4E2D\u3002";
+    const task = kind === "check" ? "\u68C0\u67E5\u5F53\u524D\u7AE0\u8282\u4E0E\u5DF2\u6709\u8BBE\u5B9A\u3001\u4EBA\u7269\u4F4D\u7F6E\u3001\u5E74\u9F84\u3001\u4E8B\u4EF6\u65F6\u95F4\u548C\u79D1\u5B66\u7EC6\u8282\u662F\u5426\u51B2\u7A81\u3002\u9010\u9879\u5F15\u7528\u6B63\u6587\u539F\u53E5\u4E0E\u8D44\u6599\u6587\u4EF6/\u6807\u9898\uFF0C\u533A\u5206\u660E\u786E\u51B2\u7A81\u3001\u6761\u4EF6\u4E0D\u8DB3\u548C\u53EF\u9009\u5EFA\u8BAE\u3002\u5BA2\u89C2\u5E38\u8BC6\u81EA\u884C\u67E5\u8BC1\uFF1B\u5C0A\u91CD\u865A\u6784\u4F8B\u5916\uFF0C\u4EBA\u7269\u8C0E\u8A00\u6216\u6BD4\u55BB\u4E0D\u5F53\u4F5C\u4E16\u754C\u4E8B\u5B9E\u3002\u53EA\u62A5\u544A\u6709\u4F9D\u636E\u7684\u95EE\u9898\u3002" : "\u4ECE\u4E0B\u9762\u6807\u8BB0\u7684\u5149\u6807\u4F4D\u7F6E\u7EED\u5199\uFF0C\u5148\u8BFB\u76F8\u5173\u539F\u7A3F\u6837\u672C\u548C\u4E16\u754C\u4E66\uFF0C\u4FDD\u6301\u89C6\u89D2\u3001\u8BED\u611F\u3001\u5BF9\u767D\u548C\u7EC6\u8282\u53D6\u820D\uFF1B\u4E0D\u8981\u91CD\u590D\u5DF2\u6709\u6B63\u6587\u3002\u7528 kaitu_novel_draft \u4FDD\u5B58\u72EC\u7ACB\u5019\u9009\uFF0Cscene \u4F7F\u7528\u4E0B\u65B9\u7AE0\u8282\u5B9A\u4F4D\uFF0CstyleSources \u5199\u5DF2\u8BFB\u573A\u666F\u3002\u76F4\u63A5\u8FD4\u56DE\u7B80\u77ED\u8BF4\u660E\uFF0C\u6B63\u6587\u7559\u5728\u5019\u9009\u4E2D\u3002";
     const position = editor.current?.state.selection.main.head ?? cursor;
     const context = `${saved.text.slice(Math.max(0, position - 1e4), position)}
 \u3010\u4F5C\u8005\u5149\u6807\u3011
@@ -44226,7 +44285,7 @@ ${context}`
               },
               id2
             )) }),
-            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: "\u5F53\u524D\u7AE0\u8282 + Agent \u81EA\u52A8\u67E5\u627E\u7684\u4E16\u754C\u4E66\u4E0E\u8D44\u6599" }),
+            /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: action === "plot" ? "\u5148\u5F39\u51FA\u9009\u9879\uFF0C\u70B9\u5B8C\u6309\u4F60\u7684\u539F\u7A3F\u5199\u4E00\u6BB5\u5019\u9009" : "\u5F53\u524D\u7AE0\u8282 + Agent \u81EA\u52A8\u67E5\u627E\u7684\u4E16\u754C\u4E66\u4E0E\u8D44\u6599" }),
             /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
               "textarea",
               {
@@ -44251,21 +44310,9 @@ ${context}`
               {
                 type: "button",
                 className: Writer_default.primary,
-                disabled: !source || busy || action === "continue" && !writing || action !== "plot" && !agent,
-                onClick: () => {
-                  if (action === "plot" && onInterview) onInterview();
-                  else void run(() => send());
-                },
-                children: action === "check" ? "\u68C0\u67E5\u5F53\u524D\u7AE0\u8282" : action === "plot" ? "\u5F00\u59CB\u6784\u601D\u8BBF\u8C08" : "\u751F\u6210\u7EED\u5199\u5019\u9009"
-              }
-            ),
-            action === "plot" && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(
-              "button",
-              {
-                type: "button",
-                disabled: !source || !agent || busy || !view?.data.story?.claims.length,
-                onClick: () => void run(() => send("plot")),
-                children: "\u6309\u5DF2\u786E\u8BA4\u610F\u56FE\u8BA9 Agent \u63D0\u8BAE"
+                disabled: !source || busy || !agent || action === "continue" && !writing,
+                onClick: () => void run(() => action === "plot" ? grill() : send()),
+                children: action === "check" ? "\u68C0\u67E5\u5F53\u524D\u7AE0\u8282" : action === "plot" ? "\u63D0\u95EE\u5E76\u5199\u4E00\u6BB5" : "\u751F\u6210\u7EED\u5199\u5019\u9009"
               }
             ),
             !agent && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)("small", { children: "\u5728 DSH \u4E2D\u6253\u5F00\u53EF\u4F7F\u7528\u5199\u4F5C\u52A9\u624B\u3002" })
@@ -44313,222 +44360,6 @@ ${d.text}
         ] })
       }
     )
-  ] });
-}
-
-// src/client/Interview.tsx
-var import_react5 = require("react");
-var import_jsx_runtime5 = require("react/jsx-runtime");
-var noteCanon = { confirmed: "\u4F5C\u8005\u786E\u8BA4", open: "\u4E0D\u91C7\u7528", ai_inference: "\u5F85\u4F60\u6838\u5BF9" };
-var beatCanon = { tentative: "\u5F85\u5B9A", confirmed: "\u4F5C\u8005\u786E\u8BA4", open: "\u4FDD\u6301\u5F00\u653E" };
-function Interview({
-  data: data2,
-  busy,
-  onEdit
-}) {
-  const story = data2.story;
-  const [spark, setSpark] = (0, import_react5.useState)(story?.spark ?? "");
-  const [custom2, setCustom] = (0, import_react5.useState)("");
-  const [edits, setEdits] = (0, import_react5.useState)({});
-  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6784\u601D\u65B0\u6545\u4E8B" }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u5148\u8BB0\u4E0B\u4F60\u5DF2\u7ECF\u786E\u5B9A\u7684\uFF0C\u4E5F\u8BB0\u4E0B\u4F60\u8FD8\u60F3\u7559\u7740\u7684\u3002\u63D0\u7EB2\u662F\u63D0\u6848\uFF0C\u4E0D\u4F1A\u5199\u5165\u6B63\u6587\u3002" }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
-        "\u4E00\u53E5\u8BDD",
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-          "textarea",
-          {
-            "aria-label": "\u4E00\u53E5\u8BDD\u6545\u4E8B",
-            value: spark,
-            disabled: busy,
-            onChange: (event) => setSpark(event.target.value),
-            placeholder: "\u4F8B\u5982\uFF1A\u4E00\u4E2A\u5728\u6708\u7403\u4E0A\u957F\u5927\u7684\u5C11\u5973\uFF0C\u4ECE\u672A\u4E3A\u751F\u5B58\u52AA\u529B\uFF0C\u5374\u7EF4\u6301\u4E0D\u4E86\u4E00\u6BB5\u4EB2\u5BC6\u5173\u7CFB\u3002"
-          }
-        )
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-        "button",
-        {
-          className: `${Prototype_default.btn} ${Prototype_default.primary}`,
-          type: "button",
-          disabled: busy || !spark.trim(),
-          onClick: () => void onEdit({ type: "story", op: "spark", text: spark.trim() }),
-          children: story ? "\u7528\u8FD9\u4E00\u53E5\u91CD\u65B0\u5F00\u59CB" : "\u5F00\u59CB\u8BBF\u8C08"
-        }
-      )
-    ] }),
-    story && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u76EE\u524D\u7684\u7406\u89E3" }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: "\u5DF2\u786E\u8BA4" }),
-      story.confirmed.length ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { children: story.confirmed.map((item) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", { children: item }, item)) }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u8FD8\u6CA1\u6709\u5DF2\u786E\u8BA4\u7684\u610F\u56FE\u3002" }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: "\u4ECD\u5F00\u653E" }),
-      story.open.length ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { children: story.open.map((item) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", { children: item }, item)) }) : /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u8FD8\u6CA1\u6709\u660E\u786E\u4FDD\u7559\u7684\u5F00\u653E\u95EE\u9898\u3002" }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { className: Novel_default.muted, children: [
-        "\u6587\u98CE\u6837\u672C\uFF1A\u4EBA\u5DE5\u6807\u8BB0 ",
-        story.portrait.authorDocuments,
-        "\uFF0C\u672A\u6807\u8BB0\u6B63\u6587 ",
-        story.portrait.unmarkedManuscripts,
-        "\uFF0CAI \u6807\u8BB0\u6216\u5019\u9009 ",
-        story.portrait.aiMarked,
-        "\uFF0C\u683C\u5F0F\u7591\u4F3C AI ",
-        story.portrait.likelyAi,
-        "\u3002"
-      ] }),
-      story.portrait.notes.map((note) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
-          note.text,
-          " ",
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: Novel_default.muted, children: noteCanon[note.canon] })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-            "button",
-            {
-              className: Prototype_default.btn,
-              type: "button",
-              disabled: busy,
-              onClick: () => void onEdit({ type: "story", op: "note", id: note.id, canon: "confirmed" }),
-              children: "\u786E\u8BA4\u8FD9\u6761"
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-            "button",
-            {
-              className: Prototype_default.btn,
-              type: "button",
-              disabled: busy,
-              onClick: () => void onEdit({ type: "story", op: "note", id: note.id, canon: "open" }),
-              children: "\u4E0D\u91C7\u7528"
-            }
-          )
-        ] })
-      ] }, note.id))
-    ] }),
-    story?.question && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: story.question.prompt }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
-        "\u60F3\u6362\u6210\u81EA\u5DF1\u7684\u8BF4\u6CD5\uFF08\u53EF\u9009\uFF09",
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-          "textarea",
-          {
-            "aria-label": "\u81EA\u5DF1\u7684\u8BF4\u6CD5",
-            value: custom2,
-            disabled: busy,
-            onChange: (event) => setCustom(event.target.value)
-          }
-        )
-      ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.choices, children: story.question.choices.map((choice) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-        "button",
-        {
-          className: Prototype_default.btn,
-          type: "button",
-          disabled: busy,
-          onClick: () => void onEdit({
-            type: "story",
-            op: "answer",
-            choice: choice.id,
-            custom: custom2.trim() || void 0
-          }).then(() => setCustom("")),
-          children: choice.label
-        },
-        choice.id
-      )) })
-    ] }),
-    story && story.claims.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u7EA0\u6B63\u7406\u89E3" }),
-      story.claims.map((claim) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-          "textarea",
-          {
-            "aria-label": `\u7EA0\u6B63${claim.text}`,
-            value: edits[claim.id] ?? claim.text,
-            disabled: busy,
-            onChange: (event) => setEdits({ ...edits, [claim.id]: event.target.value })
-          }
-        ),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-            "button",
-            {
-              className: Prototype_default.btn,
-              type: "button",
-              disabled: busy,
-              onClick: () => void onEdit({
-                type: "story",
-                op: "correct",
-                id: claim.id,
-                text: edits[claim.id] ?? claim.text,
-                canon: "confirmed"
-              }),
-              children: "\u6539\u4E3A\u5DF2\u786E\u8BA4"
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-            "button",
-            {
-              className: Prototype_default.btn,
-              type: "button",
-              disabled: busy,
-              onClick: () => void onEdit({
-                type: "story",
-                op: "correct",
-                id: claim.id,
-                text: edits[claim.id] ?? claim.text,
-                canon: "open"
-              }),
-              children: "\u6539\u4E3A\u4ECD\u5F00\u653E"
-            }
-          )
-        ] })
-      ] }, claim.id))
-    ] }),
-    story?.step === "outline" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u516B\u7AE0\u63D0\u7EB2" }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u6BCF\u4E00\u7AE0\u90FD\u8FD8\u662F\u63D0\u6848\u3002\u786E\u8BA4\u4E0D\u4F1A\u521B\u5EFA\u7AE0\u8282\u6587\u4EF6\u3002" }),
-      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-        "button",
-        {
-          className: Prototype_default.btn,
-          type: "button",
-          disabled: busy,
-          onClick: () => void onEdit({ type: "story", op: "outline" }),
-          children: "\u6309\u73B0\u5728\u7684\u786E\u8BA4\u91CD\u5199\u63D0\u7EB2"
-        }
-      ),
-      story.beats.map((beat) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("h3", { children: [
-          "\u7B2C ",
-          beat.chapter,
-          " \u7AE0 ",
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: Novel_default.muted, children: beatCanon[beat.canon] })
-        ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: beat.text }),
-        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-            "button",
-            {
-              className: Prototype_default.btn,
-              type: "button",
-              disabled: busy,
-              onClick: () => void onEdit({ type: "story", op: "beat", chapter: beat.chapter, canon: "confirmed" }),
-              children: "\u786E\u8BA4\u8FD9\u4E00\u7AE0"
-            }
-          ),
-          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
-            "button",
-            {
-              className: Prototype_default.btn,
-              type: "button",
-              disabled: busy,
-              onClick: () => void onEdit({ type: "story", op: "beat", chapter: beat.chapter, canon: "open" }),
-              children: "\u8FD9\u4E00\u7AE0\u4FDD\u6301\u5F00\u653E"
-            }
-          )
-        ] })
-      ] }, beat.chapter))
-    ] })
   ] });
 }
 
@@ -44602,7 +44433,7 @@ ${scene ? `\u5F53\u524D\u573A\u666F\uFF1A${scene.title}\uFF1B\u6587\u4EF6\uFF1A$
 }
 
 // src/client/page.tsx
-var import_jsx_runtime6 = require("react/jsx-runtime");
+var import_jsx_runtime5 = require("react/jsx-runtime");
 var status = { planned: "\u5F85\u5199", draft: "\u8FDB\u884C\u4E2D", done: "\u5B8C\u6210" };
 var roles = {
   manuscript: "\u6B63\u6587",
@@ -44638,35 +44469,35 @@ function NovelPage({
   writerAgent,
   onBrowseFolder
 }) {
-  const [catalog, setCatalog] = (0, import_react6.useState)({
+  const [catalog, setCatalog] = (0, import_react5.useState)({
     projects: [],
     science: false
   });
-  const [project, setProject] = (0, import_react6.useState)("");
-  const [view, setView] = (0, import_react6.useState)(null);
-  const [source, setSource] = (0, import_react6.useState)(null);
-  const [tab, setTab] = (0, import_react6.useState)("overview");
-  const [error51, setError] = (0, import_react6.useState)("");
-  const [busy, setBusy] = (0, import_react6.useState)(false);
-  const [receipt, setReceipt] = (0, import_react6.useState)("");
-  const [completed, setCompleted] = (0, import_react6.useState)("");
-  const [next, setNext] = (0, import_react6.useState)("");
-  const [writingIntent, setWritingIntent] = (0, import_react6.useState)("");
-  const [agentIntent, setAgentIntent] = (0, import_react6.useState)("");
-  const [adding, setAdding] = (0, import_react6.useState)(false);
-  const [folder, setFolder] = (0, import_react6.useState)("");
-  const [newTitle, setNewTitle] = (0, import_react6.useState)("");
-  const [importMode, setImportMode] = (0, import_react6.useState)("copy");
-  const [showHidden, setShowHidden] = (0, import_react6.useState)(false);
-  const [removing, setRemoving] = (0, import_react6.useState)("");
-  const [folders, setFolders] = (0, import_react6.useState)(null);
-  const refresh = (0, import_react6.useCallback)(async () => {
+  const [project, setProject] = (0, import_react5.useState)("");
+  const [view, setView] = (0, import_react5.useState)(null);
+  const [source, setSource] = (0, import_react5.useState)(null);
+  const [tab, setTab] = (0, import_react5.useState)("overview");
+  const [error51, setError] = (0, import_react5.useState)("");
+  const [busy, setBusy] = (0, import_react5.useState)(false);
+  const [receipt, setReceipt] = (0, import_react5.useState)("");
+  const [completed, setCompleted] = (0, import_react5.useState)("");
+  const [next, setNext] = (0, import_react5.useState)("");
+  const [writingIntent, setWritingIntent] = (0, import_react5.useState)("");
+  const [agentIntent, setAgentIntent] = (0, import_react5.useState)("");
+  const [adding, setAdding] = (0, import_react5.useState)(false);
+  const [folder, setFolder] = (0, import_react5.useState)("");
+  const [newTitle, setNewTitle] = (0, import_react5.useState)("");
+  const [importMode, setImportMode] = (0, import_react5.useState)("copy");
+  const [showHidden, setShowHidden] = (0, import_react5.useState)(false);
+  const [removing, setRemoving] = (0, import_react5.useState)("");
+  const [folders, setFolders] = (0, import_react5.useState)(null);
+  const refresh = (0, import_react5.useCallback)(async () => {
     const info = await request("projects");
     setCatalog(info);
     if (project && info.projects.some((p) => p.slug === project && p.linked))
       setView(await request("view", { project }));
   }, [request, project]);
-  (0, import_react6.useEffect)(() => {
+  (0, import_react5.useEffect)(() => {
     void refresh().catch((e) => setError(e.message));
   }, [refresh]);
   const run = async (op, message = "\u5DF2\u4FDD\u5B58") => {
@@ -44714,7 +44545,7 @@ function NovelPage({
   const title = catalog.projects.find((p) => p.slug === project)?.title;
   const last2 = data2?.sessions.at(-1);
   if (project && view && tab === "writer")
-    return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Prototype_default.app, style: { height: "100%" }, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+    return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Prototype_default.app, style: { height: "100%" }, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
       Writer,
       {
         project,
@@ -44722,18 +44553,17 @@ function NovelPage({
         request,
         agent: writerAgent,
         onView: setView,
-        onBack: () => setTab("overview"),
-        onInterview: () => setTab("interview")
+        onBack: () => setTab("overview")
       },
       project
     ) });
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Prototype_default.app, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.wrap, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("header", { className: Novel_default.actions, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { style: { flex: 1 }, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: Novel_default.muted, children: "\u5F00\u56FE \xB7 \u5C0F\u8BF4\u5DE5\u4F5C\u53F0" }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h1", { children: title ?? "\u4F60\u7684\u4F5C\u54C1" })
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Prototype_default.app, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.wrap, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("header", { className: Novel_default.actions, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { style: { flex: 1 }, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: Novel_default.muted, children: "\u5F00\u56FE \xB7 \u5C0F\u8BF4\u5DE5\u4F5C\u53F0" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h1", { children: title ?? "\u4F60\u7684\u4F5C\u54C1" })
       ] }),
-      !project && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      !project && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -44743,7 +44573,7 @@ function NovelPage({
           children: "\u6DFB\u52A0\u4F5C\u54C1"
         }
       ),
-      project && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      project && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -44755,7 +44585,7 @@ function NovelPage({
           children: "\u5168\u90E8\u4F5C\u54C1"
         }
       ),
-      onAgent && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -44767,11 +44597,11 @@ function NovelPage({
         }
       )
     ] }),
-    error51 && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { role: "alert", className: Novel_default.warn, children: error51 }),
-    receipt && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("output", { className: Novel_default.muted, children: receipt }),
-    !project && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(import_jsx_runtime6.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: "\u7EE7\u7EED\u5199\u4F5C\uFF0C\u627E\u56DE\u8D44\u6599\uFF0C\u68C0\u67E5\u8BBE\u5B9A\u3002" }),
-      adding && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+    error51 && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { role: "alert", className: Novel_default.warn, children: error51 }),
+    receipt && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("output", { className: Novel_default.muted, children: receipt }),
+    !project && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: "\u7EE7\u7EED\u5199\u4F5C\uFF0C\u627E\u56DE\u8D44\u6599\uFF0C\u68C0\u67E5\u8BBE\u5B9A\u3002" }),
+      adding && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
         "form",
         {
           className: `${Novel_default.card} ${Novel_default.stack}`,
@@ -44794,11 +44624,11 @@ function NovelPage({
             }, "\u4F5C\u54C1\u5DF2\u6DFB\u52A0");
           },
           children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u6DFB\u52A0\u4F5C\u54C1" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6DFB\u52A0\u4F5C\u54C1" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u4F5C\u54C1\u6587\u4EF6\u5939",
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                   "input",
                   {
                     required: true,
@@ -44807,7 +44637,7 @@ function NovelPage({
                     onChange: (e) => setFolder(e.target.value)
                   }
                 ),
-                onBrowseFolder && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+                onBrowseFolder && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                   "button",
                   {
                     type: "button",
@@ -44821,8 +44651,8 @@ function NovelPage({
                 )
               ] })
             ] }),
-            folders && onBrowseFolder && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: Novel_default.folderPicker, "aria-label": "\u9009\u62E9\u4F5C\u54C1\u6587\u4EF6\u5939", children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Novel_default.actions, children: folders.crumbs.map((c) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            folders && onBrowseFolder && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.folderPicker, "aria-label": "\u9009\u62E9\u4F5C\u54C1\u6587\u4EF6\u5939", children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.actions, children: folders.crumbs.map((c) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "button",
                 {
                   type: "button",
@@ -44833,8 +44663,8 @@ function NovelPage({
                 },
                 c.path
               )) }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: Novel_default.muted, children: folders.path }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Novel_default.folderList, children: folders.entries.filter((e) => !e.hidden).map((entry) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: folders.path }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.folderList, children: folders.entries.filter((e) => !e.hidden).map((entry) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
                 "button",
                 {
                   type: "button",
@@ -44848,9 +44678,9 @@ function NovelPage({
                 },
                 entry.path
               )) }),
-              folders.truncated && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: "\u6B64\u76EE\u5F55\u5185\u5BB9\u8F83\u591A\uFF0C\u53EF\u5728\u8DEF\u5F84\u6846\u4E2D\u8F93\u5165\u76EE\u6807\u5B50\u76EE\u5F55\u3002" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+              folders.truncated && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: "\u6B64\u76EE\u5F55\u5185\u5BB9\u8F83\u591A\uFF0C\u53EF\u5728\u8DEF\u5F84\u6846\u4E2D\u8F93\u5165\u76EE\u6807\u5B50\u76EE\u5F55\u3002" }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                   "button",
                   {
                     type: "button",
@@ -44864,12 +44694,12 @@ function NovelPage({
                     children: "\u4F7F\u7528\u6B64\u6587\u4EF6\u5939"
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { type: "button", className: Prototype_default.btn, onClick: () => setFolders(null), children: "\u53D6\u6D88\u9009\u62E9" })
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { type: "button", className: Prototype_default.btn, onClick: () => setFolders(null), children: "\u53D6\u6D88\u9009\u62E9" })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u4F5C\u54C1\u540D\u79F0",
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "input",
                 {
                   value: newTitle,
@@ -44878,16 +44708,16 @@ function NovelPage({
                 }
               )
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u4F7F\u7528\u65B9\u5F0F",
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("select", { value: importMode, onChange: (e) => setImportMode(e.target.value), children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "copy", children: "\u5BFC\u5165\u526F\u672C\uFF0C\u5728\u63D2\u4EF6\u91CC\u5199\u4F5C" }),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "link", children: "\u5173\u8054\u539F\u76EE\u5F55\uFF0C\u4E0E Obsidian \u5171\u7528\u6587\u4EF6" })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("select", { value: importMode, onChange: (e) => setImportMode(e.target.value), children: [
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "copy", children: "\u5BFC\u5165\u526F\u672C\uFF0C\u5728\u63D2\u4EF6\u91CC\u5199\u4F5C" }),
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "link", children: "\u5173\u8054\u539F\u76EE\u5F55\uFF0C\u4E0E Obsidian \u5171\u7528\u6587\u4EF6" })
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: Novel_default.muted, children: importMode === "copy" ? "\u6B63\u6587\u3001\u5927\u7EB2\u548C\u8D44\u6599\u4E00\u8D77\u590D\u5236\u5230\u63D2\u4EF6\u5DE5\u4F5C\u533A\uFF1B\u4E24\u4E2A\u76EE\u5F55\u72EC\u7ACB\u4FDD\u5B58\u3002" : "\u63D2\u4EF6\u4E0E Obsidian \u8BFB\u53D6\u540C\u4E00\u4EFD\u6587\u4EF6\uFF0C\u4FDD\u5B58\u4F1A\u5199\u56DE\u539F\u76EE\u5F55\u3002" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: importMode === "copy" ? "\u6B63\u6587\u3001\u5927\u7EB2\u548C\u8D44\u6599\u4E00\u8D77\u590D\u5236\u5230\u63D2\u4EF6\u5DE5\u4F5C\u533A\uFF1B\u4E24\u4E2A\u76EE\u5F55\u72EC\u7ACB\u4FDD\u5B58\u3002" : "\u63D2\u4EF6\u4E0E Obsidian \u8BFB\u53D6\u540C\u4E00\u4EFD\u6587\u4EF6\uFF0C\u4FDD\u5B58\u4F1A\u5199\u56DE\u539F\u76EE\u5F55\u3002" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "button",
                 {
                   type: "submit",
@@ -44896,12 +44726,12 @@ function NovelPage({
                   children: busy ? "\u6B63\u5728\u6DFB\u52A0\u2026" : "\u6DFB\u52A0\u5E76\u6253\u5F00"
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { type: "button", className: Prototype_default.btn, disabled: busy, onClick: () => setAdding(false), children: "\u53D6\u6D88" })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { type: "button", className: Prototype_default.btn, disabled: busy, onClick: () => setAdding(false), children: "\u53D6\u6D88" })
             ] })
           ]
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Novel_default.actions, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.actions, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -44911,8 +44741,8 @@ function NovelPage({
           children: showHidden ? "\u8FD4\u56DE\u4F5C\u54C1" : `\u5DF2\u9690\u85CF\uFF08${catalog.projects.filter((p) => p.hidden).length}\uFF09`
         }
       ) }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Novel_default.grid, children: [...catalog.projects].filter((p) => !!p.hidden === showHidden).sort((a, b) => Number(b.pinned) - Number(a.pinned)).map((p) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("article", { className: Novel_default.card, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.grid, children: [...catalog.projects].filter((p) => !!p.hidden === showHidden).sort((a, b) => Number(b.pinned) - Number(a.pinned)).map((p) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
           "button",
           {
             type: "button",
@@ -44920,16 +44750,16 @@ function NovelPage({
             disabled: busy,
             onClick: () => void run(() => choose(p), "\u4F5C\u54C1\u5DF2\u6253\u5F00"),
             children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("small", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
                 p.pinned ? "\u5DF2\u56FA\u5B9A \xB7 " : "",
                 p.linked ? `${p.scenes} \u573A\u666F \xB7 ${p.words} \u5B57\u8BCD` : "\u5F85\u63A5\u5165\u5C0F\u8BF4\u8D44\u6599"
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: p.title })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: p.title })
             ]
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               type: "button",
@@ -44942,7 +44772,7 @@ function NovelPage({
               children: p.hidden ? "\u6062\u590D\u663E\u793A" : "\u9690\u85CF"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               type: "button",
@@ -44953,13 +44783,13 @@ function NovelPage({
             }
           )
         ] }),
-        removing === p.slug && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { "aria-label": `\u79FB\u9664${p.title}`, className: Novel_default.warn, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+        removing === p.slug && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { "aria-label": `\u79FB\u9664${p.title}`, className: Novel_default.warn, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
             "\u79FB\u9664\u300A",
             p.title,
             "\u300B\uFF1F\u63D2\u4EF6\u8D44\u6599\u4E0E\u5BFC\u5165\u526F\u672C\u79FB\u5165\u56DE\u6536\u76EE\u5F55\uFF0C\u5173\u8054\u7684\u539F\u76EE\u5F55\u4FDD\u7559\u3002"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               type: "button",
@@ -44972,7 +44802,7 @@ function NovelPage({
               children: "\u786E\u8BA4\u79FB\u9664"
             }
           ),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               type: "button",
@@ -44984,19 +44814,18 @@ function NovelPage({
           )
         ] })
       ] }, p.slug)) }),
-      !catalog.projects.some((p) => !!p.hidden === showHidden) && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: showHidden ? "\u6CA1\u6709\u9690\u85CF\u7684\u4F5C\u54C1\u3002" : "\u70B9\u51FB\u201C\u6DFB\u52A0\u4F5C\u54C1\u201D\uFF0C\u9009\u62E9\u4F60\u7684\u6B63\u6587\u3001\u5927\u7EB2\u4E0E\u8D44\u6599\u6240\u5728\u6587\u4EF6\u5939\u3002" })
+      !catalog.projects.some((p) => !!p.hidden === showHidden) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: showHidden ? "\u6CA1\u6709\u9690\u85CF\u7684\u4F5C\u54C1\u3002" : "\u70B9\u51FB\u201C\u6DFB\u52A0\u4F5C\u54C1\u201D\uFF0C\u9009\u62E9\u4F60\u7684\u6B63\u6587\u3001\u5927\u7EB2\u4E0E\u8D44\u6599\u6240\u5728\u6587\u4EF6\u5939\u3002" })
     ] }),
-    project && !data2 && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: "\u8BA9 Agent \u8BFB\u53D6\u8FD9\u4E2A\u9879\u76EE\u7684\u76EE\u5F55\u5E76\u63A5\u5165\u7D22\u5F15\u5373\u53EF\u5F00\u59CB\u3002" }),
-    data2 && view && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(import_jsx_runtime6.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Prototype_default.subtabs, role: "tablist", children: [
+    project && !data2 && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: "\u8BA9 Agent \u8BFB\u53D6\u8FD9\u4E2A\u9879\u76EE\u7684\u76EE\u5F55\u5E76\u63A5\u5165\u7D22\u5F15\u5373\u53EF\u5F00\u59CB\u3002" }),
+    data2 && view && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Prototype_default.subtabs, role: "tablist", children: [
         ["writer", "\u6B63\u6587\u5DE5\u4F5C\u53F0"],
-        ["interview", "\u6784\u601D"],
         ["overview", "\u6982\u89C8"],
         ["chapters", "\u7AE0\u8282"],
         ["facts", "\u8D44\u6599"],
         ...catalog.science ? [["science", "\u4E16\u754C\u4E66\u4E0E\u6821\u5BF9"]] : [],
         ["drafts", "\u7EED\u5199\u5019\u9009"]
-      ].map(([id2, label]) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      ].map(([id2, label]) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           type: "button",
@@ -45007,14 +44836,14 @@ function NovelPage({
         },
         id2
       )) }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("span", { className: Novel_default.muted, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("span", { className: Novel_default.muted, children: [
           scenes.length,
           " \u573A\u666F \xB7 ",
           scenes.reduce((n, s) => n + s.words, 0),
           " \u5B57\u8BCD"
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.link,
@@ -45024,7 +44853,7 @@ function NovelPage({
             children: "\u5237\u65B0"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.link,
@@ -45034,7 +44863,7 @@ function NovelPage({
             children: data2.pinned ? "\u53D6\u6D88\u56FA\u5B9A" : "\u56FA\u5B9A\u4F5C\u54C1"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.link,
@@ -45043,28 +44872,20 @@ function NovelPage({
             children: "\u5BFC\u51FA\u8D44\u6599"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: Novel_default.muted, children: data2.writingMode === "writing" ? "\u7EED\u5199\u6A21\u5F0F" : "\u53EA\u8BFB\u6A21\u5F0F" })
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: Novel_default.muted, children: data2.writingMode === "writing" ? "\u7EED\u5199\u6A21\u5F0F" : "\u53EA\u8BFB\u6A21\u5F0F" })
       ] }),
-      data2.issues.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("details", { className: Novel_default.warn, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("summary", { children: [
+      data2.issues.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("details", { className: Novel_default.warn, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("summary", { children: [
           data2.issues.length,
           " \u9879\u7D22\u5F15\u63D0\u793A"
         ] }),
-        data2.issues.map((i2) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: i2 }, i2))
+        data2.issues.map((i2) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: i2 }, i2))
       ] }),
-      tab === "interview" && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
-        Interview,
-        {
-          data: data2,
-          busy,
-          onEdit: (command2) => run(() => edit(command2), "\u6784\u601D\u5DF2\u8BB0\u4E0B")
-        }
-      ),
-      tab === "overview" && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.stack, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: `${Novel_default.card} ${Novel_default.start}`, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u4F60\u60F3\u505A\u4EC0\u4E48\uFF1F" }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: Novel_default.muted, children: "\u76F4\u63A5\u8BF4\u9700\u6C42\uFF0CAgent \u4F1A\u7ED3\u5408\u8FD9\u90E8\u4F5C\u54C1\u7684\u6B63\u6587\u548C\u4E16\u754C\u4E66\u5904\u7406\u3002" }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+      tab === "overview" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: `${Novel_default.card} ${Novel_default.start}`, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u4F60\u60F3\u505A\u4EC0\u4E48\uFF1F" }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u76F4\u63A5\u8BF4\u9700\u6C42\uFF0CAgent \u4F1A\u7ED3\u5408\u8FD9\u90E8\u4F5C\u54C1\u7684\u6B63\u6587\u548C\u4E16\u754C\u4E66\u5904\u7406\u3002" }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
             "form",
             {
               onSubmit: (event) => {
@@ -45078,7 +44899,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                   );
               },
               children: [
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                   "textarea",
                   {
                     "aria-label": "\u4F60\u60F3\u505A\u4EC0\u4E48",
@@ -45088,8 +44909,8 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                     disabled: busy || !onAgent
                   }
                 ),
-                /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+                /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                     "button",
                     {
                       className: `${Prototype_default.btn} ${Prototype_default.primary}`,
@@ -45098,14 +44919,13 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                       children: "\u6253\u5F00 Agent \u5BF9\u8BDD"
                     }
                   ),
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { className: Prototype_default.btn, type: "button", disabled: busy, onClick: () => setTab("interview"), children: "\u6784\u601D\u65B0\u6545\u4E8B" }),
-                  /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("small", { className: Novel_default.muted, children: "\u9700\u6C42\u4F1A\u5E26\u5165 DSH \u4F1A\u8BDD\uFF0C\u53D1\u9001\u540E\u5F00\u59CB\u5904\u7406\u3002" })
+                  /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { className: Novel_default.muted, children: "\u9700\u6C42\u4F1A\u5E26\u5165 DSH \u4F1A\u8BDD\uFF0C\u53D1\u9001\u540E\u5F00\u59CB\u5904\u7406\u3002" })
                 ] })
               ]
             }
           ),
-          onAgent && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.shortcuts, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.shortcuts, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45117,7 +44937,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 children: "\u6574\u7406\u4EBA\u7269\u4E0E\u8BBE\u5B9A"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45129,7 +44949,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 children: "\u6821\u5BF9\u5F53\u524D\u7AE0\u8282"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45141,7 +44961,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 children: "\u51C6\u5907\u7EED\u5199"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45155,10 +44975,10 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             )
           ] })
         ] }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.grid, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: Novel_default.card, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u5F53\u524D\u7AE0\u8282" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.grid, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u5F53\u524D\u7AE0\u8282" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(
               "select",
               {
                 "aria-label": "\u5F53\u524D\u7AE0\u8282",
@@ -45169,8 +44989,8 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 ),
                 disabled: busy,
                 children: [
-                  !source && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: "", children: "\u9009\u62E9\u7AE0\u8282" }),
-                  scenes.map((scene) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("option", { value: scene.id, children: [
+                  !source && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: "", children: "\u9009\u62E9\u7AE0\u8282" }),
+                  scenes.map((scene) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("option", { value: scene.id, children: [
                     scene.path.split(/[/\\]/).at(-1)?.replace(/\.(md|txt|docx)$/i, ""),
                     " ",
                     "\xB7 ",
@@ -45179,19 +44999,19 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 ]
               }
             ),
-            last2 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(import_jsx_runtime6.Fragment, { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+            last2 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
                 "\u4E0A\u6B21\uFF1A",
                 last2.completed
               ] }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
                 "\u4E0B\u6B21\uFF1A",
                 last2.next || "\u672A\u586B\u5199"
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { className: Prototype_default.btn, type: "button", onClick: () => setTab("chapters"), children: "\u67E5\u770B\u7AE0\u8282" }),
-              source && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { className: Prototype_default.btn, type: "button", onClick: () => setTab("chapters"), children: "\u67E5\u770B\u7AE0\u8282" }),
+              source && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "button",
                 {
                   className: Prototype_default.btn,
@@ -45208,17 +45028,17 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               )
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("details", { className: Novel_default.card, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("summary", { children: "\u8BB0\u5F55\u672C\u6B21\u8FDB\u5C55 / \u4E0B\u6B21\u63A5\u7740\u5199" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("details", { className: Novel_default.card, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("summary", { children: "\u8BB0\u5F55\u672C\u6B21\u8FDB\u5C55 / \u4E0B\u6B21\u63A5\u7740\u5199" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u672C\u6B21\u5904\u7406",
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("textarea", { value: completed, onChange: (e) => setCompleted(e.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("textarea", { value: completed, onChange: (e) => setCompleted(e.target.value) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { children: [
               "\u672A\u5B8C\u6210\u4E8B\u9879 / \u4E0B\u6B21\u5165\u53E3",
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("textarea", { value: next, onChange: (e) => setNext(e.target.value) })
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("textarea", { value: next, onChange: (e) => setNext(e.target.value) })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45238,23 +45058,23 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: Novel_default.card, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u5F85\u5904\u7406" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u5F85\u5904\u7406" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
               data2.proposals.filter((p) => p.state === "pending").length,
               " \u9879\u63D0\u6848 \xB7",
               " ",
               view.staleFacts.length,
               " \u9879\u6765\u6E90\u9648\u65E7"
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { className: Prototype_default.link, type: "button", onClick: () => setTab("facts"), children: "\u67E5\u770B\u8D44\u6599" })
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { className: Prototype_default.link, type: "button", onClick: () => setTab("facts"), children: "\u67E5\u770B\u8D44\u6599" })
           ] }),
-          data2.sessions.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: Novel_default.card, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u6700\u8FD1\u4EA4\u63A5" }),
-            data2.sessions.slice(-4).reverse().map((s) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("small", { className: Novel_default.muted, children: s.savedAt }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: s.completed }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+          data2.sessions.length > 0 && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6700\u8FD1\u4EA4\u63A5" }),
+            data2.sessions.slice(-4).reverse().map((s) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { className: Novel_default.muted, children: s.savedAt }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: s.completed }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
                 "\u4E0B\u6B21\uFF1A",
                 s.next
               ] })
@@ -45262,18 +45082,18 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
           ] })
         ] })
       ] }),
-      tab === "chapters" && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)(import_jsx_runtime6.Fragment, { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Novel_default.scroll, children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("table", { className: Novel_default.table, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("tr", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("th", { children: "\u7AE0\u8282 / \u573A\u666F" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("th", { children: "\u53D9\u8FF0\u987A\u5E8F" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("th", { children: "\u72B6\u6001" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("th", { children: "\u5B57\u8BCD / \u5B57\u7B26" }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("th", { children: "\u4E16\u754C\u5185\u65F6\u95F4" })
+      tab === "chapters" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(import_jsx_runtime5.Fragment, { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.scroll, children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("table", { className: Novel_default.table, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("thead", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u7AE0\u8282 / \u573A\u666F" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u53D9\u8FF0\u987A\u5E8F" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u72B6\u6001" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u5B57\u8BCD / \u5B57\u7B26" }),
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("th", { children: "\u4E16\u754C\u5185\u65F6\u95F4" })
           ] }) }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("tbody", { children: scenes.map((s) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("tr", { children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("td", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("tbody", { children: scenes.map((s) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("tr", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("td", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
                 "button",
                 {
                   className: Prototype_default.link,
@@ -45290,14 +45110,14 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                   children: s.title
                 }
               ),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("small", { className: Novel_default.muted, style: { display: "block" }, children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { className: Novel_default.muted, style: { display: "block" }, children: [
                 s.path,
                 " \xB7",
                 " ",
                 origins[data2.documents.find((doc2) => doc2.id === s.documentId)?.classification?.origin ?? "unknown"]
               ] })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "input",
               {
                 "aria-label": `${s.title}\u53D9\u8FF0\u987A\u5E8F`,
@@ -45317,7 +45137,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               },
               `${s.id}-o-${s.order}`
             ) }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "select",
               {
                 "aria-label": `${s.title}\u72B6\u6001`,
@@ -45329,15 +45149,15 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                     status: e.target.value
                   })
                 ),
-                children: Object.entries(status).map(([k, v]) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("option", { value: k, children: v }, k))
+                children: Object.entries(status).map(([k, v]) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("option", { value: k, children: v }, k))
               }
             ) }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("td", { children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("td", { children: [
               s.words,
               " / ",
               s.characters
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("td", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "input",
               {
                 "aria-label": `${s.title}\u4E16\u754C\u5185\u65F6\u95F4`,
@@ -45358,22 +45178,22 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             ) })
           ] }, s.id)) })
         ] }) }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: Novel_default.muted, children: "\u53D9\u8FF0\u987A\u5E8F\u4E0E\u4E16\u754C\u5185\u65F6\u95F4\u5206\u5F00\u3002\u5B57\u8BCD v1\uFF1A\u6C49\u5B57\u6309\u5B57\uFF0C\u8FDE\u7EED\u5B57\u6BCD\uFF0F\u6570\u5B57\u6309\u8BCD\uFF0C\u6392\u9664 YAML \u548C\u4EE3\u7801\u5757\uFF1B\u4E0D\u7B49\u540C\u4E8E\u7F16\u8F91\u5668\u5B57\u6570\u3002" }),
-        source && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Evidence, { source })
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u53D9\u8FF0\u987A\u5E8F\u4E0E\u4E16\u754C\u5185\u65F6\u95F4\u5206\u5F00\u3002\u5B57\u8BCD v1\uFF1A\u6C49\u5B57\u6309\u5B57\uFF0C\u8FDE\u7EED\u5B57\u6BCD\uFF0F\u6570\u5B57\u6309\u8BCD\uFF0C\u6392\u9664 YAML \u548C\u4EE3\u7801\u5757\uFF1B\u4E0D\u7B49\u540C\u4E8E\u7F16\u8F91\u5668\u5B57\u6570\u3002" }),
+        source && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Evidence, { source })
       ] }),
-      tab === "facts" && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.stack, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u4F5C\u54C1\u6587\u4EF6\u4E0E\u6765\u6E90\u7EBF\u7D22" }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: Novel_default.muted, children: "\u660E\u786E\u6807\u8BB0\u76F4\u63A5\u8BB0\u5F55\uFF1B\u683C\u5F0F\u7EBF\u7D22\u53EA\u63D0\u793A\uFF0C\u4E0D\u6539\u53D8\u8BBE\u5B9A\u662F\u5426\u88AB\u4F5C\u8005\u786E\u8BA4\u3002" }),
-        data2.documents.map((doc2) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("article", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("strong", { children: doc2.path }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+      tab === "facts" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u4F5C\u54C1\u6587\u4EF6\u4E0E\u6765\u6E90\u7EBF\u7D22" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u660E\u786E\u6807\u8BB0\u76F4\u63A5\u8BB0\u5F55\uFF1B\u683C\u5F0F\u7EBF\u7D22\u53EA\u63D0\u793A\uFF0C\u4E0D\u6539\u53D8\u8BBE\u5B9A\u662F\u5426\u88AB\u4F5C\u8005\u786E\u8BA4\u3002" }),
+        data2.documents.map((doc2) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("strong", { children: doc2.path }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
             roles[doc2.classification?.role ?? "manuscript"],
             " \xB7",
             " ",
             origins[doc2.classification?.origin ?? "unknown"]
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("small", { children: doc2.classification?.evidence.join("\uFF1B") }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { children: data2.scenes.filter((scene) => scene.documentId === doc2.id).map((scene) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: doc2.classification?.evidence.join("\uFF1B") }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { children: data2.scenes.filter((scene) => scene.documentId === doc2.id).map((scene) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               className: Prototype_default.link,
@@ -45392,8 +45212,8 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             scene.id
           )) })
         ] }, doc2.id)),
-        source && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Evidence, { source }),
-        onAgent && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        source && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Evidence, { source }),
+        onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.btn,
@@ -45404,41 +45224,41 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             children: "\u8BA9 Agent \u6574\u7406\u4EBA\u7269\u4E0E\u5730\u70B9"
           }
         ),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("div", { className: Novel_default.grid, children: data2.facts.map((f) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("article", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("small", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("div", { className: Novel_default.grid, children: data2.facts.map((f) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
             canon[f.canon],
             " \xB7 ",
             f.kind === "person" ? "\u4EBA\u7269" : "\u5730\u70B9"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: f.name }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: f.text }),
-          view.staleFacts.includes(f.id) && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: Novel_default.warn, children: "\u6765\u6E90\u5DF2\u9648\u65E7" }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Sources, { anchors: f.sources })
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: f.name }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: f.text }),
+          view.staleFacts.includes(f.id) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.warn, children: "\u6765\u6E90\u5DF2\u9648\u65E7" }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Sources, { anchors: f.sources })
         ] }, f.id)) }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u63D0\u6848\u4E0E\u64A4\u9500" }),
-        data2.proposals.slice().reverse().map((p) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("article", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("h3", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u63D0\u6848\u4E0E\u64A4\u9500" }),
+        data2.proposals.slice().reverse().map((p) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("h3", { children: [
             p.after.name,
             " \xB7 ",
             canon[p.after.canon]
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.diff, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("small", { children: "\u539F\u503C" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: p.before?.text ?? "\u65B0\u589E" })
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.diff, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: "\u539F\u503C" }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: p.before?.text ?? "\u65B0\u589E" })
             ] }),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { children: [
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("small", { children: "\u63D0\u8BAE\u503C" }),
-              /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: p.after.text })
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: "\u63D0\u8BAE\u503C" }),
+              /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: p.after.text })
             ] })
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Sources, { anchors: p.after.sources }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("small", { children: p.state }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Sources, { anchors: p.after.sources }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: p.state }),
             p.state === "pending" ? [
               ["approve", "\u91C7\u7EB3"],
               ["reject", "\u62D2\u7EDD"]
-            ].map(([decision, label]) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            ].map(([decision, label]) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45454,7 +45274,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
                 children: label
               },
               decision
-            )) : p.state === "approved" && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            )) : p.state === "approved" && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45474,12 +45294,12 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
           ] })
         ] }, p.id))
       ] }),
-      tab === "science" && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(SciencePanel, { request, project, onAgent }),
-      tab === "drafts" && /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.stack, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u7EED\u5199\u6A21\u5F0F" }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { className: Novel_default.check, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      tab === "science" && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(SciencePanel, { request, project, onAgent }),
+      tab === "drafts" && /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u7EED\u5199\u6A21\u5F0F" }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: Novel_default.check, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "input",
               {
                 type: "checkbox",
@@ -45494,9 +45314,9 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             ),
             "\u5141\u8BB8\u4FDD\u5B58\u7EED\u5199\u5019\u9009\u4E0E\u5408\u7A3F"
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("label", { className: Novel_default.stack, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("label", { className: Novel_default.stack, children: [
             "\u8FD9\u6B21\u60F3\u600E\u4E48\u7EED\u5199\uFF08\u9009\u586B\uFF09",
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "textarea",
               {
                 value: writingIntent,
@@ -45506,8 +45326,8 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               }
             )
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { className: Novel_default.muted, children: "\u672C\u5730 Agent \u8BFB\u53D6\u6B63\u6587\u3001\u4E16\u754C\u4E66\u548C\u6587\u98CE\u6837\u672C\uFF0C\u6574\u7406\u6210\u5305\u542B\u5B9E\u9645\u6750\u6599\u7684\u5B8C\u6574\u63D0\u793A\u8BCD\u3002 \u590D\u5236\u7ED9 Gemini \u7B49\u5916\u90E8\u804A\u5929\u6A21\u578B\u5373\u53EF\u7EED\u5199\u3002" }),
-          onAgent && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { className: Novel_default.muted, children: "\u672C\u5730 Agent \u8BFB\u53D6\u6B63\u6587\u3001\u4E16\u754C\u4E66\u548C\u6587\u98CE\u6837\u672C\uFF0C\u6574\u7406\u6210\u5305\u542B\u5B9E\u9645\u6750\u6599\u7684\u5B8C\u6574\u63D0\u793A\u8BCD\u3002 \u590D\u5236\u7ED9 Gemini \u7B49\u5916\u90E8\u804A\u5929\u6A21\u578B\u5373\u53EF\u7EED\u5199\u3002" }),
+          onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               className: Prototype_default.btn,
@@ -45518,7 +45338,7 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
               children: "\u6574\u7406\u5916\u90E8\u7EED\u5199\u63D0\u793A\u8BCD"
             }
           ),
-          onAgent && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
             "button",
             {
               className: Prototype_default.btn,
@@ -45528,16 +45348,16 @@ ${source ? `\u5F53\u524D\u7AE0\u8282\uFF1A${source.scene.path} / ${source.scene.
             }
           )
         ] }),
-        data2.drafts?.map((d) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("article", { className: Novel_default.card, children: [
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: d.title }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("small", { children: [
+        data2.drafts?.map((d) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: d.title }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
             d.applied ? "\u5DF2\u5408\u7A3F" : "\u72EC\u7ACB\u5019\u9009",
             " \xB7 ",
             d.created
           ] }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("pre", { className: Novel_default.quote, style: { maxHeight: "none" }, children: d.text }),
-          /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("pre", { className: Novel_default.quote, style: { maxHeight: "none" }, children: d.text }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45549,7 +45369,7 @@ ${d.text}
                 children: "\u5BFC\u51FA Markdown"
               }
             ),
-            /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+            /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
               "button",
               {
                 className: Prototype_default.btn,
@@ -45573,38 +45393,38 @@ ${d.text}
   ] }) });
 }
 function Sources({ anchors }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("details", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("summary", { children: "\u539F\u6587\u51FA\u5904" }),
-    anchors.map((a) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("blockquote", { className: Novel_default.quote, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("small", { children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("details", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("summary", { children: "\u539F\u6587\u51FA\u5904" }),
+    anchors.map((a) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("blockquote", { className: Novel_default.quote, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
         a.path,
         " : ",
         a.line
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("br", {}),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("br", {}),
       a.quote
     ] }, `${a.path}${a.quoteHash}`))
   ] });
 }
 function Evidence({ source }) {
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("section", { className: Novel_default.card, children: [
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u6B63\u6587\u5FEB\u7167" }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { className: Novel_default.muted, children: [
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("section", { className: Novel_default.card, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6B63\u6587\u5FEB\u7167" }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { className: Novel_default.muted, children: [
       source.path,
       " : ",
       source.scene.line
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("pre", { className: Novel_default.quote, children: source.text })
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("pre", { className: Novel_default.quote, children: source.text })
   ] });
 }
 function SciencePanel({ request, project, onAgent }) {
-  const [view, setView] = (0, import_react6.useState)(null);
-  const [error51, setError] = (0, import_react6.useState)("");
-  const load = (0, import_react6.useCallback)(
+  const [view, setView] = (0, import_react5.useState)(null);
+  const [error51, setError] = (0, import_react5.useState)("");
+  const load = (0, import_react5.useCallback)(
     async () => setView(await request("sf:view", { project })),
     [request, project]
   );
-  (0, import_react6.useEffect)(() => {
+  (0, import_react5.useEffect)(() => {
     void load().catch((e) => setError(e.message));
   }, [load]);
   const run = async (op) => {
@@ -45617,10 +45437,10 @@ function SciencePanel({ request, project, onAgent }) {
     }
   };
   const latest = view?.data.rules.filter((rule) => view.data.rules.filter((r) => r.id === rule.id).at(-1) === rule) ?? [];
-  return /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.stack, children: [
-    error51 && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { role: "alert", className: Novel_default.warn, children: error51 }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-      onAgent && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.stack, children: [
+    error51 && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { role: "alert", className: Novel_default.warn, children: error51 }),
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+      onAgent && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           className: `${Prototype_default.btn} ${Prototype_default["btn-strong"]}`,
@@ -45633,8 +45453,8 @@ function SciencePanel({ request, project, onAgent }) {
           children: "\u8BA9 Agent \u5BFC\u5165\u8BBE\u5B9A\u5E76\u6821\u5BF9"
         }
       ),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("button", { className: Prototype_default.link, type: "button", onClick: () => void load(), children: "\u5237\u65B0\u7ED3\u679C" }),
-      view && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("button", { className: Prototype_default.link, type: "button", onClick: () => void load(), children: "\u5237\u65B0\u7ED3\u679C" }),
+      view && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
         "button",
         {
           className: Prototype_default.link,
@@ -45644,41 +45464,41 @@ function SciencePanel({ request, project, onAgent }) {
         }
       )
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { className: Novel_default.muted, children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { className: Novel_default.muted, children: [
       latest.length,
       " \u5F20\u8BBE\u5B9A\u5361 \xB7 ",
       view?.data.findings.length ?? 0,
       " \u9879\u6821\u5BF9\u3002\u6708\u9762\u91CD\u529B\u53C2\u8003 NASA 1.62 m/s\xB2\uFF1B\u4F5C\u54C1\u4E2D\u7684\u7279\u6B8A\u8BBE\u65BD\u4E0E\u4F8B\u5916\u53E6\u884C\u5224\u65AD\u3002"
     ] }),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u6821\u5BF9\u7ED3\u679C" }),
-    view?.data.findings.slice().reverse().map((f) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("article", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h3", { children: {
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u6821\u5BF9\u7ED3\u679C" }),
+    view?.data.findings.slice().reverse().map((f) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h3", { children: {
           hard_rule_conflict: "\u660E\u786E\u89C4\u5219\u51B2\u7A81",
           information_missing: "\u9700\u8981\u8865\u5145\u6761\u4EF6",
           plausibility_note: "\u6821\u5BF9\u63D0\u793A"
         }[f.result.type] ?? f.result.type }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("small", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
           "\u5F71\u54CD\uFF1A",
           f.result.type === "hard_rule_conflict" ? "\u4E2D" : "\u4F4E",
           " \xB7",
           " ",
           f.result.type === "hard_rule_conflict" ? "\u6761\u4EF6\u5DF2\u786E\u8BA4" : "\u4F9B\u4F5C\u8005\u5224\u65AD"
         ] }),
-        view.stale.includes(f.id) && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("span", { className: Novel_default.warn, children: "\u6765\u6E90\u6216\u89C4\u5219\u5DF2\u53D8\u5316\uFF0C\u9700\u8981\u91CD\u67E5" })
+        view.stale.includes(f.id) && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("span", { className: Novel_default.warn, children: "\u6765\u6E90\u6216\u89C4\u5219\u5DF2\u53D8\u5316\uFF0C\u9700\u8981\u91CD\u67E5" })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: f.result.conclusion }),
-      f.result.missing?.length ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("ul", { children: f.result.missing.map((m) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("li", { children: m }, m)) }) : null,
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Sources, { anchors: [f.anchor, ...f.relatedAnchors ?? []] }),
-      f.result.references?.map((r) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("a", { href: r.url, target: "_blank", rel: "noreferrer", children: r.title }) }, r.url)),
-      f.result.calculation && /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("pre", { className: Novel_default.quote, children: JSON.stringify(f.result.calculation, null, 2) }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("div", { className: Novel_default.actions, children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("small", { children: f.status }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: f.result.conclusion }),
+      f.result.missing?.length ? /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("ul", { children: f.result.missing.map((m) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("li", { children: m }, m)) }) : null,
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Sources, { anchors: [f.anchor, ...f.relatedAnchors ?? []] }),
+      f.result.references?.map((r) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("a", { href: r.url, target: "_blank", rel: "noreferrer", children: r.title }) }, r.url)),
+      f.result.calculation && /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("pre", { className: Novel_default.quote, children: JSON.stringify(f.result.calculation, null, 2) }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("div", { className: Novel_default.actions, children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("small", { children: f.status }),
         [
           ["confirmed", "\u786E\u8BA4\u95EE\u9898"],
           ["deferred", "\u6682\u7F13"],
           ["false_positive", "\u8BEF\u62A5"]
-        ].map(([state, label]) => /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
+        ].map(([state, label]) => /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(
           "button",
           {
             className: Prototype_default.btn,
@@ -45696,23 +45516,23 @@ function SciencePanel({ request, project, onAgent }) {
         ))
       ] })
     ] }, f.id)),
-    /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("h2", { children: "\u4E16\u754C\u4E66\u4E0E\u8BBE\u5B9A" }),
-    latest.map((r) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("article", { className: Novel_default.card, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("h3", { children: [
+    /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("h2", { children: "\u4E16\u754C\u4E66\u4E0E\u8BBE\u5B9A" }),
+    latest.map((r) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("article", { className: Novel_default.card, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("h3", { children: [
         r.title,
         " ",
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("small", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("small", { children: [
           "v",
           r.version,
           " \xB7 ",
           canon[r.canon]
         ] })
       ] }),
-      /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("details", { children: [
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("summary", { children: "\u67E5\u770B\u8BBE\u5B9A" }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { style: { whiteSpace: "pre-wrap" }, children: r.statement }),
-        /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(Sources, { anchors: r.sources }),
-        r.exceptions.map((e) => /* @__PURE__ */ (0, import_jsx_runtime6.jsxs)("p", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("details", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("summary", { children: "\u67E5\u770B\u8BBE\u5B9A" }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)("p", { style: { whiteSpace: "pre-wrap" }, children: r.statement }),
+        /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Sources, { anchors: r.sources }),
+        r.exceptions.map((e) => /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)("p", { children: [
           "\u4F8B\u5916\uFF1A",
           e.statement,
           " \xB7 ",
@@ -45724,9 +45544,9 @@ function SciencePanel({ request, project, onAgent }) {
 }
 
 // src/client/embedded-agent.tsx
-var import_jsx_runtime7 = require("react/jsx-runtime");
+var import_jsx_runtime6 = require("react/jsx-runtime");
 function ChatView(props) {
-  return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(import_jsx_runtime7.Fragment, { children: props.renderSlot("conversation.session", { view: "chat" }) });
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(import_jsx_runtime6.Fragment, { children: props.renderSlot("conversation.session", { view: "chat" }) });
 }
 function WriterChat({
   useSession,
@@ -45736,8 +45556,8 @@ function WriterChat({
 }) {
   const session = useSession((v) => v);
   const conversation = useConversation((v) => v);
-  const wasRunning = (0, import_react7.useRef)(false);
-  (0, import_react7.useEffect)(() => {
+  const wasRunning = (0, import_react6.useRef)(false);
+  (0, import_react6.useEffect)(() => {
     if (wasRunning.current && !session.running) onReply();
     wasRunning.current = session.running;
   }, [session.running, onReply]);
@@ -45756,48 +45576,57 @@ function EmbeddedNovelPage({
   SessionProvider,
   renderSlot
 }) {
-  const references = (0, import_react7.useRef)(/* @__PURE__ */ new Map());
-  const [, redraw] = (0, import_react7.useState)(0);
-  (0, import_react7.useEffect)(
+  const references = (0, import_react6.useRef)(/* @__PURE__ */ new Map());
+  const [, redraw] = (0, import_react6.useState)(0);
+  (0, import_react6.useEffect)(
     () => () => {
       for (const ref of references.current.values()) ref.release();
       references.current.clear();
     },
     []
   );
-  return /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(
+  async function openSession(project) {
+    let reference = references.current.get(project);
+    if (!reference) {
+      const workspace = await request("workspace");
+      const target = await services.workspaces.create({ path: workspace.path });
+      const id2 = await services.sessions.create({
+        workspaceId: target.workspaceId
+      });
+      reference = services.sessions.retain(id2, { source: "novelWriter" });
+      references.current.set(project, reference);
+      try {
+        await reference.ready;
+      } catch (e) {
+        reference.release();
+        references.current.delete(project);
+        throw e;
+      }
+      redraw((n) => n + 1);
+    }
+    return reference;
+  }
+  return /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(
     NovelPage,
     {
       request,
       onAgent,
       onBrowseFolder,
       writerAgent: {
+        async session(project) {
+          const reference = await openSession(project);
+          redraw((n) => n + 1);
+          return reference.sessionId;
+        },
         async send(project, text) {
-          let reference = references.current.get(project);
-          if (!reference) {
-            const workspace = await request("workspace");
-            const target = await services.workspaces.create({ path: workspace.path });
-            const id2 = await services.sessions.create({
-              workspaceId: target.workspaceId
-            });
-            reference = services.sessions.retain(id2, { source: "novelWriter" });
-            references.current.set(project, reference);
-            try {
-              await reference.ready;
-            } catch (e) {
-              reference.release();
-              references.current.delete(project);
-              throw e;
-            }
-            redraw((n) => n + 1);
-          }
+          const reference = await openSession(project);
           const binding = await reference.ready;
           const result = await binding.session.prompt([{ type: "text", text }], "queue");
           if (!result.ok) throw new Error(result.error.message);
         },
         render(project, onReply) {
           const ref = references.current.get(project);
-          return ref ? /* @__PURE__ */ (0, import_jsx_runtime7.jsx)(SessionProvider, { session: ref, children: renderSlot("novel.writer.chat", { onReply }) }, ref.sessionId) : /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("p", { style: { color: "var(--muted)", padding: "20px 6px" }, children: "\u9009\u62E9\u4E0A\u65B9\u64CD\u4F5C\u5F00\u59CB\u3002\u5BF9\u8BDD\u4F1A\u663E\u793A\u5728\u8FD9\u91CC\uFF0C\u53EF\u7EE7\u7EED\u8FFD\u95EE\u3001\u9009\u62E9\u6A21\u578B\u6216\u505C\u6B62\u751F\u6210\u3002" });
+          return ref ? /* @__PURE__ */ (0, import_jsx_runtime6.jsx)(SessionProvider, { session: ref, children: renderSlot("novel.writer.chat", { onReply }) }, ref.sessionId) : /* @__PURE__ */ (0, import_jsx_runtime6.jsx)("p", { style: { color: "var(--muted)", padding: "20px 6px" }, children: "\u9009\u62E9\u4E0A\u65B9\u64CD\u4F5C\u5F00\u59CB\u3002\u5BF9\u8BDD\u4F1A\u663E\u793A\u5728\u8FD9\u91CC\uFF0C\u53EF\u7EE7\u7EED\u8FFD\u95EE\u3001\u9009\u62E9\u6A21\u578B\u6216\u505C\u6B62\u751F\u6210\u3002" });
         }
       }
     }
@@ -45805,7 +45634,7 @@ function EmbeddedNovelPage({
 }
 
 // src/client/index.tsx
-var import_jsx_runtime8 = require("react/jsx-runtime");
+var import_jsx_runtime7 = require("react/jsx-runtime");
 var inject = ["slots", "remote", "layout"];
 var panel = "kaitu-novel";
 async function apply(ctx) {
@@ -45865,7 +45694,7 @@ async function apply(ctx) {
         "sidebar.panellist",
         () => ctx2.slots.register(
           { name: "sidebar.panellist", id: panel, order: 25, label: () => "\u5C0F\u8BF4\u5DE5\u4F5C\u53F0" },
-          () => /* @__PURE__ */ (0, import_jsx_runtime8.jsx)("span", { "aria-hidden": "true", children: "\u4E66" })
+          () => /* @__PURE__ */ (0, import_jsx_runtime7.jsx)("span", { "aria-hidden": "true", children: "\u4E66" })
         )
       );
     }

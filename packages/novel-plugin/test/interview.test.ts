@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { connectNovel, createProject, editNovel, initWorkspace, novelView } from "@kaitu/core";
+import { connectNovel, createProject, editNovel, initWorkspace, novelView, novelVoice } from "@kaitu/core";
 import { describe, expect, it } from "vitest";
 import { hash } from "../../core/src/novel/store.js";
 
@@ -25,6 +25,11 @@ describe("构思访谈", () => {
       links: [{ path: source, role: "manuscript" }],
     });
     connectNovel(ws, { project, sourceRoot: source, mode: "files", exclude: [], preview: false });
+    const voice = novelVoice(ws, project);
+    expect(voice.samples.some((sample) => sample.text.includes("我在实验室"))).toBe(true);
+    expect(voice.samples.some((sample) => sample.text.includes("另一版结局"))).toBe(false);
+    expect(voice.questions.map((question) => question.id)).toEqual(["conflict", "dilemma", "reader", "keep"]);
+    expect(voice.voice).toContain("第一人称");
     const edit = (command: object) => {
       const view = novelView(ws, project);
       return editNovel(ws, project, view.revision, command);

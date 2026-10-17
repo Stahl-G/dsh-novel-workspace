@@ -1,6 +1,7 @@
 import type { CreatorPortrait, PortraitNote, StoryBeat, StoryBrief, StoryClaim, StoryQuestion } from "./model.js";
 
 export interface PortraitSource {
+  path?: string;
   role: "manuscript" | "setting" | "outline" | "notes" | "reference" | "candidate";
   origin: "author" | "ai" | "likely_ai" | "unknown";
   text: string;
@@ -126,6 +127,45 @@ function finish(story: StoryBrief) {
     story.question = { id: question.id, prompt: question.prompt, choices: question.choices };
   }
   story.updatedAt = new Date().toISOString();
+}
+
+export function writeLikeMe(sources: PortraitSource[]) {
+  const usable = sources.filter(
+    (source) =>
+      source.role === "manuscript" &&
+      source.origin !== "ai" &&
+      source.origin !== "likely_ai" &&
+      source.text.trim().length > 40,
+  );
+  return {
+    voice: voiceNote(sources),
+    samples: usable.slice(0, 3).map((source) => ({
+      path: source.path ?? "",
+      text: source.text.replace(/\s+/g, " ").trim().slice(0, 280),
+    })),
+    questions: steps.map((step) => {
+      const question = questions[step];
+      return {
+        id: question.id,
+        prompt: question.prompt,
+        options: question.choices.map((choice) => ({ id: choice.id, label: choice.label })),
+      };
+    }),
+  };
+}
+
+export function answerChoice(step: string, label: string | undefined) {
+  const question = questions[step as (typeof steps)[number]];
+  if (!question) throw new Error("未知问题");
+  const picked = (label ?? "").trim();
+  if (picked) {
+    const match = question.choices.find((choice) => choice.label === picked);
+    if (!match) throw new Error("这个选项已经不在这一题里");
+    return match.id;
+  }
+  const open = question.choices.find((choice) => question.canon[choice.id] === "open");
+  if (!open) throw new Error("请选择一个选项");
+  return open.id;
 }
 
 function claimText(label: string, custom: string | undefined, canon: "confirmed" | "open") {

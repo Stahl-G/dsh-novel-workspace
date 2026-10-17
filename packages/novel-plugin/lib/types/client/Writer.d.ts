@@ -9,14 +9,14 @@ export type WriterSource = {
 };
 export type WriterAgent = {
     send(project: string, text: string): Promise<void>;
+    session(project: string): Promise<string>;
     render(project: string, onReply: () => void): ReactNode;
 };
-export declare function Writer({ project, title, request, agent, onView, onBack, onInterview, }: {
+export declare function Writer({ project, title, request, agent, onView, onBack, }: {
     project: string;
     title: string;
     request: Request;
     agent?: WriterAgent;
     onView(view: NovelView): void;
     onBack(): void;
-    onInterview?(): void;
 }): import("react").JSX.Element;

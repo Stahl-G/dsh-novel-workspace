@@ -45973,7 +45973,12 @@ function portraitSources(data) {
     try {
       const text2 = readSource(data, doc.path).text;
       const classification = doc.classification ?? classifyNovelDocument(doc.path, text2);
-      sources.push({ role: classification.role, origin: classification.origin, text: text2.slice(0, 4e3) });
+      sources.push({
+        path: doc.path,
+        role: classification.role,
+        origin: classification.origin,
+        text: text2.slice(0, 4e3)
+      });
     } catch {
     }
   }

@@ -17,10 +17,12 @@ import {
   novelTimeCheck,
   novelView,
   proposeNovelFact,
+  novelVoice,
   readNovel,
   saveNovelDraft,
   saveNovelScene,
   undoNovelScene,
+  answerChoice,
 } from "@kaitu/core";
 import { TYPERT } from "../lib/typert.host.js";
 import {
@@ -56,6 +58,73 @@ export class NovelService extends TypertRemoteService {
   }
   private snapshot(project: string) {
     return novelView(this.workspace, project);
+  }
+  private async grill(ws: Workspace, project: string, args: Record<string, unknown>) {
+    const voice = novelVoice(ws, project);
+    const asker = this.ctx.get("userQuestions") as
+      | {
+          ask(request: {
+            agent?: object;
+            questions: {
+              id: string;
+              question: string;
+              header?: string;
+              options?: { label: string }[];
+            }[];
+          }): Promise<{ answers: { id: string; selected: string[]; custom?: string }[] }>;
+        }
+      | undefined;
+    if (!asker) throw new Error("当前 DSH 没有提问卡片");
+    const session = String(args.session ?? "");
+    const registry = this.ctx.get("agents") as { get(id: string): object | undefined } | undefined;
+    const agent = session ? registry?.get(session) : undefined;
+    if (!agent) throw new Error("写作会话还没就绪，请再点一次");
+    const spark = String(args.spark ?? "").trim().slice(0, 500) || "从当前章节接着写一段";
+    let revision = novelView(ws, project).revision;
+    editNovel(ws, project, revision, { type: "story", op: "spark", text: spark });
+    const answers: { id: string; selected: string[]; custom?: string }[] = [];
+    for (const question of voice.questions) {
+      let batch: { answers: { id: string; selected: string[]; custom?: string }[] };
+      try {
+        batch = await asker.ask({
+          agent,
+          questions: [
+            {
+              id: question.id,
+              header: "构思",
+              question: question.prompt,
+              options: question.options.map((option) => ({ label: option.label })),
+            },
+          ],
+        });
+      } catch (error) {
+        const code =
+          error && typeof error === "object" && "code" in error ? String((error as { code: unknown }).code) : "";
+        const message = error instanceof Error ? error.message : "";
+        if (code === "ASK_CANCELLED" || message.includes("the user cancelled"))
+          throw new Error(answers.length ? "这题先放下了，已记下的选择还在" : "这题先放下了");
+        if (answers.length === 0 && (code === "NO_PROVIDER" || message.includes("no user-questions answerer")))
+          throw new Error("提问卡片没有接上");
+        if (answers.length > 0) throw new Error("提问中断，已记下的选择还在，请再点一次");
+        throw error instanceof Error ? error : new Error("提问没有完成");
+      }
+      const answer = batch.answers.find((item) => item.id === question.id) ?? batch.answers[0];
+      if (!answer) throw new Error("这一题没有回答");
+      revision = novelView(ws, project).revision;
+      editNovel(ws, project, revision, {
+        type: "story",
+        op: "answer",
+        choice: answerChoice(question.id, answer.selected[0]),
+        custom: answer.custom,
+      });
+      answers.push({
+        id: question.id,
+        selected: [...answer.selected],
+        ...(answer.custom ? { custom: answer.custom } : {}),
+      });
+    }
+    const story = novelView(ws, project).data.story;
+    return { voice, answers, confirmed: story?.confirmed ?? [], open: story?.open ?? [] };
   }
   private scene(project: string, scene: string) {
     return novelScene(this.workspace, project, scene);
@@ -138,6 +207,12 @@ export class NovelService extends TypertRemoteService {
         break;
       case "export":
         result = readNovel(ws, project).value;
+        break;
+      case "voice":
+        result = novelVoice(ws, project);
+        break;
+      case "grill":
+        result = await this.grill(ws, project, args);
         break;
       case "open": {
         const source = this.scene(project, String(args.scene));

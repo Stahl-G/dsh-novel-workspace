@@ -3,7 +3,6 @@ import { useCallback, useEffect, useState } from "react";
 import base from "../../../dsh-plugin/src/client/Prototype.module.css";
 import css from "./Novel.module.css";
 import { Writer, type WriterAgent } from "./Writer.js";
-import { Interview } from "./Interview.js";
 import { continuationPrompt, externalContinuationPrompt } from "./continuation-prompt.js";
 export type Request = <T = unknown>(operation: string, input?: object) => Promise<T>;
 export type FolderListing = {
@@ -165,7 +164,6 @@ export function NovelPage({
           agent={writerAgent}
           onView={setView}
           onBack={() => setTab("overview")}
-          onInterview={() => setTab("interview")}
         />
       </div>
     );
@@ -450,7 +448,6 @@ export function NovelPage({
             <div className={base.subtabs} role="tablist">
               {[
                 ["writer", "正文工作台"],
-                ["interview", "构思"],
                 ["overview", "概览"],
                 ["chapters", "章节"],
                 ["facts", "资料"],
@@ -507,13 +504,6 @@ export function NovelPage({
                 ))}
               </details>
             )}
-            {tab === "interview" && (
-              <Interview
-                data={data}
-                busy={busy}
-                onEdit={(command) => run(() => edit(command), "构思已记下")}
-              />
-            )}
             {tab === "overview" && (
               <div className={css.stack}>
                 <section className={`${css.card} ${css.start}`}>
@@ -542,9 +532,6 @@ export function NovelPage({
                         disabled={busy || !onAgent || !agentIntent.trim()}
                       >
                         打开 Agent 对话
-                      </button>
-                      <button className={base.btn} type="button" disabled={busy} onClick={() => setTab("interview")}>
-                        构思新故事
                       </button>
                       <small className={css.muted}>需求会带入 DSH 会话，发送后开始处理。</small>
                     </div>

@@ -7,7 +7,8 @@ import { type Anchor, type Document, type Fact, type NovelData, type Scene, fact
 import { changeStore, hash, id, readStore } from "./store.js";
 export type * from "./model.js";
 import { classifyNovelDocument } from "./classify.js";
-import { type PortraitSource, applyStory } from "./interview.js";
+import { type PortraitSource, answerChoice, applyStory, writeLikeMe } from "./interview.js";
+export { answerChoice, writeLikeMe } from "./interview.js";
 export { classifyNovelDocument } from "./classify.js";
 export type { NovelClassification } from "./classify.js";
 
@@ -479,12 +480,21 @@ function portraitSources(data: NovelData): PortraitSource[] {
     try {
       const text = readSource(data, doc.path).text;
       const classification = doc.classification ?? classifyNovelDocument(doc.path, text);
-      sources.push({ role: classification.role, origin: classification.origin, text: text.slice(0, 4000) });
+      sources.push({
+        path: doc.path,
+        role: classification.role,
+        origin: classification.origin,
+        text: text.slice(0, 4000),
+      });
     } catch {
       /* Missing or unreadable files stay out of the portrait. */
     }
   }
   return sources;
+}
+
+export function novelVoice(ws: Workspace, project: string) {
+  return writeLikeMe(portraitSources(readNovel(ws, project).value));
 }
 
 function linkedSource(ws: Workspace, project: string): Pick<NovelData, "sourceRoot" | "include" | "exclude"> {
