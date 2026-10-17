@@ -1,4 +1,4 @@
-window.__ModuleLoader__.load({id:"kaitu-novel-workspace",factory:(require)=>{var module={exports:{}};var exports=module.exports;window.__kaituNovelStyles=".kn_wrap_GZZZGa {\n  max-width: 1120px;\n  color: var(--ink);\n  font: 15px / 1.6 var(--font);\n  margin: auto;\n  padding: 28px;\n}\n\n.kn_wrap_GZZZGa h1 {\n  margin: 0;\n  font-size: 28px;\n}\n\n.kn_wrap_GZZZGa h2 {\n  font-size: 18px;\n}\n\n.kn_wrap_GZZZGa h3 {\n  font-size: 16px;\n}\n\n.kn_wrap_GZZZGa button, .kn_wrap_GZZZGa input, .kn_wrap_GZZZGa select, .kn_wrap_GZZZGa textarea {\n  font: inherit;\n}\n\n.kn_wrap_GZZZGa input, .kn_wrap_GZZZGa select, .kn_wrap_GZZZGa textarea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  color: var(--ink);\n  border-radius: 7px;\n  min-width: 0;\n  padding: 7px;\n}\n\n.kn_wrap_GZZZGa textarea {\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 85px;\n}\n\n.kn_wrap_GZZZGa label {\n  gap: 4px;\n  display: grid;\n}\n\n.kn_grid_GZZZGa {\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n  display: grid;\n}\n\n.kn_stack_GZZZGa {\n  gap: 14px;\n  display: grid;\n}\n\n.kn_actions_GZZZGa {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 9px;\n  display: flex;\n}\n\n.kn_muted_GZZZGa {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_table_GZZZGa {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.kn_table_GZZZGa th, .kn_table_GZZZGa td {\n  text-align: left;\n  border-bottom: 1px solid var(--line);\n  vertical-align: top;\n  padding: 9px;\n}\n\n.kn_table_GZZZGa th {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_scroll_GZZZGa {\n  overflow: auto;\n}\n\n.kn_quote_GZZZGa {\n  white-space: pre-wrap;\n  background: var(--sunken);\n  border-radius: 8px;\n  max-height: 240px;\n  padding: 15px;\n  overflow: auto;\n}\n\n.kn_card_GZZZGa {\n  border: 1px solid var(--line);\n  border-radius: var(--radius);\n  background: var(--surface);\n  padding: 18px;\n}\n\n.kn_warn_GZZZGa {\n  color: var(--news-ink);\n  background: var(--news-tint);\n  border-radius: 8px;\n  padding: 10px;\n}\n\n.kn_check_GZZZGa {\n  align-items: center;\n  gap: 7px;\n  display: flex !important;\n}\n\n.kn_wrap_GZZZGa a {\n  color: var(--link);\n}\n\n.kn_diff_GZZZGa {\n  grid-template-columns: 1fr 1fr;\n  gap: 10px;\n  display: grid;\n}\n\n.kn_diff_GZZZGa pre {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_selected_GZZZGa {\n  background: var(--doing-tint);\n}\n\n@media (width <= 760px) {\n  .kn_grid_GZZZGa, .kn_diff_GZZZGa {\n    grid-template-columns: 1fr;\n  }\n\n  .kn_wrap_GZZZGa {\n    padding: 15px;\n  }\n\n  .kn_table_GZZZGa td {\n    min-width: 100px;\n  }\n}\n\n.kn_start_GZZZGa h2 {\n  margin: 0;\n}\n\n.kn_start_GZZZGa form {\n  gap: 10px;\n  display: grid;\n}\n\n.kn_start_GZZZGa textarea {\n  resize: vertical;\n  min-height: 100px;\n}\n\n.kn_shortcuts_GZZZGa {\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-top: 16px;\n  display: flex;\n}\n\n.kn_grid_GZZZGa {\n  align-items: start;\n}\n\n.kn_card_GZZZGa select {\n  max-width: 100%;\n}\n\n.kn_card_GZZZGa summary {\n  cursor: pointer;\n  font-weight: 600;\n}\n\n.kn_card_GZZZGa details, details.kn_card_GZZZGa label {\n  margin-top: 12px;\n}\n\n.kn_app_mNecSG {\n  --bg: #fcfcfb;\n  --surface: #fff;\n  --sunken: #f5f5f3;\n  --control: #f0efec;\n  --line: #ecebe7;\n  --ink: #1f1e1d;\n  --ink2: #4d4c48;\n  --muted: #6b6a66;\n  --link: #2f5fc4;\n  --primary: #2f5fc4;\n  --on-primary: #fff;\n  --strong: #1f1e1d;\n  --on-strong: #fff;\n  --ask: #f2f5fd;\n  --ask-line: #dce4f8;\n  --scrim: #1f1e1d6b;\n  --health: #2e8b57;\n  --health-tint: #e8f3ec;\n  --health-ink: #1f6b43;\n  --doing: #6b5bd6;\n  --doing-tint: #efedfb;\n  --doing-ink: #4b3fb0;\n  --explore: #3d6fe0;\n  --explore-tint: #ecf1fc;\n  --explore-ink: #2a4fa8;\n  --news: #c47a12;\n  --news-tint: #fbefe0;\n  --news-ink: #8a520a;\n  --finance: #1f8a8a;\n  --finance-tint: #e3f2f2;\n  --finance-ink: #176868;\n  --me: #c2507a;\n  --empty: #f0efec;\n  --map-land: #eef1ec;\n  --map-grid: #dde2da;\n  --map-sea: #f4f6f7;\n  --map-dot: #d3dad4;\n  --font: -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Segoe UI\",\n    sans-serif;\n  --radius: 14px;\n}\n\n@media (prefers-color-scheme: dark) {\n  .kn_app_mNecSG:not([data-theme=\"light\"]) {\n    --bg: #171716;\n    --surface: #201f1e;\n    --sunken: #1b1b1a;\n    --control: #2a2927;\n    --line: #2f2e2c;\n    --ink: #ecebe8;\n    --ink2: #c9c7c2;\n    --muted: #a09e98;\n    --link: #8fb0f5;\n    --primary: #4c7be6;\n    --on-primary: #fff;\n    --strong: #ecebe8;\n    --on-strong: #171716;\n    --ask: #1e2638;\n    --ask-line: #2c3a5c;\n    --scrim: #0009;\n    --health-tint: #1c3226;\n    --health-ink: #8fd3ac;\n    --doing-tint: #2a2547;\n    --doing-ink: #b9aff5;\n    --explore-tint: #1e2a45;\n    --explore-ink: #a9c1f7;\n    --news-tint: #3a2a12;\n    --news-ink: #ebc27f;\n    --finance-tint: #173333;\n    --finance-ink: #8ed1d1;\n    --empty: #2a2927;\n    --map-land: #1f2620;\n    --map-grid: #2d352e;\n    --map-sea: #1a1c1d;\n    --map-dot: #343d36;\n    color-scheme: dark;\n  }\n}\n\n.kn_app_mNecSG[data-theme=\"dark\"] {\n  --bg: #171716;\n  --surface: #201f1e;\n  --sunken: #1b1b1a;\n  --control: #2a2927;\n  --line: #2f2e2c;\n  --ink: #ecebe8;\n  --ink2: #c9c7c2;\n  --muted: #a09e98;\n  --link: #8fb0f5;\n  --primary: #4c7be6;\n  --on-primary: #fff;\n  --strong: #ecebe8;\n  --on-strong: #171716;\n  --ask: #1e2638;\n  --ask-line: #2c3a5c;\n  --scrim: #0009;\n  --health-tint: #1c3226;\n  --health-ink: #8fd3ac;\n  --doing-tint: #2a2547;\n  --doing-ink: #b9aff5;\n  --explore-tint: #1e2a45;\n  --explore-ink: #a9c1f7;\n  --news-tint: #3a2a12;\n  --news-ink: #ebc27f;\n  --finance-tint: #173333;\n  --finance-ink: #8ed1d1;\n  --empty: #2a2927;\n  --map-land: #1f2620;\n  --map-grid: #2d352e;\n  --map-sea: #1a1c1d;\n  --map-dot: #343d36;\n  color-scheme: dark;\n}\n\n.kn_app_mNecSG, .kn_app_mNecSG * {\n  box-sizing: border-box;\n}\n\n.kn_app_mNecSG {\n  background: var(--bg);\n  color: var(--ink);\n  font-family: var(--font);\n  font-size: 15px;\n  line-height: 1.5;\n}\n\n.kn_app_mNecSG a {\n  color: var(--link);\n  font-weight: 500;\n  text-decoration: none;\n}\n\n.kn_app_mNecSG a:hover {\n  text-underline-offset: 3px;\n  text-decoration: underline dotted;\n}\n\n:where(.kn_app_mNecSG) button, :where(.kn_app_mNecSG) input {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_app_mNecSG button {\n  cursor: pointer;\n}\n\n.kn_app_mNecSG h1, .kn_app_mNecSG h2, .kn_app_mNecSG h3, .kn_app_mNecSG p {\n  margin: 0;\n}\n\n.kn_app_mNecSG h1, .kn_app_mNecSG h2, .kn_app_mNecSG h3 {\n  text-wrap: balance;\n}\n\n.kn_num_mNecSG {\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_sr_mNecSG {\n  clip: rect(0 0 0 0);\n  white-space: nowrap;\n  width: 1px;\n  height: 1px;\n  position: absolute;\n  overflow: hidden;\n}\n\n.kn_demo_mNecSG {\n  padding-block: 8px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--sunken);\n  border-bottom: 1px dashed var(--line);\n  color: var(--muted);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 12px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_demo_mNecSG b {\n  color: var(--ink2);\n  font-weight: 600;\n}\n\n.kn_demo_mNecSG button {\n  border: 1px dashed var(--muted);\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 13px;\n}\n\n.kn_demo_mNecSG button[aria-pressed=\"true\"] {\n  border-style: solid;\n  border-color: var(--ink);\n  color: var(--ink);\n  background: var(--surface);\n}\n\n.kn_top_mNecSG {\n  top: env(safe-area-inset-top, 0px);\n  z-index: 5;\n  padding-block: 12px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--bg);\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px 20px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_brand_mNecSG {\n  flex: 120px;\n  align-items: center;\n  gap: 10px;\n  font-size: 18px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_tabs_mNecSG {\n  background: var(--control);\n  border-radius: 12px;\n  flex: 0 auto;\n  gap: 4px;\n  padding: 4px;\n  display: flex;\n}\n\n.kn_tabs_mNecSG button {\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 22px;\n  font-size: 15px;\n  font-weight: 500;\n}\n\n.kn_tabs_mNecSG button[aria-current=\"page\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_tools_mNecSG {\n  flex: 120px;\n  justify-content: flex-end;\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_sync_mNecSG {\n  color: var(--muted);\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_dot_mNecSG {\n  border-radius: 50%;\n  flex: none;\n  width: 7px;\n  height: 7px;\n  display: inline-block;\n}\n\n.kn_btn_mNecSG {\n  white-space: nowrap;\n  border: 0;\n  border-radius: 10px;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  height: 40px;\n  padding: 0 16px;\n  font-size: 15px;\n  font-weight: 500;\n  display: inline-flex;\n}\n\n.kn_btn-primary_mNecSG {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_btn-strong_mNecSG {\n  background: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_btn-quiet_mNecSG {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 400;\n}\n\n.kn_btn-big_mNecSG {\n  height: 44px;\n  padding: 0 20px;\n}\n\n.kn_avatar_mNecSG {\n  background: var(--me);\n  color: #fff;\n  border: 0;\n  border-radius: 50%;\n  width: 40px;\n  height: 40px;\n  font-weight: 600;\n}\n\n.kn_content_mNecSG {\n  max-width: 1040px;\n  padding-block: 28px 72px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  flex-direction: column;\n  gap: 32px;\n  margin: 0 auto;\n  display: flex;\n}\n\n.kn_head_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 16px;\n  display: flex;\n}\n\n.kn_head_mNecSG h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_sub_mNecSG {\n  color: var(--muted);\n  font-size: 14px;\n}\n\n.kn_eyebrow_mNecSG {\n  color: var(--muted);\n  letter-spacing: .06em;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_sec_mNecSG {\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_sec-head_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 12px;\n  display: flex;\n}\n\n.kn_card_mNecSG {\n  background: var(--surface);\n  border-radius: var(--radius);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_chip_mNecSG {\n  white-space: nowrap;\n  border-radius: 6px;\n  align-items: center;\n  gap: 6px;\n  padding: 2px 8px;\n  font-size: 13px;\n  font-weight: 500;\n  line-height: 18px;\n  display: inline-flex;\n}\n\n.kn_capture_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding: 6px;\n  display: flex;\n}\n\n.kn_capture_mNecSG input {\n  background: none;\n  border: 0;\n  border-radius: 10px;\n  flex: 260px;\n  min-width: 0;\n  height: 44px;\n  padding: 0 14px;\n  font-size: 16px;\n}\n\n.kn_capture_mNecSG input::placeholder {\n  color: var(--muted);\n}\n\n.kn_saved_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_focus_mNecSG {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 18px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 24px;\n  padding: 24px;\n  display: flex;\n}\n\n.kn_focus-body_mNecSG {\n  flex-direction: column;\n  flex: 380px;\n  gap: 8px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_focus-title_mNecSG {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_row_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  min-height: 52px;\n  padding: 6px 16px;\n  display: flex;\n}\n\n.kn_row-title_mNecSG {\n  flex: 240px;\n  min-width: 0;\n  font-size: 16px;\n}\n\n.kn_check_mNecSG {\n  border: 1.5px solid var(--muted);\n  color: #0000;\n  background: none;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  display: flex;\n}\n\n.kn_check_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--health);\n  background: var(--health);\n  color: #fff;\n}\n\n.kn_row_mNecSG.kn_is-done_mNecSG .kn_row-title_mNecSG {\n  color: var(--muted);\n  text-decoration: line-through;\n}\n\n.kn_when_mNecSG {\n  text-align: right;\n  width: 64px;\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_ask_mNecSG {\n  background: var(--ask);\n  box-shadow: 0 0 0 1px var(--ask-line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 14px 18px;\n  display: flex;\n}\n\n.kn_ask_mNecSG p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_grid_mNecSG {\n  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_sum_mNecSG {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 14px;\n  padding: 18px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_sum_mNecSG:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_sum-h_mNecSG {\n  align-items: center;\n  gap: 8px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_sum-h_mNecSG span:last-child {\n  color: var(--muted);\n  margin-left: auto;\n  font-size: 13px;\n  font-weight: 400;\n}\n\n.kn_big_mNecSG {\n  font-size: 26px;\n  font-weight: 600;\n  line-height: 32px;\n}\n\n.kn_small_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_pair_mNecSG {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_stack_mNecSG {\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n}\n\n.kn_week_mNecSG {\n  grid-template-columns: repeat(7, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_week_mNecSG span {\n  color: var(--muted);\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_week_mNecSG i {\n  background: var(--empty);\n  border-radius: 5px;\n  width: 100%;\n  height: 18px;\n  display: block;\n}\n\n.kn_bar_mNecSG {\n  background: var(--control);\n  border-radius: 4px;\n  height: 8px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_bar_mNecSG i {\n  height: 100%;\n  display: block;\n}\n\n.kn_fin_mNecSG {\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 0;\n  display: grid;\n  overflow: hidden;\n}\n\n.kn_fin-cell_mNecSG {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_fin-cell_mNecSG:nth-child(4) {\n  border-right: 0;\n}\n\n.kn_fin-wide_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-direction: column;\n  grid-column: 1 / -1;\n  gap: 8px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_fin-pending_mNecSG {\n  flex-flow: wrap;\n  align-items: center;\n  gap: 8px 12px;\n}\n\n@media (width <= 760px) {\n  .kn_fin_mNecSG {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .kn_fin-cell_mNecSG {\n    border-right: 0;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .kn_fin-cell_mNecSG:nth-child(odd) {\n    border-right: 1px solid var(--line);\n  }\n}\n\n.kn_feed-row_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 14px;\n  padding: 10px 4px;\n  display: flex;\n}\n\n.kn_feed-row_mNecSG p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_ini_mNecSG {\n  color: #fff;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 28px;\n  height: 28px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_welcome_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 10px;\n  padding: 32px 28px;\n  display: flex;\n}\n\n.kn_welcome_mNecSG h1 {\n  font-size: 30px;\n  font-weight: 600;\n  line-height: 40px;\n}\n\n.kn_welcome_mNecSG p {\n  max-width: 36em;\n  color: var(--ink2);\n  font-size: 16px;\n}\n\n.kn_starts_mNecSG {\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_start_mNecSG {\n  text-align: left;\n  border: 0;\n  flex-direction: column;\n  gap: 10px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_start_mNecSG h3 {\n  font-size: 17px;\n  font-weight: 600;\n}\n\n.kn_start_mNecSG p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_start_mNecSG .kn_tag_mNecSG {\n  align-self: flex-start;\n}\n\n.kn_subtabs_mNecSG {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_subtabs_mNecSG button {\n  border: 1px solid var(--line);\n  height: 36px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 18px;\n  padding: 0 16px;\n  font-size: 14px;\n}\n\n.kn_subtabs_mNecSG button[aria-pressed=\"true\"] {\n  background: var(--strong);\n  border-color: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_dir_mNecSG {\n  flex-direction: column;\n  gap: 14px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_dir_mNecSG h3 {\n  font-size: 19px;\n  font-weight: 600;\n  line-height: 27px;\n}\n\n.kn_dir_mNecSG dl {\n  grid-template-columns: 4.5em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_dir_mNecSG dt {\n  color: var(--muted);\n}\n\n.kn_dir_mNecSG dd {\n  color: var(--ink);\n  margin: 0;\n}\n\n.kn_attempt_mNecSG {\n  background: var(--sunken);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 6px;\n  padding: 12px 14px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_evidence_mNecSG {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_dir-foot_mNecSG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_dir_mNecSG.kn_is-paused_mNecSG {\n  background: var(--sunken);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_split_mNecSG {\n  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);\n  gap: 20px;\n  display: grid;\n}\n\n.kn_map-box_mNecSG {\n  padding: 12px;\n  overflow: hidden;\n}\n\n.kn_map-box_mNecSG svg {\n  width: 100%;\n  height: auto;\n  display: block;\n}\n\n.kn_places_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_place_mNecSG {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 4px 12px;\n  padding: 12px 4px;\n  display: flex;\n}\n\n.kn_place_mNecSG b {\n  flex: 120px;\n  font-weight: 600;\n}\n\n.kn_legend_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_legend_mNecSG span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_news_mNecSG {\n  grid-template-columns: 120px minmax(0, 1fr);\n  gap: 16px;\n  padding: 16px;\n  display: grid;\n}\n\n.kn_news_mNecSG .kn_thumb_mNecSG {\n  aspect-ratio: 4 / 3;\n  color: #fff;\n  border-radius: 10px;\n  align-items: flex-end;\n  max-width: 100%;\n  padding: 8px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_news_mNecSG h3 {\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 25px;\n}\n\n.kn_news_mNecSG p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_news-foot_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  margin-top: 4px;\n  display: flex;\n}\n\n.kn_news-foot_mNecSG a {\n  font-size: 14px;\n}\n\n.kn_news-acts_mNecSG {\n  gap: 8px;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_comment_mNecSG {\n  border-left: 2px solid var(--news);\n  color: var(--ink);\n  padding-left: 10px;\n  font-size: 14px;\n}\n\n.kn_mods_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_mod_mNecSG {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 6px;\n  padding: 16px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_mod_mNecSG:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_raw_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 88px minmax(0, 1fr);\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_raw_mNecSG time {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_raw_mNecSG blockquote {\n  margin: 0;\n  font-size: 15px;\n}\n\n.kn_raw_mNecSG .kn_st_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  grid-column: 2;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_scrim_mNecSG {\n  z-index: 20;\n  padding-block: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px));\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--scrim);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  position: fixed;\n  inset: 0;\n}\n\n.kn_dialog_mNecSG {\n  background: var(--surface);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 18px;\n  width: 100%;\n  max-width: 560px;\n  max-height: 100%;\n  padding: 28px;\n  display: flex;\n  overflow: auto;\n  box-shadow: 0 20px 60px #00000040;\n}\n\n.kn_dialog_mNecSG h2 {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_steps_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_choice_mNecSG {\n  border: 1.5px solid var(--line);\n  text-align: left;\n  background: none;\n  border-radius: 14px;\n  align-items: flex-start;\n  gap: 14px;\n  width: 100%;\n  padding: 16px;\n  display: flex;\n}\n\n.kn_choice_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_choice_mNecSG .kn_radio_mNecSG {\n  border: 1.5px solid var(--muted);\n  border-radius: 50%;\n  flex: none;\n  width: 20px;\n  height: 20px;\n  margin-top: 2px;\n}\n\n.kn_choice_mNecSG[aria-pressed=\"true\"] .kn_radio_mNecSG {\n  border: 6px solid var(--primary);\n}\n\n.kn_choice_mNecSG b {\n  font-size: 16px;\n  font-weight: 600;\n  display: block;\n}\n\n.kn_choice_mNecSG span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_toggle_mNecSG {\n  border-top: 1px solid var(--line);\n  align-items: flex-start;\n  gap: 14px;\n  padding: 14px 0;\n  display: flex;\n}\n\n.kn_toggle_mNecSG input {\n  width: 20px;\n  height: 20px;\n  accent-color: var(--primary);\n  flex: none;\n  margin: 2px 0 0;\n}\n\n.kn_toggle_mNecSG label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_toggle_mNecSG label span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_dialog-foot_mNecSG {\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_note_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n@media (width <= 760px) {\n  .kn_split_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_news_mNecSG {\n    grid-template-columns: 84px minmax(0, 1fr);\n  }\n\n  .kn_tools_mNecSG .kn_sync_mNecSG {\n    display: none;\n  }\n\n  .kn_brand_mNecSG {\n    flex-basis: auto;\n  }\n\n  .kn_tabs_mNecSG {\n    flex: 100%;\n    order: 3;\n    justify-content: stretch;\n  }\n\n  .kn_tabs_mNecSG button {\n    flex: 1 1 0;\n    padding: 0 8px;\n  }\n\n  .kn_head_mNecSG h1 {\n    font-size: 24px;\n    line-height: 32px;\n  }\n}\n\n.kn_cal-bar_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 14px;\n  display: flex;\n}\n\n.kn_cal-nav_mNecSG {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_cal-nav_mNecSG button {\n  background: var(--control);\n  min-width: 36px;\n  height: 36px;\n  color: var(--ink);\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 14px;\n}\n\n.kn_cal-title_mNecSG {\n  flex: 200px;\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.kn_seg_mNecSG {\n  background: var(--control);\n  border-radius: 10px;\n  gap: 2px;\n  padding: 3px;\n  display: flex;\n}\n\n.kn_seg_mNecSG button {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_seg_mNecSG button[aria-pressed=\"true\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_cal_mNecSG {\n  --fc-border-color: var(--line);\n  --fc-page-bg-color: var(--surface);\n  --fc-neutral-bg-color: var(--sunken);\n  --fc-today-bg-color: var(--ask);\n  --fc-list-event-hover-bg-color: var(--sunken);\n  --fc-now-indicator-color: var(--news);\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  padding: 8px;\n  overflow: hidden;\n}\n\n.kn_cal_mNecSG [class~=\"fc\"] {\n  color: var(--ink);\n  font-size: 13px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-col-header-cell-cushion\"], .kn_cal_mNecSG [class~=\"fc-daygrid-day-number\"] {\n  color: var(--ink);\n  font-weight: 500;\n}\n\n.kn_cal_mNecSG [class~=\"fc-timegrid-slot-label-cushion\"], .kn_cal_mNecSG [class~=\"fc-timegrid-axis-cushion\"] {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] {\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n  padding: 4px 0;\n  display: flex;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] b {\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 22px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-dh\"] span {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-day-today\"] [class~=\"fc-dh\"] b {\n  color: var(--primary);\n}\n\n.kn_cal_mNecSG [class~=\"fc-event\"] {\n  cursor: pointer;\n  border-radius: 6px;\n  padding: 1px 2px;\n}\n\n.kn_cal_mNecSG [class~=\"fc-event-main\"] {\n  color: var(--fc-event-text-color);\n  font-weight: 500;\n}\n\n.kn_cal_mNecSG [class~=\"fc-list-day-cushion\"] {\n  background: var(--sunken);\n}\n\n.kn_cal_mNecSG [class~=\"fc-list-event-dot\"] {\n  border-color: var(--dot, var(--explore));\n}\n\n.kn_ev-work_mNecSG {\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  --dot: var(--explore);\n}\n\n.kn_ev-life_mNecSG {\n  --fc-event-bg-color: var(--doing-tint);\n  --fc-event-border-color: var(--doing-tint);\n  --fc-event-text-color: var(--doing-ink);\n  --dot: var(--doing);\n}\n\n.kn_ev-health_mNecSG {\n  --fc-event-bg-color: var(--health-tint);\n  --fc-event-border-color: var(--health-tint);\n  --fc-event-text-color: var(--health-ink);\n  --dot: var(--health);\n}\n\n.kn_ev-suggest_mNecSG {\n  --fc-event-bg-color: var(--surface);\n  --fc-event-border-color: var(--news);\n  --fc-event-text-color: var(--news-ink);\n  --dot: var(--news);\n}\n\n.kn_cal_mNecSG [class~=\"fc-event\"].kn_ev-suggest_mNecSG {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n.kn_cal-legend_mNecSG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_cal-legend_mNecSG span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_cal-detail_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_cal-detail_mNecSG .kn_stack_mNecSG {\n  flex: 260px;\n  min-width: 0;\n}\n\n.kn_cal-fallback_mNecSG {\n  color: var(--ink2);\n  padding: 24px;\n}\n\n.kn_sub-form_mNecSG {\n  flex-direction: column;\n  gap: 12px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_sub-form_mNecSG .kn_fields_mNecSG {\n  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);\n  gap: 10px;\n  display: grid;\n}\n\n.kn_sub-form_mNecSG label {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_sub-form_mNecSG input {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 40px;\n  color: var(--ink);\n  border-radius: 9px;\n  min-width: 0;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_agenda_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_agenda-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 96px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 14px;\n  padding: 10px 16px;\n  display: grid;\n}\n\n.kn_agenda-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_agenda-row_mNecSG time {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n  font-size: 14px;\n}\n\n@media (width <= 760px) {\n  .kn_sub-form_mNecSG .kn_fields_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_mNecSG {\n    grid-template-columns: 72px minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_mNecSG > :last-child {\n    grid-column: 2;\n  }\n}\n\n.kn_map-hero_mNecSG {\n  background: var(--map-sea);\n  height: clamp(400px, 64vh, 660px);\n  padding: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_map-svg_mNecSG {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_map-svg_mNecSG .kn_city_mNecSG {\n  cursor: pointer;\n  outline: none;\n}\n\n.kn_map-svg_mNecSG .kn_city_mNecSG:focus-visible circle {\n  stroke: var(--explore);\n}\n\n.kn_map-tools_mNecSG {\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 10px;\n  padding: 10px 12px;\n  display: flex;\n  position: absolute;\n  top: 14px;\n  left: 14px;\n}\n\n.kn_layer-chips_mNecSG {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_lchip_mNecSG {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_lchip_mNecSG[aria-pressed=\"true\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_lchip_mNecSG[aria-pressed=\"false\"] .kn_dot_mNecSG {\n  opacity: .35;\n}\n\n.kn_year_mNecSG {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_year_mNecSG input {\n  accent-color: var(--primary);\n}\n\n.kn_map-detail_mNecSG {\n  width: min(320px, 100% - 28px);\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 8px;\n  padding: 14px 16px;\n  display: flex;\n  position: absolute;\n  bottom: 14px;\n  right: 14px;\n}\n\n.kn_map-stats_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 999px;\n  padding: 6px 12px;\n  font-size: 13px;\n  position: absolute;\n  bottom: 14px;\n  left: 14px;\n}\n\n.kn_timeline_mNecSG {\n  gap: 10px;\n  padding-bottom: 6px;\n  display: flex;\n  overflow-x: auto;\n}\n\n.kn_tl-item_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  text-align: left;\n  color: var(--ink);\n  border: 0;\n  border-radius: 12px;\n  flex-direction: column;\n  flex: 0 0 200px;\n  align-items: flex-start;\n  gap: 4px;\n  padding: 12px 14px;\n  display: flex;\n}\n\n.kn_tl-item_mNecSG[aria-pressed=\"true\"] {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.kn_tl-item_mNecSG b {\n  font-size: 16px;\n  font-weight: 600;\n}\n\n.kn_tl-year_mNecSG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_tl-dot_mNecSG {\n  border-radius: 50%;\n  width: 10px;\n  height: 10px;\n}\n\n@media (width <= 760px) {\n  .kn_map-hero_mNecSG {\n    height: 520px;\n  }\n\n  .kn_map-tools_mNecSG {\n    right: 14px;\n  }\n\n  .kn_layer-chips_mNecSG {\n    flex-wrap: wrap;\n  }\n\n  .kn_map-stats_mNecSG {\n    display: none;\n  }\n}\n\n.kn_mod_mNecSG .kn_sum-h_mNecSG span[aria-hidden] {\n  color: var(--muted);\n  margin-left: auto;\n  font-weight: 400;\n}\n\n.kn_ms_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 8px 16px;\n  display: grid;\n}\n\n.kn_ms-row_mNecSG {\n  align-items: center;\n  gap: 10px;\n  font-size: 15px;\n  display: flex;\n}\n\n.kn_ms-row_mNecSG.kn_is-done_mNecSG {\n  color: var(--muted);\n}\n\n.kn_ms-row_mNecSG .kn_check_mNecSG {\n  width: 20px;\n  height: 20px;\n}\n\n.kn_kv_mNecSG {\n  grid-template-columns: 4em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_kv_mNecSG dt {\n  color: var(--muted);\n}\n\n.kn_kv_mNecSG dd {\n  margin: 0;\n}\n\n.kn_heat_mNecSG {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_heat_mNecSG i {\n  aspect-ratio: 1;\n  background: var(--empty);\n  border-radius: 5px;\n  max-width: 100%;\n}\n\n.kn_sleep_mNecSG {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  align-items: end;\n  gap: 6px;\n  height: 84px;\n  display: grid;\n}\n\n.kn_sleep_mNecSG i {\n  background: var(--health);\n  border-radius: 5px;\n}\n\n.kn_sleep_mNecSG i.kn_miss_mNecSG {\n  height: 18px;\n  box-shadow: inset 0 0 0 1px var(--muted);\n  opacity: .6;\n  background: none;\n  border: 0;\n}\n\n.kn_table-box_mNecSG {\n  overflow-x: auto;\n}\n\n.kn_table-box_mNecSG table {\n  border-collapse: collapse;\n  width: 100%;\n  font-size: 15px;\n}\n\n.kn_table-box_mNecSG th, .kn_table-box_mNecSG td {\n  border-top: 1px solid var(--line);\n  text-align: left;\n  padding: 12px 16px;\n}\n\n.kn_table-box_mNecSG thead th {\n  color: var(--muted);\n  border-top: 0;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_table-box_mNecSG .kn_r_mNecSG {\n  text-align: right;\n}\n\n.kn_note-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: auto minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 0;\n  font-weight: 400;\n  display: grid;\n}\n\n.kn_note-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_note-row_mNecSG:hover {\n  text-decoration: none;\n}\n\n.kn_conn-strip_mNecSG {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_conn-pill_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 10px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 8px;\n  padding: 8px 12px;\n  font-size: 14px;\n  display: inline-flex;\n}\n\n.kn_conn-pill_mNecSG b {\n  font-weight: 600;\n}\n\n.kn_raw_mNecSG time {\n  line-height: 1.4;\n}\n\n.kn_avatar_mNecSG {\n  background-position: center;\n  background-size: cover;\n}\n\n.kn_avatar_mNecSG.kn_has-img_mNecSG {\n  color: #0000;\n}\n\n.kn_me-avatar_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 20px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_me-avatar_mNecSG .kn_avatar_mNecSG {\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 72px;\n  height: 72px;\n  font-size: 28px;\n  display: flex;\n}\n\n.kn_crop-view_mNecSG {\n  background: var(--sunken);\n  touch-action: none;\n  cursor: grab;\n  width: 240px;\n  max-width: 100%;\n  height: 240px;\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 50%;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_crop-view_mNecSG:active {\n  cursor: grabbing;\n}\n\n.kn_crop-view_mNecSG img {\n  transform-origin: 0 0;\n  user-select: none;\n  pointer-events: none;\n  max-width: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.kn_crop-zoom_mNecSG {\n  width: 240px;\n  max-width: 100%;\n  color: var(--muted);\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_crop-zoom_mNecSG input {\n  accent-color: var(--primary);\n  flex: 1;\n}\n\n.kn_menu_mNecSG {\n  top: calc(100% + 6px);\n  right: max(16px, env(safe-area-inset-right, 0px));\n  z-index: 10;\n  background: var(--surface);\n  width: 248px;\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-direction: column;\n  padding: 6px;\n  display: flex;\n  position: absolute;\n}\n\n.kn_menu-head_mNecSG {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 4px;\n  padding: 8px 10px 10px;\n  display: flex;\n}\n\n.kn_menu-head_mNecSG b {\n  font-weight: 600;\n}\n\n.kn_menu_mNecSG button[role=\"menuitem\"] {\n  text-align: left;\n  height: 40px;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_menu_mNecSG button[role=\"menuitem\"]:hover, .kn_menu_mNecSG button[role=\"menuitem\"]:focus-visible {\n  background: var(--sunken);\n}\n\n.kn_me_mNecSG {\n  grid-template-columns: 200px minmax(0, 1fr);\n  align-items: start;\n  gap: 32px;\n  display: grid;\n}\n\n.kn_me-nav_mNecSG {\n  top: calc(env(safe-area-inset-top, 0px) + 84px);\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_me-nav_mNecSG button {\n  text-align: left;\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_me-nav_mNecSG button[aria-current=\"page\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_me-body_mNecSG {\n  flex-direction: column;\n  gap: 28px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_facts_mNecSG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_fact_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_fact_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_fact_mNecSG p {\n  font-size: 15px;\n}\n\n.kn_fact_mNecSG .kn_src_mNecSG {\n  color: var(--muted);\n  grid-column: 1;\n  font-size: 13px;\n}\n\n.kn_fact_mNecSG .kn_fact-acts_mNecSG {\n  grid-area: 1 / 2 / span 2;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_list-card_mNecSG {\n  padding: 4px 16px;\n}\n\n.kn_conn_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 36px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 12px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_conn_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_conn_mNecSG .kn_logo_mNecSG {\n  color: #fff;\n  border-radius: 10px;\n  grid-row: 1 / span 2;\n  justify-content: center;\n  align-items: center;\n  width: 36px;\n  height: 36px;\n  font-size: 14px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_conn_mNecSG b {\n  align-items: center;\n  gap: 6px;\n  font-weight: 600;\n  display: inline-flex;\n}\n\n.kn_info_mNecSG {\n  border: 1px solid var(--muted);\n  width: 18px;\n  height: 18px;\n  color: var(--muted);\n  background: none;\n  border-radius: 50%;\n  padding: 0;\n  font: italic 600 11px / 1 Georgia, serif;\n}\n\n.kn_info_mNecSG[aria-expanded=\"true\"] {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n\n.kn_conn_mNecSG .kn_hint_mNecSG {\n  background: var(--sunken);\n  color: var(--ink2);\n  border-radius: 8px;\n  grid-column: 2 / -1;\n  margin: 6px 0 0;\n  padding: 8px 10px;\n  font-size: 13px;\n}\n\n.kn_conn_mNecSG .kn_small_mNecSG {\n  grid-column: 2;\n}\n\n.kn_conn_mNecSG > :last-child {\n  grid-area: 1 / 3 / span 2;\n}\n\n.kn_switch-row_mNecSG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 16px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_switch-row_mNecSG:first-child {\n  border-top: 0;\n}\n\n.kn_switch-row_mNecSG label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_auto-ctl_mNecSG {\n  align-items: center;\n  gap: 12px;\n  display: flex;\n}\n\n.kn_time_mNecSG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 36px;\n  color: var(--ink);\n  font-variant-numeric: tabular-nums;\n  border-radius: 8px;\n  padding: 0 10px;\n  font-size: 15px;\n}\n\n.kn_time_mNecSG:disabled {\n  opacity: .45;\n}\n\n.kn_switch_mNecSG {\n  flex: none;\n  width: 44px;\n  height: 26px;\n  position: relative;\n}\n\n.kn_switch_mNecSG input {\n  opacity: 0;\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_mNecSG i {\n  background: var(--control);\n  box-shadow: inset 0 0 0 1px var(--line);\n  pointer-events: none;\n  border-radius: 13px;\n  transition: background .15s;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_mNecSG i:after {\n  content: \"\";\n  background: #fff;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  transition: transform .15s;\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  box-shadow: 0 1px 2px #00000040;\n}\n\n.kn_switch_mNecSG input:checked + i {\n  background: var(--health);\n}\n\n.kn_switch_mNecSG input:checked + i:after {\n  transform: translateX(18px);\n}\n\n.kn_switch_mNecSG input:focus-visible + i {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n@media (width <= 760px) {\n  .kn_me_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n    gap: 16px;\n  }\n\n  .kn_me-nav_mNecSG {\n    flex-flow: wrap;\n    position: static;\n  }\n\n  .kn_me-nav_mNecSG button {\n    text-align: center;\n    flex: auto;\n  }\n}\n\n.kn_chat_mNecSG {\n  grid-template-columns: 236px minmax(0, 1fr);\n  height: calc(100dvh - 118px);\n  min-height: 560px;\n  display: grid;\n}\n\n.kn_threads_mNecSG {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 16px 12px 16px 0;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_threads_mNecSG h2 {\n  color: var(--muted);\n  letter-spacing: .06em;\n  padding: 14px 10px 4px;\n  font-size: 12px;\n  font-weight: 600;\n}\n\n.kn_thread_mNecSG {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 8px 10px;\n  font-size: 14px;\n  display: block;\n  overflow: hidden;\n}\n\n.kn_thread_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_thread_mNecSG[aria-current=\"true\"] {\n  background: var(--control);\n  font-weight: 600;\n}\n\n.kn_new-thread_mNecSG {\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 6px;\n  font-weight: 500;\n  display: flex;\n}\n\n.kn_convo_mNecSG {\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_msgs_mNecSG {\n  flex-direction: column;\n  flex: auto;\n  gap: 14px;\n  min-height: 0;\n  padding: 28px max(16px, 7%);\n  display: flex;\n  overflow: auto;\n  -webkit-mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n  mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n}\n\n.kn_msg-user_mNecSG {\n  background: var(--ask);\n  overflow-wrap: anywhere;\n  border-radius: 18px;\n  align-self: flex-end;\n  max-width: min(78%, 560px);\n  padding: 10px 16px;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\n.kn_msg-ai_mNecSG {\n  flex-direction: column;\n  gap: 10px;\n  max-width: 680px;\n  font-size: 16px;\n  line-height: 1.7;\n  display: flex;\n}\n\n.kn_msg-ai_mNecSG ul {\n  flex-direction: column;\n  gap: 4px;\n  margin: 0;\n  padding-left: 1.2em;\n  display: flex;\n}\n\n.kn_tool_mNecSG {\n  background: var(--sunken);\n  max-width: 100%;\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 10px;\n  align-self: flex-start;\n  font-size: 14px;\n}\n\n.kn_tool_mNecSG summary {\n  cursor: pointer;\n  align-items: center;\n  gap: 10px;\n  padding: 8px 12px;\n  list-style: none;\n  display: flex;\n}\n\n.kn_tool_mNecSG summary::-webkit-details-marker {\n  display: none;\n}\n\n.kn_tool_mNecSG summary:after {\n  content: \"\";\n  border-right: 1.5px solid var(--muted);\n  border-bottom: 1.5px solid var(--muted);\n  width: 7px;\n  height: 7px;\n  margin-left: 6px;\n  transition: transform .12s;\n  transform: rotate(-45deg);\n}\n\n.kn_tool_mNecSG[open] summary:after {\n  transform: rotate(45deg);\n}\n\n.kn_tool_mNecSG pre {\n  color: var(--muted);\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n  margin: 0;\n  padding: 0 12px 10px 34px;\n  font: 13px / 1.6 ui-monospace, SF Mono, Menlo, monospace;\n}\n\n.kn_st-dot_mNecSG {\n  background: var(--health);\n  border-radius: 50%;\n  flex: none;\n  width: 8px;\n  height: 8px;\n}\n\n.kn_st-dot_mNecSG.kn_run_mNecSG {\n  background: var(--explore);\n}\n\n.kn_thinking_mNecSG {\n  color: var(--muted);\n  align-self: flex-start;\n  font-size: 15px;\n}\n\n.kn_acts_mNecSG {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_act_mNecSG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 34px;\n  color: var(--ink);\n  border-radius: 17px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_act_mNecSG:hover {\n  border-color: var(--muted);\n}\n\n.kn_welcome-chat_mNecSG {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 18px;\n  max-width: 680px;\n  margin: auto 0;\n  display: flex;\n}\n\n.kn_welcome-chat_mNecSG h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_suggest_mNecSG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 10px;\n  width: 100%;\n  display: grid;\n}\n\n.kn_suggest_mNecSG button {\n  text-align: left;\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 12px;\n  padding: 12px 14px;\n  font-size: 14px;\n}\n\n.kn_suggest_mNecSG button:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  color: var(--ink);\n}\n\n.kn_composer_mNecSG {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 6px;\n  margin: 0 max(16px, 7%) 18px;\n  padding: 12px 12px 10px 16px;\n  display: flex;\n}\n\n.kn_composer_mNecSG:focus-within {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1.5px var(--explore);\n}\n\n.kn_composer_mNecSG textarea {\n  resize: none;\n  width: 100%;\n  min-height: 48px;\n  max-height: 200px;\n  font: inherit;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  outline: none;\n  padding: 4px 0;\n  font-size: 16px;\n  line-height: 1.5;\n}\n\n.kn_composer_mNecSG textarea::placeholder {\n  color: var(--muted);\n}\n\n.kn_c-row_mNecSG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_c-btn_mNecSG {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_c-btn_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_send_mNecSG {\n  background: var(--strong);\n  width: 36px;\n  height: 36px;\n  color: var(--on-strong);\n  border: 0;\n  border-radius: 50%;\n  justify-content: center;\n  align-items: center;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_send_mNecSG:disabled {\n  opacity: .35;\n  cursor: default;\n}\n\n.kn_mode-wrap_mNecSG {\n  position: relative;\n}\n\n.kn_c-btn_mNecSG.kn_is-full_mNecSG {\n  color: var(--news-ink);\n  background: var(--news-tint);\n}\n\n.kn_mode-pop_mNecSG {\n  z-index: 6;\n  background: var(--surface);\n  width: min(340px, 80vw);\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  text-align: left;\n  border-radius: 14px;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px;\n  display: flex;\n  position: absolute;\n  bottom: calc(100% + 8px);\n  left: 0;\n}\n\n.kn_mode-pop_mNecSG > b {\n  padding: 4px 4px 0;\n  font-weight: 600;\n}\n\n.kn_mode-pop_mNecSG > p {\n  padding: 0 4px;\n}\n\n.kn_mode-opt_mNecSG {\n  text-align: left;\n  background: none;\n  border: 1.5px solid #0000;\n  border-radius: 10px;\n  flex-direction: column;\n  gap: 2px;\n  padding: 10px 12px;\n  display: flex;\n}\n\n.kn_mode-opt_mNecSG:hover {\n  background: var(--sunken);\n}\n\n.kn_mode-opt_mNecSG[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_mode-opt_mNecSG b {\n  font-size: 15px;\n  font-weight: 600;\n}\n\n.kn_mode-opt_mNecSG span {\n  color: var(--ink2);\n  font-size: 13px;\n}\n\n.kn_c-note_mNecSG {\n  text-align: center;\n  color: var(--muted);\n  padding: 0 max(16px, 7%) 10px;\n  font-size: 12px;\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_st-dot_mNecSG.kn_run_mNecSG {\n    animation: 1.2s ease-in-out infinite kn_pulse_mNecSG;\n  }\n\n  @keyframes kn_pulse_mNecSG {\n    50% {\n      opacity: .35;\n    }\n  }\n\n  .kn_thinking_mNecSG span {\n    background: linear-gradient(105deg, var(--muted) 40%, var(--ink) 50%, var(--muted) 60%);\n    color: #0000;\n    background-size: 250% 100%;\n    -webkit-background-clip: text;\n    background-clip: text;\n    animation: 1.8s linear infinite kn_shine_mNecSG;\n  }\n\n  @keyframes kn_shine_mNecSG {\n    from {\n      background-position: 100% 0;\n    }\n\n    to {\n      background-position: -150% 0;\n    }\n  }\n}\n\n@media (width <= 760px) {\n  .kn_chat_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n    height: calc(100dvh - 150px);\n  }\n\n  .kn_threads_mNecSG {\n    display: none;\n  }\n\n  .kn_msgs_mNecSG, .kn_composer_mNecSG, .kn_c-note_mNecSG {\n    margin-left: 0;\n    margin-right: 0;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  .kn_composer_mNecSG {\n    padding-left: 14px;\n    padding-right: 10px;\n  }\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_scrim_mNecSG {\n    animation: .16s ease-out kn_fade_mNecSG;\n  }\n\n  @keyframes kn_fade_mNecSG {\n    from {\n      opacity: 0;\n    }\n\n    to {\n      opacity: 1;\n    }\n  }\n}\n\n.kn_app_mNecSG {\n  --kt-canvas: var(--bg);\n  --kt-subtle: var(--sunken);\n  --kt-control: var(--control);\n  --kt-card: var(--surface);\n  --kt-text: var(--ink);\n  --kt-secondary: var(--ink2);\n  --kt-muted: var(--muted);\n  --kt-faint: var(--muted);\n  --kt-primary: var(--primary);\n  --kt-on-primary: var(--on-primary);\n  --kt-link: var(--link);\n  --kt-accent: var(--explore);\n  --kt-health: var(--health);\n  --kt-health-tint: var(--health-tint);\n  --kt-health-ink: var(--health-ink);\n  --kt-projects: var(--doing);\n  --kt-projects-tint: var(--doing-tint);\n  --kt-projects-ink: var(--doing-ink);\n  --kt-map: var(--explore);\n  --kt-map-tint: var(--explore-tint);\n  --kt-map-ink: var(--explore-ink);\n  --kt-feed: var(--news);\n  --kt-feed-tint: var(--news-tint);\n  --kt-feed-ink: var(--news-ink);\n  --kt-finance: var(--finance);\n  --kt-finance-tint: var(--finance-tint);\n  --kt-finance-ink: var(--finance-ink);\n  --kt-me: var(--me);\n  --kt-me-tint: var(--ask);\n  --kt-me-ink: var(--ink2);\n  --kt-today: var(--ink);\n  --kt-today-tint: var(--control);\n  --kt-today-ink: var(--ink2);\n  --kt-project-slot: var(--doing-tint);\n  --kt-target: var(--health);\n  --kt-estimate: var(--health);\n  --kt-shadow: 0 0 0 1px var(--line);\n  scrollbar-gutter: stable;\n  height: 100%;\n  overflow: auto;\n  container-type: inline-size;\n}\n\n.kn_app_mNecSG [hidden] {\n  display: none !important;\n}\n\n.kn_app_mNecSG button:disabled {\n  opacity: .55;\n  cursor: default;\n}\n\n.kn_app_mNecSG textarea, .kn_app_mNecSG select {\n  font: inherit;\n  color: inherit;\n  background: var(--surface);\n}\n\n.kn_app_mNecSG :focus-visible {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n.kn_content_mNecSG {\n  width: 100%;\n}\n\n.kn_top_mNecSG {\n  padding-left: max(16px, var(--dsh-frame-leading-clearance, 0px));\n}\n\n.kn_brand_mNecSG svg {\n  color: var(--ink);\n}\n\n.kn_avatar_mNecSG {\n  padding: 0;\n  overflow: hidden;\n}\n\n.kn_avatar_mNecSG img {\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n\n.kn_account_mNecSG {\n  position: relative;\n}\n\n.kn_menu_mNecSG {\n  top: 48px;\n  right: 0;\n}\n\n.kn_link_mNecSG {\n  color: var(--link);\n  text-align: start;\n  background: none;\n  border: 0;\n  padding: 0;\n  font-weight: 500;\n}\n\n.kn_summaryButton_mNecSG {\n  text-align: start;\n  cursor: pointer;\n  border: 0;\n}\n\n.kn_error_mNecSG {\n  background: var(--news-tint);\n  border-radius: var(--radius);\n  padding: 14px 18px;\n}\n\n.kn_emptyState_mNecSG {\n  color: var(--muted);\n  padding: 20px;\n}\n\n.kn_detailBody_mNecSG {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_child_mNecSG {\n  min-width: 0;\n}\n\n.kn_child_mNecSG > div > header h1 {\n  font-size: 22px;\n}\n\n.kn_paletteDot_mNecSG {\n  background: var(--explore);\n}\n\n.kn_financeMetric_mNecSG {\n  flex-direction: column;\n  gap: 4px;\n  display: flex;\n}\n\n.kn_calendarShell_mNecSG {\n  min-width: 0;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-header-toolbar\"] {\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-toolbar-title\"] {\n  font-size: 18px;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_calendarShell_mNecSG [class~=\"fc-event\"][class~=\"suggestion\"] {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n@media (width <= 760px) {\n  .kn_calendarShell_mNecSG [class~=\"fc-toolbar-chunk\"] {\n    flex-wrap: wrap;\n    gap: 4px;\n    display: flex;\n  }\n\n  .kn_calendarShell_mNecSG [class~=\"fc-button\"] {\n    padding: 6px 8px;\n  }\n}\n\n.kn_app_mNecSG .kn_calendarShell_mNecSG button[class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 9px;\n  height: 36px;\n}\n\n.kn_app_mNecSG .kn_calendarShell_mNecSG button[class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--surface);\n  color: var(--ink);\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n@media (width <= 760px) {\n  .kn_mods_mNecSG {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n}\n\n@media (width <= 460px) {\n  .kn_mods_mNecSG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n.kn_mode-pop_mNecSG {\n  color: var(--ink);\n  border: 0;\n  margin: 0;\n}\n\n.kn_askContent_mNecSG {\n  gap: 0;\n  max-width: 1240px;\n  padding-block: 0;\n}\n\n.kn_shell_eRVxzq {\n  color: var(--ink);\n  font: 14px / 1.6 var(--font);\n  box-sizing: border-box;\n  flex-direction: column;\n  height: 100%;\n  min-height: 650px;\n  padding: 16px;\n  display: flex;\n}\n\n.kn_shell_eRVxzq button, .kn_shell_eRVxzq select, .kn_shell_eRVxzq textarea {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_shell_eRVxzq button, .kn_shell_eRVxzq select {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 7px 11px;\n}\n\n.kn_shell_eRVxzq button:disabled {\n  opacity: .45;\n  cursor: default;\n}\n\n.kn_header_eRVxzq {\n  align-items: center;\n  gap: 12px;\n  padding: 0 8px 14px;\n  display: flex;\n}\n\n.kn_header_eRVxzq > div {\n  flex: 1;\n}\n\n.kn_header_eRVxzq h1 {\n  margin: 0;\n  font-size: 23px;\n}\n\n.kn_shell_eRVxzq small {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_columns_eRVxzq {\n  flex: 1;\n  grid-template-columns: 180px minmax(330px, 1fr) minmax(320px, 390px);\n  gap: 12px;\n  min-height: 0;\n  display: grid;\n}\n\n.kn_chapters_eRVxzq {\n  padding: 10px 6px;\n  overflow: auto;\n}\n\n.kn_shell_eRVxzq h2 {\n  margin: 4px 0 14px;\n  font-size: 15px;\n}\n\n.kn_chapters_eRVxzq button {\n  text-align: left;\n  overflow-wrap: anywhere;\n  background: none;\n  border-color: #0000;\n  width: 100%;\n  margin-bottom: 8px;\n  display: block;\n}\n\n.kn_chapters_eRVxzq small {\n  font-size: 11px;\n  display: block;\n}\n\n.kn_chapters_eRVxzq button[aria-current], .kn_tabs_eRVxzq button[aria-selected=\"true\"] {\n  color: #245db4;\n  background: #e8f1ff;\n}\n\n.kn_chapters_eRVxzq h2:not(:first-child) {\n  margin-top: 28px;\n}\n\n.kn_manuscript_eRVxzq {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_toolbar_eRVxzq {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 7px;\n  padding: 12px 16px;\n  display: flex;\n}\n\n.kn_toolbar_eRVxzq strong {\n  flex: 1;\n}\n\n.kn_toolbar_eRVxzq button {\n  font-size: 12px;\n}\n\n.kn_editorWrap_eRVxzq {\n  flex: 1;\n  min-height: 280px;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_cmHost_eRVxzq {\n  height: 100%;\n}\n\n.kn_selChatBtn_eRVxzq {\n  z-index: 5;\n  position: absolute;\n  background: #e8f1ff !important;\n}\n\n.kn_copyFlash_eRVxzq {\n  background: var(--surface);\n  padding: 6px;\n  position: absolute;\n  bottom: 15px;\n  left: 20px;\n}\n\n.kn_manuscript_eRVxzq footer {\n  color: var(--muted);\n  border-top: 1px solid var(--line);\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 16px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_assistant_eRVxzq {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 10px;\n  min-height: 0;\n  padding: 14px;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_tabs_eRVxzq {\n  gap: 6px;\n  display: flex;\n}\n\n.kn_tabs_eRVxzq button {\n  flex: 1;\n}\n\n.kn_assistant_eRVxzq textarea {\n  box-sizing: border-box;\n  border: 1px solid var(--line);\n  background: var(--surface);\n  resize: vertical;\n  border-radius: 8px;\n  width: 100%;\n  min-height: 75px;\n  padding: 9px;\n}\n\n.kn_shell_eRVxzq .kn_primary_eRVxzq {\n  color: #fff;\n  background: #3478df;\n  border-color: #0000;\n}\n\n.kn_chat_eRVxzq {\n  flex-direction: column;\n  flex: 1;\n  min-height: 260px;\n  display: flex;\n  position: relative;\n}\n\n.kn_chat_eRVxzq > * {\n  flex: 1;\n  min-height: 0;\n}\n\n.kn_candidates_eRVxzq {\n  border-top: 1px solid var(--line);\n  padding-top: 10px;\n}\n\n.kn_candidates_eRVxzq summary {\n  cursor: pointer;\n}\n\n.kn_candidates_eRVxzq summary button {\n  margin-left: 10px;\n  padding: 2px 8px;\n}\n\n.kn_candidates_eRVxzq article {\n  border: 1px solid var(--line);\n  border-radius: 8px;\n  margin-top: 10px;\n  padding: 12px;\n}\n\n.kn_candidates_eRVxzq pre {\n  white-space: pre-wrap;\n  font: inherit;\n  max-height: 230px;\n  overflow: auto;\n}\n\n.kn_error_eRVxzq {\n  color: #853e12;\n  background: #fff0df;\n  margin-bottom: 10px;\n  padding: 10px;\n}\n\n.kn_hint_eRVxzq {\n  padding: 8px 16px;\n}\n\n@media (width <= 1050px) {\n  .kn_columns_eRVxzq {\n    grid-template-columns: 140px minmax(300px, 1fr);\n  }\n\n  .kn_assistant_eRVxzq {\n    grid-column: 1 / -1;\n    min-height: 400px;\n  }\n\n  .kn_shell_eRVxzq {\n    height: auto;\n  }\n\n  .kn_manuscript_eRVxzq {\n    height: 70vh;\n  }\n}\n";
+window.__ModuleLoader__.load({id:"kaitu-novel-workspace",factory:(require)=>{var module={exports:{}};var exports=module.exports;window.__kaituNovelStyles=".kn_app_DECiPG {\n  --bg: #fcfcfb;\n  --surface: #fff;\n  --sunken: #f5f5f3;\n  --control: #f0efec;\n  --line: #ecebe7;\n  --ink: #1f1e1d;\n  --ink2: #4d4c48;\n  --muted: #6b6a66;\n  --link: #2f5fc4;\n  --primary: #2f5fc4;\n  --on-primary: #fff;\n  --strong: #1f1e1d;\n  --on-strong: #fff;\n  --ask: #f2f5fd;\n  --ask-line: #dce4f8;\n  --scrim: #1f1e1d6b;\n  --health: #2e8b57;\n  --health-tint: #e8f3ec;\n  --health-ink: #1f6b43;\n  --doing: #6b5bd6;\n  --doing-tint: #efedfb;\n  --doing-ink: #4b3fb0;\n  --explore: #3d6fe0;\n  --explore-tint: #ecf1fc;\n  --explore-ink: #2a4fa8;\n  --news: #c47a12;\n  --news-tint: #fbefe0;\n  --news-ink: #8a520a;\n  --finance: #1f8a8a;\n  --finance-tint: #e3f2f2;\n  --finance-ink: #176868;\n  --me: #c2507a;\n  --empty: #f0efec;\n  --map-land: #eef1ec;\n  --map-grid: #dde2da;\n  --map-sea: #f4f6f7;\n  --map-dot: #d3dad4;\n  --font: -apple-system, BlinkMacSystemFont, \"PingFang SC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Segoe UI\",\n    sans-serif;\n  --radius: 14px;\n}\n\n@media (prefers-color-scheme: dark) {\n  .kn_app_DECiPG:not([data-theme=\"light\"]) {\n    --bg: #171716;\n    --surface: #201f1e;\n    --sunken: #1b1b1a;\n    --control: #2a2927;\n    --line: #2f2e2c;\n    --ink: #ecebe8;\n    --ink2: #c9c7c2;\n    --muted: #a09e98;\n    --link: #8fb0f5;\n    --primary: #4c7be6;\n    --on-primary: #fff;\n    --strong: #ecebe8;\n    --on-strong: #171716;\n    --ask: #1e2638;\n    --ask-line: #2c3a5c;\n    --scrim: #0009;\n    --health-tint: #1c3226;\n    --health-ink: #8fd3ac;\n    --doing-tint: #2a2547;\n    --doing-ink: #b9aff5;\n    --explore-tint: #1e2a45;\n    --explore-ink: #a9c1f7;\n    --news-tint: #3a2a12;\n    --news-ink: #ebc27f;\n    --finance-tint: #173333;\n    --finance-ink: #8ed1d1;\n    --empty: #2a2927;\n    --map-land: #1f2620;\n    --map-grid: #2d352e;\n    --map-sea: #1a1c1d;\n    --map-dot: #343d36;\n    color-scheme: dark;\n  }\n}\n\n.kn_app_DECiPG[data-theme=\"dark\"] {\n  --bg: #171716;\n  --surface: #201f1e;\n  --sunken: #1b1b1a;\n  --control: #2a2927;\n  --line: #2f2e2c;\n  --ink: #ecebe8;\n  --ink2: #c9c7c2;\n  --muted: #a09e98;\n  --link: #8fb0f5;\n  --primary: #4c7be6;\n  --on-primary: #fff;\n  --strong: #ecebe8;\n  --on-strong: #171716;\n  --ask: #1e2638;\n  --ask-line: #2c3a5c;\n  --scrim: #0009;\n  --health-tint: #1c3226;\n  --health-ink: #8fd3ac;\n  --doing-tint: #2a2547;\n  --doing-ink: #b9aff5;\n  --explore-tint: #1e2a45;\n  --explore-ink: #a9c1f7;\n  --news-tint: #3a2a12;\n  --news-ink: #ebc27f;\n  --finance-tint: #173333;\n  --finance-ink: #8ed1d1;\n  --empty: #2a2927;\n  --map-land: #1f2620;\n  --map-grid: #2d352e;\n  --map-sea: #1a1c1d;\n  --map-dot: #343d36;\n  color-scheme: dark;\n}\n\n.kn_app_DECiPG, .kn_app_DECiPG * {\n  box-sizing: border-box;\n}\n\n.kn_app_DECiPG {\n  background: var(--bg);\n  color: var(--ink);\n  font-family: var(--font);\n  font-size: 15px;\n  line-height: 1.5;\n}\n\n.kn_app_DECiPG a {\n  color: var(--link);\n  font-weight: 500;\n  text-decoration: none;\n}\n\n.kn_app_DECiPG a:hover {\n  text-underline-offset: 3px;\n  text-decoration: underline dotted;\n}\n\n:where(.kn_app_DECiPG) button, :where(.kn_app_DECiPG) input {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_app_DECiPG button {\n  cursor: pointer;\n}\n\n.kn_app_DECiPG h1, .kn_app_DECiPG h2, .kn_app_DECiPG h3, .kn_app_DECiPG p {\n  margin: 0;\n}\n\n.kn_app_DECiPG h1, .kn_app_DECiPG h2, .kn_app_DECiPG h3 {\n  text-wrap: balance;\n}\n\n.kn_num_DECiPG {\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_sr_DECiPG {\n  clip: rect(0 0 0 0);\n  white-space: nowrap;\n  width: 1px;\n  height: 1px;\n  position: absolute;\n  overflow: hidden;\n}\n\n.kn_demo_DECiPG {\n  padding-block: 8px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--sunken);\n  border-bottom: 1px dashed var(--line);\n  color: var(--muted);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 12px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_demo_DECiPG b {\n  color: var(--ink2);\n  font-weight: 600;\n}\n\n.kn_demo_DECiPG button {\n  border: 1px dashed var(--muted);\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 13px;\n}\n\n.kn_demo_DECiPG button[aria-pressed=\"true\"] {\n  border-style: solid;\n  border-color: var(--ink);\n  color: var(--ink);\n  background: var(--surface);\n}\n\n.kn_top_DECiPG {\n  top: env(safe-area-inset-top, 0px);\n  z-index: 5;\n  padding-block: 12px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--bg);\n  border-bottom: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 12px 20px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_brand_DECiPG {\n  flex: 120px;\n  align-items: center;\n  gap: 10px;\n  font-size: 18px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_tabs_DECiPG {\n  background: var(--control);\n  border-radius: 12px;\n  flex: 0 auto;\n  gap: 4px;\n  padding: 4px;\n  display: flex;\n}\n\n.kn_tabs_DECiPG button {\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 22px;\n  font-size: 15px;\n  font-weight: 500;\n}\n\n.kn_tabs_DECiPG button[aria-current=\"page\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_tools_DECiPG {\n  flex: 120px;\n  justify-content: flex-end;\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_sync_DECiPG {\n  color: var(--muted);\n  align-items: center;\n  gap: 6px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_dot_DECiPG {\n  border-radius: 50%;\n  flex: none;\n  width: 7px;\n  height: 7px;\n  display: inline-block;\n}\n\n.kn_btn_DECiPG {\n  white-space: nowrap;\n  border: 0;\n  border-radius: 10px;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n  height: 40px;\n  padding: 0 16px;\n  font-size: 15px;\n  font-weight: 500;\n  display: inline-flex;\n}\n\n.kn_btn-primary_DECiPG {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_btn-strong_DECiPG {\n  background: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_btn-quiet_DECiPG {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 400;\n}\n\n.kn_btn-big_DECiPG {\n  height: 44px;\n  padding: 0 20px;\n}\n\n.kn_avatar_DECiPG {\n  background: var(--me);\n  color: #fff;\n  border: 0;\n  border-radius: 50%;\n  width: 40px;\n  height: 40px;\n  font-weight: 600;\n}\n\n.kn_content_DECiPG {\n  max-width: 1040px;\n  padding-block: 28px 72px;\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  flex-direction: column;\n  gap: 32px;\n  margin: 0 auto;\n  display: flex;\n}\n\n.kn_head_DECiPG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 16px;\n  display: flex;\n}\n\n.kn_head_DECiPG h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_sub_DECiPG {\n  color: var(--muted);\n  font-size: 14px;\n}\n\n.kn_eyebrow_DECiPG {\n  color: var(--muted);\n  letter-spacing: .06em;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_sec_DECiPG {\n  flex-direction: column;\n  gap: 12px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_sec-head_DECiPG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  gap: 6px 12px;\n  display: flex;\n}\n\n.kn_card_DECiPG {\n  background: var(--surface);\n  border-radius: var(--radius);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_chip_DECiPG {\n  white-space: nowrap;\n  border-radius: 6px;\n  align-items: center;\n  gap: 6px;\n  padding: 2px 8px;\n  font-size: 13px;\n  font-weight: 500;\n  line-height: 18px;\n  display: inline-flex;\n}\n\n.kn_capture_DECiPG {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  gap: 8px;\n  padding: 6px;\n  display: flex;\n}\n\n.kn_capture_DECiPG input {\n  background: none;\n  border: 0;\n  border-radius: 10px;\n  flex: 260px;\n  min-width: 0;\n  height: 44px;\n  padding: 0 14px;\n  font-size: 16px;\n}\n\n.kn_capture_DECiPG input::placeholder {\n  color: var(--muted);\n}\n\n.kn_saved_DECiPG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_focus_DECiPG {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 18px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 24px;\n  padding: 24px;\n  display: flex;\n}\n\n.kn_focus-body_DECiPG {\n  flex-direction: column;\n  flex: 380px;\n  gap: 8px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_focus-title_DECiPG {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_row_DECiPG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  min-height: 52px;\n  padding: 6px 16px;\n  display: flex;\n}\n\n.kn_row-title_DECiPG {\n  flex: 240px;\n  min-width: 0;\n  font-size: 16px;\n}\n\n.kn_check_DECiPG {\n  border: 1.5px solid var(--muted);\n  color: #0000;\n  background: none;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 24px;\n  height: 24px;\n  padding: 0;\n  display: flex;\n}\n\n.kn_check_DECiPG[aria-pressed=\"true\"] {\n  border-color: var(--health);\n  background: var(--health);\n  color: #fff;\n}\n\n.kn_row_DECiPG.kn_is-done_DECiPG .kn_row-title_DECiPG {\n  color: var(--muted);\n  text-decoration: line-through;\n}\n\n.kn_when_DECiPG {\n  text-align: right;\n  width: 64px;\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_ask_DECiPG {\n  background: var(--ask);\n  box-shadow: 0 0 0 1px var(--ask-line);\n  border-radius: 14px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 14px 18px;\n  display: flex;\n}\n\n.kn_ask_DECiPG p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_grid_DECiPG {\n  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_sum_DECiPG {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 14px;\n  padding: 18px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_sum_DECiPG:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_sum-h_DECiPG {\n  align-items: center;\n  gap: 8px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_sum-h_DECiPG span:last-child {\n  color: var(--muted);\n  margin-left: auto;\n  font-size: 13px;\n  font-weight: 400;\n}\n\n.kn_big_DECiPG {\n  font-size: 26px;\n  font-weight: 600;\n  line-height: 32px;\n}\n\n.kn_small_DECiPG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_pair_DECiPG {\n  grid-template-columns: repeat(2, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_stack_DECiPG {\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n}\n\n.kn_week_DECiPG {\n  grid-template-columns: repeat(7, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_week_DECiPG span {\n  color: var(--muted);\n  flex-direction: column;\n  align-items: center;\n  gap: 4px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_week_DECiPG i {\n  background: var(--empty);\n  border-radius: 5px;\n  width: 100%;\n  height: 18px;\n  display: block;\n}\n\n.kn_bar_DECiPG {\n  background: var(--control);\n  border-radius: 4px;\n  height: 8px;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_bar_DECiPG i {\n  height: 100%;\n  display: block;\n}\n\n.kn_fin_DECiPG {\n  grid-template-columns: repeat(4, minmax(0, 1fr));\n  gap: 0;\n  display: grid;\n  overflow: hidden;\n}\n\n.kn_fin-cell_DECiPG {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_fin-cell_DECiPG:nth-child(4) {\n  border-right: 0;\n}\n\n.kn_fin-wide_DECiPG {\n  border-top: 1px solid var(--line);\n  flex-direction: column;\n  grid-column: 1 / -1;\n  gap: 8px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_fin-pending_DECiPG {\n  flex-flow: wrap;\n  align-items: center;\n  gap: 8px 12px;\n}\n\n@media (width <= 760px) {\n  .kn_fin_DECiPG {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .kn_fin-cell_DECiPG {\n    border-right: 0;\n    border-bottom: 1px solid var(--line);\n  }\n\n  .kn_fin-cell_DECiPG:nth-child(odd) {\n    border-right: 1px solid var(--line);\n  }\n}\n\n.kn_feed-row_DECiPG {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 14px;\n  padding: 10px 4px;\n  display: flex;\n}\n\n.kn_feed-row_DECiPG p {\n  flex: 300px;\n  min-width: 0;\n}\n\n.kn_ini_DECiPG {\n  color: #fff;\n  border-radius: 50%;\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 28px;\n  height: 28px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_welcome_DECiPG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 10px;\n  padding: 32px 28px;\n  display: flex;\n}\n\n.kn_welcome_DECiPG h1 {\n  font-size: 30px;\n  font-weight: 600;\n  line-height: 40px;\n}\n\n.kn_welcome_DECiPG p {\n  max-width: 36em;\n  color: var(--ink2);\n  font-size: 16px;\n}\n\n.kn_starts_DECiPG {\n  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));\n  gap: 16px;\n  display: grid;\n}\n\n.kn_start_DECiPG {\n  text-align: left;\n  border: 0;\n  flex-direction: column;\n  gap: 10px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_start_DECiPG h3 {\n  font-size: 17px;\n  font-weight: 600;\n}\n\n.kn_start_DECiPG p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_start_DECiPG .kn_tag_DECiPG {\n  align-self: flex-start;\n}\n\n.kn_subtabs_DECiPG {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_subtabs_DECiPG button {\n  border: 1px solid var(--line);\n  height: 36px;\n  color: var(--ink2);\n  background: none;\n  border-radius: 18px;\n  padding: 0 16px;\n  font-size: 14px;\n}\n\n.kn_subtabs_DECiPG button[aria-pressed=\"true\"] {\n  background: var(--strong);\n  border-color: var(--strong);\n  color: var(--on-strong);\n}\n\n.kn_dir_DECiPG {\n  flex-direction: column;\n  gap: 14px;\n  padding: 20px;\n  display: flex;\n}\n\n.kn_dir_DECiPG h3 {\n  font-size: 19px;\n  font-weight: 600;\n  line-height: 27px;\n}\n\n.kn_dir_DECiPG dl {\n  grid-template-columns: 4.5em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_dir_DECiPG dt {\n  color: var(--muted);\n}\n\n.kn_dir_DECiPG dd {\n  color: var(--ink);\n  margin: 0;\n}\n\n.kn_attempt_DECiPG {\n  background: var(--sunken);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 6px;\n  padding: 12px 14px;\n  font-size: 14px;\n  display: flex;\n}\n\n.kn_evidence_DECiPG {\n  flex-wrap: wrap;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_dir-foot_DECiPG {\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_dir_DECiPG.kn_is-paused_DECiPG {\n  background: var(--sunken);\n  box-shadow: 0 0 0 1px var(--line);\n}\n\n.kn_split_DECiPG {\n  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);\n  gap: 20px;\n  display: grid;\n}\n\n.kn_map-box_DECiPG {\n  padding: 12px;\n  overflow: hidden;\n}\n\n.kn_map-box_DECiPG svg {\n  width: 100%;\n  height: auto;\n  display: block;\n}\n\n.kn_places_DECiPG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_place_DECiPG {\n  border-top: 1px solid var(--line);\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 4px 12px;\n  padding: 12px 4px;\n  display: flex;\n}\n\n.kn_place_DECiPG b {\n  flex: 120px;\n  font-weight: 600;\n}\n\n.kn_legend_DECiPG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_legend_DECiPG span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_news_DECiPG {\n  grid-template-columns: 120px minmax(0, 1fr);\n  gap: 16px;\n  padding: 16px;\n  display: grid;\n}\n\n.kn_news_DECiPG .kn_thumb_DECiPG {\n  aspect-ratio: 4 / 3;\n  color: #fff;\n  border-radius: 10px;\n  align-items: flex-end;\n  max-width: 100%;\n  padding: 8px;\n  font-size: 12px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_news_DECiPG h3 {\n  font-size: 17px;\n  font-weight: 600;\n  line-height: 25px;\n}\n\n.kn_news_DECiPG p {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_news-foot_DECiPG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px 14px;\n  margin-top: 4px;\n  display: flex;\n}\n\n.kn_news-foot_DECiPG a {\n  font-size: 14px;\n}\n\n.kn_news-acts_DECiPG {\n  gap: 8px;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_comment_DECiPG {\n  border-left: 2px solid var(--news);\n  color: var(--ink);\n  padding-left: 10px;\n  font-size: 14px;\n}\n\n.kn_mods_DECiPG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 12px;\n  display: grid;\n}\n\n.kn_mod_DECiPG {\n  color: var(--ink);\n  flex-direction: column;\n  gap: 6px;\n  padding: 16px;\n  font-weight: 400;\n  display: flex;\n}\n\n.kn_mod_DECiPG:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  text-decoration: none;\n}\n\n.kn_raw_DECiPG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 88px minmax(0, 1fr);\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_raw_DECiPG time {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_raw_DECiPG blockquote {\n  margin: 0;\n  font-size: 15px;\n}\n\n.kn_raw_DECiPG .kn_st_DECiPG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  grid-column: 2;\n  align-items: center;\n  gap: 8px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_scrim_DECiPG {\n  z-index: 20;\n  padding-block: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-bottom, 0px));\n  padding-left: max(16px, env(safe-area-inset-left, 0px));\n  padding-right: max(16px, env(safe-area-inset-right, 0px));\n  background: var(--scrim);\n  justify-content: center;\n  align-items: center;\n  display: flex;\n  position: fixed;\n  inset: 0;\n}\n\n.kn_dialog_DECiPG {\n  background: var(--surface);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 18px;\n  width: 100%;\n  max-width: 560px;\n  max-height: 100%;\n  padding: 28px;\n  display: flex;\n  overflow: auto;\n  box-shadow: 0 20px 60px #00000040;\n}\n\n.kn_dialog_DECiPG h2 {\n  font-size: 22px;\n  font-weight: 600;\n  line-height: 30px;\n}\n\n.kn_steps_DECiPG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_choice_DECiPG {\n  border: 1.5px solid var(--line);\n  text-align: left;\n  background: none;\n  border-radius: 14px;\n  align-items: flex-start;\n  gap: 14px;\n  width: 100%;\n  padding: 16px;\n  display: flex;\n}\n\n.kn_choice_DECiPG[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_choice_DECiPG .kn_radio_DECiPG {\n  border: 1.5px solid var(--muted);\n  border-radius: 50%;\n  flex: none;\n  width: 20px;\n  height: 20px;\n  margin-top: 2px;\n}\n\n.kn_choice_DECiPG[aria-pressed=\"true\"] .kn_radio_DECiPG {\n  border: 6px solid var(--primary);\n}\n\n.kn_choice_DECiPG b {\n  font-size: 16px;\n  font-weight: 600;\n  display: block;\n}\n\n.kn_choice_DECiPG span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_toggle_DECiPG {\n  border-top: 1px solid var(--line);\n  align-items: flex-start;\n  gap: 14px;\n  padding: 14px 0;\n  display: flex;\n}\n\n.kn_toggle_DECiPG input {\n  width: 20px;\n  height: 20px;\n  accent-color: var(--primary);\n  flex: none;\n  margin: 2px 0 0;\n}\n\n.kn_toggle_DECiPG label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_toggle_DECiPG label span {\n  color: var(--ink2);\n  font-size: 14px;\n}\n\n.kn_dialog-foot_DECiPG {\n  flex-wrap: wrap;\n  justify-content: flex-end;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_note_DECiPG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n@media (width <= 760px) {\n  .kn_split_DECiPG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_news_DECiPG {\n    grid-template-columns: 84px minmax(0, 1fr);\n  }\n\n  .kn_tools_DECiPG .kn_sync_DECiPG {\n    display: none;\n  }\n\n  .kn_brand_DECiPG {\n    flex-basis: auto;\n  }\n\n  .kn_tabs_DECiPG {\n    flex: 100%;\n    order: 3;\n    justify-content: stretch;\n  }\n\n  .kn_tabs_DECiPG button {\n    flex: 1 1 0;\n    padding: 0 8px;\n  }\n\n  .kn_head_DECiPG h1 {\n    font-size: 24px;\n    line-height: 32px;\n  }\n}\n\n.kn_cal-bar_DECiPG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 14px;\n  display: flex;\n}\n\n.kn_cal-nav_DECiPG {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_cal-nav_DECiPG button {\n  background: var(--control);\n  min-width: 36px;\n  height: 36px;\n  color: var(--ink);\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 14px;\n}\n\n.kn_cal-title_DECiPG {\n  flex: 200px;\n  font-size: 18px;\n  font-weight: 600;\n}\n\n.kn_seg_DECiPG {\n  background: var(--control);\n  border-radius: 10px;\n  gap: 2px;\n  padding: 3px;\n  display: flex;\n}\n\n.kn_seg_DECiPG button {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_seg_DECiPG button[aria-pressed=\"true\"] {\n  background: var(--surface);\n  color: var(--ink);\n  font-weight: 600;\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n.kn_cal_DECiPG {\n  --fc-border-color: var(--line);\n  --fc-page-bg-color: var(--surface);\n  --fc-neutral-bg-color: var(--sunken);\n  --fc-today-bg-color: var(--ask);\n  --fc-list-event-hover-bg-color: var(--sunken);\n  --fc-now-indicator-color: var(--news);\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  padding: 8px;\n  overflow: hidden;\n}\n\n.kn_cal_DECiPG [class~=\"fc\"] {\n  color: var(--ink);\n  font-size: 13px;\n}\n\n.kn_cal_DECiPG [class~=\"fc-col-header-cell-cushion\"], .kn_cal_DECiPG [class~=\"fc-daygrid-day-number\"] {\n  color: var(--ink);\n  font-weight: 500;\n}\n\n.kn_cal_DECiPG [class~=\"fc-timegrid-slot-label-cushion\"], .kn_cal_DECiPG [class~=\"fc-timegrid-axis-cushion\"] {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n}\n\n.kn_cal_DECiPG [class~=\"fc-dh\"] {\n  flex-direction: column;\n  align-items: center;\n  gap: 2px;\n  padding: 4px 0;\n  display: flex;\n}\n\n.kn_cal_DECiPG [class~=\"fc-dh\"] b {\n  font-size: 18px;\n  font-weight: 600;\n  line-height: 22px;\n}\n\n.kn_cal_DECiPG [class~=\"fc-dh\"] span {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_cal_DECiPG [class~=\"fc-day-today\"] [class~=\"fc-dh\"] b {\n  color: var(--primary);\n}\n\n.kn_cal_DECiPG [class~=\"fc-event\"] {\n  cursor: pointer;\n  border-radius: 6px;\n  padding: 1px 2px;\n}\n\n.kn_cal_DECiPG [class~=\"fc-event-main\"] {\n  color: var(--fc-event-text-color);\n  font-weight: 500;\n}\n\n.kn_cal_DECiPG [class~=\"fc-list-day-cushion\"] {\n  background: var(--sunken);\n}\n\n.kn_cal_DECiPG [class~=\"fc-list-event-dot\"] {\n  border-color: var(--dot, var(--explore));\n}\n\n.kn_ev-work_DECiPG {\n  --fc-event-bg-color: var(--explore-tint);\n  --fc-event-border-color: var(--explore-tint);\n  --fc-event-text-color: var(--explore-ink);\n  --dot: var(--explore);\n}\n\n.kn_ev-life_DECiPG {\n  --fc-event-bg-color: var(--doing-tint);\n  --fc-event-border-color: var(--doing-tint);\n  --fc-event-text-color: var(--doing-ink);\n  --dot: var(--doing);\n}\n\n.kn_ev-health_DECiPG {\n  --fc-event-bg-color: var(--health-tint);\n  --fc-event-border-color: var(--health-tint);\n  --fc-event-text-color: var(--health-ink);\n  --dot: var(--health);\n}\n\n.kn_ev-suggest_DECiPG {\n  --fc-event-bg-color: var(--surface);\n  --fc-event-border-color: var(--news);\n  --fc-event-text-color: var(--news-ink);\n  --dot: var(--news);\n}\n\n.kn_cal_DECiPG [class~=\"fc-event\"].kn_ev-suggest_DECiPG {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n.kn_cal-legend_DECiPG {\n  color: var(--ink2);\n  flex-wrap: wrap;\n  gap: 6px 16px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_cal-legend_DECiPG span {\n  align-items: center;\n  gap: 6px;\n  display: inline-flex;\n}\n\n.kn_cal-detail_DECiPG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 10px 16px;\n  padding: 16px 18px;\n  display: flex;\n}\n\n.kn_cal-detail_DECiPG .kn_stack_DECiPG {\n  flex: 260px;\n  min-width: 0;\n}\n\n.kn_cal-fallback_DECiPG {\n  color: var(--ink2);\n  padding: 24px;\n}\n\n.kn_sub-form_DECiPG {\n  flex-direction: column;\n  gap: 12px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_sub-form_DECiPG .kn_fields_DECiPG {\n  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);\n  gap: 10px;\n  display: grid;\n}\n\n.kn_sub-form_DECiPG label {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  min-width: 0;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_sub-form_DECiPG input {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 40px;\n  color: var(--ink);\n  border-radius: 9px;\n  min-width: 0;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_agenda_DECiPG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_agenda-row_DECiPG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 96px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 14px;\n  padding: 10px 16px;\n  display: grid;\n}\n\n.kn_agenda-row_DECiPG:first-child {\n  border-top: 0;\n}\n\n.kn_agenda-row_DECiPG time {\n  color: var(--muted);\n  font-variant-numeric: tabular-nums;\n  font-size: 14px;\n}\n\n@media (width <= 760px) {\n  .kn_sub-form_DECiPG .kn_fields_DECiPG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_DECiPG {\n    grid-template-columns: 72px minmax(0, 1fr);\n  }\n\n  .kn_agenda-row_DECiPG > :last-child {\n    grid-column: 2;\n  }\n}\n\n.kn_map-hero_DECiPG {\n  background: var(--map-sea);\n  height: clamp(400px, 64vh, 660px);\n  padding: 0;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_map-svg_DECiPG {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_map-svg_DECiPG .kn_city_DECiPG {\n  cursor: pointer;\n  outline: none;\n}\n\n.kn_map-svg_DECiPG .kn_city_DECiPG:focus-visible circle {\n  stroke: var(--explore);\n}\n\n.kn_map-tools_DECiPG {\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 10px;\n  padding: 10px 12px;\n  display: flex;\n  position: absolute;\n  top: 14px;\n  left: 14px;\n}\n\n.kn_layer-chips_DECiPG {\n  gap: 4px;\n  display: flex;\n}\n\n.kn_lchip_DECiPG {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_lchip_DECiPG[aria-pressed=\"true\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_lchip_DECiPG[aria-pressed=\"false\"] .kn_dot_DECiPG {\n  opacity: .35;\n}\n\n.kn_year_DECiPG {\n  color: var(--ink2);\n  flex-direction: column;\n  gap: 4px;\n  font-size: 13px;\n  display: flex;\n}\n\n.kn_year_DECiPG input {\n  accent-color: var(--primary);\n}\n\n.kn_map-detail_DECiPG {\n  width: min(320px, 100% - 28px);\n  box-shadow: 0 6px 20px #0000001a, 0 0 0 1px var(--line);\n  flex-direction: column;\n  gap: 8px;\n  padding: 14px 16px;\n  display: flex;\n  position: absolute;\n  bottom: 14px;\n  right: 14px;\n}\n\n.kn_map-stats_DECiPG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 999px;\n  padding: 6px 12px;\n  font-size: 13px;\n  position: absolute;\n  bottom: 14px;\n  left: 14px;\n}\n\n.kn_timeline_DECiPG {\n  gap: 10px;\n  padding-bottom: 6px;\n  display: flex;\n  overflow-x: auto;\n}\n\n.kn_tl-item_DECiPG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  text-align: left;\n  color: var(--ink);\n  border: 0;\n  border-radius: 12px;\n  flex-direction: column;\n  flex: 0 0 200px;\n  align-items: flex-start;\n  gap: 4px;\n  padding: 12px 14px;\n  display: flex;\n}\n\n.kn_tl-item_DECiPG[aria-pressed=\"true\"] {\n  box-shadow: 0 0 0 2px var(--primary);\n}\n\n.kn_tl-item_DECiPG b {\n  font-size: 16px;\n  font-weight: 600;\n}\n\n.kn_tl-year_DECiPG {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_tl-dot_DECiPG {\n  border-radius: 50%;\n  width: 10px;\n  height: 10px;\n}\n\n@media (width <= 760px) {\n  .kn_map-hero_DECiPG {\n    height: 520px;\n  }\n\n  .kn_map-tools_DECiPG {\n    right: 14px;\n  }\n\n  .kn_layer-chips_DECiPG {\n    flex-wrap: wrap;\n  }\n\n  .kn_map-stats_DECiPG {\n    display: none;\n  }\n}\n\n.kn_mod_DECiPG .kn_sum-h_DECiPG span[aria-hidden] {\n  color: var(--muted);\n  margin-left: auto;\n  font-weight: 400;\n}\n\n.kn_ms_DECiPG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 8px 16px;\n  display: grid;\n}\n\n.kn_ms-row_DECiPG {\n  align-items: center;\n  gap: 10px;\n  font-size: 15px;\n  display: flex;\n}\n\n.kn_ms-row_DECiPG.kn_is-done_DECiPG {\n  color: var(--muted);\n}\n\n.kn_ms-row_DECiPG .kn_check_DECiPG {\n  width: 20px;\n  height: 20px;\n}\n\n.kn_kv_DECiPG {\n  grid-template-columns: 4em minmax(0, 1fr);\n  gap: 6px 12px;\n  margin: 0;\n  font-size: 14px;\n  display: grid;\n}\n\n.kn_kv_DECiPG dt {\n  color: var(--muted);\n}\n\n.kn_kv_DECiPG dd {\n  margin: 0;\n}\n\n.kn_heat_DECiPG {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  gap: 5px;\n  display: grid;\n}\n\n.kn_heat_DECiPG i {\n  aspect-ratio: 1;\n  background: var(--empty);\n  border-radius: 5px;\n  max-width: 100%;\n}\n\n.kn_sleep_DECiPG {\n  grid-template-columns: repeat(14, minmax(0, 1fr));\n  align-items: end;\n  gap: 6px;\n  height: 84px;\n  display: grid;\n}\n\n.kn_sleep_DECiPG i {\n  background: var(--health);\n  border-radius: 5px;\n}\n\n.kn_sleep_DECiPG i.kn_miss_DECiPG {\n  height: 18px;\n  box-shadow: inset 0 0 0 1px var(--muted);\n  opacity: .6;\n  background: none;\n  border: 0;\n}\n\n.kn_table-box_DECiPG {\n  overflow-x: auto;\n}\n\n.kn_table-box_DECiPG table {\n  border-collapse: collapse;\n  width: 100%;\n  font-size: 15px;\n}\n\n.kn_table-box_DECiPG th, .kn_table-box_DECiPG td {\n  border-top: 1px solid var(--line);\n  text-align: left;\n  padding: 12px 16px;\n}\n\n.kn_table-box_DECiPG thead th {\n  color: var(--muted);\n  border-top: 0;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.kn_table-box_DECiPG .kn_r_DECiPG {\n  text-align: right;\n}\n\n.kn_note-row_DECiPG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: auto minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 12px;\n  padding: 14px 0;\n  font-weight: 400;\n  display: grid;\n}\n\n.kn_note-row_DECiPG:first-child {\n  border-top: 0;\n}\n\n.kn_note-row_DECiPG:hover {\n  text-decoration: none;\n}\n\n.kn_conn-strip_DECiPG {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_conn-pill_DECiPG {\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 10px;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px 8px;\n  padding: 8px 12px;\n  font-size: 14px;\n  display: inline-flex;\n}\n\n.kn_conn-pill_DECiPG b {\n  font-weight: 600;\n}\n\n.kn_raw_DECiPG time {\n  line-height: 1.4;\n}\n\n.kn_avatar_DECiPG {\n  background-position: center;\n  background-size: cover;\n}\n\n.kn_avatar_DECiPG.kn_has-img_DECiPG {\n  color: #0000;\n}\n\n.kn_me-avatar_DECiPG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 16px 20px;\n  padding: 18px;\n  display: flex;\n}\n\n.kn_me-avatar_DECiPG .kn_avatar_DECiPG {\n  flex: none;\n  justify-content: center;\n  align-items: center;\n  width: 72px;\n  height: 72px;\n  font-size: 28px;\n  display: flex;\n}\n\n.kn_crop-view_DECiPG {\n  background: var(--sunken);\n  touch-action: none;\n  cursor: grab;\n  width: 240px;\n  max-width: 100%;\n  height: 240px;\n  box-shadow: 0 0 0 1px var(--line);\n  border-radius: 50%;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_crop-view_DECiPG:active {\n  cursor: grabbing;\n}\n\n.kn_crop-view_DECiPG img {\n  transform-origin: 0 0;\n  user-select: none;\n  pointer-events: none;\n  max-width: none;\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n\n.kn_crop-zoom_DECiPG {\n  width: 240px;\n  max-width: 100%;\n  color: var(--muted);\n  align-items: center;\n  gap: 10px;\n  display: flex;\n}\n\n.kn_crop-zoom_DECiPG input {\n  accent-color: var(--primary);\n  flex: 1;\n}\n\n.kn_menu_DECiPG {\n  top: calc(100% + 6px);\n  right: max(16px, env(safe-area-inset-right, 0px));\n  z-index: 10;\n  background: var(--surface);\n  width: 248px;\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  border-radius: 14px;\n  flex-direction: column;\n  padding: 6px;\n  display: flex;\n  position: absolute;\n}\n\n.kn_menu-head_DECiPG {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 10px;\n  margin-bottom: 4px;\n  padding: 8px 10px 10px;\n  display: flex;\n}\n\n.kn_menu-head_DECiPG b {\n  font-weight: 600;\n}\n\n.kn_menu_DECiPG button[role=\"menuitem\"] {\n  text-align: left;\n  height: 40px;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_menu_DECiPG button[role=\"menuitem\"]:hover, .kn_menu_DECiPG button[role=\"menuitem\"]:focus-visible {\n  background: var(--sunken);\n}\n\n.kn_me_DECiPG {\n  grid-template-columns: 200px minmax(0, 1fr);\n  align-items: start;\n  gap: 32px;\n  display: grid;\n}\n\n.kn_me-nav_DECiPG {\n  top: calc(env(safe-area-inset-top, 0px) + 84px);\n  flex-direction: column;\n  gap: 2px;\n  display: flex;\n  position: sticky;\n}\n\n.kn_me-nav_DECiPG button {\n  text-align: left;\n  height: 40px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 9px;\n  padding: 0 12px;\n  font-size: 15px;\n}\n\n.kn_me-nav_DECiPG button[aria-current=\"page\"] {\n  background: var(--control);\n  color: var(--ink);\n  font-weight: 600;\n}\n\n.kn_me-body_DECiPG {\n  flex-direction: column;\n  gap: 28px;\n  min-width: 0;\n  display: flex;\n}\n\n.kn_facts_DECiPG {\n  flex-direction: column;\n  display: flex;\n}\n\n.kn_fact_DECiPG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 4px 16px;\n  padding: 14px 4px;\n  display: grid;\n}\n\n.kn_fact_DECiPG:first-child {\n  border-top: 0;\n}\n\n.kn_fact_DECiPG p {\n  font-size: 15px;\n}\n\n.kn_fact_DECiPG .kn_src_DECiPG {\n  color: var(--muted);\n  grid-column: 1;\n  font-size: 13px;\n}\n\n.kn_fact_DECiPG .kn_fact-acts_DECiPG {\n  grid-area: 1 / 2 / span 2;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_list-card_DECiPG {\n  padding: 4px 16px;\n}\n\n.kn_conn_DECiPG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: 36px minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 12px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_conn_DECiPG:first-child {\n  border-top: 0;\n}\n\n.kn_conn_DECiPG .kn_logo_DECiPG {\n  color: #fff;\n  border-radius: 10px;\n  grid-row: 1 / span 2;\n  justify-content: center;\n  align-items: center;\n  width: 36px;\n  height: 36px;\n  font-size: 14px;\n  font-weight: 600;\n  display: flex;\n}\n\n.kn_conn_DECiPG b {\n  align-items: center;\n  gap: 6px;\n  font-weight: 600;\n  display: inline-flex;\n}\n\n.kn_info_DECiPG {\n  border: 1px solid var(--muted);\n  width: 18px;\n  height: 18px;\n  color: var(--muted);\n  background: none;\n  border-radius: 50%;\n  padding: 0;\n  font: italic 600 11px / 1 Georgia, serif;\n}\n\n.kn_info_DECiPG[aria-expanded=\"true\"] {\n  border-color: var(--primary);\n  color: var(--primary);\n}\n\n.kn_conn_DECiPG .kn_hint_DECiPG {\n  background: var(--sunken);\n  color: var(--ink2);\n  border-radius: 8px;\n  grid-column: 2 / -1;\n  margin: 6px 0 0;\n  padding: 8px 10px;\n  font-size: 13px;\n}\n\n.kn_conn_DECiPG .kn_small_DECiPG {\n  grid-column: 2;\n}\n\n.kn_conn_DECiPG > :last-child {\n  grid-area: 1 / 3 / span 2;\n}\n\n.kn_switch-row_DECiPG {\n  border-top: 1px solid var(--line);\n  grid-template-columns: minmax(0, 1fr) auto;\n  align-items: center;\n  gap: 2px 16px;\n  padding: 14px 0;\n  display: grid;\n}\n\n.kn_switch-row_DECiPG:first-child {\n  border-top: 0;\n}\n\n.kn_switch-row_DECiPG label b {\n  font-weight: 600;\n  display: block;\n}\n\n.kn_auto-ctl_DECiPG {\n  align-items: center;\n  gap: 12px;\n  display: flex;\n}\n\n.kn_time_DECiPG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 36px;\n  color: var(--ink);\n  font-variant-numeric: tabular-nums;\n  border-radius: 8px;\n  padding: 0 10px;\n  font-size: 15px;\n}\n\n.kn_time_DECiPG:disabled {\n  opacity: .45;\n}\n\n.kn_switch_DECiPG {\n  flex: none;\n  width: 44px;\n  height: 26px;\n  position: relative;\n}\n\n.kn_switch_DECiPG input {\n  opacity: 0;\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  margin: 0;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_DECiPG i {\n  background: var(--control);\n  box-shadow: inset 0 0 0 1px var(--line);\n  pointer-events: none;\n  border-radius: 13px;\n  transition: background .15s;\n  position: absolute;\n  inset: 0;\n}\n\n.kn_switch_DECiPG i:after {\n  content: \"\";\n  background: #fff;\n  border-radius: 50%;\n  width: 20px;\n  height: 20px;\n  transition: transform .15s;\n  position: absolute;\n  top: 3px;\n  left: 3px;\n  box-shadow: 0 1px 2px #00000040;\n}\n\n.kn_switch_DECiPG input:checked + i {\n  background: var(--health);\n}\n\n.kn_switch_DECiPG input:checked + i:after {\n  transform: translateX(18px);\n}\n\n.kn_switch_DECiPG input:focus-visible + i {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n@media (width <= 760px) {\n  .kn_me_DECiPG {\n    grid-template-columns: minmax(0, 1fr);\n    gap: 16px;\n  }\n\n  .kn_me-nav_DECiPG {\n    flex-flow: wrap;\n    position: static;\n  }\n\n  .kn_me-nav_DECiPG button {\n    text-align: center;\n    flex: auto;\n  }\n}\n\n.kn_chat_DECiPG {\n  grid-template-columns: 236px minmax(0, 1fr);\n  height: calc(100dvh - 118px);\n  min-height: 560px;\n  display: grid;\n}\n\n.kn_threads_DECiPG {\n  border-right: 1px solid var(--line);\n  flex-direction: column;\n  gap: 2px;\n  min-width: 0;\n  padding: 16px 12px 16px 0;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_threads_DECiPG h2 {\n  color: var(--muted);\n  letter-spacing: .06em;\n  padding: 14px 10px 4px;\n  font-size: 12px;\n  font-weight: 600;\n}\n\n.kn_thread_DECiPG {\n  text-align: left;\n  width: 100%;\n  color: var(--ink);\n  white-space: nowrap;\n  text-overflow: ellipsis;\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  padding: 8px 10px;\n  font-size: 14px;\n  display: block;\n  overflow: hidden;\n}\n\n.kn_thread_DECiPG:hover {\n  background: var(--sunken);\n}\n\n.kn_thread_DECiPG[aria-current=\"true\"] {\n  background: var(--control);\n  font-weight: 600;\n}\n\n.kn_new-thread_DECiPG {\n  align-items: center;\n  gap: 8px;\n  margin-bottom: 6px;\n  font-weight: 500;\n  display: flex;\n}\n\n.kn_convo_DECiPG {\n  flex-direction: column;\n  min-width: 0;\n  min-height: 0;\n  display: flex;\n}\n\n.kn_msgs_DECiPG {\n  flex-direction: column;\n  flex: auto;\n  gap: 14px;\n  min-height: 0;\n  padding: 28px max(16px, 7%);\n  display: flex;\n  overflow: auto;\n  -webkit-mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n  mask-image: linear-gradient(#0000 0, #000 20px calc(100% - 28px), #0000 100%);\n}\n\n.kn_msg-user_DECiPG {\n  background: var(--ask);\n  overflow-wrap: anywhere;\n  border-radius: 18px;\n  align-self: flex-end;\n  max-width: min(78%, 560px);\n  padding: 10px 16px;\n  font-size: 16px;\n  line-height: 1.6;\n}\n\n.kn_msg-ai_DECiPG {\n  flex-direction: column;\n  gap: 10px;\n  max-width: 680px;\n  font-size: 16px;\n  line-height: 1.7;\n  display: flex;\n}\n\n.kn_msg-ai_DECiPG ul {\n  flex-direction: column;\n  gap: 4px;\n  margin: 0;\n  padding-left: 1.2em;\n  display: flex;\n}\n\n.kn_tool_DECiPG {\n  background: var(--sunken);\n  max-width: 100%;\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border-radius: 10px;\n  align-self: flex-start;\n  font-size: 14px;\n}\n\n.kn_tool_DECiPG summary {\n  cursor: pointer;\n  align-items: center;\n  gap: 10px;\n  padding: 8px 12px;\n  list-style: none;\n  display: flex;\n}\n\n.kn_tool_DECiPG summary::-webkit-details-marker {\n  display: none;\n}\n\n.kn_tool_DECiPG summary:after {\n  content: \"\";\n  border-right: 1.5px solid var(--muted);\n  border-bottom: 1.5px solid var(--muted);\n  width: 7px;\n  height: 7px;\n  margin-left: 6px;\n  transition: transform .12s;\n  transform: rotate(-45deg);\n}\n\n.kn_tool_DECiPG[open] summary:after {\n  transform: rotate(45deg);\n}\n\n.kn_tool_DECiPG pre {\n  color: var(--muted);\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n  margin: 0;\n  padding: 0 12px 10px 34px;\n  font: 13px / 1.6 ui-monospace, SF Mono, Menlo, monospace;\n}\n\n.kn_st-dot_DECiPG {\n  background: var(--health);\n  border-radius: 50%;\n  flex: none;\n  width: 8px;\n  height: 8px;\n}\n\n.kn_st-dot_DECiPG.kn_run_DECiPG {\n  background: var(--explore);\n}\n\n.kn_thinking_DECiPG {\n  color: var(--muted);\n  align-self: flex-start;\n  font-size: 15px;\n}\n\n.kn_acts_DECiPG {\n  flex-wrap: wrap;\n  gap: 8px;\n  display: flex;\n}\n\n.kn_act_DECiPG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  height: 34px;\n  color: var(--ink);\n  border-radius: 17px;\n  padding: 0 14px;\n  font-size: 14px;\n}\n\n.kn_act_DECiPG:hover {\n  border-color: var(--muted);\n}\n\n.kn_welcome-chat_DECiPG {\n  flex-direction: column;\n  align-items: flex-start;\n  gap: 18px;\n  max-width: 680px;\n  margin: auto 0;\n  display: flex;\n}\n\n.kn_welcome-chat_DECiPG h1 {\n  font-size: 28px;\n  font-weight: 600;\n  line-height: 36px;\n}\n\n.kn_suggest_DECiPG {\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 10px;\n  width: 100%;\n  display: grid;\n}\n\n.kn_suggest_DECiPG button {\n  text-align: left;\n  background: var(--surface);\n  box-shadow: 0 0 0 1px var(--line);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 12px;\n  padding: 12px 14px;\n  font-size: 14px;\n}\n\n.kn_suggest_DECiPG button:hover {\n  box-shadow: 0 0 0 1px var(--muted);\n  color: var(--ink);\n}\n\n.kn_composer_DECiPG {\n  background: var(--surface);\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1px var(--line);\n  border-radius: 20px;\n  flex-direction: column;\n  gap: 6px;\n  margin: 0 max(16px, 7%) 18px;\n  padding: 12px 12px 10px 16px;\n  display: flex;\n}\n\n.kn_composer_DECiPG:focus-within {\n  box-shadow: 0 1px 3px #1f1e1d14, 0 0 0 1.5px var(--explore);\n}\n\n.kn_composer_DECiPG textarea {\n  resize: none;\n  width: 100%;\n  min-height: 48px;\n  max-height: 200px;\n  font: inherit;\n  color: var(--ink);\n  background: none;\n  border: 0;\n  outline: none;\n  padding: 4px 0;\n  font-size: 16px;\n  line-height: 1.5;\n}\n\n.kn_composer_DECiPG textarea::placeholder {\n  color: var(--muted);\n}\n\n.kn_c-row_DECiPG {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 6px;\n  display: flex;\n}\n\n.kn_c-btn_DECiPG {\n  height: 32px;\n  color: var(--ink2);\n  background: none;\n  border: 0;\n  border-radius: 8px;\n  align-items: center;\n  gap: 6px;\n  padding: 0 10px;\n  font-size: 13px;\n  display: inline-flex;\n}\n\n.kn_c-btn_DECiPG:hover {\n  background: var(--sunken);\n}\n\n.kn_send_DECiPG {\n  background: var(--strong);\n  width: 36px;\n  height: 36px;\n  color: var(--on-strong);\n  border: 0;\n  border-radius: 50%;\n  justify-content: center;\n  align-items: center;\n  margin-left: auto;\n  display: flex;\n}\n\n.kn_send_DECiPG:disabled {\n  opacity: .35;\n  cursor: default;\n}\n\n.kn_mode-wrap_DECiPG {\n  position: relative;\n}\n\n.kn_c-btn_DECiPG.kn_is-full_DECiPG {\n  color: var(--news-ink);\n  background: var(--news-tint);\n}\n\n.kn_mode-pop_DECiPG {\n  z-index: 6;\n  background: var(--surface);\n  width: min(340px, 80vw);\n  box-shadow: 0 12px 40px #00000029, 0 0 0 1px var(--line);\n  text-align: left;\n  border-radius: 14px;\n  flex-direction: column;\n  gap: 8px;\n  padding: 10px;\n  display: flex;\n  position: absolute;\n  bottom: calc(100% + 8px);\n  left: 0;\n}\n\n.kn_mode-pop_DECiPG > b {\n  padding: 4px 4px 0;\n  font-weight: 600;\n}\n\n.kn_mode-pop_DECiPG > p {\n  padding: 0 4px;\n}\n\n.kn_mode-opt_DECiPG {\n  text-align: left;\n  background: none;\n  border: 1.5px solid #0000;\n  border-radius: 10px;\n  flex-direction: column;\n  gap: 2px;\n  padding: 10px 12px;\n  display: flex;\n}\n\n.kn_mode-opt_DECiPG:hover {\n  background: var(--sunken);\n}\n\n.kn_mode-opt_DECiPG[aria-pressed=\"true\"] {\n  border-color: var(--primary);\n  background: var(--ask);\n}\n\n.kn_mode-opt_DECiPG b {\n  font-size: 15px;\n  font-weight: 600;\n}\n\n.kn_mode-opt_DECiPG span {\n  color: var(--ink2);\n  font-size: 13px;\n}\n\n.kn_c-note_DECiPG {\n  text-align: center;\n  color: var(--muted);\n  padding: 0 max(16px, 7%) 10px;\n  font-size: 12px;\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_st-dot_DECiPG.kn_run_DECiPG {\n    animation: 1.2s ease-in-out infinite kn_pulse_DECiPG;\n  }\n\n  @keyframes kn_pulse_DECiPG {\n    50% {\n      opacity: .35;\n    }\n  }\n\n  .kn_thinking_DECiPG span {\n    background: linear-gradient(105deg, var(--muted) 40%, var(--ink) 50%, var(--muted) 60%);\n    color: #0000;\n    background-size: 250% 100%;\n    -webkit-background-clip: text;\n    background-clip: text;\n    animation: 1.8s linear infinite kn_shine_DECiPG;\n  }\n\n  @keyframes kn_shine_DECiPG {\n    from {\n      background-position: 100% 0;\n    }\n\n    to {\n      background-position: -150% 0;\n    }\n  }\n}\n\n@media (width <= 760px) {\n  .kn_chat_DECiPG {\n    grid-template-columns: minmax(0, 1fr);\n    height: calc(100dvh - 150px);\n  }\n\n  .kn_threads_DECiPG {\n    display: none;\n  }\n\n  .kn_msgs_DECiPG, .kn_composer_DECiPG, .kn_c-note_DECiPG {\n    margin-left: 0;\n    margin-right: 0;\n    padding-left: 0;\n    padding-right: 0;\n  }\n\n  .kn_composer_DECiPG {\n    padding-left: 14px;\n    padding-right: 10px;\n  }\n}\n\n@media (prefers-reduced-motion: no-preference) {\n  .kn_scrim_DECiPG {\n    animation: .16s ease-out kn_fade_DECiPG;\n  }\n\n  @keyframes kn_fade_DECiPG {\n    from {\n      opacity: 0;\n    }\n\n    to {\n      opacity: 1;\n    }\n  }\n}\n\n.kn_app_DECiPG {\n  --kt-canvas: var(--bg);\n  --kt-subtle: var(--sunken);\n  --kt-control: var(--control);\n  --kt-card: var(--surface);\n  --kt-text: var(--ink);\n  --kt-secondary: var(--ink2);\n  --kt-muted: var(--muted);\n  --kt-faint: var(--muted);\n  --kt-primary: var(--primary);\n  --kt-on-primary: var(--on-primary);\n  --kt-link: var(--link);\n  --kt-accent: var(--explore);\n  --kt-health: var(--health);\n  --kt-health-tint: var(--health-tint);\n  --kt-health-ink: var(--health-ink);\n  --kt-projects: var(--doing);\n  --kt-projects-tint: var(--doing-tint);\n  --kt-projects-ink: var(--doing-ink);\n  --kt-map: var(--explore);\n  --kt-map-tint: var(--explore-tint);\n  --kt-map-ink: var(--explore-ink);\n  --kt-feed: var(--news);\n  --kt-feed-tint: var(--news-tint);\n  --kt-feed-ink: var(--news-ink);\n  --kt-finance: var(--finance);\n  --kt-finance-tint: var(--finance-tint);\n  --kt-finance-ink: var(--finance-ink);\n  --kt-me: var(--me);\n  --kt-me-tint: var(--ask);\n  --kt-me-ink: var(--ink2);\n  --kt-today: var(--ink);\n  --kt-today-tint: var(--control);\n  --kt-today-ink: var(--ink2);\n  --kt-project-slot: var(--doing-tint);\n  --kt-target: var(--health);\n  --kt-estimate: var(--health);\n  --kt-shadow: 0 0 0 1px var(--line);\n  scrollbar-gutter: stable;\n  height: 100%;\n  overflow: auto;\n  container-type: inline-size;\n}\n\n.kn_app_DECiPG [hidden] {\n  display: none !important;\n}\n\n.kn_app_DECiPG button:disabled {\n  opacity: .55;\n  cursor: default;\n}\n\n.kn_app_DECiPG textarea, .kn_app_DECiPG select {\n  font: inherit;\n  color: inherit;\n  background: var(--surface);\n}\n\n.kn_app_DECiPG :focus-visible {\n  outline: 2px solid var(--explore);\n  outline-offset: 2px;\n}\n\n.kn_content_DECiPG {\n  width: 100%;\n}\n\n.kn_top_DECiPG {\n  padding-left: max(16px, var(--dsh-frame-leading-clearance, 0px));\n}\n\n.kn_brand_DECiPG svg {\n  color: var(--ink);\n}\n\n.kn_avatar_DECiPG {\n  padding: 0;\n  overflow: hidden;\n}\n\n.kn_avatar_DECiPG img {\n  object-fit: cover;\n  width: 100%;\n  height: 100%;\n}\n\n.kn_account_DECiPG {\n  position: relative;\n}\n\n.kn_menu_DECiPG {\n  top: 48px;\n  right: 0;\n}\n\n.kn_link_DECiPG {\n  color: var(--link);\n  text-align: start;\n  background: none;\n  border: 0;\n  padding: 0;\n  font-weight: 500;\n}\n\n.kn_summaryButton_DECiPG {\n  text-align: start;\n  cursor: pointer;\n  border: 0;\n}\n\n.kn_error_DECiPG {\n  background: var(--news-tint);\n  border-radius: var(--radius);\n  padding: 14px 18px;\n}\n\n.kn_emptyState_DECiPG {\n  color: var(--muted);\n  padding: 20px;\n}\n\n.kn_detailBody_DECiPG {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_child_DECiPG {\n  min-width: 0;\n}\n\n.kn_child_DECiPG > div > header h1 {\n  font-size: 22px;\n}\n\n.kn_paletteDot_DECiPG {\n  background: var(--explore);\n}\n\n.kn_financeMetric_DECiPG {\n  flex-direction: column;\n  gap: 4px;\n  display: flex;\n}\n\n.kn_calendarShell_DECiPG {\n  min-width: 0;\n}\n\n.kn_calendarShell_DECiPG [class~=\"fc-header-toolbar\"] {\n  flex-wrap: wrap;\n  gap: 10px;\n}\n\n.kn_calendarShell_DECiPG [class~=\"fc-toolbar-title\"] {\n  font-size: 18px;\n}\n\n.kn_calendarShell_DECiPG [class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n}\n\n.kn_calendarShell_DECiPG [class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--primary);\n  color: var(--on-primary);\n}\n\n.kn_calendarShell_DECiPG [class~=\"fc-event\"][class~=\"suggestion\"] {\n  border-style: dashed;\n  border-width: 1.5px;\n}\n\n@media (width <= 760px) {\n  .kn_calendarShell_DECiPG [class~=\"fc-toolbar-chunk\"] {\n    flex-wrap: wrap;\n    gap: 4px;\n    display: flex;\n  }\n\n  .kn_calendarShell_DECiPG [class~=\"fc-button\"] {\n    padding: 6px 8px;\n  }\n}\n\n.kn_app_DECiPG .kn_calendarShell_DECiPG button[class~=\"fc-button-primary\"] {\n  background: var(--control);\n  color: var(--ink2);\n  border: 0;\n  border-radius: 9px;\n  height: 36px;\n}\n\n.kn_app_DECiPG .kn_calendarShell_DECiPG button[class~=\"fc-button-primary\"]:not(:disabled)[class~=\"fc-button-active\"] {\n  background: var(--surface);\n  color: var(--ink);\n  box-shadow: 0 1px 2px #1f1e1d1f;\n}\n\n@media (width <= 760px) {\n  .kn_mods_DECiPG {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n}\n\n@media (width <= 460px) {\n  .kn_mods_DECiPG {\n    grid-template-columns: minmax(0, 1fr);\n  }\n}\n\n.kn_mode-pop_DECiPG {\n  color: var(--ink);\n  border: 0;\n  margin: 0;\n}\n\n.kn_askContent_DECiPG {\n  gap: 0;\n  max-width: 1240px;\n  padding-block: 0;\n}\n\n.kn_wrap_v1tP5G {\n  max-width: 1120px;\n  color: var(--ink);\n  font: 15px / 1.6 var(--font);\n  margin: auto;\n  padding: 28px;\n}\n\n.kn_wrap_v1tP5G h1 {\n  margin: 0;\n  font-size: 28px;\n}\n\n.kn_wrap_v1tP5G h2 {\n  font-size: 18px;\n}\n\n.kn_wrap_v1tP5G h3 {\n  font-size: 16px;\n}\n\n.kn_wrap_v1tP5G button, .kn_wrap_v1tP5G input, .kn_wrap_v1tP5G select, .kn_wrap_v1tP5G textarea {\n  font: inherit;\n}\n\n.kn_wrap_v1tP5G input, .kn_wrap_v1tP5G select, .kn_wrap_v1tP5G textarea {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  color: var(--ink);\n  border-radius: 7px;\n  min-width: 0;\n  padding: 7px;\n}\n\n.kn_wrap_v1tP5G textarea {\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 85px;\n}\n\n.kn_wrap_v1tP5G label {\n  gap: 4px;\n  display: grid;\n}\n\n.kn_grid_v1tP5G {\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n  display: grid;\n}\n\n.kn_stack_v1tP5G {\n  gap: 14px;\n  display: grid;\n}\n\n.kn_actions_v1tP5G {\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 9px;\n  display: flex;\n}\n\n.kn_muted_v1tP5G {\n  color: var(--muted);\n  font-size: 13px;\n}\n\n.kn_table_v1tP5G {\n  border-collapse: collapse;\n  width: 100%;\n}\n\n.kn_table_v1tP5G th, .kn_table_v1tP5G td {\n  text-align: left;\n  border-bottom: 1px solid var(--line);\n  vertical-align: top;\n  padding: 9px;\n}\n\n.kn_table_v1tP5G th {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_scroll_v1tP5G {\n  overflow: auto;\n}\n\n.kn_quote_v1tP5G {\n  white-space: pre-wrap;\n  background: var(--sunken);\n  border-radius: 8px;\n  max-height: 240px;\n  padding: 15px;\n  overflow: auto;\n}\n\n.kn_card_v1tP5G {\n  border: 1px solid var(--line);\n  border-radius: var(--radius);\n  background: var(--surface);\n  padding: 18px;\n}\n\n.kn_warn_v1tP5G {\n  color: var(--news-ink);\n  background: var(--news-tint);\n  border-radius: 8px;\n  padding: 10px;\n}\n\n.kn_check_v1tP5G {\n  align-items: center;\n  gap: 7px;\n  display: flex !important;\n}\n\n.kn_wrap_v1tP5G a {\n  color: var(--link);\n}\n\n.kn_diff_v1tP5G {\n  grid-template-columns: 1fr 1fr;\n  gap: 10px;\n  display: grid;\n}\n\n.kn_diff_v1tP5G pre {\n  white-space: pre-wrap;\n  overflow-wrap: anywhere;\n}\n\n.kn_selected_v1tP5G {\n  background: var(--doing-tint);\n}\n\n@media (width <= 760px) {\n  .kn_grid_v1tP5G, .kn_diff_v1tP5G {\n    grid-template-columns: 1fr;\n  }\n\n  .kn_wrap_v1tP5G {\n    padding: 15px;\n  }\n\n  .kn_table_v1tP5G td {\n    min-width: 100px;\n  }\n}\n\n.kn_start_v1tP5G h2 {\n  margin: 0;\n}\n\n.kn_start_v1tP5G form {\n  gap: 10px;\n  display: grid;\n}\n\n.kn_start_v1tP5G textarea {\n  resize: vertical;\n  min-height: 100px;\n}\n\n.kn_shortcuts_v1tP5G {\n  flex-wrap: wrap;\n  gap: 8px;\n  margin-top: 16px;\n  display: flex;\n}\n\n.kn_grid_v1tP5G {\n  align-items: start;\n}\n\n.kn_card_v1tP5G select {\n  max-width: 100%;\n}\n\n.kn_card_v1tP5G summary {\n  cursor: pointer;\n  font-weight: 600;\n}\n\n.kn_card_v1tP5G details, details.kn_card_v1tP5G label {\n  margin-top: 12px;\n}\n\n.kn_shell_CpraFG {\n  color: var(--ink);\n  font: 14px / 1.6 var(--font);\n  box-sizing: border-box;\n  flex-direction: column;\n  height: 100%;\n  min-height: 650px;\n  padding: 16px;\n  display: flex;\n}\n\n.kn_shell_CpraFG button, .kn_shell_CpraFG select, .kn_shell_CpraFG textarea {\n  font: inherit;\n  color: inherit;\n}\n\n.kn_shell_CpraFG button, .kn_shell_CpraFG select {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  cursor: pointer;\n  border-radius: 8px;\n  padding: 7px 11px;\n}\n\n.kn_shell_CpraFG button:disabled {\n  opacity: .45;\n  cursor: default;\n}\n\n.kn_header_CpraFG {\n  align-items: center;\n  gap: 12px;\n  padding: 0 8px 14px;\n  display: flex;\n}\n\n.kn_header_CpraFG > div {\n  flex: 1;\n}\n\n.kn_header_CpraFG h1 {\n  margin: 0;\n  font-size: 23px;\n}\n\n.kn_shell_CpraFG small {\n  color: var(--muted);\n  font-size: 12px;\n}\n\n.kn_columns_CpraFG {\n  flex: 1;\n  grid-template-columns: 180px minmax(330px, 1fr) minmax(320px, 390px);\n  gap: 12px;\n  min-height: 0;\n  display: grid;\n}\n\n.kn_chapters_CpraFG {\n  padding: 10px 6px;\n  overflow: auto;\n}\n\n.kn_shell_CpraFG h2 {\n  margin: 4px 0 14px;\n  font-size: 15px;\n}\n\n.kn_chapters_CpraFG button {\n  text-align: left;\n  overflow-wrap: anywhere;\n  background: none;\n  border-color: #0000;\n  width: 100%;\n  margin-bottom: 8px;\n  display: block;\n}\n\n.kn_chapters_CpraFG small {\n  font-size: 11px;\n  display: block;\n}\n\n.kn_chapters_CpraFG button[aria-current], .kn_tabs_CpraFG button[aria-selected=\"true\"] {\n  color: #245db4;\n  background: #e8f1ff;\n}\n\n.kn_chapters_CpraFG h2:not(:first-child) {\n  margin-top: 28px;\n}\n\n.kn_manuscript_CpraFG {\n  background: var(--surface);\n  border: 1px solid var(--line);\n  border-radius: 12px;\n  flex-direction: column;\n  min-width: 0;\n  display: flex;\n  overflow: hidden;\n}\n\n.kn_toolbar_CpraFG {\n  border-bottom: 1px solid var(--line);\n  align-items: center;\n  gap: 7px;\n  padding: 12px 16px;\n  display: flex;\n}\n\n.kn_toolbar_CpraFG strong {\n  flex: 1;\n}\n\n.kn_toolbar_CpraFG button {\n  font-size: 12px;\n}\n\n.kn_editorWrap_CpraFG {\n  flex: 1;\n  min-height: 280px;\n  position: relative;\n  overflow: hidden;\n}\n\n.kn_cmHost_CpraFG {\n  height: 100%;\n}\n\n.kn_selChatBtn_CpraFG {\n  z-index: 5;\n  position: absolute;\n  background: #e8f1ff !important;\n}\n\n.kn_copyFlash_CpraFG {\n  background: var(--surface);\n  padding: 6px;\n  position: absolute;\n  bottom: 15px;\n  left: 20px;\n}\n\n.kn_manuscript_CpraFG footer {\n  color: var(--muted);\n  border-top: 1px solid var(--line);\n  justify-content: space-between;\n  align-items: center;\n  gap: 8px;\n  padding: 10px 16px;\n  font-size: 12px;\n  display: flex;\n}\n\n.kn_assistant_CpraFG {\n  border: 1px solid var(--line);\n  background: var(--surface);\n  border-radius: 12px;\n  flex-direction: column;\n  gap: 10px;\n  min-height: 0;\n  padding: 14px;\n  display: flex;\n  overflow: auto;\n}\n\n.kn_tabs_CpraFG {\n  gap: 6px;\n  display: flex;\n}\n\n.kn_tabs_CpraFG button {\n  flex: 1;\n}\n\n.kn_assistant_CpraFG textarea {\n  box-sizing: border-box;\n  border: 1px solid var(--line);\n  background: var(--surface);\n  resize: vertical;\n  border-radius: 8px;\n  width: 100%;\n  min-height: 75px;\n  padding: 9px;\n}\n\n.kn_shell_CpraFG .kn_primary_CpraFG {\n  color: #fff;\n  background: #3478df;\n  border-color: #0000;\n}\n\n.kn_chat_CpraFG {\n  flex-direction: column;\n  flex: 1;\n  min-height: 260px;\n  display: flex;\n  position: relative;\n}\n\n.kn_chat_CpraFG > * {\n  flex: 1;\n  min-height: 0;\n}\n\n.kn_candidates_CpraFG {\n  border-top: 1px solid var(--line);\n  padding-top: 10px;\n}\n\n.kn_candidates_CpraFG summary {\n  cursor: pointer;\n}\n\n.kn_candidates_CpraFG summary button {\n  margin-left: 10px;\n  padding: 2px 8px;\n}\n\n.kn_candidates_CpraFG article {\n  border: 1px solid var(--line);\n  border-radius: 8px;\n  margin-top: 10px;\n  padding: 12px;\n}\n\n.kn_candidates_CpraFG pre {\n  white-space: pre-wrap;\n  font: inherit;\n  max-height: 230px;\n  overflow: auto;\n}\n\n.kn_error_CpraFG {\n  color: #853e12;\n  background: #fff0df;\n  margin-bottom: 10px;\n  padding: 10px;\n}\n\n.kn_hint_CpraFG {\n  padding: 8px 16px;\n}\n\n@media (width <= 1050px) {\n  .kn_columns_CpraFG {\n    grid-template-columns: 140px minmax(300px, 1fr);\n  }\n\n  .kn_assistant_CpraFG {\n    grid-column: 1 / -1;\n    min-height: 400px;\n  }\n\n  .kn_shell_CpraFG {\n    height: auto;\n  }\n\n  .kn_manuscript_CpraFG {\n    height: 70vh;\n  }\n}\n";
 "use strict";
 var __defProp = Object.defineProperty;
 var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
@@ -26,7 +26,7 @@ __export(index_exports, {
 });
 module.exports = __toCommonJS(index_exports);
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
 var external_exports = {};
 __export(external_exports, {
   $brand: () => $brand,
@@ -269,7 +269,7 @@ __export(external_exports, {
   xor: () => xor
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/index.js
 var core_exports2 = {};
 __export(core_exports2, {
   $ZodAny: () => $ZodAny,
@@ -548,7 +548,7 @@ __export(core_exports2, {
   version: () => version
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/core.js
 var _a;
 var NEVER = /* @__PURE__ */ Object.freeze({
   status: "aborted"
@@ -625,7 +625,7 @@ function config(newConfig) {
   return globalConfig;
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/util.js
 var util_exports = {};
 __export(util_exports, {
   BIGINT_FORMAT_RANGES: () => BIGINT_FORMAT_RANGES,
@@ -1321,7 +1321,7 @@ var Class = class {
   }
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/errors.js
 var initializer = (inst, def) => {
   inst.name = "$ZodError";
   Object.defineProperty(inst, "_zod", {
@@ -1460,7 +1460,7 @@ function prettifyError(error51) {
   return lines.join("\n");
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/parse.js
 var _parse = (_Err) => (schema, value, _ctx, _params) => {
   const ctx = _ctx ? { ..._ctx, async: false } : { async: false };
   const result = schema._zod.run({ value, issues: [] }, ctx);
@@ -1548,7 +1548,7 @@ var _safeDecodeAsync = (_Err) => async (schema, value, _ctx) => {
 };
 var safeDecodeAsync = /* @__PURE__ */ _safeDecodeAsync($ZodRealError);
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/regexes.js
 var regexes_exports = {};
 __export(regexes_exports, {
   base64: () => base64,
@@ -1707,7 +1707,7 @@ var sha512_hex = /^[0-9a-fA-F]{128}$/;
 var sha512_base64 = /* @__PURE__ */ fixedBase64(86, "==");
 var sha512_base64url = /* @__PURE__ */ fixedBase64url(86);
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/checks.js
 var $ZodCheck = /* @__PURE__ */ $constructor("$ZodCheck", (inst, def) => {
   var _a4;
   inst._zod ?? (inst._zod = {});
@@ -2255,7 +2255,7 @@ var $ZodCheckOverwrite = /* @__PURE__ */ $constructor("$ZodCheckOverwrite", (ins
   };
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/doc.js
 var Doc = class {
   constructor(args = []) {
     this.content = [];
@@ -2291,14 +2291,14 @@ var Doc = class {
   }
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/versions.js
 var version = {
   major: 4,
   minor: 4,
   patch: 3
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/schemas.js
 var $ZodType = /* @__PURE__ */ $constructor("$ZodType", (inst, def) => {
   var _a4;
   inst ?? (inst = {});
@@ -4391,7 +4391,7 @@ function handleRefineResult(result, payload, input, inst) {
   }
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/index.js
 var locales_exports = {};
 __export(locales_exports, {
   ar: () => ar_default,
@@ -4448,7 +4448,7 @@ __export(locales_exports, {
   zhTW: () => zh_TW_default
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ar.js
 var error = () => {
   const Sizable = {
     string: { unit: "\u062D\u0631\u0641", verb: "\u0623\u0646 \u064A\u062D\u0648\u064A" },
@@ -4555,7 +4555,7 @@ function ar_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/az.js
 var error2 = () => {
   const Sizable = {
     string: { unit: "simvol", verb: "olmal\u0131d\u0131r" },
@@ -4661,7 +4661,7 @@ function az_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/be.js
 function getBelarusianPlural(count2, one, few, many) {
   const absCount = Math.abs(count2);
   const lastDigit = absCount % 10;
@@ -4818,7 +4818,7 @@ function be_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/bg.js
 var error4 = () => {
   const Sizable = {
     string: { unit: "\u0441\u0438\u043C\u0432\u043E\u043B\u0430", verb: "\u0434\u0430 \u0441\u044A\u0434\u044A\u0440\u0436\u0430" },
@@ -4939,7 +4939,7 @@ function bg_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ca.js
 var error5 = () => {
   const Sizable = {
     string: { unit: "car\xE0cters", verb: "contenir" },
@@ -5048,7 +5048,7 @@ function ca_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/cs.js
 var error6 = () => {
   const Sizable = {
     string: { unit: "znak\u016F", verb: "m\xEDt" },
@@ -5160,7 +5160,7 @@ function cs_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/da.js
 var error7 = () => {
   const Sizable = {
     string: { unit: "tegn", verb: "havde" },
@@ -5276,7 +5276,7 @@ function da_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/de.js
 var error8 = () => {
   const Sizable = {
     string: { unit: "Zeichen", verb: "zu haben" },
@@ -5385,7 +5385,7 @@ function de_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/el.js
 var error9 = () => {
   const Sizable = {
     string: { unit: "\u03C7\u03B1\u03C1\u03B1\u03BA\u03C4\u03AE\u03C1\u03B5\u03C2", verb: "\u03BD\u03B1 \u03AD\u03C7\u03B5\u03B9" },
@@ -5495,7 +5495,7 @@ function el_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/en.js
 var error10 = () => {
   const Sizable = {
     string: { unit: "characters", verb: "to have" },
@@ -5608,7 +5608,7 @@ function en_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/eo.js
 var error11 = () => {
   const Sizable = {
     string: { unit: "karaktrojn", verb: "havi" },
@@ -5718,7 +5718,7 @@ function eo_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/es.js
 var error12 = () => {
   const Sizable = {
     string: { unit: "caracteres", verb: "tener" },
@@ -5851,7 +5851,7 @@ function es_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fa.js
 var error13 = () => {
   const Sizable = {
     string: { unit: "\u06A9\u0627\u0631\u0627\u06A9\u062A\u0631", verb: "\u062F\u0627\u0634\u062A\u0647 \u0628\u0627\u0634\u062F" },
@@ -5966,7 +5966,7 @@ function fa_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fi.js
 var error14 = () => {
   const Sizable = {
     string: { unit: "merkki\xE4", subject: "merkkijonon" },
@@ -6079,7 +6079,7 @@ function fi_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr.js
 var error15 = () => {
   const Sizable = {
     string: { unit: "caract\xE8res", verb: "avoir" },
@@ -6205,7 +6205,7 @@ function fr_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/fr-CA.js
 var error16 = () => {
   const Sizable = {
     string: { unit: "caract\xE8res", verb: "avoir" },
@@ -6313,7 +6313,7 @@ function fr_CA_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/he.js
 var error17 = () => {
   const TypeNames = {
     string: { label: "\u05DE\u05D7\u05E8\u05D5\u05D6\u05EA", gender: "f" },
@@ -6508,7 +6508,7 @@ function he_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hr.js
 var error18 = () => {
   const Sizable = {
     string: { unit: "znakova", verb: "imati" },
@@ -6631,7 +6631,7 @@ function hr_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hu.js
 var error19 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "legyen" },
@@ -6740,7 +6740,7 @@ function hu_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/hy.js
 function getArmenianPlural(count2, one, many) {
   return Math.abs(count2) === 1 ? one : many;
 }
@@ -6888,7 +6888,7 @@ function hy_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/id.js
 var error21 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "memiliki" },
@@ -6995,7 +6995,7 @@ function id_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/is.js
 var error22 = () => {
   const Sizable = {
     string: { unit: "stafi", verb: "a\xF0 hafa" },
@@ -7105,7 +7105,7 @@ function is_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/it.js
 var error23 = () => {
   const Sizable = {
     string: { unit: "caratteri", verb: "avere" },
@@ -7214,7 +7214,7 @@ function it_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ja.js
 var error24 = () => {
   const Sizable = {
     string: { unit: "\u6587\u5B57", verb: "\u3067\u3042\u308B" },
@@ -7322,7 +7322,7 @@ function ja_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ka.js
 var error25 = () => {
   const Sizable = {
     string: { unit: "\u10E1\u10D8\u10DB\u10D1\u10DD\u10DA\u10DD", verb: "\u10E3\u10DC\u10D3\u10D0 \u10E8\u10D4\u10D8\u10EA\u10D0\u10D5\u10D3\u10D4\u10E1" },
@@ -7435,7 +7435,7 @@ function ka_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/km.js
 var error26 = () => {
   const Sizable = {
     string: { unit: "\u178F\u17BD\u17A2\u1780\u17D2\u179F\u179A", verb: "\u1782\u17BD\u179A\u1798\u17B6\u1793" },
@@ -7546,12 +7546,12 @@ function km_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/kh.js
 function kh_default() {
   return km_default();
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ko.js
 var error27 = () => {
   const Sizable = {
     string: { unit: "\uBB38\uC790", verb: "to have" },
@@ -7663,7 +7663,7 @@ function ko_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/lt.js
 var capitalizeFirstCharacter = (text) => {
   return text.charAt(0).toUpperCase() + text.slice(1);
 };
@@ -7867,7 +7867,7 @@ function lt_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/mk.js
 var error29 = () => {
   const Sizable = {
     string: { unit: "\u0437\u043D\u0430\u0446\u0438", verb: "\u0434\u0430 \u0438\u043C\u0430\u0430\u0442" },
@@ -7977,7 +7977,7 @@ function mk_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ms.js
 var error30 = () => {
   const Sizable = {
     string: { unit: "aksara", verb: "mempunyai" },
@@ -8085,7 +8085,7 @@ function ms_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/nl.js
 var error31 = () => {
   const Sizable = {
     string: { unit: "tekens", verb: "heeft" },
@@ -8196,7 +8196,7 @@ function nl_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/no.js
 var error32 = () => {
   const Sizable = {
     string: { unit: "tegn", verb: "\xE5 ha" },
@@ -8305,7 +8305,7 @@ function no_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ota.js
 var error33 = () => {
   const Sizable = {
     string: { unit: "harf", verb: "olmal\u0131d\u0131r" },
@@ -8415,7 +8415,7 @@ function ota_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ps.js
 var error34 = () => {
   const Sizable = {
     string: { unit: "\u062A\u0648\u06A9\u064A", verb: "\u0648\u0644\u0631\u064A" },
@@ -8530,7 +8530,7 @@ function ps_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pl.js
 var error35 = () => {
   const Sizable = {
     string: { unit: "znak\xF3w", verb: "mie\u0107" },
@@ -8640,7 +8640,7 @@ function pl_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/pt.js
 var error36 = () => {
   const Sizable = {
     string: { unit: "caracteres", verb: "ter" },
@@ -8749,7 +8749,7 @@ function pt_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ro.js
 var error37 = () => {
   const Sizable = {
     string: { unit: "caractere", verb: "s\u0103 aib\u0103" },
@@ -8869,7 +8869,7 @@ function ro_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ru.js
 function getRussianPlural(count2, one, few, many) {
   const absCount = Math.abs(count2);
   const lastDigit = absCount % 10;
@@ -9026,7 +9026,7 @@ function ru_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sl.js
 var error39 = () => {
   const Sizable = {
     string: { unit: "znakov", verb: "imeti" },
@@ -9136,7 +9136,7 @@ function sl_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/sv.js
 var error40 = () => {
   const Sizable = {
     string: { unit: "tecken", verb: "att ha" },
@@ -9247,7 +9247,7 @@ function sv_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ta.js
 var error41 = () => {
   const Sizable = {
     string: { unit: "\u0B8E\u0BB4\u0BC1\u0BA4\u0BCD\u0BA4\u0BC1\u0B95\u0BCD\u0B95\u0BB3\u0BCD", verb: "\u0B95\u0BCA\u0BA3\u0BCD\u0B9F\u0BBF\u0BB0\u0BC1\u0B95\u0BCD\u0B95 \u0BB5\u0BC7\u0BA3\u0BCD\u0B9F\u0BC1\u0BAE\u0BCD" },
@@ -9358,7 +9358,7 @@ function ta_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/th.js
 var error42 = () => {
   const Sizable = {
     string: { unit: "\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29\u0E23", verb: "\u0E04\u0E27\u0E23\u0E21\u0E35" },
@@ -9469,7 +9469,7 @@ function th_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/tr.js
 var error43 = () => {
   const Sizable = {
     string: { unit: "karakter", verb: "olmal\u0131" },
@@ -9575,7 +9575,7 @@ function tr_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uk.js
 var error44 = () => {
   const Sizable = {
     string: { unit: "\u0441\u0438\u043C\u0432\u043E\u043B\u0456\u0432", verb: "\u043C\u0430\u0442\u0438\u043C\u0435" },
@@ -9684,12 +9684,12 @@ function uk_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ua.js
 function ua_default() {
   return uk_default();
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/ur.js
 var error45 = () => {
   const Sizable = {
     string: { unit: "\u062D\u0631\u0648\u0641", verb: "\u06C1\u0648\u0646\u0627" },
@@ -9800,7 +9800,7 @@ function ur_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/uz.js
 var error46 = () => {
   const Sizable = {
     string: { unit: "belgi", verb: "bo\u2018lishi kerak" },
@@ -9911,7 +9911,7 @@ function uz_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/vi.js
 var error47 = () => {
   const Sizable = {
     string: { unit: "k\xFD t\u1EF1", verb: "c\xF3" },
@@ -10020,7 +10020,7 @@ function vi_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-CN.js
 var error48 = () => {
   const Sizable = {
     string: { unit: "\u5B57\u7B26", verb: "\u5305\u542B" },
@@ -10130,7 +10130,7 @@ function zh_CN_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/zh-TW.js
 var error49 = () => {
   const Sizable = {
     string: { unit: "\u5B57\u5143", verb: "\u64C1\u6709" },
@@ -10238,7 +10238,7 @@ function zh_TW_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/locales/yo.js
 var error50 = () => {
   const Sizable = {
     string: { unit: "\xE0mi", verb: "n\xED" },
@@ -10346,7 +10346,7 @@ function yo_default() {
   };
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/registries.js
 var _a2;
 var $output = /* @__PURE__ */ Symbol("ZodOutput");
 var $input = /* @__PURE__ */ Symbol("ZodInput");
@@ -10396,7 +10396,7 @@ function registry() {
 (_a2 = globalThis).__zod_globalRegistry ?? (_a2.__zod_globalRegistry = registry());
 var globalRegistry = globalThis.__zod_globalRegistry;
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/api.js
 // @__NO_SIDE_EFFECTS__
 function _string(Class2, params) {
   return new Class2({
@@ -11435,7 +11435,7 @@ function _stringFormat(Class2, format, fnOrRegex, _params = {}) {
   return inst;
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/to-json-schema.js
 function initializeContext(params) {
   let target = params?.target ?? "draft-2020-12";
   if (target === "draft-4")
@@ -11794,7 +11794,7 @@ var createStandardJSONSchemaMethod = (schema, io, processors = {}) => (params) =
   return finalize(ctx, schema);
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-processors.js
 var formatMap = {
   guid: "uuid",
   url: "uri",
@@ -12338,7 +12338,7 @@ function toJSONSchema(input, params) {
   return finalize(ctx, input);
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema-generator.js
 var JSONSchemaGenerator = class {
   /** @deprecated Access via ctx instead */
   get metadataRegistry() {
@@ -12413,10 +12413,10 @@ var JSONSchemaGenerator = class {
   }
 };
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/core/json-schema.js
 var json_schema_exports = {};
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
 var schemas_exports2 = {};
 __export(schemas_exports2, {
   ZodAny: () => ZodAny,
@@ -12587,7 +12587,7 @@ __export(schemas_exports2, {
   xor: () => xor
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/checks.js
 var checks_exports2 = {};
 __export(checks_exports2, {
   endsWith: () => _endsWith,
@@ -12621,7 +12621,7 @@ __export(checks_exports2, {
   uppercase: () => _uppercase
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/iso.js
 var iso_exports = {};
 __export(iso_exports, {
   ZodISODate: () => ZodISODate,
@@ -12662,7 +12662,7 @@ function duration2(params) {
   return _isoDuration(ZodISODuration, params);
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/errors.js
 var initializer2 = (inst, issues) => {
   $ZodError.init(inst, issues);
   inst.name = "ZodError";
@@ -12702,7 +12702,7 @@ var ZodRealError = /* @__PURE__ */ $constructor("ZodError", initializer2, {
   Parent: Error
 });
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/parse.js
 var parse2 = /* @__PURE__ */ _parse(ZodRealError);
 var parseAsync2 = /* @__PURE__ */ _parseAsync(ZodRealError);
 var safeParse2 = /* @__PURE__ */ _safeParse(ZodRealError);
@@ -12716,7 +12716,7 @@ var safeDecode2 = /* @__PURE__ */ _safeDecode(ZodRealError);
 var safeEncodeAsync2 = /* @__PURE__ */ _safeEncodeAsync(ZodRealError);
 var safeDecodeAsync2 = /* @__PURE__ */ _safeDecodeAsync(ZodRealError);
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/schemas.js
 var _installedGroups = /* @__PURE__ */ new WeakMap();
 function _installLazyMethods(inst, group, methods) {
   const proto = Object.getPrototypeOf(inst);
@@ -14006,7 +14006,7 @@ function preprocess(fn, schema) {
   });
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/compat.js
 var ZodIssueCode = {
   invalid_type: "invalid_type",
   too_big: "too_big",
@@ -14032,7 +14032,7 @@ var ZodFirstPartyTypeKind;
 /* @__PURE__ */ (function(ZodFirstPartyTypeKind2) {
 })(ZodFirstPartyTypeKind || (ZodFirstPartyTypeKind = {}));
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/from-json-schema.js
 var z = {
   ...schemas_exports2,
   ...checks_exports2,
@@ -14512,7 +14512,7 @@ function fromJSONSchema(schema, params) {
   return convertSchema(normalized, ctx);
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/coerce.js
 var coerce_exports = {};
 __export(coerce_exports, {
   bigint: () => bigint3,
@@ -14537,8 +14537,155 @@ function date4(params) {
   return _coercedDate(ZodDate, params);
 }
 
-// ../../../kaitu-novel/node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
+// ../../node_modules/.pnpm/zod@4.4.3/node_modules/zod/v4/classic/external.js
 config(en_default());
+
+// ../../node_modules/.pnpm/@deepseek-ai+dsh-typert-protocol@0.2.1-rc.1_@deepseek-ai+cordis@4.0.5/node_modules/@deepseek-ai/dsh-typert-protocol/lib/types/remote-info.js
+function createTypertRemoteInfo(spec, zod) {
+  return new RemoteInfo(spec, zod);
+}
+var RemoteInfo = class {
+  spec;
+  zod;
+  index;
+  constructor(spec, zod) {
+    this.spec = spec;
+    this.zod = zod;
+  }
+  get package() {
+    return this.spec.package;
+  }
+  get descriptors() {
+    return this.resolve().descriptors;
+  }
+  get methods() {
+    return this.resolve().methods;
+  }
+  resolve() {
+    if (this.index !== void 0)
+      return this.index;
+    const zod = this.zod;
+    const descriptors = [];
+    const methods = /* @__PURE__ */ Object.create(null);
+    for (const [endpoint, definition] of Object.entries(this.spec.methods)) {
+      const separator = endpoint.indexOf("/");
+      const namespace = endpoint.slice(0, separator);
+      const method = endpoint.slice(separator + 1);
+      const parameters = definition.parameters.map((parameter) => ({ ...parameter, wire: parameter.wire ?? parameter.name }));
+      const descriptor = {
+        ...definition,
+        id: `${this.spec.package}#${endpoint}`,
+        namespace,
+        method,
+        parameters,
+        result: definition.result.description === void 0 ? definition.result : new ResultValue(definition.result)
+      };
+      if (definition.invocation.kind === "direct") {
+        const inputs = [];
+        const direct = Object.assign(descriptor, {
+          input(options) {
+            const strict = options?.strict === true;
+            return inputs[strict ? 1 : 0] ??= new NamedInput(parameters, strict, zod);
+          },
+          invoke(remote, input, signal) {
+            const named = input;
+            const values2 = parameters.map((parameter) => named[parameter.wire]);
+            if (definition.cancellation !== void 0)
+              values2.push(signal);
+            const receiver = Reflect.get(remote, namespace);
+            const call = Reflect.get(receiver, method);
+            return call.apply(receiver, values2);
+          }
+        });
+        methods[endpoint] = direct;
+      }
+      descriptors.push(descriptor);
+    }
+    return this.index = { descriptors, methods };
+  }
+};
+function optional2(parameter) {
+  return parameter.source === "json" && parameter.acceptsUndefined === true;
+}
+var NamedInput = class {
+  parameters;
+  strict;
+  zod;
+  schema;
+  projection;
+  constructor(parameters, strict, zod) {
+    this.parameters = parameters;
+    this.strict = strict;
+    this.zod = zod;
+  }
+  codec(parameter) {
+    return this.strict ? parameter.strictCodec : parameter.codec;
+  }
+  create = () => this.schema ??= this.zod.strictObject(Object.fromEntries(this.parameters.map((parameter) => {
+    const value = this.codec(parameter).create();
+    return [parameter.wire, optional2(parameter) ? value.optional() : value.nonoptional()];
+  })));
+  get jsonSchema() {
+    return this.project().jsonSchema;
+  }
+  get jsonSchemaError() {
+    return this.project().jsonSchemaError;
+  }
+  project() {
+    if (this.projection !== void 0)
+      return this.projection;
+    const unavailable = this.parameters.find((parameter) => this.codec(parameter).jsonSchema === void 0);
+    if (unavailable !== void 0) {
+      return this.projection = { jsonSchemaError: this.codec(unavailable).jsonSchemaError ?? `No JSON Schema for parameter ${unavailable.wire}` };
+    }
+    return this.projection = {
+      jsonSchema: {
+        type: "object",
+        properties: Object.fromEntries(this.parameters.map((parameter) => [parameter.wire, {
+          ...this.codec(parameter).jsonSchema,
+          ...parameter.description === void 0 ? {} : { description: parameter.description }
+        }])),
+        required: this.parameters.filter((parameter) => !optional2(parameter)).map((parameter) => parameter.wire),
+        additionalProperties: false
+      }
+    };
+  }
+};
+var ResultValue = class {
+  spec;
+  projection;
+  constructor(spec) {
+    this.spec = spec;
+  }
+  get mode() {
+    return this.spec.mode;
+  }
+  get typeSymbol() {
+    return this.spec.typeSymbol;
+  }
+  get create() {
+    return this.spec.create;
+  }
+  get decode() {
+    return this.spec.decode;
+  }
+  get encode() {
+    return this.spec.encode;
+  }
+  get description() {
+    return this.spec.description;
+  }
+  get jsonSchemaError() {
+    return this.spec.jsonSchemaError;
+  }
+  get jsonSchema() {
+    if (this.projection === void 0) {
+      const schema = this.spec.jsonSchema;
+      this.projection = { value: schema === void 0 ? void 0 : { ...schema, description: this.spec.description } };
+    }
+    return this.projection.value;
+  }
+};
 
 // lib/typert.remote-client.js
 var kaitu_novel_workspace_source_kaituNovel_request_parameter_0$schema$value;
@@ -14547,46 +14694,60 @@ var kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema$value;
 var kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema = () => kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema$value ??= external_exports.string();
 var kaitu_novel_workspace_source_kaituNovel_request_result$schema$value;
 var kaitu_novel_workspace_source_kaituNovel_request_result$schema = () => kaitu_novel_workspace_source_kaituNovel_request_result$schema$value ??= external_exports.string();
-var TYPERT_REMOTE = {
+var kaitu_novel_workspace_source_kaituNovel_request_parameter_0_strict$schema$value;
+var kaitu_novel_workspace_source_kaituNovel_request_parameter_0_strict$schema = () => kaitu_novel_workspace_source_kaituNovel_request_parameter_0_strict$schema$value ??= external_exports.string();
+var kaitu_novel_workspace_source_kaituNovel_request_parameter_1_strict$schema$value;
+var kaitu_novel_workspace_source_kaituNovel_request_parameter_1_strict$schema = () => kaitu_novel_workspace_source_kaituNovel_request_parameter_1_strict$schema$value ??= external_exports.string();
+var TYPERT_REMOTE = createTypertRemoteInfo({
   package: "kaitu-novel-workspace-source",
-  descriptors: [
-    {
-      id: "kaitu-novel-workspace-source#kaituNovel/request",
+  methods: {
+    "kaituNovel/request": {
       service: "kaituNovel",
-      namespace: "kaituNovel",
-      method: "request",
       invocation: { kind: "direct" },
       parameters: [
         {
           name: "operation",
-          wire: "operation",
           source: "json",
           codec: {
             mode: "strict",
             typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:operation",
-            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_0$schema
+            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_0$schema,
+            jsonSchema: { "type": "string" }
+          },
+          strictCodec: {
+            mode: "strict",
+            typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:operation",
+            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_0_strict$schema,
+            jsonSchema: { "type": "string" }
           }
         },
         {
           name: "input",
-          wire: "input",
           source: "json",
           codec: {
             mode: "strict",
             typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:input",
-            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema
+            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_1$schema,
+            jsonSchema: { "type": "string" }
+          },
+          strictCodec: {
+            mode: "strict",
+            typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:input",
+            create: kaitu_novel_workspace_source_kaituNovel_request_parameter_1_strict$schema,
+            jsonSchema: { "type": "string" }
           }
         }
       ],
       result: {
         mode: "strict",
         typeSymbol: "kaitu-novel-workspace-source#kaituNovel/request:result",
-        create: kaitu_novel_workspace_source_kaituNovel_request_result$schema
+        create: kaitu_novel_workspace_source_kaituNovel_request_result$schema,
+        jsonSchema: { "type": "string" }
       },
       sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 56, "column": 9 }
     }
-  ]
-};
+  }
+}, external_exports);
 var typert_remote_client_default = TYPERT_REMOTE;
 
 // src/client/agent-prompt.ts
@@ -14612,15 +14773,15 @@ var import_react4 = require("react");
 var import_react3 = require("react");
 
 // ../dsh-plugin/src/client/Prototype.module.css
-var Prototype_default = { "tabs": "kn_tabs_mNecSG", "fin": "kn_fin_mNecSG", "emptyState": "kn_emptyState_mNecSG", "calendarShell": "kn_calendarShell_mNecSG", "timeline": "kn_timeline_mNecSG", "sub": "kn_sub_mNecSG", "me": "kn_me_mNecSG", "cal-title": "kn_cal-title_mNecSG", "capture": "kn_capture_mNecSG", "link": "kn_link_mNecSG", "thread": "kn_thread_mNecSG", "agenda-row": "kn_agenda-row_mNecSG", "info": "kn_info_mNecSG", "btn-strong": "kn_btn-strong_mNecSG", "grid": "kn_grid_mNecSG", "legend": "kn_legend_mNecSG", "map-tools": "kn_map-tools_mNecSG", "st-dot": "kn_st-dot_mNecSG", "sum": "kn_sum_mNecSG", "fin-wide": "kn_fin-wide_mNecSG", "saved": "kn_saved_mNecSG", "app": "kn_app_mNecSG", "eyebrow": "kn_eyebrow_mNecSG", "ini": "kn_ini_mNecSG", "steps": "kn_steps_mNecSG", "cal-nav": "kn_cal-nav_mNecSG", "ev-work": "kn_ev-work_mNecSG", "heat": "kn_heat_mNecSG", "switch": "kn_switch_mNecSG", "thinking": "kn_thinking_mNecSG", "sub-form": "kn_sub-form_mNecSG", "tl-dot": "kn_tl-dot_mNecSG", "paletteDot": "kn_paletteDot_mNecSG", "fade": "kn_fade_mNecSG", "dialog": "kn_dialog_mNecSG", "cal-bar": "kn_cal-bar_mNecSG", "welcome-chat": "kn_welcome-chat_mNecSG", "top": "kn_top_mNecSG", "stack": "kn_stack_mNecSG", "threads": "kn_threads_mNecSG", "mode-wrap": "kn_mode-wrap_mNecSG", "choice": "kn_choice_mNecSG", "run": "kn_run_mNecSG", "cal-detail": "kn_cal-detail_mNecSG", "news-foot": "kn_news-foot_mNecSG", "cal-legend": "kn_cal-legend_mNecSG", "fact": "kn_fact_mNecSG", "conn": "kn_conn_mNecSG", "new-thread": "kn_new-thread_mNecSG", "c-note": "kn_c-note_mNecSG", "financeMetric": "kn_financeMetric_mNecSG", "subtabs": "kn_subtabs_mNecSG", "small": "kn_small_mNecSG", "ms-row": "kn_ms-row_mNecSG", "dir-foot": "kn_dir-foot_mNecSG", "lchip": "kn_lchip_mNecSG", "askContent": "kn_askContent_mNecSG", "tool": "kn_tool_mNecSG", "send": "kn_send_mNecSG", "has-img": "kn_has-img_mNecSG", "auto-ctl": "kn_auto-ctl_mNecSG", "comment": "kn_comment_mNecSG", "r": "kn_r_mNecSG", "card": "kn_card_mNecSG", "sleep": "kn_sleep_mNecSG", "logo": "kn_logo_mNecSG", "me-body": "kn_me-body_mNecSG", "raw": "kn_raw_mNecSG", "ms": "kn_ms_mNecSG", "c-row": "kn_c-row_mNecSG", "head": "kn_head_mNecSG", "dot": "kn_dot_mNecSG", "row": "kn_row_mNecSG", "dialog-foot": "kn_dialog-foot_mNecSG", "facts": "kn_facts_mNecSG", "places": "kn_places_mNecSG", "map-stats": "kn_map-stats_mNecSG", "news-acts": "kn_news-acts_mNecSG", "kv": "kn_kv_mNecSG", "is-paused": "kn_is-paused_mNecSG", "btn-big": "kn_btn-big_mNecSG", "map-detail": "kn_map-detail_mNecSG", "place": "kn_place_mNecSG", "news": "kn_news_mNecSG", "ev-suggest": "kn_ev-suggest_mNecSG", "city": "kn_city_mNecSG", "note-row": "kn_note-row_mNecSG", "sum-h": "kn_sum-h_mNecSG", "me-avatar": "kn_me-avatar_mNecSG", "year": "kn_year_mNecSG", "switch-row": "kn_switch-row_mNecSG", "btn-quiet": "kn_btn-quiet_mNecSG", "radio": "kn_radio_mNecSG", "pulse": "kn_pulse_mNecSG", "mode-opt": "kn_mode-opt_mNecSG", "map-hero": "kn_map-hero_mNecSG", "child": "kn_child_mNecSG", "is-done": "kn_is-done_mNecSG", "map-box": "kn_map-box_mNecSG", "focus-body": "kn_focus-body_mNecSG", "feed-row": "kn_feed-row_mNecSG", "time": "kn_time_mNecSG", "mods": "kn_mods_mNecSG", "error": "kn_error_mNecSG", "big": "kn_big_mNecSG", "bar": "kn_bar_mNecSG", "evidence": "kn_evidence_mNecSG", "sec": "kn_sec_mNecSG", "menu-head": "kn_menu-head_mNecSG", "demo": "kn_demo_mNecSG", "btn-primary": "kn_btn-primary_mNecSG", "starts": "kn_starts_mNecSG", "focus": "kn_focus_mNecSG", "check": "kn_check_mNecSG", "detailBody": "kn_detailBody_mNecSG", "layer-chips": "kn_layer-chips_mNecSG", "c-btn": "kn_c-btn_mNecSG", "sr": "kn_sr_mNecSG", "shine": "kn_shine_mNecSG", "tag": "kn_tag_mNecSG", "conn-strip": "kn_conn-strip_mNecSG", "dir": "kn_dir_mNecSG", "scrim": "kn_scrim_mNecSG", "cal": "kn_cal_mNecSG", "tl-year": "kn_tl-year_mNecSG", "summaryButton": "kn_summaryButton_mNecSG", "miss": "kn_miss_mNecSG", "conn-pill": "kn_conn-pill_mNecSG", "seg": "kn_seg_mNecSG", "num": "kn_num_mNecSG", "me-nav": "kn_me-nav_mNecSG", "avatar": "kn_avatar_mNecSG", "content": "kn_content_mNecSG", "brand": "kn_brand_mNecSG", "focus-title": "kn_focus-title_mNecSG", "note": "kn_note_mNecSG", "st": "kn_st_mNecSG", "fact-acts": "kn_fact-acts_mNecSG", "chat": "kn_chat_mNecSG", "week": "kn_week_mNecSG", "ev-health": "kn_ev-health_mNecSG", "msgs": "kn_msgs_mNecSG", "msg-user": "kn_msg-user_mNecSG", "cal-fallback": "kn_cal-fallback_mNecSG", "welcome": "kn_welcome_mNecSG", "thumb": "kn_thumb_mNecSG", "start": "kn_start_mNecSG", "map-svg": "kn_map-svg_mNecSG", "table-box": "kn_table-box_mNecSG", "ask": "kn_ask_mNecSG", "fields": "kn_fields_mNecSG", "crop-zoom": "kn_crop-zoom_mNecSG", "when": "kn_when_mNecSG", "fin-pending": "kn_fin-pending_mNecSG", "chip": "kn_chip_mNecSG", "row-title": "kn_row-title_mNecSG", "attempt": "kn_attempt_mNecSG", "mod": "kn_mod_mNecSG", "list-card": "kn_list-card_mNecSG", "acts": "kn_acts_mNecSG", "tools": "kn_tools_mNecSG", "tl-item": "kn_tl-item_mNecSG", "composer": "kn_composer_mNecSG", "pair": "kn_pair_mNecSG", "act": "kn_act_mNecSG", "is-full": "kn_is-full_mNecSG", "src": "kn_src_mNecSG", "menu": "kn_menu_mNecSG", "fin-cell": "kn_fin-cell_mNecSG", "toggle": "kn_toggle_mNecSG", "agenda": "kn_agenda_mNecSG", "convo": "kn_convo_mNecSG", "account": "kn_account_mNecSG", "crop-view": "kn_crop-view_mNecSG", "sec-head": "kn_sec-head_mNecSG", "mode-pop": "kn_mode-pop_mNecSG", "btn": "kn_btn_mNecSG", "split": "kn_split_mNecSG", "msg-ai": "kn_msg-ai_mNecSG", "ev-life": "kn_ev-life_mNecSG", "hint": "kn_hint_mNecSG", "sync": "kn_sync_mNecSG", "suggest": "kn_suggest_mNecSG" };
+var Prototype_default = { "map-stats": "kn_map-stats_DECiPG", "news-foot": "kn_news-foot_DECiPG", "cal-legend": "kn_cal-legend_DECiPG", "switch-row": "kn_switch-row_DECiPG", "msg-user": "kn_msg-user_DECiPG", "small": "kn_small_DECiPG", "saved": "kn_saved_DECiPG", "fin-pending": "kn_fin-pending_DECiPG", "places": "kn_places_DECiPG", "big": "kn_big_DECiPG", "place": "kn_place_DECiPG", "crop-view": "kn_crop-view_DECiPG", "src": "kn_src_DECiPG", "row": "kn_row_DECiPG", "map-hero": "kn_map-hero_DECiPG", "mode-opt": "kn_mode-opt_DECiPG", "link": "kn_link_DECiPG", "ini": "kn_ini_DECiPG", "c-btn": "kn_c-btn_DECiPG", "feed-row": "kn_feed-row_DECiPG", "fin-cell": "kn_fin-cell_DECiPG", "comment": "kn_comment_DECiPG", "me-nav": "kn_me-nav_DECiPG", "ev-life": "kn_ev-life_DECiPG", "act": "kn_act_DECiPG", "tools": "kn_tools_DECiPG", "num": "kn_num_DECiPG", "ms": "kn_ms_DECiPG", "brand": "kn_brand_DECiPG", "dot": "kn_dot_DECiPG", "eyebrow": "kn_eyebrow_DECiPG", "map-svg": "kn_map-svg_DECiPG", "btn-strong": "kn_btn-strong_DECiPG", "sub": "kn_sub_DECiPG", "mod": "kn_mod_DECiPG", "news-acts": "kn_news-acts_DECiPG", "miss": "kn_miss_DECiPG", "convo": "kn_convo_DECiPG", "run": "kn_run_DECiPG", "start": "kn_start_DECiPG", "thumb": "kn_thumb_DECiPG", "dialog-foot": "kn_dialog-foot_DECiPG", "top": "kn_top_DECiPG", "content": "kn_content_DECiPG", "week": "kn_week_DECiPG", "is-done": "kn_is-done_DECiPG", "btn-primary": "kn_btn-primary_DECiPG", "focus-title": "kn_focus-title_DECiPG", "bar": "kn_bar_DECiPG", "toggle": "kn_toggle_DECiPG", "tl-year": "kn_tl-year_DECiPG", "tl-dot": "kn_tl-dot_DECiPG", "cal-fallback": "kn_cal-fallback_DECiPG", "ms-row": "kn_ms-row_DECiPG", "me-body": "kn_me-body_DECiPG", "facts": "kn_facts_DECiPG", "time": "kn_time_DECiPG", "new-thread": "kn_new-thread_DECiPG", "tool": "kn_tool_DECiPG", "c-row": "kn_c-row_DECiPG", "send": "kn_send_DECiPG", "sr": "kn_sr_DECiPG", "pulse": "kn_pulse_DECiPG", "map-detail": "kn_map-detail_DECiPG", "attempt": "kn_attempt_DECiPG", "askContent": "kn_askContent_DECiPG", "st-dot": "kn_st-dot_DECiPG", "fact": "kn_fact_DECiPG", "note": "kn_note_DECiPG", "conn": "kn_conn_DECiPG", "list-card": "kn_list-card_DECiPG", "msgs": "kn_msgs_DECiPG", "mode-pop": "kn_mode-pop_DECiPG", "conn-pill": "kn_conn-pill_DECiPG", "composer": "kn_composer_DECiPG", "when": "kn_when_DECiPG", "calendarShell": "kn_calendarShell_DECiPG", "focus": "kn_focus_DECiPG", "mods": "kn_mods_DECiPG", "city": "kn_city_DECiPG", "layer-chips": "kn_layer-chips_DECiPG", "thread": "kn_thread_DECiPG", "financeMetric": "kn_financeMetric_DECiPG", "crop-zoom": "kn_crop-zoom_DECiPG", "summaryButton": "kn_summaryButton_DECiPG", "child": "kn_child_DECiPG", "ask": "kn_ask_DECiPG", "year": "kn_year_DECiPG", "avatar": "kn_avatar_DECiPG", "btn": "kn_btn_DECiPG", "cal-title": "kn_cal-title_DECiPG", "agenda-row": "kn_agenda-row_DECiPG", "chat": "kn_chat_DECiPG", "ev-suggest": "kn_ev-suggest_DECiPG", "fin": "kn_fin_DECiPG", "dialog": "kn_dialog_DECiPG", "menu": "kn_menu_DECiPG", "welcome-chat": "kn_welcome-chat_DECiPG", "st": "kn_st_DECiPG", "btn-big": "kn_btn-big_DECiPG", "table-box": "kn_table-box_DECiPG", "shine": "kn_shine_DECiPG", "mode-wrap": "kn_mode-wrap_DECiPG", "cal": "kn_cal_DECiPG", "logo": "kn_logo_DECiPG", "demo": "kn_demo_DECiPG", "evidence": "kn_evidence_DECiPG", "threads": "kn_threads_DECiPG", "tabs": "kn_tabs_DECiPG", "welcome": "kn_welcome_DECiPG", "cal-detail": "kn_cal-detail_DECiPG", "account": "kn_account_DECiPG", "card": "kn_card_DECiPG", "cal-bar": "kn_cal-bar_DECiPG", "fields": "kn_fields_DECiPG", "is-full": "kn_is-full_DECiPG", "sync": "kn_sync_DECiPG", "sum": "kn_sum_DECiPG", "agenda": "kn_agenda_DECiPG", "conn-strip": "kn_conn-strip_DECiPG", "dir": "kn_dir_DECiPG", "grid": "kn_grid_DECiPG", "head": "kn_head_DECiPG", "fin-wide": "kn_fin-wide_DECiPG", "tag": "kn_tag_DECiPG", "check": "kn_check_DECiPG", "is-paused": "kn_is-paused_DECiPG", "choice": "kn_choice_DECiPG", "me": "kn_me_DECiPG", "map-box": "kn_map-box_DECiPG", "starts": "kn_starts_DECiPG", "btn-quiet": "kn_btn-quiet_DECiPG", "kv": "kn_kv_DECiPG", "focus-body": "kn_focus-body_DECiPG", "stack": "kn_stack_DECiPG", "news": "kn_news_DECiPG", "sub-form": "kn_sub-form_DECiPG", "msg-ai": "kn_msg-ai_DECiPG", "switch": "kn_switch_DECiPG", "suggest": "kn_suggest_DECiPG", "auto-ctl": "kn_auto-ctl_DECiPG", "chip": "kn_chip_DECiPG", "legend": "kn_legend_DECiPG", "split": "kn_split_DECiPG", "sleep": "kn_sleep_DECiPG", "scrim": "kn_scrim_DECiPG", "dir-foot": "kn_dir-foot_DECiPG", "r": "kn_r_DECiPG", "row-title": "kn_row-title_DECiPG", "ev-work": "kn_ev-work_DECiPG", "sum-h": "kn_sum-h_DECiPG", "paletteDot": "kn_paletteDot_DECiPG", "app": "kn_app_DECiPG", "menu-head": "kn_menu-head_DECiPG", "seg": "kn_seg_DECiPG", "fade": "kn_fade_DECiPG", "info": "kn_info_DECiPG", "acts": "kn_acts_DECiPG", "cal-nav": "kn_cal-nav_DECiPG", "me-avatar": "kn_me-avatar_DECiPG", "raw": "kn_raw_DECiPG", "radio": "kn_radio_DECiPG", "tl-item": "kn_tl-item_DECiPG", "capture": "kn_capture_DECiPG", "heat": "kn_heat_DECiPG", "fact-acts": "kn_fact-acts_DECiPG", "c-note": "kn_c-note_DECiPG", "sec": "kn_sec_DECiPG", "subtabs": "kn_subtabs_DECiPG", "timeline": "kn_timeline_DECiPG", "note-row": "kn_note-row_DECiPG", "thinking": "kn_thinking_DECiPG", "sec-head": "kn_sec-head_DECiPG", "emptyState": "kn_emptyState_DECiPG", "error": "kn_error_DECiPG", "hint": "kn_hint_DECiPG", "steps": "kn_steps_DECiPG", "ev-health": "kn_ev-health_DECiPG", "detailBody": "kn_detailBody_DECiPG", "map-tools": "kn_map-tools_DECiPG", "lchip": "kn_lchip_DECiPG", "has-img": "kn_has-img_DECiPG", "pair": "kn_pair_DECiPG" };
 
 // src/client/Novel.module.css
-var Novel_default = { "actions": "kn_actions_GZZZGa", "diff": "kn_diff_GZZZGa", "grid": "kn_grid_GZZZGa", "check": "kn_check_GZZZGa", "warn": "kn_warn_GZZZGa", "table": "kn_table_GZZZGa", "start": "kn_start_GZZZGa", "card": "kn_card_GZZZGa", "quote": "kn_quote_GZZZGa", "selected": "kn_selected_GZZZGa", "stack": "kn_stack_GZZZGa", "scroll": "kn_scroll_GZZZGa", "muted": "kn_muted_GZZZGa", "wrap": "kn_wrap_GZZZGa", "shortcuts": "kn_shortcuts_GZZZGa" };
+var Novel_default = { "quote": "kn_quote_v1tP5G", "table": "kn_table_v1tP5G", "selected": "kn_selected_v1tP5G", "shortcuts": "kn_shortcuts_v1tP5G", "check": "kn_check_v1tP5G", "wrap": "kn_wrap_v1tP5G", "scroll": "kn_scroll_v1tP5G", "warn": "kn_warn_v1tP5G", "actions": "kn_actions_v1tP5G", "start": "kn_start_v1tP5G", "diff": "kn_diff_v1tP5G", "stack": "kn_stack_v1tP5G", "card": "kn_card_v1tP5G", "muted": "kn_muted_v1tP5G", "grid": "kn_grid_v1tP5G" };
 
 // src/client/Writer.tsx
 var import_react2 = require("react");
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@marijn/find-cluster-break/src/index.js
+// ../../node_modules/.pnpm/@marijn+find-cluster-break@1.0.4/node_modules/@marijn/find-cluster-break/src/index.js
 var rangeFrom = [];
 var rangeTo = [];
 (() => {
@@ -14694,7 +14855,7 @@ function codePointSize(code2) {
   return code2 < 65536 ? 1 : 2;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/state/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+state@6.7.6/node_modules/@codemirror/state/dist/index.js
 var Text = class _Text {
   /**
   Get the line description around the given position.
@@ -18100,7 +18261,7 @@ function findColumn(string5, col, tabSize, strict) {
   return strict === true ? -1 : string5.length;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/style-mod/src/style-mod.js
+// ../../node_modules/.pnpm/style-mod@4.1.4/node_modules/style-mod/src/style-mod.js
 var C = "\u037C";
 var COUNT = typeof Symbol == "undefined" ? "__" + C : Symbol.for(C);
 var SET = typeof Symbol == "undefined" ? "__styleSet" + Math.floor(Math.random() * 1e8) : /* @__PURE__ */ Symbol("styleSet");
@@ -18236,7 +18397,7 @@ var StyleSet = class {
   }
 };
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/w3c-keyname/index.js
+// ../../node_modules/.pnpm/w3c-keyname@2.2.8/node_modules/w3c-keyname/index.js
 var base = {
   8: "Backspace",
   9: "Tab",
@@ -18342,7 +18503,7 @@ function keyName(event) {
   return name2;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/view/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+view@6.43.14/node_modules/@codemirror/view/dist/index.js
 var nav = typeof navigator != "undefined" ? navigator : { userAgent: "", vendor: "", platform: "" };
 var doc = typeof document != "undefined" ? document : { documentElement: { style: {} } };
 var ie_edge = /* @__PURE__ */ /Edge\/(\d+)/.exec(nav.userAgent);
@@ -27169,7 +27330,7 @@ GutterMarker.prototype.point = true;
 // src/client/editor/CodeEditor.tsx
 var import_react = require("react");
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/common/dist/index.js
+// ../../node_modules/.pnpm/@lezer+common@1.5.3/node_modules/@lezer/common/dist/index.js
 var DefaultBufferLength = 1024;
 var nextPropID = 0;
 var Range2 = class {
@@ -29220,7 +29381,7 @@ function enterFragments(mounts, ranges) {
   return result;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/highlight/dist/index.js
+// ../../node_modules/.pnpm/@lezer+highlight@1.2.5/node_modules/@lezer/highlight/dist/index.js
 var nextTagID = 0;
 var Tag = class _Tag {
   /**
@@ -29844,7 +30005,7 @@ var classHighlighter = tagHighlighter([
   { tag: tags.punctuation, class: "tok-punctuation" }
 ]);
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/language/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+language@6.13.1/node_modules/@codemirror/language/dist/index.js
 var _a3;
 var languageDataProp = /* @__PURE__ */ new NodeProp();
 function defineLanguageFacet(baseData) {
@@ -30996,7 +31157,7 @@ var marks = {
   auto: /* @__PURE__ */ Decoration.mark({ class: "cm-iso", inclusive: true, attributes: { dir: "auto" }, bidiIsolate: null })
 };
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/commands/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+commands@6.11.1/node_modules/@codemirror/commands/dist/index.js
 var toggleComment = (target) => {
   let { state } = target, line = state.doc.lineAt(state.selection.main.from), config2 = getConfig(target.state, line.from);
   return config2.line ? toggleLineComment(target) : config2.block ? toggleBlockCommentByLine(target) : false;
@@ -32090,7 +32251,7 @@ var defaultKeymap = /* @__PURE__ */ [
   { key: "Ctrl-m", mac: "Shift-Alt-m", run: toggleTabFocusMode }
 ].concat(standardKeymap);
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/autocomplete/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+autocomplete@6.20.3/node_modules/@codemirror/autocomplete/dist/index.js
 var CompletionContext = class {
   /**
   Create a new completion context. (Mostly useful for testing
@@ -32555,7 +32716,7 @@ closedBracket.startSide = 1;
 closedBracket.endSide = -1;
 var android = typeof navigator == "object" && /* @__PURE__ */ /Android\b/.test(navigator.userAgent);
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/markdown/dist/index.js
+// ../../node_modules/.pnpm/@lezer+markdown@1.8.0/node_modules/@lezer/markdown/dist/index.js
 var CompositeBlock = class _CompositeBlock {
   static create(type, value, from, parentHash, end) {
     let hash3 = parentHash + (parentHash << 8) + type + (value << 4) | 0;
@@ -34622,7 +34783,7 @@ var Emoji = {
   }]
 };
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/lr/dist/index.js
+// ../../node_modules/.pnpm/@lezer+lr@1.4.11/node_modules/@lezer/lr/dist/index.js
 var Stack = class _Stack {
   /**
   @internal
@@ -36400,7 +36561,7 @@ function getSpecializer(spec) {
   return spec.get;
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/html/dist/index.js
+// ../../node_modules/.pnpm/@lezer+html@1.3.13/node_modules/@lezer/html/dist/index.js
 var scriptText = 55;
 var StartCloseScriptTag = 1;
 var styleText = 56;
@@ -36744,7 +36905,7 @@ function configureNesting(tags3 = [], attributes = []) {
   });
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/css/dist/index.js
+// ../../node_modules/.pnpm/@lezer+css@1.3.9/node_modules/@lezer/css/dist/index.js
 var descendantOp = 148;
 var Unit = 1;
 var identifier = 149;
@@ -36924,7 +37085,7 @@ var parser3 = LRParser.deserialize({
   tokenPrec: 2433
 });
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/lang-css/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+lang-css@6.3.1/node_modules/@codemirror/lang-css/dist/index.js
 var _properties = null;
 function properties() {
   if (!_properties && typeof document == "object" && document.body) {
@@ -37785,7 +37946,7 @@ function css() {
   return new LanguageSupport(cssLanguage, cssLanguage.data.of({ autocomplete: cssCompletionSource }));
 }
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@lezer/javascript/dist/index.js
+// ../../node_modules/.pnpm/@lezer+javascript@1.5.6/node_modules/@lezer/javascript/dist/index.js
 var noSemi = 317;
 var noSemiType = 318;
 var incdec = 1;
@@ -37997,7 +38158,7 @@ var parser4 = LRParser.deserialize({
   tokenPrec: 15205
 });
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/lang-javascript/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+lang-javascript@6.2.5/node_modules/@codemirror/lang-javascript/dist/index.js
 var snippets = [
   /* @__PURE__ */ snippetCompletion("function ${name}(${params}) {\n	${}\n}", {
     label: "function",
@@ -38309,7 +38470,7 @@ var autoCloseTags = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to, 
   return true;
 });
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/lang-html/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+lang-html@6.4.12/node_modules/@codemirror/lang-html/dist/index.js
 var Targets = ["_blank", "_self", "_top", "_parent"];
 var Charsets = ["ascii", "utf-8", "utf-16", "latin1", "latin1"];
 var Methods = ["get", "post", "put", "delete"];
@@ -39049,7 +39210,7 @@ var autoCloseTags2 = /* @__PURE__ */ EditorView.inputHandler.of((view, from, to,
   return true;
 });
 
-// ../../../../../../../../../private/tmp/novel-editor-deps/node_modules/@codemirror/lang-markdown/dist/index.js
+// ../../node_modules/.pnpm/@codemirror+lang-markdown@6.5.2/node_modules/@codemirror/lang-markdown/dist/index.js
 var data = /* @__PURE__ */ defineLanguageFacet({ commentTokens: { block: { open: "<!--", close: "-->" } } });
 var headingProp = /* @__PURE__ */ new NodeProp();
 var commonmark = /* @__PURE__ */ parser.configure({
@@ -39512,7 +39673,7 @@ function workbenchEditorExtensions(opts) {
 }
 
 // src/client/Writer.module.css
-var Writer_default = { "chapters": "kn_chapters_eRVxzq", "shell": "kn_shell_eRVxzq", "candidates": "kn_candidates_eRVxzq", "copyFlash": "kn_copyFlash_eRVxzq", "selChatBtn": "kn_selChatBtn_eRVxzq", "assistant": "kn_assistant_eRVxzq", "editorWrap": "kn_editorWrap_eRVxzq", "chat": "kn_chat_eRVxzq", "columns": "kn_columns_eRVxzq", "cmHost": "kn_cmHost_eRVxzq", "toolbar": "kn_toolbar_eRVxzq", "manuscript": "kn_manuscript_eRVxzq", "primary": "kn_primary_eRVxzq", "hint": "kn_hint_eRVxzq", "header": "kn_header_eRVxzq", "tabs": "kn_tabs_eRVxzq", "error": "kn_error_eRVxzq" };
+var Writer_default = { "header": "kn_header_CpraFG", "primary": "kn_primary_CpraFG", "assistant": "kn_assistant_CpraFG", "columns": "kn_columns_CpraFG", "chapters": "kn_chapters_CpraFG", "editorWrap": "kn_editorWrap_CpraFG", "cmHost": "kn_cmHost_CpraFG", "candidates": "kn_candidates_CpraFG", "tabs": "kn_tabs_CpraFG", "copyFlash": "kn_copyFlash_CpraFG", "chat": "kn_chat_CpraFG", "selChatBtn": "kn_selChatBtn_CpraFG", "error": "kn_error_CpraFG", "manuscript": "kn_manuscript_CpraFG", "toolbar": "kn_toolbar_CpraFG", "shell": "kn_shell_CpraFG", "hint": "kn_hint_CpraFG" };
 
 // src/client/editor/CodeEditor.tsx
 var import_jsx_runtime = require("react/jsx-runtime");

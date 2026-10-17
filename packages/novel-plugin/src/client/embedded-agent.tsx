@@ -4,6 +4,7 @@ import type {
   SessionSnapshot,
 } from "@deepseek-ai/dsh-api-session-controller/client";
 import type { ConversationViewsProps } from "@deepseek-ai/dsh-client-ui-conversation/client";
+import type {} from "@deepseek-ai/dsh-client-ui-session/client";
 import type { PropsRuntime, PropsRenderFactories, PropsRenderSlots } from "@deepseek-ai/dsh-client-ui-slots";
 import { useEffect, useRef, useState } from "react";
 import { NovelPage, type Request } from "./page.js";

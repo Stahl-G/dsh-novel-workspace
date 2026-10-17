@@ -11,13 +11,15 @@ Agent 使用 DSH 自带的文件搜索和读取能力寻找正文、设定集和
 
 ## 安装
 
-适配 DSH **0.2.0-rc.2**，需要 Node 22.19+ 或 24+。仓库包含构建产物，安装不用编译。
+适配 DSH **0.2.1-rc.1**，需要 Node 22.19+ 或 24+。仓库包含构建产物，安装不用编译。
 
-```sh
-dsh plugin --profile desktop add github:Stahl-G/dsh-novel-workspace
+在 DSH 里打开侧栏「插件」，点「添加插件」。安装源选 npm 官方源或中国大陆镜像源，插件地址填：
+
+```text
+github:Stahl-G/dsh-novel-workspace
 ```
 
-重启 DSH。组合包会加载 `kaitu-novel-workspace` 和 `kaitu-novel-workspace/sf` 两行。仓库名没有特定前缀要求；自动加载由 `package.json` 中的 `dsh.bundle` 与 `cordis.patch.yml` 决定。GitHub 安装可用；尚未提交官方市场目录。
+不要把 `https://github.com/...` 填进「自定义地址」；那一栏是 registry，不是插件位置。装完后重启。组合包会加载 `kaitu-novel-workspace` 和 `kaitu-novel-workspace/sf` 两行。自动加载由 `package.json` 中的 `dsh.bundle` 与 `cordis.patch.yml` 决定。尚未提交官方市场目录。
 
 在小说工作台插件配置中，将 `workspace` 填为现有开图工作区绝对路径。在开图项目中关联稿件目录后，即可在小说工作台连接作品。科幻插件需要小说工作台服务。
 
@@ -70,4 +72,4 @@ pnpm test
 
 ## 本版验证
 
-隔离的本机 DSH profile 已实际验证章节编辑、保存与内嵌对话入口；合成章节的保存、撤销及外部修改冲突测试通过。候选采纳的完整 UI 流程和本版真实模型回复尚未验收，临时 profile 没有模型 Key。
+DSH 0.2.1-rc.1 的 web profile 已加载本仓库：侧栏出现「小说工作台」，示例《月球上最早的人类》能打开，切换章节会换正文。合成章节的保存、撤销及外部修改冲突测试通过。候选采纳的完整 UI 流程和本版真实模型回复尚未验收，临时 profile 没有模型 Key。

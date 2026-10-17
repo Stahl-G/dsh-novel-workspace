@@ -12,26 +12,33 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 const folder = process.argv[2];
 const pkg = resolve(root, "packages", folder);
 const packageName = JSON.parse(readFileSync(resolve(pkg, "package.json"), "utf8")).name;
-// rc.2 recognizes protocol symbols only inside its workspace inventory. Give the
-// published declarations a temporary workspace identity, without importing DSH source.
+// 0.2.1-rc.1 recognizes protocol symbols only inside its workspace inventory.
+// Published declarations get a temporary workspace identity. The registry root
+// augments TypertRegistryContract, so that declaration must sit in the inventory
+// too; otherwise the merged interface is partly outside this face.
 const analysis = mkdtempSync("/tmp/kaitu-typert-");
+const declarationOnly = (source) => !source.endsWith(".js") && !source.endsWith(".map");
 if (folder === "novel-plugin")
   try {
     const analyzedPkg = resolve(analysis, `packages/${folder}`);
     const protocol = resolve(analysis, "packages/protocol");
+    // Nested under protocol so the augmentation shares that package's inventory
+    // identity. A separate registry package is itself a Typert contributor.
+    const registry = resolve(protocol, "src/registry");
     mkdirSync(analyzedPkg, { recursive: true });
     cpSync(resolve(pkg, "src"), resolve(analyzedPkg, "src"), { recursive: true });
     cpSync(resolve(pkg, "package.json"), resolve(analyzedPkg, "package.json"));
     mkdirSync(resolve(analyzedPkg, "lib"));
     writeFileSync(resolve(analyzedPkg, "lib/typert.host.d.ts"), "export declare const TYPERT: unknown;\n");
     symlinkSync(resolve(pkg, "node_modules"), resolve(analyzedPkg, "node_modules"));
-    cpSync(
-      resolve(pkg, "node_modules/@deepseek-ai/dsh-typert-protocol/lib/types"),
-      resolve(protocol, "src"),
-      {
-        recursive: true,
-      },
-    );
+    cpSync(resolve(pkg, "node_modules/@deepseek-ai/dsh-typert-protocol/lib/types"), resolve(protocol, "src"), {
+      recursive: true,
+      filter: declarationOnly,
+    });
+    cpSync(resolve(pkg, "node_modules/@deepseek-ai/dsh-typert-registry/lib/types"), registry, {
+      recursive: true,
+      filter: declarationOnly,
+    });
     writeFileSync(
       resolve(protocol, "package.json"),
       JSON.stringify({ name: "@deepseek-ai/dsh-typert-protocol", exports: { ".": "./src/index.d.ts" } }),
@@ -41,6 +48,7 @@ if (folder === "novel-plugin")
     options.compilerOptions.types = ["node"];
     options.compilerOptions.paths = {
       "@deepseek-ai/dsh-typert-protocol": [resolve(protocol, "src/index.d.ts")],
+      "@deepseek-ai/dsh-typert-registry": [resolve(registry, "index.d.ts")],
     };
     writeFileSync(resolve(analysis, "tsconfig.base.json"), JSON.stringify(options));
     symlinkSync(resolve(root, "node_modules"), resolve(analysis, "node_modules"));
