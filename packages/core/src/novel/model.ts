@@ -55,6 +55,49 @@ export interface Proposal {
   actor: "author" | "agent";
   approvedAt?: string;
 }
+export interface StoryClaim {
+  id: string;
+  kind: "conflict" | "dilemma" | "reader" | "keep";
+  text: string;
+  canon: "confirmed" | "open";
+}
+export interface StoryBeat {
+  chapter: number;
+  text: string;
+  canon: "tentative" | "confirmed" | "open";
+}
+export interface PortraitNote {
+  id: string;
+  text: string;
+  canon: "confirmed" | "open" | "ai_inference";
+}
+export interface CreatorPortrait {
+  authorDocuments: number;
+  unmarkedManuscripts: number;
+  aiMarked: number;
+  likelyAi: number;
+  notes: PortraitNote[];
+}
+export interface StoryChoice {
+  id: string;
+  label: string;
+}
+export interface StoryQuestion {
+  id: "conflict" | "dilemma" | "reader" | "keep";
+  prompt: string;
+  choices: StoryChoice[];
+}
+export interface StoryBrief {
+  spark: string;
+  claims: StoryClaim[];
+  beats: StoryBeat[];
+  portrait: CreatorPortrait;
+  step: "conflict" | "dilemma" | "reader" | "keep" | "outline";
+  confirmed: string[];
+  open: string[];
+  question: StoryQuestion | null;
+  updatedAt: string;
+}
 export interface NovelData {
   schemaVersion: 1;
   project: string;
@@ -89,6 +132,7 @@ export interface NovelData {
     next: string;
     savedAt: string;
   }[];
+  story?: StoryBrief;
 }
 export interface NovelView {
   revision: string;

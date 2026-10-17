@@ -9,6 +9,7 @@ export type WriterSource = { scene: NovelData["scenes"][number]; text: string; p
 type ReferenceSource = { path: string; relativePath: string; text: string; fileHash: string; scene: string };
 export type WriterAgent = {
   send(project: string, text: string): Promise<void>;
+  session(project: string): Promise<string>;
   render(project: string, onReply: () => void): ReactNode;
 };
 export function Writer({
@@ -219,6 +220,53 @@ export function Writer({
     localStorage.setItem(`${key}:reference`, documentId);
     setAssistantOpen(false);
   }
+  async function grill() {
+    setAssistantOpen(true);
+    if (!agent || !source) return;
+    await saveReference();
+    const saved = await save();
+    if (!saved) return;
+    const session = await agent.session(project);
+    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    type Grilled = {
+      voice: { voice: string; samples: { path: string; text: string }[] };
+      answers: { id: string; selected: string[]; custom?: string }[];
+      confirmed: string[];
+      open: string[];
+    };
+    let grilled: Grilled;
+    try {
+      grilled = await request<Grilled>("grill", { project, session, spark: intent });
+    } catch (error) {
+      if (!(error instanceof Error) || error.message !== "提问卡片没有接上") throw error;
+      const voice = await request<Grilled["voice"] & { questions: { id: string; prompt: string; options: { label: string }[] }[] }>(
+        "voice",
+        { project },
+      );
+      const cards = voice.questions
+        .map((question) => `${question.prompt}\n${question.options.map((option) => `- ${option.label}`).join("\n")}`)
+        .join("\n\n");
+      const samples = voice.samples.map((sample) => `【${sample.path}】${sample.text}`).join("\n");
+      await agent.send(
+        project,
+        `请用 ask_user_question 一次只问一题。题目和选项必须原样使用，不要改写，不要一次问完：\n${cards}\n作者点选或自己写一句之后，再写正文。已跳过或标成先开放的，不要收成结论。\n文风：${voice.voice}\n模仿这些作者原稿，不要学习候选稿或标成 AI 的文字：\n${samples || "没有足够的作者原稿，按当前章节已有句子写。"}\n写一段约四百到八百字，用 kaitu_novel_draft 保存独立候选，scene 为 ${saved.path}#${saved.scene.title}。不要修改原稿。当前模式：${writing ? "写作" : "只读"}。只读时正文留在对话里。\n作者补充：${intent || "无"}`,
+      );
+      setNotice("提问改由写作助手发出");
+      return;
+    }
+    await refresh();
+    const picks = grilled.answers
+      .map((answer) => `${answer.custom?.trim() || answer.selected.join("、") || "跳过"}`)
+      .join("\n");
+    const samples = grilled.voice.samples.map((sample) => `【${sample.path}】${sample.text}`).join("\n");
+    const position = editor.current?.state.selection.main.head ?? cursor;
+    const context = `${saved.text.slice(Math.max(0, position - 4000), position)}\n【作者光标】\n${saved.text.slice(position, position + 1500)}`;
+    await agent.send(
+      project,
+      `作品：${title}；项目：${project}\n当前文件：${saved.path}\n章节定位：${saved.path}#${saved.scene.title}\n作者已在提问卡片里选完。已确认：${grilled.confirmed.join("；") || "无"}。仍开放：${grilled.open.join("；") || "无"}。\n逐题：\n${picks}\n文风：${grilled.voice.voice}\n按这些作者原稿的节奏、人称和用词写，不要学习候选稿或标成 AI 的文字：\n${samples || "没有足够的作者原稿，按当前章节已有句子写。"}\n写一段可以直接放进这一章的正文，大约四百到八百字。开放项不要收成结论。用 kaitu_novel_draft 保存独立候选，scene 使用上面的章节定位。不要修改原稿。\n当前模式：${writing ? "写作" : "只读"}。只读时正文留在对话里，不要保存候选。\n作者补充：${intent || "无"}\n光标附近：\n${context}`,
+    );
+    setNotice("已按你的选择交给写作助手");
+  }
   async function send(kind = action) {
     setAssistantOpen(true);
     if (!agent || !source) return;
@@ -228,9 +276,7 @@ export function Writer({
     const task =
       kind === "check"
         ? "检查当前章节与已有设定、人物位置、年龄、事件时间和科学细节是否冲突。逐项引用正文原句与资料文件/标题，区分明确冲突、条件不足和可选建议。客观常识自行查证；尊重虚构例外，人物谎言或比喻不当作世界事实。只报告有依据的问题。"
-        : kind === "plot"
-          ? "结合现有伏笔和人物动机，提出 2–3 个下一步剧情方向：具体人物动作、阻力、科学或环境细节、后果及可回收的伏笔。先给可讨论的短方案。"
-          : "从下面标记的光标位置续写，先读相关原稿样本和世界书，保持视角、语感、对白和细节取舍；不要重复已有正文。用 kaitu_novel_draft 保存独立候选，scene 使用下方章节定位，styleSources 写已读场景。直接返回简短说明，正文留在候选中。";
+        : "从下面标记的光标位置续写，先读相关原稿样本和世界书，保持视角、语感、对白和细节取舍；不要重复已有正文。用 kaitu_novel_draft 保存独立候选，scene 使用下方章节定位，styleSources 写已读场景。直接返回简短说明，正文留在候选中。";
     const position = editor.current?.state.selection.main.head ?? cursor;
     const context = `${saved.text.slice(Math.max(0, position - 10000), position)}\n【作者光标】\n${saved.text.slice(position, position + 3000)}`;
     await agent.send(
@@ -583,7 +629,11 @@ export function Writer({
                       </button>
                     ))}
                   </div>
-                  <small>当前章节 + Agent 自动查找的世界书与资料</small>
+                  <small>
+                    {action === "plot"
+                      ? "先弹出选项，点完按你的原稿写一段候选"
+                      : "当前章节 + Agent 自动查找的世界书与资料"}
+                  </small>
                   <textarea
                     aria-label="给写作助手的要求"
                     placeholder="补充你的要求，或选中正文讨论……"
@@ -604,14 +654,10 @@ export function Writer({
                   <button
                     type="button"
                     className={css.primary}
-                    disabled={!source || !agent || busy || (action === "continue" && !writing)}
-                    onClick={() => void run(() => send())}
+                    disabled={!source || busy || !agent || (action === "continue" && !writing)}
+                    onClick={() => void run(() => (action === "plot" ? grill() : send()))}
                   >
-                    {action === "check"
-                      ? "检查当前章节"
-                      : action === "plot"
-                        ? "推荐接下来的剧情"
-                        : "生成续写候选"}
+                    {action === "check" ? "检查当前章节" : action === "plot" ? "提问并写一段" : "生成续写候选"}
                   </button>
                   {!agent && <small>在 DSH 中打开可使用写作助手。</small>}
                 </div>

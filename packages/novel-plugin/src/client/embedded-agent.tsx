@@ -71,33 +71,40 @@ export function EmbeddedNovelPage({
     },
     [],
   );
+  async function openSession(project: string) {
+    let reference = references.current.get(project);
+    if (!reference) {
+      const workspace = await request<{ path: string }>("workspace");
+      const target = await services.workspaces.create({ path: workspace.path });
+      const id = await services.sessions.create({
+        workspaceId: target.workspaceId as NonNullable<Parameters<ISessions["create"]>[0]>["workspaceId"],
+      });
+      reference = services.sessions.retain(id, { source: "novelWriter" });
+      references.current.set(project, reference);
+      try {
+        await reference.ready;
+      } catch (e) {
+        reference.release();
+        references.current.delete(project);
+        throw e;
+      }
+      redraw((n) => n + 1);
+    }
+    return reference;
+  }
   return (
     <NovelPage
       request={request}
       onAgent={onAgent}
       onBrowseFolder={onBrowseFolder}
       writerAgent={{
+        async session(project) {
+          const reference = await openSession(project);
+          redraw((n) => n + 1);
+          return reference.sessionId;
+        },
         async send(project, text) {
-          let reference = references.current.get(project);
-          if (!reference) {
-            const workspace = await request<{ path: string }>("workspace");
-            const target = await services.workspaces.create({ path: workspace.path });
-            const id = await services.sessions.create({
-              workspaceId: target.workspaceId as NonNullable<
-                Parameters<ISessions["create"]>[0]
-              >["workspaceId"],
-            });
-            reference = services.sessions.retain(id, { source: "novelWriter" });
-            references.current.set(project, reference);
-            try {
-              await reference.ready;
-            } catch (e) {
-              reference.release();
-              references.current.delete(project);
-              throw e;
-            }
-            redraw((n) => n + 1);
-          }
+          const reference = await openSession(project);
           const binding = await reference.ready;
           const result = await binding.session.prompt([{ type: "text", text }], "queue");
           if (!result.ok) throw new Error(result.error.message);

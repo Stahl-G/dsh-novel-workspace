@@ -20,6 +20,7 @@ export declare class NovelService extends TypertRemoteService {
     private readonly workspace;
     constructor(ctx: Context, workspace: Workspace);
     private snapshot;
+    private grill;
     private scene;
     request(operation: string, input: string): Promise<string>;
 }

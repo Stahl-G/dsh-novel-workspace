@@ -60,7 +60,7 @@ const $remote = createTypertRemoteInfo({
         create: kaitu_novel_workspace_source_kaituNovel_request_result$schema,
         jsonSchema: {"type":"string"},
       },
-      sourceLocation: {"file":"packages/novel-plugin/src/index.ts","line":64,"column":9},
+      sourceLocation: {"file":"packages/novel-plugin/src/index.ts","line":133,"column":9},
     },
   },
 }, z)
