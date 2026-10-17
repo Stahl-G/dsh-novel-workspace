@@ -14,10 +14,38 @@ type Project = {
   scenes: number;
 };
 type Catalog = { projects: Project[]; science: boolean };
-type Source = { scene: NovelData["scenes"][number]; text: string; path: string; anchor: Anchor };
-type ScienceView = { data: { rules: WorldRule[]; findings: Finding[] }; revision: string; stale: string[] };
+type Source = {
+  scene: NovelData["scenes"][number];
+  text: string;
+  path: string;
+  anchor: Anchor;
+};
+type ScienceView = {
+  data: { rules: WorldRule[]; findings: Finding[] };
+  revision: string;
+  stale: string[];
+};
 const status = { planned: "待写", draft: "进行中", done: "完成" };
-const canon = { confirmed: "作者确认", tentative: "待定", ai_inference: "AI 推测", excerpt: "原文资料" };
+const roles = {
+  manuscript: "正文",
+  setting: "设定资料",
+  outline: "大纲",
+  notes: "写作笔记",
+  reference: "参考资料",
+  candidate: "候选稿",
+};
+const origins = {
+  author: "人工来源标记",
+  ai: "AI 生成标记",
+  likely_ai: "格式疑似 AI 整理",
+  unknown: "来源未标记",
+};
+const canon = {
+  confirmed: "作者确认",
+  tentative: "待定",
+  ai_inference: "AI 推测",
+  excerpt: "原文资料",
+};
 function download(name: string, value: string, type = "text/markdown") {
   const url = URL.createObjectURL(new Blob([value], { type }));
   const a = document.createElement("a");
@@ -27,7 +55,10 @@ function download(name: string, value: string, type = "text/markdown") {
   URL.revokeObjectURL(url);
 }
 export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Agent }) {
-  const [catalog, setCatalog] = useState<Catalog>({ projects: [], science: false });
+  const [catalog, setCatalog] = useState<Catalog>({
+    projects: [],
+    science: false,
+  });
   const [project, setProject] = useState("");
   const [view, setView] = useState<NovelView | null>(null);
   const [source, setSource] = useState<Source | null>(null);
@@ -82,6 +113,11 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
   };
   const edit = (command: object) => request("edit", { project, revision: view?.revision, command });
   const data = view?.data;
+  const scenes =
+    data?.scenes.filter((scene) => {
+      const role = data.documents.find((doc) => doc.id === scene.documentId)?.classification?.role;
+      return !role || role === "manuscript";
+    }) ?? [];
   const title = catalog.projects.find((p) => p.slug === project)?.title;
   const last = data?.sessions.at(-1);
   return (
@@ -173,7 +209,7 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
             </div>
             <div className={css.actions}>
               <span className={css.muted}>
-                {data.scenes.length} 场景 · {data.scenes.reduce((n, s) => n + s.words, 0)} 字词
+                {scenes.length} 场景 · {scenes.reduce((n, s) => n + s.words, 0)} 字词
               </span>
               <button
                 className={base.link}
@@ -231,7 +267,11 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                         type="button"
                         onClick={() =>
                           void run(
-                            () => request("open", { project, scene: source.scene.id }),
+                            () =>
+                              request("open", {
+                                project,
+                                scene: source.scene.id,
+                              }),
                             "已交给原编辑器",
                           )
                         }
@@ -257,7 +297,12 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                     disabled={busy || !source || !completed}
                     onClick={() =>
                       void run(async () => {
-                        await edit({ type: "session", scene: source?.scene.id, completed, next });
+                        await edit({
+                          type: "session",
+                          scene: source?.scene.id,
+                          completed,
+                          next,
+                        });
                         setCompleted("");
                         setNext("");
                       })
@@ -305,7 +350,7 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                       </tr>
                     </thead>
                     <tbody>
-                      {data.scenes.map((s) => (
+                      {scenes.map((s) => (
                         <tr key={s.id}>
                           <td>
                             <button
@@ -314,7 +359,12 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                               onClick={() =>
                                 void run(
                                   async () =>
-                                    setSource(await request<Source>("scene", { project, scene: s.id })),
+                                    setSource(
+                                      await request<Source>("scene", {
+                                        project,
+                                        scene: s.id,
+                                      }),
+                                    ),
                                   "场景已选定",
                                 )
                               }
@@ -322,7 +372,13 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                               {s.title}
                             </button>
                             <small className={css.muted} style={{ display: "block" }}>
-                              {s.path} · {s.id.slice(0, 8)}
+                              {s.path} ·{" "}
+                              {
+                                origins[
+                                  data.documents.find((doc) => doc.id === s.documentId)?.classification
+                                    ?.origin ?? "unknown"
+                                ]
+                              }
                             </small>
                           </td>
                           <td>
@@ -335,7 +391,11 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                               onBlur={(e) => {
                                 if (Number(e.target.value) !== s.order)
                                   void run(() =>
-                                    edit({ type: "scene", ...s, order: Number(e.target.value) }),
+                                    edit({
+                                      type: "scene",
+                                      ...s,
+                                      order: Number(e.target.value),
+                                    }),
                                   );
                               }}
                             />
@@ -345,7 +405,13 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                               aria-label={`${s.title}状态`}
                               value={s.status}
                               onChange={(e) =>
-                                void run(() => edit({ type: "scene", ...s, status: e.target.value }))
+                                void run(() =>
+                                  edit({
+                                    type: "scene",
+                                    ...s,
+                                    status: e.target.value,
+                                  }),
+                                )
                               }
                             >
                               {Object.entries(status).map(([k, v]) => (
@@ -367,7 +433,11 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                               onBlur={(e) => {
                                 if ((e.target.value || null) !== s.worldTime)
                                   void run(() =>
-                                    edit({ type: "scene", ...s, worldTime: e.target.value || null }),
+                                    edit({
+                                      type: "scene",
+                                      ...s,
+                                      worldTime: e.target.value || null,
+                                    }),
                                   );
                               }}
                             />
@@ -386,6 +456,44 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
             )}
             {tab === "facts" && (
               <div className={css.stack}>
+                <h2>作品文件与来源线索</h2>
+                <p className={css.muted}>明确标记直接记录；格式线索只提示，不改变设定是否被作者确认。</p>
+                {data.documents.map((doc) => (
+                  <article key={doc.id} className={css.card}>
+                    <strong>{doc.path}</strong>
+                    <p>
+                      {roles[doc.classification?.role ?? "manuscript"]} ·{" "}
+                      {origins[doc.classification?.origin ?? "unknown"]}
+                    </p>
+                    <small>{doc.classification?.evidence.join("；")}</small>
+                    <div>
+                      {data.scenes
+                        .filter((scene) => scene.documentId === doc.id)
+                        .map((scene) => (
+                          <button
+                            className={base.link}
+                            type="button"
+                            key={scene.id}
+                            onClick={() =>
+                              void run(
+                                async () =>
+                                  setSource(
+                                    await request<Source>("scene", {
+                                      project,
+                                      scene: scene.id,
+                                    }),
+                                  ),
+                                "已读取来源",
+                              )
+                            }
+                          >
+                            {scene.title}
+                          </button>
+                        ))}
+                    </div>
+                  </article>
+                ))}
+                {source && <Evidence source={source} />}
                 {onAgent && (
                   <button
                     className={base.btn}
@@ -447,7 +555,13 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                                 disabled={busy}
                                 key={decision}
                                 onClick={() =>
-                                  void run(() => edit({ type: "decide", ids: [p.id], decision }))
+                                  void run(() =>
+                                    edit({
+                                      type: "decide",
+                                      ids: [p.id],
+                                      decision,
+                                    }),
+                                  )
                                 }
                               >
                                 {label}
@@ -460,7 +574,12 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                                 disabled={busy}
                                 onClick={() =>
                                   void run(
-                                    () => edit({ type: "decide", ids: [p.id], decision: "undo" }),
+                                    () =>
+                                      edit({
+                                        type: "decide",
+                                        ids: [p.id],
+                                        decision: "undo",
+                                      }),
                                     "已撤销",
                                   )
                                 }
@@ -484,7 +603,10 @@ export function NovelPage({ request, onAgent }: { request: Request; onAgent?: Ag
                       checked={data.writingMode === "writing"}
                       onChange={(e) =>
                         void run(() =>
-                          edit({ type: "mode", mode: e.target.checked ? "writing" : "read_only" }),
+                          edit({
+                            type: "mode",
+                            mode: e.target.checked ? "writing" : "read_only",
+                          }),
                         )
                       }
                     />

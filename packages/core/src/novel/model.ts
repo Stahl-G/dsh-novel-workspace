@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { NovelClassification } from "./classify.js";
 
 export const canon = z.enum(["confirmed", "tentative", "ai_inference", "excerpt"]);
 export const anchorSchema = z.object({
@@ -37,6 +38,7 @@ export interface Scene {
   worldTime: string | null;
 }
 export interface Document {
+  classification?: NovelClassification;
   id: string;
   path: string;
   hash: string;
@@ -79,7 +81,13 @@ export interface NovelData {
   }[];
   facts: Fact[];
   proposals: Proposal[];
-  sessions: { id: string; scene: string; completed: string; next: string; savedAt: string }[];
+  sessions: {
+    id: string;
+    scene: string;
+    completed: string;
+    next: string;
+    savedAt: string;
+  }[];
 }
 export interface NovelView {
   revision: string;

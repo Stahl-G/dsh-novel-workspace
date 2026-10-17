@@ -7250,7 +7250,7 @@ var require_public_api = __commonJS({
         return docs;
       return Object.assign([], { empty: true }, composer$1.streamInfo());
     }
-    function parseDocument2(source, options = {}) {
+    function parseDocument3(source, options = {}) {
       const { lineCounter: lineCounter2, prettyErrors } = parseOptions(options);
       const parser$1 = new parser.Parser(lineCounter2?.addNewLine);
       const composer$1 = new composer.Composer(options);
@@ -7276,7 +7276,7 @@ var require_public_api = __commonJS({
       } else if (options === void 0 && reviver && typeof reviver === "object") {
         options = reviver;
       }
-      const doc = parseDocument2(src, options);
+      const doc = parseDocument3(src, options);
       if (!doc)
         return null;
       doc.warnings.forEach((warning) => log.warn(doc.options.logLevel, warning));
@@ -7312,7 +7312,7 @@ var require_public_api = __commonJS({
     }
     exports.parse = parse5;
     exports.parseAllDocuments = parseAllDocuments;
-    exports.parseDocument = parseDocument2;
+    exports.parseDocument = parseDocument3;
     exports.stringify = stringify3;
   }
 });
@@ -17270,7 +17270,7 @@ var require_saxes = __commonJS({
 // src/index.ts
 import { Service } from "@deepseek-ai/cordis";
 
-// ../../../kaitu-novel/packages/core/dist/assets.js
+// ../core/dist/assets.js
 import { existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -17292,7 +17292,7 @@ function assetsRoot() {
 }
 var schemasDir = () => join(assetsRoot(), "schemas");
 
-// ../../../kaitu-novel/packages/core/dist/frontmatter.js
+// ../core/dist/frontmatter.js
 var import_yaml = __toESM(require_dist(), 1);
 var FM = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/;
 function parseFrontmatter(text2) {
@@ -17303,7 +17303,7 @@ function parseFrontmatter(text2) {
   return { data, body: m[2] ?? "" };
 }
 
-// ../../../kaitu-novel/packages/core/dist/errors.js
+// ../core/dist/errors.js
 var KaituError = class extends Error {
   code;
   constructor(message, code) {
@@ -37513,21 +37513,21 @@ function unzipSync(data, opts) {
   return files;
 }
 
-// ../../../kaitu-novel/packages/core/dist/chat-search.js
+// ../core/dist/chat-search.js
 import { DatabaseSync } from "node:sqlite";
 
-// ../../../kaitu-novel/packages/core/dist/schema.js
+// ../core/dist/schema.js
 var import_ajv_formats = __toESM(require_dist2(), 1);
 var import__ = __toESM(require__(), 1);
 import { existsSync as existsSync4, readFileSync as readFileSync3, readdirSync as readdirSync2 } from "node:fs";
 import { dirname as dirname3, join as join4 } from "node:path";
 
-// ../../../kaitu-novel/packages/core/dist/sync-files.js
+// ../core/dist/sync-files.js
 import childProcess from "node:child_process";
 import { existsSync as existsSync3, lstatSync, readFileSync as readFileSync2, readdirSync } from "node:fs";
 import { basename, dirname as dirname2, join as join3 } from "node:path";
 
-// ../../../kaitu-novel/packages/core/dist/sync-location.js
+// ../core/dist/sync-location.js
 import { existsSync as existsSync2, readFileSync, realpathSync } from "node:fs";
 import { homedir } from "node:os";
 import { isAbsolute, join as join2, relative, resolve, sep } from "node:path";
@@ -37544,7 +37544,7 @@ function isICloudPath(root, home = process.env.HOME || homedir()) {
   return rel === "" || rel !== ".." && !rel.startsWith(`..${sep}`) && !isAbsolute(rel);
 }
 
-// ../../../kaitu-novel/packages/core/dist/sync-files.js
+// ../core/dist/sync-files.js
 function fileStat(path) {
   try {
     return lstatSync(path);
@@ -37597,7 +37597,7 @@ function readWorkspaceConfig(root, icloud = isICloudPath(root)) {
   return existsSync3(path) ? JSON.parse(readFileSync2(path, "utf8")) : {};
 }
 
-// ../../../kaitu-novel/packages/core/dist/schema.js
+// ../core/dist/schema.js
 var addFormats = import_ajv_formats.default.default;
 var SCHEMA_BASE = "https://kaitu.local/schemas/";
 var SchemaRegistry = class {
@@ -37659,7 +37659,7 @@ function schemas() {
   return shared;
 }
 
-// ../../../kaitu-novel/packages/core/dist/time.js
+// ../core/dist/time.js
 var formatters = /* @__PURE__ */ new Map();
 function partsIn(date5, timeZone) {
   let fmt = formatters.get(timeZone);
@@ -37715,21 +37715,21 @@ function localTimeToInstant(wall, timeZone) {
   return new Date(matches.length ? Math.min(...matches.map(Number)) : Math.max(...candidates.map(Number)));
 }
 
-// ../../../kaitu-novel/packages/core/dist/projects.js
+// ../core/dist/projects.js
 var import_saxes2 = __toESM(require_saxes(), 1);
 
-// ../../../kaitu-novel/packages/core/dist/workspace.js
+// ../core/dist/workspace.js
 import { appendFileSync, existsSync as existsSync5, lstatSync as lstatSync2, mkdirSync, readFileSync as readFileSync4, realpathSync as realpathSync2, renameSync, writeFileSync } from "node:fs";
 import { basename as basename3, dirname as dirname5, isAbsolute as isAbsolute3, join as join6, relative as relative3, resolve as resolve3, sep as sep2 } from "node:path";
 
-// ../../../kaitu-novel/packages/core/dist/drive.js
+// ../core/dist/drive.js
 import { homedir as homedir2 } from "node:os";
 import { basename as basename2, dirname as dirname4, isAbsolute as isAbsolute2, join as join5, relative as relative2, resolve as resolve2 } from "node:path";
 
-// ../../../kaitu-novel/packages/core/dist/init.js
+// ../core/dist/init.js
 var import_yaml2 = __toESM(require_dist(), 1);
 
-// ../../../kaitu-novel/packages/core/dist/importers/apple-health.js
+// ../core/dist/importers/apple-health.js
 var import_saxes = __toESM(require_saxes(), 1);
 
 // ../../../kaitu-novel/node_modules/.pnpm/ical.js@2.2.1/node_modules/ical.js/dist/ical.js
@@ -45102,7 +45102,7 @@ var ICALmodule = {
   helpers
 };
 
-// ../../../kaitu-novel/packages/core/dist/importers/ics.js
+// ../core/dist/importers/ics.js
 var IanaZone = class extends ICALmodule.Timezone {
   constructor(zone) {
     super({ tzid: zone });
@@ -45116,7 +45116,7 @@ var IanaZone = class extends ICALmodule.Timezone {
   }
 };
 
-// ../../../kaitu-novel/packages/core/dist/drive.js
+// ../core/dist/drive.js
 function localStateRoot(env = process.env) {
   const home = env.HOME || homedir2();
   if (process.platform === "darwin")
@@ -45126,7 +45126,7 @@ function localStateRoot(env = process.env) {
   return join5(env.XDG_STATE_HOME || join5(home, ".local/state"), "kaitu");
 }
 
-// ../../../kaitu-novel/packages/core/dist/workspace.js
+// ../core/dist/workspace.js
 var STATE_DIR = ".kaitu";
 function stateDirectory(root, icloud) {
   const state = readWorkspaceConfig(root, icloud).state_dir;
@@ -45138,7 +45138,7 @@ function stateDirectory(root, icloud) {
   return state ?? join6(root, STATE_DIR);
 }
 
-// ../../../kaitu-novel/packages/core/dist/projects.js
+// ../core/dist/projects.js
 function slugCheck(slug) {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || ["data", "projects"].includes(slug)) {
     throw new KaituError("\u9879\u76EE slug \u4E0D\u5408\u6CD5", "BAD_ARGS");
@@ -45192,7 +45192,7 @@ function docxText(bytes) {
   return text2;
 }
 
-// ../../../kaitu-novel/packages/core/dist/onboarding.js
+// ../core/dist/onboarding.js
 var onboardingSetupSchema = external_exports.discriminatedUnion("source", [
   external_exports.object({
     source: external_exports.literal("projects"),
@@ -45213,10 +45213,10 @@ var onboardingSetupSchema = external_exports.discriminatedUnion("source", [
   }).strict()
 ]);
 
-// ../../../kaitu-novel/packages/core/dist/photos.js
+// ../core/dist/photos.js
 var MAX_PHOTO_BYTES = 25 * 1024 * 1024;
 
-// ../../../kaitu-novel/packages/core/dist/exploration-contract.js
+// ../core/dist/exploration-contract.js
 var text = external_exports.string().trim().min(1).max(1e5);
 var reference = external_exports.object({ kind: external_exports.enum(["project", "decision", "source"]), ref: text }).strict();
 var direction = external_exports.object({
@@ -45275,18 +45275,23 @@ var explorationCommandSchema = external_exports.discriminatedUnion("operation", 
   external_exports.object({ operation: external_exports.literal("update_note"), ...revision, data: note.partial() }).strict()
 ]);
 
-// ../../../kaitu-novel/packages/core/dist/finance/providers/ibkr.js
+// ../core/dist/finance/providers/ibkr.js
 var import_saxes3 = __toESM(require_saxes(), 1);
 
-// ../../../kaitu-novel/packages/core/dist/calendar.js
+// ../core/dist/calendar.js
 var interval = 15 * 60 * 1e3;
 
-// ../../../kaitu-novel/packages/core/dist/novel/index.js
+// ../core/dist/novel/index.js
 import fs2 from "node:fs";
 import { isAbsolute as isAbsolute4, join as join8, matchesGlob, relative as relative4, resolve as resolve4, sep as sep3 } from "node:path";
 
-// ../../../kaitu-novel/packages/core/dist/novel/model.js
-var canon = external_exports.enum(["confirmed", "tentative", "ai_inference", "excerpt"]);
+// ../core/dist/novel/model.js
+var canon = external_exports.enum([
+  "confirmed",
+  "tentative",
+  "ai_inference",
+  "excerpt"
+]);
 var anchorSchema = external_exports.object({
   documentId: external_exports.string(),
   path: external_exports.string(),
@@ -45306,7 +45311,7 @@ var factSchema = external_exports.object({
   confirmedAt: external_exports.string().optional()
 });
 
-// ../../../kaitu-novel/packages/core/dist/novel/store.js
+// ../core/dist/novel/store.js
 import { createHash, randomUUID } from "node:crypto";
 import fs from "node:fs";
 import { dirname as dirname6, join as join7 } from "node:path";
@@ -45343,7 +45348,82 @@ function changeStore(file3, initial2, revision2, edit) {
   }
 }
 
-// ../../../kaitu-novel/packages/core/dist/novel/index.js
+// ../core/dist/novel/classify.js
+var import_yaml3 = __toESM(require_dist(), 1);
+function classifyNovelDocument(path, text2) {
+  const result = {
+    role: "manuscript",
+    origin: "unknown",
+    evidence: []
+  };
+  const header = text2.slice(0, 3e3);
+  const front = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text2);
+  const parsed = front ? (0, import_yaml3.parseDocument)(front[1] ?? "") : null;
+  const meta3 = parsed && !parsed.errors.length ? parsed.toJS() : null;
+  const declared = meta3 && typeof meta3 === "object" ? meta3 : {};
+  const role = String(declared.role ?? declared.document_type ?? declared.type ?? "");
+  const location = `${path}
+${header.split("\n").find((line) => /^#\s/.test(line)) ?? ""}`;
+  const title = `${path.split(/[/\\]/).at(-1)}
+${header.split("\n").find((line) => /^#\s/.test(line)) ?? ""}`;
+  if (/候选|AI[ _-]?草稿|candidate/i.test(location))
+    result.role = "candidate";
+  else if (/(?:^|[/\\])(?:README|AGENTS|DESIGN)\.(md|txt)$/i.test(path))
+    result.role = "notes";
+  else if (/世界书|设定集|设定|规则|worldbook|world.?bible/i.test(title))
+    result.role = "setting";
+  else if (/大纲|总纲|分镜|outline/i.test(title))
+    result.role = "outline";
+  else if (/参考资料|外部来源|reference/i.test(location))
+    result.role = "reference";
+  else if (/笔记|修改意见|修改建议|工作单|修订说明|写作提示/i.test(location))
+    result.role = "notes";
+  else if (/大纲|设定|worldbook/i.test(path))
+    result.role = "setting";
+  const roles = {
+    manuscript: "manuscript",
+    \u6B63\u6587: "manuscript",
+    setting: "setting",
+    \u4E16\u754C\u4E66: "setting",
+    outline: "outline",
+    \u5927\u7EB2: "outline",
+    notes: "notes",
+    reference: "reference",
+    candidate: "candidate"
+  };
+  if (roles[role])
+    result.role = roles[role];
+  result.evidence.push(roles[role] ? "\u6587\u4EF6\u5143\u6570\u636E\u58F0\u660E\u7528\u9014" : `\u76EE\u5F55\u6216\u6807\u9898\u8BC6\u522B\uFF1A${result.role}`);
+  const origin = String(declared.origin ?? declared.generated_by ?? declared.author ?? "");
+  if (/^(human|author|人工|作者|手写)$/i.test(origin) || /作者手写|人工撰写/.test(path)) {
+    result.origin = "author";
+    result.evidence.push("\u660E\u786E\u7684\u4EBA\u5DE5\u6765\u6E90\u6807\u8BB0");
+  } else if (/^(ai|agent|ChatGPT|Claude|Gemini|DeepSeek)(?:[ -].*)?$/i.test(origin) || /(?:由\s*(?:AI|ChatGPT|Claude|Gemini|DeepSeek)\s*(?:生成|撰写)|(?:来源|生成工具|生成方式)[:：]\s*(?:AI|ChatGPT|Claude|Gemini|DeepSeek)|(?:^|\n)\s*(?:>\s*)?(?:AI[ _-]?生成|AI[ _-]?候选))/im.test(header)) {
+    result.origin = "ai";
+    result.evidence.push("\u660E\u786E\u7684 AI \u751F\u6210\u6807\u8BB0");
+  } else {
+    const bold = (text2.match(/\*\*[^*\n]+\*\*/g) ?? []).length;
+    const separators = (text2.match(/^\s*(?:\*\s*){3,}$|^\s*-{3,}\s*$/gm) ?? []).length;
+    const headings = (text2.match(/^#{1,6}\s/gm) ?? []).length;
+    const wrapper = /以下(?:是|为).{0,35}(?:整理|建议|方案|设定|版本)|仅供参考|免责声明|作为(?:一个|一名)?(?:AI|人工智能)|这份.{0,12}(?:采用什么|不保证什么)/.test(header);
+    const evidence = [];
+    if (bold >= 12)
+      evidence.push(`\u5BC6\u96C6\u52A0\u7C97\uFF08${bold}\u5904\uFF09`);
+    if (separators >= 3)
+      evidence.push(`\u91CD\u590D\u5206\u9694\u7EBF\uFF08${separators}\u5904\uFF09`);
+    if (headings >= 6)
+      evidence.push(`\u6A21\u677F\u5F0F\u591A\u7EA7\u6807\u9898\uFF08${headings}\u5904\uFF09`);
+    if (wrapper)
+      evidence.push("\u8BF4\u660E\u3001\u5EFA\u8BAE\u6216\u514D\u8D23\u58F0\u660E\u5F0F\u5F00\u573A");
+    if (evidence.length >= 2 && (bold >= 12 || wrapper)) {
+      result.origin = "likely_ai";
+      result.evidence.push(...evidence);
+    }
+  }
+  return result;
+}
+
+// ../core/dist/novel/index.js
 var inside = (root, path) => path === root || path.startsWith(`${root}${sep3}`);
 var initial = () => {
   throw new Error("\u8BF7\u5148\u5173\u8054\u5C0F\u8BF4\u76EE\u5F55");
@@ -45382,7 +45462,12 @@ function readSource(data, path) {
     throw new Error("\u6587\u4EF6\u8D85\u8FC7 1 MB\uFF0C\u5DF2\u8DF3\u8FC7");
   const bytes = fs2.readFileSync(target);
   const text2 = /\.docx$/i.test(path) ? docxText(bytes) : new TextDecoder("utf-8", { fatal: true }).decode(bytes);
-  return { text: text2, hash: hash2(bytes), modified: stat.mtime.toISOString(), identity: `${stat.dev}:${stat.ino}` };
+  return {
+    text: text2,
+    hash: hash2(bytes),
+    modified: stat.mtime.toISOString(),
+    identity: `${stat.dev}:${stat.ino}`
+  };
 }
 function countNovelText(text2) {
   const plain = text2.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, "").replace(/^\s*(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\s*\1\s*$/gm, "").replace(/!\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/<[^>]*>/g, "").replace(/^[\s#>*+\-\d.)]+/gm, "").replace(/[`*_~]/g, "");
@@ -45397,7 +45482,9 @@ function scan(data) {
   const issues = [];
   const paths = [];
   const walk = (dir) => {
-    for (const entry of fs2.readdirSync(join8(data.sourceRoot, dir), { withFileTypes: true })) {
+    for (const entry of fs2.readdirSync(join8(data.sourceRoot, dir), {
+      withFileTypes: true
+    })) {
       const path = join8(dir, entry.name);
       if (entry.name.startsWith(".") || data.exclude.some((glob) => matchesGlob(path, glob)))
         continue;
@@ -45432,6 +45519,7 @@ function scan(data) {
         path,
         hash: source.hash,
         identity: source.identity,
+        classification: classifyNovelDocument(path, source.text),
         modified: source.modified
       });
       const body = source.text.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, (match) => "\n".repeat(match.split("\n").length - 1));
@@ -45445,10 +45533,21 @@ function scan(data) {
         return fence ? "" : line;
       }).join("\n");
       const headings = [...masked.matchAll(/^#{1,6}\s+(.+)$/gm)];
-      const starts = data.mode === "headings" && headings.length ? headings.map((match) => ({ title: match[1].trim(), offset: match.index })) : [{ title: headings[0]?.[1]?.trim() ?? path.replace(/\.(md|txt|docx)$/i, ""), offset: 0 }];
+      const starts = data.mode === "headings" && headings.length ? headings.map((match) => ({
+        title: match[1].trim(),
+        offset: match.index
+      })) : [
+        {
+          title: headings[0]?.[1]?.trim() ?? path.replace(/\.(md|txt|docx)$/i, ""),
+          offset: 0
+        }
+      ];
       const first = starts[0];
       if (data.mode === "headings" && first && first.offset > 0 && body.slice(0, first.offset).trim())
-        starts.unshift({ title: path.replace(/\.(md|txt|docx)$/i, ""), offset: 0 });
+        starts.unshift({
+          title: path.replace(/\.(md|txt|docx)$/i, ""),
+          offset: 0
+        });
       const occurrences = /* @__PURE__ */ new Map();
       for (const [i2, start] of starts.entries()) {
         const n = occurrences.get(start.title) ?? 0;
@@ -45468,7 +45567,7 @@ function scan(data) {
           ...countNovelText(body.slice(start.offset, starts[i2 + 1]?.offset)),
           writtenAt: source.modified,
           order: old?.order ?? data.scenes.length + scenes.length,
-          status: old?.status ?? "planned",
+          status: old?.status ?? (countNovelText(body.slice(start.offset, starts[i2 + 1]?.offset)).words ? "draft" : "planned"),
           worldTime: old?.worldTime ?? null
         });
       }
@@ -45531,6 +45630,14 @@ function novelScene(ws, project, sceneId) {
 }
 function novelView(ws, project) {
   const { value: data, revision: revision2 } = readNovel(ws, project);
+  for (const doc of data.documents) {
+    if (!doc.classification) {
+      try {
+        doc.classification = classifyNovelDocument(doc.path, readSource(data, doc.path).text);
+      } catch {
+      }
+    }
+  }
   return {
     data,
     revision: revision2,
@@ -45542,8 +45649,14 @@ var canonRevision = (data) => hash2(JSON.stringify(data.facts));
 function editNovel(ws, project, revision2, input2) {
   const command = external_exports.discriminatedUnion("type", [
     external_exports.object({ type: external_exports.literal("refresh") }),
-    external_exports.object({ type: external_exports.literal("mode"), mode: external_exports.enum(["read_only", "writing"]) }),
-    external_exports.object({ type: external_exports.literal("include"), paths: external_exports.array(external_exports.string()).min(1) }),
+    external_exports.object({
+      type: external_exports.literal("mode"),
+      mode: external_exports.enum(["read_only", "writing"])
+    }),
+    external_exports.object({
+      type: external_exports.literal("include"),
+      paths: external_exports.array(external_exports.string()).min(1)
+    }),
     external_exports.object({ type: external_exports.literal("pin"), value: external_exports.boolean() }),
     external_exports.object({
       type: external_exports.literal("scene"),
@@ -45579,13 +45692,21 @@ function editNovel(ws, project, revision2, input2) {
       const scene = data.scenes.find((item) => item.id === command.id);
       if (!scene)
         throw new Error("\u627E\u4E0D\u5230\u573A\u666F");
-      Object.assign(scene, { status: command.status, order: command.order, worldTime: command.worldTime });
+      Object.assign(scene, {
+        status: command.status,
+        order: command.order,
+        worldTime: command.worldTime
+      });
       data.scenes.sort((a, b) => a.order - b.order);
     }
     if (command.type === "session") {
       if (!data.scenes.some((scene) => scene.id === command.scene))
         throw new Error("\u627E\u4E0D\u5230\u573A\u666F");
-      data.sessions.push({ ...command, id: id(), savedAt: (/* @__PURE__ */ new Date()).toISOString() });
+      data.sessions.push({
+        ...command,
+        id: id(),
+        savedAt: (/* @__PURE__ */ new Date()).toISOString()
+      });
     }
     if (command.type === "decide") {
       const base = canonRevision(data);
@@ -45623,7 +45744,7 @@ function editNovel(ws, project, revision2, input2) {
   });
 }
 
-// ../../../kaitu-novel/packages/core/dist/novel/time.js
+// ../core/dist/novel/time.js
 function dateValue(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value))
     return null;
@@ -45631,10 +45752,10 @@ function dateValue(value) {
   return Number.isFinite(time3) && new Date(time3).toISOString().slice(0, 10) === value ? time3 : null;
 }
 
-// ../../../kaitu-novel/packages/core/dist/novel/science.js
+// ../core/dist/novel/science.js
 import { join as join9 } from "node:path";
 
-// ../../../kaitu-novel/packages/core/dist/novel/reference.js
+// ../core/dist/novel/reference.js
 var moonGravity = {
   id: "nasa-moon-surface-gravity",
   value: 1.62,
@@ -45655,7 +45776,7 @@ function novelScienceReference(topic) {
   } : { type: "information_missing", error: "\u672C\u5730\u8D44\u6599\u8868\u6682\u672A\u6536\u5F55\u6B64\u9879" };
 }
 
-// ../../../kaitu-novel/packages/core/dist/novel/science.js
+// ../core/dist/novel/science.js
 var units = {
   m: { factor: 1, dimension: "L" },
   km: { factor: 1e3, dimension: "L" },

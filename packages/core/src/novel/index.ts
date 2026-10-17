@@ -6,6 +6,16 @@ import { type Workspace, stateDirectory } from "../workspace.js";
 import { type Anchor, type Document, type Fact, type NovelData, type Scene, factSchema } from "./model.js";
 import { changeStore, hash, id, readStore } from "./store.js";
 export type * from "./model.js";
+import { classifyNovelDocument } from "./classify.js";
+export { classifyNovelDocument } from "./classify.js";
+export type { NovelClassification } from "./classify.js";
+
+export function manuscriptScenes(data: NovelData) {
+  return data.scenes.filter((scene) => {
+    const role = data.documents.find((doc) => doc.id === scene.documentId)?.classification?.role;
+    return !role || role === "manuscript";
+  });
+}
 
 export const novelContractVersion = 1;
 const inside = (root: string, path: string) => path === root || path.startsWith(`${root}${sep}`);
@@ -24,14 +34,14 @@ export function readNovel(ws: Workspace, project: string) {
 export function novelProjects(ws: Workspace) {
   return listProjects(ws).map((project) => {
     const file = novelFile(ws, project.slug);
-    const novel = fs.existsSync(file) ? readNovel(ws, project.slug).value : null;
+    const novel = fs.existsSync(file) ? novelView(ws, project.slug).data : null;
     return {
       slug: project.slug,
       title: project.title,
       linked: !!novel,
       pinned: novel?.pinned ?? false,
-      words: novel?.scenes.reduce((sum, scene) => sum + scene.words, 0) ?? 0,
-      scenes: novel?.scenes.length ?? 0,
+      words: novel ? manuscriptScenes(novel).reduce((sum, scene) => sum + scene.words, 0) : 0,
+      scenes: novel ? manuscriptScenes(novel).length : 0,
     };
   });
 }
@@ -109,7 +119,12 @@ function readSource(data: Pick<NovelData, "sourceRoot" | "include" | "exclude">,
   const text = /\.docx$/i.test(path)
     ? docxText(bytes)
     : new TextDecoder("utf-8", { fatal: true }).decode(bytes);
-  return { text, hash: hash(bytes), modified: stat.mtime.toISOString(), identity: `${stat.dev}:${stat.ino}` };
+  return {
+    text,
+    hash: hash(bytes),
+    modified: stat.mtime.toISOString(),
+    identity: `${stat.dev}:${stat.ino}`,
+  };
 }
 export function countNovelText(text: string) {
   const plain = text
@@ -131,7 +146,9 @@ function scan(data: NovelData) {
   const issues: string[] = [];
   const paths: string[] = [];
   const walk = (dir: string) => {
-    for (const entry of fs.readdirSync(join(data.sourceRoot, dir), { withFileTypes: true })) {
+    for (const entry of fs.readdirSync(join(data.sourceRoot, dir), {
+      withFileTypes: true,
+    })) {
       const path = join(dir, entry.name);
       if (entry.name.startsWith(".") || data.exclude.some((glob) => matchesGlob(path, glob))) continue;
       const relevant = data.include.some((glob) => {
@@ -168,6 +185,7 @@ function scan(data: NovelData) {
         path,
         hash: source.hash,
         identity: source.identity,
+        classification: classifyNovelDocument(path, source.text),
         modified: source.modified,
       });
       const body = source.text.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, (match) =>
@@ -189,11 +207,22 @@ function scan(data: NovelData) {
       const headings = [...masked.matchAll(/^#{1,6}\s+(.+)$/gm)];
       const starts =
         data.mode === "headings" && headings.length
-          ? headings.map((match) => ({ title: (match[1] as string).trim(), offset: match.index }))
-          : [{ title: headings[0]?.[1]?.trim() ?? path.replace(/\.(md|txt|docx)$/i, ""), offset: 0 }];
+          ? headings.map((match) => ({
+              title: (match[1] as string).trim(),
+              offset: match.index,
+            }))
+          : [
+              {
+                title: headings[0]?.[1]?.trim() ?? path.replace(/\.(md|txt|docx)$/i, ""),
+                offset: 0,
+              },
+            ];
       const first = starts[0];
       if (data.mode === "headings" && first && first.offset > 0 && body.slice(0, first.offset).trim())
-        starts.unshift({ title: path.replace(/\.(md|txt|docx)$/i, ""), offset: 0 });
+        starts.unshift({
+          title: path.replace(/\.(md|txt|docx)$/i, ""),
+          offset: 0,
+        });
       const occurrences = new Map<string, number>();
       for (const [i, start] of starts.entries()) {
         const n = occurrences.get(start.title) ?? 0;
@@ -214,7 +243,9 @@ function scan(data: NovelData) {
           ...countNovelText(body.slice(start.offset, starts[i + 1]?.offset)),
           writtenAt: source.modified,
           order: old?.order ?? data.scenes.length + scenes.length,
-          status: old?.status ?? "planned",
+          status:
+            old?.status ??
+            (countNovelText(body.slice(start.offset, starts[i + 1]?.offset)).words ? "draft" : "planned"),
           worldTime: old?.worldTime ?? null,
         });
       }
@@ -289,6 +320,15 @@ export function novelScene(ws: Workspace, project: string, sceneId: string) {
 }
 export function novelView(ws: Workspace, project: string) {
   const { value: data, revision } = readNovel(ws, project);
+  for (const doc of data.documents) {
+    if (!doc.classification) {
+      try {
+        doc.classification = classifyNovelDocument(doc.path, readSource(data, doc.path).text);
+      } catch {
+        /* Existing missing-source reporting handles unavailable documents. */
+      }
+    }
+  }
   return {
     data,
     revision,
@@ -329,8 +369,14 @@ export function editNovel(ws: Workspace, project: string, revision: string, inpu
   const command = z
     .discriminatedUnion("type", [
       z.object({ type: z.literal("refresh") }),
-      z.object({ type: z.literal("mode"), mode: z.enum(["read_only", "writing"]) }),
-      z.object({ type: z.literal("include"), paths: z.array(z.string()).min(1) }),
+      z.object({
+        type: z.literal("mode"),
+        mode: z.enum(["read_only", "writing"]),
+      }),
+      z.object({
+        type: z.literal("include"),
+        paths: z.array(z.string()).min(1),
+      }),
       z.object({ type: z.literal("pin"), value: z.boolean() }),
       z.object({
         type: z.literal("scene"),
@@ -363,12 +409,20 @@ export function editNovel(ws: Workspace, project: string, revision: string, inpu
     if (command.type === "scene") {
       const scene = data.scenes.find((item) => item.id === command.id);
       if (!scene) throw new Error("找不到场景");
-      Object.assign(scene, { status: command.status, order: command.order, worldTime: command.worldTime });
+      Object.assign(scene, {
+        status: command.status,
+        order: command.order,
+        worldTime: command.worldTime,
+      });
       data.scenes.sort((a, b) => a.order - b.order);
     }
     if (command.type === "session") {
       if (!data.scenes.some((scene) => scene.id === command.scene)) throw new Error("找不到场景");
-      data.sessions.push({ ...command, id: id(), savedAt: new Date().toISOString() });
+      data.sessions.push({
+        ...command,
+        id: id(),
+        savedAt: new Date().toISOString(),
+      });
     }
     if (command.type === "decide") {
       const base = canonRevision(data);
@@ -414,7 +468,11 @@ function linkedSource(ws: Workspace, project: string): Pick<NovelData, "sourceRo
     (link) => link.role === "manuscript" || link.role === "folder",
   )?.path;
   if (!root) throw new Error("项目尚未关联作品目录");
-  return { sourceRoot: fs.realpathSync(root), include: ["**/*.md", "**/*.txt", "**/*.docx"], exclude: [] };
+  return {
+    sourceRoot: fs.realpathSync(root),
+    include: ["**/*.md", "**/*.txt", "**/*.docx"],
+    exclude: [],
+  };
 }
 export function connectNovelAutomatically(ws: Workspace, project: string) {
   if (fs.existsSync(novelFile(ws, project))) return readNovel(ws, project).value;
@@ -476,7 +534,9 @@ export function applyNovelDraft(
     const text =
       operation === "append" ? `${before}\n\n${draft.text}\n` : (draft.applied as { before: string }).before;
     if (operation === "append") {
-      fs.mkdirSync(join(data.managedRoot, "source-backups"), { recursive: true });
+      fs.mkdirSync(join(data.managedRoot, "source-backups"), {
+        recursive: true,
+      });
       fs.writeFileSync(
         join(data.managedRoot, "source-backups", `${draft.id}.json`),
         JSON.stringify({ path: scene.path, hash: hash(before), text: before }),

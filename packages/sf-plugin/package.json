@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "license": "MIT",
   "devDependencies": {
@@ -40,7 +40,14 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "lib/types", "lib/typert.host.js", "lib/typert.remote-client.js", "README.md", "LICENSE"],
+  "files": [
+    "dist",
+    "lib/types",
+    "lib/typert.host.js",
+    "lib/typert.remote-client.js",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/Stahl-G/rensheng-kaitu.git",

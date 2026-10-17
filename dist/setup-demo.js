@@ -7250,7 +7250,7 @@ var require_public_api = __commonJS({
         return docs;
       return Object.assign([], { empty: true }, composer$1.streamInfo());
     }
-    function parseDocument2(source2, options = {}) {
+    function parseDocument3(source2, options = {}) {
       const { lineCounter: lineCounter2, prettyErrors } = parseOptions(options);
       const parser$1 = new parser.Parser(lineCounter2?.addNewLine);
       const composer$1 = new composer.Composer(options);
@@ -7276,7 +7276,7 @@ var require_public_api = __commonJS({
       } else if (options === void 0 && reviver && typeof reviver === "object") {
         options = reviver;
       }
-      const doc = parseDocument2(src, options);
+      const doc = parseDocument3(src, options);
       if (!doc)
         return null;
       doc.warnings.forEach((warning) => log.warn(doc.options.logLevel, warning));
@@ -7312,7 +7312,7 @@ var require_public_api = __commonJS({
     }
     exports.parse = parse5;
     exports.parseAllDocuments = parseAllDocuments;
-    exports.parseDocument = parseDocument2;
+    exports.parseDocument = parseDocument3;
     exports.stringify = stringify3;
   }
 });
@@ -68497,10 +68497,22 @@ var interval = 15 * 60 * 1e3;
 
 // packages/core/src/novel/index.ts
 import fs5 from "node:fs";
-import { isAbsolute as isAbsolute6, join as join20, matchesGlob as matchesGlob2, relative as relative7, resolve as resolve5, sep as sep4 } from "node:path";
+import {
+  isAbsolute as isAbsolute6,
+  join as join20,
+  matchesGlob as matchesGlob2,
+  relative as relative7,
+  resolve as resolve5,
+  sep as sep4
+} from "node:path";
 
 // packages/core/src/novel/model.ts
-var canon = external_exports.enum(["confirmed", "tentative", "ai_inference", "excerpt"]);
+var canon = external_exports.enum([
+  "confirmed",
+  "tentative",
+  "ai_inference",
+  "excerpt"
+]);
 var anchorSchema = external_exports.object({
   documentId: external_exports.string(),
   path: external_exports.string(),
@@ -68555,6 +68567,83 @@ function changeStore(file2, initial, revision2, edit) {
   }
 }
 
+// packages/core/src/novel/classify.ts
+var import_yaml3 = __toESM(require_dist(), 1);
+function classifyNovelDocument(path, text2) {
+  const result = {
+    role: "manuscript",
+    origin: "unknown",
+    evidence: []
+  };
+  const header = text2.slice(0, 3e3);
+  const front = /^---\r?\n([\s\S]*?)\r?\n---/.exec(text2);
+  const parsed = front ? (0, import_yaml3.parseDocument)(front[1] ?? "") : null;
+  const meta3 = parsed && !parsed.errors.length ? parsed.toJS() : null;
+  const declared = meta3 && typeof meta3 === "object" ? meta3 : {};
+  const role = String(
+    declared.role ?? declared.document_type ?? declared.type ?? ""
+  );
+  const location = `${path}
+${header.split("\n").find((line) => /^#\s/.test(line)) ?? ""}`;
+  const title = `${path.split(/[/\\]/).at(-1)}
+${header.split("\n").find((line) => /^#\s/.test(line)) ?? ""}`;
+  if (/候选|AI[ _-]?草稿|candidate/i.test(location)) result.role = "candidate";
+  else if (/(?:^|[/\\])(?:README|AGENTS|DESIGN)\.(md|txt)$/i.test(path))
+    result.role = "notes";
+  else if (/世界书|设定集|设定|规则|worldbook|world.?bible/i.test(title))
+    result.role = "setting";
+  else if (/大纲|总纲|分镜|outline/i.test(title)) result.role = "outline";
+  else if (/参考资料|外部来源|reference/i.test(location))
+    result.role = "reference";
+  else if (/笔记|修改意见|修改建议|工作单|修订说明|写作提示/i.test(location))
+    result.role = "notes";
+  else if (/大纲|设定|worldbook/i.test(path)) result.role = "setting";
+  const roles = {
+    manuscript: "manuscript",
+    \u6B63\u6587: "manuscript",
+    setting: "setting",
+    \u4E16\u754C\u4E66: "setting",
+    outline: "outline",
+    \u5927\u7EB2: "outline",
+    notes: "notes",
+    reference: "reference",
+    candidate: "candidate"
+  };
+  if (roles[role]) result.role = roles[role];
+  result.evidence.push(
+    roles[role] ? "\u6587\u4EF6\u5143\u6570\u636E\u58F0\u660E\u7528\u9014" : `\u76EE\u5F55\u6216\u6807\u9898\u8BC6\u522B\uFF1A${result.role}`
+  );
+  const origin = String(
+    declared.origin ?? declared.generated_by ?? declared.author ?? ""
+  );
+  if (/^(human|author|人工|作者|手写)$/i.test(origin) || /作者手写|人工撰写/.test(path)) {
+    result.origin = "author";
+    result.evidence.push("\u660E\u786E\u7684\u4EBA\u5DE5\u6765\u6E90\u6807\u8BB0");
+  } else if (/^(ai|agent|ChatGPT|Claude|Gemini|DeepSeek)(?:[ -].*)?$/i.test(origin) || /(?:由\s*(?:AI|ChatGPT|Claude|Gemini|DeepSeek)\s*(?:生成|撰写)|(?:来源|生成工具|生成方式)[:：]\s*(?:AI|ChatGPT|Claude|Gemini|DeepSeek)|(?:^|\n)\s*(?:>\s*)?(?:AI[ _-]?生成|AI[ _-]?候选))/im.test(
+    header
+  )) {
+    result.origin = "ai";
+    result.evidence.push("\u660E\u786E\u7684 AI \u751F\u6210\u6807\u8BB0");
+  } else {
+    const bold = (text2.match(/\*\*[^*\n]+\*\*/g) ?? []).length;
+    const separators = (text2.match(/^\s*(?:\*\s*){3,}$|^\s*-{3,}\s*$/gm) ?? []).length;
+    const headings = (text2.match(/^#{1,6}\s/gm) ?? []).length;
+    const wrapper = /以下(?:是|为).{0,35}(?:整理|建议|方案|设定|版本)|仅供参考|免责声明|作为(?:一个|一名)?(?:AI|人工智能)|这份.{0,12}(?:采用什么|不保证什么)/.test(
+      header
+    );
+    const evidence = [];
+    if (bold >= 12) evidence.push(`\u5BC6\u96C6\u52A0\u7C97\uFF08${bold}\u5904\uFF09`);
+    if (separators >= 3) evidence.push(`\u91CD\u590D\u5206\u9694\u7EBF\uFF08${separators}\u5904\uFF09`);
+    if (headings >= 6) evidence.push(`\u6A21\u677F\u5F0F\u591A\u7EA7\u6807\u9898\uFF08${headings}\u5904\uFF09`);
+    if (wrapper) evidence.push("\u8BF4\u660E\u3001\u5EFA\u8BAE\u6216\u514D\u8D23\u58F0\u660E\u5F0F\u5F00\u573A");
+    if (evidence.length >= 2 && (bold >= 12 || wrapper)) {
+      result.origin = "likely_ai";
+      result.evidence.push(...evidence);
+    }
+  }
+  return result;
+}
+
 // packages/core/src/novel/index.ts
 var inside = (root2, path) => path === root2 || path.startsWith(`${root2}${sep4}`);
 function novelFile(ws2, project) {
@@ -68571,12 +68660,18 @@ function connectNovel(ws2, input2) {
     preview: external_exports.boolean().default(true)
   }).parse(input2);
   const project = readProject(ws2, options.project);
-  const linked = project.data.links.filter((link) => link.role === "manuscript" || link.role === "folder");
+  const linked = project.data.links.filter(
+    (link) => link.role === "manuscript" || link.role === "folder"
+  );
   if (!isAbsolute6(options.sourceRoot)) throw new Error("\u8BF7\u9009\u62E9\u7EDD\u5BF9\u76EE\u5F55\u8DEF\u5F84");
   const root2 = fs5.realpathSync(options.sourceRoot);
-  if (!linked.some((link) => fs5.existsSync(link.path) && fs5.realpathSync(link.path) === root2))
+  if (!linked.some(
+    (link) => fs5.existsSync(link.path) && fs5.realpathSync(link.path) === root2
+  ))
     throw new Error("\u8BF7\u5148\u5728\u73B0\u6709\u9879\u76EE\u4E2D\u5173\u8054\u8BE5\u7A3F\u4EF6\u76EE\u5F55");
-  const managed = resolve5(join20(stateDirectory(ws2.root), "novels", options.project));
+  const managed = resolve5(
+    join20(stateDirectory(ws2.root), "novels", options.project)
+  );
   if (!isAbsolute6(managed) || inside(root2, managed) || inside(managed, root2))
     throw new Error("\u8D44\u6599\u76EE\u5F55\u9700\u8981\u4E0E\u6B63\u6587\u76EE\u5F55\u5206\u5F00");
   const file2 = novelFile(ws2, options.project);
@@ -68614,10 +68709,12 @@ function sourcePath(data, path) {
   if (!inside(data.sourceRoot, target2)) throw new Error("\u5F15\u7528\u8D85\u51FA\u4F5C\u54C1\u76EE\u5F55");
   const parts = relative7(data.sourceRoot, target2).split(sep4).filter(Boolean);
   let current2 = data.sourceRoot;
-  if (fs5.realpathSync(current2) !== current2) throw new Error("\u4F5C\u54C1\u76EE\u5F55\u5DF2\u79FB\u52A8\uFF0C\u8BF7\u91CD\u65B0\u5173\u8054");
+  if (fs5.realpathSync(current2) !== current2)
+    throw new Error("\u4F5C\u54C1\u76EE\u5F55\u5DF2\u79FB\u52A8\uFF0C\u8BF7\u91CD\u65B0\u5173\u8054");
   for (const part of parts) {
     current2 = join20(current2, part);
-    if (fs5.lstatSync(current2).isSymbolicLink()) throw new Error("\u4F5C\u54C1\u7D22\u5F15\u4E0D\u8DDF\u968F\u7B26\u53F7\u94FE\u63A5");
+    if (fs5.lstatSync(current2).isSymbolicLink())
+      throw new Error("\u4F5C\u54C1\u7D22\u5F15\u4E0D\u8DDF\u968F\u7B26\u53F7\u94FE\u63A5");
   }
   if (data.exclude.some((glob) => matchesGlob2(path, glob)) || !data.include.some((glob) => matchesGlob2(path, glob)))
     throw new Error("\u5F15\u7528\u5DF2\u5728\u8BFB\u53D6\u8303\u56F4\u4E4B\u5916");
@@ -68629,7 +68726,12 @@ function readSource(data, path) {
   if (stat.size > 1024 * 1024) throw new Error("\u6587\u4EF6\u8D85\u8FC7 1 MB\uFF0C\u5DF2\u8DF3\u8FC7");
   const bytes = fs5.readFileSync(target2);
   const text2 = /\.docx$/i.test(path) ? docxText(bytes) : new TextDecoder("utf-8", { fatal: true }).decode(bytes);
-  return { text: text2, hash: hash2(bytes), modified: stat.mtime.toISOString(), identity: `${stat.dev}:${stat.ino}` };
+  return {
+    text: text2,
+    hash: hash2(bytes),
+    modified: stat.mtime.toISOString(),
+    identity: `${stat.dev}:${stat.ino}`
+  };
 }
 function countNovelText(text2) {
   const plain = text2.replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/, "").replace(/^\s*(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\s*\1\s*$/gm, "").replace(/!\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/\[([^\]]*)\]\([^)]*\)/g, "$1").replace(/<[^>]*>/g, "").replace(/^[\s#>*+\-\d.)]+/gm, "").replace(/[`*_~]/g, "");
@@ -68644,9 +68746,12 @@ function scan(data) {
   const issues = [];
   const paths = [];
   const walk2 = (dir) => {
-    for (const entry of fs5.readdirSync(join20(data.sourceRoot, dir), { withFileTypes: true })) {
+    for (const entry of fs5.readdirSync(join20(data.sourceRoot, dir), {
+      withFileTypes: true
+    })) {
       const path = join20(dir, entry.name);
-      if (entry.name.startsWith(".") || data.exclude.some((glob) => matchesGlob2(path, glob))) continue;
+      if (entry.name.startsWith(".") || data.exclude.some((glob) => matchesGlob2(path, glob)))
+        continue;
       const relevant = data.include.some((glob) => {
         const fixed = glob.split(/[*?{\[]/, 1)[0] ?? "";
         return !fixed || fixed === path || fixed.startsWith(`${path}${sep4}`) || path.startsWith(fixed);
@@ -68670,13 +68775,15 @@ function scan(data) {
         (doc) => doc.identity === source2.identity || doc.hash === source2.hash
       );
       const previous = samePath ?? (candidates.length === 1 ? candidates[0] : void 0);
-      if (!samePath && candidates.length > 1) issues.push(`${path}\uFF1A\u6587\u4EF6\u5173\u8054\u6709\u591A\u4E2A\u5019\u9009\uFF0C\u8BF7\u6838\u5BF9`);
+      if (!samePath && candidates.length > 1)
+        issues.push(`${path}\uFF1A\u6587\u4EF6\u5173\u8054\u6709\u591A\u4E2A\u5019\u9009\uFF0C\u8BF7\u6838\u5BF9`);
       const documentId = previous?.id ?? id();
       documents.push({
         id: documentId,
         path,
         hash: source2.hash,
         identity: source2.identity,
+        classification: classifyNovelDocument(path, source2.text),
         modified: source2.modified
       });
       const body = source2.text.replace(
@@ -68693,10 +68800,21 @@ function scan(data) {
         return fence ? "" : line;
       }).join("\n");
       const headings = [...masked.matchAll(/^#{1,6}\s+(.+)$/gm)];
-      const starts = data.mode === "headings" && headings.length ? headings.map((match) => ({ title: match[1].trim(), offset: match.index })) : [{ title: headings[0]?.[1]?.trim() ?? path.replace(/\.(md|txt|docx)$/i, ""), offset: 0 }];
+      const starts = data.mode === "headings" && headings.length ? headings.map((match) => ({
+        title: match[1].trim(),
+        offset: match.index
+      })) : [
+        {
+          title: headings[0]?.[1]?.trim() ?? path.replace(/\.(md|txt|docx)$/i, ""),
+          offset: 0
+        }
+      ];
       const first = starts[0];
       if (data.mode === "headings" && first && first.offset > 0 && body.slice(0, first.offset).trim())
-        starts.unshift({ title: path.replace(/\.(md|txt|docx)$/i, ""), offset: 0 });
+        starts.unshift({
+          title: path.replace(/\.(md|txt|docx)$/i, ""),
+          offset: 0
+        });
       const occurrences = /* @__PURE__ */ new Map();
       for (const [i2, start] of starts.entries()) {
         const n = occurrences.get(start.title) ?? 0;
@@ -68705,7 +68823,8 @@ function scan(data) {
         const old = data.scenes.find(
           (scene) => scene.documentId === documentId && (data.mode === "files" || scene.heading === heading)
         );
-        if (n) issues.push(`${path}\uFF1A\u91CD\u590D\u6807\u9898\u300C${start.title}\u300D\uFF0C\u6309\u51FA\u73B0\u4F4D\u7F6E\u533A\u5206`);
+        if (n)
+          issues.push(`${path}\uFF1A\u91CD\u590D\u6807\u9898\u300C${start.title}\u300D\uFF0C\u6309\u51FA\u73B0\u4F4D\u7F6E\u533A\u5206`);
         scenes.push({
           id: old?.id ?? id(),
           documentId,
@@ -68717,7 +68836,7 @@ function scan(data) {
           ...countNovelText(body.slice(start.offset, starts[i2 + 1]?.offset)),
           writtenAt: source2.modified,
           order: old?.order ?? data.scenes.length + scenes.length,
-          status: old?.status ?? "planned",
+          status: old?.status ?? (countNovelText(body.slice(start.offset, starts[i2 + 1]?.offset)).words ? "draft" : "planned"),
           worldTime: old?.worldTime ?? null
         });
       }
@@ -68729,7 +68848,9 @@ function scan(data) {
   }
   for (const old of data.scenes)
     if (!scenes.some((scene) => scene.id === old.id))
-      issues.push(`${old.path} / ${old.title}\uFF1A\u539F\u573A\u666F\u5DF2\u5931\u8054\uFF0C\u4FDD\u7559\u8D44\u6599\u5F15\u7528\u5F85\u6838\u5BF9`);
+      issues.push(
+        `${old.path} / ${old.title}\uFF1A\u539F\u573A\u666F\u5DF2\u5931\u8054\uFF0C\u4FDD\u7559\u8D44\u6599\u5F15\u7528\u5F85\u6838\u5BF9`
+      );
   data.documents = documents;
   data.scenes = scenes.sort((a, b) => a.order - b.order);
   data.issues = issues;
