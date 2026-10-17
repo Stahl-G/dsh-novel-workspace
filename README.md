@@ -23,7 +23,7 @@ dsh plugin --profile desktop add github:Stahl-G/dsh-novel-workspace
 
 ## 直接试用公开示例
 
-内置 H. G. Wells 的 **The First Men in the Moon**（1901）英文原文，以及本项目据原作整理的中文世界书。保留原文来源与 Project Gutenberg 完整许可，见 [示例说明](examples/first-men-in-the-moon/README.md)。
+内置《月球上最早的人类》中文版与本项目整理的中文世界书。译本由仓库维护者提供并确认可公开使用，见 [示例说明](examples/first-men-in-the-moon/README.md)。
 
 没有现成开图工作区也可以创建示例：
 
@@ -39,7 +39,7 @@ node dist/setup-demo.js /tmp/my-novel-demo
 
 > 根据原文和世界书，整理一份可贴到 Gemini 的续写提示词，把它需要的上下文直接放进提示词里。
 
-默认只读；想续写时在作品中开启写作模式。示例是威尔斯的虚构月球，校对应尊重 Cavorite 与月球大气等小说前提。
+默认只读；想续写时在作品中开启写作模式。示例里的月球环境和凯沃物质是小说设定，校对时应尊重书内前提。
 
 ## 开发
 

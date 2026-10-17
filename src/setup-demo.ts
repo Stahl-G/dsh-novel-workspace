@@ -10,6 +10,6 @@ mkdirSync(root, {recursive:true});
 const source = join(root,'manuscript');
 cpSync(fileURLToPath(new URL('../examples/first-men-in-the-moon',import.meta.url)),source,{recursive:true});
 const ws = await initWorkspace(join(root,'workspace'),{timeZone:'UTC'});
-const p = await createProject(ws,{title:'The First Men in the Moon',kind:'personal',local_only:true,links:[{path:source,role:'manuscript'}]});
+const p = await createProject(ws,{title:'月球上最早的人类',kind:'personal',local_only:true,links:[{path:source,role:'manuscript'}]});
 connectNovel(ws,{project:p.slug,sourceRoot:source,mode:'files',include:['**/*.txt','**/*.md'],preview:false});
 console.log(JSON.stringify({workspace:ws.root,project:p.slug,sourceRoot:source},null,2));
