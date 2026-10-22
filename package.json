@@ -84,5 +84,19 @@
   "packageManager": "pnpm@11.22.0",
   "engines": {
     "node": "^22.19.0 || >=24"
+  },
+  "kaitu": {
+    "explore": {
+      "title": {
+        "zh": "写作",
+        "en": "Writing"
+      },
+      "description": {
+        "zh": "继续故事，整理世界与人物",
+        "en": "Continue stories, shape worlds and characters"
+      },
+      "icon": "书",
+      "page": "kaitu-novel"
+    }
   }
 }
