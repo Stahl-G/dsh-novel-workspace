@@ -45,7 +45,7 @@ export function workbenchEditorExtensions(opts: {
       ".cm-content": { padding: "28px 30px 120px", minHeight: "100%" },
       ".cm-line": { padding: "0", maxWidth: "760px", margin: "auto" },
       ".cm-cursor": { borderLeftColor: "var(--ink)" },
-      ".cm-selectionBackground, &.cm-focused .cm-selectionBackground": { backgroundColor: "#b8d6ff" },
+      ".cm-selectionBackground, &.cm-focused .cm-selectionBackground": { backgroundColor: "color-mix(in srgb, var(--link) 25%, transparent)" },
     }),
   ];
 }
