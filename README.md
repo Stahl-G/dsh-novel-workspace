@@ -85,7 +85,13 @@ pnpm test
 
 代码源于 [Stahl-G/rensheng-kaitu](https://github.com/Stahl-G/rensheng-kaitu)，基线 `92edcf3`，小说插件迭代至 `220f6d8`；此仓库独立打包。代码 MIT，打包依赖许可见 [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)。公共示例单独注明许可。
 
-## 本版验证
+## 0.1.2 与开图嵌入
+
+开发版本按开图插件版本统一为 **0.1.2**，根包、小说插件与随包科幻插件保持一致。此前代码版本为 0.3.2；按 semver，已安装 0.3.x 的更新器不会自动升级到 0.1.2。正式发行前需明确选择重新安装目标版本的路径，保留原有历史包与 tag，不覆盖旧版本。
+
+模块声明使用 `kaitu.explore.page = "kaitu-novel"`，沿用 DSH 的 slots / remote 协议。宿主 hash 带 `kaitu-embed=1` 时收起插件大标题，保留作品操作与保存状态，内容使用宿主可用宽高。配色取自开图 `docs/design/desktop-c.html`，编辑器与可拖动分栏保持原实现。
+
+## 既有版本验证记录
 
 0.3.2 的“想剧情”直接使用 DSH 提问卡片。作者点选或自己写一句，四题之后按未标成 AI 的原稿写一段候选。标成 AI 或角色为候选稿的文件不进入文风样本。候选不写入正文。
 自动测试覆盖文件操作、外部修改冲突、整份大纲保存、目录关联、科幻计算，以及文风样本排除候选稿。

@@ -1,7 +1,7 @@
 .shell {
   color: var(--ink);
   font: 14px / 1.6 var(--font);
-  height: 100dvh;
+  height: 100%;
   min-height: 0;
   overflow: hidden;
   display: flex;
@@ -19,7 +19,7 @@
 .shell select {
   background: var(--surface);
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 7px 11px;
   cursor: pointer;
 }
@@ -76,7 +76,7 @@
 .separator:hover::after,
 .separator:focus-visible::after,
 .separator:active::after {
-  background: #3478df;
+  background: var(--primary);
 }
 .separator[aria-orientation="vertical"] {
   width: 12px;
@@ -109,8 +109,8 @@
 }
 .chapters button[aria-current],
 .tabs button[aria-selected="true"] {
-  background: #e8f1ff;
-  color: #245db4;
+  background: var(--sunken);
+  color: var(--link);
 }
 .chapters h2:not(:first-child) {
   margin-top: 28px;
@@ -149,7 +149,7 @@
 .selChatBtn {
   position: absolute;
   z-index: 5;
-  background: #e8f1ff !important;
+  background: var(--sunken) !important;
 }
 .copyFlash {
   position: absolute;
@@ -213,14 +213,14 @@
   box-sizing: border-box;
   min-height: 75px;
   border: 1px solid var(--line);
-  border-radius: 8px;
+  border-radius: 10px;
   background: var(--surface);
   padding: 9px;
   resize: vertical;
 }
 .shell .primary {
-  background: #3478df;
-  color: white;
+  background: var(--primary);
+  color: var(--on-primary);
   border-color: transparent;
 }
 .chat {
@@ -252,7 +252,7 @@
 .candidates article {
   border: 1px solid var(--line);
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 10px;
 }
 .candidates pre {
@@ -263,8 +263,8 @@
 }
 .error {
   padding: 10px;
-  background: #fff0df;
-  color: #853e12;
+  background: var(--sunken);
+  color: var(--danger);
   margin-bottom: 10px;
 }
 .hint {

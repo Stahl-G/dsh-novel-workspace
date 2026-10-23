@@ -1,3 +1,5 @@
+import theme from "./Theme.module.css";
+import { useKaituEmbedded } from "./embed.js";
 import type { Anchor, Finding, NovelData, NovelView, WorldRule } from "@kaitu/core";
 import { useCallback, useEffect, useState } from "react";
 import base from "../../../dsh-plugin/src/client/Prototype.module.css";
@@ -74,6 +76,7 @@ export function NovelPage({
   writerAgent?: WriterAgent;
   onBrowseFolder?(path?: string): Promise<FolderListing>;
 }) {
+  const embedded = useKaituEmbedded();
   const [catalog, setCatalog] = useState<Catalog>({
     projects: [],
     science: false,
@@ -155,7 +158,7 @@ export function NovelPage({
   const last = data?.sessions.at(-1);
   if (project && view && tab === "writer")
     return (
-      <div className={base.app} style={{ height: "100%" }}>
+      <div className={`${base.app} ${theme.root}`} data-embedded={embedded} style={{ height: "100%" }}>
         <Writer
           key={project}
           project={project}
@@ -168,10 +171,10 @@ export function NovelPage({
       </div>
     );
   return (
-    <div className={base.app}>
+    <div className={`${base.app} ${theme.root}`} data-embedded={embedded}>
       <div className={css.wrap}>
         <header className={css.actions}>
-          <div style={{ flex: 1 }}>
+          <div data-plugin-heading style={{ flex: 1 }}>
             <span className={css.muted}>开图 · 小说工作台</span>
             <h1>{title ?? "你的作品"}</h1>
           </div>

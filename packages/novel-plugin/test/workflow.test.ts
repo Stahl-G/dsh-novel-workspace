@@ -298,6 +298,39 @@ describe("轻量小说插件真实文件闭环", () => {
   });
 });
 
+it("写作台返回的场景 ID 能保存独立候选，绝对文件路径不能充当场景定位", async () => {
+  const { ws, project, source, options, dir } = await fixture("headings");
+  try {
+    connectNovel(ws, { ...options, preview: false });
+    const scene = novelView(ws, project).data.scenes.find((s) => s.title === "观测站")!;
+    const saved = novelScene(ws, project, scene.id);
+    const originals = fingerprints(source);
+    editNovel(ws, project, novelView(ws, project).revision, { type: "mode", mode: "writing" });
+    const input = { title: "合成候选", text: "合成测试：窗外的影子转过观测站。", styleSources: [scene.id] };
+    const revision = novelView(ws, project).revision;
+    // Writer 曾将读取原稿用的绝对路径放进候选工具的 scene 参数。
+    expect(() =>
+      saveNovelDraft(ws, project, revision, {
+        ...input,
+        scene: `${saved.path}#${saved.scene.title}`,
+      }),
+    ).toThrow(/未找到场景/);
+    const draft = saveNovelDraft(ws, project, revision, { ...input, scene: saved.scene.id });
+    const stored = JSON.parse(fs.readFileSync(novelFile(ws, project), "utf8"));
+    expect(stored.drafts).toEqual([
+      expect.objectContaining({
+        ...input,
+        id: draft.id,
+        scene: saved.scene.id,
+        sourceHash: saved.anchor.fileHash,
+      }),
+    ]);
+    expect(fingerprints(source)).toEqual(originals);
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
+});
+
 it("章节编辑保留前后正文、拒绝覆盖外部修改、撤销恢复原始字节", async () => {
   const { ws, project, source, options } = await fixture("headings");
   const path = join(source, "第一章.md");

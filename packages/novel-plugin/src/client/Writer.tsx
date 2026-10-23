@@ -249,7 +249,7 @@ export function Writer({
       const samples = voice.samples.map((sample) => `【${sample.path}】${sample.text}`).join("\n");
       await agent.send(
         project,
-        `请用 ask_user_question 一次只问一题。题目和选项必须原样使用，不要改写，不要一次问完：\n${cards}\n作者点选或自己写一句之后，再写正文。已跳过或标成先开放的，不要收成结论。\n文风：${voice.voice}\n模仿这些作者原稿，不要学习候选稿或标成 AI 的文字：\n${samples || "没有足够的作者原稿，按当前章节已有句子写。"}\n写一段约四百到八百字，用 kaitu_novel_draft 保存独立候选，scene 为 ${saved.path}#${saved.scene.title}。不要修改原稿。当前模式：${writing ? "写作" : "只读"}。只读时正文留在对话里。\n作者补充：${intent || "无"}`,
+        `请用 ask_user_question 一次只问一题。题目和选项必须原样使用，不要改写，不要一次问完：\n${cards}\n作者点选或自己写一句之后，再写正文。已跳过或标成先开放的，不要收成结论。\n文风：${voice.voice}\n模仿这些作者原稿，不要学习候选稿或标成 AI 的文字：\n${samples || "没有足够的作者原稿，按当前章节已有句子写。"}\n写一段约四百到八百字，用 kaitu_novel_draft 保存独立候选，scene 为 ${saved.scene.id}。不要修改原稿。当前模式：${writing ? "写作" : "只读"}。只读时正文留在对话里。\n作者补充：${intent || "无"}`,
       );
       setNotice("提问改由写作助手发出");
       return;
@@ -263,7 +263,7 @@ export function Writer({
     const context = `${saved.text.slice(Math.max(0, position - 4000), position)}\n【作者光标】\n${saved.text.slice(position, position + 1500)}`;
     await agent.send(
       project,
-      `作品：${title}；项目：${project}\n当前文件：${saved.path}\n章节定位：${saved.path}#${saved.scene.title}\n作者已在提问卡片里选完。已确认：${grilled.confirmed.join("；") || "无"}。仍开放：${grilled.open.join("；") || "无"}。\n逐题：\n${picks}\n文风：${grilled.voice.voice}\n按这些作者原稿的节奏、人称和用词写，不要学习候选稿或标成 AI 的文字：\n${samples || "没有足够的作者原稿，按当前章节已有句子写。"}\n写一段可以直接放进这一章的正文，大约四百到八百字。开放项不要收成结论。用 kaitu_novel_draft 保存独立候选，scene 使用上面的章节定位。不要修改原稿。\n当前模式：${writing ? "写作" : "只读"}。只读时正文留在对话里，不要保存候选。\n作者补充：${intent || "无"}\n光标附近：\n${context}`,
+      `作品：${title}；项目：${project}\n当前文件：${saved.path}\n章节定位：${saved.scene.id}\n作者已在提问卡片里选完。已确认：${grilled.confirmed.join("；") || "无"}。仍开放：${grilled.open.join("；") || "无"}。\n逐题：\n${picks}\n文风：${grilled.voice.voice}\n按这些作者原稿的节奏、人称和用词写，不要学习候选稿或标成 AI 的文字：\n${samples || "没有足够的作者原稿，按当前章节已有句子写。"}\n写一段可以直接放进这一章的正文，大约四百到八百字。开放项不要收成结论。用 kaitu_novel_draft 保存独立候选，scene 使用上面的章节定位。不要修改原稿。\n当前模式：${writing ? "写作" : "只读"}。只读时正文留在对话里，不要保存候选。\n作者补充：${intent || "无"}\n光标附近：\n${context}`,
     );
     setNotice("已按你的选择交给写作助手");
   }
@@ -281,7 +281,7 @@ export function Writer({
     const context = `${saved.text.slice(Math.max(0, position - 10000), position)}\n【作者光标】\n${saved.text.slice(position, position + 3000)}`;
     await agent.send(
       project,
-      `作品：${title}；项目：${project}\n作品目录：${view?.data.sourceRoot}\n当前文件：${saved.path}\n章节定位：${saved.path}#${saved.scene.title}\n${task}\n先用 DSH 文件工具寻找并阅读相关世界书、设定集、大纲；引用已存在的资料，不要求作者重填。当前模式：${writing ? "写作" : "只读"}。本次操作仅讨论、校对或保存候选，不修改任何原稿。\n作者补充：${intent || "无"}\n${selected ? `选中段落：\n${selected}\n` : ""}光标附近正文（全文及上下文请按文件读取）：\n${context}`,
+      `作品：${title}；项目：${project}\n作品目录：${view?.data.sourceRoot}\n当前文件：${saved.path}\n章节定位：${saved.scene.id}\n${task}\n先用 DSH 文件工具寻找并阅读相关世界书、设定集、大纲；引用已存在的资料，不要求作者重填。当前模式：${writing ? "写作" : "只读"}。本次操作仅讨论、校对或保存候选，不修改任何原稿。\n作者补充：${intent || "无"}\n${selected ? `选中段落：\n${selected}\n` : ""}光标附近正文（全文及上下文请按文件读取）：\n${context}`,
     );
     setNotice("已发送给写作助手");
   }
