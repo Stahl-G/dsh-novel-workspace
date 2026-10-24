@@ -54,7 +54,7 @@ export async function initWorkspace(root: string, opts: InitOptions = {}): Promi
   for (const d of EMPTY_DIRS) mkdirSync(join(ws.root, d), { recursive: true });
 
   if (tz !== "Asia/Shanghai") {
-    const text = ws.readText("me/rules.md");
+    const text = ws.readText("me/rules.md").replaceAll("\r\n", "\n");
     const end = text.indexOf("\n---", 4);
     const doc = parseDocument(text.slice(4, end));
     doc.set("timezone", tz);

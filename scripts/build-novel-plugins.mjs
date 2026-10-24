@@ -1,10 +1,13 @@
 import { execFileSync } from "node:child_process";
 import { cpSync, mkdirSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
+import { tmpdir } from "node:os";
+import { dirname, join, resolve } from "node:path";
+import { fileURLToPath, pathToFileURL } from "node:url";
 const require = createRequire(new URL("../packages/novel-plugin/package.json", import.meta.url));
-const { WorkspaceTypertGenerator } = await import(require.resolve("@deepseek-ai/dsh-typert-generator"));
+const { WorkspaceTypertGenerator } = await import(
+  pathToFileURL(require.resolve("@deepseek-ai/dsh-typert-generator")).href
+);
 const { build } = require("esbuild");
 const { transform } = require("lightningcss");
 
@@ -14,7 +17,7 @@ const pkg = resolve(root, "packages", folder);
 const packageName = JSON.parse(readFileSync(resolve(pkg, "package.json"), "utf8")).name;
 // Typert requires declaration owners, including framework module merges, in its
 // host inventory. Analyze the published SDK declarations without DSH source.
-const analysis = mkdtempSync("/tmp/kaitu-typert-");
+const analysis = mkdtempSync(join(tmpdir(), "kaitu-typert-"));
 if (folder === "novel-plugin")
   try {
     const analyzedPkg = resolve(analysis, `packages/${folder}`);
@@ -25,7 +28,7 @@ if (folder === "novel-plugin")
     cpSync(resolve(pkg, "package.json"), resolve(analyzedPkg, "package.json"));
     mkdirSync(resolve(analyzedPkg, "lib"));
     writeFileSync(resolve(analyzedPkg, "lib/typert.host.d.ts"), "export declare const TYPERT: unknown;\n");
-    symlinkSync(resolve(pkg, "node_modules"), resolve(analyzedPkg, "node_modules"));
+    symlinkSync(resolve(pkg, "node_modules"), resolve(analyzedPkg, "node_modules"), process.platform === "win32" ? "junction" : "dir");
     for (const [index, sdkName] of sdkPackages.entries()) {
       const sdkRoot = sdkRoots[index];
       cpSync(resolve(pkg, `node_modules/@deepseek-ai/${sdkName}/lib/types`), resolve(sdkRoot, "src"), {
@@ -35,7 +38,7 @@ if (folder === "novel-plugin")
         resolve(sdkRoot, "package.json"),
         JSON.stringify({ name: `@deepseek-ai/${sdkName}`, exports: { ".": "./src/index.d.ts" } }),
       );
-      symlinkSync(resolve(pkg, "node_modules"), resolve(sdkRoot, "node_modules"));
+      symlinkSync(resolve(pkg, "node_modules"), resolve(sdkRoot, "node_modules"), process.platform === "win32" ? "junction" : "dir");
     }
     const options = JSON.parse(readFileSync(resolve(root, "tsconfig.base.json"), "utf8"));
     options.compilerOptions.types = ["node"];
@@ -46,7 +49,7 @@ if (folder === "novel-plugin")
       ]),
     );
     writeFileSync(resolve(analysis, "tsconfig.base.json"), JSON.stringify(options));
-    symlinkSync(resolve(root, "node_modules"), resolve(analysis, "node_modules"));
+    symlinkSync(resolve(root, "node_modules"), resolve(analysis, "node_modules"), process.platform === "win32" ? "junction" : "dir");
     for (const dir of [analyzedPkg, ...sdkRoots]) {
       writeFileSync(
         resolve(dir, "tsconfig.json"),
@@ -82,9 +85,9 @@ if (folder === "novel-plugin")
   } finally {
     rmSync(analysis, { recursive: true, force: true });
   }
-execFileSync("tsc", ["-p", "tsconfig.json"], { cwd: pkg, stdio: "inherit" });
+execFileSync(process.execPath, [require.resolve("typescript/bin/tsc"), "-p", "tsconfig.json"], { cwd: pkg, stdio: "inherit" });
 if (folder === "novel-plugin")
-  execFileSync("tsc", ["-p", "tsconfig.client.json"], { cwd: pkg, stdio: "inherit" });
+  execFileSync(process.execPath, [require.resolve("typescript/bin/tsc"), "-p", "tsconfig.client.json"], { cwd: pkg, stdio: "inherit" });
 const hostBundle = await build({
   metafile: true,
   entryPoints: [resolve(pkg, "src/index.ts")],

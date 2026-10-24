@@ -38,9 +38,9 @@ export function Writer({
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
   const [busy, setBusy] = useState(false);
-  const [intent, setIntent] = useState("");
+  const [intent, setIntent] = useState(() => sessionStorage.getItem(`${key}:intent`) ?? "");
   const [selected, setSelected] = useState("");
-  const [action, setAction] = useState("check");
+  const [action, setAction] = useState(() => sessionStorage.getItem(`${key}:action`) ?? "check");
   const [cursor, setCursor] = useState(0);
   const [epoch, setEpoch] = useState(0);
   const [reference, setReference] = useState<ReferenceSource | null>(null);
@@ -49,6 +49,10 @@ export function Writer({
   referenceLatest.current = { reference, text: referenceText };
   const [referenceId, setReferenceId] = useState("");
   const [assistantOpen, setAssistantOpen] = useState(true);
+  useEffect(() => {
+    sessionStorage.setItem(`${key}:intent`, intent);
+    sessionStorage.setItem(`${key}:action`, action);
+  }, [key, intent, action]);
   const editor = useRef<EditorView | null>(null);
   const latest = useRef({ source, text });
   latest.current = { source, text };

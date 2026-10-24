@@ -1,6 +1,7 @@
 import { spawn } from "node:child_process";
 import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
+import { isAbsolute } from "node:path";
 import { type Context, Service } from "@deepseek-ai/cordis";
 import { Remote, TypertRemoteService } from "@deepseek-ai/dsh-typert-protocol";
 import type { TypertContribution } from "@deepseek-ai/dsh-typert-registry";
@@ -217,7 +218,12 @@ export class NovelService extends TypertRemoteService {
       case "open": {
         const source = this.scene(project, String(args.scene));
         await new Promise<void>((resolve, reject) => {
-          const child = spawn("open", [source.path], { stdio: "ignore" });
+          const windows = process.platform === "win32";
+          const command = windows ? "rundll32.exe" : process.platform === "darwin" ? "open" : "xdg-open";
+          const child = spawn(command, windows ? ["url.dll,FileProtocolHandler", source.path] : [source.path], {
+            stdio: "ignore",
+            windowsHide: true,
+          });
           child.once("error", reject);
           child.once("exit", (code) =>
             code === 0 ? resolve() : reject(new Error("无法打开编辑器，请按路径打开正文")),
@@ -264,7 +270,7 @@ interface ToolContext {
 }
 export function apply(ctx: Context, config: Config = {}) {
   const workspace = config.workspace ?? defaultRoot();
-  if (!workspace.startsWith("/")) throw new Error("请配置开图工作区绝对路径");
+  if (!isAbsolute(workspace)) throw new Error("请配置开图工作区绝对路径");
   const ws = new Workspace(workspace);
   const service = new NovelService(ctx, ws);
   new NovelDataService(ctx, ws);

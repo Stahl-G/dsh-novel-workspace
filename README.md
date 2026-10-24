@@ -11,7 +11,7 @@ Agent 使用 DSH 自带的文件搜索和读取能力寻找正文、设定集和
 
 ## 安装
 
-适配原生 DeepSeek Harness **0.2.1-rc.2**。仓库包含构建产物，安装不用编译。桌面版自带运行时；独立 CLI 需要 Node 22.19+ 或 24+。
+适配原生 DeepSeek Harness **0.2.1-rc.3**。仓库包含构建产物，安装不用编译。桌面版自带运行时；独立 CLI 需要 Node 22.19+ 或 24+。
 
 ```sh
 dsh plugin --profile desktop add github:Stahl-G/dsh-novel-workspace
