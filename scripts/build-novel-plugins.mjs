@@ -42,12 +42,17 @@ if (folder === "novel-plugin")
     }
     const options = JSON.parse(readFileSync(resolve(root, "tsconfig.base.json"), "utf8"));
     options.compilerOptions.types = ["node"];
-    options.compilerOptions.paths = Object.fromEntries(
+    const sdkPaths = Object.fromEntries(
       sdkPackages.map((name, index) => [
         `@deepseek-ai/${name}`,
         [resolve(sdkRoots[index], "src/index.d.ts")],
       ]),
     );
+    // Resolve workspace types explicitly when Windows temp and source use different drives.
+    options.compilerOptions.paths = {
+      "@kaitu/core": [resolve(root, "packages/core/dist/index.d.ts")],
+      ...sdkPaths,
+    };
     writeFileSync(resolve(analysis, "tsconfig.base.json"), JSON.stringify(options));
     symlinkSync(resolve(root, "node_modules"), resolve(analysis, "node_modules"), process.platform === "win32" ? "junction" : "dir");
     for (const dir of [analyzedPkg, ...sdkRoots]) {
