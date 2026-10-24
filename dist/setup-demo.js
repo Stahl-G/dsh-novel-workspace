@@ -66242,7 +66242,7 @@ async function initWorkspace(root2, opts = {}) {
   const ws2 = new Workspace(root2);
   for (const d of EMPTY_DIRS) mkdirSync2(join10(ws2.root, d), { recursive: true });
   if (tz !== "Asia/Shanghai") {
-    const text2 = ws2.readText("me/rules.md");
+    const text2 = ws2.readText("me/rules.md").replaceAll("\r\n", "\n");
     const end = text2.indexOf("\n---", 4);
     const doc = (0, import_yaml2.parseDocument)(text2.slice(4, end));
     doc.set("timezone", tz);

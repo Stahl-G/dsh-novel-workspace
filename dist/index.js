@@ -15513,19 +15513,19 @@ If you're a developer and you believe this is a bug in isomorphic-git, please fi
       if (!path.length) return ".";
       path = path.replace(/\\/g, "/");
       const drivePrefix = getWindowsDrivePrefix(path);
-      const isAbsolute9 = path[0] === "/" || drivePrefix !== null && path[2] === "/";
+      const isAbsolute10 = path[0] === "/" || drivePrefix !== null && path[2] === "/";
       const trailingSeparator = path.at(-1) === "/";
       const pathBody = drivePrefix ? path.slice(2) : path;
-      let normalized = normalizeString(pathBody, !isAbsolute9);
+      let normalized = normalizeString(pathBody, !isAbsolute10);
       if (!normalized.length) {
-        const root = drivePrefix ? isAbsolute9 ? drivePrefix + "/" : drivePrefix : isAbsolute9 ? "/" : ".";
-        return trailingSeparator && !isAbsolute9 ? root + "/" : root;
+        const root = drivePrefix ? isAbsolute10 ? drivePrefix + "/" : drivePrefix : isAbsolute10 ? "/" : ".";
+        return trailingSeparator && !isAbsolute10 ? root + "/" : root;
       }
       if (trailingSeparator) normalized += "/";
       if (drivePrefix) {
-        return isAbsolute9 ? `${drivePrefix}/${normalized}` : `${drivePrefix}${normalized}`;
+        return isAbsolute10 ? `${drivePrefix}/${normalized}` : `${drivePrefix}${normalized}`;
       }
-      return isAbsolute9 ? `/${normalized}` : normalized;
+      return isAbsolute10 ? `/${normalized}` : normalized;
     }
     function join22(...args) {
       if (args.length === 0) return ".";
@@ -18636,7 +18636,7 @@ ${obj.gpgsig ? obj.gpgsig : ""}`;
         throw new MissingParameterError(name2);
       }
     }
-    function isAbsolute8(filepath) {
+    function isAbsolute9(filepath) {
       return filepath.startsWith("/") || /^[a-zA-Z]:[\\/]/.test(filepath);
     }
     async function discoverGitdir({ fsp, dotgit }) {
@@ -18647,7 +18647,7 @@ ${obj.gpgsig ? obj.gpgsig : ""}`;
         return dotgit;
       } else if (dotgitStat.isFile()) {
         return fsp._readFile(dotgit, "utf8").then((contents) => contents.trimRight().substr(8)).then((submoduleGitdir) => {
-          if (isAbsolute8(submoduleGitdir)) {
+          if (isAbsolute9(submoduleGitdir)) {
             return submoduleGitdir;
           }
           const gitdir = join22(dirname10(dotgit), submoduleGitdir);
@@ -36281,6 +36281,7 @@ var require_saxes = __commonJS({
 import { spawn } from "node:child_process";
 import { createHash as createHash3 } from "node:crypto";
 import { readFileSync as readFileSync16 } from "node:fs";
+import { isAbsolute as isAbsolute8 } from "node:path";
 import { Service } from "@deepseek-ai/cordis";
 import { Remote, TypertRemoteService } from "@deepseek-ai/dsh-typert-protocol";
 
@@ -66265,7 +66266,7 @@ async function initWorkspace(root, opts = {}) {
   for (const d of EMPTY_DIRS)
     mkdirSync2(join10(ws.root, d), { recursive: true });
   if (tz !== "Asia/Shanghai") {
-    const text2 = ws.readText("me/rules.md");
+    const text2 = ws.readText("me/rules.md").replaceAll("\r\n", "\n");
     const end = text2.indexOf("\n---", 4);
     const doc = (0, import_yaml2.parseDocument)(text2.slice(4, end));
     doc.set("timezone", tz);
@@ -84211,7 +84212,7 @@ var $remote = createTypertRemoteInfo({
         create: kaitu_novel_workspace_source_kaituNovel_request_result$schema,
         jsonSchema: { "type": "string" }
       },
-      sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 133, "column": 9 }
+      sourceLocation: { "file": "packages/novel-plugin/src/index.ts", "line": 134, "column": 9 }
     }
   }
 }, external_exports2);
@@ -84545,7 +84546,12 @@ var NovelService = class extends (_a6 = TypertRemoteService, _request_dec = [Rem
       case "open": {
         const source = this.scene(project, String(args.scene));
         await new Promise((resolve6, reject) => {
-          const child = spawn("open", [source.path], { stdio: "ignore" });
+          const windows = process.platform === "win32";
+          const command = windows ? "rundll32.exe" : process.platform === "darwin" ? "open" : "xdg-open";
+          const child = spawn(command, windows ? ["url.dll,FileProtocolHandler", source.path] : [source.path], {
+            stdio: "ignore",
+            windowsHide: true
+          });
           child.once("error", reject);
           child.once(
             "exit",
@@ -84581,7 +84587,7 @@ var NovelDataService = class extends Service {
 };
 function apply(ctx, config3 = {}) {
   const workspace = config3.workspace ?? defaultRoot();
-  if (!workspace.startsWith("/")) throw new Error("\u8BF7\u914D\u7F6E\u5F00\u56FE\u5DE5\u4F5C\u533A\u7EDD\u5BF9\u8DEF\u5F84");
+  if (!isAbsolute8(workspace)) throw new Error("\u8BF7\u914D\u7F6E\u5F00\u56FE\u5DE5\u4F5C\u533A\u7EDD\u5BF9\u8DEF\u5F84");
   const ws = new Workspace(workspace);
   const service = new NovelService(ctx, ws);
   new NovelDataService(ctx, ws);
