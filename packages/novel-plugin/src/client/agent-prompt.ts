@@ -1,7 +1,5 @@
 import type { Context } from "@deepseek-ai/cordis";
 
-// rc.3: workspace-controller/client/service, session-controller/client/sessions/service,
-// ui-workspace/client/navigation. Use the owners so workspace feeds and mainView retention stay consistent.
 export interface KaituSessionServices {
   workspaces: { create(input: { path: string }): Promise<{ workspaceId: string }> };
   sessions: {
