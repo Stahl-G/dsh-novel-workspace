@@ -1,9 +1,11 @@
-import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Context } from "@deepseek-ai/cordis";
 import { Workspace, novelFile } from "@kaitu/core";
 import { expect, it, vi } from "vitest";
+import { apply as applyScience } from "../../sf-plugin/src/index.js";
 import { type KaituSessionServices, openKaituSession } from "../src/client/agent-prompt.js";
 import { apply } from "../src/index.js";
 
@@ -52,7 +54,42 @@ it("小说服务读取缺省分类的 schema 1 资料，取消工具与未知版
     const unsupported = JSON.stringify({ ...legacy, schemaVersion: 99 });
     writeFileSync(file, unsupported);
     await expect(request("view", { project })).rejects.toThrow(/版本暂不支持/);
+    const revision = createHash("sha256").update(unsupported).digest("hex");
+    const modified = statSync(file).mtimeMs;
+    for (const [operation, args] of [
+      ["edit", { command: { type: "pin", value: false } }],
+      ["propose", { fact: {} }],
+      ["draft", { input: { title: "合成候选", text: "合成内容", scene: "unknown" } }],
+      ["applyDraft", { id: "unknown", operation: "append" }],
+      ["saveScene", { input: { scene: "unknown", fileHash: "unknown", text: "合成内容" } }],
+      ["undoScene", {}],
+    ] as const)
+      await expect(request(operation, { project, revision, ...args })).rejects.toThrow(/版本暂不支持/);
     expect(readFileSync(file, "utf8")).toBe(unsupported);
+    expect(statSync(file).mtimeMs).toBe(modified);
+    expect(readFileSync(manuscript, "utf8")).toBe(original);
+    writeFileSync(file, bytes);
+    applyScience(ctx);
+    const scienceFile = join(legacy.managedRoot, "science.json");
+    const unsupportedScience = JSON.stringify({ schemaVersion: 99, rules: [], findings: [] });
+    writeFileSync(scienceFile, unsupportedScience);
+    const scienceRevision = createHash("sha256").update(unsupportedScience).digest("hex");
+    const scienceModified = statSync(scienceFile).mtimeMs;
+    for (const [operation, args] of [
+      ["view", {}],
+      ["rule", { rule: {} }],
+      ["check", { input: {} }],
+      ["review", { input: { id: "unknown", status: "deferred", note: "合成备注" } }],
+      ["note", { input: { scene: legacy.scenes[0].id, type: "plausibility_note", conclusion: "合成结论" } }],
+      ["import", { documentId: legacy.documents[0].id }],
+    ] as const)
+      expect(() =>
+        ctx.kaituScience.request(operation, { project, revision: scienceRevision, ...args }),
+      ).toThrow(/版本暂不支持/);
+    expect(readFileSync(scienceFile, "utf8")).toBe(unsupportedScience);
+    expect(statSync(scienceFile).mtimeMs).toBe(scienceModified);
+    expect(readFileSync(file, "utf8")).toBe(bytes);
+    expect(readFileSync(manuscript, "utf8")).toBe(original);
   } finally {
     rmSync(root, { recursive: true, force: true });
   }
