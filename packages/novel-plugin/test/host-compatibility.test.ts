@@ -4,8 +4,9 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Context } from "@deepseek-ai/cordis";
 import { Workspace, novelFile } from "@kaitu/core";
-import { expect, it } from "vitest";
+import { expect, it, vi } from "vitest";
 import { apply as applyScience } from "../../sf-plugin/src/index.js";
+import { openKaituSession } from "../src/client/agent-prompt.js";
 import { apply } from "../src/index.js";
 
 it("小说服务读取缺省分类的 schema 1 资料，取消工具与未知版本均不改写文件", async () => {
@@ -92,4 +93,29 @@ it("小说服务读取缺省分类的 schema 1 资料，取消工具与未知版
   } finally {
     rmSync(root, { recursive: true, force: true });
   }
+});
+
+it("等待工作区期间离开页面不会打开迟到会话", async () => {
+  const navigation = new AbortController();
+  const pendingWorkspace = Promise.withResolvers<{ workspaceId: string }>();
+  const createSession = vi.fn(async () => "late-session");
+  const openSession = vi.fn();
+  const setDraft = vi.fn();
+  const pending = openKaituSession(
+    {
+      layout: { beginNavigation: () => navigation.signal },
+      workspaces: { create: () => pendingWorkspace.promise },
+      sessions: { create: createSession, scope: () => new Context() },
+      uiWorkspace: { openSession },
+      conversation: { input: { for: () => ({ setDraft }) } },
+    },
+    "/synthetic/workspace",
+    "取消的提示词",
+  );
+  navigation.abort();
+  pendingWorkspace.resolve({ workspaceId: "late-workspace" });
+  expect(await pending).toBe(false);
+  expect(createSession).not.toHaveBeenCalled();
+  expect(openSession).not.toHaveBeenCalled();
+  expect(setDraft).not.toHaveBeenCalled();
 });
