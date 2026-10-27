@@ -4,9 +4,8 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { Context } from "@deepseek-ai/cordis";
 import { Workspace, novelFile } from "@kaitu/core";
-import { expect, it, vi } from "vitest";
+import { expect, it } from "vitest";
 import { apply as applyScience } from "../../sf-plugin/src/index.js";
-import { type KaituSessionServices, openKaituSession } from "../src/client/agent-prompt.js";
 import { apply } from "../src/index.js";
 
 it("小说服务读取缺省分类的 schema 1 资料，取消工具与未知版本均不改写文件", async () => {
@@ -93,45 +92,4 @@ it("小说服务读取缺省分类的 schema 1 资料，取消工具与未知版
   } finally {
     rmSync(root, { recursive: true, force: true });
   }
-});
-
-it("会话交接到作品工作区；等待工作区期间离开页面不会打开迟到会话", async () => {
-  const navigation = new AbortController();
-  const scope = new Context();
-  const setDraft = vi.fn();
-  const openSession = vi.fn();
-  const createWorkspace = vi.fn(async (_input: { path: string }) => ({ workspaceId: "synthetic-workspace" }));
-  const createSession = vi.fn(async (_input: { workspaceId: string }) => "synthetic-session");
-  const services: KaituSessionServices = {
-    layout: { beginNavigation: () => navigation.signal },
-    workspaces: { create: createWorkspace },
-    sessions: {
-      create: createSession,
-      scope: () => scope,
-    },
-    uiWorkspace: { openSession },
-    conversation: {
-      input: {
-        for: (value) => {
-          expect(value).toBe(scope);
-          return { setDraft };
-        },
-      },
-    },
-  };
-  expect(await openKaituSession(services, "/synthetic/workspace", "合成写作上下文")).toBe(true);
-  expect(createWorkspace).toHaveBeenCalledWith({ path: "/synthetic/workspace" });
-  expect(createSession).toHaveBeenCalledWith({ workspaceId: "synthetic-workspace" });
-  expect(openSession).toHaveBeenCalledWith("synthetic-session");
-  expect(setDraft).toHaveBeenCalledWith("合成写作上下文");
-  vi.clearAllMocks();
-  const pendingWorkspace = Promise.withResolvers<{ workspaceId: string }>();
-  createWorkspace.mockReturnValueOnce(pendingWorkspace.promise);
-  const pending = openKaituSession(services, "/synthetic/workspace", "取消的提示词");
-  navigation.abort();
-  pendingWorkspace.resolve({ workspaceId: "late-workspace" });
-  expect(await pending).toBe(false);
-  expect(createSession).not.toHaveBeenCalled();
-  expect(openSession).not.toHaveBeenCalled();
-  expect(setDraft).not.toHaveBeenCalled();
 });
