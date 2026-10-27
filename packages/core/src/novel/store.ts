@@ -4,12 +4,17 @@ import { dirname, join } from "node:path";
 
 export const hash = (value: string | Uint8Array) => createHash("sha256").update(value).digest("hex");
 export const id = () => randomUUID();
-export function readStore<T>(file: string, initial: () => T): { value: T; revision: string } {
+export function readStore<T extends { schemaVersion: 1 }>(
+  file: string,
+  initial: () => T,
+): { value: T; revision: string } {
   const raw = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
-  return { value: raw ? (JSON.parse(raw) as T) : initial(), revision: hash(raw) };
+  const value = raw ? (JSON.parse(raw) as T) : initial();
+  if (value.schemaVersion !== 1) throw new Error("资料版本暂不支持，请保留原文件");
+  return { value, revision: hash(raw) };
 }
 // A single sidecar contains the data and its undo log, so a rename commits both.
-export function changeStore<T, R>(
+export function changeStore<T extends { schemaVersion: 1 }, R>(
   file: string,
   initial: () => T,
   revision: string,

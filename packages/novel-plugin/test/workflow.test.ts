@@ -49,7 +49,12 @@ async function fixture(mode: "files" | "headings" = "files") {
   fs.writeFileSync(join(source, "bad.md"), Buffer.from([0xff, 0xfe, 0x00]));
   const outside = join(dir, "外部.md");
   fs.writeFileSync(outside, "不得读取外部笔记");
-  fs.symlinkSync(outside, join(source, "越界.md"));
+  if (process.platform === "win32") {
+    const outsideDir = join(dir, "外部目录");
+    fs.mkdirSync(outsideDir);
+    fs.writeFileSync(join(outsideDir, "外部.md"), "不得读取外部笔记");
+    fs.symlinkSync(outsideDir, join(source, "越界.md"), "junction");
+  } else fs.symlinkSync(outside, join(source, "越界.md"));
   const ws = await initWorkspace(join(dir, "workspace"), { timeZone: "UTC" });
   const { slug: project } = await createProject(ws, {
     title: "合成小说",

@@ -11,7 +11,7 @@ Agent 使用 DSH 自带的文件搜索和读取能力寻找正文、设定集和
 
 ## 安装
 
-适配原生 DeepSeek Harness **0.2.1-rc.2**。仓库包含构建产物，安装不用编译。桌面版自带运行时；独立 CLI 需要 Node 22.19+ 或 24+。
+适配原生 DeepSeek Harness **0.2.1-rc.3**。仓库包含构建产物，安装不用编译。桌面版自带运行时；独立 CLI 需要 Node 22.19+ 或 24+。
 
 ```sh
 dsh plugin --profile desktop add github:Stahl-G/dsh-novel-workspace
@@ -85,9 +85,11 @@ pnpm test
 
 代码源于 [Stahl-G/rensheng-kaitu](https://github.com/Stahl-G/rensheng-kaitu)，基线 `92edcf3`，小说插件迭代至 `220f6d8`；此仓库独立打包。代码 MIT，打包依赖许可见 [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)。公共示例单独注明许可。
 
-## 0.1.2 与开图嵌入
+## rc.3 候选版本与旧资料
 
-开发版本按开图插件版本统一为 **0.1.2**，根包、小说插件与随包科幻插件保持一致。此前代码版本为 0.3.2；按 semver，已安装 0.3.x 的更新器不会自动升级到 0.1.2。正式发行前需明确选择重新安装目标版本的路径，保留原有历史包与 tag，不覆盖旧版本。
+当前候选 **0.3.3-rc.1**，适配 DSH **0.2.1-rc.3**，版本高于旧 0.1.2 / 0.3.1 / 0.3.2。稳定更新频道可能过滤预发布版本，测试时请指定候选分支或本地包。
+
+沿用现有工作区与配置，小说资料仍为 `schemaVersion: 1`；稿件链接、世界书、候选稿和撤销记录保留。
 
 模块声明使用 `kaitu.explore.page = "kaitu-novel"`，沿用 DSH 的 slots / remote 协议。宿主 hash 带 `kaitu-embed=1` 时收起插件大标题，保留作品操作与保存状态，内容使用宿主可用宽高。配色取自开图 `docs/design/desktop-c.html`，编辑器与可拖动分栏保持原实现。
 

@@ -45314,7 +45314,10 @@ var hash2 = (value) => createHash("sha256").update(value).digest("hex");
 var id = () => randomUUID();
 function readStore(file3, initial2) {
   const raw = fs.existsSync(file3) ? fs.readFileSync(file3, "utf8") : "";
-  return { value: raw ? JSON.parse(raw) : initial2(), revision: hash2(raw) };
+  const value = raw ? JSON.parse(raw) : initial2();
+  if (value.schemaVersion !== 1)
+    throw new Error("\u8D44\u6599\u7248\u672C\u6682\u4E0D\u652F\u6301\uFF0C\u8BF7\u4FDD\u7559\u539F\u6587\u4EF6");
+  return { value, revision: hash2(raw) };
 }
 function changeStore(file3, initial2, revision2, edit) {
   fs.mkdirSync(dirname6(file3), { recursive: true });
@@ -45646,8 +45649,6 @@ function novelFile(ws, project) {
 }
 function readNovel(ws, project) {
   const result = readStore(novelFile(ws, project), initial);
-  if (result.value.schemaVersion !== 1)
-    throw new Error("\u5C0F\u8BF4\u8D44\u6599\u7248\u672C\u6682\u4E0D\u652F\u6301\uFF0C\u8BF7\u4FDD\u7559\u539F\u6587\u4EF6");
   return result;
 }
 function sourcePath(data, path) {

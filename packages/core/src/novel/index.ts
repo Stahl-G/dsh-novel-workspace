@@ -30,7 +30,6 @@ export function novelFile(ws: Workspace, project: string) {
 }
 export function readNovel(ws: Workspace, project: string) {
   const result = readStore(novelFile(ws, project), initial);
-  if (result.value.schemaVersion !== 1) throw new Error("小说资料版本暂不支持，请保留原文件");
   return result;
 }
 export function novelProjects(ws: Workspace) {

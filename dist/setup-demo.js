@@ -66242,7 +66242,7 @@ async function initWorkspace(root2, opts = {}) {
   const ws2 = new Workspace(root2);
   for (const d of EMPTY_DIRS) mkdirSync2(join10(ws2.root, d), { recursive: true });
   if (tz !== "Asia/Shanghai") {
-    const text2 = ws2.readText("me/rules.md");
+    const text2 = ws2.readText("me/rules.md").replaceAll("\r\n", "\n");
     const end = text2.indexOf("\n---", 4);
     const doc = (0, import_yaml2.parseDocument)(text2.slice(4, end));
     doc.set("timezone", tz);
@@ -68528,7 +68528,9 @@ var hash2 = (value) => createHash2("sha256").update(value).digest("hex");
 var id = () => randomUUID2();
 function readStore(file2, initial) {
   const raw = fs4.existsSync(file2) ? fs4.readFileSync(file2, "utf8") : "";
-  return { value: raw ? JSON.parse(raw) : initial(), revision: hash2(raw) };
+  const value = raw ? JSON.parse(raw) : initial();
+  if (value.schemaVersion !== 1) throw new Error("\u8D44\u6599\u7248\u672C\u6682\u4E0D\u652F\u6301\uFF0C\u8BF7\u4FDD\u7559\u539F\u6587\u4EF6");
+  return { value, revision: hash2(raw) };
 }
 function changeStore(file2, initial, revision2, edit) {
   fs4.mkdirSync(dirname8(file2), { recursive: true });

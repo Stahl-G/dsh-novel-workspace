@@ -304,3 +304,7 @@
 .referenceActions button {
   padding: 4px 8px;
 }
+
+@media (max-width: 760px) {
+  .header > div { flex-basis: 100%; }
+}
