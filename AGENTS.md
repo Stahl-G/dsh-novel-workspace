@@ -8,3 +8,5 @@
 - 改发行代码后运行 pnpm build，提交 dist 供 GitHub 直接安装；测试使用临时 HOME 和合成数据。
 - 从作者的完整写作流程判断取舍；只保留有用户价值的功能。编辑器优先复用现成开源组件，界面不展示文件哈希、内部编号或技术校验细节。
 - 官方 DSH 保持原生品牌、导航和功能；开图 App 使用独立数据目录。小说工作台只作为普通插件接入，开发测试使用隔离 profile。
+
+- Avoid unnecessary secondary labels and descriptions. Let the layout do the explaining.
