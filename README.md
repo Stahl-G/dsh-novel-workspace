@@ -11,7 +11,7 @@ Agent 使用 DSH 自带的文件搜索和读取能力寻找正文、设定集和
 
 ## 安装
 
-适配原生 DeepSeek Harness **0.2.1-rc.3**。仓库包含构建产物，安装不用编译。桌面版自带运行时；独立 CLI 需要 Node 22.19+ 或 24+。
+适配原生 DeepSeek Harness **0.2.2-rc.1**。仓库包含构建产物，安装不用编译。桌面版自带运行时；独立 CLI 需要 Node 24.9+。
 
 ```sh
 dsh plugin --profile desktop add github:Stahl-G/dsh-novel-workspace
@@ -85,9 +85,9 @@ pnpm test
 
 代码源于 [Stahl-G/rensheng-kaitu](https://github.com/Stahl-G/rensheng-kaitu)，基线 `92edcf3`，小说插件迭代至 `220f6d8`；此仓库独立打包。代码 MIT，打包依赖许可见 [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)。公共示例单独注明许可。
 
-## rc.3 候选版本与旧资料
+## 候选版本与旧资料
 
-当前候选 **0.3.3-rc.1**，适配 DSH **0.2.1-rc.3**，版本高于旧 0.1.2 / 0.3.1 / 0.3.2。稳定更新频道可能过滤预发布版本，测试时请指定候选分支或本地包。
+当前候选 **0.3.3-rc.2**，适配 DSH **0.2.2-rc.1**，版本高于旧 0.1.2 / 0.3.1 / 0.3.2。稳定更新频道可能过滤预发布版本，测试时请指定候选分支或本地包。
 
 沿用现有工作区与配置，小说资料仍为 `schemaVersion: 1`；稿件链接、世界书、候选稿和撤销记录保留。
 

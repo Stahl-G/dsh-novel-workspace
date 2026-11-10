@@ -99,7 +99,7 @@ const hostBundle = await build({
   outfile: resolve(pkg, "dist/index.js"),
   bundle: true,
   platform: "node",
-  target: "node22",
+  target: "node24.9",
   format: "esm",
   external: ["@deepseek-ai/cordis", "@deepseek-ai/dsh-typert-protocol"],
   banner: {
