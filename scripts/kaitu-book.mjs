@@ -3,7 +3,7 @@
 import { constants } from "node:fs";
 import { lstat, mkdir, mkdtemp, open, readFile, realpath, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { pathToFileURL, URL } from "node:url";
+import { URL } from "node:url";
 import { TextDecoder } from "node:util";
 
 export async function creativeAgreementTemplate() {
@@ -127,8 +127,8 @@ export async function main(args) {
   return `旧稿副本已准备：${result.directory}\n原稿未改动。下一步在 DSH 打开此目录，按 导入说明.md 运行 /story-import。\n`;
 }
 
-const invokedFile = process.argv[1] ? await realpath(process.argv[1]).catch(() => undefined) : undefined;
-if (invokedFile && import.meta.url === pathToFileURL(invokedFile).href) {
+// Node 24.9+ distinguishes direct execution even for macOS aliases and Windows 8.3 paths.
+if (import.meta.main) {
   main(process.argv.slice(2)).then((message) => process.stdout.write(message)).catch((error) => {
     process.stderr.write(`未完成：${error.message}\n`);
     process.exitCode = 1;
