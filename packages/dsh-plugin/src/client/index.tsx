@@ -1,3 +1,4 @@
+import { registerNovelEntry } from "./novel-entry.js";
 import type { Context as ClientContext } from "@deepseek-ai/cordis";
 import type { ISessions } from "@deepseek-ai/dsh-api-session-controller/client";
 import { defineStore } from "@deepseek-ai/dsh-client-store";
@@ -2111,6 +2112,7 @@ function ProductionToolView({ block, inspect }: ToolCallViewProps) {
 
 /** Register only official DSH surfaces; the split bridge never replaces Chat. */
 export function apply(context: ClientContext): void {
+  registerNovelEntry(context);
   context.slots.inject("shell.overlay", () => {
     const disposeSeat = context.slots.register({
       name: "shell.overlay",

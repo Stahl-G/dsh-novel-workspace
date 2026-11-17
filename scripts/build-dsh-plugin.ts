@@ -27,11 +27,11 @@ const inlineCss: Plugin = {
   name: "inline-css",
   setup(builder) {
     builder.onResolve({ filter: /\.css\?inline$/ }, (args) => ({
-      path: resolve(args.resolveDir, args.path.slice(0, -"?inline".length)),
+      path: relative(root, resolve(args.resolveDir, args.path.slice(0, -"?inline".length))).replaceAll("\\", "/"),
       namespace: "inline-css"
     }));
     builder.onLoad({ filter: /.*/, namespace: "inline-css" }, async (args) => ({
-      contents: await readFile(args.path, "utf8"),
+      contents: await readFile(resolve(root, args.path), "utf8"),
       loader: "text"
     }));
   }

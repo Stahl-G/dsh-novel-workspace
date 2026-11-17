@@ -1115,6 +1115,20 @@ async function main(): Promise<void> {
         } catch { /* the step may already be persisted */ }
       }
       await page.locator('[class*="onboardingOverlay"]').waitFor({ state: "detached", timeout: 10_000 }).catch(() => undefined);
+      // Kaitu entry must open a real native Session and expose the upstream workbench.
+      await page.getByRole("button", { name: "写作", exact: true }).click();
+      const novelEntry = page.locator("[data-kaitu-novel-entry]");
+      await novelEntry.waitFor({ state: "visible" });
+      await novelEntry.getByRole("textbox", { name: "作品目录路径" }).fill(storyRoot);
+      await novelEntry.getByRole("button", { name: "打开", exact: true }).click();
+      await page.locator(".oh-story-editor").waitFor({ state: "visible", timeout: 20_000 });
+      const entrySession = await page.locator("[data-conversation-content][data-conversation-session]").first().getAttribute("data-conversation-session");
+      if (!entrySession) throw new Error("Novel entry did not select a native conversation.");
+      await page.getByRole("button", { name: "写作", exact: true }).click();
+      await novelEntry.getByRole("navigation", { name: "最近打开的作品" }).getByRole("button").first().click();
+      await page.locator(".oh-story-editor").waitFor({ state: "visible" });
+      const resumedSession = await page.locator("[data-conversation-content][data-conversation-session]").first().getAttribute("data-conversation-session");
+      if (resumedSession !== entrySession) throw new Error("Novel entry did not resume its existing native conversation.");
       await selectSession(page, storyWorkspace.workspace.title, storySessionTitle);
       const blankSession = page.getByRole("button", { name: /^(?:New session|新建会话)$/u }).filter({ visible: true }).first();
       try { await blankSession.waitFor({ state: "visible", timeout: 10_000 }); }
@@ -2985,6 +2999,7 @@ async function main(): Promise<void> {
       ok: true,
       dshVersion,
       architecture: "pure-plugin",
+      nativeNovelEntry: true, nativeNovelResume: "same-session",
       sessionApi: true,
       skills: ohStorySkills.length,
       dramaSkills: dramaSkills.length,
