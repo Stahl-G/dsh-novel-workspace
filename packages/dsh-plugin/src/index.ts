@@ -10,6 +10,7 @@ import { DRAMA_PYTHON, hostPython } from "./host-python.js";
 import { registerOhStoryHooks } from "./native-hooks.js";
 import { registerOhStoryRoleTool } from "./role-tool.js";
 import { registerOhStoryProductionTool } from "./production-tool.js";
+import { registerDurationTool } from "./duration-tool.js";
 import { registerWorkspaceRoute } from "./workspace-route.js";
 import { assertTrustedWorkspaceAuthority } from "./workspace-request-trust.js";
 
@@ -47,6 +48,7 @@ export async function apply(context: Context, config: Config = {}): Promise<void
   context.skills.registerProvider(() => createVideoRecapSkillProvider());
   registerOhStoryHooks(context);
   registerOhStoryProductionTool(context);
+  registerDurationTool(context);
   await registerOhStoryRoleTool(context);
   registerWorkspaceRoute(context, { maxBytes: config.editorMaxBytes ?? 2_097_152, trustedHosts });
   // Register the bundled media adapters for this host up front so the first

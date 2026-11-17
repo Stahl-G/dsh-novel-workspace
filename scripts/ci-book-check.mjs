@@ -6,7 +6,9 @@ import { fileURLToPath, URL } from "node:url";
 
 export default function checkBookCLI() {
   if (process.env.CI !== "true") return; // local pnpm verify already runs test:book
-  execFileSync(process.execPath, ["--test", fileURLToPath(new URL("./kaitu-book.test.mjs", import.meta.url))], {
+  const suites = ["./kaitu-book.test.mjs", "./kaitu-author-loop.test.mjs"]
+    .map((file) => fileURLToPath(new URL(file, import.meta.url)));
+  execFileSync(process.execPath, ["--test", ...suites], {
     stdio: "inherit"
   });
 }

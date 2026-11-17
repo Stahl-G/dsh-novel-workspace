@@ -82,6 +82,19 @@ const roleSmokePrompt = "ROLE_RUNTIME_SMOKE：必须调用 oh_story_role 的 nar
 const roleChildPrompt = `ROLE_CHILD_SMOKE：必须先调用 oh_story_bundled_reference 读取 ${roleReference}，确认内容包含“${roleReferenceExcerpt}”，再回复指定验证文本。`;
 const roleChildReply = "ROLE_CHILD_RESULT：narrative-writer 子 Agent 已读取打包参考并完成。";
 const roleParentReply = "ROLE_PARENT_RESULT：已收到 narrative-writer 子 Agent 结果。";
+// Entirely synthetic author declaration; the fixture requests a real tool, never supplies its answer.
+const durationToolName = "kaitu_check_declared_duration";
+const durationArgs = {
+  ruleConfirmed: true, sceneConfirmed: true,
+  confirmationQuote: "合成测试作者确认：环站A每圈恒定8分钟，本场景完整2圈、正文19分钟，无额外等待，无例外。",
+  ruleSource: "author-message:duration-smoke#rule", sceneSource: "author-message:duration-smoke#scene",
+  ruleQuote: "环站A每圈恒定8分钟。", sceneQuote: "环站A完成完整2圈，正文写经过19分钟。",
+  ruleScope: "环站A", sceneScope: "环站A", ruleUnit: "minute", sceneUnit: "minute",
+  minutesPerCycle: 8, cycles: 2, elapsedMinutes: 19,
+  constantDuration: true, extraDelayMinutes: 0, exception: "none"
+};
+const durationSmokePrompt = `DURATION_RUNTIME_SMOKE：只调用 ${durationToolName} 核对以下合成作者消息，不改任何文件。${JSON.stringify(durationArgs)}`;
+const durationReply = "DURATION_RESULT_RECEIVED：已收到只读工具结果。";
 const productionIntentSmokePrompt = "PRODUCTION_INTENT_SMOKE：必须调用 oh_story_production，聚焦 EP001 的 SHOT-EP001-008 生产目标。";
 const productionIntentReply = "PRODUCTION_INTENT_RESULT：生产目标聚焦意图已发送。";
 const productionIntentArgs = { action: "focus_target", episode: "剧集/EP001", targetId: "SHOT-EP001-008", section: "shots" } as const;
@@ -220,11 +233,17 @@ async function startMockDeepSeek(): Promise<MockDeepSeek> {
       // /short-drama-edit in Drama 0.7; leaving it out made that turn settle instantly.
       const productionTurn = currentTurn.includes("/short-drama-produce") || currentTurn.includes("/short-drama-edit");
       const roleParentTurn = currentTurn.includes(roleSmokePrompt);
+      const durationTurn = currentTurn.includes(durationSmokePrompt);
       const productionIntentTurn = currentTurn.includes(productionIntentSmokePrompt);
       const roleChildTurn = serialized.includes(roleChildPrompt) && !serialized.includes(roleSmokePrompt);
       const hasToolResult = messages.slice(lastUserIndex + 1).some(isToolResult);
       let events: MessagesEvent[];
-      if (roleChildTurn && !hasToolResult) {
+      if (durationTurn) {
+        requests.push(hasToolResult ? "duration-resume" : "duration-start");
+        events = hasToolResult
+          ? messagesText([durationReply])
+          : messagesToolCall("call_kaitu_duration_smoke", durationToolName, durationArgs);
+      } else if (roleChildTurn && !hasToolResult) {
         requests.push("role-child-reference-start");
         events = messagesToolCall("call_oh_story_reference_smoke", "oh_story_bundled_reference", { reference: roleReference });
       } else if (roleChildTurn) {
@@ -842,6 +861,35 @@ async function main(): Promise<void> {
         || JSON.stringify(roleTrace) !== JSON.stringify(["role-parent-start", "role-child-reference-start", "role-child-reference-resume", "role-parent-resume"])) {
         throw new Error(`Packaged oh_story_role contract failed: ${JSON.stringify({ roleCalls, roleArguments, roleResult, roleTrace, eventTypes: roleEvents.map((event) => event.type), hasChildReply: serializedRoleEvents.includes(roleChildReply), hasParentReply: serializedRoleEvents.includes(roleParentReply) })}`);
       }
+
+      // Verify the native tool/result, not assistant prose or a simulated arithmetic answer.
+      const snapshotStory = async (): Promise<string> => {
+        const entries = await readdir(storyRoot, { recursive: true, withFileTypes: true });
+        const paths = entries.filter((entry) => entry.isFile()).map((entry) => join(entry.parentPath, entry.name)).sort();
+        return JSON.stringify(await Promise.all(paths.map(async (path) => [path, (await readFile(path)).toString("base64")])));
+      };
+      const storyBeforeDuration = await snapshotStory();
+      const durationAfterSeq = (await sessionEvents(origin, storySession.sessionId)).at(-1)?.seq ?? -1;
+      await rpc(origin, "session/prompt", { request: {
+        requestId: crypto.randomUUID(), sessionId: storySession.sessionId, mode: "queue",
+        content: [{ type: "text", text: durationSmokePrompt }]
+      } });
+      const durationEvents = await waitForCompletedTurn(origin, storySession.sessionId, durationAfterSeq);
+      const durationCalls = durationEvents.filter((event) => event.type === "tool/call")
+        .map((event) => event.data as { readonly callId?: string; readonly name?: string; readonly arguments?: unknown });
+      const durationResult = durationEvents.filter((event) => event.type === "tool/result")
+        .map((event) => (event.data as { readonly message?: { readonly toolCallId?: string; readonly isError?: boolean } }).message)
+        .find((message) => message?.toolCallId !== undefined && message.toolCallId === durationCalls[0]?.callId);
+      const resultText = JSON.stringify(durationResult);
+      const durationTrace = mockDeepSeek?.requests.filter((kind) => kind.startsWith("duration-")) ?? [];
+      if (durationCalls.length !== 1 || durationCalls[0]?.name !== durationToolName
+        || durationResult === undefined || durationResult.isError === true
+        || !resultText.includes("书内算术条件冲突") || !resultText.includes("8 × 2 = 16 分钟")
+        || !resultText.includes("正文为 19 分钟") || !resultText.includes("未改稿")
+        || JSON.stringify(durationTrace) !== JSON.stringify(["duration-start", "duration-resume"])) {
+        throw new Error(`Native duration tool failed: ${JSON.stringify({ durationCalls, durationResult, durationTrace })}`);
+      }
+      if (await snapshotStory() !== storyBeforeDuration) throw new Error("Read-only duration tool changed the synthetic manuscript.");
 
       const dramaEventsBeforeIntent = await sessionEvents(origin, dramaSession.sessionId);
       const intentAfterSeq = dramaEventsBeforeIntent.at(-1)?.seq ?? -1;
@@ -3027,6 +3075,7 @@ async function main(): Promise<void> {
       compactGameViewport: 500,
       agentWriteStreaming: !useRealDeepSeek,
       roleToolE2e: !useRealDeepSeek,
+      declaredDurationToolE2e: !useRealDeepSeek,
       atomicCasWriters: candidates.length,
       compactViewport: 500
     })}\n`);

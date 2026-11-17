@@ -42,7 +42,7 @@
     "test:dsh:rc": "tsx scripts/native-dsh-smoke.ts 0.2.0-rc.2",
     "test:dsh:next": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.3",
     "pack:preview": "pnpm --filter kaitu-novel-workspace pack --pack-destination dist",
-    "test:book": "node --test scripts/kaitu-book.test.mjs"
+    "test:book": "node --test scripts/kaitu-book.test.mjs scripts/kaitu-author-loop.test.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
