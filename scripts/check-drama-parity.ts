@@ -1,0 +1,154 @@
+import { createHash } from "node:crypto";
+import { readFile, readdir, stat } from "node:fs/promises";
+import { join } from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+import { currentDramaFiles, dramaRoot, dramaUpstreamRoot, readDramaManifest } from "./drama-assets.js";
+
+const execFileAsync = promisify(execFile);
+
+async function dramaPython(): Promise<string> {
+  const candidates = process.env.DRAMA_PYTHON === undefined
+    ? (process.platform === "win32" ? ["python", "python3"] : ["python3", "python"])
+    : [process.env.DRAMA_PYTHON];
+  const failures: string[] = [];
+  for (const candidate of candidates) {
+    try {
+      await execFileAsync(candidate, ["-c", "import sys; raise SystemExit(0 if sys.version_info.major == 3 else 1)"], { encoding: "utf8" });
+      return candidate;
+    } catch (error) {
+      failures.push(`${candidate}: ${error instanceof Error ? error.message : String(error)}`);
+    }
+  }
+  throw new Error(`Drama Skills selftests require Python 3 (override with DRAMA_PYTHON). Tried: ${failures.join("; ")}`);
+}
+const manifest = await readDramaManifest();
+const actualFiles = await currentDramaFiles();
+if (JSON.stringify(actualFiles) !== JSON.stringify(manifest.files)) {
+  throw new Error("Bundled Drama Skills files differ from manifest; run pnpm assets:sync:drama.");
+}
+if (manifest.skills.length !== 12 || !manifest.skills.every((name) => name === "short-drama" || name.startsWith("short-drama-"))) {
+  throw new Error(`Expected 12 pinned Drama Skills, found ${String(manifest.skills.length)}.`);
+}
+if (!manifest.skills.includes("short-drama-edit")) {
+  throw new Error("Bundled Drama Skills are missing the v0.7 assembly stage short-drama-edit.");
+}
+const paths = new Set(manifest.files.map(({ path }) => path));
+for (const required of [
+  "skills/short-drama/references/creator-documents.md",
+  "skills/short-drama-storyboard/references/keyframe-craft.md",
+  "skills/short-drama-produce/references/builtin-providers.md",
+  "skills/short-drama-edit/scripts/edit_tool.py",
+  "skills/short-drama-edit/references/editing-guide.md",
+  "skills/short-drama-breakdown/scripts/breakdown_tool.py"
+]) {
+  if (!paths.has(required)) throw new Error(`Bundled Drama Skills are missing the contract asset ${required}.`);
+}
+for (const forbidden of [
+  "skills/short-drama/references/lifecycle-commands.md",
+  "skills/short-drama/scripts/dashboard_server.py",
+  "skills/short-drama/scripts/creator_views.py"
+]) {
+  if (paths.has(forbidden)) throw new Error(`Bundled Drama Skills retained incompatible runtime content ${forbidden}.`);
+}
+if (manifest.files.some(({ path }) => path.includes("/__pycache__/") || path.endsWith(".pyc") || path.endsWith("/.DS_Store"))) {
+  throw new Error("Bundled Drama Skills retained upstream workspace artifacts.");
+}
+const routeSkill = await readFile(join(dramaRoot, "skills/short-drama/SKILL.md"), "utf8");
+for (const document of ["剧本.md", "视觉设定.md", "分镜.md", "图片提示词.md", "视频提示词.md"]) {
+  if (!routeSkill.includes(document)) throw new Error(`Drama creator-first route no longer declares ${document}.`);
+}
+// v0.7 adds assembly downstream of production. 剪辑单.md records what reaches the cut —
+// kept footage, timing, post-processing and the delivery spec — and is not a sixth
+// creative truth: lines, shot purpose and declared durations stay in the five documents.
+if (!routeSkill.includes("剪辑单.md")) throw new Error("Drama v0.7 route no longer declares the 剪辑单.md assembly stage.");
+const editSkill = await readFile(join(dramaRoot, "skills/short-drama-edit/SKILL.md"), "utf8");
+if (!editSkill.includes("剧集/<EP>/剪辑单.md")) throw new Error("Drama v0.7 assembly document contract is missing.");
+if (!editSkill.includes("SHOT-...") || !editSkill.includes("IMG-...") || !editSkill.includes("- 配音 N：")) {
+  throw new Error("Drama v0.8.1 static-frame assembly contract is missing.");
+}
+const reviewSkill = await readFile(join(dramaRoot, "skills/short-drama-review/SKILL.md"), "utf8");
+if (!reviewSkill.includes("审查/EP001-审查.md")) throw new Error("Drama v0.6 review Markdown contract is missing.");
+const produceSkill = await readFile(join(dramaRoot, "skills/short-drama-produce/SKILL.md"), "utf8");
+if (!produceSkill.includes("剧集/<EP>/制作成果/")) throw new Error("Drama v0.6 production output contract is missing.");
+const adapterContract = await readFile(join(dramaRoot, "skills/short-drama-produce/references/adapter-contract.md"), "utf8");
+if (
+  !produceSkill.includes("reference_audio") ||
+  !adapterContract.includes('"reference_audio"') ||
+  !adapterContract.includes("character") ||
+  !adapterContract.includes("reference_roles")
+) {
+  throw new Error("Drama v0.8.1 reference-audio production contract is missing.");
+}
+const productionTool = await readFile(join(dramaRoot, "skills/short-drama-produce/scripts/production_tool.py"), "utf8");
+if (!productionTool.includes('AUDIO_REFERENCE_ROLE = "reference_audio"') || !productionTool.includes('"reference_roles"')) {
+  throw new Error("Drama v0.8.1 reference-audio enforcement is missing.");
+}
+const creatorCheck = await readFile(join(dramaRoot, "skills/short-drama/scripts/creator_markdown_check.py"), "utf8");
+if (!creatorCheck.includes("不说话的人物不绑定参考音频") || !creatorCheck.includes("声音参考重复")) {
+  throw new Error("Drama v0.12.0 voice identity and control checks are missing.");
+}
+const fixtureSources = JSON.parse(await readFile(join(import.meta.dirname, "demo-fixtures/sources.json"), "utf8")) as {
+  readonly fixtures: readonly {
+    readonly kind: string;
+    readonly commit: string;
+    readonly sourcePath: string;
+    readonly localPath: string;
+    readonly files?: readonly { readonly path: string; readonly sha256: string; readonly bytes: number }[];
+  }[];
+};
+const dramaFixture = fixtureSources.fixtures.find((fixture) => fixture.kind === "drama");
+if (dramaFixture === undefined || dramaFixture.commit !== manifest.upstream.commit || dramaFixture.files === undefined) {
+  throw new Error("Drama demo fixture provenance is missing or does not match the pinned upstream commit.");
+}
+const fixtureRoot = join(import.meta.dirname, "demo-fixtures", dramaFixture.localPath);
+const fixtureFiles = (await readdir(fixtureRoot, { withFileTypes: true }))
+  .filter((entry) => entry.isFile())
+  .map((entry) => entry.name)
+  .sort();
+if (JSON.stringify(fixtureFiles) !== JSON.stringify(dramaFixture.files.map(({ path }) => path).sort())) {
+  throw new Error("Drama demo fixture files differ from their recorded provenance.");
+}
+for (const expected of dramaFixture.files) {
+  const bytes = await readFile(join(fixtureRoot, expected.path));
+  const sha256 = createHash("sha256").update(bytes).digest("hex");
+  if (bytes.byteLength !== expected.bytes || sha256 !== expected.sha256) {
+    throw new Error(`Drama demo fixture ${expected.path} differs from its recorded upstream content.`);
+  }
+}
+// v0.9.1 dropped the legacy JSON checkers, and with them the selftests of Skills that now ship
+// no scripts; every Skill that still ships scripts must still ship and pass its selftest.
+const scriptedSkills = [...new Set(manifest.files
+  .map(({ path }) => /^skills\/([^/]+)\/scripts\/[^/]+\.py$/u.exec(path)?.[1])
+  .filter((skill) => skill !== undefined))].sort();
+const selftests = manifest.files
+  .map(({ path }) => path)
+  .filter((path) => path.endsWith("/scripts/selftest.py"));
+const missingSelftests = scriptedSkills.filter((skill) => !paths.has(`skills/${skill}/scripts/selftest.py`));
+if (scriptedSkills.length === 0 || missingSelftests.length > 0) {
+  throw new Error(`Every Drama Skill with scripts needs a selftest; missing: ${missingSelftests.join(", ") || "all"}.`);
+}
+const python = await dramaPython();
+for (const selftest of selftests) {
+  // A selftest must never wait on a prompt (ffmpeg asks before overwriting); close its stdin and
+  // bound it, so a stuck one fails with its name instead of holding CI until the job times out.
+  const run = execFileAsync(python, ["-B", join(dramaRoot, selftest)], {
+    encoding: "utf8",
+    timeout: 300_000,
+    env: { ...process.env, PYTHONDONTWRITEBYTECODE: "1" }
+  });
+  run.child.stdin?.end();
+  try { await run; }
+  catch (error) { throw new Error(`Drama selftest ${selftest} failed: ${String(error)}`, { cause: error }); }
+}
+const source = dramaUpstreamRoot();
+if (process.env.DRAMA_SKILLS_UPSTREAM_DIR !== undefined && (await stat(source).catch(() => undefined))?.isDirectory()) {
+  const { stdout } = await execFileAsync("git", ["-C", source, "rev-parse", "HEAD"], { encoding: "utf8" });
+  if (stdout.trim() !== manifest.upstream.commit) throw new Error("Drama Skills upstream commit differs from the pinned manifest.");
+  for (const expected of dramaFixture.files) {
+    const upstream = await readFile(join(source, dramaFixture.sourcePath, expected.path));
+    const local = await readFile(join(fixtureRoot, expected.path));
+    if (!upstream.equals(local)) throw new Error(`Drama demo fixture ${expected.path} differs from the pinned upstream example.`);
+  }
+}
+process.stdout.write(`Drama parity OK: ${String(manifest.skills.length)} bundled skills and ${String(selftests.length)} selftests at ${manifest.upstream.commit.slice(0, 12)}.\n`);

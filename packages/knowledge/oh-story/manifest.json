@@ -1,0 +1,1662 @@
+{
+  "schemaVersion": 2,
+  "upstream": {
+    "repository": "git@github.com:zenstory-ai/oh-story-claudecode.git",
+    "commit": "41a9b6c855d7d29a2bf214b4eefda2b10a0e8afb",
+    "releaseVersion": "0.10.5",
+    "agentsVersion": 44
+  },
+  "generatedAt": "2026-11-15T12:32:36.016Z",
+  "skills": [
+    "browser-cdp",
+    "story",
+    "story-cover",
+    "story-deslop",
+    "story-import",
+    "story-long-analyze",
+    "story-long-scan",
+    "story-long-write",
+    "story-publish",
+    "story-review",
+    "story-setup",
+    "story-short-analyze",
+    "story-short-scan",
+    "story-short-write"
+  ],
+  "roles": [
+    "chapter-extractor",
+    "character-designer",
+    "consistency-checker",
+    "narrative-writer",
+    "story-architect",
+    "story-explorer",
+    "story-researcher"
+  ],
+  "files": [
+    {
+      "path": "LICENSE.upstream",
+      "sha256": "52c71355258924a967927780245f70677b38ff7d073c03f9096df33888f34653",
+      "bytes": 1081
+    },
+    {
+      "path": "roles/chapter-extractor.md",
+      "sha256": "beb30754d542e2a7b16f85633c7b79f0195f474d8f97452400e80bd114afa5d8",
+      "bytes": 14200
+    },
+    {
+      "path": "roles/character-designer.md",
+      "sha256": "9fd53734e1a742be9a5cf3a3b0871a6fe8f18e6394c3b2664fa13e923024e036",
+      "bytes": 4633
+    },
+    {
+      "path": "roles/consistency-checker.md",
+      "sha256": "5dcdd020707519bc5349ff22c1f36b71a9cc819a1895aace624839fe9cd454f8",
+      "bytes": 11510
+    },
+    {
+      "path": "roles/narrative-writer.md",
+      "sha256": "8cd836263a0e1ada9c32eaaf1500be9a7ee097748f2f975585d7000b34189f0c",
+      "bytes": 15597
+    },
+    {
+      "path": "roles/story-architect.md",
+      "sha256": "253e2ce3110279207057b3b13d452eece9365613ef4b4834dfa835c4ba02b2b9",
+      "bytes": 8646
+    },
+    {
+      "path": "roles/story-explorer.md",
+      "sha256": "2cf47342d11f2b407a9562f8caf1b7f73dc516dec8d0a952b328316f0c81489d",
+      "bytes": 11167
+    },
+    {
+      "path": "roles/story-researcher.md",
+      "sha256": "2cf8840aad122a9d1dd765d49bcd8245f4afa1153e723cee1ed7feb0bf3a736e",
+      "bytes": 10214
+    },
+    {
+      "path": "skills/browser-cdp/SKILL.md",
+      "sha256": "917b1ba16fdccb5b697a99e074236431c40c0a88211e7d00a1a21a669f01f08f",
+      "bytes": 8276
+    },
+    {
+      "path": "skills/story-cover/SKILL.md",
+      "sha256": "1eb81925e81b126dcbcd89523a40a86104050a6bff46feee1ac17725525444d7",
+      "bytes": 10302
+    },
+    {
+      "path": "skills/story-cover/references/api-fallback.md",
+      "sha256": "dc142b9bc3b856e8fd6966e5e67c3ed0ab35dc9c4e6b14b8b1fca10185634230",
+      "bytes": 4828
+    },
+    {
+      "path": "skills/story-cover/references/cover-styles.md",
+      "sha256": "744c0d3693b4f0708eda59061977fedbafbb4200b16a7807ef44e8964ef0ce1d",
+      "bytes": 11464
+    },
+    {
+      "path": "skills/story-deslop/SKILL.md",
+      "sha256": "b27143e23651e75778938c807ef851f0bffecc351439baa7566204b407a0ef21",
+      "bytes": 11591
+    },
+    {
+      "path": "skills/story-deslop/references/agent-calls.md",
+      "sha256": "5841f1b182b9da3ee6dd3ec5b7e64c4661ec844cb782f0bbc11280ff3e87116c",
+      "bytes": 1258
+    },
+    {
+      "path": "skills/story-deslop/references/banned-words.md",
+      "sha256": "3c79c3bca61ae35f38d3679ae63b861967fcee75a667a2521565a8f10ab82da2",
+      "bytes": 11117
+    },
+    {
+      "path": "skills/story-deslop/references/deslop-gates.md",
+      "sha256": "ed76a33654117ed5bc39f8f41203ba7aa591d16c91e558074e160b50c2f0b95b",
+      "bytes": 2312
+    },
+    {
+      "path": "skills/story-deslop/references/expression.md",
+      "sha256": "984b087ccd6ed5c62693946490cab1c623cf407def986a57448353e8047830da",
+      "bytes": 9795
+    },
+    {
+      "path": "skills/story-deslop/references/narrative-focus.md",
+      "sha256": "245d00dcbe8c7dd0cf3d7098f7cb37a24ea59aee2f9e17ad7c3119298a394f32",
+      "bytes": 6856
+    },
+    {
+      "path": "skills/story-deslop/references/short-deslop.md",
+      "sha256": "e6cbdfd7ab776f2094aca43c4c97342ee318014744e36c78bf9eaa5fd4dfdcac",
+      "bytes": 1570
+    },
+    {
+      "path": "skills/story-deslop/references/story-logic.md",
+      "sha256": "8eac37d14f85f1ed7516f9817d1333e9fee50297f4ac5457c9c1ea5364959ba5",
+      "bytes": 6051
+    },
+    {
+      "path": "skills/story-deslop/references/style-resolution.md",
+      "sha256": "87791172cffc66de355491f921886e73407f3304ece35d25c1e1de0e717c1bfd",
+      "bytes": 3053
+    },
+    {
+      "path": "skills/story-deslop/scripts/check-ai-patterns.js",
+      "sha256": "10dc95deb12fd74b3d36ed0acd3516b442cd44d653d9ab8ffab5ecfea2868f29",
+      "bytes": 81491
+    },
+    {
+      "path": "skills/story-deslop/scripts/check-degeneration.js",
+      "sha256": "b50c55f63e5a38f503c23994d20b3428565cbebb8014d69bfb667d9e412044f8",
+      "bytes": 15793
+    },
+    {
+      "path": "skills/story-deslop/scripts/normalize-punctuation.js",
+      "sha256": "dbe5d6388f3924b2c4f5ab8717dede8178beac1e5ec1b178187f3a57d2c3d13c",
+      "bytes": 19472
+    },
+    {
+      "path": "skills/story-deslop/scripts/style-whitelist.js",
+      "sha256": "398018c5acff324009493d1e7661f8864bf62d6d95616d00fa5141cc86eb3908",
+      "bytes": 1168
+    },
+    {
+      "path": "skills/story-import/SKILL.md",
+      "sha256": "21706355da941135c69a8934e8bac0c3918558c8198622c2d435d8d5c1bbaa10",
+      "bytes": 11127
+    },
+    {
+      "path": "skills/story-import/references/benchmark-sync.md",
+      "sha256": "802429eaa724c9a01e6c877624d532f294c260631c27a69362c395daa930e805",
+      "bytes": 4103
+    },
+    {
+      "path": "skills/story-import/references/character-state-reverse.md",
+      "sha256": "3788758a5c1cec1fb663ec99db797cd3821a2ea729d7ee05b427ea47725e3846",
+      "bytes": 4157
+    },
+    {
+      "path": "skills/story-import/references/deep-analysis.md",
+      "sha256": "477546d82b58c1520cb751ae26ca3060de0d1522cfe3922e4bc7aad37747d76e",
+      "bytes": 4390
+    },
+    {
+      "path": "skills/story-import/references/import-report.md",
+      "sha256": "d90b90d870f54377e686839efa8d14b4dcff7e1647d51af8d1e1ea61ca2f18f0",
+      "bytes": 4482
+    },
+    {
+      "path": "skills/story-import/references/import-special-cases.md",
+      "sha256": "e55eb01982f2e6bcb5fbe2d1683b60a9643d9e0bf5a6672d2c2f2ecce49565ca",
+      "bytes": 2607
+    },
+    {
+      "path": "skills/story-import/references/import-tracking.md",
+      "sha256": "6d566c1ed01343a9f8d0ac90990271b8f0602bbaa8559d8c6715aa4be4f69f88",
+      "bytes": 6888
+    },
+    {
+      "path": "skills/story-import/references/length-routing.md",
+      "sha256": "1cc8227e5cebd69c9de9a7e5296187595c28a9e62fcac46bf3ad417dd95393c9",
+      "bytes": 1543
+    },
+    {
+      "path": "skills/story-import/references/outline-reverse-rules.md",
+      "sha256": "b3677a163e9c5538b6f528a4a3d9078aabedc3b20b25f7284938c3a9adf238dc",
+      "bytes": 6156
+    },
+    {
+      "path": "skills/story-import/references/outline-reverse.md",
+      "sha256": "4a201f444635203996a54bf3394b0e3106f4eb1d86509beb1881e6c415321813",
+      "bytes": 2902
+    },
+    {
+      "path": "skills/story-import/references/structure-mapping-long.md",
+      "sha256": "4fe4cc6e944e43e711c48206138116a54d5768ef28847242f16ee2e9be3b9762",
+      "bytes": 20645
+    },
+    {
+      "path": "skills/story-import/references/structure-mapping-short.md",
+      "sha256": "4ab4310a5331744713a0be95ea4e76d996eaf732fc910e74a89cf1d18f27f1b3",
+      "bytes": 10418
+    },
+    {
+      "path": "skills/story-import/references/tracking-initialization.md",
+      "sha256": "90cb779283e64388f455016be35877369400d0a5c30c9231606527ca6a6efd0f",
+      "bytes": 1651
+    },
+    {
+      "path": "skills/story-import/scripts/build_outline_brief.py",
+      "sha256": "45ca52567b081bd91fef26b252478f2f4e9cad55345807456d9d8926d300d8d4",
+      "bytes": 16636
+    },
+    {
+      "path": "skills/story-import/scripts/check-outline-contract.js",
+      "sha256": "db7f9d501bce30e70b8092d898d2874cceb6d6898d42d6d205e53e924128dced",
+      "bytes": 28978
+    },
+    {
+      "path": "skills/story-import/scripts/outline_view.py",
+      "sha256": "b67e607d8b5b5b0dcf91a00674e98d5ccfb6483b3f9f23e6d9264c4a92a75d48",
+      "bytes": 18637
+    },
+    {
+      "path": "skills/story-import/scripts/tracking_commit.py",
+      "sha256": "bb29debd23e9f68a5d5220bc94694fb60a215b54b4d175964d1c5159f89aa477",
+      "bytes": 85124
+    },
+    {
+      "path": "skills/story-import/scripts/wordcount_core.py",
+      "sha256": "5f1882e0150677618bf1d69a2b893b5b9f4bb4fce4d34b574733ed99829d96bf",
+      "bytes": 19317
+    },
+    {
+      "path": "skills/story-long-analyze/SKILL.md",
+      "sha256": "c50afa4397fba6356a71fa1f30cac8f640c064bec7571eb129ed147b6d8c0d75",
+      "bytes": 10053
+    },
+    {
+      "path": "skills/story-long-analyze/references/author-facing.md",
+      "sha256": "92a744ae3e67450934df075880953722dab14471f1e1e8b1c956336fc23ec81c",
+      "bytes": 12750
+    },
+    {
+      "path": "skills/story-long-analyze/references/final-checks.md",
+      "sha256": "25aa222b51c08bd3ac0634fea95cf776b00ca270fb537a354cea647304c0d893",
+      "bytes": 1022
+    },
+    {
+      "path": "skills/story-long-analyze/references/index-rebuild.md",
+      "sha256": "dfcc794a1d0076ce127cbf7bfc83da791053d57cd74d9de26d02e72a42913bc8",
+      "bytes": 3010
+    },
+    {
+      "path": "skills/story-long-analyze/references/inspiration-library.md",
+      "sha256": "c3a2f7007e9c5e9f7444a9bd8e4004c9f9f1f1c513295e5814bff69b18e1711e",
+      "bytes": 10231
+    },
+    {
+      "path": "skills/story-long-analyze/references/pipeline-ops.md",
+      "sha256": "21c36cc0749da2e8f7e325af616a359e121f13846ddd4348b5ae5a92e96a315c",
+      "bytes": 7516
+    },
+    {
+      "path": "skills/story-long-analyze/references/stage1-golden-chapters.md",
+      "sha256": "08bc18247c50e9ceb1a92dc77f551acc3286d80c4e65dd08946e6dfa67499d82",
+      "bytes": 6126
+    },
+    {
+      "path": "skills/story-long-analyze/references/stage2-extraction.md",
+      "sha256": "bdbfe09708496152e3aca8f094373cdeab16c12728584d0aac41512508e96df6",
+      "bytes": 11183
+    },
+    {
+      "path": "skills/story-long-analyze/references/stage3-plot-rhythm.md",
+      "sha256": "0b6bcf949bd902ac02d48c5c5b716d643df8d0a12efe2645c3d96d608805ed92",
+      "bytes": 20018
+    },
+    {
+      "path": "skills/story-long-analyze/references/stage4-characters-settings.md",
+      "sha256": "85c2c0612900a6e01aeb152b6cabe8023f371ec75f5403c45689de18e82bd44f",
+      "bytes": 6379
+    },
+    {
+      "path": "skills/story-long-analyze/references/stage5-report.md",
+      "sha256": "137282c798935ac91e46fa957f45bb4178413470ab62b9e5d2455f3fd7ff3e73",
+      "bytes": 2756
+    },
+    {
+      "path": "skills/story-long-analyze/references/style-profile-generator.md",
+      "sha256": "0c8d9e560f09ff67d4e69f47477b971802df9babfd40b22f616458f3bbccb410",
+      "bytes": 7588
+    },
+    {
+      "path": "skills/story-long-analyze/references/synthesis-inputs.md",
+      "sha256": "78fd89bad27bfea5bf57230a27537b67cfd39c5f0c9a10faa39752d9a117d8b3",
+      "bytes": 3371
+    },
+    {
+      "path": "skills/story-long-analyze/scripts/build_chapter_index.py",
+      "sha256": "097040f1e3901f4c3321732560ddce31e26cffab527ff966bd84a299f86d38df",
+      "bytes": 23281
+    },
+    {
+      "path": "skills/story-long-analyze/scripts/inspect_existing_assets.py",
+      "sha256": "43e8a322f7f3b98d75804460e53bf243c33d21417ce9de8e611a566dcbe22b0c",
+      "bytes": 32162
+    },
+    {
+      "path": "skills/story-long-analyze/scripts/inspiration_index.py",
+      "sha256": "88f1d48f50892116b7956dc2842bdc22b37a0049f1e845c26abc4a0cce0d634e",
+      "bytes": 39303
+    },
+    {
+      "path": "skills/story-long-analyze/scripts/manage_analysis_run.py",
+      "sha256": "468ffa515123b7ff8d0b2e97407b77cba873c9036cc3d5043ab88ead6c91fe91",
+      "bytes": 58560
+    },
+    {
+      "path": "skills/story-long-analyze/scripts/render_relation_chart.py",
+      "sha256": "84aa360739a150fdb681a13349e713457eafa23d009e9e755f92d8a01b49d71f",
+      "bytes": 19423
+    },
+    {
+      "path": "skills/story-long-scan/SKILL.md",
+      "sha256": "05bdc32875b16e3625dfc9f8d5c8313da58a8f87268622a4bcadc7a7fc387618",
+      "bytes": 8035
+    },
+    {
+      "path": "skills/story-long-scan/references/genre-trends.md",
+      "sha256": "bb59b9ae6880bb14255680c5dad5b63d109673ca9520e6ea8d49f8de758ef398",
+      "bytes": 3732
+    },
+    {
+      "path": "skills/story-long-scan/references/platform-ciweimao.md",
+      "sha256": "2fc929a4571e3a5b6bc4d3f207b2b4f6c987bbc6a9bd1c8a5d698214dbb2fb30",
+      "bytes": 1838
+    },
+    {
+      "path": "skills/story-long-scan/references/platform-fanqie.md",
+      "sha256": "6b23c416822d62d1771555a1507a2df0da867d1a86aec3a27d6160fd56afdba3",
+      "bytes": 2773
+    },
+    {
+      "path": "skills/story-long-scan/references/platform-jjwxc.md",
+      "sha256": "40fb306968c2c62a2514ef0e8d8e768c84380d11e6eebb874455d2af7963a9f0",
+      "bytes": 2012
+    },
+    {
+      "path": "skills/story-long-scan/references/platform-qidian.md",
+      "sha256": "c466926d662d572835c2ba4d6bff4294de38c8e0e429dbce72d2f18fc032444d",
+      "bytes": 3435
+    },
+    {
+      "path": "skills/story-long-scan/references/platform-qimao.md",
+      "sha256": "b2b4a835b108c8b0b09f9b25e5c74f0b004523048f4a754234a96d1c0b4e295f",
+      "bytes": 2558
+    },
+    {
+      "path": "skills/story-long-scan/references/topic-decision.md",
+      "sha256": "68523a1447039b638ebc9cfce56afabe898ba7b7a04115a4cd4ea56cc0e568d8",
+      "bytes": 4822
+    },
+    {
+      "path": "skills/story-long-scan/scripts/aggregate-rank.js",
+      "sha256": "2cb444fbc7a46f507fdba181cc8f79f3823be2e8503b30b8520838c914203ebc",
+      "bytes": 32105
+    },
+    {
+      "path": "skills/story-long-scan/scripts/cdp-utils.js",
+      "sha256": "0bbb2379d2889db7db2a6fed2d95bf750ca4d909621acd28f9e47cecece54761",
+      "bytes": 8564
+    },
+    {
+      "path": "skills/story-long-scan/scripts/ciweimao-rank-scraper.js",
+      "sha256": "5cfce8f7d831dc0b0fb7fc770ac88649149bb58c9ec32daf79605857f8aa20c7",
+      "bytes": 9554
+    },
+    {
+      "path": "skills/story-long-scan/scripts/fanqie-rank-scraper.js",
+      "sha256": "15984208e9dcee6e243b6cd1be748d25181ef549b1b4c34c81a8816c81dd610b",
+      "bytes": 26267
+    },
+    {
+      "path": "skills/story-long-scan/scripts/jjwxc-rank-scraper.js",
+      "sha256": "31508e393e0e5fc31b8b01772c044489a5d355ec5ce59f865d5ca6ffdd59838a",
+      "bytes": 16528
+    },
+    {
+      "path": "skills/story-long-scan/scripts/qidian-rank-scraper.js",
+      "sha256": "8223d4b888daf3bec4c135f93edfdc7e0ce1a126a46f3b2fd5a524542c673002",
+      "bytes": 49572
+    },
+    {
+      "path": "skills/story-long-scan/scripts/qimao-rank-scraper.js",
+      "sha256": "fb55d617b4852a4b088a794a49fff4b8eff20d8b2fdf09140a8e63fc3c7d0464",
+      "bytes": 35676
+    },
+    {
+      "path": "skills/story-long-write/SKILL.md",
+      "sha256": "107a26e339c98f4477a30d17518531c2c4c0f63cded43b3eb2884275e3a5ee0e",
+      "bytes": 13282
+    },
+    {
+      "path": "skills/story-long-write/references/agent-calls.md",
+      "sha256": "82ed413b62c50c7cc9e7abea078d2fec9d45b5ba172044525210928ad0fb18bb",
+      "bytes": 5306
+    },
+    {
+      "path": "skills/story-long-write/references/artifact-protocols.md",
+      "sha256": "ca9d6e2605c06be31947c34b939500e104c9883f54db207a10ff43d3dafbb71b",
+      "bytes": 10048
+    },
+    {
+      "path": "skills/story-long-write/references/author-memory.md",
+      "sha256": "9c08c6e4e3c586c0a8b2f0dfae8e1a79d1b609b4fab32988822796a366a43d26",
+      "bytes": 6778
+    },
+    {
+      "path": "skills/story-long-write/references/banned-words.md",
+      "sha256": "3c79c3bca61ae35f38d3679ae63b861967fcee75a667a2521565a8f10ab82da2",
+      "bytes": 11117
+    },
+    {
+      "path": "skills/story-long-write/references/benchmark-recall.md",
+      "sha256": "ff8d501ad3dd39110574fd299d575a9d6d8abc41015bd34a502584062de99e0b",
+      "bytes": 5358
+    },
+    {
+      "path": "skills/story-long-write/references/character-basics.md",
+      "sha256": "e11fe53f693a3b359518efecbef685886044e7a9f660d815d2f15bf74668c171",
+      "bytes": 12626
+    },
+    {
+      "path": "skills/story-long-write/references/character-relations.md",
+      "sha256": "d980256286ea50865ab09b53bb42376ed97aea7810d626e3310cee7612e6af12",
+      "bytes": 10475
+    },
+    {
+      "path": "skills/story-long-write/references/cross-book-recall.md",
+      "sha256": "11cf14b0ad0137a2dca22ef79dfb122550beb551e7a86f57312a4aef80b715f6",
+      "bytes": 3955
+    },
+    {
+      "path": "skills/story-long-write/references/dialogue-mastery.md",
+      "sha256": "6b33c4940188586691fcac85ed4b91cdc0e07ce3ee1da0b4dbdc5744587f30e3",
+      "bytes": 11215
+    },
+    {
+      "path": "skills/story-long-write/references/emotional-methods.md",
+      "sha256": "392abeec846066c6848337cbbdb65fdb858718a1debd032d58de8bcd67bfb9e3",
+      "bytes": 8065
+    },
+    {
+      "path": "skills/story-long-write/references/female-audience-writing.md",
+      "sha256": "8595a4b2d2f6c58fae0f5058ab8f67bb61616c2674427af92070ab579d12470c",
+      "bytes": 7677
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards.md",
+      "sha256": "d5c5b6f56928b749d82842542d6829c9d534fc386cf0ad74a84ad10e5e35b348",
+      "bytes": 7213
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/东方仙侠.md",
+      "sha256": "8bfe1f4adef550fe90f1f2683d5a35d2a274fa2a2f5b0c560998ed82b3dea638",
+      "bytes": 2406
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/传统玄幻.md",
+      "sha256": "eea82f7a3124b2ffa3f1e54e2e0c878c11102b22f3cee20c3540ac911af25d9d",
+      "bytes": 1920
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/历史古代.md",
+      "sha256": "0087ae3cbae1d4a6797c0ac8d943dd6d7199afbfccdaa48bb8c311464a73d4b3",
+      "bytes": 1754
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/历史脑洞.md",
+      "sha256": "c1e7ed609a27cc4ed23c51f11ea085fe452a1467e6722047ab476e67fa15063c",
+      "bytes": 2012
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/双男主.md",
+      "sha256": "c369be2bfa0ebd40528e12f52aa9298286724504210ec7fd0a315e44aeeed435",
+      "bytes": 2363
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/古言脑洞.md",
+      "sha256": "986a542199892bab8b4876277cc73d8908843e9d66531071df3a870cf1c39b58",
+      "bytes": 1821
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/古风世情.md",
+      "sha256": "ed33cdfb2c3a87732e3cf855d2420f6a37713b7880821e88cc7c31dfc66c09f3",
+      "bytes": 2377
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/女频悬疑.md",
+      "sha256": "244ce33377596e3fa23207407124b412ed1e0fb2d8fd31d653a85ae44c7f2934",
+      "bytes": 1847
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/女频种田.md",
+      "sha256": "d9f5a9fea0ff4cb096831aa6865a4586116c0e3e478fcb186ed85d59e8b35b39",
+      "bytes": 1819
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/宫斗宅斗.md",
+      "sha256": "f4390076b223ba1c75c4298b33c3bbad826a967dea4bab29f9d3c0c2eeba3c86",
+      "bytes": 1653
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/年代.md",
+      "sha256": "f8c2d41205fb5a7de9be332da9d471c8238735acac6311fd02b348b0c1491efb",
+      "bytes": 2164
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/快穿.md",
+      "sha256": "3a83bede31a3e7cf88620a23892ce88564c0520b0a831a5c974b4a679d2c0b24",
+      "bytes": 1964
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/悬疑灵异.md",
+      "sha256": "040a7c945f6c3358fab3a18fe63e45f808d98071ed2964e490b038da261f16c3",
+      "bytes": 1757
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/悬疑脑洞.md",
+      "sha256": "0b469e1493ae29f7ced71072627a51c89475c87980dd9a0b0b7d1bd915c5c92f",
+      "bytes": 1912
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/战神赘婿.md",
+      "sha256": "dba3e7f52ac7f44498e8099e451682efbc3688470242200d358e92fc47c7a14d",
+      "bytes": 1899
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/抗战谍战.md",
+      "sha256": "9dcd8e42302e49f589d4ab51bfca1404a2407a94a813bf6624ca166efdc8bec0",
+      "bytes": 1828
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/星光璀璨.md",
+      "sha256": "9b9933ec54f4a22c9c5c8ccd0595cc14e67e7bc22ae1eb209d6d33d385f14c46",
+      "bytes": 1864
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/民国言情.md",
+      "sha256": "86c003c1eec6d6d8a3181e69e8f98211c6dadc10e085d5635190e8ea5e06220e",
+      "bytes": 1899
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/流派兜底.md",
+      "sha256": "15db63396d582f1389f7fbc87f6420490f4d0cd700888419138a7af0ffc8c789",
+      "bytes": 8576
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/游戏体育.md",
+      "sha256": "c554b3084b507541a0255a7d2889d86cf5d376abed0403c2e4314feb0998ff28",
+      "bytes": 1971
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/玄幻脑洞.md",
+      "sha256": "8b2854a9a943ac3425ab8f9557c774eb9e2d153a4b056f4521394bd01cfc52cb",
+      "bytes": 2073
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/玄幻言情.md",
+      "sha256": "281dd8b578cead55915794aac320e0d401f25a80c0867dfb3724791246b7f0a5",
+      "bytes": 1744
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/现言脑洞.md",
+      "sha256": "c2733304c19f50aae3d395ce4c736ca26b7f631c9d5e98a9eeb3f1cd9606fd1c",
+      "bytes": 1845
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/科幻末世.md",
+      "sha256": "1baf9ed53f85b99766f8bf3e64af60be9d0e774a156af9e822c5ac51d4c13f64",
+      "bytes": 1744
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/职场婚恋.md",
+      "sha256": "5cb1831a622e88b2ab3435e70f556bdb38c9eb262725757c88d9cd4800937ab7",
+      "bytes": 1720
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/西方奇幻.md",
+      "sha256": "dfeb3fa38cb9481f74aea566e3d269b571ac29d6d69a1f2ed0142f93128bf05e",
+      "bytes": 1914
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/豪门总裁.md",
+      "sha256": "cfb132cf19908f06f39bcd7a1f00b3864539e294286ddd2d324944a54a065557",
+      "bytes": 2404
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/都市修真.md",
+      "sha256": "9d5c6f9ab6a0a453f1dec91ed6851df4bd0d8ecf20ec1c4dd525024ad02a7cfc",
+      "bytes": 1778
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/都市日常.md",
+      "sha256": "a16e8638cd2914e76078dac52e5a36d459e312609fa6d8e9c5301e07ddbce4b4",
+      "bytes": 2872
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/都市种田.md",
+      "sha256": "aacafd2de90f60cb162783dc7a714930ad0bb48ecb39dc61ba7707d4707c7b05",
+      "bytes": 1716
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/都市脑洞.md",
+      "sha256": "e3181b4e882bb66d4e6e8852c56f3bd30bb0b93f2653969da9c6118bc8f4d93a",
+      "bytes": 2481
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/都市高武.md",
+      "sha256": "b8d298d2a9dbda7516b074436ecc6ecc01a16df48a6292e9f498253c76876f1c",
+      "bytes": 2087
+    },
+    {
+      "path": "skills/story-long-write/references/genre-prose-cards/青春甜宠.md",
+      "sha256": "b5fbaf98c911050b0f7219da67aaeaf2402e74f9907ccd19e1506c735a67c954",
+      "bytes": 1886
+    },
+    {
+      "path": "skills/story-long-write/references/genre-readers.md",
+      "sha256": "d9a1cb0ba7473585b26a3680bb7f0179141237fa7ebf4d609537e6602b1b07e1",
+      "bytes": 7041
+    },
+    {
+      "path": "skills/story-long-write/references/long-chapter-hooks.md",
+      "sha256": "13a92dfc56bb5155b939cfa5c87f743e5aff371099395ffb9f6dadd05f86a524",
+      "bytes": 6650
+    },
+    {
+      "path": "skills/story-long-write/references/long-chapter-quality.md",
+      "sha256": "1c70f5a2b40e3b9195e84358ff3b33b3a023b158394de62164907c35e8dbb9c6",
+      "bytes": 3430
+    },
+    {
+      "path": "skills/story-long-write/references/long-format.md",
+      "sha256": "b3915cee0ff8aa78d3848cdb0d638f3111948c644fe432e75111b99f489991b0",
+      "bytes": 2158
+    },
+    {
+      "path": "skills/story-long-write/references/long-genre-catalog.md",
+      "sha256": "24ef38ea4a604f8f9e81c4487df10133ee0d1e095fec06e468c32440c063b34f",
+      "bytes": 12231
+    },
+    {
+      "path": "skills/story-long-write/references/long-genre-mechanics.md",
+      "sha256": "d6c1569b14fd7b890502fc67524a9a3afb77ab7f4fc6a9fd85c79570d3407c03",
+      "bytes": 8453
+    },
+    {
+      "path": "skills/story-long-write/references/long-reversal.md",
+      "sha256": "06d30e96d7690510df14afefaeb9b9278f71ae6c4e6b5f1e2e75e25650c80626",
+      "bytes": 12587
+    },
+    {
+      "path": "skills/story-long-write/references/long-suspense.md",
+      "sha256": "acfbe8cffe4ed55a5fdb758c3528b827d85359ea90e0d323377884bbfe628127",
+      "bytes": 9377
+    },
+    {
+      "path": "skills/story-long-write/references/opening-design.md",
+      "sha256": "84ec6ceebfca07749fe18292edad0182aa928d4cfd0a7a62aa47d46a0b18a7eb",
+      "bytes": 4563
+    },
+    {
+      "path": "skills/story-long-write/references/outline-methods.md",
+      "sha256": "e0714990de0403bad3a42161032c620cded09468538e7883d14e8d3501be0565",
+      "bytes": 12840
+    },
+    {
+      "path": "skills/story-long-write/references/outline-template.md",
+      "sha256": "8451910836fa6accbe6d0873ca62a9ecc55c209c81d2d74d62cab5a35e28e80e",
+      "bytes": 8220
+    },
+    {
+      "path": "skills/story-long-write/references/plot-core-methods.md",
+      "sha256": "c13fcf962487412de48996c4e2c4e31709433c43eaab83991e09ae3ce2a13075",
+      "bytes": 5470
+    },
+    {
+      "path": "skills/story-long-write/references/project-files.md",
+      "sha256": "f2b17dc8f07567060db29ad5a81b6c6ebacfdcc70edb52332c3c89f78c8956dd",
+      "bytes": 4814
+    },
+    {
+      "path": "skills/story-long-write/references/reader-contract-and-progression.md",
+      "sha256": "989039471f55671a4ad973839d8b08793917c575d625f29ac1f689fdf3af401a",
+      "bytes": 7055
+    },
+    {
+      "path": "skills/story-long-write/references/revision-diagnosis.md",
+      "sha256": "f9b9be6e6e6ec41024dc361ca43cb2c432bf8011b096b557a03db842fe5864a8",
+      "bytes": 3691
+    },
+    {
+      "path": "skills/story-long-write/references/style-combat-face.md",
+      "sha256": "42dda5489381703025916a6c324bfeef52129fc9f38dc34f4f31eb4bb53867f7",
+      "bytes": 9321
+    },
+    {
+      "path": "skills/story-long-write/references/tracking-initialization.md",
+      "sha256": "90cb779283e64388f455016be35877369400d0a5c30c9231606527ca6a6efd0f",
+      "bytes": 1651
+    },
+    {
+      "path": "skills/story-long-write/references/tracking-transaction.md",
+      "sha256": "d6c3615c33118558f1f703666519627c78b16ef619b503d133c6b2e67546ee24",
+      "bytes": 8769
+    },
+    {
+      "path": "skills/story-long-write/references/workflow-chapter.md",
+      "sha256": "d850c4da64edcf15d26120649fe1080a6c4bd2e0086dd9e160085ecafd715b87",
+      "bytes": 12836
+    },
+    {
+      "path": "skills/story-long-write/references/workflow-daily.md",
+      "sha256": "a49afd57202bfe7116d1b7f848637b10793d7b8d377616a054395c593f25d1b6",
+      "bytes": 6443
+    },
+    {
+      "path": "skills/story-long-write/references/workflow-outline.md",
+      "sha256": "e201a485bf1d6d507dac6bd7a4f4d77c3ed69361db6d274cd09012e19f2de6f3",
+      "bytes": 11744
+    },
+    {
+      "path": "skills/story-long-write/references/workflow-revision.md",
+      "sha256": "32371c3a09d65b17245d58422526c92642a357f661db6b0b63242f574194430b",
+      "bytes": 6694
+    },
+    {
+      "path": "skills/story-long-write/references/workflow-setup.md",
+      "sha256": "5dc78edb0b48e983f4e445f087170b6eb091d6318b0a1d1a69ae43b48f6ba63c",
+      "bytes": 11121
+    },
+    {
+      "path": "skills/story-long-write/references/workflow-volume.md",
+      "sha256": "f6d4f54cd974126f7f3c2e458c561592d1657bd57a68bd2d237eb733691fe6c6",
+      "bytes": 6120
+    },
+    {
+      "path": "skills/story-long-write/references/writing-craft.md",
+      "sha256": "071a04956449b43c989e1258ef29246e7cfaa72d844d657e63bf16cedf30e6c6",
+      "bytes": 24181
+    },
+    {
+      "path": "skills/story-long-write/scripts/author_memory_commit.py",
+      "sha256": "b18bb7d229dacb0bcf0849e0ae4d1713a649e6771ceda161270b6ee3503342b2",
+      "bytes": 76766
+    },
+    {
+      "path": "skills/story-long-write/scripts/build_architect_brief.py",
+      "sha256": "3edd107bca02a6d2dfab807bf2483dfc56eb95a36e6c3c83b2e0f14543c81787",
+      "bytes": 22054
+    },
+    {
+      "path": "skills/story-long-write/scripts/build_writer_prompt.py",
+      "sha256": "2456ae73975c6eb970bb8c77a04e008c43936cc6d7b1da56c850bf3c3acb1fbc",
+      "bytes": 42729
+    },
+    {
+      "path": "skills/story-long-write/scripts/check-ai-patterns.js",
+      "sha256": "10dc95deb12fd74b3d36ed0acd3516b442cd44d653d9ab8ffab5ecfea2868f29",
+      "bytes": 81491
+    },
+    {
+      "path": "skills/story-long-write/scripts/check-degeneration.js",
+      "sha256": "b50c55f63e5a38f503c23994d20b3428565cbebb8014d69bfb667d9e412044f8",
+      "bytes": 15793
+    },
+    {
+      "path": "skills/story-long-write/scripts/check-outline-contract.js",
+      "sha256": "db7f9d501bce30e70b8092d898d2874cceb6d6898d42d6d205e53e924128dced",
+      "bytes": 28978
+    },
+    {
+      "path": "skills/story-long-write/scripts/check-outline-copy.js",
+      "sha256": "e99137b089c1d5050830ab916d2e80bed94280e24b51dda30387e32f46117eae",
+      "bytes": 13676
+    },
+    {
+      "path": "skills/story-long-write/scripts/convert_outline_format.py",
+      "sha256": "fa8c69adac0e92e12f941d3dca54ebac67ae39c867845ff77c4b75a775427923",
+      "bytes": 20267
+    },
+    {
+      "path": "skills/story-long-write/scripts/normalize-punctuation.js",
+      "sha256": "dbe5d6388f3924b2c4f5ab8717dede8178beac1e5ec1b178187f3a57d2c3d13c",
+      "bytes": 19472
+    },
+    {
+      "path": "skills/story-long-write/scripts/outline_view.py",
+      "sha256": "b67e607d8b5b5b0dcf91a00674e98d5ccfb6483b3f9f23e6d9264c4a92a75d48",
+      "bytes": 18637
+    },
+    {
+      "path": "skills/story-long-write/scripts/storyctl.py",
+      "sha256": "b2fcb10d0e0171066e8829b36449952345033525d460ea8560515a28592aba97",
+      "bytes": 37907
+    },
+    {
+      "path": "skills/story-long-write/scripts/style-whitelist.js",
+      "sha256": "398018c5acff324009493d1e7661f8864bf62d6d95616d00fa5141cc86eb3908",
+      "bytes": 1168
+    },
+    {
+      "path": "skills/story-long-write/scripts/template_fence.py",
+      "sha256": "ec51ca83a3279191b377bec20f860b70d90a1fd4b5508579fd302e5250511a30",
+      "bytes": 2655
+    },
+    {
+      "path": "skills/story-long-write/scripts/tracking_commit.py",
+      "sha256": "bb29debd23e9f68a5d5220bc94694fb60a215b54b4d175964d1c5159f89aa477",
+      "bytes": 85124
+    },
+    {
+      "path": "skills/story-long-write/scripts/wordcount_core.py",
+      "sha256": "5f1882e0150677618bf1d69a2b893b5b9f4bb4fce4d34b574733ed99829d96bf",
+      "bytes": 19317
+    },
+    {
+      "path": "skills/story-publish/SKILL.md",
+      "sha256": "ccfa2befb94211d9c106108e696792791e88e56254ebacc333407aaab2f820e3",
+      "bytes": 8869
+    },
+    {
+      "path": "skills/story-publish/references/fanqie-content-tags.md",
+      "sha256": "3e36430f20e668cc9e0b9fc67b925a8342f867142a71014a22adc60a8f469181",
+      "bytes": 4565
+    },
+    {
+      "path": "skills/story-publish/references/fanqie-reading-female.md",
+      "sha256": "0b05e75427a6d72b3a4dbec73b8a65ffbabd9041ba8d839fab2eeacf17aa7a83",
+      "bytes": 2583
+    },
+    {
+      "path": "skills/story-publish/references/fanqie-reading-male.md",
+      "sha256": "54c894711311be51caac2a5f5eb025f25f88088f8ba57419a99c5e05eed2452c",
+      "bytes": 2246
+    },
+    {
+      "path": "skills/story-publish/references/fanqie-short.md",
+      "sha256": "d3accd53e284853985cda8d03e782300bb526c4ab67c0a8973ea2003e1b35449",
+      "bytes": 3517
+    },
+    {
+      "path": "skills/story-publish/references/fanqie.md",
+      "sha256": "e5e8b16aacce39ff4f01e07fa9b63df70a2851b52916e591a39b6fb7a0e7f421",
+      "bytes": 3432
+    },
+    {
+      "path": "skills/story-publish/scripts/check-publish-format.py",
+      "sha256": "e4896583d3cc620f21b4f202458533d7dee95b6b75b90b38a118e63d0dc972b6",
+      "bytes": 10779
+    },
+    {
+      "path": "skills/story-review/SKILL.md",
+      "sha256": "93f80f576cc71db3e879b712a45bd627675f9c1a02157299408f5c7e605fb3a0",
+      "bytes": 19757
+    },
+    {
+      "path": "skills/story-review/references/agent-prompts.md",
+      "sha256": "35b2213d9e140f2af26673d2db73c1b6b1e777f2a074c67e670582b49ef5f5e7",
+      "bytes": 13812
+    },
+    {
+      "path": "skills/story-review/references/banned-words.md",
+      "sha256": "3c79c3bca61ae35f38d3679ae63b861967fcee75a667a2521565a8f10ab82da2",
+      "bytes": 11117
+    },
+    {
+      "path": "skills/story-review/references/batch-review.md",
+      "sha256": "d6ab245c0965a38c433ac7b647089eae247674d6a5dbadd5cc0c5ba6c6fd2921",
+      "bytes": 2325
+    },
+    {
+      "path": "skills/story-review/references/expression.md",
+      "sha256": "984b087ccd6ed5c62693946490cab1c623cf407def986a57448353e8047830da",
+      "bytes": 9795
+    },
+    {
+      "path": "skills/story-review/references/narrative-focus.md",
+      "sha256": "245d00dcbe8c7dd0cf3d7098f7cb37a24ea59aee2f9e17ad7c3119298a394f32",
+      "bytes": 6856
+    },
+    {
+      "path": "skills/story-review/references/quality-rubric.md",
+      "sha256": "0c1198b389dc8b956bd8397009be2e1c4d7772bd32472fb2486d0a734136b9cb",
+      "bytes": 5170
+    },
+    {
+      "path": "skills/story-review/references/review-tracking.md",
+      "sha256": "3d0f774a0da208753f3e8f8ef6441d7b0375abb134dcdc59a1c433995663c704",
+      "bytes": 2269
+    },
+    {
+      "path": "skills/story-review/references/rubrics/fanqie.md",
+      "sha256": "16f853ba308a9840d7d544deceae8401576592c364e5aaf41a063f783cb96725",
+      "bytes": 1012
+    },
+    {
+      "path": "skills/story-review/references/rubrics/qidian.md",
+      "sha256": "ac35937f3339253e8cdabb61a136c99548aa13461dd2bcd2fc5f180e395e1f78",
+      "bytes": 1082
+    },
+    {
+      "path": "skills/story-review/references/rubrics/zhihu.md",
+      "sha256": "86c18fff364a70a19b627105708e63178f49ec1a0a61d86107e105e7bc362fec",
+      "bytes": 1451
+    },
+    {
+      "path": "skills/story-review/references/solo.md",
+      "sha256": "899b0ffa66b96e73baae83fdccd4182bba32e10359fdf2c9024c6c9e19272ada",
+      "bytes": 3007
+    },
+    {
+      "path": "skills/story-review/references/story-logic.md",
+      "sha256": "8eac37d14f85f1ed7516f9817d1333e9fee50297f4ac5457c9c1ea5364959ba5",
+      "bytes": 6051
+    },
+    {
+      "path": "skills/story-review/references/style-resolution.md",
+      "sha256": "87791172cffc66de355491f921886e73407f3304ece35d25c1e1de0e717c1bfd",
+      "bytes": 3053
+    },
+    {
+      "path": "skills/story-review/references/tracking-initialization.md",
+      "sha256": "90cb779283e64388f455016be35877369400d0a5c30c9231606527ca6a6efd0f",
+      "bytes": 1651
+    },
+    {
+      "path": "skills/story-review/references/tracking-transaction.md",
+      "sha256": "d6c3615c33118558f1f703666519627c78b16ef619b503d133c6b2e67546ee24",
+      "bytes": 8769
+    },
+    {
+      "path": "skills/story-review/scripts/check-ai-patterns.js",
+      "sha256": "10dc95deb12fd74b3d36ed0acd3516b442cd44d653d9ab8ffab5ecfea2868f29",
+      "bytes": 81491
+    },
+    {
+      "path": "skills/story-review/scripts/check-degeneration.js",
+      "sha256": "b50c55f63e5a38f503c23994d20b3428565cbebb8014d69bfb667d9e412044f8",
+      "bytes": 15793
+    },
+    {
+      "path": "skills/story-review/scripts/normalize-punctuation.js",
+      "sha256": "dbe5d6388f3924b2c4f5ab8717dede8178beac1e5ec1b178187f3a57d2c3d13c",
+      "bytes": 19472
+    },
+    {
+      "path": "skills/story-review/scripts/style-whitelist.js",
+      "sha256": "398018c5acff324009493d1e7661f8864bf62d6d95616d00fa5141cc86eb3908",
+      "bytes": 1168
+    },
+    {
+      "path": "skills/story-review/scripts/tracking_commit.py",
+      "sha256": "bb29debd23e9f68a5d5220bc94694fb60a215b54b4d175964d1c5159f89aa477",
+      "bytes": 85124
+    },
+    {
+      "path": "skills/story-review/scripts/wordcount_core.py",
+      "sha256": "5f1882e0150677618bf1d69a2b893b5b9f4bb4fce4d34b574733ed99829d96bf",
+      "bytes": 19317
+    },
+    {
+      "path": "skills/story-setup/SKILL.md",
+      "sha256": "ce39567c15dce582085fa315b9074005e6b03dadebca97e0597eb3c22a60140a",
+      "bytes": 17254
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/agent-quality.md",
+      "sha256": "3b15f24c352d59f5715fbaa3e9d9c248a4c24dec79c1d8d9ee99458a244b7bc5",
+      "bytes": 3776
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/agent-reference-profiles.md",
+      "sha256": "c22aa24cfa3541049597d84a171d6aaee5b6a051946ead09e7a42fe17259222a",
+      "bytes": 4367
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/banned-words.md",
+      "sha256": "3c79c3bca61ae35f38d3679ae63b861967fcee75a667a2521565a8f10ab82da2",
+      "bytes": 11117
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/benchmark-style-load.md",
+      "sha256": "2a88c85d1577875a70ff019bf85b3a2e9539a684e8e64d2189a67f3ba46b40cb",
+      "bytes": 10306
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/character-basics.md",
+      "sha256": "e11fe53f693a3b359518efecbef685886044e7a9f660d815d2f15bf74668c171",
+      "bytes": 12626
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/character-relations.md",
+      "sha256": "d980256286ea50865ab09b53bb42376ed97aea7810d626e3310cee7612e6af12",
+      "bytes": 10475
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/cross-book-recall.md",
+      "sha256": "11cf14b0ad0137a2dca22ef79dfb122550beb551e7a86f57312a4aef80b715f6",
+      "bytes": 3955
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/deslop-gates.md",
+      "sha256": "ed76a33654117ed5bc39f8f41203ba7aa591d16c91e558074e160b50c2f0b95b",
+      "bytes": 2312
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/dialogue-mastery.md",
+      "sha256": "6b33c4940188586691fcac85ed4b91cdc0e07ce3ee1da0b4dbdc5744587f30e3",
+      "bytes": 11215
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/expression.md",
+      "sha256": "984b087ccd6ed5c62693946490cab1c623cf407def986a57448353e8047830da",
+      "bytes": 9795
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/female-audience-writing.md",
+      "sha256": "8595a4b2d2f6c58fae0f5058ab8f67bb61616c2674427af92070ab579d12470c",
+      "bytes": 7677
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/format-and-structure.md",
+      "sha256": "5c8b923e469dc47691a1717c7dbfc6b338664f9ada4eba5742ff29ec1f846b09",
+      "bytes": 8174
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards.md",
+      "sha256": "d5c5b6f56928b749d82842542d6829c9d534fc386cf0ad74a84ad10e5e35b348",
+      "bytes": 7213
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/东方仙侠.md",
+      "sha256": "8bfe1f4adef550fe90f1f2683d5a35d2a274fa2a2f5b0c560998ed82b3dea638",
+      "bytes": 2406
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/传统玄幻.md",
+      "sha256": "eea82f7a3124b2ffa3f1e54e2e0c878c11102b22f3cee20c3540ac911af25d9d",
+      "bytes": 1920
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/历史古代.md",
+      "sha256": "0087ae3cbae1d4a6797c0ac8d943dd6d7199afbfccdaa48bb8c311464a73d4b3",
+      "bytes": 1754
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/历史脑洞.md",
+      "sha256": "c1e7ed609a27cc4ed23c51f11ea085fe452a1467e6722047ab476e67fa15063c",
+      "bytes": 2012
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/双男主.md",
+      "sha256": "c369be2bfa0ebd40528e12f52aa9298286724504210ec7fd0a315e44aeeed435",
+      "bytes": 2363
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/古言脑洞.md",
+      "sha256": "986a542199892bab8b4876277cc73d8908843e9d66531071df3a870cf1c39b58",
+      "bytes": 1821
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/古风世情.md",
+      "sha256": "ed33cdfb2c3a87732e3cf855d2420f6a37713b7880821e88cc7c31dfc66c09f3",
+      "bytes": 2377
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/女频悬疑.md",
+      "sha256": "244ce33377596e3fa23207407124b412ed1e0fb2d8fd31d653a85ae44c7f2934",
+      "bytes": 1847
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/女频种田.md",
+      "sha256": "d9f5a9fea0ff4cb096831aa6865a4586116c0e3e478fcb186ed85d59e8b35b39",
+      "bytes": 1819
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/宫斗宅斗.md",
+      "sha256": "f4390076b223ba1c75c4298b33c3bbad826a967dea4bab29f9d3c0c2eeba3c86",
+      "bytes": 1653
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/年代.md",
+      "sha256": "f8c2d41205fb5a7de9be332da9d471c8238735acac6311fd02b348b0c1491efb",
+      "bytes": 2164
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/快穿.md",
+      "sha256": "3a83bede31a3e7cf88620a23892ce88564c0520b0a831a5c974b4a679d2c0b24",
+      "bytes": 1964
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/悬疑灵异.md",
+      "sha256": "040a7c945f6c3358fab3a18fe63e45f808d98071ed2964e490b038da261f16c3",
+      "bytes": 1757
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/悬疑脑洞.md",
+      "sha256": "0b469e1493ae29f7ced71072627a51c89475c87980dd9a0b0b7d1bd915c5c92f",
+      "bytes": 1912
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/战神赘婿.md",
+      "sha256": "dba3e7f52ac7f44498e8099e451682efbc3688470242200d358e92fc47c7a14d",
+      "bytes": 1899
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/抗战谍战.md",
+      "sha256": "9dcd8e42302e49f589d4ab51bfca1404a2407a94a813bf6624ca166efdc8bec0",
+      "bytes": 1828
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/星光璀璨.md",
+      "sha256": "9b9933ec54f4a22c9c5c8ccd0595cc14e67e7bc22ae1eb209d6d33d385f14c46",
+      "bytes": 1864
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/民国言情.md",
+      "sha256": "86c003c1eec6d6d8a3181e69e8f98211c6dadc10e085d5635190e8ea5e06220e",
+      "bytes": 1899
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/流派兜底.md",
+      "sha256": "15db63396d582f1389f7fbc87f6420490f4d0cd700888419138a7af0ffc8c789",
+      "bytes": 8576
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/游戏体育.md",
+      "sha256": "c554b3084b507541a0255a7d2889d86cf5d376abed0403c2e4314feb0998ff28",
+      "bytes": 1971
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/玄幻脑洞.md",
+      "sha256": "8b2854a9a943ac3425ab8f9557c774eb9e2d153a4b056f4521394bd01cfc52cb",
+      "bytes": 2073
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/玄幻言情.md",
+      "sha256": "281dd8b578cead55915794aac320e0d401f25a80c0867dfb3724791246b7f0a5",
+      "bytes": 1744
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/现言脑洞.md",
+      "sha256": "c2733304c19f50aae3d395ce4c736ca26b7f631c9d5e98a9eeb3f1cd9606fd1c",
+      "bytes": 1845
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/科幻末世.md",
+      "sha256": "1baf9ed53f85b99766f8bf3e64af60be9d0e774a156af9e822c5ac51d4c13f64",
+      "bytes": 1744
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/职场婚恋.md",
+      "sha256": "5cb1831a622e88b2ab3435e70f556bdb38c9eb262725757c88d9cd4800937ab7",
+      "bytes": 1720
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/西方奇幻.md",
+      "sha256": "dfeb3fa38cb9481f74aea566e3d269b571ac29d6d69a1f2ed0142f93128bf05e",
+      "bytes": 1914
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/豪门总裁.md",
+      "sha256": "cfb132cf19908f06f39bcd7a1f00b3864539e294286ddd2d324944a54a065557",
+      "bytes": 2404
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/都市修真.md",
+      "sha256": "9d5c6f9ab6a0a453f1dec91ed6851df4bd0d8ecf20ec1c4dd525024ad02a7cfc",
+      "bytes": 1778
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/都市日常.md",
+      "sha256": "a16e8638cd2914e76078dac52e5a36d459e312609fa6d8e9c5301e07ddbce4b4",
+      "bytes": 2872
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/都市种田.md",
+      "sha256": "aacafd2de90f60cb162783dc7a714930ad0bb48ecb39dc61ba7707d4707c7b05",
+      "bytes": 1716
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/都市脑洞.md",
+      "sha256": "e3181b4e882bb66d4e6e8852c56f3bd30bb0b93f2653969da9c6118bc8f4d93a",
+      "bytes": 2481
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/都市高武.md",
+      "sha256": "b8d298d2a9dbda7516b074436ecc6ecc01a16df48a6292e9f498253c76876f1c",
+      "bytes": 2087
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-prose-cards/青春甜宠.md",
+      "sha256": "b5fbaf98c911050b0f7219da67aaeaf2402e74f9907ccd19e1506c735a67c954",
+      "bytes": 1886
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/genre-readers.md",
+      "sha256": "0eeeb43dcf35f68abdaf0fb650a472b56f518f471a3312c4821750bb5b73309d",
+      "bytes": 7082
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/long-chapter-hooks.md",
+      "sha256": "13a92dfc56bb5155b939cfa5c87f743e5aff371099395ffb9f6dadd05f86a524",
+      "bytes": 6650
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/long-emotional-methods.md",
+      "sha256": "c36096d387c5e50230f63dae4e7291c6fb3512e9cba67f109405dc046896711c",
+      "bytes": 8110
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/long-genre-catalog.md",
+      "sha256": "24ef38ea4a604f8f9e81c4487df10133ee0d1e095fec06e468c32440c063b34f",
+      "bytes": 12231
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/long-genre-mechanics.md",
+      "sha256": "d6c1569b14fd7b890502fc67524a9a3afb77ab7f4fc6a9fd85c79570d3407c03",
+      "bytes": 8453
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/long-quality.md",
+      "sha256": "2b566bd39118f18857f24f473c18aa5739862b1a245c24f8e00876cd1a7c77b9",
+      "bytes": 3278
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/long-reversal.md",
+      "sha256": "06d30e96d7690510df14afefaeb9b9278f71ae6c4e6b5f1e2e75e25650c80626",
+      "bytes": 12587
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/long-suspense.md",
+      "sha256": "acfbe8cffe4ed55a5fdb758c3528b827d85359ea90e0d323377884bbfe628127",
+      "bytes": 9377
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/narrative-focus.md",
+      "sha256": "245d00dcbe8c7dd0cf3d7098f7cb37a24ea59aee2f9e17ad7c3119298a394f32",
+      "bytes": 6856
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/opening-design.md",
+      "sha256": "84ec6ceebfca07749fe18292edad0182aa928d4cfd0a7a62aa47d46a0b18a7eb",
+      "bytes": 4563
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/outline-methods.md",
+      "sha256": "e0714990de0403bad3a42161032c620cded09468538e7883d14e8d3501be0565",
+      "bytes": 12840
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/plot-core-methods.md",
+      "sha256": "c13fcf962487412de48996c4e2c4e31709433c43eaab83991e09ae3ce2a13075",
+      "bytes": 5470
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/short-chapter-hooks.md",
+      "sha256": "836a784916efdb8afee5617d23dab25cf411aeb5017a158daf517dfd218b8833",
+      "bytes": 8239
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/short-emotional-methods.md",
+      "sha256": "da70ee55554403f3a0e47b9f167cc9a6e41b7528e6ff12943fa9fd76b2a4dcc6",
+      "bytes": 4665
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/short-genre-formulas.md",
+      "sha256": "b5d5669499eb31aa8eafe700cd0a6a4e83d40970649a95f3a6183150f99fce9d",
+      "bytes": 19202
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/short-quality.md",
+      "sha256": "a9721a1aa85f0344ee0e1b26566a870eea8dfdf90bf7dbc6146525749539211b",
+      "bytes": 2891
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/short-reversal.md",
+      "sha256": "10b81b17e62d9ece9c919bd3c18de11f7a88c5b996d4c44705bd69218e153797",
+      "bytes": 13003
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/story-logic.md",
+      "sha256": "8eac37d14f85f1ed7516f9817d1333e9fee50297f4ac5457c9c1ea5364959ba5",
+      "bytes": 6051
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/style-combat-face.md",
+      "sha256": "42dda5489381703025916a6c324bfeef52129fc9f38dc34f4f31eb4bb53867f7",
+      "bytes": 9321
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/style-resolution.md",
+      "sha256": "87791172cffc66de355491f921886e73407f3304ece35d25c1e1de0e717c1bfd",
+      "bytes": 3053
+    },
+    {
+      "path": "skills/story-setup/references/agent-references/writing-craft.md",
+      "sha256": "071a04956449b43c989e1258ef29246e7cfaa72d844d657e63bf16cedf30e6c6",
+      "bytes": 24181
+    },
+    {
+      "path": "skills/story-setup/references/diagnostics.md",
+      "sha256": "e0ddc16ad63dc45c8895f2e8254aaf4bb1c5bee7a606b699f2087c2999cf93cb",
+      "bytes": 4437
+    },
+    {
+      "path": "skills/story-short-analyze/SKILL.md",
+      "sha256": "c4eaa5ad1e127f7e66f6bdab73c24344832476c0ade3959a5b9755ae20a354dc",
+      "bytes": 10809
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-characters.md",
+      "sha256": "7b617c473687eac269a7144dd0f9cf59970b6ad6b65cac37710203b1dc806bd1",
+      "bytes": 3458
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-method.md",
+      "sha256": "59c57784865eedd90cb2470dd9ec6c41b272eb6a78d94c763ebe38c35323c01d",
+      "bytes": 721
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-report-style.md",
+      "sha256": "23ad621406a7f290671fba6a1096c3beab5a6f418982c9cd348210809cb70b21",
+      "bytes": 1938
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-short-genres.md",
+      "sha256": "c983b89afb63284f2d8820ecd944e9db7e37ac30a7d69856757eb339e5e2e198",
+      "bytes": 4782
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-short-hooks.md",
+      "sha256": "c32161aa30d5dbbae20e37239879c5432a40d50a21f9a26cee835b9384da454f",
+      "bytes": 3837
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-short-mechanics.md",
+      "sha256": "3a7f3b17b35073fa1ab5d58fccc56bee1aefb376f60375ca5bb91512caf0446e",
+      "bytes": 4152
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-short-patterns.md",
+      "sha256": "573b86e896401a7beba0f6c1f711327bca9628222278c9ce818ff2eb456e7891",
+      "bytes": 3994
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-short-suspense.md",
+      "sha256": "e2a3328800952c9d7d73f47037fd7e5642b62e0299861da32d0c009e4246d01e",
+      "bytes": 3932
+    },
+    {
+      "path": "skills/story-short-analyze/references/analysis-submission.md",
+      "sha256": "100d387f8d7ab09f9e1b15e216fcfc860d77cf4eba53f412149b8e4837b07cbd",
+      "bytes": 3060
+    },
+    {
+      "path": "skills/story-short-analyze/references/optional-modules.md",
+      "sha256": "b7141f15fdea42d1f6d71f23ea9e32902fa29c1fdfb6a8ca081892b33b5b2523",
+      "bytes": 1511
+    },
+    {
+      "path": "skills/story-short-analyze/references/output-contract.md",
+      "sha256": "a4a7d270dd699f87c3cd17d2417cc81262b9bd4006b2c584b4b131f6911b1a4d",
+      "bytes": 7276
+    },
+    {
+      "path": "skills/story-short-analyze/references/quality-checklist.md",
+      "sha256": "f5a669dab506702afefb9e4167d91238dcbe0bf93f1d85619b18d7df51400f2f",
+      "bytes": 4107
+    },
+    {
+      "path": "skills/story-short-analyze/references/source-story-quality.md",
+      "sha256": "e35d5ed4fec2c1384e5f22338ca3a78293a79b6b0552add81f09b9633f9502ce",
+      "bytes": 4649
+    },
+    {
+      "path": "skills/story-short-analyze/references/stage2-3-structure-emotion.md",
+      "sha256": "45e4cb9dd2ec6c921421e46d3ce88ab58371c91e1b4af56eec06c8b3b09f3dc3",
+      "bytes": 11010
+    },
+    {
+      "path": "skills/story-short-analyze/references/stage4-6-reversal-summary.md",
+      "sha256": "60f92c0853279516ea78bb554954baa67d9aa174291cf78de311c063101a0b1c",
+      "bytes": 23724
+    },
+    {
+      "path": "skills/story-short-scan/SKILL.md",
+      "sha256": "7fcca72fc9f755dc1b278591e06c2e3bee0ca1dbcdda481cfe80d86afb308e83",
+      "bytes": 7671
+    },
+    {
+      "path": "skills/story-short-scan/references/manual-rank-input.md",
+      "sha256": "9ac64cee492600bd207bb3ac01fbabd052c375850e2b3151d8a3aae581b346ad",
+      "bytes": 1563
+    },
+    {
+      "path": "skills/story-short-scan/references/platform-dianzhong.md",
+      "sha256": "7fe36266a56b5d13f20d0ef7880341109c985ac10aa5222c5dceb35e37711e2d",
+      "bytes": 1357
+    },
+    {
+      "path": "skills/story-short-scan/references/platform-heiyan.md",
+      "sha256": "7c2db4dacdafddeabd78924ec80ed7f0846cb6b3585870a1711707435a1b92b1",
+      "bytes": 1690
+    },
+    {
+      "path": "skills/story-short-scan/references/real-market-data.md",
+      "sha256": "5e41644c55063f75355558e897072b3d03082aeb9a6c1147b615371ef2ca7872",
+      "bytes": 3678
+    },
+    {
+      "path": "skills/story-short-scan/references/topic-match.md",
+      "sha256": "929a8c65bd8f69e1b3232c71fbd7b2e5663c8d82636952f87a9e33c18eaa3939",
+      "bytes": 2806
+    },
+    {
+      "path": "skills/story-short-scan/scripts/aggregate-rank.js",
+      "sha256": "2cb444fbc7a46f507fdba181cc8f79f3823be2e8503b30b8520838c914203ebc",
+      "bytes": 32105
+    },
+    {
+      "path": "skills/story-short-scan/scripts/cdp-utils.js",
+      "sha256": "0bbb2379d2889db7db2a6fed2d95bf750ca4d909621acd28f9e47cecece54761",
+      "bytes": 8564
+    },
+    {
+      "path": "skills/story-short-scan/scripts/dz-browse-scraper.js",
+      "sha256": "8ca5ba2d89400f3b0a74e223a474d153d512c743e41c36c2411bfdb8a240d108",
+      "bytes": 10118
+    },
+    {
+      "path": "skills/story-short-scan/scripts/heiyan-booklist-scraper.js",
+      "sha256": "f707de559969b5785096f25de5bc2453d8661c94fed49c2d6be23e3c9824330b",
+      "bytes": 13593
+    },
+    {
+      "path": "skills/story-short-write/SKILL.md",
+      "sha256": "57f945099eadc2509a51f30565193f6f4d61d5277dfe9a50e1113b40a5316547",
+      "bytes": 10752
+    },
+    {
+      "path": "skills/story-short-write/references/agent-calls.md",
+      "sha256": "f3c93e404b082cf10dc0ea68e31d0e0bc14c51f43bf8d6279844a88348ed9693",
+      "bytes": 2532
+    },
+    {
+      "path": "skills/story-short-write/references/author-memory.md",
+      "sha256": "9c08c6e4e3c586c0a8b2f0dfae8e1a79d1b609b4fab32988822796a366a43d26",
+      "bytes": 6778
+    },
+    {
+      "path": "skills/story-short-write/references/banned-words.md",
+      "sha256": "3c79c3bca61ae35f38d3679ae63b861967fcee75a667a2521565a8f10ab82da2",
+      "bytes": 11117
+    },
+    {
+      "path": "skills/story-short-write/references/benchmark-recall.md",
+      "sha256": "e535df1e7e26e158213347aedeecc34c3c228d7498b234dadc03a7cb508a9b46",
+      "bytes": 3915
+    },
+    {
+      "path": "skills/story-short-write/references/dialogue-mastery.md",
+      "sha256": "6b33c4940188586691fcac85ed4b91cdc0e07ce3ee1da0b4dbdc5744587f30e3",
+      "bytes": 11215
+    },
+    {
+      "path": "skills/story-short-write/references/emotional-methods.md",
+      "sha256": "da70ee55554403f3a0e47b9f167cc9a6e41b7528e6ff12943fa9fd76b2a4dcc6",
+      "bytes": 4665
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/世情打脸.md",
+      "sha256": "3bff72147b16ba2662ec0dae83f43708e486f711220fc25a763a59e4197a8516",
+      "bytes": 16307
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/双男主.md",
+      "sha256": "38a9ab831e55a1278616ab3d2b0d88dd48a25737c403f695cb20b7e4ab6c2131",
+      "bytes": 12520
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/复仇打脸.md",
+      "sha256": "a18c192cd13ce31424186d1ed5c58a7444fa12a4177820c4eacf02b564363905",
+      "bytes": 13785
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/宅斗宫斗.md",
+      "sha256": "b494853132d6e5d8cd99f113a3d9fa956f24579f5862ae5aba0f4e507aaa0774",
+      "bytes": 13899
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/总裁豪门.md",
+      "sha256": "22393dc737ec50f9d2d2ad35bc4ecf04448e11fdf04e60ed96e959d984c4f8d1",
+      "bytes": 15015
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/悬疑.md",
+      "sha256": "fad4a4397edfdbcd8958d7e75432cdedcae6d4d43bed52788477501514b24b39",
+      "bytes": 13662
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/民俗怪谈.md",
+      "sha256": "aa91827883e04e30677561759c264affe9b2c81824e090ae7a7cf659bef8abc6",
+      "bytes": 13151
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/沙雕脑洞.md",
+      "sha256": "8f51a8b946cbf5b7e338c1ee75d95f462f235e9d3381ebdd38127871fbd3c2c9",
+      "bytes": 14488
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/甜宠.md",
+      "sha256": "5d8e083e9319059b1c5009992ff1a8284887f4b422edde7a9fee83c436c9478c",
+      "bytes": 11429
+    },
+    {
+      "path": "skills/story-short-write/references/genre-styles/追妻火葬场.md",
+      "sha256": "8d2e503dddf581fd4e3a66d7052e28524722210dce767c5c1eea104052de7631",
+      "bytes": 15317
+    },
+    {
+      "path": "skills/story-short-write/references/genre-writing-formulas.md",
+      "sha256": "b5d5669499eb31aa8eafe700cd0a6a4e83d40970649a95f3a6183150f99fce9d",
+      "bytes": 19202
+    },
+    {
+      "path": "skills/story-short-write/references/hooks-chapter.md",
+      "sha256": "836a784916efdb8afee5617d23dab25cf411aeb5017a158daf517dfd218b8833",
+      "bytes": 8239
+    },
+    {
+      "path": "skills/story-short-write/references/scene-craft.md",
+      "sha256": "1c92aab0d836be1d2f041f0f9c7d17cb555252e395a1b2021ca6dadcfc5ac3b2",
+      "bytes": 2921
+    },
+    {
+      "path": "skills/story-short-write/references/short-craft.md",
+      "sha256": "2b3d8b90b4e7f136e8f6b667efa46ad801cc6e6eea184e1a69220e5548927382",
+      "bytes": 9064
+    },
+    {
+      "path": "skills/story-short-write/references/short-deslop.md",
+      "sha256": "e6cbdfd7ab776f2094aca43c4c97342ee318014744e36c78bf9eaa5fd4dfdcac",
+      "bytes": 1570
+    },
+    {
+      "path": "skills/story-short-write/references/short-format.md",
+      "sha256": "72cc15f2ca21bd6d9c47934da18b6b4a7085e5039387e9bc53e57dcfd9d04b5e",
+      "bytes": 9022
+    },
+    {
+      "path": "skills/story-short-write/references/short-reversal.md",
+      "sha256": "10b81b17e62d9ece9c919bd3c18de11f7a88c5b996d4c44705bd69218e153797",
+      "bytes": 13003
+    },
+    {
+      "path": "skills/story-short-write/references/submission-craft.md",
+      "sha256": "35bf1f76f0b2c8b6d00e691748ea5802034cd841e2b965db77c21969d08709c4",
+      "bytes": 5875
+    },
+    {
+      "path": "skills/story-short-write/references/villain-and-reveal.md",
+      "sha256": "ca96174f6c15971b46c61b96c69d3fe54149e235221f48e69110925283a08532",
+      "bytes": 5304
+    },
+    {
+      "path": "skills/story-short-write/references/workflow-design.md",
+      "sha256": "bb868bb955202b63ae3add307c99c14366eceb86baff55b0cfed6071e13c76a0",
+      "bytes": 10410
+    },
+    {
+      "path": "skills/story-short-write/references/workflow-draft.md",
+      "sha256": "285d163881426739b2eb49e33db0783f770a5e42b83689b292a9f2709d180f74",
+      "bytes": 9895
+    },
+    {
+      "path": "skills/story-short-write/references/workflow-revision.md",
+      "sha256": "c6387f01636aadd35837da2b0ebfcaf13c892472c164a1711e87b9f00a416f1c",
+      "bytes": 7791
+    },
+    {
+      "path": "skills/story-short-write/scripts/author_memory_commit.py",
+      "sha256": "b18bb7d229dacb0bcf0849e0ae4d1713a649e6771ceda161270b6ee3503342b2",
+      "bytes": 76766
+    },
+    {
+      "path": "skills/story-short-write/scripts/check-ai-patterns.js",
+      "sha256": "10dc95deb12fd74b3d36ed0acd3516b442cd44d653d9ab8ffab5ecfea2868f29",
+      "bytes": 81491
+    },
+    {
+      "path": "skills/story-short-write/scripts/check-degeneration.js",
+      "sha256": "b50c55f63e5a38f503c23994d20b3428565cbebb8014d69bfb667d9e412044f8",
+      "bytes": 15793
+    },
+    {
+      "path": "skills/story-short-write/scripts/check-delivery-contract.js",
+      "sha256": "a37984b28e44963e64bb6247a80f4eb72c7d539386229d5e4d7281e59ea45902",
+      "bytes": 9055
+    },
+    {
+      "path": "skills/story-short-write/scripts/check-outline-copy.js",
+      "sha256": "e99137b089c1d5050830ab916d2e80bed94280e24b51dda30387e32f46117eae",
+      "bytes": 13676
+    },
+    {
+      "path": "skills/story-short-write/scripts/check-phase2-contract.js",
+      "sha256": "b720c054facd44e58644c7d395f4ddf7445a650b64be13a36ff77f9b086fb5fb",
+      "bytes": 20036
+    },
+    {
+      "path": "skills/story-short-write/scripts/normalize-punctuation.js",
+      "sha256": "dbe5d6388f3924b2c4f5ab8717dede8178beac1e5ec1b178187f3a57d2c3d13c",
+      "bytes": 19472
+    },
+    {
+      "path": "skills/story-short-write/scripts/style-whitelist.js",
+      "sha256": "398018c5acff324009493d1e7661f8864bf62d6d95616d00fa5141cc86eb3908",
+      "bytes": 1168
+    },
+    {
+      "path": "skills/story/SKILL.md",
+      "sha256": "473097150c83c8b8232f06c0eac80e892ef8589aed814fb3918702d8bd0c98b5",
+      "bytes": 14158
+    },
+    {
+      "path": "skills/story/VERSION",
+      "sha256": "45ee1057823e816e97dbf21270577fe75f755d830d9717bf4fd3ee8c243495f0",
+      "bytes": 7
+    }
+  ]
+}
