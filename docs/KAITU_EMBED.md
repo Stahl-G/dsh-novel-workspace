@@ -1,6 +1,6 @@
 # 开图桌面嵌入边界
 
-本重写版新增原生 DSH 主面板 `kaitu-novel` 与侧栏“写作”入口，只负责选择目录及打开/续用会话，正文 UI 仍由 Oh Story 提供。开图“探索 → 写作”的完整 iframe 尚须单独验收，不得把原生 DSH 测试等同于桌面验收。
+本重写版新增原生 DSH 主面板 `kaitu-novel` 与侧栏“写作”入口，只负责选择目录及打开/续用会话，正文 UI 仍由 Oh Story 提供。开图“探索 → 写作”的宿主路由与实际 DSH iframe 已在合成工程通过联验；这与完整 Electron 安装器、用户本机数据或模型写作质量验收不同。
 
 ## 已核实的接口
 
@@ -22,4 +22,20 @@
 
 ## 验证边界
 
-`novel-entry-navigation.test.ts` 覆盖取消、重复点击、异步过期、失败重试、切换和返回。`native-dsh-smoke.ts` 新增真实打包点击“写作” → 打开合成书目录 → 见到上游编辑器 → 返回续用同一会话的检查。2026-11-17 在 DSH 0.2.2-rc.1 的隔离打包 Chrome 验收通过（provider=local-fixture）：实际打开上游编辑器，并核对返回前后的原生 Session ID 相同。纯合成导航测试 7 项、类型检查与 lint 同时通过。包元数据已指向经过原生验证的 main key `kaitu-novel`，不据此声称完整开图 App 已验收。未启动日常开图、未读取真实稿件；桌面 iframe 嵌入仍是发布前的独立验收项。
+`novel-entry-navigation.test.ts` 覆盖取消、重复点击、异步过期、失败重试、切换和返回。`native-dsh-smoke.ts` 新增真实打包点击“写作” → 打开合成书目录 → 见到上游编辑器 → 返回续用同一会话的检查。2026-11-17 在 DSH 0.2.2-rc.1 的隔离打包 Chrome 验收通过（provider=local-fixture）：实际打开上游编辑器，并核对返回前后的原生 Session ID 相同。纯合成导航测试 7 项、类型检查与 lint 同时通过。包元数据已指向经过原生验证的 main key `kaitu-novel`，不据此声称完整开图 App 已验收。未启动日常开图、未读取真实稿件；针对开图宿主的独立 iframe 联验见下节。
+
+
+## 隔离联验（2026-11-17）
+
+读取真实安装包的 `kaitu.explore` 元数据，通过宿主 `createPluginService.explore/page` 生成 iframe 入口。在官方 DSH **0.2.1-rc.3** 中加载上述 commit 的生产 `ExplorePluginRoute.tsx` 与 CSS，接收当前 iframe 窗口与父 origin 的导航信息。浏览器用合成目录完成首次使用向导后操作：进入“写作”、打开副本、看到 Oh Story 编辑器、通过父宿主消息返回“写作”并继续同一会话。导航状态按 `false → true → false → true` 变化。该检查使用环回地址与本地模拟 provider，不读日常配置、真实稿或 API key。
+
+这不是“整套桌面已装好”：测试组合了宿主实际发现服务、路由/样式及官方 DSH Web。外层窗口为浏览器测试页而非 Electron 安装包；测试准备仅就错误类型替代了宿主服务中与导航无关的聚合依赖。未执行真实模型写作，也未在日常桌面安装。
+
+### 复跑
+先安装本插件的冻结依赖，并准备一个干净的开图宿主检出（本次为上文 aa91087）。安装 Node.js 24.9+、pnpm 11.22.0 和 Chrome 后运行：
+
+```sh
+node scripts/test-kaitu-embed.mjs /path/to/rensheng-kaitu-checkout
+```
+
+脚本会报告宿主 Git 提交、发现服务/路由/样式的 SHA-256、DSH 版本、合成验收及导航事件。测试只验证指定宿主源码组合，不替代最终发布包、首次安装器、升级迁移和模型写作验收。
