@@ -233,7 +233,7 @@ async function startMockDeepSeek(): Promise<MockDeepSeek> {
       // /short-drama-edit in Drama 0.7; leaving it out made that turn settle instantly.
       const productionTurn = currentTurn.includes("/short-drama-produce") || currentTurn.includes("/short-drama-edit");
       const roleParentTurn = currentTurn.includes(roleSmokePrompt);
-      const durationTurn = currentTurn.includes(durationSmokePrompt);
+      const durationTurn = currentTurn.includes("DURATION_RUNTIME_SMOKE：");
       const productionIntentTurn = currentTurn.includes(productionIntentSmokePrompt);
       const roleChildTurn = serialized.includes(roleChildPrompt) && !serialized.includes(roleSmokePrompt);
       const hasToolResult = messages.slice(lastUserIndex + 1).some(isToolResult);
