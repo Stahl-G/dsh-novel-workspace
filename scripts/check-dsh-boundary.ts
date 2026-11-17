@@ -23,4 +23,4 @@ await walk(resolve(root, 'packages'));
 await walk(resolve(root, 'scripts'));
 if (scannedOutsidePlugin === 0) throw new Error('DSH boundary check scanned zero files outside packages/dsh-plugin/.');
 if (violations.length > 0) throw new Error(`DeepSeek Harness imports escaped the native plugin boundary: ${violations.join(', ')}`);
-process.stdout.write(`DSH boundary OK: scanned ${String(scannedOutsidePlugin)} non-plugin files; all @deepseek-ai imports stay in @oh-story/dsh.\n`);
+process.stdout.write(`DSH boundary OK: scanned ${String(scannedOutsidePlugin)} non-plugin files; all @deepseek-ai imports stay in kaitu-novel-workspace.\n`);

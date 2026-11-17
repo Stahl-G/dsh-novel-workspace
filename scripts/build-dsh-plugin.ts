@@ -39,6 +39,9 @@ const inlineCss: Plugin = {
 
 await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
+await mkdir(resolve(packageRoot, "scripts"), { recursive: true });
+await cp(resolve(root, "scripts/kaitu-book.mjs"), resolve(packageRoot, "scripts/kaitu-book.mjs"));
+
 
 await build({
   entryPoints: [resolve(packageRoot, "src/index.ts")],
@@ -69,7 +72,7 @@ await build({
   minify: true,
   external: ["@deepseek-ai/*", "react", "react/jsx-runtime", "react-dom", "react-dom/client"],
   plugins: [inlineCss],
-  banner: { js: "window.__ModuleLoader__.load({id:\"@oh-story/dsh\",factory:(require)=>{var module={exports:{}};var exports=module.exports;" },
+  banner: { js: "window.__ModuleLoader__.load({id:\"kaitu-novel-workspace\",factory:(require)=>{var module={exports:{}};var exports=module.exports;" },
   footer: { js: ";return module.exports;}});" }
 });
 

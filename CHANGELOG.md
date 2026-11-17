@@ -1,3 +1,7 @@
+# 开图重写版（0.4.0-alpha.1，开发中）
+
+以 Oh Story DSH v0.1.26 为运行基底，其许可与来源见 UPSTREAM.md。小说创作可使用书级约定，并可用 kaitu-book 将旧稿复制到全新的准备目录，不会自动搬移旧版数据库。
+
 # Changelog
 
 本文件记录 `@oh-story/dsh` 的用户可见变更。

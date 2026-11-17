@@ -9,6 +9,7 @@ export default tseslint.config(
       "**/dist/**",
       "**/lib/**",
       "**/coverage/**",
+      "packages/dsh-plugin/scripts/**",
       "**/node_modules/**",
       "docs/blueprint/**",
       // Bundled upstream knowledge is vendored verbatim and hashed by the parity

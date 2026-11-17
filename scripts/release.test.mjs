@@ -415,24 +415,18 @@ test("public npm verification retries missing metadata instead of accepting a nu
   );
 });
 
-test("all local actions are immutable and the release workflow has isolated publishers", async () => {
+test("the Kaitu development fork inherits only its existing read-only CI and cannot publish", async () => {
   const workflows = (await readdir(path.join(".github", "workflows")))
-    .filter((name) => name.endsWith(".yml"))
-    .sort();
-  assert.ok(workflows.length >= 4, "expected all repository workflows to be discovered");
-  for (const workflow of workflows) {
-    const source = await readFile(path.join(".github", "workflows", workflow), "utf8");
-    for (const match of source.matchAll(/^\s*- uses:\s*([^\s#]+)/gm)) {
-      assert.match(match[1], /@[a-f0-9]{40}$/i, `${workflow}: ${match[1]} is not full-SHA pinned`);
-    }
-  }
-  const release = await readFile(path.join(".github", "workflows", "release.yml"), "utf8");
-  assert.doesNotMatch(release, /--clobber/);
-  assert.match(release, /github-release:[\s\S]*contents: write/);
-  assert.match(release, /npm:[\s\S]*id-token: write/);
-  assert.match(release, /artifact-ids: \$\{\{ needs\.verify\.outputs\.artifact-id \}\}/);
-  assert.match(release, /manifest-sha256: \$\{\{ steps\.digests\.outputs\.manifest-sha256 \}\}/);
-  assert.match(release, /npm-publish[^\n]+--repository "\$GITHUB_REPOSITORY" --tag "\$GITHUB_REF_NAME"/);
-  assert.match(release, /persist-credentials: false/);
-  assert.match(release, /EVENT_NAME.*workflow_dispatch[\s\S]*refs\/heads\/main/);
+    .filter((name) => /\.ya?ml$/iu.test(name)).sort();
+  assert.deepEqual(workflows, ["check.yml"]);
+  const workflow = await readFile(path.join(".github", "workflows", workflows[0]), "utf8");
+  assert.match(workflow, /permissions:\s*contents: read/u);
+  assert.doesNotMatch(workflow, /:\s*write\b|npm publish|pnpm publish|gh release|secrets\.|pull_request_target|workflow_dispatch/iu);
+  assert.match(workflow, /pnpm install --frozen-lockfile/u);
+  assert.match(workflow, /pnpm build/u);
+  assert.match(workflow, /pnpm typecheck/u);
+  assert.match(workflow, /vitest run/u);
+  const product = JSON.parse(await readFile("packages/dsh-plugin/package.json", "utf8"));
+  assert.equal(product.private, true);
+  assert.equal(product.name, "kaitu-novel-workspace");
 });

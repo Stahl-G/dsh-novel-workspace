@@ -1,21 +1,21 @@
 {
-  "name": "oh-story-dsh",
-  "version": "0.1.26",
+  "name": "kaitu-oh-story-source",
+  "version": "0.4.0-alpha.1",
   "private": true,
-  "description": "A DSH plugin for fiction, short-drama, playable game, and video-recap production",
+  "description": "开图小说工作台：基于 Oh Story 的独立开发版",
   "license": "MIT",
   "type": "module",
-  "packageManager": "pnpm@11.7.0",
+  "packageManager": "pnpm@11.22.0",
   "engines": {
     "node": ">=24.0.0"
   },
   "scripts": {
     "dev": "pnpm build:dsh-plugin",
-    "build:dsh-plugin": "pnpm --filter @oh-story/dsh build",
+    "build:dsh-plugin": "pnpm --filter kaitu-novel-workspace build",
     "build": "pnpm -r --if-present build",
     "typecheck": "pnpm -r --if-present typecheck",
     "lint": "eslint . --max-warnings=0",
-    "test": "pnpm test:unit",
+    "test": "pnpm test:book && pnpm test:unit",
     "test:unit": "pnpm -r --if-present test",
     "test:contract": "pnpm -r --if-present test:contract",
     "test:dsh": "pnpm test:dsh:native",
@@ -36,12 +36,13 @@
     "assets:sync:video": "tsx scripts/sync-video-recap-assets.ts",
     "assets:check": "tsx scripts/check-upstream-parity.ts && tsx scripts/check-drama-parity.ts && tsx scripts/check-novel-to-game-parity.ts && tsx scripts/check-video-recap-parity.ts",
     "dsh:boundary": "tsx scripts/check-dsh-boundary.ts",
-    "verify": "pnpm lint && pnpm typecheck && pnpm assets:check && pnpm dsh:boundary && pnpm test:release && pnpm test:upstream-updates && pnpm test:unit && pnpm build",
-    "verify:portable": "pnpm typecheck && pnpm assets:check && pnpm test:release && pnpm test:unit && pnpm build",
+    "verify": "pnpm lint && pnpm typecheck && pnpm assets:check && pnpm dsh:boundary && pnpm test:release && pnpm test:upstream-updates && pnpm test:book && pnpm test:unit && pnpm build",
+    "verify:portable": "pnpm typecheck && pnpm assets:check && pnpm test:release && pnpm test:book && pnpm test:unit && pnpm build",
     "verify:release": "pnpm verify && pnpm test:dsh && pnpm test:dsh:rc && pnpm test:dsh:next",
-    "pack:release": "pnpm --filter @oh-story/dsh pack --pack-destination release",
     "test:dsh:rc": "tsx scripts/native-dsh-smoke.ts 0.2.0-rc.2",
-    "test:dsh:next": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.3"
+    "test:dsh:next": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.3",
+    "pack:preview": "pnpm --filter kaitu-novel-workspace pack --pack-destination dist",
+    "test:book": "node --test scripts/kaitu-book.test.mjs"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",

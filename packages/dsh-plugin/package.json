@@ -1,7 +1,7 @@
 {
-  "name": "@oh-story/dsh",
-  "version": "0.1.26",
-  "description": "A DSH plugin for fiction, short-drama, interactive-game, and video-recap production",
+  "name": "kaitu-novel-workspace",
+  "version": "0.4.0-alpha.1",
+  "description": "开图小说工作台：Oh Story 上游原生 DSH 插件的独立改造版",
   "keywords": [
     "deepseek-harness",
     "dsh-plugin",
@@ -19,16 +19,12 @@
     "video-production",
     "ai-agents"
   ],
-  "homepage": "https://github.com/zenstory-ai/oh-story-dsh#readme",
-  "bugs": "https://github.com/zenstory-ai/oh-story-dsh/issues",
+  "homepage": "https://github.com/Stahl-G/dsh-novel-workspace",
+  "bugs": "https://github.com/Stahl-G/dsh-novel-workspace/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zenstory-ai/oh-story-dsh.git",
+    "url": "git+https://github.com/Stahl-G/dsh-novel-workspace.git",
     "directory": "packages/dsh-plugin"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
   },
   "engines": {
     "node": ">=24.0.0",
@@ -66,7 +62,11 @@
     "cordis.patch.yml",
     "lib/**/*",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "templates/creative-brief.md",
+    "scripts/kaitu-book.mjs",
+    "UPSTREAM.md",
+    "LICENSE.kaitu"
   ],
   "scripts": {
     "build": "tsx ../../scripts/build-dsh-plugin.ts && tsc -p tsconfig.build.json",
@@ -132,5 +132,9 @@
     "react-dom": "18.3.1",
     "typescript": "6.0.3",
     "zod": "4.4.3"
+  },
+  "private": true,
+  "bin": {
+    "kaitu-book": "./scripts/kaitu-book.mjs"
   }
 }

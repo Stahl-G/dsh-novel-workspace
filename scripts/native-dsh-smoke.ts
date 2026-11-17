@@ -586,8 +586,8 @@ async function main(): Promise<void> {
       const source = await readFile(path, "utf8");
       await writeFile(path, source.replaceAll("EP001", "EP002").replaceAll("四个号，四个粉", "百万倒计时"));
     }));
-    runPnpm(["--filter", "@oh-story/dsh", "build"]);
-    runPnpm(["--filter", "@oh-story/dsh", "pack", "--pack-destination", packDirectory]);
+    runPnpm(["--filter", "kaitu-novel-workspace", "build"]);
+    runPnpm(["--filter", "kaitu-novel-workspace", "pack", "--pack-destination", packDirectory]);
     await mkdir(installation, { recursive: true });
     await writeFile(join(installation, "package.json"), `${JSON.stringify({ private: true, dependencies: { "@deepseek-ai/dsh": dshVersion } }, null, 2)}\n`);
     await writeFile(join(installation, "pnpm-workspace.yaml"), [
@@ -605,7 +605,7 @@ async function main(): Promise<void> {
     if (archive.status !== 0) throw new Error(`Could not inspect plugin tarball:\n${archive.stderr}`);
     const entries = new Set(archive.stdout.split(/\r?\n/u).filter((entry) => entry !== ""));
     for (const required of [
-      "package/LICENSE", "package/README.md", "package/cordis.patch.yml", "package/package.json",
+      "package/LICENSE", "package/UPSTREAM.md", "package/LICENSE.kaitu", "package/scripts/kaitu-book.mjs", "package/templates/creative-brief.md", "package/README.md", "package/cordis.patch.yml", "package/package.json",
       "package/lib/index.js", "package/lib/client.js", "package/lib/oh-story/manifest.json", "package/lib/drama/manifest.json",
       "package/lib/novel-to-game/manifest.json",
       "package/lib/video-recap/manifest.json",
@@ -734,7 +734,7 @@ async function main(): Promise<void> {
     }
     // Names alone cannot tell the plugin's bridged Skills from same-named copies found elsewhere.
     const foreignSkills = [...ohStorySkills, ...dramaSkills, ...gameSkills, ...videoSkills]
-      .filter((skill) => !(skill.path ?? "").replaceAll("\\", "/").includes("/@oh-story/dsh/lib/"));
+      .filter((skill) => !(skill.path ?? "").replaceAll("\\", "/").includes("/kaitu-novel-workspace/lib/"));
     if (foreignSkills.length > 0) {
       throw new Error(`Skills did not come from the installed plugin: ${JSON.stringify(foreignSkills.map((skill) => ({ name: skill.name, path: skill.path })))}`);
     }
@@ -1069,7 +1069,7 @@ async function main(): Promise<void> {
     const index = await (await dshFetch(origin)).text();
     const preloadPath = [...index.matchAll(/\/?plugins\/\?\?[^"'\s]+/gu)]
       .map((match) => match[0].replaceAll("&amp;", "&"))
-      .find((path) => path.includes("@oh-story/dsh/client.js"));
+      .find((path) => path.includes("kaitu-novel-workspace/client.js"));
     if (preloadPath === undefined) throw new Error("DSH did not publish the Oh Story Browser module.");
     const bundle = await (await dshFetch(new URL(preloadPath, `${origin}/`))).text();
     // Registrations appear both minified and pretty-printed in the combined bundle, so the
@@ -1078,7 +1078,7 @@ async function main(): Promise<void> {
     // DSH 0.2.2-rc.2 writes its own module ids as template literals (`id:\`...\``).
     const registration = /window\.__ModuleLoader__\.load\(\{\s*id:\s*(?<quote>["`])(?<id>[^"`]+)\k<quote>/gu;
     const registrations = [...bundle.matchAll(registration)];
-    const startIndex = registrations.findIndex((match) => match.groups?.id === "@oh-story/dsh");
+    const startIndex = registrations.findIndex((match) => match.groups?.id === "kaitu-novel-workspace");
     if (startIndex < 0) throw new Error("DSH did not serve the Oh Story Browser module.");
     const start = registrations[startIndex]!.index;
     const client = bundle.slice(start, registrations[startIndex + 1]?.index);

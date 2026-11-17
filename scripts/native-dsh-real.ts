@@ -107,8 +107,8 @@ async function main(): Promise<void> {
       writeFile(join(projectRoot, "剧集", "EP001", "视频提示词.md"), "# EP001 视频提示词\n\n## MOTION-EP001-001 · 车票滑出\n- 分镜：SHOT-EP001-001\n- 时长：4s\n- 开场画面：An abandoned ticket booth glowing in a storm.\n- 动作过程：空售票窗亮灯 → 湿车票从缝隙滑出\n- 终点：湿车票滑到人物面前。\n\n### 可复制提示词\n> The ticket booth light switches on and a wet ticket slides through the slot.\n")
     ]);
     const before = await treeDigest(projectRoot);
-    run("pnpm", ["--filter", "@oh-story/dsh", "build"]);
-    run("pnpm", ["--filter", "@oh-story/dsh", "pack", "--pack-destination", packDirectory]);
+    run("pnpm", ["--filter", "kaitu-novel-workspace", "build"]);
+    run("pnpm", ["--filter", "kaitu-novel-workspace", "pack", "--pack-destination", packDirectory]);
     await mkdir(installation, { recursive: true });
     await writeFile(join(installation, "package.json"), `${JSON.stringify({ private: true, dependencies: { "@deepseek-ai/dsh": dshVersion } }, null, 2)}\n`);
     await writeFile(join(installation, "pnpm-workspace.yaml"), [
@@ -146,7 +146,7 @@ async function main(): Promise<void> {
     }
     await rpc(origin, "session/selectModel", { request: { sessionId: session.sessionId, provider: deepseek.id, model: selectedModel } });
 
-    const fromPlugin = (skill: { readonly path?: string } | undefined): boolean => (skill?.path ?? "").replaceAll("\\", "/").includes("/@oh-story/dsh/lib/");
+    const fromPlugin = (skill: { readonly path?: string } | undefined): boolean => (skill?.path ?? "").replaceAll("\\", "/").includes("/kaitu-novel-workspace/lib/");
     const skills = await rpc<{ readonly skills: readonly { readonly name: string; readonly path?: string }[] }>(origin, "skills/list", { request: { sessionId: session.sessionId } });
     if (!fromPlugin(skills.skills.find((skill) => skill.name === "story-review"))) throw new Error("story-review was not registered by the packed plugin in the DSH Session.");
     await rpc(origin, "session/prompt", {

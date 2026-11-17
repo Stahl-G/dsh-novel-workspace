@@ -2,6 +2,7 @@ import { readdir, readFile } from "node:fs/promises";
 import { isAbsolute, join, relative, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { bundledKnowledgePath } from "./bundled-paths.js";
+import { creativeAgreementBridge } from "./creative-agreement.js";
 import { dramaAdapterConfigPath, dramaAdapterSummary, DRAMA_ADAPTER_CONFIG_ENV } from "./drama-adapters.js";
 import {
   BUNDLED_SKILL_RANK,
@@ -298,7 +299,8 @@ export function parseBundledSkill(source: string): ParsedSkill {
 export function dshSkillContent(name: string, content: string): string {
   const override = DSH_SKILL_OVERRIDES[name];
   const native = DSH_NATIVE_SKILLS[name];
-  return `${DSH_SKILL_BRIDGE}${override === undefined ? "" : `\n<skill-specific-dsh-override>${override}</skill-specific-dsh-override>`}\n\n${native ?? content}`;
+  const agreement = creativeAgreementBridge(name);
+  return `${DSH_SKILL_BRIDGE}${override === undefined ? "" : `\n<skill-specific-dsh-override>${override}</skill-specific-dsh-override>`}${agreement === "" ? "" : `\n${agreement}`}\n\n${native ?? content}`;
 }
 
 export function defaultBundledSkillRoot(): string {

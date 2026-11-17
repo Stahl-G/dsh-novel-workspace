@@ -25,3 +25,7 @@ oh-story-dsh 是 DeepSeek Harness（DSH）的社区插件，发布一个包 `@oh
 - 新想法放 `proposed/`，与代码同一提交移到 `implemented/`。格式化、改名、版本号等机械改动不需要笔记。
 - 笔记开头是 `# Agent Note: <标题>`、空行、`Status: <状态>`；正文中文、小节标题英文：`## Problem`、`## Decision`（现在时）或 `## Proposal`、`## Alternatives considered`、`## Consequences`（`proposed/` 与 `rejected/` 用 `## Risks`），结尾给 `来源：` 提交列表或 `## Verification`。
 - 不建 `INDEX.md`，目录本身就是状态。
+
+## 开图衍生版
+
+以上是固定上游的维护约定，不授权向上游或 npm 发布。此分支产品包为 kaitu-novel-workspace；不合并、不发布、不改变开图用户的配置。保留上游许可、原生 DSH 会话与模型权限。工程测试仅用隔离目录、合成稿件及本地 fixture provider。不要测试或提交私人原稿、密钥、世界书或会话。旧仓库代码不是本版运行基底。Avoid unnecessary secondary labels and descriptions. Let the layout do the explaining.
