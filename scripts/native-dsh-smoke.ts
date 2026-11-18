@@ -733,6 +733,41 @@ async function main(): Promise<void> {
     await welcome.waitFor({ state: "visible", timeout: 10_000 });
 
 
+    // First-use regression: no book Workspace/Session is pre-created through RPC.
+    // The launcher must make a real native workspace, not merely a cwd-only Session.
+    if (!useRealDeepSeek) {
+      const freshRoot = join(projectsRoot, "首次写作合成验收");
+      await mkdir(join(freshRoot, "正文"), { recursive: true });
+      await writeFile(join(freshRoot, "正文", "第001章_合成验收.md"), "# 合成验收\n\n纸灯机器人在蓝色书桌上摆好三颗木星模型。\n");
+      const beforeBook = await snapshotSyntheticBook(freshRoot);
+      const freshPage = await firstRunPage.context().newPage();
+      await freshPage.goto(dshTokenUrl, { waitUntil: "networkidle" });
+      await freshPage.getByRole("button", { name: "写作", exact: true }).click();
+      const entry = freshPage.getByRole("region", { name: "写作", exact: true });
+      await entry.getByRole("textbox", { name: "作品目录路径" }).fill(freshRoot);
+      await entry.getByRole("button", { name: "打开", exact: true }).click();
+      await freshPage.locator(".oh-story-editor").waitFor({ state: "visible", timeout: 20_000 }).catch(async (error: unknown) => { throw new Error(`${String(error)}\n${await freshPage.locator("body").ariaSnapshot()}`); });
+      const freshId = await freshPage.locator("[data-conversation-content][data-conversation-session]").first().getAttribute("data-conversation-session");
+      if (!freshId) throw new Error("First-use launcher did not select a native Session.");
+      await freshPage.getByRole("treeitem").filter({ hasText: /^首次写作合成验收/u }).first().waitFor({ state: "visible" });
+      // Only select the local fixture model; creation and sending use actual UI.
+      await rpc(origin, "session/selectModel", { request: { sessionId: freshId, provider: "deepseek-official", model: "deepseek-flash" } });
+      const composer = freshPage.locator('[data-composer-seat] textarea, [data-composer-seat] [contenteditable="true"]').first();
+      await composer.fill("NATIVE_ENTRY_RELOAD：首次写作合成验收，不修改作品。");
+      const send = freshPage.getByRole("button", { name: /^(?:Send message|发送消息)$/u });
+      await send.click({ timeout: 10_000 });
+      await freshPage.getByRole("paragraph").filter({ hasText: /^合成重载检查已记录，未修改作品。$/u }).waitFor({ state: "visible", timeout: 20_000 });
+      await freshPage.reload({ waitUntil: "networkidle" });
+      await freshPage.getByRole("button", { name: "写作", exact: true }).click();
+      await entry.getByRole("navigation", { name: "最近打开的作品" }).getByRole("button", { name: "首次写作合成验收", exact: true }).click();
+      await freshPage.locator(".oh-story-editor").waitFor({ state: "visible" });
+      const resumed = await freshPage.locator("[data-conversation-content][data-conversation-session]").first().getAttribute("data-conversation-session");
+      if (resumed !== freshId) throw new Error("First-use recent entry replaced its native Session.");
+      await freshPage.getByRole("paragraph").filter({ hasText: /^合成重载检查已记录，未修改作品。$/u }).waitFor({ state: "visible" });
+      if (await snapshotSyntheticBook(freshRoot) !== beforeBook) throw new Error("First-use navigation changed the manuscript.");
+      await freshPage.close();
+    }
+
     const storyWorkspace = await rpc<{ readonly workspace: { readonly workspaceId: string; readonly title: string } }>(origin, "workspace/create", { request: { path: storyRoot } });
     const dramaWorkspace = await rpc<{ readonly workspace: { readonly workspaceId: string; readonly title: string } }>(origin, "workspace/create", { request: { path: dramaRoot } });
     const plainWorkspace = await rpc<{ readonly workspace: { readonly workspaceId: string; readonly title: string } }>(origin, "workspace/create", { request: { path: plainRoot } });

@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "vitest";
-import { createNovelEntryNavigation } from "../src/client/novel-entry-navigation.js";
+import { createNovelEntryNavigation, createWorkspaceSession } from "../src/client/novel-entry-navigation.js";
 import { browserRecentMemory, chooseEntry, recentEntries, type EntryCatalog, type EntrySession } from "../src/client/novel-entry-catalog.js";
 function deferred<T>() { let resolve!: (value: T) => void; let reject!: (error: Error) => void; const promise = new Promise<T>((yes, no) => { resolve = yes; reject = no; }); return { promise, resolve, reject }; }
 function fixture(shared = new Map<string, string>()) {
@@ -23,6 +23,16 @@ function fixture(shared = new Map<string, string>()) {
 }
 const ticks = async () => { for (let n = 0; n < 5; n++) await Promise.resolve(); };
 describe("native novel entry durable identity navigation", () => {
+  it("uses the Host canonical path to recover an existing workspace Session", async () => {
+    const f = fixture();
+    f.rows.push({ id: "canonical", cwd: "/private/var/book", updatedAt: 1 });
+    f.services.validateDirectory.mockImplementation(async () => "/private/var/book");
+    await f.controller.open("/var/book");
+    expect(f.services.openSession).toHaveBeenCalledExactlyOnceWith("canonical");
+    expect(f.services.createSession).not.toHaveBeenCalled();
+    expect(f.controller.getSnapshot().recent).toEqual([{ id: "canonical", path: "/private/var/book" }]);
+  });
+
   it("restores recent IDs after a fresh instance, resumes the exact session and does not list unrelated history", async () => {
     const f = fixture(); await f.controller.open("/synthetic/one");
     f.rows.push({ id: "code", cwd: "/code", updatedAt: 500 });
@@ -132,5 +142,21 @@ describe("native novel entry durable identity navigation", () => {
     const bad = browserRecentMemory({ getItem: () => '{"path":"/private"}', setItem() {} }, "/"); expect(bad.read()).toEqual([]);
     expect(recentEntries({ ready: false, sessions: [{ id: "a", cwd: "/book", updatedAt: 1 }] }, ["a"], () => "/book")).toEqual([]);
     expect(f.services.memory.read()).toEqual(["a"]);
+  });
+});
+
+describe("first-use native workspace creation", () => {
+  it("registers the book before creating an attached Session, never cwd-only", async () => {
+    const calls: string[] = [];
+    const workspaces = { create: vi.fn(async (input: { path: string }) => { calls.push(input.path); return { workspaceId: "book-workspace" }; }) };
+    const sessions = { create: vi.fn(async () => { calls.push("session"); return "book-session"; }) };
+    await expect(createWorkspaceSession("/synthetic/book", workspaces, sessions)).resolves.toBe("book-session");
+    expect(calls).toEqual(["/synthetic/book", "session"]);
+    expect(sessions.create).toHaveBeenCalledExactlyOnceWith({ workspaceId: "book-workspace" });
+  });
+  it("does not create an ungrouped Session when the Host refuses the directory", async () => {
+    const sessions = { create: vi.fn(async () => "must-not-exist") };
+    await expect(createWorkspaceSession("/missing", { create: async () => { throw new Error("not a directory"); } }, sessions)).rejects.toThrow("not a directory");
+    expect(sessions.create).not.toHaveBeenCalled();
   });
 });
