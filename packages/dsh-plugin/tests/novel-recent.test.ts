@@ -126,3 +126,23 @@ it("registers strict native Remote descriptors and refuses direct invocation wit
     await expect(service.touch("one")).rejects.toThrow("已登录");
   } finally { await context.fiber.dispose(); }
 });
+
+it("resolves profile and native catalog through the real plugin injection scope", async () => {
+  const f = await fixture();
+  const context = new Context();
+  new TypertRegistry(context);
+  context.provide("profileContext", { dir: f.profile });
+  context.provide("workspaceRegistry", { archivedSessionIds: [] });
+  context.provide("sessionController", { list: async () => ({ items: [{ sessionId: "one", cwd: f.book, formatStatus: "current" }] }) });
+  const scoped = context.extend({ invocation: { peer: { principal: { kind: "owner" } }, request: { args: { sessionId: "one" } }, signal: new AbortController().signal } });
+  try {
+    const fiber = scoped.plugin(NovelRecentService);
+    await fiber.await();
+    const service = scoped.get("kaituNovelRecent") as NovelRecentService;
+    expect(service).toBeDefined();
+    expect(await service.touch("one")).toEqual({ entries: [{ id: "one", path: f.book }] });
+    context.set("profileContext", {});
+    await expect(service.touch("one")).rejects.toThrow("没有配置目录");
+    expect(JSON.parse(await readFile(f.file, "utf8"))).toEqual({ version: 1, ids: ["one"] });
+  } finally { await context.fiber.dispose(); }
+});

@@ -24,7 +24,7 @@ async function catalog(context: Context): Promise<readonly RecentSessionRow[]> {
 
 /** Strict descriptors registered on DSH's authenticated Gateway, never a bare HTTP endpoint. */
 export class NovelRecentService extends TypertRemoteService {
-  static inject = ["sessionController", "typert"];
+  static inject = ["sessionController", "typert", "workspaceRegistry", "profileContext"];
   constructor(context: Context) {
     super(context, "kaituNovelRecent");
     this.ctx.typert.register({

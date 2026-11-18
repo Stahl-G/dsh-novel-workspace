@@ -7,6 +7,7 @@ import { useEffect, useState, useSyncExternalStore } from "react";
 import { createNovelEntryNavigation } from "./novel-entry-navigation.js";
 import { absoluteBookPath, hostRecentMemory } from "./novel-entry-memory.js";
 import { novelRecentRemote } from "./novel-entry-contract.js";
+import type { NovelRecentRemote } from "../novel-recent-contract.js";
 
 export const NOVEL_ENTRY_PANEL = "kaitu-novel" as MainPanelId;
 type SessionId = Awaited<ReturnType<ISessions["create"]>>;
@@ -35,7 +36,7 @@ export function NovelEntry({ navigation }: { navigation: Navigation }) {
 
 export function registerNovelEntry(context: Context): void {
   context.plugin({
-    inject: ["layout", "sessions", "workspaces", "uiWorkspace", "slots", "remote"],
+    inject: ["layout", "sessions", "workspaces", "uiWorkspace", "slots", "remote", "typert"],
     apply(ctx: Context) {
       // DSH declares a legacy SessionStore on Context; upstream uses the controller facade at this boundary.
       const sessions = ctx.sessions as unknown as ISessions;
@@ -44,10 +45,18 @@ export function registerNovelEntry(context: Context): void {
       const workspaces = ctx.get("workspaces") as {
         list: { getSnapshot(): { phase: string; archivedSessionIds: readonly string[] }; subscribe(listener: () => void): () => void };
       };
-      const mounted = ctx.remote.$mount(novelRecentRemote);
+      // Mount and consume in different Cordis scopes: the consumer cannot wait
+      // for the namespace service that its own apply would have to create.
+      const mounted = new Promise<NovelRecentRemote>((resolve, reject) => {
+        ctx.plugin({
+          inject: ["remote", "remote.kaituNovelRecent"],
+          apply(consumer: Context) { resolve(consumer.remote.kaituNovelRecent); }
+        });
+        void ctx.remote.$mount(novelRecentRemote).catch(reject);
+      });
       const memory = hostRecentMemory({
-        read: async () => { await mounted; const result = await ctx.remote.kaituNovelRecent.read(AbortSignal.timeout(5000)); if (!result.ok) throw new Error("Recent read unavailable"); return result.value; },
-        touch: async (id) => { await mounted; const result = await ctx.remote.kaituNovelRecent.touch(id, AbortSignal.timeout(5000)); if (!result.ok) throw new Error("Recent save unavailable"); return result.value; }
+        read: async () => { const remote = await mounted; const result = await remote.read(); if (!result.ok) throw new Error("Recent read unavailable"); return result.value; },
+        touch: async (id) => { const remote = await mounted; const result = await remote.touch(id); if (!result.ok) throw new Error("Recent save unavailable"); return result.value; }
       });
       const navigation = createNovelEntryNavigation<SessionId>({
         owner: sessions,

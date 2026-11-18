@@ -23,6 +23,13 @@ const sourceHashes = {};
 for (const path of ["packages/desktop/plugins.mjs", "packages/dsh-plugin/src/client/ExplorePluginRoute.tsx", "packages/dsh-plugin/src/client/ExplorePluginEmbed.module.css"]) {
   sourceHashes[path] = createHash("sha256").update(await readFile(join(host,path))).digest("hex");
 }
+// Preserve the production Host's exact DSH dependency graph, replacing only the QA importer.
+const hostLock = await readFile(join(host, "pnpm-lock.yaml"), "utf8");
+const lockedDsh = / {6}'@deepseek-ai\/dsh':\n {8}specifier: ([^\n]+)\n {8}version: ([^\n]+)/u.exec(hostLock);
+if (!lockedDsh || lockedDsh[1] !== dshVersion || !lockedDsh[2].startsWith(dshVersion)) throw new Error("Host lockfile DSH version does not match payload-loader");
+const fixtureLock = hostLock.replace(/^importers:[\s\S]*?(?=^packages:)/mu,
+  `importers:\n  .:\n    dependencies:\n      '@deepseek-ai/dsh':\n        specifier: ${dshVersion}\n        version: ${lockedDsh[2]}\n\n`);
+if(fixtureLock===hostLock)throw new Error("Host lockfile importer boundary is unsupported");
 const require = createRequire(import.meta.url);
 const semverEntry = require.resolve("semver", {paths:[join(plugin,"node_modules/.pnpm/node_modules"),host,plugin]});
 const qa = await mkdtemp(join(tmpdir(),"kaitu-embed-qa-"));
@@ -72,9 +79,11 @@ const IFRAME_CHECK = `    {
         await frame.locator('.oh-story-editor').waitFor({state:'visible',timeout:15000});
         const originalSession=await frame.locator('[data-conversation-content][data-conversation-session]').first().getAttribute('data-conversation-session');
         if(!originalSession)throw Error('Missing original native session');
+        const savedRecent=await rpc<{entries:{id:string;path:string}[]}>(origin,'kaituNovelRecent/read',{});
+        if(!savedRecent.entries.some(entry=>entry.id===originalSession))throw Error('Host did not persist the opened session: '+JSON.stringify(savedRecent));
         const bookBeforeReload=await snapshotSyntheticBook(storyRoot);
         const chatMarker='IFRAME_RELOAD：重载前的合成聊天线索，不修改作品。';
-        await prepareSession(origin,originalSession,chatMarker,'写作 iframe 重载验证');
+        await prepareSession(origin,originalSession,chatMarker);
         const catalogBeforeReload=await rpc<{items:{sessionId:string}[]}>(origin,'session/list',{_request:{}});
         await page.goto('about:blank');await page.goto(outerOrigin);
         await page.locator('iframe').evaluate((e,url)=>e.setAttribute('src',url),target);
@@ -148,12 +157,15 @@ const block=IFRAME_CHECK.replace('__SERVICE_MODULE__',qa+'/plugins-service.mjs')
 if(!src.includes(marker)) throw Error('smoke injection target missing');
 src=src.replace(marker,block+'\n'+marker);
 src=src.replace('redact(logs.join("").slice(-16_000))', 'redact(logs.join("").slice(-16_000)).replace(/([?&]token=)[A-Za-z0-9_.-]+/gu, "$1[REDACTED]")');
+const installMarker = '    try { runPnpm(["--dir", installation, "install", "--offline"]); }\n    catch { runPnpm(["--dir", installation, "install"]); }';
+if(!src.includes(installMarker))throw new Error("DSH fixture install marker changed");
+src=src.replace(installMarker,`    await writeFile(join(installation, "pnpm-lock.yaml"), ${JSON.stringify(fixtureLock)});\n    try { runPnpm(["--dir", installation, "install", "--frozen-lockfile", "--offline"]); }\n    catch { runPnpm(["--dir", installation, "install", "--frozen-lockfile"]); }`);
 await writeFile(qa+'/native-embed.ts',src);
 
 
 const child = spawn(process.execPath,[require.resolve("tsx/cli"),join(qa,"native-embed.ts")],{
   cwd:plugin, stdio:["ignore","pipe","pipe"],
-  env:{PATH:process.env.PATH,HOME:join(qa,"home"),TMPDIR:qa,LANG:"en_US.UTF-8",PNPM_HOME:join(qa,"pnpm-home"),npm_config_cache:join(qa,"npm-cache"),npm_config_manage_package_manager_versions:"false",DSH_TEST_VERSION:dshVersion}
+  env:{PATH:process.env.PATH,HOME:process.env.KAITU_QA_PACKAGE_HOME ?? join(qa,"home"),TMPDIR:qa,LANG:"en_US.UTF-8",PNPM_HOME:process.env.KAITU_QA_PNPM_HOME ?? join(qa,"pnpm-home"),npm_config_network_concurrency:"4",npm_config_cache:join(qa,"npm-cache"),npm_config_manage_package_manager_versions:"false",DSH_TEST_VERSION:dshVersion}
 });
 let output="";
 child.stdout.on("data",chunk=>{output+=chunk.toString()});

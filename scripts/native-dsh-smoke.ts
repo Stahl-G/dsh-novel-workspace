@@ -353,7 +353,7 @@ async function snapshotSyntheticBook(root: string): Promise<string> {
   return JSON.stringify(await Promise.all(paths.map(async (path) => [path, (await readFile(path)).toString("base64")])));
 }
 
-async function prepareSession(origin: string, sessionId: string, prompt: string, title: string): Promise<void> {
+async function prepareSession(origin: string, sessionId: string, prompt: string, title?: string): Promise<void> {
   const models = await rpc<{
     readonly groups: readonly { readonly id: string; readonly models: readonly { readonly id: string }[] }[];
   }>(origin, "session/modelCatalog", {});
@@ -374,7 +374,7 @@ async function prepareSession(origin: string, sessionId: string, prompt: string,
     }
   });
   await waitForCompletedTurn(origin, sessionId);
-  await rpc(origin, "session/rename", { request: { sessionId, title } });
+  if (title !== undefined) await rpc(origin, "session/rename", { request: { sessionId, title } });
 }
 
 /** Send one request with headers verbatim; fetch silently drops a forged Host. */
@@ -1186,7 +1186,7 @@ async function main(): Promise<void> {
       if (resumedSession !== entrySession) throw new Error("Novel entry did not resume its existing native conversation.");
       const bookBeforeReload = await snapshotSyntheticBook(storyRoot);
       const entryChatMarker = "NATIVE_ENTRY_RELOAD：这是重载前的合成聊天线索，不修改作品。";
-      if (!useRealDeepSeek) await prepareSession(origin, entrySession, entryChatMarker, "写作入口 · 重载验证");
+      if (!useRealDeepSeek) await prepareSession(origin, entrySession, entryChatMarker);
       const catalogBeforeReload = await rpc<{ readonly items: readonly { readonly sessionId: string }[] }>(origin, "session/list", { _request: {} });
       // Destroy the entire document and JS runtime, not just hide/remount the panel.
       await page.goto("about:blank");

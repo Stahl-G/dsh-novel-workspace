@@ -5,8 +5,8 @@ export const recentSessionId = z.string().min(1).max(256).refine((value) => Arra
 export const recentResponse = z.object({ entries: z.array(z.object({ id: recentSessionId, path: z.string().min(1).max(8192) }).strict()).max(8) }).strict();
 export type NovelRecentResponse = z.infer<typeof recentResponse>;
 export interface NovelRecentRemote {
-  read(signal?: AbortSignal): Promise<RemoteResult<NovelRecentResponse>>;
-  touch(sessionId: string, signal?: AbortSignal): Promise<RemoteResult<NovelRecentResponse>>;
+  read(): Promise<RemoteResult<NovelRecentResponse>>;
+  touch(sessionId: string): Promise<RemoteResult<NovelRecentResponse>>;
 }
 declare module "@deepseek-ai/dsh-typert-protocol" {
   interface TypertRemoteNamespaceMap { kaituNovelRecent: NovelRecentRemote }
