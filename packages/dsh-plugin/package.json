@@ -1,0 +1,162 @@
+{
+  "name": "kaitu-novel-workspace",
+  "version": "0.4.0-alpha.2",
+  "description": "开图小说工作台：Oh Story 上游原生 DSH 插件的独立改造版",
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "oh-story",
+    "drama-skills",
+    "novel-to-game",
+    "creative-writing",
+    "fiction-writing",
+    "novel-writing",
+    "short-drama",
+    "screenwriting",
+    "interactive-fiction",
+    "game-development",
+    "video-recap",
+    "video-production",
+    "ai-agents"
+  ],
+  "homepage": "https://github.com/Stahl-G/dsh-novel-workspace",
+  "bugs": "https://github.com/Stahl-G/dsh-novel-workspace/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stahl-G/dsh-novel-workspace.git",
+    "directory": "packages/dsh-plugin"
+  },
+  "engines": {
+    "node": ">=24.9.0",
+    "dsh": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0"
+  },
+  "type": "module",
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "types": "./lib/types/client/index.d.ts",
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-store",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-tool",
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ],
+      "platform": "web"
+    }
+  },
+  "files": [
+    "cordis.patch.yml",
+    "lib/**/*",
+    "LICENSE",
+    "README.md",
+    "templates/creative-brief.md",
+    "scripts/kaitu-book.mjs",
+    "UPSTREAM.md",
+    "LICENSE.kaitu"
+  ],
+  "scripts": {
+    "build": "tsx ../../scripts/build-dsh-plugin.ts && tsc -p tsconfig.build.json",
+    "prepack": "pnpm build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:contract": "vitest run contract"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4 || ^4.0.5-alpha.1 || ^4.0.6-alpha.1",
+    "@deepseek-ai/dsh-agent": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-api-session-controller": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-store": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-ui-chat": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-ui-conversation": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-ui-layout": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-ui-renderer": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-ui-session": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-ui-slots": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-ui-tool": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-fs": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-host-webserver": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-llm": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-session": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-sandbox-policy": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-skill": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-subagent": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-tools": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-typert-registry": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-util-values": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/schemastery": "^3.18.4 || ^3.18.5-alpha.1 || ^3.18.6-alpha.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zod": "^4.4.3",
+    "@deepseek-ai/dsh-client-ui-workspace": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-client-ui-sidebar": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0",
+    "@deepseek-ai/dsh-typert-protocol": ">=0.2.0-rc.2 <0.2.1-0 || >=0.2.1-alpha.1 <0.2.2-0 || >=0.2.2-alpha.2 <0.2.3-0"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "4.1.0",
+    "@deepseek-ai/dsh-agent": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-api-session-controller": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-store": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-chat": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-conversation": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-layout": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-renderer": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-session": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-slots": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-tool": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-fs": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-host-webserver": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-llm": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-session": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-sandbox-policy": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-skill": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-subagent": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-tools": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-typert-registry": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-util-values": "0.2.2-rc.1",
+    "@deepseek-ai/schemastery": "3.19.0",
+    "@types/react": "18.3.28",
+    "@types/react-dom": "18.3.7",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "typescript": "6.0.3",
+    "zod": "4.4.3",
+    "@deepseek-ai/dsh-client-ui-workspace": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-client-ui-sidebar": "0.2.2-rc.1",
+    "@deepseek-ai/dsh-typert-protocol": "0.2.2-rc.1"
+  },
+  "private": true,
+  "bin": {
+    "kaitu-book": "./scripts/kaitu-book.mjs"
+  },
+  "kaitu": {
+    "explore": {
+      "title": {
+        "zh": "写作",
+        "en": "Writing"
+      },
+      "description": {
+        "zh": "继续故事，整理世界与人物",
+        "en": "Continue stories, shape worlds and characters"
+      },
+      "icon": "M4 3h6a2 2 0 0 1 2 2v16a3 3 0 0 0-3-3H4V3Zm16 0h-6a2 2 0 0 0-2 2v16a3 3 0 0 1 3-3h5V3Z",
+      "page": "kaitu-novel"
+    }
+  }
+}

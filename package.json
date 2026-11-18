@@ -1,103 +1,58 @@
 {
-  "version": "0.3.3-rc.1",
-  "type": "module",
+  "name": "kaitu-oh-story-source",
+  "version": "0.4.0-alpha.2",
+  "private": true,
+  "description": "开图小说工作台：基于 Oh Story 的独立开发版",
   "license": "MIT",
-  "devDependencies": {
-    "@deepseek-ai/cordis": "~4.0.5",
-    "@deepseek-ai/dsh-api-remotes": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-client-ui-layout": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-client-ui-primitives": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-client-ui-renderer": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-client-ui-sidebar": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-client-ui-slots": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-typert-generator": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-typert-registry": "0.2.1-rc.3",
-    "@types/react": "18.3.31",
-    "@types/react-dom": "^18.3.7",
-    "esbuild": "0.28.2",
-    "lightningcss": "1.33.0",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "@biomejs/biome": "^1.9.4",
-    "@types/node": "^22.10.0",
-    "typescript": "^5.7.0",
-    "vitest": "^3.2.0",
-    "@codemirror/state": "6.7.6",
-    "@codemirror/view": "6.43.14",
-    "@codemirror/commands": "6.11.1",
-    "@codemirror/lang-markdown": "6.5.2",
-    "@deepseek-ai/dsh-api-session-controller": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-client-ui-conversation": "0.2.1-rc.3",
-    "@deepseek-ai/dsh-client-ui-session": "0.2.1-rc.3",
-    "react-resizable-panels": "4.14.5"
-  },
-  "name": "kaitu-novel-workspace",
-  "description": "DSH 小说工作台与科幻设定校对，支持世界书、续写与外部 chatbot 提示词",
-  "scripts": {
-    "build": "pnpm --filter @kaitu/core build && pnpm --filter ./packages/novel-plugin build && pnpm --filter ./packages/sf-plugin build && node scripts/assemble.mjs",
-    "test": "vitest run",
-    "typecheck": "pnpm -r typecheck"
-  },
-  "dependencies": {
-    "@deepseek-ai/dsh-typert-protocol": "0.2.1-rc.3",
-    "zod": "4.4.3"
-  },
-  "peerDependencies": {
-    "@deepseek-ai/cordis": "~4.0.5"
-  },
-  "exports": {
-    ".": "./dist/index.js",
-    "./sf": "./dist/sf.js",
-    "./client": "./dist/client.js",
-    "./package.json": "./package.json"
-  },
-  "files": [
-    "dist",
-    "schemas",
-    "templates",
-    "examples",
-    "LICENSE",
-    "THIRD_PARTY_LICENSES.md",
-    "cordis.patch.yml",
-    "README.md"
-  ],
-  "dsh": {
-    "client": {
-      "platform": "web",
-      "inject": [
-        "@deepseek-ai/dsh-api-remotes",
-        "@deepseek-ai/dsh-client-ui-renderer",
-        "@deepseek-ai/dsh-client-ui-layout",
-        "@deepseek-ai/dsh-client-ui-sidebar",
-        "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-api-session-controller"
-      ]
-    },
-    "bundle": {
-      "patch": "./cordis.patch.yml"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Stahl-G/dsh-novel-workspace.git"
-  },
+  "type": "module",
   "packageManager": "pnpm@11.22.0",
   "engines": {
-    "node": "^22.19.0 || >=24",
-    "dsh": "0.2.1-rc.3"
+    "node": ">=24.9.0"
   },
-  "kaitu": {
-    "explore": {
-      "title": {
-        "zh": "写作",
-        "en": "Writing"
-      },
-      "description": {
-        "zh": "继续故事，整理世界与人物",
-        "en": "Continue stories, shape worlds and characters"
-      },
-      "icon": "书",
-      "page": "kaitu-novel"
-    }
+  "scripts": {
+    "dev": "pnpm build:dsh-plugin",
+    "build:dsh-plugin": "pnpm --filter kaitu-novel-workspace build",
+    "build": "pnpm -r --if-present build",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "lint": "eslint . --max-warnings=0",
+    "test": "pnpm test:book && pnpm test:unit",
+    "test:unit": "pnpm -r --if-present test",
+    "test:contract": "pnpm -r --if-present test:contract",
+    "test:dsh": "pnpm test:dsh:native",
+    "test:dsh:native": "tsx scripts/native-dsh-smoke.ts",
+    "test:dsh:real": "tsx scripts/native-dsh-real.ts",
+    "test:release": "node --test scripts/release.test.mjs",
+    "test:upstream-updates": "node --test scripts/upstream-updates.test.mjs",
+    "upstream:updates": "node scripts/upstream-updates.mjs --dry-run",
+    "demo": "tsx scripts/render-workbench-demo.ts all",
+    "demo:story": "tsx scripts/render-workbench-demo.ts story",
+    "demo:drama": "tsx scripts/render-workbench-demo.ts drama",
+    "demo:game": "tsx scripts/render-workbench-demo.ts game",
+    "demo:video": "tsx scripts/render-workbench-demo.ts video",
+    "assets:sync": "pnpm assets:sync:story && pnpm assets:sync:drama && pnpm assets:sync:game && pnpm assets:sync:video",
+    "assets:sync:story": "tsx scripts/sync-oh-story-assets.ts",
+    "assets:sync:drama": "tsx scripts/sync-drama-assets.ts",
+    "assets:sync:game": "tsx scripts/sync-novel-to-game-assets.ts",
+    "assets:sync:video": "tsx scripts/sync-video-recap-assets.ts",
+    "assets:check": "tsx scripts/check-upstream-parity.ts && tsx scripts/check-drama-parity.ts && tsx scripts/check-novel-to-game-parity.ts && tsx scripts/check-video-recap-parity.ts",
+    "dsh:boundary": "tsx scripts/check-dsh-boundary.ts",
+    "verify": "pnpm lint && pnpm typecheck && pnpm assets:check && pnpm dsh:boundary && pnpm test:release && pnpm test:upstream-updates && pnpm test:book && pnpm test:unit && pnpm build",
+    "verify:portable": "pnpm typecheck && pnpm assets:check && pnpm test:release && pnpm test:book && pnpm test:unit && pnpm build",
+    "verify:release": "pnpm verify && pnpm test:dsh && pnpm test:dsh:rc && pnpm test:dsh:next",
+    "test:dsh:rc": "tsx scripts/native-dsh-smoke.ts 0.2.0-rc.2",
+    "test:dsh:next": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.3",
+    "pack:preview": "pnpm --filter kaitu-novel-workspace pack --pack-destination dist",
+    "test:book": "node --test scripts/kaitu-book.test.mjs scripts/kaitu-author-loop.test.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.62.1",
+    "@types/node": "25.5.0",
+    "esbuild": "0.28.2",
+    "eslint": "10.8.1",
+    "tsx": "4.23.12",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.67.0",
+    "vitest": "4.1.11"
   }
 }

@@ -1,0 +1,408 @@
+import type { AssistantChatData, ChatSnapshot } from "@deepseek-ai/dsh-client-ui-chat/client";
+import type {
+  ConversationTimelineSnapshot,
+  PartialAssistant,
+  RunningToolCall,
+  ToolCallBlock
+} from "@deepseek-ai/dsh-client-ui-conversation/client";
+import {
+  editableCreativePath,
+  GAME_DIRECTORY,
+  isCreativeRootPath,
+  isDramaDirectory,
+  isStoryDirectory,
+  safeRelativePath,
+  SHORT_STORY_FILE_SET,
+  VIDEO_DIRECTORY
+} from "../creative-paths.js";
+
+export type MutationToolName = "write" | "edit" | "str_replace_editor";
+
+export interface FileMutationActivity {
+  readonly callId: string;
+  readonly name: MutationToolName;
+  readonly argsRaw: string;
+  readonly stage: "streaming" | "running";
+  readonly path: string | undefined;
+  readonly operation: "replace-file" | "replace-text" | "insert-text" | undefined;
+  readonly oldText: string | undefined;
+  readonly newText: string | undefined;
+  readonly replaceAll: boolean;
+}
+
+interface JsonStringPrefix {
+  readonly value: string;
+  readonly complete: boolean;
+}
+
+export type WorkbenchMode = "story" | "drama" | "game" | "video";
+
+const WORKBENCH_LABELS: Readonly<Record<WorkbenchMode, string>> = {
+  story: "小说",
+  drama: "短剧",
+  game: "游戏",
+  video: "视频"
+};
+
+export function workbenchLabel(mode: WorkbenchMode): string {
+  return WORKBENCH_LABELS[mode];
+}
+
+export interface WorkspaceFilePath {
+  readonly path: string;
+}
+
+/** Oh Story short fiction: one book as three files at the workspace root. */
+export const SHORT_STORY_FILES: ReadonlySet<string> = SHORT_STORY_FILE_SET;
+const MUTATING_CALLS = new Set(["write", "edit", "str_replace_editor", "bash", "run_code", "oh_story_role"]);
+
+/** Read the latest running Assistant step, including tool-only steps hidden from the Chat list. */
+export function streamingAssistant(timeline: ConversationTimelineSnapshot): PartialAssistant | null {
+  for (const turnNumber of timeline.turnOrder.toReversed()) {
+    const turn = timeline.turns.get(turnNumber);
+    if (turn === undefined) continue;
+    for (const step of turn.steps.toReversed()) {
+      const assistant: AssistantChatData | undefined = step.data.get("assistant-step");
+      if (assistant?.status === "running") return assistant;
+    }
+  }
+  return null;
+}
+
+function decodeEscape(character: string): string | undefined {
+  switch (character) {
+    case "\"": return "\"";
+    case "\\": return "\\";
+    case "/": return "/";
+    case "b": return "\b";
+    case "f": return "\f";
+    case "n": return "\n";
+    case "r": return "\r";
+    case "t": return "\t";
+    default: return undefined;
+  }
+}
+
+/** Read a JSON string even while the model is still streaming its closing quote. */
+export function jsonStringPrefix(raw: string, key: string): JsonStringPrefix | undefined {
+  const match = new RegExp(`"${key.replace(/[.*+?^${}()|[\]\\]/gu, "\\$&")}"\\s*:\\s*"`, "u").exec(raw);
+  if (match === null) return undefined;
+  let value = "";
+  for (let index = match.index + match[0].length; index < raw.length; index += 1) {
+    const character = raw[index] ?? "";
+    if (character === "\"") return { value, complete: true };
+    if (character !== "\\") { value += character; continue; }
+    const escape = raw[index + 1];
+    if (escape === undefined) return { value, complete: false };
+    if (escape === "u") {
+      const hex = raw.slice(index + 2, index + 6);
+      if (!/^[\da-f]{4}$/iu.test(hex)) return { value, complete: false };
+      value += String.fromCharCode(Number.parseInt(hex, 16));
+      index += 5;
+      continue;
+    }
+    const decoded = decodeEscape(escape);
+    if (decoded === undefined) return { value, complete: false };
+    value += decoded;
+    index += 1;
+  }
+  return { value, complete: false };
+}
+
+function completedString(raw: string, key: string): string | undefined {
+  const value = jsonStringPrefix(raw, key);
+  return value?.complete === true ? value.value : undefined;
+}
+
+function parsedArgs(raw: string): Record<string, unknown> | undefined {
+  try {
+    const value = JSON.parse(raw) as unknown;
+    return typeof value === "object" && value !== null && !Array.isArray(value) ? value as Record<string, unknown> : undefined;
+  } catch { return undefined; }
+}
+
+function mutationFromArgs(name: string, callId: string, argsRaw: string, stage: FileMutationActivity["stage"], argumentsComplete?: boolean): FileMutationActivity | undefined {
+  const complete = parsedArgs(argsRaw);
+  if (name === "write") {
+    return {
+      callId, name, argsRaw, stage,
+      path: jsonStringPrefix(argsRaw, "file_path")?.value,
+      operation: "replace-file",
+      oldText: undefined,
+      newText: jsonStringPrefix(argsRaw, "content")?.value,
+      replaceAll: false
+    };
+  }
+  if (name === "edit") {
+    return {
+      callId, name, argsRaw, stage,
+      path: jsonStringPrefix(argsRaw, "file_path")?.value,
+      operation: "replace-text",
+      oldText: completedString(argsRaw, "old_string"),
+      newText: jsonStringPrefix(argsRaw, "new_string")?.value,
+      replaceAll: complete?.replace_all === true
+    };
+  }
+  if (name !== "str_replace_editor") return undefined;
+  const command = completedString(argsRaw, "command");
+  if (command === "view") return undefined;
+  const path = jsonStringPrefix(argsRaw, "path")?.value;
+  if (command === "create") {
+    return {
+      callId, name, argsRaw, stage, path,
+      operation: "replace-file",
+      oldText: undefined,
+      newText: jsonStringPrefix(argsRaw, "file_text")?.value,
+      replaceAll: false
+    };
+  }
+  if (command === "str_replace") {
+    return {
+      callId, name, argsRaw, stage, path,
+      operation: "replace-text",
+      oldText: completedString(argsRaw, "old_str"),
+      newText: jsonStringPrefix(argsRaw, "new_str")?.value ?? ((argumentsComplete ?? complete !== undefined) ? "" : undefined),
+      replaceAll: complete?.replace_all === true
+    };
+  }
+  if (command === "insert") {
+    return {
+      callId, name, argsRaw, stage, path,
+      operation: "insert-text",
+      oldText: undefined,
+      newText: jsonStringPrefix(argsRaw, "new_str")?.value,
+      replaceAll: false
+    };
+  }
+  return { callId, name, argsRaw, stage, path, operation: undefined, oldText: undefined, newText: undefined, replaceAll: false };
+}
+
+function visitRunning(blocks: readonly ToolCallBlock[], visit: (call: RunningToolCall) => void): void {
+  for (const block of blocks) {
+    if (!("kind" in block)) visit(block);
+    visitRunning(block.subCalls, visit);
+  }
+}
+
+/** A call a finished Assistant step issued that DSH has not settled yet. */
+export interface UndispatchedCall {
+  readonly callId: string;
+  readonly name: string;
+  readonly argsRaw: string;
+}
+
+/**
+ * Calls of the open Turn whose Assistant step has finished streaming but that have no result yet.
+ * DSH 0.1.7 hides such a call's tool row until its durable `tool/call` event — through pre-execute
+ * hooks and any approval — so it is in neither `partial` nor the running calls, and a call it does
+ * list on rc.2 stays `preparing` without arguments. The step's own tool-call block still holds them.
+ */
+export function undispatchedCalls(chat: ChatSnapshot): UndispatchedCall[] {
+  const turnNumber = chat.timeline.turnOrder.at(-1);
+  const turn = turnNumber === undefined ? undefined : chat.timeline.turns.get(turnNumber);
+  // Only a closed Turn is finished: a Turn whose start fell outside the loaded history window
+  // reports `unknown` while it still runs. Callers pass the result only while the Session runs.
+  if (turn === undefined || turn.status === "closed") return [];
+  const calls: UndispatchedCall[] = [];
+  for (const step of turn.steps) {
+    const assistant: AssistantChatData | undefined = step.data.get("assistant-step");
+    if (assistant?.status !== "settled") continue;
+    for (const block of assistant.blocks) {
+      if (block.kind === "tool-call") calls.push({ callId: block.callId, name: block.name, argsRaw: block.argsRaw });
+    }
+  }
+  if (calls.length === 0) return calls;
+  const settled = new Set<string>();
+  for (const node of chat.legacy.nodes as readonly unknown[]) {
+    const value = node as { readonly kind?: unknown; readonly callId?: unknown };
+    if (value.kind === "tool-result" && typeof value.callId === "string") settled.add(value.callId);
+  }
+  return calls.filter((call) => !settled.has(call.callId));
+}
+
+export function sameUndispatchedCalls(left: readonly UndispatchedCall[], right: readonly UndispatchedCall[]): boolean {
+  return left.length === right.length && left.every((call, index) => (
+    call.callId === right[index]?.callId && call.argsRaw === right[index].argsRaw
+  ));
+}
+
+/** Return every active file mutation in official DSH dispatch order, including nested Code Mode calls. */
+export function fileMutations(
+  runningCalls: readonly RunningToolCall[],
+  partial: PartialAssistant | null = null,
+  undispatched: readonly UndispatchedCall[] = []
+): FileMutationActivity[] {
+  const values: FileMutationActivity[] = [];
+  visitRunning(runningCalls, (call) => {
+    if (call.phase === "start") {
+      const mutation = mutationFromArgs(call.name, call.callId, call.argsRaw, "running");
+      if (mutation !== undefined) values.push(mutation);
+      return;
+    }
+    // Alpha publishes lazy arguments while preparing; rc.2 still relies on the
+    // Assistant block below. Read on every projection, since args grows in place.
+    if (call.args === undefined || !["write", "edit", "str_replace_editor"].includes(call.name)) return;
+    const fields: Record<string, unknown> = {};
+    for (const key of ["file_path", "path", "content", "file_text", "new_string", "new_str", "old_string", "old_str", "command", "insert_line", "replace_all"]) {
+      if (["old_string", "old_str", "command"].includes(key) && !call.args.complete(key)) continue;
+      const value = call.args.text(key) ?? call.args.value(key);
+      if (value !== undefined) fields[key] = value;
+    }
+    if (Object.keys(fields).length === 0) return;
+    const mutation = mutationFromArgs(call.name, call.callId, JSON.stringify(fields), "streaming", call.args.closed());
+    if (mutation !== undefined) values.push(mutation);
+  });
+  for (const call of undispatched) {
+    if (values.some((candidate) => candidate.callId === call.callId)) continue;
+    const mutation = mutationFromArgs(call.name, call.callId, call.argsRaw, "running");
+    if (mutation !== undefined) values.push(mutation);
+  }
+  for (const block of partial?.blocks ?? []) {
+    if (block.kind !== "tool-call") continue;
+    const value = mutationFromArgs(block.name, block.callId, block.argsRaw, "streaming");
+    if (value !== undefined && !values.some((candidate) => candidate.callId === value.callId)) values.push(value);
+  }
+  return values;
+}
+
+/** Running calls whose settlement may have changed creative files. */
+export function mutatingCallIds(runningCalls: readonly RunningToolCall[]): ReadonlySet<string> {
+  const ids = new Set<string>();
+  visitRunning(runningCalls, (call) => { if (MUTATING_CALLS.has(call.name)) ids.add(call.callId); });
+  return ids;
+}
+
+function settledMutationSignals(block: ToolCallBlock): string[] {
+  const nested = block.subCalls.flatMap(settledMutationSignals);
+  if (!("kind" in block) || block.isError) return nested;
+  if (block.call === null) return nested;
+  const mutation = mutationFromArgs(block.call.name, block.callId, block.call.argsRaw, "running");
+  return mutation?.path === undefined ? nested : [`${block.callId}\0${mutation.path}`, ...nested];
+}
+
+function latestSettledWrite(chat: ChatSnapshot): { readonly signal: string; readonly turn: number | undefined } | undefined {
+  for (const key of chat.order.toReversed()) {
+    const node = chat.nodes.get(key);
+    if (node?.kind !== "tool-call") continue;
+    const root = (node.data as { readonly root?: ToolCallBlock }).root;
+    const signal = root === undefined ? undefined : settledMutationSignals(root).at(-1);
+    if (signal === undefined) continue;
+    const location = node.location;
+    return { signal, turn: location.kind === "turn" || location.kind === "step" ? location.turn.turn : undefined };
+  }
+  return undefined;
+}
+
+/** Latest durable successful mutation, used when a fast call skips the live render window. */
+export function latestSettledMutation(chat: ChatSnapshot): string | undefined {
+  return latestSettledWrite(chat)?.signal;
+}
+
+/** The Turn that produced {@link latestSettledMutation}, when the Chat still locates it. */
+export function latestSettledMutationTurn(chat: ChatSnapshot): number | undefined {
+  return latestSettledWrite(chat)?.turn;
+}
+
+/** The last Turn while it is open. A reloaded Session shows history Turns as closed. */
+export function openTurn(chat: ChatSnapshot): number | undefined {
+  const turnNumber = chat.timeline.turnOrder.at(-1);
+  if (turnNumber === undefined) return undefined;
+  return chat.timeline.turns.get(turnNumber)?.status === "open" ? turnNumber : undefined;
+}
+
+/** Convert a DSH tool path to the creative-relative path accepted by the narrow route. */
+export function creativeRelativePath(path: string | undefined, cwd: string | undefined): string | undefined {
+  if (path === undefined || path === "") return undefined;
+  const normalized = path.replaceAll("\\", "/");
+  const root = cwd?.replaceAll("\\", "/").replace(/\/$/u, "");
+  const insideRoot = root !== undefined && normalized.startsWith(`${root}/`);
+  if ((normalized.startsWith("/") || /^[a-z]:\//iu.test(normalized) || normalized.startsWith("file:")) && !insideRoot) return undefined;
+  const relative = insideRoot ? normalized.slice(root.length + 1) : normalized.replace(/^\.\//u, "");
+  if (!safeRelativePath(relative) || !isCreativeRootPath(relative) || !editableCreativePath(relative)) return undefined;
+  return relative;
+}
+
+export function workbenchModeForPath(path: string | undefined): WorkbenchMode | undefined {
+  if (path === "short-drama.json") return "drama";
+  if (path !== undefined && SHORT_STORY_FILE_SET.has(path)) return "story";
+  const directory = path?.split("/", 1)[0];
+  if (directory !== undefined && isStoryDirectory(directory)) return "story";
+  if (directory !== undefined && isDramaDirectory(directory)) return "drama";
+  if (directory === GAME_DIRECTORY) return "game";
+  if (directory === VIDEO_DIRECTORY) return "video";
+  return undefined;
+}
+
+/**
+ * The workbench to show when a Session first opens a workspace: the current one when it has
+ * work, otherwise the first of 小说, 短剧, 游戏, 视频 that does.
+ */
+export function initialWorkbenchMode(
+  current: WorkbenchMode,
+  files: readonly WorkspaceFilePath[],
+  games: readonly unknown[],
+  videos: readonly unknown[]
+): WorkbenchMode {
+  const hasWork = (mode: WorkbenchMode): boolean => mode === "game"
+    ? games.length > 0
+    : mode === "video" ? videos.length > 0 : files.some((file) => workbenchModeForPath(file.path) === mode);
+  if (hasWork(current)) return current;
+  return (["story", "drama", "game", "video"] as const).find(hasWork) ?? current;
+}
+
+/** Choose the first useful document when a creative workbench opens. */
+export function preferredWorkbenchFile(
+  files: readonly WorkspaceFilePath[],
+  mode: WorkbenchMode
+): string | undefined {
+  const matching = files.filter((file) => workbenchModeForPath(file.path) === mode);
+  const preferences = mode === "story"
+    ? [/^正文\/.*\.md$/u, /^正文\.md$/u, /^小节大纲\.md$/u, /^大纲\/.*\.md$/u, /\.md$/u]
+    : mode === "drama" ? [
+        /^剧集\/EP0*1\/剧本\.md$/u,
+        /^剧集\/.*\/剧本\.md$/u,
+        /^剧集\/EP0*1\/screenplay\.md$/iu,
+        /^剧集\/.*\/screenplay\.md$/iu,
+        /^项目开发\/creative-brief\.md$/u,
+        /^输入\/.*\.md$/u,
+        /\.md$/u,
+        /^short-drama\.json$/u
+      ] : mode === "game" ? [
+        /^game-adaptations\/[^/]+\/PRODUCT_BRIEF\.md$/u,
+        /^game-adaptations\/[^/]+\/design\/GAME_DESIGN\.md$/u,
+        /^game-adaptations\/[^/]+\/qa\/verification\.json$/u,
+        /^game-adaptations\/[^/]+\/build\/app\/index\.html$/u,
+        /\.md$/u
+      ] : [
+        /^video-recaps\/[^/]+\/work\/recap_story_plan\.json$/u,
+        /^video-recaps\/[^/]+\/work\/narration\.json$/u,
+        /^video-recaps\/[^/]+\/work\/assembly_manifest\.json$/u
+      ];
+  for (const pattern of preferences) {
+    const match = matching.find((file) => pattern.test(file.path));
+    if (match !== undefined) return match.path;
+  }
+  return matching[0]?.path;
+}
+
+/** Project one streamed mutation over its immediate predecessor. */
+export function previewMutation(activity: FileMutationActivity, base: string): string | undefined {
+  if (activity.operation === "replace-file") return activity.newText;
+  if (activity.operation === "replace-text") {
+    if (activity.oldText === undefined || activity.newText === undefined || activity.oldText === "") return undefined;
+    if (activity.replaceAll) return base.includes(activity.oldText) ? base.split(activity.oldText).join(activity.newText) : undefined;
+    const at = base.indexOf(activity.oldText);
+    return at < 0 ? undefined : `${base.slice(0, at)}${activity.newText}${base.slice(at + activity.oldText.length)}`;
+  }
+  if (activity.operation === "insert-text") {
+    if (activity.newText === undefined) return undefined;
+    const rawLine = /"insert_line"\s*:\s*(\d+)/u.exec(activity.argsRaw)?.[1];
+    if (rawLine === undefined) return undefined;
+    const line = Number.parseInt(rawLine, 10);
+    const parts = base.split("\n");
+    const at = Math.max(0, Math.min(parts.length, line));
+    parts.splice(at, 0, activity.newText);
+    return parts.join("\n");
+  }
+  return undefined;
+}

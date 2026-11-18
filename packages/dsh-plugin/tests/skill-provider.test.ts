@@ -1,0 +1,409 @@
+import { readFile, stat } from "node:fs/promises";
+import { resolve } from "node:path";
+import { renderSkillContent } from "@deepseek-ai/dsh-skill";
+import { describe, expect, it } from "vitest";
+import { createDramaSkillProvider, createNovelToGameSkillProvider, createOhStorySkillProvider, createVideoRecapSkillProvider, parseBundledSkill } from "../src/skill-provider.js";
+
+const skillRoot = resolve(import.meta.dirname, "../../knowledge/oh-story/skills");
+const dramaRoot = resolve(import.meta.dirname, "../../knowledge/drama/skills");
+const gameRoot = resolve(import.meta.dirname, "../../knowledge/novel-to-game/skills");
+const videoRoot = resolve(import.meta.dirname, "../../knowledge/video-recap/skills");
+
+describe("Oh Story bundled skill provider", () => {
+  it("publishes the complete upstream capability catalog with a DSH bridge", async () => {
+    const provider = createOhStorySkillProvider(skillRoot);
+    const listed = await provider.list({});
+    if (!Array.isArray(listed)) throw new Error("Expected a complete bundled catalog.");
+    const candidates = listed;
+    expect(candidates).toHaveLength(14);
+    expect(candidates.map((candidate) => candidate.name)).toContain("story-long-write");
+    expect(candidates.every((candidate) => candidate.source === "bundled" && candidate.invocation.modelInvocable)).toBe(true);
+    const selected = candidates.find((candidate) => candidate.name === "story-long-write");
+    expect(selected).toBeDefined();
+    const skill = await provider.get(selected!, {});
+    expect(skill?.content).toContain("# story-long-write");
+    expect(skill?.content).toContain("oh_story_role");
+    expect(skill?.content).toContain("DSH owns the workspace, model, preset, permissions, Session Log");
+    for (const platformPath of [".claude/agents", ".codex/agents", ".opencode/agents", ".agents/agents", "invoke_subagent"]) {
+      expect(skill?.content).toContain(platformPath);
+    }
+    expect(skill?.content).toContain("Oh Story Roles are reached only through oh_story_role");
+    for (const generic of ["DSH's subagent or subagent_fork tools", "not an Agent tool", "subagent_type, agent_type, agent, or TypeName"]) {
+      expect(skill?.content).toContain(generic);
+    }
+    expect(skill?.content).toContain("Keep the upstream writing, Tracking, lint, outline, revision, and quality workflows");
+    for (const shellRule of [
+      "Create and assemble 正文/ chapter files only with the write and edit tools",
+      "never through shell redirection, cp, mv, tee, or a script",
+      "so that DSH's outline guard, its Tracking reminder, and the 小说 view observe the write",
+      "storyctl.py chapter check --fix-punctuation"
+    ]) expect(skill?.content).toContain(shellRule);
+    await expect(readFile(resolve(skillRoot, "story-long-write/scripts/storyctl.py"), "utf8")).resolves.toContain("\"--fix-punctuation\"");
+    for (const candidate of candidates) {
+      const bridged = await provider.get(candidate, {});
+      for (const authorRule of [
+        "reply in the language the author writes in, and keep progress updates in that language while you wait for oh_story_role or any other background helper to return",
+        "reply and report in the author's writing terms (book, chapter, outline, settings), never in script, field, or state names",
+        "attach a raw error only when something failed",
+        "A template block marked <!-- author-report --> is only a format reference: output its text directly, without that marker and without a code fence.",
+        "only through story-long-write or story-short-write and that writing Skill's references/author-memory.md and scripts/author_memory_commit.py; never keep it in a host or DSH memory",
+        "story-deslop and story-review consume only preferences already supplied by their caller and never query or record author memory themselves",
+        "Never edit the bundled Skill files (SKILL.md, references/, scripts/).",
+        "When a Skill script fails, stop and show the author the command you ran and its error"
+      ]) expect(bridged?.content, candidate.name).toContain(authorRule);
+    }
+    // Oh Story 0.10.0 moved the 细纲 plot-point table into outline-template.md and cut it to three columns.
+    const outlineTemplate = await readFile(resolve(skillRoot, "story-long-write/references/outline-template.md"), "utf8");
+    expect(outlineTemplate).toContain("| # | 情节点（谁做了什么） | 作用 |");
+    expect(skill?.content.startsWith("---")).toBe(false);
+    const setupCandidate = candidates.find((candidate) => candidate.name === "story-setup");
+    const setup = await provider.get(setupCandidate!, {});
+    expect(setup?.content).toContain("never deploy Claude/OpenCode/Codex/Antigravity/ZCode/OpenClaw/Reasonix files");
+    expect(setup?.content).not.toContain("merge-codex-hooks.py");
+    expect(setup?.content).toContain("第一章正文落盘前必须有对应细纲");
+    expect(setup?.content).toContain("都不建 追踪/");
+    expect(setup?.content).toContain("scripts/tracking_commit.py init");
+    expect(setup?.content).not.toContain("并准备追踪/_tracking-state.json");
+    // Upstream story-setup's install report order: 现在可以做什么 → 你还需要做的事 → 明细.
+    const reportOrder = ["「现在可以做什么」", "「你还需要做的事」", "「无需其他操作」", "最后才简短列出创建和保留了哪些文件"]
+      .map((phrase) => setup?.content.indexOf(phrase) ?? -1);
+    expect(reportOrder.every((index, position) => index >= 0 && (position === 0 || index > reportOrder[position - 1]!))).toBe(true);
+    expect(setup?.content).not.toContain("复述创建、保留和待用户确认的文件");
+    await expect(readFile(resolve(skillRoot, "story-long-write/scripts/tracking_commit.py"), "utf8")).resolves.toContain("\"init\"");
+    expect(setup?.resourceBase).toEqual({ kind: "directory", path: resolve(skillRoot, "story-setup") });
+    for (const reference of ["character-basics.md", "long-quality.md", "short-quality.md", "writing-craft.md", "outline-methods.md"]) {
+      await expect(readFile(resolve(skillRoot, "story-setup/references/agent-references", reference), "utf8"))
+        .resolves.toMatch(/\S/u);
+    }
+    const renderedSetup = renderSkillContent(setup!);
+    expect(renderedSetup).toContain("<skill_resources>");
+    expect(renderedSetup).toContain(`Base directory for this skill: ${resolve(skillRoot, "story-setup")}`);
+    const routeCandidate = candidates.find((candidate) => candidate.name === "story");
+    const route = await provider.get(routeCandidate!, {});
+    expect(route?.content).toContain("The 小说 workspace is an official DSH conversation view");
+    expect(routeCandidate?.description).toContain("记住我的写作习惯");
+    expect(route?.content).toContain("无当前书的\n  通用习惯默认交 story-long-write");
+    expect(route?.content).toContain("路由层不读写作者记忆文件");
+    // Oh Story 0.9.0 story/SKILL.md 「书目录判定」: one rule for routing, review and cover.
+    for (const phrase of [".active-book", "最多 4 层", "有 正文/\n或 设定/ 子目录的是长篇，有 正文.md 或 设定.md 文件的是短篇"]) {
+      expect(route?.content).toContain(phrase);
+    }
+    expect(route?.content).not.toContain("加载本 skill 的");
+    for (const phrase of ["灵感库", "跨书灵感聚合", "更新灵感库", "不写正文", "「开一本长篇或接着写」", "「更多（拆书、扫榜、导入旧稿、审稿、封面、发布资料）」"]) {
+      expect(route?.content).toContain(phrase);
+    }
+    // Oh Story 0.9.2: listing material has its own Skill; 开书 still routes to long-form writing.
+    expect(route?.content).toContain("story-publish；只说「开书」");
+    const publish = await provider.get(candidates.find((candidate) => candidate.name === "story-publish")!, {});
+    expect(publish?.content).toContain("# story-publish");
+    expect(publish?.content).toContain("Never sign in to, fill in, or submit anything on a platform's author backend");
+    const cover = await provider.get(candidates.find((candidate) => candidate.name === "story-cover")!, {});
+    expect(cover?.content).toContain("offer the upstream prompt-only mode instead of a paid API");
+    expect(route?.content).not.toContain("还没部署过");
+    expect(route?.content).not.toContain("dashboard-server.mjs");
+    const browserCandidate = candidates.find((candidate) => candidate.name === "browser-cdp");
+    const browser = await provider.get(browserCandidate!, {});
+    expect(browser?.content).not.toContain("setup-cdp-chrome.js 9222");
+    for (const name of ["story-long-scan", "story-short-scan"]) {
+      const candidate = candidates.find((value) => value.name === name);
+      const scan = await provider.get(candidate!, {});
+      expect(scan?.content).toContain("当前 DSH Preset 可见的网页工具");
+      expect(scan?.content).not.toContain("rank-scraper.js");
+      expect(scan?.content).not.toContain("WebFetch");
+      expect(scan?.content).not.toContain("Bearer token");
+      expect(scan?.content).toContain("报告写给作者");
+      expect(scan?.content).toContain("结论不含它");
+      expect(scan?.content).toContain("扫榜/{YYYYMMDD}/");
+    }
+    // Oh Story 0.8.2: scan conclusions hand off to the writing Skills through files.
+    const longScan = await provider.get(candidates.find((value) => value.name === "story-long-scan")!, {});
+    expect(longScan?.content).toContain("选题决策.md");
+    // Oh Story 0.9.0: Phase 1 asks every missing condition at once; 推荐选题 names benchmark books to analyze.
+    for (const phrase of ["缺的一次问齐", "看新书里在冒头的还是成熟\n   大盘", "建议拆的对标书", "趋势写「未比较」"]) {
+      expect(longScan?.content).toContain(phrase);
+    }
+    expect((await provider.get(candidates.find((value) => value.name === "story-short-scan")!, {}))?.content).toContain("短篇扫榜结论.md");
+    const shortScan = await provider.get(candidates.find((value) => value.name === "story-short-scan")!, {});
+    expect(shortScan?.content).toContain("可信度：样本多少篇、来自哪几个榜");
+    for (const phrase of ["知乎盐言", "征稿要求.md", "在架数量", "可行性最高写「中」", "优先根据简介判断"]) {
+      expect(shortScan?.content).toContain(phrase);
+    }
+    for (const name of ["story-long-analyze", "story-import"]) {
+      const analysis = await provider.get(candidates.find((value) => value.name === name)!, {});
+      for (const rule of [
+        "role chapter-extractor",
+        "{拆文目录}/_analysis_cache/输入-{批次ID}.md",
+        "DSH denies any other write or edit by a chapter-extractor child",
+        "manage_analysis_run.py commit",
+        "needs Python 3",
+        "有限并行 tier: three batches per round",
+        "never promise more",
+        "copies this batch's plan fields verbatim",
+        "chapter_chars, min_plot_points",
+        "the plan's handoff_cache when it is not empty",
+        "dispatch the same batch to a chapter-extractor again with every field above plus the error code"
+      ]) expect(analysis?.content).toContain(rule);
+    }
+    const analyzeScripts = resolve(skillRoot, "story-long-analyze/scripts");
+    await expect(readFile(resolve(analyzeScripts, "manage_analysis_run.py"), "utf8")).resolves.toContain("\"commit\"");
+    const importSkill = await provider.get(candidates.find((value) => value.name === "story-import")!, {});
+    for (const importRule of [
+      "Keep upstream's order: in the long-form structure migration (references/structure-mapping-long.md) Step 2 copies the manuscript into 正文/, Step 10 reverse-builds the 细纲 in batches, and Phase 4 initialises Tracking.",
+      "/story-long-write 写第N章",
+      "never offer the author Step 4's choice to install a writing environment with /story-setup",
+      "build_outline_brief.py, outline_view.py --check --strict, tracking_commit.py init and check with Python 3; check-outline-contract.js with Node",
+      "mirrors the outline gate of upstream proseBlockReason for books with 大纲/ or 追踪/",
+      "open an import window before Step 2 copies any chapter: create .story/work/导入中.md in the book directory",
+      "delete it right after Phase 4's tracking_commit.py init and check both succeed",
+      "only holds while 追踪/_tracking-state.json is absent"
+    ]) expect(importSkill?.content).toContain(importRule);
+    expect(importSkill?.content).not.toContain("before copying that chapter");
+    // The order the override names must still be upstream's (Oh Story 0.8.2 split import into references).
+    expect(importSkill?.content).toContain("## Phase 4：追踪初始化（仅长篇）");
+    expect(importSkill?.content).toContain("写作环境：");
+    const importReferences = resolve(skillRoot, "story-import/references");
+    const longMapping = await readFile(resolve(importReferences, "structure-mapping-long.md"), "utf8");
+    for (const step of ["### Step 2：正文标准化", "### Step 10：逐批反推细纲"]) expect(longMapping).toContain(step);
+    const importTracking = await readFile(resolve(importReferences, "import-tracking.md"), "utf8");
+    for (const command of ["tracking_commit.py init --project", "tracking_commit.py check --project"]) expect(importTracking).toContain(command);
+    const review = await provider.get(candidates.find((value) => value.name === "story-review")!, {});
+    for (const reviewRule of [
+      "When a review falls back to solo in DSH, the reason is that oh_story_role or DSH's spawn runtime is unavailable in this Session",
+      "agent tool unavailable -> solo",
+      "spawn failed -> solo",
+      "Never tell the author that the reviewers are not installed, missing, or outdated, and never tell them to run /story-setup."
+    ]) expect(review?.content).toContain(reviewRule);
+    // Upstream's solo template (references/solo.md since 0.8.2) suggests /story-setup, which the override above corrects.
+    await expect(readFile(resolve(skillRoot, "story-review/references/solo.md"), "utf8")).resolves.toContain("运行 /story-setup 后可以四个视角审");
+  });
+
+  it("routes author memory to the writing Skills and packages their current resources", async () => {
+    const provider = createOhStorySkillProvider(skillRoot);
+    const candidates = await provider.list({});
+    if (!Array.isArray(candidates)) throw new Error("Expected a complete bundled catalog.");
+    for (const name of ["story-long-write", "story-short-write"]) {
+      const writing = await provider.get(candidates.find((candidate) => candidate.name === name)!, {});
+      for (const rule of [
+        "pass that same root as both --workspace and --book-root",
+        ".story/作者记忆/书级/",
+        "--kind on queries",
+        "also covers organizing memories and migrating old 本书： entries"
+      ]) expect(writing?.content, name).toContain(rule);
+      const protocol = await readFile(resolve(skillRoot, name, "references/author-memory.md"), "utf8");
+      expect(writing?.content).toContain("references/author-memory.md");
+      expect(protocol).toContain("Author Memory Receipt");
+      // Oh Story 0.10.0 merged author-memory-maintenance.md into author-memory.md.
+      expect(protocol).toContain("author_memory_commit.py migrate --workspace");
+      await expect(stat(resolve(skillRoot, name, "references/author-memory-maintenance.md"))).rejects.toMatchObject({ code: "ENOENT" });
+      expect(writing?.content).toContain("完成即停，不建书、不写正文");
+      const memoryScript = await readFile(resolve(skillRoot, name, "scripts/author_memory_commit.py"), "utf8");
+      for (const flag of ["\"--book-root\"", "\"--kind\"", "\"migrate\""]) expect(memoryScript).toContain(flag);
+    }
+    for (const name of ["story", "story-deslop", "story-review"]) {
+      await expect(stat(resolve(skillRoot, name, "scripts/author_memory_commit.py"))).rejects.toMatchObject({ code: "ENOENT" });
+      await expect(stat(resolve(skillRoot, name, "references/author-memory.md"))).rejects.toMatchObject({ code: "ENOENT" });
+    }
+  });
+
+  it("makes the three deslop methods available to Skills and the native writer Role", async () => {
+    // Oh Story 0.9.0 dropped story-long-write's copies; its writer Role still reads them from agent-references.
+    await expect(stat(resolve(skillRoot, "story-long-write/references/expression.md"))).rejects.toMatchObject({ code: "ENOENT" });
+    // Oh Story 0.10.0 dropped story-short-write's copies too: a full deslop goes to story-deslop.
+    await expect(stat(resolve(skillRoot, "story-short-write/references/expression.md"))).rejects.toMatchObject({ code: "ENOENT" });
+    for (const name of ["story-deslop", "story-review", "story-setup/references/agent-references"]) {
+      const referenceRoot = name.endsWith("agent-references") ? resolve(skillRoot, name) : resolve(skillRoot, name, "references");
+      for (const method of ["expression.md", "narrative-focus.md", "story-logic.md"]) {
+        await expect(readFile(resolve(referenceRoot, method), "utf8")).resolves.toMatch(/\S/u);
+      }
+      await expect(stat(resolve(referenceRoot, "anti-ai-writing.md"))).rejects.toMatchObject({ code: "ENOENT" });
+    }
+    const deslop = await readFile(resolve(skillRoot, "story-deslop/SKILL.md"), "utf8");
+    expect(deslop).toContain("用户只要检测或标注时，只出诊断，不修改正文");
+    expect(deslop).toContain("已授权的剧情重写按执行边界直接执行或转交");
+    for (const name of ["story-deslop", "story-review"]) {
+      const source = await readFile(resolve(skillRoot, name, "SKILL.md"), "utf8");
+      expect(source).toMatch(/只接收调用方已有的作者偏好，(?:独立调用时)?不查询或记录作者记忆/u);
+    }
+  });
+
+  it("rejects missing frontmatter", () => {
+    expect(() => parseBundledSkill("# no metadata")).toThrow(/frontmatter/u);
+  });
+
+  it("parses folded YAML descriptions and user invocation metadata", () => {
+    const parsed = parseBundledSkill("---\nname: folded-skill\nuser-invocable: false\ndescription: >\n first line\n second line\n---\n# Body\n");
+    expect(parsed.description).toBe("first line second line");
+    expect(parsed.userInvocable).toBe(false);
+  });
+
+  it("rejects candidate paths outside the packaged skill root", async () => {
+    const provider = createOhStorySkillProvider(skillRoot);
+    await expect(provider.get({
+      name: "story-long-write",
+      description: "invalid external candidate",
+      invocation: { modelInvocable: true, userInvocable: true },
+      provider: "oh-story",
+      source: "bundled",
+      resourceBase: { kind: "directory", path: resolve(skillRoot, "..") },
+      rank: 0,
+      locator: new URL("file:///tmp/SKILL.md"),
+      path: resolve(skillRoot, "../SKILL.md")
+    }, {})).rejects.toThrow(/escaped/u);
+  });
+});
+
+describe("Drama Skills bundled provider", () => {
+  it("publishes the complete upstream short-drama workflow through DSH", async () => {
+    const provider = createDramaSkillProvider(dramaRoot);
+    const listed = await provider.list({});
+    if (!Array.isArray(listed)) throw new Error("Expected a complete Drama Skills catalog.");
+    expect(listed).toHaveLength(12);
+    expect(listed.map((candidate) => candidate.name)).toEqual(expect.arrayContaining([
+      "short-drama", "short-drama-write", "short-drama-storyboard", "short-drama-produce", "short-drama-edit", "short-drama-breakdown"
+    ]));
+    const breakdown = await provider.get(listed.find((candidate) => candidate.name === "short-drama-breakdown")!, {});
+    expect(breakdown?.content).toContain("never search for or download a benchmark through a browser or web tool");
+    expect(breakdown?.content).toContain("instead of estimating cuts or durations by eye");
+    expect(breakdown?.content).toContain("Without recorded upload permission, use local measurement only");
+    expect(breakdown?.content).toContain("use a tool visible in the current DSH preset that can read both video and audio");
+    expect(breakdown?.content).toContain("copied out as a separate project only when registered as owned or licensed with a recorded basis");
+    for (const candidate of listed) {
+      const skill = await provider.get(candidate, {});
+      expect(skill?.content).toContain("each episode keeps only the requested documents, up to five creator-facing sources");
+      expect(skill?.content).toContain("Never precreate empty documents, backfill nominal stages, or start work the creator did not request");
+      expect(skill?.content).toContain("an oral review writes nothing");
+      expect(skill?.content).toContain("never create a parallel JSON/JSONL lifecycle truth");
+      expect(skill?.content).toContain("Never upgrade a v0.5 structured project in place");
+      expect(skill?.content).toContain("剧集/<EP>/剪辑单.md is the v0.7 assembly record, not a sixth creative truth");
+      // Drama 0.7.1 widened what the cut list records; the creative-truth boundary did not move.
+      expect(skill?.content).toContain("records what reaches the cut");
+      expect(skill?.content).toContain("the delivery spec including optional 颗粒 grain");
+      expect(skill?.content).toContain("It never changes a line, a shot's job, or a declared duration");
+      expect(skill?.content).not.toContain("records only which frames");
+    }
+    const routeCandidate = listed.find((candidate) => candidate.name === "short-drama");
+    const route = await provider.get(routeCandidate!, {});
+    expect(route?.content).toContain("native 短剧 tab");
+    expect(route?.content).toContain("each episode keeps only the requested documents, up to five creator-facing sources");
+    expect(route?.content).toContain("剧集/<EP>/剧本.md, 视觉设定.md, 分镜.md, 图片提示词.md, and 视频提示词.md");
+    expect(route?.content).toContain("never create a parallel JSON/JSONL lifecycle truth");
+    expect(route?.content).toContain("Never upgrade a v0.5 structured project in place");
+    expect(route?.content).toContain("New projects follow only the v0.6 creator-first contract and create only documents required by the current request");
+    expect(route?.content).toContain("upstream's dashboard_server.py and its assets are not bundled");
+    expect(route?.content).toContain("不另存重复的结构化副本");
+    const reviewCandidate = listed.find((candidate) => candidate.name === "short-drama-review");
+    const review = await provider.get(reviewCandidate!, {});
+    expect(review?.content).toContain("审查/EP001-审查.md");
+    const productionCandidate = listed.find((candidate) => candidate.name === "short-drama-produce");
+    const production = await provider.get(productionCandidate!, {});
+    expect(production?.content).toContain("explicitly confirms the exact current job");
+    expect(production?.content).toContain("DSH permissions and approval UI");
+    expect(production?.content).toContain("source must be the current creator-first Markdown");
+    expect(production?.content).toContain("剧集/<EP>/制作成果/");
+    expect(production?.content).toContain("orphaned_provider_job");
+    expect(production?.content).toContain("collect spends nothing and does not need the confirmation gate");
+    // oh_story_production's jobKind is image | video | composition: speech and music keep the gate but never reach the task board.
+    expect(production?.content).toContain("from this Skill it registers image and video jobs only");
+    expect(production?.content).toContain("speech (tts) and music jobs pass through the same prepare → explicit creator confirmation → run gate but are never registered with track_job");
+    expect(production?.content).toContain("Compile them as reference_audio bindings, preserve character exactly from 角色");
+    expect(production?.content).toContain("separate 参考音频 line, never in 输入参考图 or the workbench image picker");
+    expect(production?.content).toContain("The bundled seedance and minimax-h3 profiles accept reference_audio by default");
+    expect(production?.content).toContain("custom external adapter in OH_STORY_DRAMA_ADAPTER_CONFIG must explicitly declare reference_audio in reference_roles");
+    expect(production?.content).toContain("reject before paid submission, never drop or substitute the binding");
+    expect(production?.content).not.toContain("audio is never bound");
+    // The claim above rests on prepare's creator-first declaration grammar.
+    const productionTool = await readFile(resolve(dramaRoot, "short-drama-produce/scripts/production_tool.py"), "utf8");
+    expect(productionTool).toContain('REFERENCE_SUFFIX_RE = r"(?:png|jpe?g|webp)"');
+    expect(production?.content).toContain("every image, video, speech, or music result comes from a provider adapter");
+    const editCandidate = listed.find((candidate) => candidate.name === "short-drama-edit");
+    const edit = await provider.get(editCandidate!, {});
+    expect(edit?.content).toContain("剧集/<EP>/制作成果/成片/");
+    expect(edit?.content).toContain("The default burned-subtitle route needs an ffmpeg built with libass");
+    expect(edit?.content).not.toContain("zero-dependency");
+    expect(edit?.content).toContain("`- 未采用镜头：MOTION-…（理由：…）；GROUP-…（理由：…）；SHOT-…（理由：…）`");
+    expect(edit?.content).toContain("reasons name 文件缺失, 质量不可用 or 叙事取舍");
+    expect(edit?.content).toContain("Same-aspect-ratio video clips whose resolution or frame rate differs from the delivery spec raise a check reminder and are automatically scaled and frame-rate-converted by render");
+    expect(edit?.content).toContain("Write them under 剧集/<EP>/制作成果/成片/规格统一/, an edit-owned intermediate, never beside the produce-stage originals and never over produced footage, and name them without the original's job-id token");
+    expect(edit?.content).not.toContain("beside the originals");
+    expect(edit?.content).toContain("point 来源 at the new file");
+    expect(edit?.content).toContain("The 声音 line in 剪辑单.md is a record, not an instruction the built-in render executes");
+    // Drama Skills 0.8.0: render mixes 音效 lines and overlays 画面文字 through Remotion, which has no ffmpeg fallback.
+    expect(edit?.content).toContain("any `画面文字` line in 剪辑单.md requires it whatever the subtitle route");
+    expect(edit?.content).toContain("Without that approval write no 画面文字 lines");
+    expect(edit?.content).toContain("mixes in the `音效` lines");
+    expect(edit?.content).toContain("`- 接镜匹配：无` in the delivery spec turns it off");
+    expect(edit?.content).toContain("ends as render does with whole-film two-pass loudnorm to the declared 交付响度");
+    expect(edit?.content).toContain("and only then replaces 剧集/<EP>/制作成果/成片/成片.mp4");
+    expect(edit?.content).toContain("Run edit_tool.py verify last, on that delivered file, and report every 未测 item as untested");
+    expect(edit?.content).toContain("Static cuts are rendered to the delivery specification");
+    expect(edit?.content).toContain("cross-cut `配音` and looping `环境声`");
+    expect(edit?.content).toContain("The native production sequence accepts video and accepted keyframe images");
+    expect(edit?.content).toContain("This stage never generates footage");
+  });
+});
+
+describe("NovelToGame bundled provider", () => {
+  it("publishes the complete five-Skill playable adaptation pipeline through DSH", async () => {
+    const provider = createNovelToGameSkillProvider(gameRoot);
+    const listed = await provider.list({});
+    if (!Array.isArray(listed)) throw new Error("Expected a complete NovelToGame catalog.");
+    // NovelToGame 0.8.0 folds game-concept, game-world-design and game-art-direction into game-design.
+    expect(listed.map((candidate) => candidate.name)).toEqual([
+      "game-build",
+      "game-design",
+      "game-qa",
+      "novel-game-analyze",
+      "novel-to-game"
+    ]);
+    for (const candidate of listed) {
+      const skill = await provider.get(candidate, {});
+      expect(skill?.content).toContain("The 游戏 tab is the playable Game Studio");
+      expect(skill?.content).toContain("game-adaptations/<project>/");
+      expect(skill?.content).toContain("qa/verification.json remains the sole machine QA truth");
+      expect(skill?.content).toContain("run it as a DSH subagent visible in this preset, giving it only the playable entry, the run instructions game-qa allows, and normal player input");
+      expect(skill?.content).toContain("game-build's graybox playtest or game-qa's first-round blind playtest");
+      expect(skill?.content).toContain("tell the user in one sentence that they can already play it in the 游戏 tab");
+      expect(skill?.resourceBase).toEqual({ kind: "directory", path: resolve(gameRoot, candidate.name) });
+    }
+    const route = await provider.get(listed.find((candidate) => candidate.name === "novel-to-game")!, {});
+    expect(route?.content).toContain("# NovelToGame 总入口");
+    expect(route?.content).toContain("quick");
+    expect(route?.content).toContain("director");
+    expect(route?.content).toContain("resume");
+    const qa = await provider.get(listed.find((candidate) => candidate.name === "game-qa")!, {});
+    for (const check of ["launch", "render", "input", "coreLoop", "outcome", "restart"]) {
+      expect(qa?.content).toContain(check);
+    }
+  });
+});
+
+describe("video-recap bundled provider", () => {
+  it("publishes the self-contained video-recap and on-demand video-reference with native DSH boundaries", async () => {
+    const provider = createVideoRecapSkillProvider(videoRoot);
+    const listed = await provider.list({});
+    if (!Array.isArray(listed)) throw new Error("Expected a complete video-recap catalog.");
+    // video-recap 0.7.0 merges the six production Skills into one self-contained Skill.
+    expect(listed.map((candidate) => candidate.name)).toEqual(["video-recap", "video-reference"]);
+    expect(listed.every((candidate) => candidate.invocation.userInvocable)).toBe(true);
+    // The bridge names the 审片台 server that 0.7.0's SKILL.md §5 asks the Agent to start; the sync must keep it out.
+    await expect(stat(resolve(videoRoot, "video-recap/scripts/dashboard_server.py"))).rejects.toThrow();
+    await expect(stat(resolve(videoRoot, "video-recap/scripts/library.py"))).resolves.toBeDefined();
+    for (const candidate of listed) {
+      const skill = await provider.get(candidate, {});
+      expect(skill?.content).toContain("The Video Studio is a preview and artifact surface");
+      expect(skill?.content).toContain("video-recaps/<project>/");
+      expect(skill?.content).toContain("on-demand video-reference Skill");
+      expect(skill?.content).toContain("full-mode validation is lint-only");
+      expect(skill?.content).toContain("final_qc.json uses schema 2 findings");
+      expect(skill?.content).toContain("deliver external .srt");
+      expect(skill?.content).toContain("MIMO_API_KEY, FISH_API_KEY");
+      expect(skill?.content).toContain("its dashboard/ package and its assets are not bundled");
+      expect(skill?.content).toContain("Check the environment with scripts/doctor.py");
+      expect(skill?.content).toContain("Never set EDIT_MODE or TARGET_DURATION");
+      expect(skill?.content).toContain("pass --no-require-final-qc only when the user explicitly asks");
+      expect(skill?.content).toContain("--voice-ref (VOICE_REF) sends the reference recording to MiMo's voice-clone model");
+      expect(skill?.content).not.toContain("--edit-mode dub sends");
+      expect(skill?.resourceBase).toEqual({ kind: "directory", path: resolve(videoRoot, candidate.name) });
+    }
+  });
+});

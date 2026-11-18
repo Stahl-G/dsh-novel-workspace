@@ -1,0 +1,407 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zenstory-ai/zenstory/main/apps/web/public/brand/zenstory-ai-mark.svg" alt="" width="76" height="76">
+</p>
+
+<h1 align="center">NovelToGame</h1>
+
+<p align="center">
+  <b>A text-cited novel-to-game workflow: adaptation planning, builds tailored to your local tools, and first-player blind-playtest QA.</b>
+</p>
+
+<p align="center">
+  <a href="https://zenstory.ai/novel-to-game"><b>Project page</b></a>
+  &nbsp;·&nbsp;
+  <a href="#install"><b>Install</b></a>
+  &nbsp;·&nbsp;
+  <a href="#see-what-it-produces"><b>See what it produces</b></a>
+  &nbsp;·&nbsp;
+  <a href="README_ZH.md"><b>中文</b></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/zenstory-ai/novel-to-game/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/zenstory-ai/novel-to-game?style=flat-square&color=22D3EE&logo=github&logoColor=white&label=Stars"></a>
+  <a href="https://github.com/zenstory-ai/novel-to-game/releases/latest"><img alt="Release" src="https://img.shields.io/github/v/release/zenstory-ai/novel-to-game?style=flat-square&color=081431&label=Release"></a>
+  <img alt="Skills 5" src="https://img.shields.io/badge/Skills-5-081431?style=flat-square">
+  <a href="https://github.com/zenstory-ai/novel-to-game/actions/workflows/validate.yml"><img alt="Validate" src="https://img.shields.io/github/actions/workflow/status/zenstory-ai/novel-to-game/validate.yml?style=flat-square&label=Validate"></a>
+  <a href="./LICENSE"><img alt="License MIT" src="https://img.shields.io/badge/License-MIT-1F6FEB?style=flat-square"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/zenstory-ai/novel-to-game/discussions"><img alt="GitHub Discussions" src="https://img.shields.io/badge/GitHub%20Discussions-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+  <a href="https://github.com/zenstory-ai/novel-to-game/issues"><img alt="GitHub Issues" src="https://img.shields.io/badge/GitHub%20Issues-181717?style=for-the-badge&logo=github&logoColor=white"></a>
+</p>
+
+NovelToGame is five open-source skills for the coding agent you already use (Claude Code, Codex, or Kimi Code). Give it a novel and, if you have one in mind, a target platform or engine. It reads the whole book, chooses a game direction it can defend, designs the world and the look, builds by adapting to the rendering stacks and asset tools available in your environment, and blind-playtests the result as a first-time player before recording one complete verification run. You get a playable build at the finish level you asked for, plus the design documents behind it. The two examples below are browser games and include links to their playable builds.
+
+## Play Online
+
+Each game links to the adaptation workspace behind it: source provenance, the concept and the directions it rejected, game and art direction, runnable source, and the QA record from the playable path.
+
+### Journey to the West · Three Borrowings of the Banana Fan
+
+<p>
+  <a href="https://xiyouji.vibecoco.ai"><img src="examples/journey-to-the-west/screenshots/hero.jpg" alt="Wukong's party in the painted Flame Mountain village, with minimap, quest tracker, message line and function buttons in the corners" width="49%"></a>
+  <a href="https://xiyouji.vibecoco.ai"><img src="examples/journey-to-the-west/screenshots/battle.jpg" alt="Jilei Mountain battle: the Bull Demon King's side on the left, Wukong's party on the right, action-order bar above and command panel below" width="49%"></a>
+</p>
+
+**One wave of a fan blew you fifty thousand li. Walk back, take the quest, and win the mountain one turn at a time.**
+
+A Fantasy Westward Journey-style turn-based RPG built on chapters 59–61. Click to walk four painted scene maps, find the NPCs marked "!", let the quest tracker auto-path you there, and take the repeatable demon-bounty daily between story fights. Earn experience and silver, shop, swap gear, study skills and field a pet; then win command-turn battles with the five-element wheel, rage stunts and Wukong's seventy-two transformations, until a demon king who outclasses you ends as rain over the Mountain of Flames.
+
+**[Play in browser](https://xiyouji.vibecoco.ai)** · [Adaptation workspace](examples/journey-to-the-west/) · design estimate: 45–90 min · all ages · playable prototype
+
+### Jin Ping Mei · Ledger of Desire
+
+<p>
+  <a href="https://jinpingmei.vibecoco.ai"><img src="examples/jin-ping-mei/screenshots/title.jpg" alt="Animated title screen: the five women of the Ximen household in a spring courtyard beside the title and menu" width="49%"></a>
+  <a href="https://jinpingmei.vibecoco.ai"><img src="examples/jin-ping-mei/screenshots/cut.jpg" alt="Dinner cutscene after a choice: Wu Yueniang at the head of the table speaks while Sun Xue'e, Pan Jinlian and Li Ping'er listen, with her line as a caption along the bottom" width="49%"></a>
+</p>
+
+**That spring, five doors kept a lamp lit for you. Whatever you say, they remember.**
+
+An interactive-film romance set in the Ximen household the spring after Li Ping'er marries in: after each choice that matters, a short voiced cutscene acts out what you just changed (who walks out, who brings you a bowl, whose face falls), and the next lines are read as captions over its last frame. A common route puts all five women at one table, in one night of rain and at one Qingming feast; what your choices build with each of them decides which courtyard doors are still lit on the night the routes split. Each of the five heroine routes has a good, an ordinary and a missed ending (16 endings, counting the one where no lamp is left), and every heroine ending turns to a fixed page of what the novel does to her (the no-lamp ending turns to Ximen Qing's death and the household scattering). Public quarrels are timed, and staying silent is an answer with its own branch; in two scenes you can study the picture first, and spotting the right detail gives you something to say; on the rainy night you hold a key to keep your lamp alight; a seal marks the lines a heroine will remember; and a story tree lets you replay any chapter you have reached. Auto, read-only skip, backlog, hide, quick save, thumbnail saves and rollback are there, with a CG gallery, a cutscene gallery, scene replay, music room and ending flowchart.
+
+**[Play in browser](https://jinpingmei.vibecoco.ai)** · [Adaptation workspace](examples/jin-ping-mei/) · design estimate: 20–30 min per route, 1–1.5 h for all five · 18+ · playable prototype
+
+## What it is
+
+The skills run on your coding agent's model and organize adaptation into stages. Each stage owns a document, with source evidence separated from design choices:
+
+- **Key source facts carry citations.** Analysis reads the whole book and writes a `SOURCE_BIBLE` covering main story arcs, standout conflict scenes, character relationships and agendas, secrets and information gaps, world rules, signature spaces and props, and adaptation boundaries — each citing its chapter or file location. Source facts are labelled `immutable`, `adaptable`, `open`, or `conflicted`; anything the novel does not define is marked a design invention, never smuggled in as fact.
+- **Choose the game genre deliberately instead of defaulting to one template.** The concept stage compares real alternatives and eliminates directions with named one-strike vetoes (the core loop ignores the novel's central tension; strip the proper nouns and a generic template remains; the player only spends resources to release a fixed plot). Concept, world design, and art direction are written by different stages into different documents, and the build may not quietly redesign them.
+- **Keep the outer features players expect from a borrowed genre.** Players recognise a genre by more than its core mechanic, so a systems game lists which outer features of the genre (entering the world, objective guidance, progression and reasons to return) it implements, degrades, or drops and why, and what the first minute shows. A Fantasy Westward Journey-style RPG is not shipped as a bare chain of fights.
+- **Built for the approved platform, tailored to your local environment.** The product brief, the one-page requirements sheet the agent drafts first, locks platform, engine, target runtime, and the runtime actually available for testing. Within that platform, `game-build` probes what your machine and session actually offer (such as Three.js, image/text-to-3D models like Hunyuan3D, Blender CLI/Python/MCP, 2D Canvas/WebGL, or native Godot/Unity toolchains) and chooses a fitting build route; a missing native toolchain may not silently become a web page. The design documents are engine-independent Markdown you own.
+- **QA combines a blind first-player playthrough with one end-to-end verification run.** Before reading source code or design specs, an isolated QA pass launches the build from the title screen as a first-time player to uncover onboarding, interaction, pacing, and mobile viewport friction (`qa/playtest-report.md`), then reconciles findings against the design documents and records one complete execution proving `launch`, `render`, `input`, `coreLoop`, `outcome`, and `restart` (`qa/verification.json`). Untested environments are listed as limitations.
+- **Voice is opt-in and generated at build time by default.** No line goes to a text-to-speech provider unless art direction chooses voice; runtime synthesis needs the product brief's explicit approval, and the novel and design documents are never uploaded.
+
+Interactive fiction is a first-class track: continuous scenes, dialogue, testimony, and key choices can carry the whole game, held to the same agency and evidence requirements as a systems game. On a character route, a key choice targets that character's own wound or agenda, and the relationship shows in reactions, forms of address, the places that open to you and what you are trusted with, not in an on-screen number.
+
+Interactive film builds on that track: a text adventure crossed with a short drama. After each choice that matters later, a short cutscene acts out what the choice changed, and the next lines are read over its last frame. Every option at such a choice gets its own cutscene, and moving stills do not count as one. The skills budget cutscenes per choice and option and write them as storyboards. Generation waits until the rest of the game is finished and goes through a ledger that names no provider. With video off or missing, the game is still fully playable on still frames ([interactive film method](skills/game-design/references/interactive-film-method.md), [generative media production](skills/game-build/references/generative-media.md), both in Chinese). The Jin Ping Mei example above is built this way.
+
+## Install
+
+### One command per agent
+
+Prerequisite: you already use Claude Code, Codex, or Kimi Code, and `npx` (Node.js) runs in your terminal.
+
+| Agent CLI | Install | Invoke |
+|---|---|---|
+| Claude Code | `npx skills add zenstory-ai/novel-to-game -g -y -a claude-code -s '*'` | `/novel-to-game` |
+| Codex | `npx skills add zenstory-ai/novel-to-game -g -y -a codex -s '*'` | `$novel-to-game` |
+| Kimi Code | `npx skills add zenstory-ai/novel-to-game -g -y -a kimi-code-cli -s '*'` | `/skill:novel-to-game` |
+
+`-g` installs globally for every directory; drop it to install into the current directory only. **To update, run the same command again, or `npx skills update`.**
+
+The skills are also listed on [ClawHub](https://clawhub.ai/), published from the repository's [publish inventory](.clawhub/publish.json).
+
+<details>
+<summary><strong>All three CLIs at once, or native plugin installation</strong></summary>
+
+Install adapters for all three CLIs on the same machine:
+
+```bash
+npx skills add zenstory-ai/novel-to-game -g -y -s '*' \
+  -a claude-code -a codex -a kimi-code-cli
+```
+
+Cloning the repository also enables project-local skill discovery in all three CLIs.
+
+#### Claude Code
+
+```text
+/plugin marketplace add zenstory-ai/novel-to-game
+/plugin install novel-to-game@novel-to-game-skills
+/novel-to-game:novel-to-game quick
+```
+
+#### Codex
+
+```bash
+codex plugin marketplace add zenstory-ai/novel-to-game
+codex plugin add novel-to-game@novel-to-game-skills
+```
+
+#### Kimi Code 0.27 or newer
+
+```text
+/plugins install https://github.com/zenstory-ai/novel-to-game
+/reload
+/skill:novel-to-game quick
+```
+
+</details>
+
+> Changes are in [CHANGELOG.md](CHANGELOG.md) and [Releases](https://github.com/zenstory-ai/novel-to-game/releases).
+
+## See what it produces
+
+Every excerpt below is copied from a file in this repository. Both examples keep their documents in Simplified Chinese, so their Markdown excerpts are translated here and marked as such, while JSON records are quoted as they are and glossed in the surrounding text. The originals are linked. Cuts are marked with "…".
+
+### What the design documents look like
+
+In [Journey to the West](examples/journey-to-the-west/), the Banana-Leaf Fan (owned by Rakshasi, the Bull Demon King's wife) enters the analysis as facts pinned to chapters, in [`analysis/SOURCE_BIBLE.md`](examples/journey-to-the-west/analysis/SOURCE_BIBLE.md) (translated; 3 of the table's 11 rows):
+
+```markdown
+| Fact | Evidence |
+|---|---|
+| The true fan quells fire with one wave, raises wind with two, brings rain with three; Rakshasi first blows Wukong away with it, and he returns after obtaining the wind-fixing pill from Bodhisattva Lingji | Chapter 59 |
+| Wukong turns into an insect and enters her belly to force the fan out of her, but receives a fake; the fake fan raises the flames three times in a row | Chapter 59 |
+…
+| The Bull Demon King also commands the seventy-two transformations; disguised as Bajie he tricks the true fan back, and Wukong, flushed with success, does not look closely | Chapter 61 |
+```
+
+[`concepts/CONCEPT.md`](examples/journey-to-the-west/concepts/CONCEPT.md) turns the fan into a two-sided rule, the fake fan feeding the fire and the true fan's three waves turning the boss fight, and records which rival directions died, and on which veto (translated):
+
+```markdown
+One-strike veto check (one line per direction):
+
+- Direction 1 · Three Borrowings of the Banana Fan: passes (none of the six triggered).
+- Direction 2 · The Westward Post Road: triggers item 2 — within the slice length, relationship building decays into event buttons and stat bars with no repeatable trade-off — eliminated.
+- Direction 3 · Two Hearts: triggers item 3 — in the novel the true and the false are told apart by the Buddha, so the player's core tension cannot become a reliable mechanic (it would need a tell the novel does not contain) — eliminated.
+```
+
+[`design/GAME_DESIGN.md`](examples/journey-to-the-west/design/GAME_DESIGN.md) gives each wave exact effects and durations, and says why the timing of the third wave is the final battle's core decision (translated):
+
+```markdown
+| Order | Effect (all enemies, ignores the five elements) | Source |
+|---|---|---|
+| First wave · Quell fire | Clears enemy buffs (keeps the guard-break / stun / exposure our side applied); enemy attack −30% (3 turns) | One wave quells fire |
+| Second wave · Raise wind | Whole party speed +30% (3 turns), seizing the head of the action queue | Two waves raise wind |
+| Third wave · Bring rain | Party heals over time (8% max stamina per action, 3 turns); enemy defence −25% and **exposed (damage taken +60%)**, all for 3 turns | Three waves bring rain |
+
+The three stages are both a power curve and the ritual of the "three borrowings": first suppress the enemy's offence, then seize the initiative, then open the exposure window and focus fire,
+taking down the White Bull's true form with your companion beast and transformations. The rain's exposure window is the only chance for a quick kill in the final battle: the White Bull's true form stacks frenzy every turn,
+and dragging it out means you will be killed in turn, so "when to open the third wave" is the core decision of the finale.
+```
+
+The same document lists the genre's outer features around those battles, and what was implemented, degraded, or dropped (translated; 4 of the table's 8 rows):
+
+```markdown
+| Genre feature | State | How / why |
+|---|---|---|
+| Entering the world and moving | Implemented | Four walkable 3/4 scenes (Flame Mountain village, Cuiyun Mountain, the fire mouth, Jilei Mountain); click-to-walk, arrow-key walking, teal teleport circles (click the circle or its name) |
+| Objective guidance / tracking | Implemented | "!" above main-quest NPCs; one click on the quest tracker on the right auto-paths, across maps too; minimap at top left |
+…
+| Pets | Degraded | Two fixed pets (the Water-Repelling Golden-Eyed Beast and a catchable fire demon), one in battle; no collection pool, breeding, or rerolling — a 45–90 minute campaign has no use for them |
+…
+| Parties / trading / PVP | Not done | A single-player offline game with no second player; master and three disciples are the fixed party |
+```
+
+[`design/ART_DIRECTION.md`](examples/journey-to-the-west/design/ART_DIRECTION.md) sets the bar as the genre's own screenshots, then gives each wave of the fan its own effect and saves the lasting change to the world for the ending (translated):
+
+```markdown
+**Any in-game screenshot, taken at random, should look like a game screen from a turn-based Journey to the West online game such as Fantasy Westward Journey or Wen Dao**: painted 3/4 top-down walking scenes,
+small HUD cards pinned to the four corners, names and quest markers over heads; battles with two rows of standing figures, enemy left and party right, an action-order bar along the top and a command panel at the bottom.
+What is borrowed is the genre's form and readability, not their chibi big heads, outlines, or specific character designs.
+…
+5. **The true fan's three waves**: each wave gets a teal-outlined banner, followed by two or three seconds of full-screen tint and particles — ash settling as the fire is quelled, wind streaks, rain lines.
+   The lasting change to the world belongs to the ending: the Mountain of Flames becomes a new rain-soaked landscape with no open flame (`huoyan-rain`), with the restart button always visible.
+```
+
+And [`qa/verification.json`](examples/journey-to-the-west/qa/verification.json) records the real browser run that reached that ending and started over:
+
+```json
+"completeRun": {
+  "id": "three-fans-main-path",
+  "cleanContext": true,
+  "terminal": "done",
+  "restart": "ask",
+  "evidence": "qa/evidence/run.json"
+},
+"checks": {
+  "launch": "PASS",
+  "render": "PASS",
+  "input": "PASS",
+  "coreLoop": "PASS",
+  "outcome": "PASS",
+  "restart": "PASS"
+},
+```
+
+### How a choice is written so the game remembers it
+
+[Jin Ping Mei](examples/jin-ping-mei/) is the romance-ADV example. Its [`concepts/CONCEPT.md`](examples/jin-ping-mei/concepts/CONCEPT.md) gives each heroine something she wants and a wound only the player gets to see, each pinned to chapters (translated; 3 of the table's 5 rows):
+
+```markdown
+Core sentence: **Whatever you said, they remember.**
+…
+| Character | What she wants | Her wound | Source basis |
+|---|---|---|---|
+| Wu Yueniang | To be asked first about what matters | She is the principal wife only in front of others | Chapters 1, 21 |
+| Pan Jinlian | To be seen, to be chosen first | Apart from the way you look at her, she has nothing | Chapters 8, 9, 38 |
+| Li Ping'er | Safety and certainty | Seen first as a trunk of valuables, only later as a person | Chapters 14, 16, 19 |
+```
+
+[`design/GAME_DESIGN.md`](examples/jin-ping-mei/design/GAME_DESIGN.md) keeps affection off the screen, aims each route's key choice at her wound, and says what decides the ending (translated; 2 of the route table's 5 rows):
+
+```markdown
+Choices show no numbers. Affection has only three outlets: her expression and lines; whether her courtyard door is "lit" on the night the routes split; and an optional "feelings" glance in the system menu
+(only her look and "the lamp is lit / the lamp is going out", no tiers and no numbers). Yueniang states the rule in the first chapter: on the night the Qingming feast breaks up, only a door still lit can be entered.
+…
+| Character | Source basis | Key choice (the right move) | Good | Ordinary | Missed |
+|---|---|---|---|---|---|
+…
+| Pan Jinlian | Chapters 8, 38: sends verses longing for him; plays the pipa on a snowy night | Do not open Ping'er's trunks for her, but stay with her tonight | The pipa is not cold | The side gate left ajar | The fan falls |
+| Li Ping'er | Chapters 14, 19: entrusts herself over the garden wall; met coldly when she marries in | Do not take her keys; say in front of everyone that her silver is hers | The keys in her hand | Tea under the window | The trunks |
+…
+Ending rule: get the key choice wrong → Missed; get it right, with her affection ≥7 and the truth told at the last question → Good; otherwise → Ordinary.
+```
+
+Every heroine ending then turns to a page of what the novel does to her: the ending decides only what the two of you made of this one spring, and the page footer says it cannot change where she goes in the book.
+
+In [`qa/verification.json`](examples/jin-ping-mei/qa/verification.json), the complete browser run ends at `yue_good` and all six checks pass; the first limitation records how much of the story that run covered:
+
+```json
+{
+  "scope": "路径覆盖",
+  "reason": "浏览器只走吴月娘良缘一条完整路径；其余 15 个结局由 npm run verify:model 穷举全部选择证明可达，没有逐一在浏览器里走。"
+}
+```
+
+That is: the browser walked only Wu Yueniang's good-ending route, and the other 15 endings were shown reachable by exhausting the choices in `npm run verify:model`, not walked one by one in the browser.
+
+## Your first request
+
+Give the agent a novel file, directory, or link, then copy one of these requests and adjust it.
+
+**A systems game with a new playable route:**
+
+```text
+Use novel-to-game quick to adapt this novel into a fully playable game.
+Recommend the target platform, genre, and engine from the source, and keep the first build to about 15 minutes.
+Let the player enter the world as an original character with a new playable route through its conflict.
+```
+
+**An interactive story** (this locks the `narrative-led` experience profile, so concept, design, and QA judge continuous scenes, character dialogue, testimony, and key choices instead of rounds, cards, and resource bars):
+
+```text
+Use novel-to-game quick to adapt this novel into an interactive story.
+Carry the experience with continuous scenes, character dialogue, testimony, and key choices.
+Keep variables as hidden causal tags rather than a visible stat panel.
+Key choices must change later scenes, character attitudes, and the ending, and be named back in later text.
+```
+
+**Design notes only, no build yet:**
+
+```text
+Using my authorized source, plan one small gameplay-design slice for my target engine.
+Keep the choices and outcomes bounded; show each option's evidence, cost, visible effect, and where a later scene uses its state.
+Label allowed additions and unresolved questions. Deliver design notes only—do not build, run QA, or claim a finished runtime.
+```
+
+`quick` is the default: the agent drafts a product brief with sensible defaults and stops for your decision only where a real fork in platform, core gameplay or fantasy, adult content, real persons, copyright or asset licences, paid services, or irreversible production spend would change the direction. Everything else is recorded in the brief as an unconfirmed assumption, and the agent compares meaningful alternatives and continues through design, build, and QA. Choose `director` when you want to make the key calls yourself: the agent stops with candidates and a recommendation at the concept, at what to cut after the graybox playtest, and at the visual target images when a target pack is made, unless you have already decided.
+
+## Workflow
+
+```text
+Novel → Source analysis → Concept → World design → Graybox playtest ↺ → Art direction → Full build → QA → Playable game
+```
+
+After world design, the build probes the rendering libraries and modeling/generative tools available in your environment and takes the core loop to a graybox (a rough build without final art, but with the real controls and space) that can be played from start to an ending. A separate session that has read neither the design nor the source plays it from scratch; if it cannot follow the game, cannot finish it, or the core fun is not there, the problem goes back to the design stage, and the story, dialogue and level volume are revised around the part players actually chase. When `targetFinish` is `graybox`, the approved graybox goes straight to QA; otherwise art direction is set and art produced in bulk. The build implements the approved design in full, polishes player-facing copy, and prepares rule regressions plus one end-to-end verify command. When cost keeps climbing, the run cuts scope before the budget is gone and records the cut as a non-goal; it does not lower the bar. `game-qa` then blind-playtests the build from the title screen as a first-time player before reading specs or running the complete-run check that binds all six checks to one execution; findings flow back to the product, design, art, or build document that owns them.
+
+## Skills
+
+| Skill | Responsibility |
+|---|---|
+| [`novel-to-game`](skills/novel-to-game/) | Confirm requirements, choose a mode, orchestrate stage handoffs, and recover progress |
+| [`novel-game-analyze`](skills/novel-game-analyze/) | Deconstruct full-book story arcs, standout conflict scenes, character relationships, secrets, world rules, and adaptation boundaries with citations |
+| [`game-design`](skills/game-design/) | Guide concept selection (`CONCEPT.md`), world/system/narrative design (`GAME_DESIGN.md`), and visual/audio direction (`ART_DIRECTION.md`) in separate stages |
+| [`game-build`](skills/game-build/) | Probe local rendering stacks and 3D/2D/audio tools, take the approved design to a playable graybox and then the finished game, polish player-facing copy, and wire rule regressions and one end-to-end verify command |
+| [`game-qa`](skills/game-qa/) | Blind-playtest as a first-time player from the title screen, reconcile against design specs, and write one complete-run verification record |
+
+## Artifacts
+
+Each run creates a compact, self-contained adaptation workspace:
+
+```text
+game-adaptations/<project>/
+  PRODUCT_BRIEF.md
+  analysis/SOURCE_BIBLE.md
+  concepts/CONCEPT.md
+  design/GAME_DESIGN.md
+  design/ART_DIRECTION.md   # omitted when targetFinish is graybox
+  build/BUILD_BRIEF.md
+  build/app/
+  qa/verification.json
+  _progress.md
+```
+
+The design documents are engine-agnostic Markdown you own. The target runtime you approve determines the implementation and QA environment.
+
+## FAQ
+
+### I asked for an interactive story and got cards, rounds, and a stat panel. How do I get scenes, dialogue, and key choices instead?
+
+Say so in the request, as the second example above does. That locks `experienceProfile: narrative-led` in the product brief, and the profile carries through concept, design, art, build, and QA. The design method records each key choice as concrete words and deeds, an immediate reaction, and a persistent fact with the later scene that reads it, not a hidden score. This track was added after a reader showed us exactly this failure in [Discussion #17](https://github.com/zenstory-ai/novel-to-game/discussions/17); see [`game-design`](skills/game-design/SKILL.md) and the [narrative design method](skills/game-design/references/narrative-design-method.md) (both in Chinese).
+
+### I want an interactive film. How do I get cutscenes after choices instead of moving pictures?
+
+Ask for an interactive film, and say how many choices should get cutscenes if budget matters. The design stage then lists which choice points get a cutscene and what each option's cutscene shows, and the build makes one representative clip before generating the rest. Video generation needs a provider in your agent's environment; the repository only keeps the ledger, prompts and finished files.
+
+### How long does a full run take, and what does it cost?
+
+The agent reads the whole novel, writes the adaptation documents, builds, and runs QA through separate skill calls. A full run may span more than one session. Token usage is billed by your coding agent. The product brief records the budget you give it (model quota, time or money), and when it runs short the run cuts outer scenes and minor branches first, recording each cut as a non-goal, before the budget runs out. Generation services, engine licences or hosting may have separate costs; the requirements stage identifies paid services before use. The public examples' progress files do not record wall-clock time or token counts, so this README does not quote a number.
+
+### The session ended halfway. Can it continue?
+
+Yes. Start with `novel-to-game resume`, the third mode beside `quick` and `director`. It reads `_progress.md` and the documents that actually exist, works out the last stage that was genuinely finished, and continues from there; test results are only ever read from `qa/verification.json`. See [`novel-to-game`](skills/novel-to-game/SKILL.md) (Chinese).
+
+### Which engine or platform does it build for? Will it fall back to a web page if my toolchain is missing?
+
+You choose, and the product brief locks it: platform, production engine, target runtime, and the runtime actually available for testing. The build may not switch to a web page when the target toolchain is unavailable; only a substitute runtime already approved in the brief may be used, and then `targetRuntime`, `testedRuntime`, and the uncovered items are recorded separately. QA on a substitute run covers only the environment actually tested. The two public examples are dependency-free static browser games because their briefs chose the browser as the target runtime. No public example yet targets a native engine or console; a Godot, Unity, or mobile build depends on the toolchain present in your environment and is recorded the same way, with anything untested written as a limitation. See [`game-build`](skills/game-build/SKILL.md) and the [QA contract](skills/game-qa/references/qa-contract.md) (both in Chinese).
+
+### Do I need a GPU or my own model? Who pays for images and voice?
+
+For analysis, design and coding, the skills use your coding agent's model. If that model is hosted, these steps require no extra local model or GPU. Running the resulting game follows its target runtime's hardware requirements. External services are opt-in. Generated images are used only when art direction selects them, with the tool chosen in your environment after checking capability, licence, and cost (the Jin Ping Mei example records most of its images, generated with Codex's built-in image tool, batch by batch in `build/art/generated-art.json`). Voice is off unless art direction chooses it; the default is build-time generation into local assets, only the per-line dialogue and any pronunciation notes are sent, and the novel and design documents are never uploaded. See [generative media production](skills/game-build/references/generative-media.md) (Chinese).
+
+### How do I know the game it built actually runs? What does the QA PASS mean?
+
+`game-qa` runs in two rounds: first an isolated blind playtest from the title screen as a first-time player without reading source code or design documents (recording onboarding, interaction, pacing, and mobile viewport findings in `qa/playtest-report.md`), then spec reconciliation and one end-to-end complete run on the tested runtime proving six things in `qa/verification.json`: the build launched, rendered a non-empty frame that changes, changed state on real input, completed the core loop, reached at least one designed outcome, and restarted to the initial state (any `P0` blocker found during blind playtesting fails the corresponding check). Status is only `NOT_RUN`, `FAIL`, or `PASS`; unverified is not a pass, and an old PASS is overwritten by every rerun. Every gap is written as a limitation with a scope and a reason. It does not prove subjective fun, balance, other browsers or devices, rights, or commercial release quality. See the [blind-playtest method](skills/game-qa/references/blind-playtest-method.md) and the [QA contract](skills/game-qa/references/qa-contract.md) (both in Chinese).
+
+### My novel is in one language. Can the game be in another?
+
+Yes. Novels in any language are accepted; artifacts use the language you ask for, or the conversation language if you do not say. Quotations and textual evidence stay in the original language, only what a decision needs is translated, and one terminology table holds names, places, objects, and rules. Register, forms of address, character voice, and cultural concepts are kept; rites, religion, and narrative conventions are not swapped for another culture's genre labels. Source language does not decide the interface language; the brief records them separately. See [`novel-game-analyze`](skills/novel-game-analyze/SKILL.md) (Chinese).
+
+### Can I adapt a novel I do not own the rights to?
+
+The skills do not clear rights for you, and QA does not certify them. Copyright, asset licensing, and real persons are among the decisions `quick` stops for; the brief records the compliance boundary and `SOURCE_BIBLE` records the edition, coverage, and authorisation boundary; a concept that depends on another game's protected characters, maps, interface, or text is a hard veto. The public examples use Project Gutenberg texts and record the rights status in each `source/SOURCE.md`, including why the Jin Ping Mei example ships an expurgated text.
+
+### Can I get design documents without a build?
+
+Yes. Use the third request above. Each stage of `game-design` stops at its own document: concept selection writes no code or numeric tables, world design writes no file names or tests, and art direction leaves asset production to the build. Even when you do build, the graybox playtest only shows whether the core loop is legible and playable and produces no QA verdict; the six checks come only from the finished build.
+
+## Further reading
+
+- [Quick-start guide](https://zenstory.ai/novel-to-game/quick-start) — scope a first adaptation: separate authorized source facts, author-approved additions, and open questions, and keep the first slice small.
+- [Meaningful-choice guide](https://zenstory.ai/novel-to-game/meaningful-choices) — give each player option evidence, cost, and a visible outcome, and name the later scene that reads its state.
+- [Choosing a gameplay type for a novel](docs/novel-to-game-choose-gameplay.md) (Chinese) — find the decision a player can repeat, then compare several gameplay shapes on one scene.
+- [Designing an AI text adventure](docs/ai-text-adventure-game-design.md) (Chinese) — settle each turn against the current game facts before the AI narrates, so free-form input cannot rewrite results.
+- [NovelToGame compared with story-to-game builders](docs/novel-to-game-vs-story-to-game-tools.md) — the three shapes of tool and where the design documents live.
+- [Blender asset feedback](docs/research/blender-asset-feedback.md) (Chinese) — why Blender is a conditional entry in `game-build`, not a default.
+
+## Contributing
+
+Reproducible bugs, skill gaps backed by evidence, and example proposals that demonstrate a distinct adaptation lesson are welcome. Use the structured forms in [Issues](https://github.com/zenstory-ai/novel-to-game/issues/new/choose) and read the [contribution guide](CONTRIBUTING.md) for the required checks and the rights rule; questions and early ideas go to [Discussions](https://github.com/zenstory-ai/novel-to-game/discussions).
+
+<a href="https://github.com/zenstory-ai/novel-to-game/graphs/contributors"><img alt="Contributors" src="https://contrib.rocks/image?repo=zenstory-ai/novel-to-game"></a>
+
+## License
+
+NovelToGame is released under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+Thanks to the [linux.do](https://linux.do) community for early feedback and support.
+
+## Part of ZenStory AI
+
+This project is maintained by [ZenStory AI](https://zenstory.ai) — open-source, agent-native tools for creating, adapting and producing stories (GitHub org: [zenstory-ai](https://github.com/zenstory-ai)). Sibling projects:
+
+| Project | What it does |
+| --- | --- |
+| [oh-story-claudecode](https://github.com/zenstory-ai/oh-story-claudecode) | Web-fiction writing skill pack: chart scanning, deconstruction, drafting, de-AI-flavor, covers |
+| [drama-skills](https://github.com/zenstory-ai/drama-skills) | AI short-drama / motion-comic suite: scripts, assets, storyboards, image & video prompts, review |
+| [novel-to-game](https://github.com/zenstory-ai/novel-to-game) | Agent skills for source-grounded novel adaptation, target-runtime builds, and evidence-based QA (this repo) |
+| [video-recap-skills](https://github.com/zenstory-ai/video-recap-skills) | Create Chinese-narration recaps from supported video files, with optional editable JianYing/CapCut draft export |
+| [oh-story-dsh](https://github.com/zenstory-ai/oh-story-dsh) | Community DeepSeek Harness plugin with novel, short-drama, game and video-recap workbenches |
+| [zenstory](https://github.com/zenstory-ai/zenstory) | Chat-to-create AI novel-writing workbench ([app.zenstory.ai](https://app.zenstory.ai)) |

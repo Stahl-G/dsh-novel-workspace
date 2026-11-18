@@ -1,0 +1,344 @@
+import type { ChatSnapshot } from "@deepseek-ai/dsh-client-ui-chat/client";
+import type { ConversationTimelineSnapshot, RunningToolCall } from "@deepseek-ai/dsh-client-ui-conversation/client";
+import { describe, expect, it } from "vitest";
+import { PartialArguments } from "@deepseek-ai/dsh-util-values";
+import {
+  creativeRelativePath,
+  fileMutations,
+  initialWorkbenchMode,
+  jsonStringPrefix,
+  latestSettledMutation,
+  latestSettledMutationTurn,
+  mutatingCallIds,
+  openTurn,
+  preferredWorkbenchFile,
+  previewMutation,
+  sameUndispatchedCalls,
+  streamingAssistant,
+  undispatchedCalls,
+  workbenchModeForPath
+} from "../src/client/file-activity.js";
+
+describe("official DSH file activity", () => {
+  it("reads a tool-only Assistant from official Step location data", () => {
+    const assistant = {
+      status: "running" as const,
+      turn: 2,
+      step: 1,
+      time: 1,
+      blocks: [{ kind: "tool-call" as const, callId: "write-hidden", name: "write", argsRaw: "{}" }]
+    };
+    const timeline = {
+      turnOrder: [2],
+      turns: new Map([[2, {
+        turn: 2,
+        status: "open",
+        start: undefined,
+        end: undefined,
+        data: { get: () => undefined },
+        steps: [{
+          turn: 2,
+          step: 1,
+          status: "open",
+          start: undefined,
+          end: undefined,
+          data: { get: () => assistant }
+        }]
+      }]])
+    } as unknown as ConversationTimelineSnapshot;
+
+    expect(streamingAssistant(timeline)).toBe(assistant);
+  });
+
+  it("decodes a still-streaming JSON string prefix", () => {
+    expect(jsonStringPrefix('{"file_path":"正文/第011章.md","content":"雨声\\n越来', "content"))
+      .toEqual({ value: "雨声\n越来", complete: false });
+    expect(jsonStringPrefix('{"content":"雨声\\n越来。"}', "content"))
+      .toEqual({ value: "雨声\n越来。", complete: true });
+  });
+
+  it("projects a streaming write call before tool execution starts", () => {
+    const activity = fileMutations([], {
+      turn: 1,
+      step: 1,
+      blocks: [{
+        kind: "tool-call",
+        callId: "write-1",
+        name: "write",
+        argsRaw: '{"file_path":"正文/第011章.md","content":"第一行\\n第二'
+      }]
+    }).at(-1);
+    expect(activity).toMatchObject({
+      callId: "write-1",
+      stage: "streaming",
+      path: "正文/第011章.md",
+      operation: "replace-file",
+      newText: "第一行\n第二"
+    });
+    expect(previewMutation(activity!, "旧正文")).toBe("第一行\n第二");
+  });
+
+  it("uses the executing DSH call and previews targeted edits", () => {
+    const running = [{
+      phase: "start",
+      args: PartialArguments.EMPTY,
+
+      callId: "edit-1",
+      name: "edit",
+      argsRaw: '{"file_path":"正文/第002章.md","old_string":"旧句","new_string":"新句正在生成',
+      turn: 1,
+      step: 1,
+      time: 1,
+      subCalls: []
+    }] as RunningToolCall[];
+    const activity = fileMutations(running).at(-1);
+    expect(activity).toMatchObject({ stage: "running", oldText: "旧句", newText: "新句正在生成" });
+    expect(previewMutation(activity!, "开头。旧句。结尾。")).toBe("开头。新句正在生成。结尾。");
+  });
+
+  it("walks nested calls and preserves concurrent mutations", () => {
+    const child = (callId: string, path: string): RunningToolCall => ({
+      phase: "start",
+      args: PartialArguments.EMPTY,
+      callId,
+      name: "write",
+      argsRaw: JSON.stringify({ file_path: path, content: callId }),
+      turn: 1,
+      step: 1,
+      time: 1,
+      subCalls: []
+    });
+    const running: RunningToolCall[] = [{
+      phase: "start",
+      args: PartialArguments.EMPTY,
+
+      callId: "code-1",
+      name: "run_code",
+      argsRaw: "{}",
+      turn: 1,
+      step: 1,
+      time: 1,
+      subCalls: [child("write-a", "正文/A.md"), child("write-b", "正文/B.md")]
+    }];
+    expect(fileMutations(running).map((value) => value.path)).toEqual(["正文/A.md", "正文/B.md"]);
+    expect([...mutatingCallIds(running)]).toEqual(["code-1", "write-a", "write-b"]);
+  });
+
+  it("waits for a preparing DSH call to receive its arguments", () => {
+    const preparing: RunningToolCall[] = [{ phase: "preparing", args: PartialArguments.EMPTY, callId: "write-next", name: "write", turn: 1, step: 1, time: 1, subCalls: [] }];
+    expect(fileMutations(preparing)).toEqual([]);
+    expect([...mutatingCallIds(preparing)]).toEqual(["write-next"]);
+  });
+
+  it("follows alpha preparing arguments as their view grows in place", () => {
+    const args = new PartialArguments();
+    args.append('{"file_path":"正文/新章.md","content":"雨声');
+    const call: RunningToolCall = { phase: "preparing", args, callId: "alpha-write", name: "write", turn: 1, step: 1, time: 1, subCalls: [] };
+    expect(fileMutations([call]).at(-1)).toMatchObject({ stage: "streaming", path: "正文/新章.md", newText: "雨声" });
+    args.append('越来越近"}');
+    expect(args.refresh()).toBe(true);
+    expect(fileMutations([call]).at(-1)?.newText).toBe("雨声越来越近");
+  });
+
+  it("does not apply an edit until its old-string argument is complete", () => {
+    const args = new PartialArguments();
+    args.append('{"file_path":"正文/新章.md","new_string":"新句","old_string":"旧');
+    const call: RunningToolCall = { phase: "preparing", args, callId: "alpha-edit", name: "edit", turn: 1, step: 1, time: 1, subCalls: [] };
+    expect(previewMutation(fileMutations([call])[0]!, "旧句")).toBeUndefined();
+    args.append('句"}');
+    expect(previewMutation(fileMutations([call])[0]!, "旧句")).toBe("新句");
+  });
+
+  it("does not preview a deletion while str_replace arguments are still open", () => {
+    const args = new PartialArguments();
+    args.append('{"command":"str_replace","path":"正文/新章.md","old_str":"旧句"');
+    const call: RunningToolCall = { phase: "preparing", args, callId: "alpha-replace", name: "str_replace_editor", turn: 1, step: 1, time: 1, subCalls: [] };
+    expect(previewMutation(fileMutations([call])[0]!, "旧句")).toBeUndefined();
+    args.append(',"new_str":"新');
+    expect(previewMutation(fileMutations([call])[0]!, "旧句")).toBe("新");
+    const deletion = { ...call, args: PartialArguments.fromText('{"command":"str_replace","path":"正文/新章.md","old_str":"旧句"}') };
+    expect(previewMutation(fileMutations([deletion])[0]!, "旧句")).toBe("");
+  });
+
+  it("keeps a streamed write visible while DSH holds it before dispatch", () => {
+    // DSH 0.1.7 hides a call between its finished step and the durable tool/call event
+    // (pre-execute hooks, approval). Losing the activity there dropped the live preview and let
+    // the workbench reset the selection before the file existed.
+    const write = { kind: "tool-call" as const, callId: "write-held", name: "write", argsRaw: '{"file_path":"设定/角色/新人物.md","content":"完整内容"}' };
+    const chat = (status: "running" | "settled", turnStatus: "open" | "closed" | "unknown", results: readonly string[] = []) => ({
+      timeline: {
+        turnOrder: [3],
+        turns: new Map([[3, {
+          turn: 3,
+          status: turnStatus,
+          steps: [{ turn: 3, step: 2, data: { get: () => ({ status, turn: 3, step: 2, time: 1, blocks: [write, { kind: "text", text: "写入" }] }) } }]
+        }]])
+      },
+      legacy: { nodes: results.map((callId) => ({ kind: "tool-result", callId })) }
+    }) as unknown as ChatSnapshot;
+
+    const held = undispatchedCalls(chat("settled", "open"));
+    expect(held).toEqual([{ callId: "write-held", name: "write", argsRaw: write.argsRaw }]);
+    expect(fileMutations([], null, held).at(-1)).toMatchObject({ callId: "write-held", stage: "running", path: "设定/角色/新人物.md", newText: "完整内容" });
+    // A preparing row DSH still lists adds nothing on its own and does not duplicate the held call.
+    const preparing: RunningToolCall[] = [{ phase: "preparing", args: PartialArguments.EMPTY, callId: "write-held", name: "write", turn: 3, step: 2, time: 1, subCalls: [] }];
+    expect(fileMutations(preparing, null, held)).toHaveLength(1);
+    // Streaming steps belong to `partial`; settled calls and closed Turns are no longer pending.
+    expect(undispatchedCalls(chat("running", "open"))).toEqual([]);
+    expect(undispatchedCalls(chat("settled", "open", ["write-held"]))).toEqual([]);
+    expect(undispatchedCalls(chat("settled", "closed"))).toEqual([]);
+    // A running Turn whose start fell outside the loaded history window reports `unknown`.
+    expect(undispatchedCalls(chat("settled", "unknown")).map((call) => call.callId)).toEqual(["write-held"]);
+    expect(sameUndispatchedCalls(held, undispatchedCalls(chat("settled", "open")))).toBe(true);
+  });
+
+  it("uses the latest durable DSH call when a fast call leaves the live window", () => {
+    const node = {
+      key: "tool:write-1",
+      kind: "tool-call",
+      location: { kind: "step", turn: { turn: 1 }, step: { step: 1 } },
+      data: {
+        root: {
+          kind: "tool-result",
+          callId: "write-1",
+          isError: false,
+          call: { name: "write", argsRaw: '{"file_path":"正文/新章.md","content":"完成"}' },
+          subCalls: []
+        }
+      }
+    };
+    const chat = {
+      order: [node.key],
+      nodes: { get: (key: string) => key === node.key ? node : undefined }
+    } as unknown as ChatSnapshot;
+    expect(latestSettledMutation(chat)).toBe("write-1\0正文/新章.md");
+  });
+
+  it("locates the Turn of the latest settled write and reports only an open last Turn", () => {
+    const node = {
+      key: "tool:write-9",
+      kind: "tool-call",
+      location: { kind: "step", turn: { turn: 4 }, step: { step: 1 } },
+      data: { root: { kind: "tool-result", callId: "write-9", isError: false, call: { name: "write", argsRaw: '{"file_path":"正文/第009章.md","content":"x"}' }, subCalls: [] } }
+    };
+    const chat = (status: "open" | "closed") => ({
+      order: [node.key],
+      nodes: { get: (key: string) => key === node.key ? node : undefined },
+      timeline: { turnOrder: [3, 4], turns: new Map([[4, { turn: 4, status }]]) }
+    }) as unknown as ChatSnapshot;
+    expect(latestSettledMutationTurn(chat("open"))).toBe(4);
+    expect(openTurn(chat("open"))).toBe(4);
+    // A reloaded Session shows the same write inside a closed Turn: history, not live work.
+    expect(openTurn(chat("closed"))).toBeUndefined();
+  });
+
+  it("supports replace-all and deletion", () => {
+    const replaceAll = fileMutations([{
+      phase: "start",
+      args: PartialArguments.EMPTY,
+
+      callId: "edit-all",
+      name: "edit",
+      argsRaw: '{"file_path":"正文/A.md","old_string":"旧","new_string":"新","replace_all":true}',
+      turn: 1,
+      step: 1,
+      time: 1,
+      subCalls: []
+    }]).at(-1);
+    expect(previewMutation(replaceAll!, "旧/旧")).toBe("新/新");
+
+    const deletion = fileMutations([{
+      phase: "start",
+      args: PartialArguments.EMPTY,
+
+      callId: "delete-text",
+      name: "str_replace_editor",
+      argsRaw: '{"command":"str_replace","path":"正文/A.md","old_str":"删掉"}',
+      turn: 1,
+      step: 1,
+      time: 1,
+      subCalls: []
+    }]).at(-1);
+    expect(previewMutation(deletion!, "保留删掉结尾")).toBe("保留结尾");
+  });
+
+  it("accepts only editable story paths inside the current DSH workspace", () => {
+    const cwd = "/books/demo";
+    expect(creativeRelativePath("/books/demo/正文/第003章.md", cwd)).toBe("正文/第003章.md");
+    expect(creativeRelativePath("设定/人物.json", cwd)).toBe("设定/人物.json");
+    expect(creativeRelativePath("正文/script.ts", cwd)).toBeUndefined();
+    expect(creativeRelativePath("剧集/EP001/index.html", cwd)).toBeUndefined();
+    expect(creativeRelativePath("video-recaps/ep1/work/subtitles.srt", cwd)).toBe("video-recaps/ep1/work/subtitles.srt");
+    expect(creativeRelativePath("video-recaps/ep1/work/subtitles.ass", cwd)).toBe("video-recaps/ep1/work/subtitles.ass");
+    expect(creativeRelativePath("/books/demo/src/app.ts", cwd)).toBeUndefined();
+    expect(creativeRelativePath("/正文/越界.md", cwd)).toBeUndefined();
+    expect(creativeRelativePath("../正文/逃逸.md", cwd)).toBeUndefined();
+  });
+
+  it("recognizes short-drama files and chooses the matching workbench", () => {
+    const cwd = "/shows/demo";
+    expect(creativeRelativePath("/shows/demo/剧集/第01集.md", cwd)).toBe("剧集/第01集.md");
+    expect(creativeRelativePath("short-drama.json", cwd)).toBe("short-drama.json");
+    expect(creativeRelativePath(".short-drama/private.json", cwd)).toBeUndefined();
+    expect(workbenchModeForPath("剧集/第01集.md")).toBe("drama");
+    expect(workbenchModeForPath("正文/第001章.md")).toBe("story");
+  });
+
+  it("recognizes an Oh Story short story kept as three files at the workspace root", () => {
+    const cwd = "/books/short";
+    for (const name of ["正文.md", "设定.md", "小节大纲.md"]) {
+      expect(creativeRelativePath(`/books/short/${name}`, cwd)).toBe(name);
+      expect(workbenchModeForPath(name)).toBe("story");
+    }
+    expect(creativeRelativePath("/books/short/笔记.md", cwd)).toBeUndefined();
+    expect(workbenchModeForPath("笔记.md")).toBeUndefined();
+    expect(preferredWorkbenchFile([{ path: "设定.md" }, { path: "小节大纲.md" }, { path: "正文.md" }], "story")).toBe("正文.md");
+  });
+
+  it("opens a new Session on the workbench that holds the workspace's work", () => {
+    expect(initialWorkbenchMode("story", [{ path: "剧集/EP001/剧本.md" }], [], [])).toBe("drama");
+    expect(initialWorkbenchMode("story", [], [{ id: "letter" }], [])).toBe("game");
+    expect(initialWorkbenchMode("story", [], [], [{}])).toBe("video");
+    expect(initialWorkbenchMode("story", [{ path: "正文.md" }, { path: "剧集/EP001/剧本.md" }], [], [])).toBe("story");
+    expect(initialWorkbenchMode("drama", [{ path: "正文/第001章.md" }, { path: "剧集/EP001/剧本.md" }], [], [])).toBe("drama");
+    // A workspace with no work keeps the current workbench.
+    expect(initialWorkbenchMode("story", [], [], [])).toBe("story");
+  });
+
+  it("recognizes NovelToGame artifacts and prefers the product brief", () => {
+    const cwd = "/games/demo";
+    expect(creativeRelativePath("/games/demo/game-adaptations/ledger/build/app/index.html", cwd))
+      .toBe("game-adaptations/ledger/build/app/index.html");
+    expect(creativeRelativePath("game-adaptations/ledger/build/app/js/main.js", cwd))
+      .toBe("game-adaptations/ledger/build/app/js/main.js");
+    expect(creativeRelativePath("game-adaptations/../secrets.txt", cwd)).toBeUndefined();
+    expect(workbenchModeForPath("game-adaptations/ledger/qa/verification.json")).toBe("game");
+    expect(preferredWorkbenchFile([
+      { path: "game-adaptations/ledger/design/GAME_DESIGN.md" },
+      { path: "game-adaptations/ledger/PRODUCT_BRIEF.md" },
+      { path: "game-adaptations/ledger/qa/verification.json" }
+    ], "game")).toBe("game-adaptations/ledger/PRODUCT_BRIEF.md");
+  });
+
+  it("prefers the v0.6 creator-first screenplay without dropping v0.5 read-only fallback", () => {
+    expect(preferredWorkbenchFile([
+      { path: "剧集/EP001/screenplay.md" },
+      { path: "项目开发/creative-brief.md" },
+      { path: "剧集/EP001/剧本.md" }
+    ], "drama")).toBe("剧集/EP001/剧本.md");
+    expect(preferredWorkbenchFile([
+      { path: "short-drama.json" },
+      { path: "剧集/EP001/screenplay.md" }
+    ], "drama")).toBe("剧集/EP001/screenplay.md");
+  });
+});
+
+describe("agent path resolution before the workspace loads", () => {
+  it("cannot resolve an absolute mutation path without a cwd", () => {
+    // Why the settled-mutation effect waits for workspace.cwd instead of consuming the signal:
+    // the mutation carries an absolute path, so resolving it early yields undefined and the
+    // follow-the-agent selection would be dropped permanently.
+    expect(creativeRelativePath("/home/runner/work/story/设定/角色/a.md", undefined)).toBeUndefined();
+    expect(creativeRelativePath("/home/runner/work/story/设定/角色/a.md", "/home/runner/work/story")).toBe("设定/角色/a.md");
+  });
+});

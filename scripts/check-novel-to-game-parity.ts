@@ -1,0 +1,61 @@
+import { readFile, readdir, stat } from "node:fs/promises";
+import { join } from "node:path";
+import { execFile } from "node:child_process";
+import { promisify } from "node:util";
+import {
+  currentNovelToGameFiles,
+  novelToGameRoot,
+  novelToGameUpstreamRoot,
+  readNovelToGameManifest
+} from "./novel-to-game-assets.js";
+
+const execFileAsync = promisify(execFile);
+const manifest = await readNovelToGameManifest();
+const actualFiles = await currentNovelToGameFiles();
+if (JSON.stringify(actualFiles) !== JSON.stringify(manifest.files)) {
+  throw new Error("Bundled NovelToGame files differ from manifest; run pnpm assets:sync:game.");
+}
+
+// 0.8.0 folds game-concept, game-world-design and game-art-direction into game-design.
+const expectedSkills = [
+  "game-build",
+  "game-design",
+  "game-qa",
+  "novel-game-analyze",
+  "novel-to-game"
+];
+const skills = (await readdir(join(novelToGameRoot, "skills"), { withFileTypes: true }))
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
+  .sort();
+if (JSON.stringify(skills) !== JSON.stringify(expectedSkills) || JSON.stringify(skills) !== JSON.stringify(manifest.skills)) {
+  throw new Error(`Expected the complete five-Skill NovelToGame pipeline, found ${String(skills.length)}.`);
+}
+if ((await readFile(join(novelToGameRoot, "VERSION"), "utf8")).trim() !== manifest.upstream.releaseVersion) {
+  throw new Error("NovelToGame release version does not match the bundled manifest.");
+}
+for (const required of [
+  "skills/game-build/references/build-brief-contract.md",
+  "skills/game-build/references/generative-media.md",
+  "skills/game-qa/references/qa-contract.md"
+]) {
+  if (!manifest.files.some((entry) => entry.path === required)) throw new Error(`Bundled NovelToGame asset is missing ${required}.`);
+}
+// Upstream's example games are built products the Skills never read; they stay out of the tarball.
+const examples = manifest.files.filter(({ path }) => path.startsWith("examples/"));
+if (examples.length > 0) {
+  throw new Error(`Bundled NovelToGame assets retained upstream examples: ${examples.slice(0, 5).map(({ path }) => path).join(", ")}`);
+}
+if (manifest.files.some(({ path }) => path.includes("/__pycache__/") || path.endsWith(".pyc") || path.endsWith("/.DS_Store") || /(?:^|\/)\.omc\//u.test(path))) {
+  throw new Error("Bundled NovelToGame assets retained upstream workspace artifacts.");
+}
+
+const source = novelToGameUpstreamRoot();
+if (process.env.NOVEL_TO_GAME_UPSTREAM_DIR !== undefined && (await stat(source).catch(() => undefined))?.isDirectory()) {
+  const { stdout } = await execFileAsync("git", ["-C", source, "rev-parse", "HEAD"], { encoding: "utf8" });
+  if (stdout.trim() !== manifest.upstream.commit) throw new Error("NovelToGame upstream commit differs from the pinned manifest.");
+}
+
+process.stdout.write(
+  `NovelToGame parity OK: ${manifest.upstream.releaseVersion}, ${String(skills.length)} Skills, no bundled examples, at ${manifest.upstream.commit.slice(0, 12)}.\n`
+);
