@@ -243,6 +243,9 @@ async function startMockDeepSeek(): Promise<MockDeepSeek> {
         events = hasToolResult
           ? messagesText([durationReply])
           : messagesToolCall("call_kaitu_duration_smoke", durationToolName, durationArgs);
+      } else if (currentTurn.includes("NATIVE_ENTRY_RELOAD：") || currentTurn.includes("IFRAME_RELOAD：")) {
+        requests.push("entry-reload");
+        events = messagesText(["合成重载检查已记录，未修改作品。"]);
       } else if (roleChildTurn && !hasToolResult) {
         requests.push("role-child-reference-start");
         events = messagesToolCall("call_oh_story_reference_smoke", "oh_story_bundled_reference", { reference: roleReference });
