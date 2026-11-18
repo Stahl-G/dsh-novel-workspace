@@ -63,15 +63,71 @@ const IFRAME_CHECK = `    {
         await page.waitForTimeout(500);
 
         await frame.getByRole('button',{name:'打开',exact:true}).click();
-        await frame.locator('.oh-story-editor').waitFor({state:'visible',timeout:30000});
+        try { await frame.locator('.oh-story-editor').waitFor({state:'visible',timeout:30000}); } catch(error) {throw Error('Initial novel open failed: '+(await frame.locator('body').innerText()).slice(0,4000),{cause:error});}
+
         const hidden=await frame.locator('html').evaluate(e=>e.classList.contains('embedded'));if(!hidden)throw Error('Real host embed CSS not applied');
         await page.evaluate(origin=>{document.querySelector('iframe')!.contentWindow!.postMessage({type:'kaitu:explore-return'},origin)},new URL(target).origin);
         await frame.locator('[data-kaitu-novel-entry]').waitFor({state:'visible',timeout:15000});
         await page.evaluate(origin=>{document.querySelector('iframe')!.contentWindow!.postMessage({type:'kaitu:explore-conversation'},origin)},new URL(target).origin);
         await frame.locator('.oh-story-editor').waitFor({state:'visible',timeout:15000});
+        const originalSession=await frame.locator('[data-conversation-content][data-conversation-session]').first().getAttribute('data-conversation-session');
+        if(!originalSession)throw Error('Missing original native session');
+        const bookBeforeReload=await snapshotSyntheticBook(storyRoot);
+        const chatMarker='IFRAME_RELOAD：重载前的合成聊天线索，不修改作品。';
+        await prepareSession(origin,originalSession,chatMarker,'写作 iframe 重载验证');
+        const catalogBeforeReload=await rpc<{items:{sessionId:string}[]}>(origin,'session/list',{_request:{}});
+        await page.goto('about:blank');await page.goto(outerOrigin);
+        await page.locator('iframe').evaluate((e,url)=>e.setAttribute('src',url),target);
+        await frame.locator('[data-kaitu-novel-entry]').waitFor({state:'visible',timeout:30000});
+        await frame.getByRole('navigation',{name:'最近打开的作品'}).getByRole('button').first().click({timeout:15000});
+        await frame.locator('.oh-story-editor').waitFor({state:'visible',timeout:30000});
+        const readSession=()=>frame.locator('[data-conversation-content][data-conversation-session]').first().getAttribute('data-conversation-session');
+        if(await readSession()!==originalSession)throw Error('Iframe hard reload lost native session');
+        await frame.getByText(chatMarker,{exact:true}).waitFor({state:'visible'});
+        await page.evaluate(origin=>document.querySelector('iframe')!.contentWindow!.postMessage({type:'kaitu:explore-return'},origin),new URL(target).origin);
+        await frame.getByRole('textbox',{name:'作品目录路径'}).fill(storyRoot);
+        await frame.getByRole('button',{name:'打开',exact:true}).click();
+        await frame.locator('.oh-story-editor').waitFor({state:'visible',timeout:30000});
+        if(await readSession()!==originalSession)throw Error('Iframe same directory created another session after reload');
+        const catalogAfterReload=await rpc<{items:{sessionId:string}[]}>(origin,'session/list',{_request:{}});
+        if(JSON.stringify(catalogBeforeReload.items.map(x=>x.sessionId).sort())!==JSON.stringify(catalogAfterReload.items.map(x=>x.sessionId).sort()))throw Error('Iframe reload unexpectedly created a session');
+        if(await snapshotSyntheticBook(storyRoot)!==bookBeforeReload)throw Error('Iframe reload changed manuscript');
+        // Restart the actual isolated Host on another origin; no browser storage is copied.
         const events=await page.evaluate(()=>window['events']);
+        await context.close();
+        if(!child)throw Error('Missing isolated Host process');
+        await stopDshProcess(child);
+        let restartPort=String(await freePort());
+        while(restartPort===new URL(origin).port)restartPort=String(await freePort());
+        const restartOrigin='http://127.0.0.1:'+restartPort;
+        const restartLogs:string[]=[];
+        child=spawn(process.execPath,[dshBin,'web','--no-open','--port',restartPort],{cwd:repositoryRoot,env,stdio:['ignore','pipe','pipe']});
+        child.stdout?.on('data',(chunk:Buffer)=>{restartLogs.push(chunk.toString('utf8'));logs.push(chunk.toString('utf8'));});
+        child.stderr?.on('data',(chunk:Buffer)=>{restartLogs.push(chunk.toString('utf8'));logs.push(chunk.toString('utf8'));});
+        const restartTokenUrl=await authorizeDsh(restartOrigin,restartLogs);
+        const restartTarget=await service.page('plugin:kaitu-novel-workspace',outerOrigin,async()=>({url:restartTokenUrl}));
+        const freshContext=await browser.newContext({viewport:{width:1440,height:1000}});
+        const freshPage=await freshContext.newPage();freshPage.on('pageerror',e=>errors.push(e.message));
+        await freshPage.goto(outerOrigin);
+        await freshPage.locator('iframe').evaluate((e,url)=>e.setAttribute('src',url),restartTarget);
+        const freshFrame=freshPage.frameLocator('iframe');
+        await freshFrame.locator('[data-kaitu-novel-entry]').waitFor({state:'visible',timeout:30000});
+        await freshFrame.getByRole('navigation',{name:'最近打开的作品'}).getByRole('button').first().click({timeout:15000});
+        await freshFrame.locator('.oh-story-editor').waitFor({state:'visible',timeout:30000});
+        const readRestartSession=()=>freshFrame.locator('[data-conversation-content][data-conversation-session]').first().getAttribute('data-conversation-session');
+        if(await readRestartSession()!==originalSession)throw Error('Host restart/new origin lost original session identity');
+        await freshFrame.getByText(chatMarker,{exact:true}).waitFor({state:'visible'});
+        await freshPage.evaluate(origin=>document.querySelector('iframe')!.contentWindow!.postMessage({type:'kaitu:explore-return'},origin),new URL(restartTarget).origin);
+        await freshFrame.getByRole('textbox',{name:'作品目录路径'}).fill(storyRoot);
+        await freshFrame.getByRole('button',{name:'打开',exact:true}).click();
+        await freshFrame.locator('.oh-story-editor').waitFor({state:'visible',timeout:30000});
+        if(await readRestartSession()!==originalSession)throw Error('Same directory after Host restart created another session');
+        const catalogAfterRestart=await rpc<{items:{sessionId:string}[]}>(restartOrigin,'session/list',{_request:{}});
+        if(JSON.stringify(catalogBeforeReload.items.map(x=>x.sessionId).sort())!==JSON.stringify(catalogAfterRestart.items.map(x=>x.sessionId).sort()))throw Error('Host restart/resume unexpectedly created a session');
+        if(await snapshotSyntheticBook(storyRoot)!==bookBeforeReload)throw Error('Host restart/resume changed manuscript');
+
         if(errors.length)throw Error('Browser errors: '+errors.join('\\n'));
-        process.stdout.write(JSON.stringify({ok:true,dshVersion,hostCommit:'__HOST_COMMIT__',route:'unmodified-production-ExplorePluginRoute',metadata:'actual-installed-package',discovery:discovered,productionServicePage:true,iframe:true,syntheticBook:true,novelEditor:true,returnAndConversation:true,embedCSS:true,navigationEvents:events,provider:'local-fixture',fullElectronApp:false})+'\\n');
+        process.stdout.write(JSON.stringify({ok:true,dshVersion,hostCommit:'__HOST_COMMIT__',route:'unmodified-production-ExplorePluginRoute',metadata:'actual-installed-package',discovery:discovered,productionServicePage:true,iframe:true,syntheticBook:true,novelEditor:true,returnAndConversation:true,hardReloadSameSessionAndChat:true,hostRestartNewOriginFreshContext:true,noDuplicateSession:true,manuscriptUnchanged:true,embedCSS:true,navigationEvents:events,provider:'local-fixture',fullElectronApp:false})+'\\n');
       } finally {await browser.close();await new Promise<void>((r,j)=>outer.close(e=>e?j(e):r()))}
       return;
     }

@@ -11,6 +11,7 @@ import { registerOhStoryHooks } from "./native-hooks.js";
 import { registerOhStoryRoleTool } from "./role-tool.js";
 import { registerOhStoryProductionTool } from "./production-tool.js";
 import { registerDurationTool } from "./duration-tool.js";
+import { registerNovelRecent } from "./novel-recent-service.js";
 import { registerWorkspaceRoute } from "./workspace-route.js";
 import { assertTrustedWorkspaceAuthority } from "./workspace-request-trust.js";
 
@@ -49,6 +50,7 @@ export async function apply(context: Context, config: Config = {}): Promise<void
   registerOhStoryHooks(context);
   registerOhStoryProductionTool(context);
   registerDurationTool(context);
+  registerNovelRecent(context);
   await registerOhStoryRoleTool(context);
   registerWorkspaceRoute(context, { maxBytes: config.editorMaxBytes ?? 2_097_152, trustedHosts });
   // Register the bundled media adapters for this host up front so the first

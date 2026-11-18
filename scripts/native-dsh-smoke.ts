@@ -346,6 +346,13 @@ async function waitForCompletedTurn(origin: string, sessionId: string, afterSeq 
   throw new Error(`DSH Agent turn did not complete within ${String(timeout / 1_000)} seconds.`);
 }
 
+/** Snapshot only the isolated synthetic book, never a user's manuscript. */
+async function snapshotSyntheticBook(root: string): Promise<string> {
+  const entries = await readdir(root, { recursive: true, withFileTypes: true });
+  const paths = entries.filter((entry) => entry.isFile()).map((entry) => join(entry.parentPath, entry.name)).sort();
+  return JSON.stringify(await Promise.all(paths.map(async (path) => [path, (await readFile(path)).toString("base64")])));
+}
+
 async function prepareSession(origin: string, sessionId: string, prompt: string, title: string): Promise<void> {
   const models = await rpc<{
     readonly groups: readonly { readonly id: string; readonly models: readonly { readonly id: string }[] }[];
@@ -1177,6 +1184,27 @@ async function main(): Promise<void> {
       await page.locator(".oh-story-editor").waitFor({ state: "visible" });
       const resumedSession = await page.locator("[data-conversation-content][data-conversation-session]").first().getAttribute("data-conversation-session");
       if (resumedSession !== entrySession) throw new Error("Novel entry did not resume its existing native conversation.");
+      const bookBeforeReload = await snapshotSyntheticBook(storyRoot);
+      const entryChatMarker = "NATIVE_ENTRY_RELOAD：这是重载前的合成聊天线索，不修改作品。";
+      if (!useRealDeepSeek) await prepareSession(origin, entrySession, entryChatMarker, "写作入口 · 重载验证");
+      const catalogBeforeReload = await rpc<{ readonly items: readonly { readonly sessionId: string }[] }>(origin, "session/list", { _request: {} });
+      // Destroy the entire document and JS runtime, not just hide/remount the panel.
+      await page.goto("about:blank");
+      await page.goto(dshTokenUrl, { waitUntil: "networkidle" });
+      await page.getByRole("button", { name: "写作", exact: true }).click();
+      await novelEntry.getByRole("navigation", { name: "最近打开的作品" }).getByRole("button").first().click({ timeout: 15_000 });
+      await page.locator(".oh-story-editor").waitFor({ state: "visible" });
+      const readEntrySession = () => page.locator("[data-conversation-content][data-conversation-session]").first().getAttribute("data-conversation-session");
+      if (await readEntrySession() !== entrySession) throw new Error("Hard client reload lost the native novel session.");
+      if (!useRealDeepSeek) await page.getByText(entryChatMarker, { exact: true }).waitFor({ state: "visible" });
+      await page.getByRole("button", { name: "写作", exact: true }).click();
+      await novelEntry.getByRole("textbox", { name: "作品目录路径" }).fill(storyRoot);
+      await novelEntry.getByRole("button", { name: "打开", exact: true }).click();
+      await page.locator(".oh-story-editor").waitFor({ state: "visible" });
+      if (await readEntrySession() !== entrySession) throw new Error("Re-entering the same directory after reload created another session.");
+      const catalogAfterReload = await rpc<{ readonly items: readonly { readonly sessionId: string }[] }>(origin, "session/list", { _request: {} });
+      if (JSON.stringify(catalogBeforeReload.items.map((item) => item.sessionId).sort()) !== JSON.stringify(catalogAfterReload.items.map((item) => item.sessionId).sort())) throw new Error("Reload/resume unexpectedly created a native session.");
+      if (await snapshotSyntheticBook(storyRoot) !== bookBeforeReload) throw new Error("Reload/resume changed the synthetic manuscript.");
       await selectSession(page, storyWorkspace.workspace.title, storySessionTitle);
       const blankSession = page.getByRole("button", { name: /^(?:New session|新建会话)$/u }).filter({ visible: true }).first();
       try { await blankSession.waitFor({ state: "visible", timeout: 10_000 }); }
@@ -3048,6 +3076,7 @@ async function main(): Promise<void> {
       dshVersion,
       architecture: "pure-plugin",
       nativeNovelEntry: true, nativeNovelResume: "same-session",
+      nativeNovelHardReload: "same-session-and-chat-no-duplicate-no-manuscript-change",
       sessionApi: true,
       skills: ohStorySkills.length,
       dramaSkills: dramaSkills.length,
