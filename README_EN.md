@@ -1,3 +1,5 @@
+> Kaitu derivative: development dependencies and the default native smoke now target DSH **0.2.2-rc.4** (npm `next`, not the `latest` tag). Use [the Kaitu preview instructions](docs/TRY_PREVIEW.md). The upstream release notes and examples below are preserved historical documentation, not this derivative’s installation instructions.
+
 <!-- Last synced with README.md: 2026-11-15 -->
 
 <p align="center">

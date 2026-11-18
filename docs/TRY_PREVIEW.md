@@ -1,6 +1,6 @@
 # 从测试包试用，不改日常开图
 
-这不是新版开图安装器。下载私用的 `kaitu-novel-workspace-0.4.0-alpha.2.tgz`，不必解压或覆盖原插件。下面是 macOS 示例；需要 Node 24.9+、pnpm 11.22.0，原生 DSH 命令 `dsh` 对应已验证版本 0.2.2-rc.1。
+这不是新版开图安装器。下载私用的 `kaitu-novel-workspace-0.4.0-alpha.2.tgz`，不必解压或覆盖原插件。下面是 macOS 示例；需要 Node 24.9+、pnpm 11.22.0，原生 DSH 命令 `dsh` 对应已验证版本 0.2.2-rc.4。
 
 在**同一个**终端运行：
 

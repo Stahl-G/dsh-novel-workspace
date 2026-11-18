@@ -1,3 +1,16 @@
+# 开图 DSH 0.2.2-rc.4 升级验收（2026-11-18）
+
+本次基于开图 Oh Story 重做候选 `8c3f9fa`，升级代码 `2161571`。这是开发分支验收，不是发版或真实稿件迁移。
+
+- 官方目标：[DSH 0.2.2-rc.4](https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.2-rc.4)。npm `next` 为 rc.4，`latest` 仍为 rc.1；不把预发布称为稳定版。
+- 全部直接 DSH 开发包与 workspace overrides 已统一为 rc.4；原有 engines/peer 兼容范围包含 rc.4。安装器自动生成的 rc.4 `minimumReleaseAgeExclude` 例外已撤销，沿用原供应链策略。最终配置的冻结安装在 2026-11-18 10:30 UTC 因 71 个 rc.4 包尚处 24 小时冷却期而报 `ERR_PNPM_MINIMUM_RELEASE_AGE_VIOLATION`，不算通过；离线复核另报缺包元数据。等待冷却期结束后须重新验证安装与 CI，不降低门禁。
+- 使用首次安装留下的依赖，`pnpm verify` 通过（功能检查，不等于最终策略的全新安装通过）：lint、typecheck、四套资产校验、DSH 边界、release/upstream-update 检查、40 个文件 289 项单测、另 13 项合成副本/作者流程及 build。
+- `pnpm test:contract` 9 项通过。
+- `pnpm test:dsh:native` 在初次安装的官方 rc.4 独立临时 home/profile、打包后的插件、Chrome 和本地 fixture provider 下返回 `ok: true`。验证写作入口、同会话返回、硬重载恢复同会话及聊天、会话不重复且合成稿件未变、Session API、Skills、Role 工具和显式整数时长检查。还验证了上游小说/短剧/游戏/视频工作台、保存恢复及静态预览安全边界。
+- 本次未运行真实付费模型或完整 Electron 安装器；未改用户 profile、真实稿件或权限。rc.1 与更早版本的历史证据保留在下文，本次未重跑，不把旧结果充作 rc.4 的结果。
+
+---
+
 # Validation
 
 Candidate: `@oh-story/dsh` 0.1.26 on DeepSeek Harness `0.2.2-rc.1` (the npm `latest`), with `0.2.1-rc.5`, `0.2.0-rc.2` and `0.2.2-rc.3` (the npm `next`) also covered. Local aggregate acceptance passed on 2026-11-15.

@@ -1,3 +1,5 @@
+> 开图衍生分支说明：本分支不执行上游发布。开发依赖与默认 `test:dsh` 已更新为 DSH `0.2.2-rc.4`（npm `next`），`test:dsh:previous` 保留 `0.2.2-rc.1` 回归。以下上游发布记录与示例保留历史版本，不用于发布本分支。
+
 # Release process
 
 `@oh-story/dsh` is distributed as the same prebuilt tarball through npm and
