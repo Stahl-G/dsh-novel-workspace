@@ -1,6 +1,6 @@
 {
   "name": "kaitu-novel-workspace",
-  "version": "0.4.0-alpha.2",
+  "version": "0.4.0-alpha.3",
   "description": "开图小说工作台：Oh Story 上游原生 DSH 插件的独立改造版",
   "keywords": [
     "deepseek-harness",
