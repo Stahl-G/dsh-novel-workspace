@@ -18,7 +18,7 @@ import {
 } from "./native-dsh-helpers.js";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const dshVersion = process.env.DSH_TEST_VERSION ?? process.argv[2] ?? "0.2.2-rc.1";
+const dshVersion = process.env.DSH_TEST_VERSION ?? process.argv[2] ?? "0.2.2-rc.4";
 /** ChatFlow may wrap rows in its slot; nested process rows do not belong to the main tail. */
 const CHAT_FLOW_ROW_SELECTOR = ":is([data-chat-flow-key], [data-chat-running]):not([data-step-process-content] *)";
 const demoFramesDirectory = process.env.OH_STORY_DEMO_FRAMES_DIR;

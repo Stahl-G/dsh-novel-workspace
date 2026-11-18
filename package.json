@@ -38,9 +38,10 @@
     "dsh:boundary": "tsx scripts/check-dsh-boundary.ts",
     "verify": "pnpm lint && pnpm typecheck && pnpm assets:check && pnpm dsh:boundary && pnpm test:release && pnpm test:upstream-updates && pnpm test:book && pnpm test:unit && pnpm build",
     "verify:portable": "pnpm typecheck && pnpm assets:check && pnpm test:release && pnpm test:book && pnpm test:unit && pnpm build",
-    "verify:release": "pnpm verify && pnpm test:dsh && pnpm test:dsh:rc && pnpm test:dsh:next",
+    "verify:release": "pnpm verify && pnpm test:dsh && pnpm test:dsh:rc && pnpm test:dsh:previous",
     "test:dsh:rc": "tsx scripts/native-dsh-smoke.ts 0.2.0-rc.2",
-    "test:dsh:next": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.3",
+    "test:dsh:previous": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.1",
+    "test:dsh:next": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.4",
     "pack:preview": "pnpm --filter kaitu-novel-workspace pack --pack-destination dist",
     "test:book": "node --test scripts/kaitu-book.test.mjs scripts/kaitu-author-loop.test.mjs"
   },
