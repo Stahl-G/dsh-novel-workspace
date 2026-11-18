@@ -4,12 +4,13 @@ import type { MainPanelId } from "@deepseek-ai/dsh-client-ui-layout/client";
 import type {} from "@deepseek-ai/dsh-client-ui-workspace/client";
 import type {} from "@deepseek-ai/dsh-client-ui-sidebar/client";
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { createNovelEntryNavigation } from "./novel-entry-navigation.js";
+import { createNovelEntryNavigation, createWorkspaceSession } from "./novel-entry-navigation.js";
 import { absoluteBookPath, hostRecentMemory } from "./novel-entry-memory.js";
 import { novelRecentRemote } from "./novel-entry-contract.js";
 import type { NovelRecentRemote } from "../novel-recent-contract.js";
 
 export const NOVEL_ENTRY_PANEL = "kaitu-novel" as MainPanelId;
+type WorkspaceId = NonNullable<NonNullable<Parameters<ISessions["create"]>[0]>["workspaceId"]>;
 type SessionId = Awaited<ReturnType<ISessions["create"]>>;
 type Navigation = ReturnType<typeof createNovelEntryNavigation<SessionId>>;
 
@@ -41,9 +42,10 @@ export function registerNovelEntry(context: Context): void {
       // DSH declares a legacy SessionStore on Context; upstream uses the controller facade at this boundary.
       const sessions = ctx.sessions as unknown as ISessions;
       // Same public workspace catalog consumed by native uiWorkspace. The
-      // plugin does not mutate workspace memberships or archived identities.
+      // plugin creates a native workspace before a new Session, never edits archived identities.
       const workspaces = ctx.get("workspaces") as {
         list: { getSnapshot(): { phase: string; archivedSessionIds: readonly string[] }; subscribe(listener: () => void): () => void };
+        create(input: { path: string }): Promise<{ workspaceId: WorkspaceId; path: string }>;
       };
       // Mount and consume in different Cordis scopes: the consumer cannot wait
       // for the namespace service that its own apply would have to create.
@@ -75,10 +77,15 @@ export function registerNovelEntry(context: Context): void {
           const stopWorkspaces = workspaces.list.subscribe(listener);
           return () => { stopSessions(); stopWorkspaces(); };
         },
-        validateDirectory: (path) => Promise.resolve(absoluteBookPath(path)),
+        validateDirectory: async (path) => {
+          // Host canonicalization (not string equality) resolves /var symlinks
+          // and Windows path spelling before selecting a durable Session.
+          const workspace = await workspaces.create({ path: absoluteBookPath(path) });
+          return workspace.path;
+        },
         beginNavigation: () => ctx.layout.beginNavigation(),
         pickDirectory: () => ctx.uiWorkspace.pickDirectory(),
-        createSession: (cwd) => sessions.create({ cwd }),
+        createSession: (path) => createWorkspaceSession(path, workspaces, sessions),
         openSession: (id) => ctx.uiWorkspace.openSession(id)
       });
       void navigation.restore();

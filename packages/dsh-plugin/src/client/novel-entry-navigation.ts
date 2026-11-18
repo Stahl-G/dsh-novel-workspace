@@ -98,3 +98,13 @@ export function createNovelEntryNavigation<Id extends string>(services: NovelEnt
     dispose: () => { cancel(); disposed = true; unsubscribe(); listeners.clear(); }
   };
 }
+
+/** Register the directory through the Host before creating its attached Session. */
+export async function createWorkspaceSession<WorkspaceId, SessionId>(
+  path: string,
+  workspaces: { create(input: { path: string }): Promise<{ workspaceId: WorkspaceId }> },
+  sessions: { create(input: { workspaceId: WorkspaceId }): Promise<SessionId> }
+): Promise<SessionId> {
+  const workspace = await workspaces.create({ path });
+  return sessions.create({ workspaceId: workspace.workspaceId });
+}
