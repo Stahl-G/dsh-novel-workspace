@@ -32,4 +32,6 @@ pnpm pack:preview
 
 打包产物为 `dist/kaitu-novel-workspace-0.4.0-alpha.4.tgz`。在专门的 DSH 测试 home、全新 profile 和合成作品目录中，使用 DSH `0.2.3-alpha.2` 的 `dsh plugin --profile web add <打包文件的绝对路径>`，再从同一环境启动 `dsh web`。不要把上游原版和本衍生版装在同一个 profile：保留了上游的工具、路由及工作台。原生 DSH 侧栏“写作”可打开作品目录。下次从“最近打开的作品”继续；只保留最近八个曾在写作入口主动打开的会话，不列普通聊天，也不在稿件目录写入跟踪文件。复用同一 DSH home 和 profile，旧稿仍保存在原作品目录。插件也登记了开图“探索→写作”要求的主面板；开图固定的 DSH 0.2.1-rc.3 已通过实际发现服务及 iframe 路由联验，见[桌面嵌入验证边界](docs/KAITU_EMBED.md)。这不是自动迁移或替换日常安装的开关。
 
+在 DSH 0.2.3-alpha.2 的本机 Web profile 上，游戏试玩 iframe 请求独立回环来源时会收到 HTTP 403。小说写作可用，游戏试玩和存档恢复仍待兼容。
+
 `pnpm test:book` 验证纯合成复制场景；`pnpm test:dsh` 运行上游的隔离 DSH Web/打包 Chrome 测试（使用本地 fixture provider），不证明真实模型能产生好小说。常用架构与使用说明：[来源与许可](UPSTREAM.md)、[上游使用文档](https://github.com/zenstory-ai/oh-story-dsh/blob/v0.1.26/README.md)、[原生工作台架构](docs/ARCHITECTURE.md)。
