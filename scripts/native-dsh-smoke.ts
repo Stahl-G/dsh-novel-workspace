@@ -1,6 +1,6 @@
 import { spawn, spawnSync, type ChildProcess } from "node:child_process";
 import { cp, mkdir, mkdtemp, readFile, readdir, realpath, rm, writeFile } from "node:fs/promises";
-import { createServer as createHttpServer, request as httpRequest, type Server as HttpServer } from "node:http";
+import { createServer as createHttpServer, type Server as HttpServer } from "node:http";
 import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -11,6 +11,7 @@ import {
   dshFetch,
   freePort,
   isolateFirstUseWorkspace,
+  rawStatus,
   rpc,
   sessionEvents,
   stopDshProcess,
@@ -18,7 +19,7 @@ import {
 } from "./native-dsh-helpers.js";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const dshVersion = process.env.DSH_TEST_VERSION ?? process.argv[2] ?? "0.2.2-rc.4";
+const dshVersion = process.env.DSH_TEST_VERSION ?? process.argv[2] ?? "0.2.3-alpha.2";
 /** ChatFlow may wrap rows in its slot; nested process rows do not belong to the main tail. */
 const CHAT_FLOW_ROW_SELECTOR = ":is([data-chat-flow-key], [data-chat-running]):not([data-step-process-content] *)";
 const demoFramesDirectory = process.env.OH_STORY_DEMO_FRAMES_DIR;
@@ -380,24 +381,6 @@ async function prepareSession(origin: string, sessionId: string, prompt: string,
   if (title !== undefined) await rpc(origin, "session/rename", { request: { sessionId, title } });
 }
 
-/** Send one request with headers verbatim; fetch silently drops a forged Host. */
-async function rawStatus(target: string, headers: Readonly<Record<string, string>>): Promise<number> {
-  const url = new URL(target);
-  return new Promise<number>((accept, reject) => {
-    const call = httpRequest({
-      host: url.hostname,
-      port: url.port,
-      path: `${url.pathname}${url.search}`,
-      method: "GET",
-      headers: { host: url.host, ...headers }
-    }, (response) => {
-      response.resume();
-      response.once("end", () => { accept(response.statusCode ?? 0); });
-    });
-    call.once("error", reject);
-    call.end();
-  });
-}
 
 async function ensureOpen(summary: ReturnType<Page["locator"]>): Promise<void> {
   const details = summary.locator("..");
@@ -3148,9 +3131,12 @@ async function main(): Promise<void> {
     })}\n`);
   } catch (error) {
     const apiKey = process.env.DEEPSEEK_API_KEY;
-    const redact = (value: string): string => apiKey === undefined ? value : value.replaceAll(apiKey, "[REDACTED]");
+    const redact = (value: string): string => {
+      const sanitized = value.replace(/([?&]token=)[^\s&]+/gu, "$1[REDACTED]");
+      return apiKey ? sanitized.replaceAll(apiKey, "[REDACTED]") : sanitized;
+    };
     // eslint-disable-next-line preserve-caught-error -- The original cause may contain credentials; retain only redacted diagnostics.
-    throw new Error(`${redact(String(error))}\nMock requests: ${JSON.stringify(mockDeepSeek?.requests ?? [])}\nDSH logs:\n${redact(logs.join("").slice(-16_000))}`);
+    throw new Error(`${redact(error instanceof Error ? error.stack ?? error.message : String(error))}\nMock requests: ${JSON.stringify(mockDeepSeek?.requests ?? [])}\nDSH logs:\n${redact(logs.join("").slice(-16_000))}`);
   } finally {
     if (firstRunBrowser !== undefined) await firstRunBrowser.close();
     if (child !== undefined) await stopDshProcess(child);

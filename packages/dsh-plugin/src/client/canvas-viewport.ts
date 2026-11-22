@@ -83,10 +83,12 @@ export function fitRects(nodes: readonly CanvasRect[], size: CanvasSize, fallbac
 export function initialReadableViewport(nodes: readonly CanvasRect[], size: CanvasSize, fallback: CanvasViewport = DEFAULT_CANVAS_VIEWPORT): CanvasViewport {
   if (nodes.length === 0 || size.width <= 0 || size.height <= 0) return fallback;
   const fitted = fitRects(nodes, size, fallback);
-  const zoom = Math.max(READABLE_ZOOM, fitted.zoom);
   const left = Math.min(...nodes.map((node) => node.x));
   const top = Math.min(...nodes.map((node) => node.y));
   const right = Math.max(...nodes.map((node) => node.x + node.width));
+  // A docked DSH panel can be narrower than the readable cluster at 65%.
+  const widthZoom = (size.width - FIT_PADDING * 2) / Math.max(1, right - left);
+  const zoom = clampZoom(Math.min(widthZoom, Math.max(READABLE_ZOOM, fitted.zoom)));
   return {
     x: size.width / 2 - (left + (right - left) / 2) * zoom,
     y: FIT_PADDING - top * zoom,

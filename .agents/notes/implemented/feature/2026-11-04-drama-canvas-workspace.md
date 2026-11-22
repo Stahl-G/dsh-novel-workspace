@@ -16,6 +16,8 @@ Status: implemented
 
 本决定扩展 [已有无限画布决定](../../implemented/feature/2026-10-08-infinite-drama-canvas.md)，改变其只有两列小型节点的呈现以及长列适应策略；画布只投影、原生 Chat 所有权与 Session UI 边界保持。
 
+DSH 0.2.3-alpha.2 默认停靠面板压缩了画布宽度。首开按代表性故事、素材、镜头卡片的实际宽度限制缩放，窄面板也看得到完整卡片。
+
 ## Alternatives considered
 
 - 固定阶段向导：用户明确否决，阻断自由探索。

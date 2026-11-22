@@ -1,13 +1,13 @@
 {
   "name": "kaitu-oh-story-source",
-  "version": "0.4.0-alpha.3",
+  "version": "0.4.0-alpha.4",
   "private": true,
   "description": "开图小说工作台：基于 Oh Story 的独立开发版",
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@11.22.0",
   "engines": {
-    "node": ">=24.9.0"
+    "node": "^24.22.3 || >=26.13.1"
   },
   "scripts": {
     "dev": "pnpm build:dsh-plugin",
@@ -41,7 +41,7 @@
     "verify:release": "pnpm verify && pnpm test:dsh && pnpm test:dsh:rc && pnpm test:dsh:previous",
     "test:dsh:rc": "tsx scripts/native-dsh-smoke.ts 0.2.0-rc.2",
     "test:dsh:previous": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.1",
-    "test:dsh:next": "tsx scripts/native-dsh-smoke.ts 0.2.2-rc.4",
+    "test:dsh:next": "tsx scripts/native-dsh-smoke.ts 0.2.3-alpha.2",
     "pack:preview": "pnpm --filter kaitu-novel-workspace pack --pack-destination dist",
     "test:book": "node --test scripts/kaitu-book.test.mjs scripts/kaitu-author-loop.test.mjs"
   },

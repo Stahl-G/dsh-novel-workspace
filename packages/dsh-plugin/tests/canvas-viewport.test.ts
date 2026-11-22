@@ -50,6 +50,9 @@ describe("canvas viewport", () => {
     ];
     const initial = initialReadableViewport(focus, size);
     expect(initial.zoom).toBeGreaterThanOrEqual(.65);
+    const docked = { width: 700, height: size.height };
+    const narrow = initialReadableViewport(focus, docked);
+    expect(focus.every((node) => rectVisible(narrow, node, docked))).toBe(true);
     expect(initial.zoom).toBeGreaterThan(fitRects([...focus, { x: 4000, y: 3000, width: 292, height: 310 }], size).zoom);
   });
 });

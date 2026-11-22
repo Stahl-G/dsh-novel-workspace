@@ -1,3 +1,4 @@
+import { request as httpRequest } from "node:http";
 import type { ChildProcess } from "node:child_process";
 import { mkdir, writeFile } from "node:fs/promises";
 import { createServer } from "node:net";
@@ -17,6 +18,7 @@ interface HistoryRecord {
   readonly event: HistoryEvent;
 }
 
+let dshAuthOrigin: string | undefined;
 let dshAuthCookie: string | undefined;
 
 export async function freePort(): Promise<number> {
@@ -46,6 +48,7 @@ export async function authorizeDsh(origin: string, logs: readonly string[]): Pro
         const response = await fetch(tokenUrl, { redirect: "manual" });
         const cookie = response.headers.getSetCookie().map((entry) => entry.split(";", 1)[0]).join("; ");
         if (cookie !== "") {
+          dshAuthOrigin = new URL(tokenUrl).origin;
           dshAuthCookie = cookie;
           return tokenUrl;
         }
@@ -156,4 +159,24 @@ export async function stopDshProcess(child: ChildProcess): Promise<void> {
     new Promise<void>((accept) => setTimeout(accept, 3_000))
   ]);
   if (child.exitCode === null && child.signalCode === null) child.kill("SIGKILL");
+}
+
+/** Send one request with headers verbatim; fetch silently drops a forged Host. */
+export async function rawStatus(target: string, headers: Readonly<Record<string, string>>): Promise<number> {
+  const url = new URL(target);
+  if (!dshAuthCookie || url.origin !== dshAuthOrigin) throw new Error("Expected this fixture host.");
+  return new Promise<number>((accept, reject) => {
+    const call = httpRequest({
+      host: url.hostname,
+      port: url.port,
+      path: `${url.pathname}${url.search}`,
+      method: "GET",
+      headers: { host: url.host, ...headers, cookie: dshAuthCookie }
+    }, (response) => {
+      response.resume();
+      response.once("end", () => { accept(response.statusCode ?? 0); });
+    });
+    call.once("error", reject);
+    call.end();
+  });
 }
